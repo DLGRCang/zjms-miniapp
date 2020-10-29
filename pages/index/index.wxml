@@ -1,0 +1,48 @@
+<basics wx:if="{{PageCur=='basics'}}"></basics>
+<about wx:if="{{PageCur=='about'}}"></about>
+<guide wx:if="{{PageCur=='guide'}}"></guide>
+<pay wx:if="{{PageCur=='pay'}}"></pay>
+<plugin wx:if="{{PageCur=='plugin'}}"></plugin>
+
+<view class="cu-bar tabbar bg-white shadow foot">
+
+	<view class="action" bindtap="NavChange" data-cur="basics">
+		<view class='cuIcon-cu-image'>
+			<!-- <image src="/images/tabbar/basics{{PageCur=='basics'?'_cur':''}}.png"></image> -->
+			<text class="cuIcon-home {{PageCur=='basics'?'text-active':'text-gray'}}"></text>
+		</view>
+		<view class="{{PageCur=='basics'?'text-active':'text-gray'}}">首页</view>
+	</view>
+
+	<view class="action" bindtap="NavChange" data-cur="about">
+		<view class='cuIcon-cu-image'>
+			<!-- <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image> -->
+			<text class="cuIcon-time {{PageCur=='about'?'text-active':'text-gray'}}"></text>
+		</view>
+		<view class="{{PageCur=='about'?'text-active':'text-gray'}}">预约</view>
+	</view>
+
+	<view class="action" bindtap="NavChange" data-cur="guide">
+		<view class='cuIcon-cu-image'>
+			<!-- <image src="/images/tabbar/guide{{PageCur=='guide'?'_cur':''}}.png"></image> -->
+			<text class="cuIcon-favor {{PageCur=='guide'?'text-active':'text-gray'}}"></text>
+		</view>
+		<view class="{{PageCur=='guide'?'text-active':'text-gray'}}">办事指南</view>
+	</view>
+
+	<view class="action" bindtap="NavChange" data-cur="pay">
+		<view class='cuIcon-cu-image'>
+			<!-- <image src="/images/tabbar/pay{{PageCur=='pay'?'_cur':''}}.png"></image> -->
+			<text class="cuIcon-pay {{PageCur=='pay'?'text-active':'text-gray'}}"></text>
+		</view>
+		<view class="{{PageCur=='pay'?'text-active':'text-gray'}}">缴费</view>
+	</view>
+
+	<view class="action" bindtap="NavChange" data-cur="plugin">
+		<view class='cuIcon-cu-image'>
+			<!-- <image src="/images/tabbar/plugin{{PageCur=='plugin'?'_cur':''}}.png"></image> -->
+			<text class="cuIcon-peoplelist {{PageCur=='plugin'?'text-active':'text-gray'}}"></text>
+		</view>
+		<view class="{{PageCur=='plugin'?'text-active':'text-gray'}}">我的</view>
+	</view>
+</view>

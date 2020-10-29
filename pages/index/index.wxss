@@ -1,0 +1,62 @@
+.link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.left {
+  width: 220rpx;
+  /* 这里的高度可以写也可以不写，效果还是可以实现的，不过最好还是写上吧 */
+  height: 100vh;
+  background-color:#F7F8F9;
+  text-align: center;
+  color: #333;
+}
+
+.left .item {
+  line-height: 50px;
+  font-size: 34rpx;
+}
+
+.active {
+  background-color: #FEFFFF;
+  color: #054FAC;
+  font-weight: 700;
+}
+.active .son{
+  color: #E63E0E;
+}
+
+.right {
+  /* 这里的高度可写也可不写，效果还是可以实现的，不过最好还是写上吧 */
+  height: 100vh;
+  background-color: #FEFFFF;
+  padding: 0 30rpx;
+}
+
+.right-cont {
+  padding-bottom: 30rpx;
+}
+
+.title {
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+  color: #054FAC;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.content {
+  padding: 0 5rpx 0 20rpx;
+}
+
+.list-item{
+  font-size: 32rpx;
+  color: #333;
+  line-height: 50rpx;
+}
+.text-active{
+  color: #054FAC;
+  font-weight: 700;
+}

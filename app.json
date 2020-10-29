@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/basics/home/home",   
+    "pages/about/home/home",
+    "pages/guide/home/home",
+    "pages/pay/home/home",
+    "pages/plugin/home/home"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/publish",
+      "name": "伊旗发布",
+      "pages": [
+        "pages/radio/radio"
+      ]
+    },{
+      "root": "pages/charm",
+      "name": "魅力伊旗",
+      "pages": [
+        "pages/historyCulture/historyCulture"
+      ]
+    },{
+      "root": "pages/travel",
+      "name": "旅游出行",
+      "pages": [
+        "pages/scenicSpot/scenicSpot"
+      ]
+    },{
+      "root": "pages/food",
+      "name": "食在伊旗",
+      "pages": [
+        "pages/specialFood/specialFood"
+      ]
+    },{
+      "root": "pages/economic",
+      "name": "经济活动",
+      "pages": [
+        "pages/market/market"
+      ]
+    },{
+      "root": "pages/education",
+      "name": "教育文体",
+      "pages": [
+        "pages/primarySchool/primarySchool"
+      ]
+    },{
+      "root": "pages/medical",
+      "name": "医疗康养",
+      "pages": [
+        "pages/hospital/hospital"
+      ]
+    },{
+      "root": "pages/government",
+      "name": "政务服务",
+      "pages": [
+        "pages/flagLeader/flagLeader"
+      ]
+    },{
+      "root": "pages/help",
+      "name": "维权助困",
+      "pages": [
+        "pages/disabled/disabled"
+      ]
+    },{
+      "root": "pages/life",
+      "name": "生活服务",
+      "pages": [
+        "pages/housekeeping/housekeeping"
+      ]
+    }],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "指间民生",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}
