@@ -29,24 +29,27 @@
 				<view class="">
 					<view class="flex justify-between margin-bottom-sm">
 						<view class="text-lg">伊旗新闻</view>
-						<view class="text-grey">更多+</view>
+						<view class="text-grey" bindtap="newsList">更多+</view>
 					</view>
-					<view class="padding-bottom-sm">你你你你你你</view>
+					<!-- <block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item"></block> data-id="{{item.id}}" -->
+					<view class="padding-bottom-sm" bindtap="newsDetail">你你你你你你</view>
 				</view>
 				<!-- 公告 -->
 				<view class="margin-tb-lg">
 					<view class="flex justify-between margin-bottom-sm">
 						<view>通知公告</view>
-						<view class="text-grey">更多+</view>
+						<view class="text-grey" bindtap="noticeList">更多+</view>
 					</view>
 				</view>
-				<view class="padding-bottom-sm">你你你你你你</view>
+				<!-- <block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item"></block>  data-id="{{item.id}}"-->
+				<view class="padding-bottom-sm" bindtap="noticeDetail">你你你你你你</view>
+
 			</view>
 			<!-- 宫格 -->
 			<view class="cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl">
 				<!-- 图文 -->
 				<view class="cu-item" wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
-					<view class="" bindtap="{{items.tab}}">
+					<view class="" bindtap="goDetail"  data-id="{{item.id}}" data-tab="{{items.tab}}">
 						<image class="padding-bottom-sm" src="{{items.pic}}" mode='widthFix' style='width:100rpx;height:100rpx;'></image>
 						<text class="text-black">{{items.tit}}{{items.nick}}</text>
 					</view>

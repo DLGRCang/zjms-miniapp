@@ -79,9 +79,8 @@ App({
         })
       })
     }
-
-
   },
+  
   globalData: {
     userInfo: null,
     ColorList: [{

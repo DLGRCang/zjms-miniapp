@@ -12,7 +12,13 @@
       "root": "pages/publish",
       "name": "伊旗发布",
       "pages": [
-        "pages/radio/radio"
+        "pages/radio/radio",
+        "pages/tv/tv",
+        "pages/pushBest/pushBest",
+        "pages/newsList/newsList",
+        "pages/newsDetail/newsDetail",
+        "pages/noticeList/noticeList",
+        "pages/noticeDetail/noticeDetail"
       ]
     },{
       "root": "pages/charm",
