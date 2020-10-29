@@ -47,7 +47,7 @@
 				<!-- 图文 -->
 				<view class="cu-item" wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
 					<view class="" bindtap="{{items.tab}}">
-						<image class="" src="{{items.pic}}" mode='widthFix' style='width:50rpx;height:50rpx;'></image>
+						<image class="padding-bottom-sm" src="{{items.pic}}" mode='widthFix' style='width:100rpx;height:100rpx;'></image>
 						<text class="text-black">{{items.tit}}{{items.nick}}</text>
 					</view>
 				</view>

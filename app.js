@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function() {
+  onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -38,93 +38,127 @@ App({
         this.globalData.StatusBar = e.statusBarHeight;
         let capsule = wx.getMenuButtonBoundingClientRect();
         if (capsule) {
-         	this.globalData.Custom = capsule;
-        	this.globalData.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
+          this.globalData.Custom = capsule;
+          this.globalData.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
         } else {
-        	this.globalData.CustomBar = e.statusBarHeight + 50;
+          this.globalData.CustomBar = e.statusBarHeight + 50;
         }
       }
     })
+    // let baseUrl = 'http://******/'; //测试
+    // let baseUrl = 'http://******/';//预发布
+    let baseUrl = 'https://*****/';//线上
+    module.exports = function (url, method, data = {}) {
+      let meth = method.toUpperCase()
+      if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
+        meth = 'GET' //不传情况下默认'GET'
+      }
+      if (getApp().globalData.userInfo != null) {//已登陆情况下必传参数（项目需要看情况而定）
+        data['token'] = getApp().globalData.userInfo.token;
+        data['uid'] = getApp().globalData.userInfo.uid;
+      }
+      return new Promise(function (resolve, reject) {
+        wx.request({
+          header: {
+            'content-type': meth == 'POST' ? 'application/x-www-form-urlencoded' : 'application/json'
+          },
+          url: baseUrl + url,
+          data: data,
+          method: meth,
+          success: function (res) {
+            //返回信息统一处理操作
+
+            //resolve用于具体调用中
+            resolve(res)
+          },
+          fail: function (res) {
+            //错误信息统一处理操作
+
+            reject(res)
+          }
+        })
+      })
+    }
 
 
-    
   },
   globalData: {
+    userInfo: null,
     ColorList: [{
-        title: '嫣红',
-        name: 'red',
-        color: '#e54d42'
-      },
-      {
-        title: '桔橙',
-        name: 'orange',
-        color: '#f37b1d'
-      },
-      {
-        title: '明黄',
-        name: 'yellow',
-        color: '#fbbd08'
-      },
-      {
-        title: '橄榄',
-        name: 'olive',
-        color: '#8dc63f'
-      },
-      {
-        title: '森绿',
-        name: 'green',
-        color: '#39b54a'
-      },
-      {
-        title: '天青',
-        name: 'cyan',
-        color: '#1cbbb4'
-      },
-      {
-        title: '海蓝',
-        name: 'blue',
-        color: '#0081ff'
-      },
-      {
-        title: '姹紫',
-        name: 'purple',
-        color: '#6739b6'
-      },
-      {
-        title: '木槿',
-        name: 'mauve',
-        color: '#9c26b0'
-      },
-      {
-        title: '桃粉',
-        name: 'pink',
-        color: '#e03997'
-      },
-      {
-        title: '棕褐',
-        name: 'brown',
-        color: '#a5673f'
-      },
-      {
-        title: '玄灰',
-        name: 'grey',
-        color: '#8799a3'
-      },
-      {
-        title: '草灰',
-        name: 'gray',
-        color: '#aaaaaa'
-      },
-      {
-        title: '墨黑',
-        name: 'black',
-        color: '#333333'
-      },
-      {
-        title: '雅白',
-        name: 'white',
-        color: '#ffffff'
-      },
+      title: '嫣红',
+      name: 'red',
+      color: '#e54d42'
+    },
+    {
+      title: '桔橙',
+      name: 'orange',
+      color: '#f37b1d'
+    },
+    {
+      title: '明黄',
+      name: 'yellow',
+      color: '#fbbd08'
+    },
+    {
+      title: '橄榄',
+      name: 'olive',
+      color: '#8dc63f'
+    },
+    {
+      title: '森绿',
+      name: 'green',
+      color: '#39b54a'
+    },
+    {
+      title: '天青',
+      name: 'cyan',
+      color: '#1cbbb4'
+    },
+    {
+      title: '海蓝',
+      name: 'blue',
+      color: '#0081ff'
+    },
+    {
+      title: '姹紫',
+      name: 'purple',
+      color: '#6739b6'
+    },
+    {
+      title: '木槿',
+      name: 'mauve',
+      color: '#9c26b0'
+    },
+    {
+      title: '桃粉',
+      name: 'pink',
+      color: '#e03997'
+    },
+    {
+      title: '棕褐',
+      name: 'brown',
+      color: '#a5673f'
+    },
+    {
+      title: '玄灰',
+      name: 'grey',
+      color: '#8799a3'
+    },
+    {
+      title: '草灰',
+      name: 'gray',
+      color: '#aaaaaa'
+    },
+    {
+      title: '墨黑',
+      name: 'black',
+      color: '#333333'
+    },
+    {
+      title: '雅白',
+      name: 'white',
+      color: '#ffffff'
+    },
     ]
   },
   // globalData: {
