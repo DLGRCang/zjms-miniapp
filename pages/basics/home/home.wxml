@@ -33,8 +33,8 @@
 					</view>
 					<block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
 						<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
-						<text class="cuIcon-ticket text-red"></text>		{{item.content}}
-					</view>
+							<text class="cuIcon-ticket text-red"></text> {{item.content}}
+						</view>
 					</block>
 				</view>
 				<!-- 公告 -->
@@ -45,21 +45,20 @@
 					</view>
 				</view>
 				<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
-						<view class="padding-bottom-sm" bindtap="noticeDetail" data-id="{{item.id}}">
-							<text class="cuIcon-hotfill text-red"></text>		{{item.content}}
-						</view>
-					</block>
-			</view>
-			<!-- 宫格 -->
-			<view class="cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl">
-				<!-- 图文 -->
-				<view class="cu-item" wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
-					<view class="" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
-						<image class="padding-bottom-sm" src="{{items.pic}}" mode='widthFix' style='width:100rpx;height:100rpx;'>
-						</image>
-						<text class="text-black">{{items.tit}}{{items.nick}}</text>
+					<view class="padding-bottom-sm" bindtap="noticeDetail" data-id="{{item.id}}">
+						<text class="cuIcon-hotfill text-red"></text> {{item.content}}
 					</view>
-				</view>
+				</block>
+			</view>
+			<!-- 宫格 cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl -->
+			<view class="grid col-3 no-border margin-bottom-lg padding-left-lg">
+				<!-- 图文 -->
+				<block wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
+					<view class="" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
+						<view><image class="margin-bottom-sm" src="{{items.pic}}" mode='widthFix' style='width:100rpx;height:100rpx;'></image></view>
+						<view><text class="text-black">{{items.tit}}{{items.nick}}</text></view>
+					</view>
+				</block>
 			</view>
 
 
