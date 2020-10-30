@@ -5,8 +5,12 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		pageTabs:["Tab1", "Tab2", "Tab3"],
 		tabs:['标1签','标2签','标3签','标4签']
 
+	},
+	selectTab:function(e){
+		console.log("点击了第几个Tab:"+e.detail.TabCur)
 	},
 
 	/**

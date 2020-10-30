@@ -1,0 +1,11 @@
+/* components/tab.wxss *//* pages/test/test.wxss */
+.cu-item {
+	height: 90rpx;
+	display: inline-block;
+	line-height: 90rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	margin: 0 10rpx;
+	padding: 0 20rpx;
+	
+}

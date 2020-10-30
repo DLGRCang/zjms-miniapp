@@ -1,5 +1,7 @@
 {
   "pages": [
+
+    
     "pages/index/index",
     "pages/basics/home/home",   
     "pages/about/home/home",
@@ -83,7 +85,9 @@
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom"
+    "cu-custom": "/colorui/components/cu-custom",
+    "item-image-text": "/components/item-image-text/item-image-text",
+    "tab": "/components/tab/tab"
   },
   "sitemapLocation": "sitemap.json"
 }
