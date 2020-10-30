@@ -1,2 +1,9 @@
-<!--pages/publish/pages/pushBest/pushBest.wxml-->
-<text>pages/publish/pages/pushBest/pushBest.wxml</text>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}"><view slot="content">推优榜</view></cu-custom>
+
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
