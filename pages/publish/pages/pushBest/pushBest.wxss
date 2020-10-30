@@ -1,1 +1,35 @@
 /* pages/publish/pages/pushBest/pushBest.wxss */
+.grid {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.grid_item {
+	flex: 0 0 auto;
+	width: 33.33333333%;
+	text-align: center;
+	color: #797979;
+	padding: 40rpx 0;
+	font-size: 30rpx;
+}
+
+.w_h {
+	width: 324rpx;
+	height: 324rpx;
+}
+
+.round_bg {
+	width: 100rpx;
+	height: 100rpx;
+	margin-top: -50rpx;
+}
+
+.round_bg_tv {
+	height: 90rpx;
+	width: 90rpx;
+	margin-top: 4rpx;
+}
