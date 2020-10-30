@@ -1995,7 +1995,7 @@ button.icon.lg {
 }
 
 .nav .cu-item.cur {
-	border-bottom: 4rpx solid;
+	border-bottom: 6rpx solid;
 }
 
 /* ==================
@@ -2887,7 +2887,10 @@ scroll-view.cu-steps .cu-item {
 .align-stretch {
 	align-items: stretch;
 }
-
+.center{
+	align-items:center;
+	 justify-content: center;
+}
 .justify-start {
 	justify-content: flex-start;
 }
