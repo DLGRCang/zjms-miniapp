@@ -6,17 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    TabCur: 0,
-    tabList:[
-      "最美家庭","新时代好少年","三八红旗手"
-    ],
+  
   },
-  tabSelect(e) {
-    this.setData({
-      TabCur: e.currentTarget.dataset.id,
-      scrollLeft: (e.currentTarget.dataset.id-1)*60
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,9 +1,34 @@
 const app = getApp()
+const util = require('../../../utils/util.js')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    newsInfo: [
+      {
+        id: 0,
+        content: '伊旗111111111111111111111111111111',
+      }, {
+        id: 0,
+        content: '伊旗111111111111111111111111111111',
+      }, {
+        id: 0,
+        content: '伊旗111111111111111111111111111111',
+      }
+    ],
+    noticeInfo: [
+      {
+        id: 0,
+        content: '伊旗111111111111111111111111111111',
+      }, {
+        id: 0,
+        content: '伊旗111111111111111111111111111111',
+      }, {
+        id: 0,
+        content: '伊旗111111111111111111111111111111',
+      }
+    ],
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
@@ -507,21 +532,15 @@ Page({
         switch (tab) {
           case 0:
             //广播
-            wx.navigateTo({
-              url: '../../pages/publish/pages/radio/radio',
-            });
+            util.pageJump('../../pages/publish/pages/radio/radio')
             break;
           case 1:
             //电视
-            wx.navigateTo({
-              url: '../../pages/publish/pages/tv/tv',
-            });
+            util.pageJump('../../pages/publish/pages/tv/tv')
             break;
           case 2:
             //推优榜
-            wx.navigateTo({
-              url: '../../pages/publish/pages/pushBest/pushBest',
-            });
+            util.pageJump('../../pages/publish/pages/pushBest/pushBest')
             break;
         }
         break;
@@ -772,29 +791,19 @@ Page({
 
   //新闻列表
   newsList: function () {
-    wx.navigateTo({
-      url: '../../pages/publish/pages/newsList/newsList',
-    });
+    util.pageJump("../../pages/publish/pages/newsList/newsList")
   },
   //新闻详情
-  noticeDetail: function (e) {
-    let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../../pages/publish/pages/newsDetail/newsDetail?id=' + id,
-    });
+  newsDetail: function (e) {
+    util.pageJumpTo('../../pages/publish/pages/newsDetail/newsDetail', 'id', e.currentTarget.dataset.id)
   },
   //通知公告列表
   noticeList: function () {
-    wx.navigateTo({
-      url: '../../pages/publish/pages/noticeList/noticeList',
-    });
+    util.pageJump('../../pages/publish/pages/noticeList/noticeList')
   },
   //通知公告详情
   noticeDetail: function (e) {
-    let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../../pages/publish/pages/noticeDetail/noticeDetail?id=' + id,
-    });
+    util.pageJumpTo('../../pages/publish/pages/noticeDetail/noticeDetail', 'id', e.currentTarget.dataset.id)
   },
 
 

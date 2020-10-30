@@ -28,18 +28,18 @@ Component({
 			type: [Boolean, String],
 			value: false
 		},
-		date:{
-			type:String,
-			value:''
+		date: {
+			type: String,
+			value: ''
 		},
-			//是否显示日期
-			isDate: {
-				type: [Boolean, String],
-				value: false
-			},
-		starNum:{
-			type:Number,
-			value:0
+		//是否显示日期
+		isDate: {
+			type: [Boolean, String],
+			value: false
+		},
+		starNum: {
+			type: Number,
+			value: 0
 		},
 		//标题
 		itemTitle: {
@@ -58,5 +58,5 @@ Component({
 		},
 	},
 
-	
+
 })
