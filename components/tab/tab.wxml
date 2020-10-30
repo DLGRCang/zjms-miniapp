@@ -1,0 +1,9 @@
+<!--components/tab.wxml-->
+<view class="flex text-center nav">
+	<view class="flex-sub" wx:for="{{tabName}}" wx:key> 
+		<view class="cu-item  {{index==TabCur?'text-blue cur':''}}"  bindtap="tabSelect"
+		 data-id="{{index}}">
+			{{tabName[index]}}
+		</view>
+	</view>
+</view>

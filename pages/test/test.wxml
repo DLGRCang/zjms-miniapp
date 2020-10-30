@@ -1,6 +1,7 @@
 <!--pages/test/test.wxml-->
-<view>
-	<item-image-text  imgUrl="" itemTitle="标题" itemInfo="内容简介" itemTabs="{{tabs}}" isImg="true">
+<view class="flex-direction">
+	<item-image-text imgUrl="" itemTitle="标题" itemInfo="内容简介" itemTabs="{{tabs}}" isImg="true">
 	</item-image-text>
-
+	<!-- Tab组件 -->
+	<tab bindmyevent="selectTab" tabName="{{pageTabs}}"></tab>
 </view>

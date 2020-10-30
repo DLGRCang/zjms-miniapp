@@ -1,0 +1,39 @@
+<!--pages/test/test.wxml-->
+<cu-custom bgColor="" isBack="{{false}}">
+  <view slot="content">办事指南</view>
+</cu-custom>
+
+<tab tabName="{{tabName}}" bindmyevent="selectTab"></tab>
+
+
+<view class="flex margin-sm margin-top margin-bottom-lg">
+  <picker class="text-center flex-sub" bindchange="PickerChange" value="{{index}}" range="{{themes}}"
+      data-var="{{themes}}">
+    <view style="width:200rpx"  class="text-cut search_type {{0==SearchCur?'search_type_selected text-blue':''}}" bindtap="searchSelect" data-id="0">
+      {{searchType[0]}}
+    </view>
+  </picker>
+  <picker class="text-center flex-sub" bindchange="PickerChange" value="{{index}}" range="{{types}}"
+  data-var="{{types}}">
+    <view style="width:200rpx" class="text-cut search_type {{1==SearchCur?'search_type_selected text-blue':''}}" bindtap="searchSelect" data-id="1">
+      {{searchType[1]}}
+    </view>
+  </picker>
+  <picker class="text-center flex-sub" bindchange="PickerChange" value="{{index}}" range="{{deps}}"
+      data-var="{{deps}}">
+    <view style="width:200rpx" class="text-cut search_type {{2==SearchCur?'search_type_selected text-blue':''}}" bindtap="searchSelect" data-id="2">
+      {{searchType[2]}}
+    </view>
+  </picker>
+</view>
+<view class="flex  align-start justify-between padding-bottom-xl padding-left-lg padding-right-lg" wx:for="{{3}}"
+  wx:key>
+  <view>
+    <view class="text-blue text-dl .margin-bottom-sm text-cut" style="width:450rpx">烟花爆竹经烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可营许可
+    </view>
+    <view class="text-grey text-sm text-cut" style="width:450rpx"><text
+        class="padding-right-xs cuIcon-forward text-red"></text>烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可</view>
+  </view>
+  <view class="bg-gradual-blue  radius text-center padding-xs"><text
+      class="padding-right-xs cuIcon-footprint"></text>跑0次事项</view>
+</view>
