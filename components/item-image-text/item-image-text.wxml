@@ -1,0 +1,16 @@
+<!--components/item-image-text/item-image-text.wxml-->
+<view class="flex padding">
+	<view class="radius margin-right" style="background:#D8D8D8;width:132rpx;height:132rpx" wx:if="{{isImg}}">
+		<image src="{{imgUrl}}" style="width:132rpx;height:132rpx" mode="aspectFit"></image>
+	</view>
+	<view class="flex flex-direction  " style="width:520rpx">
+		<text class=" margin-bottom-xs text-df text-cut">{{itemTitle}}</text>
+		<text class="text-sm text-cut margin-bottom-sm">{{itemInfo}}</text>
+		<view wx:if="{{isTab}}">
+			<view class="cu-tag" wx:for="{{itemTabs}}" wx:key>{{itemTabs[index]}}</view>
+		</view>
+		<view wx:if="{{isStar}}"><text class="cuIcon-favorfill lg text-yellow" wx:for="{{starNum}}" wx:key></text></view>
+		<view wx:if="{{isDate}}" class="text-grey text-sm">{{date}}</view>
+	</view>
+
+</view>
