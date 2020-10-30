@@ -1,2 +1,2 @@
-<!--pages/publish/pages/pushBest/pushBest.wxml-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}"><view slot="content">推优榜</view></cu-custom>
 <text>pages/publish/pages/pushBest/pushBest.wxml</text>

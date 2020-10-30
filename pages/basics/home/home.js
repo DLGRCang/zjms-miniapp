@@ -770,10 +770,6 @@ Page({
 
   },
 
-  //推优榜
-  pushBest: function () {
-
-  },
   //新闻列表
   newsList: function () {
     wx.navigateTo({
