@@ -1,15 +1,11 @@
-// pages/charm/pages/villageProduct/villageProduct.js
+// pages/index/test.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		tabName:['访客','合作社']
 
-	},
-	selectTab:function(e){
-		console.log("点击了第几个Tab:"+e.detail.TabCur)
 	},
 
 	/**

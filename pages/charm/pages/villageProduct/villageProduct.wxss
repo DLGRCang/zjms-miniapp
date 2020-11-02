@@ -1,1 +1,9 @@
 /* pages/charm/pages/villageProduct/villageProduct.wxss */
+.bgColor{
+	background-color: #A6CF5F;
+	color: #ffffff;
+	
+}
+.text-green{
+	color: #A6CF5F;
+}

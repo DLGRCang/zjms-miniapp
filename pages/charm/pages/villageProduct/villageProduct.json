@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+	  "artel": "/pages/charm/pages/villageProduct/artel/artel"
+  }
 }
