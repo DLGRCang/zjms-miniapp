@@ -1,5 +1,5 @@
 <!--pages/test/test.wxml-->
-<cu-custom bgColor="" isBack="{{false}}">
+<cu-custom bgColor="bg-white" isBack="{{false}}">
   <view slot="content">办事指南</view>
 </cu-custom>
 
@@ -29,7 +29,7 @@
 <view class="flex  align-start justify-between margin-bottom-xl padding-left-xl padding-right-lg" wx:for="{{3}}"
   wx:key>
   <view>
-    <view class="text-blue text-lf .margin-bottom-sm text-cut" style="width:450rpx">烟花爆竹经烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可营许可
+    <view class="text-blue text-lg .margin-bottom-sm text-cut" style="width:450rpx">烟花爆竹经烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可营许可
     </view>
     <view class="text-grey  text-cut" style="width:450rpx"><text
         class="text-df padding-right-xs cuIcon-forward text-red"></text>烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可</view>
