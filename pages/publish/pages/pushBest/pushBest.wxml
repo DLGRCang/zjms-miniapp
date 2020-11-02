@@ -1,7 +1,7 @@
 <cu-custom bgColor="" isBack="{{true}}">
 	<view slot="content" class="text-xl text-black text-bold">推优榜</view>
 </cu-custom>
-<tab padding-lr-lg tabName="{{tabName}}" bindmyevent="selectTab"></tab>
+<tab padding-lr-lg tabName="{{tabName}}" bindmyevent="selectTab" tvColor="text-yellow"></tab>
 <view class="grid" style="padding: 33rpx;">
 	<view class="flex align-center flex-direction margin-bottom-lg" wx:for="{{4}}" wx:key style="height: 470rpx;">
 		<view class="bg-grey margin-xs w_h">

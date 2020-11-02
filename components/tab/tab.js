@@ -12,7 +12,13 @@ Component({
 		tabName: {
 			type: Array,
 			value: []
+		},
+		//选中时的颜色
+		tvColor: {
+			type: String,
+			value: 'text-blue',
 		}
+		
 
 	},
 

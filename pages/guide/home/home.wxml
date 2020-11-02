@@ -28,7 +28,7 @@
 </view>
 <view class="flex  align-start justify-between margin-bottom-xl padding-left-xl padding-right-lg" wx:for="{{3}}" wx:key bindtap="guideDetail" data-id="{{index}}">
   <view>
-    <view class="text-blue text-xl .margin-bottom-sm text-cut text-bold" style="width:450rpx">烟花爆竹经烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可营许可
+    <view class="text-blue text-lg .margin-bottom-sm text-cut text-bold" style="width:450rpx">烟花爆竹经烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可营许可
     </view>
     <view class="text-grey  text-cut" style="width:450rpx"><text
         class="text-df padding-right-xs cuIcon-forward text-red"></text>烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可</view>

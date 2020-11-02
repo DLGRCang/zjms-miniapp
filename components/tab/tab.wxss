@@ -7,5 +7,9 @@
 	font-weight: bold;
 	margin: 0 10rpx;
 	padding: 0 20rpx;
-	
+	border-bottom: 6rpx solid;
 }
+.cu-item_no {
+	border-bottom: 0rpx solid;
+}
+
