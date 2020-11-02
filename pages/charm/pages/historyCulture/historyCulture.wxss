@@ -1,1 +1,36 @@
 /* pages/charm/pages/historyCulture/historyCulture.wxss */
+page {
+  background-color: #FFFBFB;
+}
+
+.list {
+  width: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid #EE6967;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 5rpx;
+}
+
+.sText {
+  margin-top: 5rpx;
+  background-color: #EE6967;
+  height: 36rpx;
+  width: 36rpx;
+  line-height: 36rpx;
+  color: #FFFFFF;
+  border: 1rpx solid #EE6967;
+  border-radius: 16rpx;
+}
+.content{
+  background-color: #FFFFFF;
+  border: 1rpx solid #FFFFFF;
+  border-radius: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.link{
+  margin:40rpx auto;
+  width: 90%;
+  border-bottom: 1rpx solid #dadada;
+}

@@ -10,10 +10,10 @@ Page({
         id: 0,
         content: '伊旗111111111111111111111111111111',
       }, {
-        id: 0,
+        id: 1,
         content: '伊旗111111111111111111111111111111',
       }, {
-        id: 0,
+        id: 2,
         content: '伊旗111111111111111111111111111111',
       }
     ],
@@ -22,10 +22,10 @@ Page({
         id: 0,
         content: '伊旗111111111111111111111111111111',
       }, {
-        id: 0,
+        id: 1,
         content: '伊旗111111111111111111111111111111',
       }, {
-        id: 0,
+        id: 2,
         content: '伊旗111111111111111111111111111111',
       }
     ],
@@ -551,10 +551,10 @@ Page({
             console.log("一");
             break;
           case 1:
-            console.log("历史");
+            util.pageJump('../../pages/charm/pages/historyCulture/historyCulture')
             break;
           case 2:
-            console.log("投资");
+            util.pageJump('../../pages/charm/pages/investment/investment')
             break;
         }
         break;

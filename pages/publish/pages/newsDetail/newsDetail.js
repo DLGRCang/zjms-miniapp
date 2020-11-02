@@ -1,20 +1,29 @@
-// pages/publish/pages/newsDetail/newsDetail.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id: 0,
+    info:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var id = options.id;
+    console.log(options.id)
+    this.setData({
+      id: id
+    })
+    //this.getDetail(id);
   },
-
+  getDetail: function (id) {
+    //根据id查询
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,4 +1,6 @@
 // pages/charm/pages/historyCulture/historyCulture.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**

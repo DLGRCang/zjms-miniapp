@@ -32,7 +32,8 @@
       "root": "pages/charm",
       "name": "魅力伊旗",
       "pages": [
-        "pages/historyCulture/historyCulture"
+        "pages/historyCulture/historyCulture",
+        "pages/investment/investment"
       ]
     },
     {

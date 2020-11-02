@@ -1,1 +1,4 @@
-/* pages/publish/pages/noticeDetail/noticeDetail.wxss */
+.main{
+  display: flex;
+  justify-content: center;
+}

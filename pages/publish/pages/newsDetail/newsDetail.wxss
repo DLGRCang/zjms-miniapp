@@ -1,1 +1,5 @@
 /* pages/publish/pages/newsDetail/newsDetail.wxss */
+.main{
+  display: flex;
+  justify-content: center;
+}
