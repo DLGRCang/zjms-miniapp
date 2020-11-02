@@ -548,7 +548,8 @@ Page({
       case 1:
         switch (tab) {
           case 0:
-            console.log("一");
+            util.pageJump('../../pages/charm/pages/villageProduct/villageProduct')
+            console.log("一村一品");
             break;
           case 1:
             util.pageJump('../../pages/charm/pages/historyCulture/historyCulture')

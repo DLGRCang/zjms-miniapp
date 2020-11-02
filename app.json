@@ -33,7 +33,8 @@
       "name": "魅力伊旗",
       "pages": [
         "pages/historyCulture/historyCulture",
-        "pages/investment/investment"
+        "pages/investment/investment",
+        "pages/villageProduct/villageProduct"
       ]
     },
     {

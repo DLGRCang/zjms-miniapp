@@ -5,7 +5,7 @@
 	</view>
 	<view class="flex flex-direction  " style="width:520rpx">
 		<text class=" margin-bottom-xs text-df text-cut">{{itemTitle}}</text>
-		<text class="text-sm text-cut margin-bottom-sm">{{itemInfo}}</text>
+		<text class="text-sm text-cut margin-bottom-sm" style="height:40rpx">{{itemInfo}}</text>
 		<view wx:if="{{isTab}}">
 			<view class="cu-tag" wx:for="{{itemTabs}}" wx:key>{{itemTabs[index]}}</view>
 		</view>
