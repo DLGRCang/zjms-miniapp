@@ -10,7 +10,7 @@
   "subpackages": [
     {
       "root": "pages/guideDetail",
-      "name": "办事指南模块",
+      "name": "办事指南",
       "pages": [
         "pages/guideInfo/guideInfo"
       ]
