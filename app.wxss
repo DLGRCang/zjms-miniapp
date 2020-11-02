@@ -1,5 +1,5 @@
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";
 page{
-  background:#fff
+  background:#ffffff;
 }

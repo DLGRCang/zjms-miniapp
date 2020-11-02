@@ -1,8 +1,4 @@
 /* pages/component/nav/nav.wxss */
-.link{
-  background-color: #FFFFFF;
-  margin-top: -2rpx;
-}
 .VerticalNav.nav {
   width: 200rpx;
   white-space: initial;
@@ -14,7 +10,8 @@
   background-color: #F7F8F9;
   margin: 0;
   border: none;
-  height: 52px;
+  /* height: 52px; */
+  height: 44px;
   position: relative;
 }
 

@@ -16,9 +16,11 @@ Page({
 		text: '我们的高兴的'
 	},
 	//切换顶部tab
-	selectTab:function(e){
-		TabCur: e.currentTarget.dataset.id;
-		console.log("点击了第几个Tab:"+e.detail.TabCur)
+	selectTab: function (e) {
+		this.setData({
+			TabCur: e.currentTarget.dataset.id
+			// console.log("点击了第几个Tab:"+e.detail.TabCur)
+		})
 	},
 
 	//检索条件切换
@@ -28,7 +30,7 @@ Page({
 		})
 	},
 	PickerChange(e) {
-	
+
 		this.setData({
 			index: e.detail.value,
 		})
