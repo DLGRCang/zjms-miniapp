@@ -1,0 +1,31 @@
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">投资兴业</view>
+</cu-custom>
+<tab bindmyevent="selectTab" tabName="{{tabName}}" ></tab>
+
+<view wx:if="{{tabBar===0}}">
+<!-- <block wx:for="{{info}}" wx:for-item="item" wx:key="item"> -->
+  <view class="contents">
+  <item-image-text imgUrl="" itemTitle="0000000000000000000000000" isImg="true" isDate="true" date="12:22">
+  </item-image-text>
+</view>
+<!-- </block> -->
+</view>
+<view wx:if="{{tabBar===1}}">
+<!-- <block wx:for="{{info}}" wx:for-item="item" wx:key="item"> -->
+  <view class="contents">
+  <item-image-text imgUrl="" itemTitle="111111111111111111111111111" isImg="true" isDate="true" date="12:22">
+  </item-image-text>
+</view>
+<!-- </block> -->
+</view>
+<view wx:if="{{tabBar===2}}">
+<!-- <block wx:for="{{info}}" wx:for-item="item" wx:key="item"> -->
+  <view class="contents">
+  <item-image-text imgUrl="" itemTitle="22222222222222222222222222222222" isImg="true" isDate="true" date="12:22">
+  </item-image-text>
+</view>
+<!-- </block> -->
+</view>
+
+

@@ -4,15 +4,15 @@
 <image src="" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lr-lg">
   <!-- 民族文化 -->
-  <view class="flex justify-content margin-tb-lg">
+  <view class="flex justify-contents margin-tb-lg">
     <view class="list"></view>
     <view class="text-center padding-left-xs text-lg">民族文化</view>
     <view></view>
   </view>
   <!-- 内容展示 -->
-  <view class="content padding-tb-lg">
+  <view class="contents padding-tb-lg">
     <view class="flex justify-between">
-      <view class="flex justify-content ">
+      <view class="flex justify-contents ">
         <view class="sText text-sm flex justify-center">译</view>
         <view class="text-center padding-left-lg text-lg">蒙汉语翻译</view>
       </view>
@@ -20,7 +20,7 @@
     </view>
     <view class="link"></view>
     <view class="flex justify-between">
-      <view class="flex justify-content">
+      <view class="flex justify-contents">
         <view class="sText text-sm flex justify-center">蒙</view>
         <view class="text-center padding-left-lg text-lg">蒙语每日一句</view>
       </view>
@@ -30,13 +30,13 @@
   </view>
 
   <!-- 历史追溯 -->
-  <view class="flex justify-content  margin-tb-lg">
+  <view class="flex justify-contents  margin-tb-lg">
     <view class="list"></view>
     <view class="text-center padding-left-xs text-lg">历史追溯</view>
     <view></view>
   </view>
   <!-- <block wx:for="{{info}}" wx:for-item="item" wx:key="item"> -->
-    <view class="content">
+    <view class="contents">
       <item-image-text imgUrl="" itemTitle="111111111111111111111111111" isImg="true" isDate="true" date="12:22">
       </item-image-text>
     </view>
