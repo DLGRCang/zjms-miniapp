@@ -31,5 +31,5 @@
 .round_bg_tv {
 	height: 90rpx;
 	width: 90rpx;
-	margin-top: 4rpx;
+	margin-top: 5rpx;
 }
