@@ -1,4 +1,5 @@
 // pages/test/test.js
+const util = require('../../../utils/util.js')
 Page({
 	/**
 	 * 页面的初始数据
@@ -41,5 +42,8 @@ Page({
 			searchType: picker
 		})
 
+	},
+	guideDetail(e){
+		util.pageJumpTo('/pages/guideDetail/pages/guideInfo/guideInfo','id',e.currentTarget.dataset.id)
 	}
 })

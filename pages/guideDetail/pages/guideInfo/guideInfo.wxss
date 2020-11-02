@@ -1,1 +1,28 @@
 /* pages/guideDetail/pages/guideInfo/guideInfo.wxss */
+.title {
+	margin-bottom: 72rpx;
+	font-weight: bold;
+}
+
+.title::before {
+	font-family: "cuIcon";
+	content: "\e600";
+	font-size: 12rpx;
+	margin-right: 10rpx;
+}
+.content-title{
+	margin-bottom: 30rpx;
+	color: #000000;
+
+}
+.content-title::before {
+	font-family: "cuIcon";
+	content: "\e701";
+	color: #054FAC;
+	margin-left: -15rpx;
+
+}
+.content {
+	margin-bottom: 62rpx;
+
+}
