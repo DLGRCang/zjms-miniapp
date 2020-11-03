@@ -5,10 +5,15 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		tabName:['访客','合作社']
+		tabId:0,
+		tabName:['访客','合作社'],
+		num:9
 
 	},
 	selectTab:function(e){
+		this.setData({
+			tabId:e.detail.TabCur
+		})
 		console.log("点击了第几个Tab:"+e.detail.TabCur)
 	},
 
