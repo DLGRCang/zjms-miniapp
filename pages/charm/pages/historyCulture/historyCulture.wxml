@@ -1,14 +1,10 @@
-<cu-custom bgColor="bg-red" isBack="{{true}}">
+<cu-custom bgColor="red" isBack="{{true}}">
   <view slot="content">历史文化</view>
 </cu-custom>
-<image src="" mode='widthFix' style="height：375px;width:100%;"></image>
+<image src="/image/history.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lr-lg">
   <!-- 民族文化 -->
-  <view class="flex justify-contents margin-tb-lg">
-    <view class="list"></view>
-    <view class="text-center padding-left-xs text-lg">民族文化</view>
-    <view></view>
-  </view>
+  <dot-title  title="民族文化" color="text-red"></dot-title>
   <!-- 内容展示 -->
   <view class="contents padding-tb-lg">
     <view class="flex justify-between">
@@ -30,11 +26,7 @@
   </view>
 
   <!-- 历史追溯 -->
-  <view class="flex justify-contents  margin-tb-lg">
-    <view class="list"></view>
-    <view class="text-center padding-left-xs text-lg">历史追溯</view>
-    <view></view>
-  </view>
+  <dot-title  title="历史追溯" color="text-red"></dot-title>
   <!-- <block wx:for="{{info}}" wx:for-item="item" wx:key="item"> -->
     <view class="contents">
       <item-image-text imgUrl="" itemTitle="111111111111111111111111111" isImg="true" isDate="true" date="12:22">

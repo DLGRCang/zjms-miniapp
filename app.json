@@ -105,7 +105,8 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom",
     "item-image-text": "/components/item-image-text/item-image-text",
-    "tab": "/components/tab/tab"
+    "tab": "/components/tab/tab",
+    "dot-title":"/components/dot-title/dot-title"
   },
   "sitemapLocation": "sitemap.json"
 }

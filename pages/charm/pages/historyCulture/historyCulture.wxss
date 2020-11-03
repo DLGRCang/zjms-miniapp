@@ -2,7 +2,10 @@
 page {
   background-color: #FFFBFB;
 }
-
+.red{
+  background-color: #EE6967;
+  color: #ffffff;
+}
 .list {
   width: 10rpx;
   height: 32rpx;

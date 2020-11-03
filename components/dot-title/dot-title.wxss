@@ -1,0 +1,9 @@
+/* components/dot-title/dot-title.wxss */
+.list {
+  width: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid ;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}

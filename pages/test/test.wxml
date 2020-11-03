@@ -5,4 +5,6 @@
 	<!-- Tab组件 -->
 	<tab bindmyevent="selectTab" tabName="{{pageTabs}}"></tab>
 	<text>11111111111111111111111111111111111111111111111111111111111111111</text>
+
+	<dot-title id="goMore" title="投资" color="red" isMore="true"></dot-title>
 </view>
