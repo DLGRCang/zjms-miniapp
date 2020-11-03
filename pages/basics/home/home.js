@@ -803,7 +803,7 @@ Page({
       case 9:
         switch (tab) {
           case 0:
-            console.log("1");
+            util.pageJump('../../pages/life/pages/housekeeping/housekeeping')
             break;
           case 1:
             console.log("2");

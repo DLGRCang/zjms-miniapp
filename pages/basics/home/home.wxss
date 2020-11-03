@@ -1,6 +1,6 @@
 /* pages/component/nav/nav.wxss */
 .VerticalNav.nav {
-  width: 200rpx;
+  width: 20%;
   white-space: initial;
 }
 
@@ -10,9 +10,10 @@
   background-color: #F7F8F9;
   margin: 0;
   border: none;
-  /* height: 52px; */
-  height: 44px;
+  height: 96rpx;
+  line-height: 96rpx;
   position: relative;
+  font-size: 26rpx;
 }
 
 .VerticalNav.nav .cu-item.cur {
@@ -24,6 +25,7 @@
 }
 
 .VerticalMain{
+  width: 80%;
   background-color:  #FFFFFF;
 }
 
@@ -41,6 +43,26 @@
 }
 .box{
 padding-right: 90rpx;
+}
+
+.icon-wrap{
+  width: 100%;
+  margin: 40rpx 0 10rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.icon-wrap .icon-item{
+  width: 33.3333%;
+  flex-shrink: 1;
+  padding-bottom: 30rpx;
+}
+.icon-wrap .icon-item .item-img{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8rpx;
+}
+.icon-wrap .icon-item .item-text{
+  text-align: center;
 }
 
 

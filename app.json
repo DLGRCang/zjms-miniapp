@@ -91,7 +91,9 @@
       "root": "pages/life",
       "name": "生活服务",
       "pages": [
-        "pages/housekeeping/housekeeping"
+        "pages/housekeeping/housekeeping",
+        "pages/details-list/details-list",
+        "pages/details/details"
       ]
     }
   ],
