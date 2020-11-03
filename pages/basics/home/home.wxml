@@ -4,7 +4,7 @@
 	<!-- <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
     <view slot="content">列表</view>
   </cu-custom> -->
-	<image src='/image/basic.png' mode='widthFix' class='png' style='width:100%;height:386rpx:486rpx'></image>
+	<image src='/image/basic.png' style='width:100%;height:386rpx:486rpx'></image>
 
 	<!-- 实现左右联动效果 -->
 	<view class="flex">
@@ -61,10 +61,10 @@
 					<block wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
 						<view class="margin-bottom-lg" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
 							<view>
-								<image class="margin-bottom-sm" src="{{items.pic}}" mode='widthFix' style='width:100rpx;height:100rpx;'>
+								<image src="{{items.pic}}" style='width:100rpx;height:100rpx;'>
 								</image>
 							</view>
-							<view><text class="text-black">{{items.tit}}{{items.nick}}</text></view>
+							<view class="margin-top-sm"><text class="text-black">{{items.tit}}{{items.nick}}</text></view>
 						</view>
 					</block>
 				</view>
