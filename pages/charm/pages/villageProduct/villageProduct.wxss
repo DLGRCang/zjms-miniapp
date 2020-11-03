@@ -1,9 +1,76 @@
 /* pages/charm/pages/villageProduct/villageProduct.wxss */
-.bgColor{
+.bgColor {
 	background-color: #A6CF5F;
 	color: #ffffff;
-	
+
 }
-.text-green{
+
+.text-green {
 	color: #A6CF5F;
+}
+
+.village-icon::before {
+	font-family: "cuIcon";
+	color: #9ECA4D;
+	content: "\e701";
+}
+
+.village-icon {
+	margin-left: 25rpx;
+	font-size: 36rpx;
+	color: #000000;
+
+}
+
+.village-name {
+	color: #ffffff;
+	font-size: 26rpx;
+	margin-bottom: 15rpx;
+	padding-left: 10rpx;
+	background: rgba(0, 0, 0, 0.2);
+
+}
+
+.village-name::before {
+
+	font-family: "cuIcon";
+	content: "\e651";
+}
+
+ .grid {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+  }
+ 
+ .grid::after{
+    content: '';
+    width: 50%;
+  
+  }
+ .grid1 {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+  }
+ 
+ .grid1::after{
+    content: '';
+    width: 25%;
+  
+  }
+
+
+.grid-item {
+	display: flex;
+	flex: 0 0 auto;
+	width: 25%;
+	align-items: center;
+
 }

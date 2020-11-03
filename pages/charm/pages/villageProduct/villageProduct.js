@@ -5,7 +5,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		tabName:['访客','合作社']
+		tabName:['访客','合作社'],
+		num:9
 
 	},
 	selectTab:function(e){
