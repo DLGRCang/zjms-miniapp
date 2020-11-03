@@ -11,7 +11,7 @@
 		<!-- 左边栏 -->
 		<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
 			style="height:calc(93vh - 450rpx)">
-			<view class="cu-item {{index==TabCur?'active cur':''}}" wx:for="{{mainInfo}}" wx:key bindtap='tabSelect'
+			<view class="cu-item {{index==TabCur?'active cur':''}}" wx:for="{{mainInfo}}" wx:key="index" bindtap='tabSelect'
 				data-id="{{index}}">
 				<text>{{item.name}}</text>
 				<text class="son">{{item.nick}}</text>
