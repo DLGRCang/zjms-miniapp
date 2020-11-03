@@ -1,8 +1,10 @@
 <!--pages/test/test.wxml-->
 <view class="flex-direction">
-	<item-image-text imgUrl="" itemTitle="标题" itemInfo="内容简介" itemTabs="{{tabs}}" isImg="true" isTab="true">
+	<item-image-text imgUrl="" itemTitle="标题" itemInfo="内容" itemTabs="{{tabs}}" isImg="true" isDate="true" date="2019-02-03">
 	</item-image-text>
 	<!-- Tab组件 -->
 	<tab bindmyevent="selectTab" tabName="{{pageTabs}}"></tab>
 	<text>11111111111111111111111111111111111111111111111111111111111111111</text>
+
+	<dot-title id="goMore" title="投资" color="red" isMore="true"></dot-title>
 </view>
