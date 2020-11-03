@@ -39,6 +39,8 @@
 .text-blue{
   color: #0851AD;
 }
-
+.box{
+padding-right: 90rpx;
+}
 
 

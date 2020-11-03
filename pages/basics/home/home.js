@@ -40,18 +40,18 @@ Page({
       introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
-          tit: "广播",
-          pic: "",
+          tit: "听广播",
+          pic: "/image/1.png",
           tab: 0
         },
         {
-          tit: "电视",
-          pic: "",
+          tit: "看电视",
+          pic: "/image/2.png",
           tab: 1
         },
         {
           tit: "推优榜",
-          pic: "",
+          pic: "/image/3.png",
           tab: 2
         },
       ]
@@ -64,17 +64,17 @@ Page({
       list: [
         {
           tit: "一村一品",
-          pic: "",
+          pic: "/image/4.png",
           tab: 0
         },
         {
           tit: "历史文化",
-          pic: "",
+          pic: "/image/5.png",
           tab: 1
         },
         {
           tit: "投资兴业",
-          pic: "",
+          pic: "/image/6.png",
           tab: 2
         },
       ]
@@ -88,44 +88,49 @@ Page({
       list: [
         {
           tit: "知名景点",
-          pic: "",
+          pic: "/image/7.png",
           tab: 0
         },
         {
           tit: "伊旗天气",
-          pic: "",
+          pic: "/image/8.png",
           tab: 1
         },
         {
           tit: "飞机火车",
-          pic: "",
+          pic: "/image/9.png",
           tab: 2
         },
         {
           tit: "长途汽车",
-          pic: "",
+          pic: "/image/10.png",
           tab: 3
         },
         {
           tit: "公交出租",
-          pic: "",
+          pic: "/image/11.png",
           tab: 4
         },
         {
           tit: "酒店宾馆",
-          pic: "",
+          pic: "/image/12.png",
           tab: 5
         },
         {
           tit: "身边公厕",
-          pic: "",
+          pic: "/image/13.png",
           tab: 6
         },
         {
           tit: "找充电桩",
-          pic: "",
+          pic: "/image/14.png",
           tab: 7
         },
+        {
+          tit: "乡村旅游",
+          pic: "/image/15.png",
+          tab: 8
+        }
       ]
     },
     {
@@ -137,32 +142,32 @@ Page({
       list: [
         {
           tit: "特色美食",
-          pic: "",
+          pic: "/image/16.png",
           tab: 0
         },
         {
           tit: "经济快餐",
-          pic: "",
+          pic: "/image/17.png",
           tab: 1
         },
         {
           tit: "高档餐饮",
-          pic: "",
+          pic: "/image/18.png",
           tab: 2
         },
         {
-          tit: "名族食品",
-          pic: "",
+          tit: "民族食品",
+          pic: "/image/19.png",
           tab: 3
         },
         {
           tit: "饮食文化",
-          pic: "",
+          pic: "/image/20.png",
           tab: 4
         },
         {
           tit: "农产安全",
-          pic: "",
+          pic: "/image/21.png",
           tab: 5
         },
       ],
@@ -176,37 +181,47 @@ Page({
       list: [
         {
           tit: "商场超市",
-          pic: "",
+          pic: "/image/22.png",
           tab: 0
         },
         {
           tit: "农贸市场",
-          pic: "",
+          pic: "/image/23.png",
           tab: 1
         },
         {
           tit: "户外摊点",
-          pic: "",
+          pic: "/image/24.png",
           tab: 2
         },
         {
           tit: "二手交易",
-          pic: "",
+          pic: "/image/25.png",
           tab: 3
         },
         {
           tit: "农资门市",
-          pic: "",
+          pic: "/image/26.png",
           tab: 4
         },
         {
           tit: "会展活动",
-          pic: "",
+          pic: "/image/27.png",
           tab: 5
         },
         {
           tit: "消费维权",
-          pic: "",
+          pic: "/image/28.png",
+          tab: 6
+        },
+        {
+          tit: "活动促销",
+          pic: "/image/29.png",
+          tab: 6
+        },
+        {
+          tit: "知识产权",
+          pic: "/image/30.png",
           tab: 6
         }
       ],
@@ -219,52 +234,52 @@ Page({
       list: [
         {
           tit: "学前教育",
-          pic: "",
+          pic: "/image/31.png",
           tab: 0
         },
         {
           tit: "中小学",
-          pic: "",
+          pic: "/image/32.png",
           tab: 1
         },
         {
           tit: "学生资助",
-          pic: "",
+          pic: "/image/33.png",
           tab: 2
         },
         {
           tit: "转学办理",
-          pic: "",
+          pic: "/image/34.png",
           tab: 3
         },
         {
           tit: "图书馆",
-          pic: "",
+          pic: "/image/35.png",
           tab: 4
         },
         {
-          tit: "书店",
-          pic: "",
+          tit: "图书商店",
+          pic: "/image/36.png",
           tab: 5
         },
         {
           tit: "民办学校",
-          pic: "",
+          pic: "/image/37.png",
           tab: 6
         },
         {
           tit: "家庭教育",
-          pic: "",
+          pic: "/image/38.png",
           tab: 7
         },
         {
           tit: "农业技术",
-          pic: "",
+          pic: "/image/39.png",
           tab: 8
         },
         {
           tit: "文体健身",
-          pic: "",
+          pic: "/image/40.png",
           tab: 9
         }
       ],
@@ -277,42 +292,42 @@ Page({
       list: [
         {
           tit: "医院药店",
-          pic: "",
+          pic: "/image/41.png",
           tab: 0
         },
         {
           tit: "健康证",
-          pic: "",
+          pic: "/image/42.png",
           tab: 1
         },
         {
           tit: "疫苗接种",
-          pic: "",
+          pic: "/image/43.png",
           tab: 2
         },
         {
           tit: "体检",
-          pic: "",
+          pic: "/image/44.png",
           tab: 3
         },
         {
           tit: "核酸检测",
-          pic: "",
+          pic: "/image/45.png",
           tab: 4
         },
         {
           tit: "老年证",
-          pic: "",
+          pic: "/image/46.png",
           tab: 5
         },
         {
           tit: "高龄补助",
-          pic: "",
+          pic: "/image/47.png",
           tab: 6
         },
         {
           tit: "福利院",
-          pic: "",
+          pic: "/image/48.png",
           tab: 7
         }
       ],
@@ -326,28 +341,43 @@ Page({
       list: [
         {
           tit: "大厅指引",
-          pic: "",
+          pic: "/image/49.png",
           tab: 0
         },
         {
           tit: "旗长热线",
-          pic: "",
+          pic: "/image/50.png",
           tab: 1
         },
         {
           tit: "旗镇互通",
-          pic: "",
+          pic: "/image/51.png",
           tab: 2
         },
         {
           tit: "调查问卷",
-          pic: "",
+          pic: "/image/52.png",
           tab: 3
         },
         {
           tit: "随手拍",
-          pic: "",
+          pic: "/image/53.png",
           tab: 4
+        },
+        {
+          tit: "志愿者",
+          pic: "/image/54.png",
+          tab: 5
+        },
+        {
+          tit: "创城行动",
+          pic: "/image/55.png",
+          tab: 6
+        },
+        {
+          tit: "土地认养",
+          pic: "/image/56.png",
+          tab: 7
         }
       ],
     },
@@ -360,32 +390,32 @@ Page({
       list: [
         {
           tit: "残疾人",
-          pic: "",
+          pic: "/image/57.png",
           tab: 0
         },
         {
           tit: "低保户",
-          pic: "",
+          pic: "/image/58.png",
           tab: 1
         },
         {
           tit: "红十字补贴",
-          pic: "",
+          pic: "/image/59.png",
           tab: 2
         },
         {
           tit: "失信人员",
-          pic: "",
+          pic: "/image/60.png",
           tab: 3
         },
         {
           tit: "法律服务",
-          pic: "",
+          pic: "/image/61.png",
           tab: 4
         },
         {
           tit: "女性关互",
-          pic: "",
+          pic: "/image/62.png",
           tab: 5
         },
       ],
@@ -398,69 +428,74 @@ Page({
       list: [
         {
           tit: "家政服务",
-          pic: "",
+          pic: "/image/63.png",
           tab: 0
         },
         {
-          tit: "物业",
-          pic: "",
+          tit: "物业服务",
+          pic: "/image/64.png",
           tab: 1
         },
         {
           tit: "保修服务",
-          pic: "",
+          pic: "/image/65.png",
           tab: 2
         },
         {
           tit: "招聘求职",
-          pic: "",
+          pic: "/image/66.png",
           tab: 3
         },
         {
           tit: "美发洗浴",
-          pic: "",
+          pic: "/image/67.png",
           tab: 4
         },
         {
           tit: "代驾挪车",
-          pic: "",
+          pic: "/image/68.png",
           tab: 5
         },
         {
           tit: "顺风车",
-          pic: "",
+          pic: "/image/69.png",
           tab: 6
         },
         {
           tit: "生产转让",
-          pic: "",
+          pic: "/image/70.png",
           tab: 7
         },
         {
           tit: "生鲜配送",
-          pic: "",
+          pic: "/image/71.png",
           tab: 8
         },
         {
           tit: "生活缴费",
-          pic: "",
+          pic: "/image/72.png",
           tab: 9
         },
         {
           tit: "通信服务",
-          pic: "",
+          pic: "/image/73.png",
           tab: 10
         },
         {
           tit: "金融服务",
-          pic: "",
+          pic: "/image/74.png",
           tab: 11
         },
-        // {
-        //   tit: "电影剧院",
-        //   pic: "",
-        //  tab:12
-        // }
+        {
+          tit: "电影剧院",
+          pic: "/image/75.png",
+          tab: 12
+        },
+        {
+          tit: "爱车养护",
+          pic: "/image/76.png",
+          tab: 13
+        },
       ],
     },
 
@@ -586,6 +621,9 @@ Page({
           case 7:
             console.log("充电侧");
             break;
+          case 8:
+            console.log("乡村");
+            break;
         }
         break;
       //食在伊旗
@@ -634,6 +672,12 @@ Page({
             break;
           case 6:
             console.log("消费");
+            break;
+          case 7:
+            console.log("消费促进");
+            break;
+          case 9:
+            console.log("知识产权");
             break;
         }
         break;
@@ -720,6 +764,16 @@ Page({
           case 4:
             console.log("5");
             break;
+          case 5:
+            console.log("6");
+            break;
+          case 6:
+            console.log("7");
+            break;
+          case 7:
+            console.log("8");
+            break;
+           
         }
         break;
       //维权助困
@@ -783,6 +837,12 @@ Page({
             break;
           case 11:
             console.log("12");
+            break;
+          case 12:
+            console.log("13");
+            break;
+          case 13:
+            console.log("14");
             break;
         }
         break;

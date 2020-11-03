@@ -56,10 +56,10 @@
 					</block>
 				</view>
 				<!-- 宫格 cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl -->
-				<view class="grid col-3 no-border margin-bottom-lg padding-left-lg">
+				<view class="grid col-3  no-border margin-tb-lg padding-left-lg">
 					<!-- 图文 -->
 					<block wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
-						<view class="" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
+						<view class="margin-bottom-lg" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
 							<view>
 								<image class="margin-bottom-sm" src="{{items.pic}}" mode='widthFix' style='width:100rpx;height:100rpx;'>
 								</image>
