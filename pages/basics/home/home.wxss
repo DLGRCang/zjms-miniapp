@@ -54,7 +54,7 @@ padding-right: 90rpx;
 .icon-wrap .icon-item{
   width: 33.3333%;
   flex-shrink: 1;
-  margin-bottom: 30rpx;
+  padding-bottom: 30rpx;
 }
 .icon-wrap .icon-item .item-img{
   display: flex;

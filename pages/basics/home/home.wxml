@@ -8,7 +8,7 @@
 
 	<!-- 实现左右联动效果 -->
 	<view class="flex">
-		<!-- 左边 -->
+		<!-- 左边栏 -->
 		<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
 			style="height:calc(93vh - 450rpx)">
 			<view class="cu-item {{index==TabCur?'active cur':''}}" wx:for="{{mainInfo}}" wx:key bindtap='tabSelect'
