@@ -753,6 +753,7 @@ Page({
             console.log("1");
             break;
           case 1:
+            util.pageJump('../../pages/government/pages/flagLeader/flagLeader')
             console.log("2");
             break;
           case 2:
@@ -762,6 +763,7 @@ Page({
             console.log("4");
             break;
           case 4:
+            util.pageJump('../../pages/government/pages/instaShot/instaShot')
             console.log("5");
             break;
           case 5:

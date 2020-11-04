@@ -76,7 +76,8 @@
 			"root": "pages/government",
 			"name": "政务服务",
 			"pages": [
-				"pages/flagLeader/flagLeader"
+				"pages/flagLeader/flagLeader",
+				"pages/instaShot/instaShot"
 			]
 		},
 		{

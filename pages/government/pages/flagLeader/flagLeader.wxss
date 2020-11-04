@@ -1,1 +1,49 @@
 /* pages/government/pages/flagLeader/flagLeader.wxss */
+.bgColor {
+	background-color:#2B83F4;
+	color: #ffffff;
+}
+
+.button-btn {
+	background-color:
+	#2B83F4;
+	color: #ffffff;
+	margin: 0 30rpx 50rpx 30rpx;
+	font-size: 34rpx;
+}
+.title-color {
+	color:#2B83F4
+}
+.help-text{
+	font-size: 32rpx;
+	color: #000000;
+
+}
+/* 微信 */
+.help-icon1::before{
+	font-family: "cuIcon";
+	content: "\e612";
+	color: #2B83F4;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+/* 电话 */
+.help-icon2::before{
+	font-family: "cuIcon";
+	content: "\e652";
+	color: #2B83F4;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+	}
+/* 邮箱 */
+.help-icon3::before{
+	font-family: "cuIcon";
+	content: "\e7bd";
+	color: #2B83F4;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+.into{
+	color: #BEBEBE;
+	font-size: 28rpx;
+}
