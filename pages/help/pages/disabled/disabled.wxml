@@ -1,3 +1,7 @@
 <!--pages/help/pages/disabled/disabled.wxml-->
-<text>pages/help/pages/disabled/disabled.wxml</text>
-残疾人
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">残疾人</view>
+</cu-custom>
+<image mode="widthFix" src="/image/canjiren.png" style="width:100%"></image>
+<button  class="button">伤残鉴定</button>
+<dot-title title="残疾证发放" color="title-color"></dot-title>

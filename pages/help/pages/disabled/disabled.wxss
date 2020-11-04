@@ -1,1 +1,15 @@
 /* pages/help/pages/disabled/disabled.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+
+.button {
+	background-color: #EE6967;
+	color: #ffffff;
+	margin: -120rpx 70rpx 0 70rpx;
+	font-size: 34rpx;
+}
+.title-color{
+	color:#EE6967
+}

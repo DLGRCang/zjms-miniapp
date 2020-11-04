@@ -2,7 +2,6 @@
 .bgColor {
 	background-color: #A6CF5F;
 	color: #ffffff;
-
 }
 
 .text-green {
