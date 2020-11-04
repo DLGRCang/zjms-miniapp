@@ -9,7 +9,7 @@
 	<!-- 实现左右联动效果 -->
 	<view class="flex">
 		<!-- 左边栏 -->
-		<view class="VerticalNav nav" style="height:calc(93vh - 450rpx)">
+		<view class="VerticalNav nav" style="height:calc(93vh - 430rpx)">
 			<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index" bindtap='tabSelect'
 				data-id="{{index}}">
 				<text>{{item.name}}</text>
