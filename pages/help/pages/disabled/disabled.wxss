@@ -4,10 +4,16 @@
 	color: #ffffff;
 }
 
-.button {
+.button{
 	background-color: #EE6967;
 	color: #ffffff;
 	margin: -120rpx 70rpx 0 70rpx;
+	font-size: 34rpx;
+}
+.button-btn {
+	background-color: #EE6967;
+	color: #ffffff;
+	margin: 0 30rpx 50rpx 30rpx;
 	font-size: 34rpx;
 }
 .title-color{
