@@ -1,2 +1,12 @@
-<!--pages/help/pages/Insured.wxml-->
-<text>pages/help/pages/Insured.wxml</text>
+<!--pages/help/pages/dishonest/dishonest.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">低保户</view>
+</cu-custom>
+<image mode="widthFix" src="/image/dibaohu.png" style="width:100%"></image>
+<button class="button">身份核定</button>
+<view class="padding">
+	<dot-title title="公示" color="title-color" isMore="true"></dot-title>
+
+	<item-image-text wx:for="{{3}}"  itemTitle="可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做家里的老人遇到这些事情." isImg="{{false}}" isDate="{{true}}" date="2019-02-03"></item-image-text>
+<button class="button-btn">申请补助</button>
+</view>

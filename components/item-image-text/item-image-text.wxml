@@ -3,8 +3,8 @@
 	<view class="radius margin-right" style="background:#D8D8D8;width:132rpx;height:132rpx" wx:if="{{isImg}}">
 		<image src="{{imgUrl}}" style="width:132rpx;height:132rpx" mode="aspectFit"></image>
 	</view>
-	<view class="flex flex-direction  " style="max-width:470rpx">
-		<text class=" margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{itemTitle}}</text>
+	<view class="flex flex-direction  " style="max-width:550rpx">
+		<text class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{itemTitle}}</text>
 		<text class="text-sm text-cut margin-bottom-sm">{{itemInfo}}</text>
 		<view wx:if="{{isTab}}">
 			<view class="cu-tag" wx:for="{{itemTabs}}" wx:key>{{itemTabs[index]}}</view>
