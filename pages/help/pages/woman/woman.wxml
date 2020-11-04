@@ -1,2 +1,27 @@
-<!--pages/help/pages/woman/woman.wxml-->
-<text>pages/help/pages/woman/woman.wxml</text>
+<!--pages/help/pages/law/law.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">女性关护</view>
+</cu-custom>
+<image mode="widthFix" src="/image/nvxingguanhu.png" style="width:100%"></image>
+<view class="padding">
+	<dot-title title="咨询求助" color="title-color"></dot-title>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
+		<text class="help-text help-icon1">在线求助</text>
+		<text class="into"></text>
+	</view>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
+		<text class="help-text help-icon2">心理咨询</text>
+		<text class="into"></text>
+	</view>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
+		<text class="help-text help-icon3">在线调解</text>
+		<text class="into"></text>
+	</view>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 80rpx 30rpx; ">
+		<text class="help-text help-icon4">二癌救助</text>
+		<text class="into"></text>
+	</view>
+	<dot-title title="活动展示" color="title-color" ></dot-title>
+	<item-image-text wx:for="{{3}}" itemTitle="活动名称" itemInfo="活动描述" isTab="true" itemTabs="{{itemTabs}}"></item-image-text>
+
+</view>

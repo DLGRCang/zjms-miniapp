@@ -1,1 +1,66 @@
-/* pages/help/pages/woman/woman.wxss */
+.bgColor {
+	background-color:
+		#EE6967;
+	color: #ffffff;
+}
+
+.button-btn {
+	background-color:
+		#EE6967;
+	color: #ffffff;
+	margin: 0 30rpx 50rpx 30rpx;
+	font-size: 34rpx;
+}
+
+.title-color {
+	color:#EE6967
+}
+
+.into {
+	font-family: cuIcon;
+	content: "\e6a3";
+}
+
+.into::after {
+	font-family: "cuIcon";
+	content: "\e6a3";
+	color: #D8D8D8;
+}
+
+.help-text{
+	font-size: 32rpx;
+	color: #000000;
+
+}
+/* 在线求助 */
+.help-icon1::before{
+	font-family: "cuIcon";
+	content: "\e6ff";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+/* 心理咨询 */
+.help-icon2::before{
+	font-family: "cuIcon";
+	content: "\e6f4";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+	}
+/* 在线和解 */
+.help-icon3::before{
+	font-family: "cuIcon";
+	content: "\e78d";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+/* 二癌救助 */
+.help-icon4::before{
+	font-family: "cuIcon";
+	content: "\e6f1";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
