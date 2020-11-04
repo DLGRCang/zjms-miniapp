@@ -780,21 +780,27 @@ Page({
       case 8:
         switch (tab) {
           case 0:
+           util.pageJump('../../pages/help/pages/disabled/disabled')
             console.log("1");
             break;
           case 1:
+            util.pageJump('../../pages/help/pages/insured/insured')
             console.log("2");
             break;
           case 2:
+		   util.pageJump('../../pages/help/pages/redcross/redcross')
             console.log("3");
             break;
           case 3:
+		     util.pageJump('../../pages/help/pages/dishonest/dishonest')
             console.log("4");
             break;
           case 4:
+		    util.pageJump('../../pages/help/pages/law/law')
             console.log("5");
             break;
           case 5:
+		  util.pageJump('../../pages/help/pages/woman/woman')
             console.log("6");
             break;
         }
