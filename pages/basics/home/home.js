@@ -498,17 +498,11 @@ Page({
         },
       ],
     },
-
-
-
-
     ],
-
     TabCur: 0,
     MainCur: 0,
     VerticalNavTop: 0,
     load: true
-
   },
   onReady() {
     wx.hideLoading()
@@ -584,7 +578,6 @@ Page({
         switch (tab) {
           case 0:
             util.pageJump('../../pages/charm/pages/villageProduct/villageProduct')
-            console.log("一村一品");
             break;
           case 1:
             util.pageJump('../../pages/charm/pages/historyCulture/historyCulture')
@@ -754,7 +747,6 @@ Page({
             break;
           case 1:
             util.pageJump('../../pages/government/pages/flagLeader/flagLeader')
-            console.log("2");
             break;
           case 2:
             console.log("3");
@@ -764,7 +756,6 @@ Page({
             break;
           case 4:
             util.pageJump('../../pages/government/pages/instaShot/instaShot')
-            console.log("5");
             break;
           case 5:
             console.log("6");
@@ -783,27 +774,21 @@ Page({
         switch (tab) {
           case 0:
             util.pageJump('../../pages/help/pages/disabled/disabled')
-            console.log("1");
             break;
           case 1:
             util.pageJump('../../pages/help/pages/insured/insured')
-            console.log("2");
             break;
           case 2:
             util.pageJump('../../pages/help/pages/redcross/redcross')
-            console.log("3");
             break;
           case 3:
             util.pageJump('../../pages/help/pages/dishonest/dishonest')
-            console.log("4");
             break;
           case 4:
             util.pageJump('../../pages/help/pages/law/law')
-            console.log("5");
             break;
           case 5:
             util.pageJump('../../pages/help/pages/woman/woman')
-            console.log("6");
             break;
         }
         break;
