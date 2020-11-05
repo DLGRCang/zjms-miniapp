@@ -1,0 +1,39 @@
+/* pages/medical/pages/welfareHouse/welfareHouse.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+
+.title-color {
+	color: #EE6967
+}
+
+.jingla-img {
+	width: 288rpx;
+	height: 192rpx;
+	background-color: #dadddb;
+
+}
+
+.yanglao-yuyue {
+	background-color: #EE6967;
+	width: 120rpx;
+	text-align: center;
+	padding: 5rpx 0;
+}
+
+.cu-tag {
+	font-size: 16rpx;
+	vertical-align: middle;
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	color: #929292;
+	border-radius: 5rpx;
+	border: 1px solid #929292;
+	height: 30rpx;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	white-space: nowrap;
+}

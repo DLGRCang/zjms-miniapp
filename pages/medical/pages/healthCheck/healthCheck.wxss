@@ -1,0 +1,8 @@
+/* pages/medical/pages/healthCheck/healthCheck.wxss */
+.bgColor {
+	background-color: #FFBE1A;
+	color: #ffffff;
+}
+.title-color{
+	color:#FFBE1A
+}
