@@ -1,13 +1,23 @@
 // pages/food/pages/economicsFood/economicsFood.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    array: ['美国', '中国', '巴西', '日本'],
+    index:0,
+    color:"#000000"
   },
-
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value,
+      color:"#5560DE"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,2 +1,7 @@
-<!--pages/food/pages/topFood/topFood.wxml-->
-<text>pages/food/pages/topFood/topFood.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content">高档餐饮</view>
+</cu-custom>
+<view class="margin-lr-xs">
+
+
+</view>

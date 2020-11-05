@@ -37,6 +37,12 @@ Component({
 			type: [Boolean, String],
 			value: false
 		},
+		//是否显示横线
+		isLine: {
+			type: [Boolean, String],
+			value: false
+		},
+		//星星数量
 		starNum: {
 			type: Number,
 			value: 0

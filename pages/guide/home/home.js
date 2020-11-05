@@ -9,7 +9,6 @@ Page({
 		searchType: ["服务主题", "事项类型", "服务部门"],
 		TabCur: 0, //标签选中项
 		SearchCur: -1, //筛选条件选中项
-
 		index: 0,
 		themes: ['生育收养', '民族宗教', '教育科研'], //服务主题
 		types: ['事项类型A', 'B事项类型', '事项C类型'], //事项类型
@@ -39,9 +38,15 @@ Page({
 		var value = e.target.dataset.var;
 		picker[this.data.SearchCur] = value[this.data.index];
 		this.setData({
-			searchType: picker
+			searchType: picker,
+			SearchCur:-1
 		})
 
+	},
+	cancel(){
+		this.setData({
+			SearchCur:-1,
+		})
 	},
 	guideDetail(e){
 		util.pageJumpTo('/pages/guideDetail/pages/guideInfo/guideInfo','id',e.currentTarget.dataset.id)

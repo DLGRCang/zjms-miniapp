@@ -1,11 +1,13 @@
 // pages/food/pages/nationFood/nationFood.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    itemTabs:["蒙古族"],
   },
 
   /**

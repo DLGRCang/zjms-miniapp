@@ -11,5 +11,5 @@
 		<view wx:if="{{isStar}}"><text class="cuIcon-favorfill lg text-yellow" wx:for="{{starNum}}" wx:key></text></view>
 		<view wx:if="{{isDate}}" class="text-grey text-sm">{{date}}</view>
 	</view>
-
 </view>
+<view wx:if="{{isLine}}" class="line"></view>
