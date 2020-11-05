@@ -1,8 +1,7 @@
 <!--components/item-image-text/item-image-text.wxml-->
 <view class="flex padding">
-	<view class="radius margin-right" style="background:#D8D8D8;width:132rpx;height:132rpx" wx:if="{{isImg}}">
-		<image src="{{imgUrl}}" style="width:132rpx;height:132rpx" mode="aspectFit"></image>
-	</view>
+	<image class="radius margin-right" wx:if="{{isImg}}" src="{{imgUrl}}" style="width:132rpx;height:132rpx;background-color:#D8D8D8"
+	 mode="aspectFit"></image>
 	<view class="flex flex-direction  " style="max-width:550rpx">
 		<text class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{itemTitle}}</text>
 		<text class="text-sm text-cut margin-bottom-sm">{{itemInfo}}</text>

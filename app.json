@@ -50,10 +50,10 @@
 			"pages": [
 				"pages/specialFood/specialFood",
 				"pages/economicsFood/economicsFood",
-        "pages/topFood/topFood",
-        "pages/nationFood/nationFood",
-        "pages/cultureFood/cultureFood",
-        "pages/animalFood/animalFood"
+				"pages/topFood/topFood",
+				"pages/nationFood/nationFood",
+				"pages/cultureFood/cultureFood",
+				"pages/animalFood/animalFood"
 			]
 		},
 		{
@@ -74,7 +74,11 @@
 			"root": "pages/medical",
 			"name": "医疗康养",
 			"pages": [
-				"pages/hospital/hospital"
+				"pages/hospital/hospital",
+				"pages/healthCard/healthCard",
+				"pages/healthCheck/healthCheck",
+				"pages/nucleicAcidCheck/nucleicAcidCheck",
+				"pages/welfareHouse/welfareHouse"
 			]
 		},
 		{

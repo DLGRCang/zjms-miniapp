@@ -720,18 +720,26 @@ Page({
       case 6:
         switch (tab) {
           case 0:
+            //医院药店
+            util.pageJump('../../pages/medical/pages/hospital/hospital')
             console.log("1");
             break;
           case 1:
+            //健康证
+            util.pageJump('../../pages/medical/pages/healthCard/healthCard')
             console.log("2");
             break;
           case 2:
             console.log("3");
             break;
           case 3:
+             //体检
+             util.pageJump('../../pages/medical/pages/healthCheck/healthCheck')
             console.log("4");
             break;
           case 4:
+              //核酸检测
+              util.pageJump('../../pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck')
             console.log("5");
             break;
           case 5:
@@ -741,6 +749,8 @@ Page({
             console.log("7");
             break;
           case 7:
+                //福利院
+                util.pageJump('../../pages/medical/pages/welfareHouse/welfareHouse')
             console.log("8");
             break;
 
