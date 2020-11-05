@@ -22,7 +22,6 @@
       </view>
       <view class="text-grey">你好! <text class="cuIcon-notification text-red"></text></view>
     </view>
-
   </view>
 
   <!-- 历史追溯 -->

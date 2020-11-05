@@ -67,7 +67,17 @@
 			"root": "pages/education",
 			"name": "教育文体",
 			"pages": [
-				"pages/primarySchool/primarySchool"
+				"pages/primarySchool/primarySchool",
+				"pages/midSchool/midSchool",
+				"pages/schoolDetail/schoolDetail",
+				"pages/studentHelp/studentHelp",
+				"pages/transfer/transfer",
+				"pages/library/library",
+				"pages/bookShop/bookShop",
+				"pages/mbSchool/mbSchool",
+				"pages/homeEducate/homeEducate",
+				"pages/agricultural/agricultural",
+				"pages/fitness/fitness"
 			]
 		},
 		{

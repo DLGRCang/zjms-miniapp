@@ -1,11 +1,12 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content" class="text-white text-xl text-black text-bold">学前教育</view>
+  <view slot="content" class="text-white text-xl text-black text-bold">中小学</view>
 </cu-custom>
-<image mode="widthFix" src="/image/xqjy.png" style="width:100%;height:396rpx;"></image>
-<button class="button">幼儿园划片</button>
+<image mode="widthFix" src="/image/zxx.png" style="width:100%;height:396rpx;"></image>
 <view class="margin-lr-lg">
+
+<block wx:for="{{type}}" wx:key="item">
   <view class="title">
-    <dot-title title="幼儿园" color="color" isMore="true"></dot-title>
+    <dot-title title="{{item}}" color="color" isMore="true"></dot-title>
   </view>
   <view class="cont">
     <view wx:for="{{info}}" wx:key="item" bindtap="goDetail" data-id="{{item.id}}">
@@ -14,4 +15,7 @@
       </item-image-text>
     </view>
   </view>
+</block>
+
+
 </view>

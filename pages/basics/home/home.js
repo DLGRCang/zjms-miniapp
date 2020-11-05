@@ -678,34 +678,34 @@ Page({
       case 5:
         switch (tab) {
           case 0:
-            console.log("1");
+            util.pageJump('../../pages/education/pages/primarySchool/primarySchool')
             break;
           case 1:
-            console.log("2");
+            util.pageJump('../../pages/education/pages/midSchool/midSchool')
             break;
           case 2:
-            console.log("3");
+            util.pageJump('../../pages/education/pages/studentHelp/studentHelp')
             break;
           case 3:
-            console.log("4");
+            util.pageJump('../../pages/education/pages/transfer/transfer')
             break;
           case 4:
-            console.log("5");
+            util.pageJump('../../pages/education/pages/library/library')
             break;
           case 5:
-            console.log("6");
+            util.pageJump('../../pages/education/pages/bookShop/bookShop')
             break;
           case 6:
-            console.log("7");
+            util.pageJump('../../pages/education/pages/mbSchool/mbSchool')
             break;
           case 7:
-            console.log("8");
+            util.pageJump('../../pages/education/pages/homeEducate/homeEducate')
             break;
           case 8:
-            console.log("9");
+            util.pageJump('../../pages/education/pages/agricultural/agricultural')
             break;
           case 9:
-            console.log("10");
+            util.pageJump('../../pages/education/pages/fitness/fitness')
             break;
         }
         break;
@@ -715,36 +715,31 @@ Page({
           case 0:
             //医院药店
             util.pageJump('../../pages/medical/pages/hospital/hospital')
-            console.log("1");
             break;
           case 1:
             //健康证
             util.pageJump('../../pages/medical/pages/healthCard/healthCard')
-            console.log("2");
             break;
           case 2:
-            console.log("3");
+            console.log("疫苗接种");
             break;
           case 3:
-             //体检
-             util.pageJump('../../pages/medical/pages/healthCheck/healthCheck')
-            console.log("4");
+            //体检
+            util.pageJump('../../pages/medical/pages/healthCheck/healthCheck')
             break;
           case 4:
-              //核酸检测
-              util.pageJump('../../pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck')
-            console.log("5");
+            //核酸检测
+            util.pageJump('../../pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck')
             break;
           case 5:
-            console.log("6");
+            console.log("老年证");
             break;
           case 6:
-            console.log("7");
+            console.log("高龄补助");
             break;
           case 7:
-                //福利院
-                util.pageJump('../../pages/medical/pages/welfareHouse/welfareHouse')
-            console.log("8");
+            //福利院
+            util.pageJump('../../pages/medical/pages/welfareHouse/welfareHouse')
             break;
 
         }
@@ -753,28 +748,28 @@ Page({
       case 7:
         switch (tab) {
           case 0:
-            console.log("1");
+            console.log("指引");
             break;
           case 1:
             util.pageJump('../../pages/government/pages/flagLeader/flagLeader')
             break;
           case 2:
-            console.log("3");
+            console.log("互通");
             break;
           case 3:
-            console.log("4");
+            console.log("调查问卷");
             break;
           case 4:
             util.pageJump('../../pages/government/pages/instaShot/instaShot')
             break;
           case 5:
-            console.log("6");
+            console.log("志愿者");
             break;
           case 6:
-            console.log("7");
+            console.log("创城");
             break;
           case 7:
-            console.log("8");
+            console.log("土地");
             break;
 
         }

@@ -1,4 +1,4 @@
-// pages/education/pages/primarySchool/primarySchool.js
+// pages/education/pages/midSchool/midSchool.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
@@ -29,7 +29,6 @@ Page({
     console.log(e)
     util.pageJumpTo('../schoolDetail/schoolDetail', 'id', e.currentTarget.dataset.id)
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
