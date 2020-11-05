@@ -60,7 +60,15 @@
 			"root": "pages/economic",
 			"name": "经济活动",
 			"pages": [
-				"pages/market/market"
+				"pages/market/market",
+				"pages/farmerMarket/farmerMarket",
+				"pages/outdoorStalls/outdoorStalls",
+				"pages/secondHand/secondHand",
+				"pages/farmerRetail/farmerRetail",
+				"pages/exhibition/exhibition",
+				"pages/protectRight/protectRight",
+				"pages/promotion/promotion",
+				"pages/intellectualProperty/intellectualProperty"
 			]
 		},
 		{
