@@ -630,22 +630,22 @@ Page({
       case 3:
         switch (tab) {
           case 0:
-            console.log("特色");
+            util.pageJump('../../pages/food/pages/specialFood/specialFood')
             break;
           case 1:
-            console.log("经济");
+            util.pageJump('../../pages/food/pages/economicsFood/economicsFood')
             break;
           case 2:
-            console.log("高档");
+            util.pageJump('../../pages/food/pages/topFood/topFood')
             break;
           case 3:
-            console.log("民族");
+            util.pageJump('../../pages/food/pages/nationFood/nationFood')
             break;
           case 4:
-            console.log("饮食");
+            util.pageJump('../../pages/food/pages/cultureFood/cultureFood')
             break;
           case 5:
-            console.log("农");
+            util.pageJump('../../pages/food/pages/animalFood/animalFood')
             break;
         }
         break;
@@ -775,14 +775,14 @@ Page({
           case 7:
             console.log("8");
             break;
-           
+
         }
         break;
       //维权助困
       case 8:
         switch (tab) {
           case 0:
-           util.pageJump('../../pages/help/pages/disabled/disabled')
+            util.pageJump('../../pages/help/pages/disabled/disabled')
             console.log("1");
             break;
           case 1:
@@ -790,19 +790,19 @@ Page({
             console.log("2");
             break;
           case 2:
-		   util.pageJump('../../pages/help/pages/redcross/redcross')
+            util.pageJump('../../pages/help/pages/redcross/redcross')
             console.log("3");
             break;
           case 3:
-		     util.pageJump('../../pages/help/pages/dishonest/dishonest')
+            util.pageJump('../../pages/help/pages/dishonest/dishonest')
             console.log("4");
             break;
           case 4:
-		    util.pageJump('../../pages/help/pages/law/law')
+            util.pageJump('../../pages/help/pages/law/law')
             console.log("5");
             break;
           case 5:
-		  util.pageJump('../../pages/help/pages/woman/woman')
+            util.pageJump('../../pages/help/pages/woman/woman')
             console.log("6");
             break;
         }
