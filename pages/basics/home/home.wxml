@@ -1,9 +1,5 @@
-<!-- <cu-custom bgImage="/image/basic.png" ></cu-custom> -->
 <scroll-view scroll-y class="scrollPage">
 	<!-- 顶部图片 -->
-	<!-- <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-    <view slot="content">列表</view>
-  </cu-custom> -->
 	<image src='/image/basic.png' style='width:100%;height:434rpx'></image>
 
 	<!-- 实现左右联动效果 -->
