@@ -1,1 +1,6 @@
 /* pages/food/pages/economicsFood/economicsFood.wxss */
+.bgColor{
+  color: #ffffff;
+  background-color: #5560DE;
+}
+

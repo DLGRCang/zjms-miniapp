@@ -1,2 +1,7 @@
-<!--pages/food/pages/economicsFood/economicsFood.wxml-->
-<text>pages/food/pages/economicsFood/economicsFood.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content">经济快餐</view>
+</cu-custom>
+<view class="margin-lr-xs">
+
+
+</view>

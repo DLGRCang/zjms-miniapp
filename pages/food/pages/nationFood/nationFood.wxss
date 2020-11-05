@@ -1,1 +1,5 @@
 /* pages/food/pages/nationFood/nationFood.wxss */
+.bgColor{
+  color: #ffffff;
+  background-color: #2B83F4;
+}

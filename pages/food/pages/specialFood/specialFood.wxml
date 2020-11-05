@@ -22,9 +22,8 @@
   </view>
 
   <view wx:for="{{5}}" wx:key="item">
-    <item-image-text imgUrl="" itemTitle="店铺名称" itemInfo="距您直线3.2公立" isImg="true" isStar="true" starNum="5">
+    <item-image-text imgUrl="" itemTitle="店铺名称" itemInfo="距您直线3.2公立" isImg="true" isStar="true" starNum="5" isLine="true">
     </item-image-text>
-    <view class="line"></view>
   </view>
 
 </view>
