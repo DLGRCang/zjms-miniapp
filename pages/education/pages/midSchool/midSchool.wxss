@@ -1,0 +1,16 @@
+/* pages/education/pages/midSchool/midSchool.wxss */
+.bgColor {
+	background-color: #A6CF5F;
+	color: #ffffff;
+}
+.title{
+  margin-top: 60rpx;
+  margin-left: 20rpx;
+}
+.color{
+	color:#A6CF5F;
+}
+.cont{
+  border: 1rpx solid #F5F5F5;
+  padding: 10rpx;
+}

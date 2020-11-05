@@ -1,1 +1,24 @@
 /* pages/education/pages/primarySchool/primarySchool.wxss */
+.bgColor {
+	background-color: #FFBE1A;
+	color: #ffffff;
+}
+.title{
+  margin-top: 60rpx;
+  margin-left: 20rpx;
+}
+.button{
+  width: 610rpx;
+  height: 98rpx;
+	background-color: #FFBE1A;
+	color: #ffffff;
+	margin-top: -130rpx;
+	font-size: 34rpx;
+}
+.color{
+	color:#FFBE1A;
+}
+.cont{
+  border: 1rpx solid #F5F5F5;
+  padding: 10rpx;
+}

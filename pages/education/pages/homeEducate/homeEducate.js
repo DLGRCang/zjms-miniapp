@@ -1,33 +1,11 @@
-// pages/education/pages/primarySchool/primarySchool.js
-const app = getApp()
-const util = require('../../../../utils/util.js')
+// pages/education/pages/homeEducate/homeEducate.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    type: ['小学学校', '中学学校'],
-    itemTabs: ['双语', '寄宿'],
-    info: [
-      {
-        id: 0,
-        tit: '111',
-        cont: '1111'
-      }, {
-        id: 1,
-        tit: '222222222',
-        cont: '2222222222'
-      }, {
-        id: 3,
-        tit: '3333333',
-        cont: '33333333333333'
-      }
-    ]
-  },
-  goDetail(e) {
-    console.log(e)
-    util.pageJumpTo('../schoolDetail/schoolDetail', 'id', e.currentTarget.dataset.id)
+
   },
 
   /**

@@ -1,0 +1,25 @@
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">详情</view>
+</cu-custom>
+<image mode="widthFix" src="/image/xqjy.png" style="width:100%;height:380rpx;"></image>
+<view class="margin-lr-lg">
+  <dot-title title="入学流程" color="color"></dot-title>
+  <!-- 内容展示 -->
+  <view class="contents padding-tb-lg">
+
+    <view class="flex justify-contents margin-bottom-sm">
+      <view class="sText text-sm flex justify-center">1</view>
+      <view class="text-center padding-left-lg text-lg">第一步：体检证明</view>
+    </view>
+    <view class="flex justify-contents link">
+      <view class="sText text-sm flex justify-center">2</view>
+      <view class="text-center padding-left-lg text-lg">第二步：报名登记</view>
+    </view>
+    <view class="flex justify-contents margin-top-sm">
+      <view class="sText text-sm flex justify-center">3</view>
+      <view class="text-center padding-left-lg text-lg">第三步：办理入校</view>
+    </view>
+
+
+  </view>
+</view>
