@@ -1,3 +1,5 @@
-<!--pages/food/pages/specialFood/specialFood.wxml-->
-<text>pages/food/pages/specialFood/specialFood.wxml</text>
-特色美食
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content">特色美食</view>
+</cu-custom>
+<image src="/image/food.png" mode='widthFix' style="height：375px;width:100%;"></image>
+
