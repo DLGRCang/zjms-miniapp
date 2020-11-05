@@ -7,19 +7,19 @@
 
 
 <view class="flex padding-lr-lg margin-top margin-bottom-lg">
-  <picker class="text-center flex-sub" bindchange="PickerChange" value="{{index}}" range="{{themes}}"
+  <picker class="text-center flex-sub" bindcancel="cancel" bindchange="PickerChange" value="{{index}}" range="{{themes}}"
       data-var="{{themes}}">
     <view style="width:200rpx"  class="text-df text-cut search_type {{0==SearchCur?'search_type_selected text-blue':''}}" bindtap="searchSelect" data-id="0">
       {{searchType[0]}}
     </view>
   </picker>
-  <picker class="text-center flex-sub" bindchange="PickerChange" value="{{index}}" range="{{types}}"
+  <picker class="text-center flex-sub" bindcancel="cancel" bindchange="PickerChange" value="{{index}}" range="{{types}}"
   data-var="{{types}}">
     <view style="width:200rpx" class="text-df text-cut search_type {{1==SearchCur?'search_type_selected text-blue':''}}" bindtap="searchSelect" data-id="1">
       {{searchType[1]}}
     </view>
   </picker>
-  <picker class="text-center flex-sub" bindchange="PickerChange" value="{{index}}" range="{{deps}}"
+  <picker class="text-center flex-sub" bindcancel="cancel" bindchange="PickerChange" value="{{index}}" range="{{deps}}"
       data-var="{{deps}}">
     <view style="width:200rpx" class="text-df text-cut search_type {{2==SearchCur?'search_type_selected text-blue':''}}" bindtap="searchSelect" data-id="2">
       {{searchType[2]}}
