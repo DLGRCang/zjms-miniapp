@@ -217,12 +217,12 @@ Page({
         {
           tit: "活动促销",
           pic: "/image/29.png",
-          tab: 6
+          tab: 7
         },
         {
           tit: "知识产权",
           pic: "/image/30.png",
-          tab: 6
+          tab: 8
         }
       ],
     }, {
@@ -669,7 +669,7 @@ Page({
           case 7:
             console.log("消费促进");
             break;
-          case 9:
+          case 8:
             console.log("知识产权");
             break;
         }
