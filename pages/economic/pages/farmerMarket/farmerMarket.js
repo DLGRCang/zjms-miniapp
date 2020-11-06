@@ -1,13 +1,11 @@
-// pages/education/pages/mbSchool/mbSchool.js
-const app = getApp()
-const util = require('../../../../utils/util.js')
+// pages/economic/pages/farmerMarket/farmerMarket.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    itemTabs:['食宿','双语'],
+
   },
 
   /**

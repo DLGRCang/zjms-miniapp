@@ -1,25 +1,72 @@
 <cu-custom bgColor="White" isBack="{{true}}">
   <view slot="content">详情</view>
 </cu-custom>
-<image mode="widthFix" src="/image/xqjy.png" style="width:100%;height:380rpx;"></image>
+<view class="head">
+  <swiper class="screen-swiper" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{10}}" wx:key>
+      <image src="/image/food.png"></image>
+    </swiper-item>
+  </swiper>
+  <view class="num flex justify-center ">88张</view>
+</view>
+
+
 <view class="margin-lr-lg">
   <dot-title title="入学流程" color="color"></dot-title>
   <!-- 内容展示 -->
   <view class="contents padding-tb-lg">
-
     <view class="flex justify-contents margin-bottom-sm">
       <view class="sText text-sm flex justify-center">1</view>
       <view class="text-center padding-left-lg text-lg">第一步：体检证明</view>
     </view>
-    <view class="flex justify-contents link">
+    <view class="line"></view>
+    <view class="flex justify-contents">
       <view class="sText text-sm flex justify-center">2</view>
       <view class="text-center padding-left-lg text-lg">第二步：报名登记</view>
     </view>
+    <view class="line"></view>
     <view class="flex justify-contents margin-top-sm">
       <view class="sText text-sm flex justify-center">3</view>
       <view class="text-center padding-left-lg text-lg">第三步：办理入校</view>
     </view>
+  </view>
+  <dot-title title="师资力量" color="color"></dot-title>
+  <view class="contents">
+    <view class="flex justify-contents margin-tb-xl">
+      <view class="cu-avatar lg round" style="background-image:url(/image/food.png);"></view>
+      <view class="margin-left-lg">
+        <view class="text-lg">张宏昌</view>
+        <view class="text-sm text-grey">12年教学经验 ｜ 优秀教师 ｜ 特级教师</view>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="flex justify-contents margin-tb-xl">
+      <view class="cu-avatar lg round" style="background-image:url(/image/food.png);"></view>
+      <view class="margin-left-lg">
+        <view class="text-lg">张宏昌</view>
+        <view class="text-sm text-grey">12年教学经验 ｜ 优秀教师 ｜ 特级教师</view>
+      </view>
+    </view>
+  </view>
 
-
+  <dot-title title="硬件设备" color="color"></dot-title>
+  <view class="contents">
+    <view class="flex justify-contents margin-tb-xl text-lg">
+      <view class="text-grey flex justify-center">图书馆</view>
+      <view class="text-center padding-left-lg ">藏书30万册</view>
+    </view>
+    <view class="line"></view>
+    <view class="flex justify-contents margin-tb-xl text-lg">
+      <view class="text-grey flex justify-center">实验室</view>
+      <view class="text-center padding-left-lg ">全市科技实验室
+</view>
+    </view>
+    <view class="line"></view>
+    <view class="flex justify-contents margin-tb-xl text-lg">
+      <view class="text-grey flex justify-center">体育馆</view>
+      <view class="text-center padding-left-lg ">全国最大体育馆</view>
+    </view>
   </view>
 </view>
+
+<view class="padding-top-lg"></view>

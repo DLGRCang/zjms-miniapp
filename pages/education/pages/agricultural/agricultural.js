@@ -1,11 +1,13 @@
 // pages/education/pages/agricultural/agricultural.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    itemTabs:['机械','电子'],
   },
 
   /**
