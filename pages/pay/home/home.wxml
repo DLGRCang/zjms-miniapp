@@ -1,2 +1,19 @@
-<!--pages/pay/home/home.wxml-->
-<text>pages/pay/home/home.wxml</text>
+<cu-custom bgColor="bgColor">
+  <view class="text-bold" slot="content">缴费</view>
+</cu-custom>
+<view style="padding-bottom:150rpx;">
+  <view class="cu-list menu-avatar margin-lr-lg cont" wx:for="{{info}}" wx:key="item">
+  <view class="cu-item"  bindtap="{{item.goDetail}}">
+    <view class="cu-avatar lg" style="background-image:url({{item.url}});"></view>
+    <view class="content flex-sub">
+      <view>{{item.title}}</view>
+      <view class="text-gray text-sm flex justify-between">
+        在线缴费
+      </view>
+    </view>
+    <view class="action">
+      <view class="cuIcon-right text-gray"></view>
+    </view>
+  </view>
+</view>
+</view>

@@ -1,1 +1,22 @@
 /* pages/education/pages/transfer/transfer.wxss */
+.bgColor {
+	background-color:#2162B5;
+	color: #ffffff;
+}
+.button{
+  width: 610rpx;
+  height: 98rpx;
+	background-color: #2162B5;
+	color: #ffffff;
+	margin-top: -130rpx;
+	font-size: 34rpx;
+}
+.color{
+	color:#2162B5;
+}
+.cont{
+  background-color: #FFFFFF;
+  border: 1rpx solid #EAEBEC;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}

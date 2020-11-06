@@ -1,1 +1,9 @@
 /* pages/education/pages/library/library.wxss */
+.bgColor {
+	background-color:#6670E1;
+	color: #ffffff;
+}
+
+.color{
+	color:#6670E1;
+}

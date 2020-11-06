@@ -1,1 +1,8 @@
 /* pages/education/pages/fitness/fitness.wxss */
+.bgColor {
+	background-color:#2B83F4;
+	color: #ffffff;
+}
+.color{
+	color:#2B83F4;
+}

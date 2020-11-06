@@ -1,1 +1,8 @@
 /* pages/education/pages/homeEducate/homeEducate.wxss */
+.bgColor {
+	background-color:#FF91A2;
+	color: #ffffff;
+}
+.color{
+	color:#FF91A2;
+}

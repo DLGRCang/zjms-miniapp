@@ -1,13 +1,71 @@
 // pages/pay/home/home.js
+const app = getApp()
+const util = require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    info: [
+      {
+        url: '/image/liantong.png',
+        title: '联通网上营业厅',
+        goDetail: 'yidong'
+      }, {
+        url: '/image/yidong.png',
+        title: '移动网上营业厅',
+        goDetail: 'liantong'
+      }, {
+        url: '/image/shuifei.png',
+        title: '伊金霍洛旗水费',
+        goDetail: 'waterFee'
+      }, {
+        url: '/image/dianfei.png',
+        title: '伊金霍洛旗电费',
+        goDetail: 'electricFee'
+      }, {
+        url: '/image/ranqifei.png',
+        title: '伊金霍洛旗燃气费',
+        goDetail: 'gasFee'
+      }, {
+        url: '/image/gongnuanfei.png',
+        title: '伊金霍洛旗供暖费',
+        goDetail: 'hotFee'
+      },
+    ],
+  },
+  //联通缴费
+  liantong() {
+    wx.navigateToMiniProgram({
+      appId: 'wxfcd156333d74ee79',
+      path: 'pages/recharge/main?channel=' + 1,
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
+  //移动缴费
+  yidong() {
+    wx.navigateToMiniProgram({
+      appId: 'wx56af9763578b9a93',
+      path: '',
+      success: function (res) {
 
+      },
+      fail: function (res) { }
+    })
   },
 
+
+  //用电缴费
+  electricFee() {
+    wx.navigateToMiniProgram({
+      appId: 'wxd2ade0f25a874ee2',
+      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150900&service_id=2&wx_agency_id=150000000201',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

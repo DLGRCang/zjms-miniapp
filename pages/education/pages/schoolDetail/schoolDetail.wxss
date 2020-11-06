@@ -1,7 +1,30 @@
 /* pages/education/pages/schoolDetail/schoolDetail.wxss */
-.color{
+.color {
   color: #FFBE1A;
 }
+
+.head {
+  position: relative;
+}
+
+.screen-swiper {
+  height: 420rpx;
+  width: 100%;
+}
+
+.num {
+  position: absolute;
+  right: 60rpx;
+  top: 340rpx;
+  width: 110rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  border: 1rpx solid rgba(44, 29, 29, 0.2);
+  border-radius: 40rpx;
+  color: #ffffff;
+  background-color: rgba(44, 29, 29, 0.2);
+}
+
 .list {
   width: 10rpx;
   height: 32rpx;
@@ -21,16 +44,14 @@
   border: 1rpx solid #FFEDE5;
   border-radius: 16rpx;
 }
-.contents{
+
+.contents {
   background-color: #FFFFFF;
   border: 1rpx solid #EAEBEC;
-  border-radius: 20rpx;
+  border-radius: 10rpx;
   padding-left: 20rpx;
   padding-right: 20rpx;
 }
-.link{
-  border-bottom: 1rpx solid #dadada;
-  border-top: 1rpx solid #dadada;
-  padding-top: 30rpx;
-  padding-bottom: 30rpx;
+.info {
+  display: inline-block;
 }
