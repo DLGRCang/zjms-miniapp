@@ -123,7 +123,15 @@
 			"root": "pages/life",
 			"name": "生活服务",
 			"pages": [
-				"pages/housekeeping/housekeeping"
+				"pages/housekeeping/housekeeping",
+				"pages/property/property",
+				"pages/repair/repair",
+				"pages/job/job",
+				"pages/hairdressing/hairdressing",
+				"pages/moveCar/moveCar",
+				"pages/car/car",
+				"pages/seafood/seafood",
+				"pages/finance/finance"
 			]
 		}
 	],

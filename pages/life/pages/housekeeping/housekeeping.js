@@ -114,12 +114,6 @@ Page({
       }]
     }]
   },
-  getMore: function (e) {
-    util.pageJumpTo('./details-list/details-list', 'id', e.currentTarget.dataset.id)
-  },
-  getDetails: function (e) {
-    util.pageJumpTo('./details/details', 'id', e.currentTarget.dataset.id)
-  },
   onLoad: function (options) {
 
   }

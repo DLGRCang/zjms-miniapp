@@ -437,7 +437,7 @@ Page({
           tab: 1
         },
         {
-          tit: "保修服务",
+          tit: "报修服务",
           pic: "/image/65.png",
           tab: 2
         },
@@ -804,27 +804,29 @@ Page({
             util.pageJump('../../pages/life/pages/housekeeping/housekeeping')
             break;
           case 1:
-            console.log("2");
+            util.pageJump('../../pages/life/pages/property/property')
             break;
           case 2:
-            console.log("3");
+            util.pageJump('../../pages/life/pages/repair/repair')
             break;
           case 3:
-            console.log("4");
+            util.pageJump('../../pages/life/pages/job/job')
             break;
           case 4:
-            console.log("5");
+            util.pageJump('../../pages/life/pages/hairdressing/hairdressing')
             break;
           case 5:
-            console.log("6");
+            console.log("代驾挪车");
+            // util.pageJump('../../pages/life/pages/moveCar/moveCar')
             break;
           case 6:
-            console.log("7");
+            util.pageJump('../../pages/life/pages/car/car')
             break;
           case 7:
-            console.log("8");
+            console.log("生产转让");
             break;
           case 8:
+            util.pageJump('../../pages/life/pages/seafood/seafood')
             console.log("9");
             break;
           case 9:
@@ -834,7 +836,7 @@ Page({
             console.log("11");
             break;
           case 11:
-            console.log("12");
+            util.pageJump('../../pages/life/pages/finance/finance')
             break;
           case 12:
             console.log("13");

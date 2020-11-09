@@ -1,0 +1,22 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">生鲜配送</view>
+</cu-custom>
+<image mode="widthFix" src="/image/shengxian.png" style="width:100%;height:396rpx;"></image>
+<view class="margin-lr-lg">
+  <dot-title title="生鲜商家" color="color" isMore="true"></dot-title>
+  <view class="cont">
+    <view wx:for="{{3}}" wx:key="item">
+      <item-image-text imgUrl="" itemTitle="生鲜商家" itemInfo="距您直线3.2公里" itemTabs="{{tabs}}" isTab="true" isImg="true">
+      </item-image-text>
+    </view>
+  </view>
+  <dot-title title="生鲜需求" color="color" isMore="true"></dot-title>
+  <view class="margin-bottom-lg cont" style="padding:20rpx;">
+      <view wx:for="{{3}}" wx:key="item">
+        <view>20年10月10日 从 伊金霍洛旗 到 巴彦淖尔 三个人</view>
+        <view class="margin-top-xs text-grey text-sm">2020-06-09</view>
+        <view class="line"></view>
+      </view>
+      <button>发布需求</button>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+/* pages/life/pages/hairdressing/hairdressing.wxss */
+.bgColor {
+	background-color: #2B83F4;
+	color: #ffffff;
+}
+
+.color{
+	color:#2B83F4;
+}
+.cont{
+  background-color: #FFFFFF;
+  border: 1rpx solid #EAEBEC;
+  border-radius: 10rpx;
+  padding: 8rpx;
+}

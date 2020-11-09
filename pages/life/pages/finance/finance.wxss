@@ -1,0 +1,16 @@
+/* pages/life/pages/finance/finance.wxss */
+.bgColor {
+  background-color: #EE6967;
+  color: #ffffff;
+}
+
+.color {
+  color: #EE6967;
+}
+
+.cont {
+  background-color: #FFFFFF;
+  border: 1rpx solid #EAEBEC;
+  border-radius: 10rpx;
+  padding: 8rpx;
+}

@@ -1,0 +1,15 @@
+/* pages/life/pages/repair/repair.wxss */
+.bgColor {
+	background-color: #6670E1;
+	color: #ffffff;
+}
+
+.color{
+	color:#6670E1;
+}
+.cont{
+  background-color: #FFFFFF;
+  border: 1rpx solid #EAEBEC;
+  border-radius: 10rpx;
+  padding: 8rpx;
+}
