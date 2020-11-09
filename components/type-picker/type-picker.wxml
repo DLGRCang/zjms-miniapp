@@ -1,0 +1,21 @@
+<view class="flex padding-lr-lg margin-top margin-bottom-lg">
+  <picker 
+    class="text-center flex-sub" 
+    bindcancel="cancel" 
+    bindchange="PickerChange" 
+    value="{{pickIndex}}"
+    wx:for="{{pickType}}"
+    wx:key="index"
+    range="{{item.content}}" 
+    data-val="{{item.content}}"
+  >
+    <view 
+      style="width:200rpx" 
+      class="text-df text-cut search_type {{index==SearchCur?'search_type_selected text-blue':''}}" 
+      bindtap="searchSelect" 
+      data-id="{{index}}"
+    >
+      {{item.title}}
+    </view>
+  </picker>
+</view>
