@@ -1,35 +1,17 @@
-<cu-custom bgColor="header-bgcolor" isBack="{{true}}">
+<cu-custom bgColor="bgColor" isBack="{{true}}">
   <view slot="content" class="text-xl text-white">家政服务</view>
 </cu-custom>
-<view class="banner">
-  <image mode="scaleToFill" src="{{bannerSrc}}"></image>
-</view>
-<view class="wrapper">
-  <view wx:for="{{contentData}}" wx:key="id">
-    <view class="title">
-      <view class="left">
-        <view class="shuxian"></view>
-        <view class="text">{{item.title}}</view>
-      </view>
-      <view class="right" bindtap="getMore" data-id="{{item.id}}">更多+</view>
-    </view>
-    <view class="content">
-      <view class="block" wx:for="{{item.block}}" wx:key="index" data-id="{{item.blockId}}" bindtap="getDetails">
-        <view class="img">
-          <image mode="scaleToFill" src="{{item.img}}"></image>
-        </view>
-        <view class="text-wrap">
-          <view class="title ellipsis">{{item.title}}</view>
-          <view class="subtitle ellipsis">距您直线{{item.distence}}</view>
-          <view class="tips cf">
-            <view class="tip-item fl" wx:for="{{item.tips}}" wx:key="index">{{item}}</view>
-          </view>
-        </view>
+<image mode="widthFix" src="/image/jiazheng-banner.png" style="width:100%;height:396rpx;"></image>
+<view class="margin-lr-lg padding-bottom-lg">
+  <block wx:for="{{title}}" wx:key="item">
+    <dot-title title="{{item}}" color="color" isMore="true"></dot-title>
+    <view class="cont">
+      <view wx:for="{{3}}" wx:key="items">
+        <item-image-text imgUrl="" itemTitle="开发工程师招聘" itemInfo="腾讯" itemTabs="{{tabs}}" isTab="true" isImg="true">
+        </item-image-text>
       </view>
     </view>
-  </view>  
-</view>
-<view class="footer">
-  <text>版权所有 伊金霍洛旗大数据管理局
-    技术支持 腾讯云</text>
+  </block>
+
+
 </view>
