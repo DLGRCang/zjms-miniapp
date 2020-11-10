@@ -4,3 +4,14 @@
   background-color: #5560DE;
 }
 
+.hot-icon{
+  display: flex;
+  width: 26rpx;
+  height: 26rpx;
+  background-color: orange;
+  border-radius: 6rpx;
+  justify-content: center;
+  align-items: center;
+  margin-right: 4rpx;
+  font-size: 18rpx;
+}
