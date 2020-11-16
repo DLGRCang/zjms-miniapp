@@ -1,11 +1,13 @@
-// pages/life/pages/details/details.js
+// pages/life/pages/property/property.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    itemTabs:['食宿','双语'],
   },
 
   /**

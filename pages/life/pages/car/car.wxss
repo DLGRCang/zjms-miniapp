@@ -1,0 +1,25 @@
+/* pages/life/pages/car/car.wxss */
+.bgColor {
+  background-color: #6670E1;
+  color: #ffffff;
+}
+
+.color {
+  color: #6670E1;
+}
+
+.cont {
+  background-color: #FFFFFF;
+  border: 1rpx solid #EAEBEC;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+
+button {
+  color: #FFFFFF;
+  width: 610rpx;
+  height: 96rpx;
+  background: #6670E1;
+  border-radius: 6rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.01);
+}

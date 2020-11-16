@@ -1,0 +1,20 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">求职招聘</view>
+</cu-custom>
+<image mode="widthFix" src="/image/wuye.png" style="width:100%;height:396rpx;"></image>
+<view class="margin-lr-lg padding-tb-lg">
+  <dot-title title="全职招聘" color="color" isMore="true"></dot-title>
+  <view class="cont">
+    <view wx:for="{{6}}" wx:key="item">
+      <item-image-text imgUrl="" itemTitle="开发工程师招聘" itemInfo="腾讯" itemTabs="{{tabs}}" isTab="true" isImg="true">
+      </item-image-text>
+    </view>
+  </view>
+  <dot-title title="兼职招聘" color="color" isMore="true"></dot-title>
+  <view class="cont">
+    <view wx:for="{{6}}" wx:key="item">
+      <item-image-text imgUrl="" itemTitle="开发工程师招聘" itemInfo="腾讯" itemTabs="{{tabs}}" isTab="true" isImg="true">
+      </item-image-text>
+    </view>
+  </view>
+</view>

@@ -1,67 +1,46 @@
-// pages/food/pages/topFood/topFood.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    searchType: [{
+      title: '全部美食',
+      content: ['全部美食', '火锅', '烧烤', '蛋糕']
+    }, {
+      title: '全程范围',
+      content: ['全程范围', '新城区', '赛罕区', '回民区']
+    }, {
+      title: '智能排序',
+      content: ['智能排序', '价格', '评价', '配送时间']
+    }]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  onpickChange: function(e) {
+		let picker = this.data.searchType
+		this.data.searchType[e.detail.current].title = e.detail.pick
+		this.setData({
+			searchType: picker
+		})
+	},
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
 
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
 
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   }

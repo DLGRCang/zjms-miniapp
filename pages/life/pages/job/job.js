@@ -1,11 +1,13 @@
-// pages/life/pages/details-list/details-list.js
+// pages/life/pages/job/job.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tabs:['五险一金','双休'],
   },
 
   /**

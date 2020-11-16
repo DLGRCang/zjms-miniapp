@@ -7,5 +7,7 @@
 	<text>11111111111111111111111111111111111111111111111111111111111111111</text>
 
 	<dot-title id="goMore" title="投资" color="red" isMore="true"></dot-title>
+
+	<type-picker pickType="{{searchType}}" bind:pickChange="onpickChange"></type-picker>
 </view>
 

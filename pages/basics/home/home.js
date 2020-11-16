@@ -8,25 +8,25 @@ Page({
     newsInfo: [
       {
         id: 0,
-        content: '伊旗111111111111111111111111111111',
+        content: '苏新亚调研指导高考准备…',
       }, {
         id: 1,
-        content: '伊旗111111111111111111111111111111',
+        content: '华瑞锋调研旗党校工作',
       }, {
         id: 2,
-        content: '伊旗111111111111111111111111111111',
+        content: '郝永耀深入基层走访联系人大...',
       }
     ],
     noticeInfo: [
       {
         id: 0,
-        content: '伊旗111111111111111111111111111111',
+        content: '伊旗自来水公司2020年6月份…',
       }, {
         id: 1,
-        content: '伊旗111111111111111111111111111111',
+        content: '伊金霍洛旗2020年中考通知',
       }, {
         id: 2,
-        content: '伊旗111111111111111111111111111111',
+        content: '关于65岁以上老人申领补贴通知',
       }
     ],
     StatusBar: app.globalData.StatusBar,
@@ -437,7 +437,7 @@ Page({
           tab: 1
         },
         {
-          tit: "保修服务",
+          tit: "报修服务",
           pic: "/image/65.png",
           tab: 2
         },
@@ -804,27 +804,29 @@ Page({
             util.pageJump('../../pages/life/pages/housekeeping/housekeeping')
             break;
           case 1:
-            console.log("2");
+            util.pageJump('../../pages/life/pages/property/property')
             break;
           case 2:
-            console.log("3");
+            util.pageJump('../../pages/life/pages/repair/repair')
             break;
           case 3:
-            console.log("4");
+            util.pageJump('../../pages/life/pages/job/job')
             break;
           case 4:
-            console.log("5");
+            util.pageJump('../../pages/life/pages/hairdressing/hairdressing')
             break;
           case 5:
-            console.log("6");
+            console.log("代驾挪车");
+            // util.pageJump('../../pages/life/pages/moveCar/moveCar')
             break;
           case 6:
-            console.log("7");
+            util.pageJump('../../pages/life/pages/car/car')
             break;
           case 7:
-            console.log("8");
+            console.log("生产转让");
             break;
           case 8:
+            util.pageJump('../../pages/life/pages/seafood/seafood')
             console.log("9");
             break;
           case 9:
@@ -834,7 +836,7 @@ Page({
             console.log("11");
             break;
           case 11:
-            console.log("12");
+            util.pageJump('../../pages/life/pages/finance/finance')
             break;
           case 12:
             console.log("13");

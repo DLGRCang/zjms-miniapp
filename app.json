@@ -124,8 +124,14 @@
 			"name": "生活服务",
 			"pages": [
 				"pages/housekeeping/housekeeping",
-				"pages/details-list/details-list",
-				"pages/details/details"
+				"pages/property/property",
+				"pages/repair/repair",
+				"pages/job/job",
+				"pages/hairdressing/hairdressing",
+				"pages/moveCar/moveCar",
+				"pages/car/car",
+				"pages/seafood/seafood",
+				"pages/finance/finance"
 			]
 		}
 	],
@@ -140,7 +146,8 @@
 		"cu-custom": "/colorui/components/cu-custom",
 		"item-image-text": "/components/item-image-text/item-image-text",
 		"tab": "/components/tab/tab",
-		"dot-title": "/components/dot-title/dot-title"
+		"dot-title": "/components/dot-title/dot-title",
+		"type-picker": "/components/type-picker/type-picker"
 	},
 	"sitemapLocation": "sitemap.json"
 }
