@@ -1,4 +1,5 @@
 // pages/government/pages/flagLeader/flagLeader.js
+const util = require('../../../utils/util.js')
 Page({
 
 	/**
@@ -7,7 +8,7 @@ Page({
 	data: {
 
 	},
-
+	
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
