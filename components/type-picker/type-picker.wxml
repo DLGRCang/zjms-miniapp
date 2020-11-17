@@ -1,4 +1,4 @@
-<view class="flex padding-lr-lg margin-top margin-bottom-lg">
+<view class="flex padding-left-xs padding-right-xs">
   <picker 
     class="text-center flex-sub" 
     bindcancel="cancel" 
@@ -9,8 +9,7 @@
     range="{{item.content}}" 
     data-val="{{item.content}}"
   >
-    <view 
-      style="width:200rpx" 
+    <view
       class="text-df text-cut search_type {{index==SearchCur?'search_type_selected text-blue':''}}" 
       bindtap="searchSelect" 
       data-id="{{index}}"
