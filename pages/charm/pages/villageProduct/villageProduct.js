@@ -7,7 +7,7 @@ Page({
 	data: {
 		tabId: 0,
 		tabName: ['访客', '合作社'],
-		lableName: ['大型', '便民']
+		lableName: ['大型', '便民'],
 		num: 9
 
 	},
