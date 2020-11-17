@@ -1,1 +1,9 @@
 /* pages/economic/pages/market/market.wxss */
+.bgColor {
+	background-color:#6670E1;
+	color: #ffffff;
+}
+
+.text-green {
+	color:#6670E1;
+}
