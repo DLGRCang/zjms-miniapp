@@ -647,30 +647,39 @@ Page({
         switch (tab) {
           case 0:
             console.log("商场");
+			 util.pageJump('../../pages/economic/pages/market/market')
             break;
           case 1:
             console.log("农贸");
+			 util.pageJump('../../pages/economic/pages/farmerMarket/farmerMarket')
             break;
           case 2:
             console.log("户外");
+			util.pageJump('../../pages/economic/pages/outdoorStalls/outdoorStalls')
             break;
           case 3:
             console.log("二手");
+			util.pageJump('../../pages/economic/pages/secondHand/secondHand')
             break;
           case 4:
             console.log("农资");
+			util.pageJump('../../pages/economic/pages/farmerRetail/farmerRetail')
             break;
           case 5:
             console.log("会展");
+			util.pageJump('../../pages/economic/pages/exhibition/exhibition')
             break;
           case 6:
             console.log("消费");
+			util.pageJump('../../pages/economic/pages/protectRight/protectRight')
             break;
           case 7:
             console.log("消费促进");
+			util.pageJump('../../pages/economic/pages/promotion/promotion')
             break;
           case 8:
             console.log("知识产权");
+				util.pageJump('../../pages/economic/pages/intellectualProperty/intellectualProperty')
             break;
         }
         break;
