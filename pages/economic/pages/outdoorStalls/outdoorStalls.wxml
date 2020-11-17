@@ -1,2 +1,8 @@
 <!--pages/economic/pages/outdoorStalls/outdoorStalls.wxml-->
-<text>pages/economic/pages/outdoorStalls/outdoorStalls.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">户外摊点</view>
+</cu-custom>
+<image mode="widthFix" src="/image/huwaitandian.png" style="width:100%"></image>
+
+<item-image-text wx:for="{{3}}" itemTitle="家家乐玩家大动员" itemInfo="距您直线3.2公里 · 火车站" isTab="true" itemTabs="{{lableName}}"></item-image-text>
+
