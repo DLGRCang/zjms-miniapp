@@ -1,20 +1,12 @@
-// pages/economic/pages/secondHand/secondHand.js
-const util = require('../../../../utils/util.js')
+// pages/economic/pages/secondHandInfo/secondHandInfo.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		tabName: ['出售']
+
 	},
-
-	secondHandInfo: function () {
-		console.log("我们");
-		util.pageJump('../../../../pages/economic/pages/secondHandInfo/secondHandInfo')
-	},
-
-
 
 	/**
 	 * 生命周期函数--监听页面加载

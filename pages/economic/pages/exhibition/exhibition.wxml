@@ -1,2 +1,12 @@
 <!--pages/economic/pages/exhibition/exhibition.wxml-->
-<text>pages/economic/pages/exhibition/exhibition.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">会展活动</view>
+</cu-custom>
+<image mode="widthFix" src="/image/huizhanhuodong.png" style="width:100%"></image>
+<button class="button">会展备案</button>
+
+<view class="flex flex-direction padding-lg">
+	<dot-title title="会展信息" color="title-color"></dot-title>
+	<item-image-text wx:for="{{3}}" itemTitle="茶香四溢会展活动" itemInfo="距您直线3.2公里 · 火车站" isTab="true" itemTabs="{{tabName}}"></item-image-text>
+
+</view>
