@@ -1,2 +1,5 @@
 <!--pages/economic/pages/farmerRetail/farmerRetail.wxml-->
-<text>pages/economic/pages/farmerRetail/farmerRetail.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">农资门市部</view>
+</cu-custom>
+<item-image-text wx:for="{{3}}" itemTitle="水果农资门市部" itemInfo="水果农资门市部" isTab="true" itemTabs="{{tabName}}"></item-image-text>

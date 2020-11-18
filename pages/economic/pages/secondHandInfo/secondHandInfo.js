@@ -1,11 +1,11 @@
-// pages/economic/pages/outdoorStalls/outdoorStalls.js
+// pages/economic/pages/secondHandInfo/secondHandInfo.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		lableName:['玩具','儿童'],
+
 	},
 
 	/**
