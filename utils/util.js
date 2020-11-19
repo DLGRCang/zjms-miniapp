@@ -14,9 +14,10 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-// let baseUrl = 'http://******/'; //测试
+// let baseUrl = 'http://192.168.31.101:8004/InfoIssue/'; //测试
+let baseUrl = 'http://127.0.0.1:8004/InfoIssue/';//测试(本地)
 // let baseUrl = 'http://******/';//预发布
-let baseUrl = 'https://*****/';//线上
+// let baseUrl = 'https://*****/';//线上
 //请求方法
 const requestApi = function (url, method, data = {}) {
   let meth = method.toUpperCase()
@@ -51,19 +52,19 @@ const requestApi = function (url, method, data = {}) {
 }
 
 //身份证号校验
-const checkIdCard = function (data){
+const checkIdCard = function (data) {
   if (!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(data))) {
     wx.showToast({
       title: '身份证号有误',
       icon: 'none'
     });
     return false;
-  }else{
+  } else {
     return true;
   }
 }
 //手机号校验
-const checkPhone=function(data){
+const checkPhone = function (data) {
   if (!(/^1[345678]\d{9}$/.test(data))) {
     wx.showToast({
       title: '电话号码有误',
@@ -75,7 +76,7 @@ const checkPhone=function(data){
   }
 }
 //邮箱校验
-const checkEmail=function(data){
+const checkEmail = function (data) {
   if (!(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(data))) {
     wx.showToast({
       title: '邮箱有误',
@@ -88,23 +89,23 @@ const checkEmail=function(data){
 }
 
 //根据身份证号判断生日
-const getBirthday=function(data){
+const getBirthday = function (data) {
   return data.substring(6, 10) + '-' + data.substring(10, 12) + '-' + data.substring(12, 14);
 }
 
 //根据身份证号判断性别
-const getGender=function(data){
-  return (data.substring(17, 18) % 2 == 0) ?'女' : '男';
+const getGender = function (data) {
+  return (data.substring(17, 18) % 2 == 0) ? '女' : '男';
 }
 //拨打电话
-const callPhone=function(phoneNumber){
+const callPhone = function (phoneNumber) {
   wx.makePhoneCall({
     phoneNumber: 'phoneNumber',
   })
 }
 
 //跳转页面(不带参)
-const pageJump=function(url){
+const pageJump = function (url) {
   wx.navigateTo({
     url: url,
   })
@@ -113,14 +114,14 @@ const pageJump=function(url){
 //跳转页面(带id)
 //name(参数)value（参数值）
 //例pageJumpTo（‘url’，‘id’，‘1’）
-const pageJumpTo=function(url,name,value){
+const pageJumpTo = function (url, name, value={}) {
   wx.navigateTo({
     url: url + '?' + name + "=" + value,
   })
 }
 
 //url参数获取
-const getParams=function getUrlkey(url) {
+const getParams = function getUrlkey(url) {
   var params = {};
   var urls = url.split("?");
   if (urls[1]) {
@@ -137,14 +138,15 @@ const getParams=function getUrlkey(url) {
 
 module.exports = {
   formatTime: formatTime,
-  requestApi:requestApi,
-  checkIdCard:checkIdCard,
-  checkPhone:checkPhone,
-  checkEmail:checkEmail,
-  getBirthday:getBirthday,
-  getGender:getGender,
-  callPhone:callPhone,
-  pageJump:pageJump,
-  pageJumpTo:pageJumpTo,
-  getParams:getParams
+  requestApi: requestApi,
+  baseUrl: baseUrl,
+  checkIdCard: checkIdCard,
+  checkPhone: checkPhone,
+  checkEmail: checkEmail,
+  getBirthday: getBirthday,
+  getGender: getGender,
+  callPhone: callPhone,
+  pageJump: pageJump,
+  pageJumpTo: pageJumpTo,
+  getParams: getParams
 }
