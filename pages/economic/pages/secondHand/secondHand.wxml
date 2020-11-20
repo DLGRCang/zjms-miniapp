@@ -5,9 +5,9 @@
 <image mode="widthFix" src="/image/ershoujiaoyi.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">
 	<dot-title title="二手车" color="title-color" isMore="true" bind:myevent="secondHandInfo"></dot-title>
-	<item-image-text wx:for="{{3}}" itemTitle="10年雪铁龙世嘉" itemInfo="车辆详细描述" isTab="true" itemTabs="{{tabName}}"></item-image-text>
+	<item-image-text wx:for="{{3}}" bindtap="secondHandInfo" itemTitle="10年雪铁龙世嘉" itemInfo="车辆详细描述" isTab="true" itemTabs="{{tabName}}"></item-image-text>
 <button class="button-btn">我要发布</button>
-<dot-title title="二手车" color="title-color" isMore="true"></dot-title>
+<dot-title title="二手房" color="title-color" isMore="true"></dot-title>
 	<item-image-text wx:for="{{3}}" itemTitle="10年雪铁龙世嘉" itemInfo="房屋详细描述" isTab="true" itemTabs="{{tabName}}"></item-image-text>
 <button class="button-btn">我要发布</button>
 </view>

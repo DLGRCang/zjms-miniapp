@@ -10,7 +10,6 @@ Page({
 	},
 
 	secondHandInfo: function () {
-		console.log("我们");
 		util.pageJump('../../../../pages/economic/pages/secondHandInfo/secondHandInfo')
 	},
 
