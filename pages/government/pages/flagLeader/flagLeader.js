@@ -1,19 +1,37 @@
 // pages/government/pages/flagLeader/flagLeader.js
-const util = require('../../../utils/util.js')
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
-
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-
+		contactInfo:null,
+		messageList:[],
 	},
-	
+	//获取联系方式
+	getContactInfo() {
+		let that = this;
+		return util.requestApi('app/release/hotline/listpagehotline', 'GET', {}).then(res => {
+			// console.log(res.data.rows[0])
+			that.setData({
+				contactInfo:res.data.rows[0]
+			})
+		});
+	},
+	//获取留言列表
+	getMessageList() {
+		let that = this;
+		return util.requestApi('api/onlinemessage/listpageonlinemessage', 'GET', {}).then(res => {
+			console.log(res)
+		});
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.getContactInfo();
+		this.getMessageList();
 	},
 
 	/**

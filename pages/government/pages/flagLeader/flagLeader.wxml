@@ -7,15 +7,15 @@
 	<dot-title title="联系方式" color="title-color"></dot-title>
 	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon1">微信</text>
-		<text class="into">微信号</text>
+		<text class="into">{{contactInfo.wechat}}</text>
 	</view>
 	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon2">电话</text>
-		<text class="into">18845477777</text>
+		<text class="into">{{contactInfo.phone}}</text>
 	</view>
 	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 70rpx 30rpx; ">
 		<text class="help-text help-icon3">邮箱</text>
-		<text class="into">785885415@qq.com</text>
+		<text class="into">{{contactInfo.email}}</text>
 	</view>
 	
 	<dot-title title="在线留言" color="title-color" ></dot-title>
