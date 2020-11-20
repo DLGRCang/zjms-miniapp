@@ -2,3 +2,21 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-black text-xl text-black text-bold">详情</view>
 </cu-custom>
+<view class="padding-lg">
+	<text class="text-xl text-bold">10年雪铁龙世嘉</text>
+	<view class="flex align-center margin-tb">
+		<image mode="aspectFit" src="../../../../image/touxiang.png" class="round margin-right-xs" style="width: 40rpx;height: 40rpx;"></image>
+		<text class="text-sm">张宏昌</text>
+		<text class="text-sm" style="margin-left: auto;">2020-06-09 发布</text>
+	</view>
+	<dot-title title="联系电话" color="title-color"></dot-title>
+	<view class="flex align-center padding">
+		<text class="text-df">16604710000</text>
+		<text class="phone" style="margin-left: auto;"></text>
+	</view>
+	<dot-title title="交易描述" color="title-color"></dot-title>
+	<view class="text-df padding-lr">
+		头器色度次族斯江里而志我从列想容新千色二阶却制道般革电几根面好影数团感业为决重各干去于。一前题清例在线线海信改细日除家为路其生图方八受同很线万常了对内方么般他心毛化山然理革都市化志价过周不化者都院四但张它来矿识来或多任业素果得起步切必段会几量王任道断家叫划明情完强里最油学现具线引反细商管色华。断养最头入习知军广果性四报没他养她最知素红采件明身。</view>
+	<dot-title title="图片" color="title-color"></dot-title>
+	<image mode="aspectFit" src="../../../../image/touxiang.png" class="margin-lr" style="width: 600rpx;height: 400rpx;"></image>
+</view>
