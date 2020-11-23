@@ -1,0 +1,31 @@
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">个人信息</view>
+</cu-custom>
+<view class="margin-lg">
+  <view class="text-bold text-xxl margin-tb-lg">基础信息</view>
+  <view class="flex p-xs margin-tb-xs text-lg">
+    <view class="flex-sub">姓名</view>
+    <view class="flex-twice">张三</view>
+  </view>
+  <view class="flex p-xs margin-tb-xs text-lg">
+    <view class="flex-sub">性别</view>
+    <view class="flex-twice">男</view>
+  </view>
+  <view class="flex p-xs margin-tb-xs text-lg">
+    <view class="flex-sub">出生日期</view>
+    <view class="flex-twice">1998-10-01</view>
+  </view>
+  <view class="flex p-xs margin-tb-xs text-lg">
+    <view class="flex-sub">民族</view>
+    <view class="flex-twice">汉族</view>
+  </view>
+  <view class="flex p-xs margin-tb-xs text-lg">
+    <view class="flex-sub">身份证号</view>
+    <view class="flex-twice">152365499712441582</view>
+  </view>
+  <view class="flex p-xs margin-tb-xs text-lg">
+    <view class="flex-sub">绑定手机号</view>
+    <view class="flex-twice" style="padding-left:30rpx;">16604716666</view>
+    <view class="text-blue">更换</view>
+  </view>
+</view>

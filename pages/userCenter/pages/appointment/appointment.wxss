@@ -1,0 +1,4 @@
+/* pages/userCenter/pages/appointment/appointment.wxss */
+.color{
+  color: #054FAC;
+}

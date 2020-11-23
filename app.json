@@ -16,6 +16,20 @@
 			]
 		},
 		{
+			"root": "pages/userCenter",
+			"name": "个人中心",
+			"pages": [
+				"pages/userinfo/userinfo",
+				"pages/order/order",
+				"pages/consult/consult",
+				"pages/appointment/appointment",
+				"pages/apply/apply",
+				"pages/card/card",
+				"pages/join/join",
+				"pages/tel/tel"
+			]
+		},
+		{
 			"root": "pages/publish",
 			"name": "伊旗发布",
 			"pages": [

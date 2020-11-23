@@ -1,2 +1,44 @@
-<!--pages/plugin/home/home.wxml-->
-<text>pages/plugin/home/home.wxml</text>
+<cu-custom bgColor="White">
+  <view slot="content">个人中心</view>
+</cu-custom>
+<view class="margin-lr-lg">
+  <!-- 头像组 -->
+  <view class="flex justify-between margin-tb-lg ">
+    <view class="flex">
+      <view class="user">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class="padding-xs">
+        <view class="text-lg text-bold">
+          <open-data type="userNickName" lang="zh_CN"></open-data>
+        </view>
+        <view bindtap="userinfo" class="text-sm text-grey margin-top-sm">
+          个人信息<text class="cuIcon-right"></text>
+        </view>
+      </view>
+    </view>
+    <view class="setting">
+      <text class="cuIcon-settingsfill"></text>
+      登录设置
+    </view>
+  </view>
+  <!-- 功能组 -->
+  <view class="margin-tb-lg">
+    <view class="grid col-2 margin-tb-lg text-center">
+      <view bindtap="myOrder" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-form"></text> 我的订单</view>
+      <view bindtap="myConsult" class="items"><text class="cuIcon-profile"></text> 我的咨询</view>
+    </view>
+    <view class="grid col-2 margin-tb text-center">
+      <view bindtap="myAppointment" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-countdown"></text> 我的预约</view>
+      <view bindtap="myApply" class="items"><text class="cuIcon-read"></text> 我的申请</view>
+    </view>
+    <view class="grid col-2 margin-tb text-center">
+      <view bindtap="myCard" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-vipcard"></text> 我的卡券</view>
+      <view bindtap="myJoin" class="items"><text class="cuIcon-comment"></text> 我的参与</view>
+    </view>
+    <view class="grid col-2 margin-tb text-left">
+      <view class="items"><text class="cuIcon-addressbook"></text> 电话本  </view>
+      <view bindtap="myTel" style="padding-left:90rpx;color:grey;">158人<text class="cuIcon-right"></text></view>
+    </view>
+  </view>
+</view>
