@@ -1,0 +1,35 @@
+/* pages/economic/pages/exhibitionInfo/exhibitionInfo.wxss */
+.bgColor {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.title-color {
+	color: #2162B5
+}
+
+.icon::before {
+	font-family: "cuIcon";
+	content: "\e650";
+	margin-right: 30rpx;
+	font-size: 28rpx;
+	color: #A7A7A7;
+}
+
+.into::before {
+	font-family: "cuIcon";
+	content: "\e6a3";
+	margin-right: 30rpx;
+	font-size: 28rpx;
+	color: #A7A7A7;
+}
+.grey-text{
+	font-size: 28rpx;
+	color:#BEBEBE;
+	margin-right: 30rpx;
+		
+}
+.black-text{
+	font-size: 28rpx;
+		
+}
