@@ -69,7 +69,8 @@
 				"pages/protectRight/protectRight",
 				"pages/promotion/promotion",
 				"pages/intellectualProperty/intellectualProperty",
-				"pages/secondHandInfo/secondHandInfo"
+				"pages/secondHandInfo/secondHandInfo",
+				"pages/exhibitionInfo/exhibitionInfo"
 			]
 		},
 		{
