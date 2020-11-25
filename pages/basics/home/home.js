@@ -617,6 +617,8 @@ Page({
             break;
           case 8:
             console.log("乡村");
+			util.pageJump('../../pages/travel/pages/ruralTourism/ruralTourism')
+
             break;
         }
         break;
@@ -765,6 +767,7 @@ Page({
             break;
           case 2:
             console.log("互通");
+			 util.pageJump('../../pages/government/pages/eachFlagTown/eachFlagTown')
             break;
           case 3:
             console.log("调查问卷");
@@ -774,9 +777,11 @@ Page({
             break;
           case 5:
             console.log("志愿者");
+			  util.pageJump('../../pages/government/pages/volunteerService/volunteerService')
             break;
           case 6:
             console.log("创城");
+			  util.pageJump('../../pages/government/pages/cityAction/cityAction')
             break;
           case 7:
             console.log("土地");
@@ -833,6 +838,7 @@ Page({
             util.pageJump('../../pages/life/pages/car/car')
             break;
           case 7:
+            util.pageJump('../../pages/life/pages/productionTransfer/productionTransfer')
             console.log("生产转让");
             break;
           case 8:

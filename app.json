@@ -55,7 +55,8 @@
 			"root": "pages/travel",
 			"name": "旅游出行",
 			"pages": [
-				"pages/scenicSpot/scenicSpot"
+				"pages/scenicSpot/scenicSpot",
+				"pages/ruralTourism/ruralTourism"
 			]
 		},
 		{
@@ -120,7 +121,10 @@
 			"name": "政务服务",
 			"pages": [
 				"pages/flagLeader/flagLeader",
-				"pages/instaShot/instaShot"
+				"pages/instaShot/instaShot",
+				"pages/cityAction/cityAction",
+				"pages/eachFlagTown/eachFlagTown",
+				"pages/volunteerService/volunteerService"
 			]
 		},
 		{
@@ -147,7 +151,7 @@
 				"pages/moveCar/moveCar",
 				"pages/car/car",
 				"pages/seafood/seafood",
-				"pages/finance/finance"
+				"pages/productionTransfer/productionTransfer"
 			]
 		}
 	],

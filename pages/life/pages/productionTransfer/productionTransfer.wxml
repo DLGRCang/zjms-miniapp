@@ -1,0 +1,10 @@
+<!--pages/life/pages/productionTransfer/productionTransfer.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">生产转让</view>
+</cu-custom>
+<image mode="widthFix" src="/image/shengchanzhuanrang.png" style="width:100%"></image>
+<button class="button">发布转让信息</button>
+<view class="padding padding-tb-xl">
+	<item-image-text wx:for="{{5}}" itemTitle="可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做家里的老人遇到这些事情." isDate="true"
+		date="2019-02-03"></item-image-text>
+</view>

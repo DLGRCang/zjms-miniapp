@@ -1,4 +1,4 @@
-/* pages/help/pages/redcross/redcross.wxss */
+/* pages/government/pages/volunteerService/volunteerService.wxss */
 .bgColor {
 	background-color: #EE6967;
 	color: #ffffff;

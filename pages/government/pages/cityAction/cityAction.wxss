@@ -1,4 +1,4 @@
-/* pages/economic/pages/promotion/promotion.wxss */
+/* pages/government/pages/cityAction/cityAction.wxss */
 .bgColor {
 	background-color: #2B83F4;
 	color: #ffffff;

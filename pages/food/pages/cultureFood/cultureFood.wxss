@@ -1,1 +1,5 @@
 /* pages/food/pages/cultureFood/cultureFood.wxss */
+.bgColor {
+	background-color: #2162B5;
+	color: #ffffff;
+}

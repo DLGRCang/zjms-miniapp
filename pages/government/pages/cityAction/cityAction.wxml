@@ -1,0 +1,10 @@
+<!--pages/government/pages/cityAction/cityAction.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">创城行动</view>
+</cu-custom>
+<image mode="widthFix" src="/image/chuangchengxingdong.png" style="width:100%"></image>
+
+	<view class="flex flex-direction padding">
+	<item-image-text wx:for="{{3}}" itemTitle="嘉曼检测机构" itemInfo="距您直线3.2公里 · 火车站" isTab="true" itemTabs="{{tabName}}"></item-image-text>
+	</view>
+

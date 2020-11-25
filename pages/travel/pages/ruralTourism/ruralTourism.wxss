@@ -1,4 +1,4 @@
-/* pages/food/pages/animalFood/animalFood.wxss */
+/* pages/travel/pages/ruralTourism/ruralTourism.wxss */
 .bgColor {
 	background-color: #A6CF5F;
 	color: #ffffff;
