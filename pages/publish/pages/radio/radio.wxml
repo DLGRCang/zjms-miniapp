@@ -1,2 +1,9 @@
-<!--pages/publish/pages/radio/radio.wxml-->
-<text>pages/publish/pages/radio/radio.wxml</text>广播
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">广播</view>
+</cu-custom>
+<view class="audio">
+  <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+</view>
+
+<button type="primary" bindtap="audioPlay">播放</button>
+<button type="primary" bindtap="audioPause">暂停</button>

@@ -1,4 +1,6 @@
 // pages/publish/pages/tv/tv.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
@@ -7,12 +9,25 @@ Page({
   data: {
 
   },
+  //播放
+  bindPlay: function() {
+    this.videoContext.play()
+  },
+  //暂停
+  bindPause: function() {
+    this.videoContext.pause()
+  },
+  //播放错误
+  videoErrorCallback: function (e) {
+    console.log('视频错误信息:')
+    console.log(e.detail.errMsg)
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
@@ -63,4 +78,6 @@ Page({
   onShareAppMessage: function () {
 
   }
+
+
 })

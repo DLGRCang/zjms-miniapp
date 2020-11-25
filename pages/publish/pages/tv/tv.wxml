@@ -1,2 +1,13 @@
-<!--pages/publish/pages/tv/tv.wxml-->
-<text>pages/publish/pages/tv/tv.wxml</text>
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">电视</view>
+</cu-custom>
+
+<view class='videoView'>
+  <video id="myVideo" src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"
+  autoplay="true" binderror="videoErrorCallback"></video>
+</view>
+
+<view class='controlView'>
+  <button bindtap="bindPlay" class="button" type="primary">播放</button>
+  <button bindtap="bindPause" class="button" type="primary">暂停</button>
+</view>

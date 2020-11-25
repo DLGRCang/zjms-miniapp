@@ -1,1 +1,9 @@
 /* pages/publish/pages/radio/radio.wxss */
+.audio{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  margin: 20rpx;
+}

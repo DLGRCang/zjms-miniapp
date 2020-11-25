@@ -11,11 +11,9 @@
   background-color: #F7F8F9;
   border: none;
   position: relative;
-  font-size: 26rpx;
+  top: -7rpx;
+  font-size: 30rpx;
   flex: 1;
-  margin: 0;
-  margin-top: -6rpx;
-  margin-top: -6rpx;
   display: flex;
   justify-content: center;
   align-items: center;
