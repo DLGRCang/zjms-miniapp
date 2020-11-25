@@ -7,7 +7,7 @@
   <dot-title title="小吃一条街" color="red" isMore="true"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{6}}" wx:key="item">
-      <image src="/image/food.png"></image>
+      <image src="{{imgUrl}}/image/food.png"></image>
       <view class="margin-top-xs padding-left-sm">香羊羊小吃烧烤</view>
       <view class="margin-top-xs padding-left-sm">
         <text class="text-sm text-grey">服务星级：</text>

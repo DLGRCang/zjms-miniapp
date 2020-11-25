@@ -6,7 +6,7 @@
   <dot-title title="旗图书馆" color="color" isMore="true"></dot-title>
   <view class="flex justify-between">
     <view wx:for="{{3}}" wx:key="item">
-      <view><image src="/image/tushuguan.png" style="height:276rpx;width:200rpx;"></image></view>
+      <view><image src="{{imgUrl}}/image/tushuguan.png" style="height:276rpx;width:200rpx;"></image></view>
       <view class="margin-tb-xs">没有此人 更高…</view>
       <view class="text-sm text-grey">借阅 203 次</view>
     </view>
@@ -15,7 +15,7 @@
   <dot-title title="民委图书馆" color="color" isMore="true"></dot-title>
   <view class="flex justify-between">
     <view wx:for="{{3}}" wx:key="item">
-      <view><image src="/image/tushuguan.png" style="height:276rpx;width:200rpx;"></image></view>
+      <view><image src="{{imgUrl}}/image/tushuguan.png" style="height:276rpx;width:200rpx;"></image></view>
       <view class="margin-tb-xs">没有此人 更高…</view>
       <view class="text-sm text-grey">借阅 203 次</view>
     </view>
