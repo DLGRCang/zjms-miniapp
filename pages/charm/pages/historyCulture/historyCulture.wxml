@@ -1,7 +1,7 @@
 <cu-custom bgColor="red" isBack="{{true}}">
   <view slot="content">历史文化</view>
 </cu-custom>
-<image src="/image/history.png" mode='widthFix' style="height：375px;width:100%;"></image>
+<image src="{{imgUrl}}/image/history.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lr-lg">
   <!-- 民族文化 -->
   <dot-title  title="民族文化" color="text-red"></dot-title>

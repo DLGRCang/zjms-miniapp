@@ -2,4 +2,4 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">体检</view>
 </cu-custom>
-<image mode="widthFix" src="/image/tiijan.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/tiijan.png" style="width:100%"></image>

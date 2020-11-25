@@ -2,7 +2,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">健康证</view>
 </cu-custom>
-<image mode="widthFix" src="/image/jiankangzheng.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/jiankangzheng.png" style="width:100%"></image>
 <button  class="button">在线办理</button>
 
 <view class="flex flex-direction padding-lg">

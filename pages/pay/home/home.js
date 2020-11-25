@@ -7,29 +7,30 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrl: app.globalData.imgUrl,
     info: [
       {
-        url: '/image/liantong.png',
+        url: app.globalData.imgUrl + '/image/liantong.png',
         title: '联通网上营业厅',
         goDetail: 'yidong'
       }, {
-        url: '/image/yidong.png',
+        url: app.globalData.imgUrl + '/image/yidong.png',
         title: '移动网上营业厅',
         goDetail: 'liantong'
       }, {
-        url: '/image/shuifei.png',
+        url: app.globalData.imgUrl + '/image/shuifei.png',
         title: '伊金霍洛旗水费',
         goDetail: 'waterFee'
       }, {
-        url: '/image/dianfei.png',
+        url: app.globalData.imgUrl + '/image/dianfei.png',
         title: '伊金霍洛旗电费',
         goDetail: 'electricFee'
       }, {
-        url: '/image/ranqifei.png',
+        url: app.globalData.imgUrl + '/image/ranqifei.png',
         title: '伊金霍洛旗燃气费',
         goDetail: 'gasFee'
       }, {
-        url: '/image/gongnuanfei.png',
+        url: app.globalData.imgUrl + '/image/gongnuanfei.png',
         title: '伊金霍洛旗供暖费',
         goDetail: 'hotFee'
       },

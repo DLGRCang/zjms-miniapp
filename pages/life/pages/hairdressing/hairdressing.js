@@ -3,10 +3,11 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		imgUrl:app.globalData.imgUrl,
     tabId:0,
     tabName:['美发','洗浴'],
     tabs:['时尚','烫发'],

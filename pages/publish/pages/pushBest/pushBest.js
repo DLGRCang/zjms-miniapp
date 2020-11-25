@@ -6,12 +6,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-	 tabName: ["最美家庭", "新时代好少年","三八红旗手"]
+    imgUrl: app.globalData.imgUrl,
+    tabName: ["最美家庭", "新时代好少年", "三八红旗手"]
   },
   //切换顶部tab
-  selectTab:function(e){
-  	TabCur: e.currentTarget.dataset.id;
-  	console.log("点击了第几个Tab:"+e.detail.TabCur)
+  selectTab: function (e) {
+    TabCur: e.currentTarget.dataset.id;
+    console.log("点击了第几个Tab:" + e.detail.TabCur)
   },
   /**
    * 生命周期函数--监听页面加载

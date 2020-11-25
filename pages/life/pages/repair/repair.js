@@ -3,10 +3,11 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		imgUrl:app.globalData.imgUrl,
     tabId:0,
 		tabName:['水务','电力','供暖','燃气','电梯'],
 

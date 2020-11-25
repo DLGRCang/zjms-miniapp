@@ -1,10 +1,13 @@
 // pages/education/pages/transfer/transfer.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		imgUrl:app.globalData.imgUrl,
 
   },
 

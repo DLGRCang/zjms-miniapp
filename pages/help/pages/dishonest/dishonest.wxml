@@ -2,7 +2,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">失信人员</view>
 </cu-custom>
-<image mode="widthFix" src="/image/shixinrenyuan.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/shixinrenyuan.png" style="width:100%"></image>
 <button class="button">人员查询</button>
 <view class="padding">
 	<dot-title title="限制措施" color="title-color"></dot-title>

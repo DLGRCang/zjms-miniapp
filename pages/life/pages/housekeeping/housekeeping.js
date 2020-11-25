@@ -2,10 +2,11 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		imgUrl:app.globalData.imgUrl,
     tabs:['五险一金','双休'],
     title:['搬家装修','保姆月嫂','保洁疏通','家电维修','修锁换锁'],
   },

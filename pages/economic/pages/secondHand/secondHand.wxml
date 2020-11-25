@@ -2,7 +2,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">二手交易</view>
 </cu-custom>
-<image mode="widthFix" src="/image/ershoujiaoyi.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/ershoujiaoyi.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">
 	<dot-title title="二手车" color="title-color" isMore="true" bind:myevent="secondHandInfo"></dot-title>
 	<item-image-text wx:for="{{3}}" bindtap="secondHandInfo" itemTitle="10年雪铁龙世嘉" itemInfo="车辆详细描述" isTab="true" itemTabs="{{tabName}}"></item-image-text>

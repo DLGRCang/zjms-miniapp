@@ -1,4 +1,5 @@
 // pages/economic/pages/secondHand/secondHand.js
+const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
@@ -6,6 +7,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl:app.globalData.imgUrl,
 		tabName: ['出售']
 	},
 

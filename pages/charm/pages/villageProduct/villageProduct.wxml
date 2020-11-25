@@ -2,7 +2,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">一村一品</view>
 </cu-custom>
-<image mode="widthFix" src="/image/yicunyipin.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/yicunyipin.png" style="width:100%"></image>
 <tab bindmyevent="selectTab" tvColor="text-green" tabName="{{tabName}}"></tab>
 <!-- 村情乡貌 -->
 <block wx:if="{{tabId==0}}">

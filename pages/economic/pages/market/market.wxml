@@ -2,6 +2,6 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">商场超市</view>
 </cu-custom>
-<image mode="widthFix" src="/image/shangchangchaoshi.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/shangchangchaoshi.png" style="width:100%"></image>
 <tab bindmyevent="selectTab" tvColor="text-green" tabName="{{tabName}}"></tab>
 <item-image-text wx:for="{{3}}" itemTitle="大型购物商场" itemInfo="距您直线3.2公里 · 火车站" isTab="true" itemTabs="{{lableName}}"></item-image-text>

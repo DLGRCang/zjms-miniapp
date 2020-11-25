@@ -3,10 +3,11 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		imgUrl:app.globalData.imgUrl,
     tabs:['水果','蔬菜'],
   },
 

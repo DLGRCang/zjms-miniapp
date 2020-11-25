@@ -1,10 +1,13 @@
 // pages/charm/pages/villageProduct/villageProduct.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl:app.globalData.imgUrl,
 		tabId: 0,
 		tabName: ['访客', '合作社'],
 		lableName: ['大型', '便民'],

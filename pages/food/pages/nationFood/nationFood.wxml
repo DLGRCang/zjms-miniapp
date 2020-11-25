@@ -1,7 +1,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
   <view slot="content">民族食品</view>
 </cu-custom>
-<image src="/image/nationFood.png" mode='widthFix' style="height：375px;width:100%;"></image>
+<image src="{{imgUrl}}/image/nationFood.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lr-xs" wx:for="{{6}}" wx:key="item">
 	<item-image-text imgUrl="" itemTitle="奶酪" itemInfo="奶酪奶酪奶酪奶酪奶酪奶酪奶酪奶酪" isImg="true" isTab="true" itemTabs="{{itemTabs}}" isLine="true">
   </item-image-text>

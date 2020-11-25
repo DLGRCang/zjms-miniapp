@@ -1,7 +1,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
   <view slot="content" class="text-white text-xl text-black text-bold">转学办理</view>
 </cu-custom>
-<image mode="widthFix" src="/image/zhuanxue.png" style="width:100%;height:396rpx;"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/zhuanxue.png" style="width:100%;height:396rpx;"></image>
 <button class="button">转学申请</button>
 <view class="margin-lr-lg padding-tb-lg">
   <dot-title title="申请规则" color="color" isMore="true"></dot-title>

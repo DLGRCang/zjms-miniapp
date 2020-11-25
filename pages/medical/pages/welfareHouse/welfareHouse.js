@@ -1,10 +1,13 @@
 // pages/medical/pages/welfareHouse/welfareHouse.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl:app.globalData.imgUrl,
 		tabName: ['福利好', '可预约'],
 		itemTabs:['可预约','可探视','中西餐']
 	},

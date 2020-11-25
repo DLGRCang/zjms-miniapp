@@ -1,10 +1,13 @@
 // pages/economic/pages/market/market.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl:app.globalData.imgUrl,
 		tabId: 0,
 		tabName: ['商场', '超市'],
 		lableName: ['大型', '便民'],

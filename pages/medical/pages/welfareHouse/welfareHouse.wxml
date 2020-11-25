@@ -2,7 +2,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">福利院</view>
 </cu-custom>
-<image mode="widthFix" src="/image/fuliyuan.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/fuliyuan.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">
 	<dot-title title="福利院" color="title-color" isMore="true"></dot-title>
 	<item-image-text wx:for="{{2}}" itemTitle="安康综合福利院" itemInfo="安康综合福利院详情" isTab="true" itemTabs="{{tabName}}"></item-image-text>

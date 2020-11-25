@@ -1,8 +1,8 @@
 <!--pages/government/pages/instaShot/instaShot.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">失信人员</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">随手拍</view>
 </cu-custom>
-<image mode="widthFix" src="/image/ruishoupai.png" style="width:100%"></image>
+<image mode="widthFix" src="{{imgUrl}}/image/ruishoupai.png" style="width:100%"></image>
 <button class="button">问题上报</button>
 <view class="padding">
 	<dot-title title="上报历史" color="title-color" isMore="true"></dot-title>

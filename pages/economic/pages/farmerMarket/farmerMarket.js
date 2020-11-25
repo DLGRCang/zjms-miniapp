@@ -1,10 +1,13 @@
 // pages/economic/pages/farmerMarket/farmerMarket.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl:app.globalData.imgUrl,
 		tabId: 0,
 		tabName: ['大型', '百货'],
 		num: 9

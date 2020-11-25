@@ -3,10 +3,11 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		imgUrl:app.globalData.imgUrl,
     type: ['小学学校', '中学学校'],
     itemTabs: ['双语', '寄宿'],
     info: [

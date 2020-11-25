@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrl:app.globalData.imgUrl,
     tabName: ["招商宣传", "优惠政策", "优质项目"],
     tabBar:0,
   },

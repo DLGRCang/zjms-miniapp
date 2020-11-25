@@ -48,6 +48,7 @@ App({
   },
 
   globalData: {
+    imgUrl:'https://wuliji2.wulanchabu.gov.cn/zjmsMiniAppImages',
     userInfo: null,
     ColorList: [{
       title: '嫣红',
