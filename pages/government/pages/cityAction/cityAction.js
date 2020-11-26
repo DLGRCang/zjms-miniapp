@@ -1,11 +1,13 @@
 // pages/government/pages/cityAction/cityAction.js
+const app = getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		tabName: ['停车场','可预约']
+		tabName: ['停车场','可预约'],
+		imgUrl:app.globalData.imgUrl,  
 	},
 
 	/**

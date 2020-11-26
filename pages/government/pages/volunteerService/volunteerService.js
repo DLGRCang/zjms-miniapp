@@ -1,10 +1,12 @@
 // pages/government/pages/volunteerService/volunteerService.js
+const app=getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl:app.globalData.imgUrl,  
 		tabName:['志愿','服务']
 	},
 

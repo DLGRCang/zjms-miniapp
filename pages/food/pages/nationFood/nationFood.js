@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
+    imgUrl:app.globalData.imgUrl,  
     itemTabs:["蒙古族"],
   },
 

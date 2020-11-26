@@ -1,10 +1,12 @@
 // pages/government/pages/eachFlagTown/eachFlagTown.js
+const app=getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl:app.globalData.imgUrl,  
 		tabName: ['停车场','可预约']
 	},
 
