@@ -14,8 +14,8 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-// let baseUrl = 'http://192.168.31.101:8004/InfoIssue/'; //测试
-let baseUrl = 'http://127.0.0.1:8004/InfoIssue/';//测试(本地)
+let baseUrl = 'http://192.168.0.42:8004/InfoIssue/app/release/infocontent/'; //测试(赵雪融)
+// let baseUrl = 'http://127.0.0.1:8004/InfoIssue/';//测试(本地)（严冬）
 // let baseUrl = 'http://******/';//预发布
 // let baseUrl = 'https://*****/';//线上
 //请求方法

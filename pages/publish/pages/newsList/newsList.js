@@ -16,9 +16,13 @@ Page({
   onLoad: function (options) {
     var id = options.id;
     console.log(options.id)
-    this.setData({
-      id: id
-    })
+    let data = {
+			infotypeid: id
+		}
+    util.requestApi('listUserpageinfocontent?', 'GET', data).then(res => {
+			this.artelList=res.data.rows;
+			console.log(this.artelList)
+		});
   },
 
   /**

@@ -7,6 +7,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+    infotypeid:'a23c14ed-8924-4708-90e4-ea55a7493d99',
 		imgUrl:app.globalData.imgUrl,
 
   },
@@ -15,7 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.
   },
 
   /**
