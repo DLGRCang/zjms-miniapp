@@ -1,0 +1,10 @@
+/* pages/publish/pages/form/form.wxss */
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.cu-bar{
+  border-top: 1rpx solid #eee;
+}
+.cu-form-group{
+  border-bottom: 1rpx solid #eee;
+}
