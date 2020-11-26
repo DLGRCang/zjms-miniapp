@@ -1,4 +1,5 @@
 //app.js
+const util = require('/utils/util.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力（）
@@ -46,7 +47,19 @@ App({
       }
     })
   },
-
+//获取新闻列表数据
+getArtelData: function (infotypeid) {
+  console.log("*****"+infotypeid);
+  let data = {
+    infotypeid: infotypeid,
+  }
+  util.requestApi('listUserpageinfocontent?', 'GET', data).then(res => {
+    let artelList=res.data.rows;
+    console.log("请求新闻列表");
+    console.log(artelList);
+    return artelList;
+  });
+},
   globalData: {
     imgUrl:'https://wuliji2.wulanchabu.gov.cn/zjmsMiniAppImages',
     userInfo: null,

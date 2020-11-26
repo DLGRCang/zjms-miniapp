@@ -17,7 +17,7 @@
 		</view>
 	</view>
 
-<!-- 村有好货 -->
+	<!-- 村有好货 -->
 
 	<text class="flex village-icon margin-top">村有好货</text>
 	<view class="padding  {{num%4==2?'grid':'grid1'}} ">
@@ -30,5 +30,9 @@
 <!-- 合作社 -->
 
 <block wx:if="{{tabId==1}}">
-<artel></artel>
+	<view style="margin: 70rpx 70rpx 0 70rpx;" class="flex flex-direction" wx:for="{{3}}" wx:key>
+		<text
+			class="text-cut-two text-df margin-bottom-sm text-black">这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做</text>
+		<text class="text-sm text-grey">2020-06-09</text>
+	</view>
 </block>
