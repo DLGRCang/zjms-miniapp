@@ -874,14 +874,7 @@ Page({
   newsDetail: function (e) {
     util.pageJumpTo('../../pages/publish/pages/newsDetail/newsDetail', 'id', e.currentTarget.dataset.id)
   },
-  //通知公告列表
-  // noticeList: function () {
-  //   util.pageJump('../../pages/publish/pages/noticeList/noticeList')
-  // },
-  // //通知公告详情
-  // noticeDetail: function (e) {
-  //   util.pageJumpTo('../../pages/publish/pages/noticeDetail/noticeDetail', 'id', e.properties.id)
-  // },
+
 
 
 
