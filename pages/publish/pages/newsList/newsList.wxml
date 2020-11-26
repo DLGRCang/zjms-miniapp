@@ -1,2 +1,3 @@
-<!--pages/publish/pages/newsList/newsList.wxml-->
-<text>pages/publish/pages/newsList/newsList.wxml</text>
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">列表</view>
+</cu-custom>

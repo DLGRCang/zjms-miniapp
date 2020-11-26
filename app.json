@@ -37,9 +37,7 @@
 				"pages/tv/tv",
 				"pages/pushBest/pushBest",
 				"pages/newsList/newsList",
-				"pages/newsDetail/newsDetail",
-				"pages/noticeList/noticeList",
-				"pages/noticeDetail/noticeDetail"
+				"pages/newsDetail/newsDetail"
 			]
 		},
 		{

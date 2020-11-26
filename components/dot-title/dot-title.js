@@ -28,6 +28,11 @@ Component({
       type: [Boolean, String],
       value: false
     },
+    //参数
+    sign:{
+      type: String,
+      default: ''
+    },
 
   },
 
@@ -42,11 +47,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    goMoreList:function(){
+    goMoreList:function(e){
       console.log("更多列表")
-      var myEventDetail = {} // detail对象，提供给事件监听函数
-			var myEventOption = {} // 触发事件的选项
-			this.triggerEvent('myevent', myEventDetail, myEventOption)
+      wx.navigateTo({
+        url: '/pages/publish/pages/newsList/newsList?id='+e.currentTarget.dataset.id,
+      })
+      // var myEventDetail = {} // detail对象，提供给事件监听函数
+			// var myEventOption = {} // 触发事件的选项
+			// this.triggerEvent('myevent', myEventDetail, myEventOption)
     }
   }
 })

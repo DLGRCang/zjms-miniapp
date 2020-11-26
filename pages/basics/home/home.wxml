@@ -41,11 +41,11 @@
 					<view class="margin-tb-lg">
 						<view class="flex justify-between margin-bottom-sm">
 							<view>通知公告</view>
-							<view class="text-grey text-sm" bindtap="noticeList">更多+</view>
+							<view class="text-grey text-sm" bindtap="newsList">更多+</view>
 						</view>
 					</view>
 					<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
-						<view class="padding-bottom-sm" bindtap="noticeDetail" data-id="{{item.id}}">
+						<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
 							<text class="cuIcon-hotfill text-red"></text> {{item.content}}
 						</view>
 					</block>

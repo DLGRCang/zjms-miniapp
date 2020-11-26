@@ -6,7 +6,7 @@
 
 <block wx:for="{{type}}" wx:key="item">
   <view class="title">
-    <dot-title title="{{item}}" color="color" isMore="true"></dot-title>
+    <dot-title title="{{item}}" color="color" isMore="true"  sign='小中学'></dot-title>
   </view>
   <view class="cont">
     <view wx:for="{{info}}" wx:key="item" bindtap="goDetail" data-id="{{item.id}}">
