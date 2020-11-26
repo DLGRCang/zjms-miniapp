@@ -6,7 +6,7 @@
 <view class="flex flex-direction padding-lg">
 	<dot-title title="消费者维权" color="title-color"></dot-title>
 	<view class="flex" wx:for="{{2}}">
-		<image mode="aspectFit" src="../../../../image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
+		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
 		<view class="flex flex-direction">
 			<text class="text-black text-df" style="margin-bottom: 4rpx;">张宏昌</text>
 			<text class="text-gray text-sm margin-bottom-xs">2019-02-03</text>
