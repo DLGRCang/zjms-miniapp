@@ -4,14 +4,14 @@
 <image mode="widthFix" src="{{imgUrl}}/image/wuye.png" style="width:100%;height:396rpx;"></image>
 <button class="button">问题上报</button>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="小区通知" color="color" ></dot-title>
+  <dot-title title="小区通知" color="color" isMore="true"></dot-title>
   <view class="cont">
     <view class="margin-bottom-lg" wx:for="{{8}}" wx:key="item">
       <view>这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做</view>
       <view class="margin-top-xs text-grey text-sm">2020-06-09</view>
       <view class="line"></view>
     </view>
-    <view class="flex justify-center text-grey margin-bottom-xs">查看更多</view>
+    <!-- <view class="flex justify-center text-grey margin-bottom-xs">查看更多</view> -->
   </view>
   <dot-title title="上报历史" color="color" isMore="true"></dot-title>
   <view wx:for="{{6}}" wx:key="item">
