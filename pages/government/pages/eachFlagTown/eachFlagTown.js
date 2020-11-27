@@ -1,5 +1,7 @@
 // pages/government/pages/eachFlagTown/eachFlagTown.js
 const app=getApp()
+const data = require('../../../../utils/data.js')
+
 Page({
 
 	/**
@@ -7,14 +9,25 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,  
-		tabName: ['停车场','可预约']
+		infotypeid: 'adc3128a-3ce0-4c37-9d29-d7b41eaa02a3',
+    page:1,
+		dataList: [], //新闻列表
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				dataList: this.data.dataList.concat(dataList)
+			})
+			console.log(this.data.dataList);
+		})
+	},
 	onLoad: function (options) {
-
+		this.getDataList()
 	},
 
 	/**

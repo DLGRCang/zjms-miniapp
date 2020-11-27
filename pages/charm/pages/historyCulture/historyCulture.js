@@ -11,15 +11,15 @@ Page({
     imgUrl:app.globalData.imgUrl,
     infotypeid: 'dc504a4a-b1c4-4b92-b0bd-605b7af3d76b',
     page:1,
-		artelList: [], //合作社列表
+		dataList: [], //新闻列表
   },
   getDataList: function () {
 		//加载数据列表
 		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
 			this.setData({
-				artelList: this.data.dataList.concat(dataList)
+				dataList: this.data.dataList.concat(dataList)
 			})
-			console.log(this.data.artelList);
+			console.log(this.data.dataList);
 		})
 	},
 	onLoad: function (options) {

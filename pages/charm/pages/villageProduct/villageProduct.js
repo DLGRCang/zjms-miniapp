@@ -32,7 +32,7 @@ Page({
 		//加载一村一品合作社列表
 		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
 			this.setData({
-				artelList: this.data.dataList.concat(dataList)
+				artelList: this.data.artelList.concat(dataList)
 			})
 			console.log(this.data.artelList);
 		})

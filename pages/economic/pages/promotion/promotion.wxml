@@ -4,5 +4,5 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/xiaofeicujinhuodong.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">
-<item-image-text wx:for="{{5}}"   itemTitle="可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做家里的老人遇到这些事情."  isDate="true" date="2019-02-03"></item-image-text>
+<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
 </view>

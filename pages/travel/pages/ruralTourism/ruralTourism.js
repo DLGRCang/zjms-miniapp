@@ -1,5 +1,6 @@
 // pages/travel/pages/ruralTourism/ruralTourism.js
 const app = getApp()
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -7,13 +8,21 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,  
+		infotypeid: '93f04e98-3616-476b-a877-a4abe5aa4cc5',
+    page:1,
+		dataList: [], //
 	},
-
-	/**
-	 * 生命周期函数--监听页面加载
-	 */
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				dataList: this.data.dataList.concat(dataList)
+			})
+			console.log(this.data.dataList);
+		})
+	},
 	onLoad: function (options) {
-
+		this.getDataList()
 	},
 
 	/**

@@ -5,8 +5,8 @@
 <image mode="widthFix" src="{{imgUrl}}/image/ruishoupai.png" style="width:100%"></image>
 <button class="button">问题上报</button>
 <view class="padding">
-	<dot-title title="上报历史" color="title-color" isMore="true"></dot-title>
+	<dot-title title="上报历史" color="title-color" isMore="true" sign="{{infotypeid}}"></dot-title>
 
-	<item-image-text wx:for="{{2}}"   itemTitle="可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做家里的老人遇到这些事情."  isDate="true" date="2019-02-03"></item-image-text>
+	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
 <button class="button-btn">结果查询</button>
 </view>

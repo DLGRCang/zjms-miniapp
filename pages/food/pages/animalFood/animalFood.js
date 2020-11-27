@@ -1,6 +1,7 @@
 // pages/food/pages/animalFood/animalFood.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
   /**
@@ -8,14 +9,22 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
+    infotypeid: '64c5721f-2ca9-4d9b-b07c-46708bd5b6fb',
+    page:1,
+		dataList: [], //新闻列表
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
+  getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				dataList: this.data.dataList.concat(dataList)
+			})
+			console.log(this.data.dataList);
+		})
+	},
+	onLoad: function (options) {
+		this.getDataList()
+	},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
