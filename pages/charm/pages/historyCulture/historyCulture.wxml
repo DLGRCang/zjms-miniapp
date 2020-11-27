@@ -28,7 +28,7 @@
   <dot-title  title="历史追溯" color="text-red"></dot-title>
   <!-- <block wx:for="{{info}}" wx:for-item="item" wx:key="item"> -->
     <view class="contents">
-      <item-image-text imgUrl="" itemTitle="111111111111111111111111111" isImg="true" isDate="true" date="12:22">
+      <item-image-text imgUrl="" itemTitle="可以这样做这一篇发爸爸妈可以这样做这一篇发爸爸妈可以这样做这一篇发爸爸妈" isImg="true" isDate="true" date="12:22">
       </item-image-text>
     </view>
   <!-- </block> -->

@@ -3837,6 +3837,7 @@ scroll-view.cu-steps .cu-item {
 	-webkit-line-clamp: 2;
 	line-clamp: 2;
 	-webkit-box-orient: vertical;
+
 }
 
 .text-bold {

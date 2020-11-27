@@ -1,6 +1,7 @@
 // pages/charm/pages/historyCulture/historyCulture.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
   /**
@@ -8,14 +9,22 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
+    infotypeid: 'dc504a4a-b1c4-4b92-b0bd-605b7af3d76b',
+    page:1,
+		artelList: [], //合作社列表
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
+  getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				artelList: this.data.dataList.concat(dataList)
+			})
+			console.log(this.data.artelList);
+		})
+	},
+	onLoad: function (options) {
+		this.getDataList()
+	},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,6 +1,6 @@
 <!--components/item-image-text/item-image-text.wxml-->
 <view class="flex padding">
-	<image class="radius margin-right" wx:if="{{isImg}}" src="{{imgUrl}}" style="width:132rpx;height:132rpx;background-color:#D8D8D8"
+	<image class="radius margin-right" wx:if="{{isImg}}" src="{{imgUrl}}" style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"
 	></image>
 	<view class="flex flex-direction  " style="max-width:550rpx">
 		<text class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{itemTitle}}</text>
@@ -9,7 +9,7 @@
 			<view class="cu-tag" wx:for="{{itemTabs}}" wx:key="index">{{itemTabs[index]}}</view>
 		</view>
 		<view wx:if="{{isStar}}"><text class="cuIcon-favorfill lg text-yellow" wx:for="{{starNum}}" wx:key="index"></text></view>
-		<view wx:if="{{isDate}}" class="text-grey text-sm">{{date}}</view>
+		<view wx:if="{{isDate}}" class="text-grey text-sm" style="margin-top:auto">{{date}}</view>
 	</view>
 </view>
 <view wx:if="{{isLine}}" class="line"></view>

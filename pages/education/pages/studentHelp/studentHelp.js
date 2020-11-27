@@ -4,32 +4,31 @@ const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
-	data: {
-    infotypeid:'a23c14ed-8924-4708-90e4-ea55a7493d99',
-    dataList:[],
-		imgUrl:app.globalData.imgUrl,
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    infotypeid: 'a23c14ed-8924-4708-90e4-ea55a7493d99',
+    page: 1,
+    dataList: [],
+    imgUrl: app.globalData.imgUrl,
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-<<<<<<< Updated upstream
-
-=======
-   	//加载学生资助列表
-		data.getArtelData(this.data.infotypeid).then(dataList => {
+  getDataList: function () {
+    //加载学生资助列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
       this.setData({
-        dataList: dataList
+        dataList: this.data.dataList.concat(dataList)
       })
       console.log(this.data.dataList);
-    }
-  )
->>>>>>> Stashed changes
+    })
+  },
+  onLoad: function (options) {
+    this.getDataList();
   },
 
   /**
@@ -64,14 +63,20 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      page:1
+    })
+    this.getDataList();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      page:page++
+    })
+    this.getDataList();
   },
 
   /**

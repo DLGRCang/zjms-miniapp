@@ -7,9 +7,9 @@
   <dot-title title="相关规则" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
 
   <view class="cont">
-    <view class="margin-bottom-lg" wx:for="{{8}}" wx:key="item">
-      <view>第一百二十八期 三合镇六合村第一季度 低保补助对外公示</view>
-      <view class="margin-top-xs text-grey text-sm">2020-06-09</view>
+    <view class="margin-bottom-lg" wx:for="{{dataList}}" wx:key="item">
+      <view>{{item.info_content}}</view>
+      <view class="margin-top-xs text-grey text-sm">{{item.publishdate}}</view>
       <view class="line"></view>
     </view>
     <button class="bgColor">申请历史</button>
