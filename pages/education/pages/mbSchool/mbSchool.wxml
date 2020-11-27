@@ -11,7 +11,7 @@
       <item-image-text imgUrl="" itemTitle="爱宝贝亲子班" itemInfo="距您直线3.2公里" isImg="true" isTab="true" itemTabs="{{itemTabs}}" isLine="true">
   </item-image-text>
     </view>
-    <view class="flex justify-center text-grey margin-bottom-xs">查看更多</view>
+
   </view>
   <dot-title title="相关规则" color="color" isMore="true"></dot-title>
 
@@ -21,6 +21,5 @@
       <view class="margin-top-xs text-grey text-sm">2020-06-09</view>
       <view class="line"></view>
     </view>
-    <view class="flex justify-center text-grey margin-bottom-xs">查看更多</view>
   </view>
 </view>

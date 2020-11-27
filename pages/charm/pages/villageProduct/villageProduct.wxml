@@ -30,9 +30,9 @@
 <!-- 合作社 -->
 
 <block wx:if="{{tabId==1}}">
-	<view style="margin: 70rpx 70rpx 0 70rpx;" class="flex flex-direction" wx:for="{{3}}" wx:key>
+	<view style="margin: 70rpx 70rpx 0 70rpx;" class="flex flex-direction" wx:for="{{artelList}}" wx:key>
 		<text
-			class="text-cut-two text-df margin-bottom-sm text-black">这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做</text>
+			class="text-cut-two text-df margin-bottom-sm text-black">{{item.}}</text>
 		<text class="text-sm text-grey">2020-06-09</text>
 	</view>
 </block>

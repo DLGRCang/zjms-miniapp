@@ -8,7 +8,7 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-
+		tabName:['补贴','专项']
 	},
 
 	/**

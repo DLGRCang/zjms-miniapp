@@ -9,6 +9,7 @@ Page({
 	 */
 	data: {
     infotypeid:'a23c14ed-8924-4708-90e4-ea55a7493d99',
+    dataList:[],
 		imgUrl:app.globalData.imgUrl,
 
   },
@@ -17,7 +18,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+<<<<<<< Updated upstream
 
+=======
+   	//加载学生资助列表
+		data.getArtelData(this.data.infotypeid).then(dataList => {
+      this.setData({
+        dataList: dataList
+      })
+      console.log(this.data.dataList);
+    }
+  )
+>>>>>>> Stashed changes
   },
 
   /**
