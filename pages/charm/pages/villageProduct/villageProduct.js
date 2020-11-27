@@ -1,6 +1,7 @@
 // pages/charm/pages/villageProduct/villageProduct.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -13,7 +14,7 @@ Page({
 		tabName: ['访客', '合作社'],
 		lableName: ['大型', '便民'],
 		num: 9,
-		artelList: [],//合作社列表
+		artelList: [], //合作社列表
 	},
 	selectTab: function (e) {
 		this.setData({
@@ -26,14 +27,18 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		console.log("///////////"+this.infotypeid),
-		this.setData({
-		
-			artelList:app.getArtelData(this.infotypeid)
-		})
-		console.log("一村一品合作社列表")
-		console.log(this.artelList)
-	
+		//加载一村一品合作社列表
+		data.getArtelData(this.data.infotypeid).then(dataList => {
+				console.log("一村一品合作社列表")
+				this.setData({
+					artelList: dataList
+				})
+				console.log(this.data.artelList)
+			}
+		)
+
+
+
 	},
 
 	/**

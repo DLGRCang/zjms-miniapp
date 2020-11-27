@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    dataList:[]
   },
 
   /**
@@ -15,14 +15,16 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
+    console.log("新闻列表id:")
     console.log(options.id)
-    let data = {
-			infotypeid: id
-		}
-    util.requestApi('listUserpageinfocontent?', 'GET', data).then(res => {
-			this.artelList=res.data.rows;
-			console.log(this.artelList)
-		});
+    //加载新闻列表
+    data.getArtelData(id).then(dataList => {
+      this.setData({
+        dataList: dataList
+      })
+      console.log("加载新闻列表")
+      console.log(this.data.dataList)
+    })
   },
 
   /**
