@@ -7,5 +7,5 @@
 <view class="padding">
 	<dot-title title="限制措施" color="title-color"></dot-title>
 
-	<item-image-text wx:for="{{3}}"  itemTitle="可以这样做这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做家里的老人遇到这些事情." isImg="{{false}}" isDate="true" date="2019-02-03"></item-image-text>
+	<item-image-text wx:for="{dataList"  itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
 </view>

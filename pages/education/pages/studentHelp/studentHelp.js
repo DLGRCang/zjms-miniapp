@@ -19,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   getDataList: function () {
-    //加载学生资助列表
+    //加载新闻列表
     data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
       this.setData({
         dataList: this.data.dataList.concat(dataList)

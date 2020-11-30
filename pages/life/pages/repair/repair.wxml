@@ -4,34 +4,34 @@
 <image mode="widthFix" src="{{imgUrl}}/image/baoxiu.png" style="width:100%;height:396rpx;"></image>
 <tab bindmyevent="selectTab" tvColor="color" tabName="{{tabName}}"></tab>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="上报历史" color="color" isMore="true"></dot-title>
-  <view class="cont" wx:if="{{tabId==0}}">
-    <view wx:for="{{6}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做0" isImg="true" isDate="true" date="2019-02-03">
+  <dot-title title="上报历史" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
+  <view  wx:if="{{tabId==0}}">
+    <view wx:for="{{dataList}}" wx:key="item">
+      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==1}}">
-    <view wx:for="{{6}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做1" isImg="true" isDate="true" date="2019-02-03">
+    <view wx:for="{{dataList}}" wx:key="item">
+      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==2}}">
-    <view wx:for="{{6}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做2" isImg="true" isDate="true" date="2019-02-03">
+    <view wx:for="{{dataList}}" wx:key="item">
+      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==3}}">
-    <view wx:for="{{6}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做3" isImg="true" isDate="true" date="2019-02-03">
+    <view wx:for="{{dataList}}" wx:key="item">
+      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==4}}">
-    <view wx:for="{{6}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做4" isImg="true" isDate="true" date="2019-02-03">
+    <view wx:for="{{dataList}}" wx:key="item">
+      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
