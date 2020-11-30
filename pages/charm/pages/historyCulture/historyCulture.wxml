@@ -28,7 +28,7 @@
   <dot-title  title="历史追溯" color="text-red"></dot-title>
   <block wx:for="{{dataList}}" wx:key="item">
     <view class="contents">
-      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </block>

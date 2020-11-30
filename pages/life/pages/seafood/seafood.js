@@ -1,6 +1,7 @@
 // pages/life/pages/seafood/seafood.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -9,13 +10,26 @@ Page({
 	data: {
 		imgUrl:app.globalData.imgUrl,
     tabs:['水果','蔬菜'],
+    infotypeid: 'd7b8259d-c340-47f6-884d-64fc587ad936',
+    page: 1,
+    dataList: [],
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
+getDataList: function () {
+    //加载新闻列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+      this.setData({
+        dataList: this.data.dataList.concat(dataList)
+      })
+      console.log(this.data.dataList);
+    })
+  },
   onLoad: function (options) {
-
+    this.getDataList();
   },
 
   /**

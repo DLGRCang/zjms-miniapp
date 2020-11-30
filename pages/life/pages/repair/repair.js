@@ -26,7 +26,7 @@ Page({
 
     } else if (this.data.tabId == 1) {
       this.setData({
-        infotypeid: '8443f98b-4e17-4c58-a315-0d40c9b56f1d'
+        infotypeid: 'ee79e32c-5492-4cf8-8cb5-f8f0d819f08a'
       })
 
     } else if (this.data.tabId == 2) {

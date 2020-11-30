@@ -1,4 +1,5 @@
 // components/item-image-text/item-image-text.js
+
 Component({
 	options: {
 		addGlobalClass: true,
@@ -8,6 +9,13 @@ Component({
 	 * 组件的属性列表
 	 */
 	properties: {
+		obj:{
+			type:Object,
+			default:''
+
+
+		},
+		
 		//图片url
 		imgUrl: {
 			type: String,
@@ -63,6 +71,17 @@ Component({
 			default: []
 		},
 	},
+	methods:{
+		gotoDetail:function(){
+			console.log("点击跳转");
+			wx.navigateTo({
+				
+				url: "/pages/publish/pages/newsDetail/newsDetail?info_content="+this.properties.obj.info_content+"&info_source="+this.properties.obj.info_source+"&publishdate="+this.properties.obj.publishdate+"&info_detail="+encodeURIComponent(this.properties.obj.info_detail),
+			})
+		
+		}
+	
+	}
 
 
 })

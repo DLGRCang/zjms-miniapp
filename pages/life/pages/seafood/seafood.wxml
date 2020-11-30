@@ -10,11 +10,11 @@
       </item-image-text>
     </view>
   </view>
-  <dot-title title="生鲜需求" color="color" isMore="true"></dot-title>
+  <dot-title title="生鲜需求" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
   <view class="margin-bottom-lg cont" style="padding:20rpx;">
-      <view wx:for="{{3}}" wx:key="item">
-        <view>20年10月10日 从 伊金霍洛旗 到 巴彦淖尔 三个人</view>
-        <view class="margin-top-xs text-grey text-sm">2020-06-09</view>
+      <view wx:for="{{dataList}}" wx:key="item">
+        <view>{{item.info_content}}</view>
+        <view class="margin-top-xs text-grey text-sm">{{item.publishdate}}</view>
         <view class="line"></view>
       </view>
       <button>发布需求</button>

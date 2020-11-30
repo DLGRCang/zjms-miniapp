@@ -2,10 +2,9 @@
   <view slot="content">详情</view>
 </cu-custom>
 <view class="">
-  <view class="main margin-top-lg padding-tb-xs text-xxl">苏新亚调研指导高考准备工作</view>
-  <view class="main text-grey">时间：2020-07-13 10:24  来源：伊金霍洛旗</view>
-  <view class="main margin-lg">7月6日，旗委副书记、政府旗长苏新亚调研指导高考准备工作及部分学校和卫生系统重点项目建设情况。政府副旗长闫彩煜，政府办公室主任李金锋及各有关部门负责人陪同调研。 　　
-    　　在市一中伊金霍洛校区高考考点，苏新亚重点查看了考场布置、视频监控、疫情防控等情况，听取各部门考前准备工作汇报，详细了解了高考人数、校园安保、后勤保障等高考前准备情况。
-  </view>
-  <image class="main margin-lg" src=""  mode='widthFix' style="width: 370px;height: 228px;"></image>
+  <view class="main margin-top-lg padding-tb-xs text-xxl">{{info_content}}</view>
+  <view class="main text-grey">时间：{{publishdate}}  来源：{{info_source}}</view>
+  <rich-text nodes="{{info_detail}}" class="main margin-lg"></rich-text>
+  <!-- <parser class="main margin-lg" html="{{info_detail}}" /> -->
+
 </view>

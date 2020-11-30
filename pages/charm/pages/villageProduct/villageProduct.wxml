@@ -31,8 +31,8 @@
 
 <block wx:if="{{tabId==1}}">
 	<view style="margin: 40rpx 70rpx 40rpx 70rpx;" class="flex flex-direction" wx:for="{{artelList}}">
-		<text
-			class="text-cut-two text-df margin-bottom-sm text-black">{{item.info_content}}</text>
-		<text class="text-sm text-grey">{{item.publishdate}}</text>
+		<item-image-text obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
+			date="{{item.publishdate}}">
+		</item-image-text>
 	</view>
 </block>

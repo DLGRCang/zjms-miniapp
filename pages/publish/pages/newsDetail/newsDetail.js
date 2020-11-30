@@ -7,19 +7,36 @@ Page({
    */
   data: {
     id: 0,
-    info:[]
+    info:[],
+
+    info_content:'',
+    info_source:'',
+    info_detail:'',
+    publishdate:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     var id = options.id;
-    console.log(options.id)
+    var info_content=options.info_content;
+    var info_source=options.info_source;
+    var info_detail=decodeURIComponent(options.info_detail);
+    var publishdate=options.publishdate;
+    
+   
     this.setData({
-      id: id
+     
+      id: id,
+      info_content:info_content,
+      info_source:info_source,
+      info_detail:info_detail,
+      publishdate:publishdate
+
     })
-    //this.getDetail(id);
+   console.log(info_detail);
   },
   getDetail: function (id) {
     //根据id查询
