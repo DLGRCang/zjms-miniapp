@@ -1,6 +1,7 @@
 // pages/help/pages/Insured.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,15 +9,26 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-
+		infotypeid: 'c08cbe30-d446-4fc2-9cfb-ebc5b1510e70',
+    page: 1,
+    dataList: [],
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
-
-	},
+	getDataList: function () {
+    //加载新闻列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+      this.setData({
+        dataList: this.data.dataList.concat(dataList)
+      })
+      console.log(this.data.dataList);
+    })
+  },
+  onLoad: function (options) {
+    this.getDataList();
+  },
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
