@@ -18,7 +18,7 @@ let baseUrl = 'http://192.168.0.42:8004/InfoIssue/app/release/infocontent/'; //�
 // let baseUrl = 'http://127.0.0.1:8004/InfoIssue/';//测试(本地)（严冬）
 // let baseUrl = 'http://******/';//预发布
 // let baseUrl = 'https://*****/';//线上
-//请求方法
+//内部请求方法
 const requestApi = function (url, method, data = {}) {
   let meth = method.toUpperCase()
   if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
@@ -34,6 +34,39 @@ const requestApi = function (url, method, data = {}) {
         'content-type': meth == 'POST' ? 'application/x-www-form-urlencoded' : 'application/json'
       },
       url: baseUrl + url,
+      data: data,
+      method: meth,
+      success: function (res) {
+        //返回信息统一处理操作
+
+        //resolve用于具体调用中
+        resolve(res)
+      },
+      fail: function (res) {
+        //错误信息统一处理操作
+
+        reject(res)
+      }
+    })
+  })
+}
+
+//外部请求方法
+const requestData = function (url, method, data = {}) {
+  let meth = method.toUpperCase()
+  if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
+    meth = 'GET' //不传情况下默认'GET'
+  }
+  if (getApp().globalData.userInfo != null) {//已登陆情况下必传参数（项目需要看情况而定）
+    data['token'] = getApp().globalData.userInfo.token;
+    data['uid'] = getApp().globalData.userInfo.uid;
+  }
+  return new Promise(function (resolve, reject) {
+    wx.request({
+      header: {
+        'content-type': meth == 'POST' ? 'application/x-www-form-urlencoded' : 'application/json'
+      },
+      url:  url,
       data: data,
       method: meth,
       success: function (res) {
@@ -139,6 +172,7 @@ const getParams = function getUrlkey(url) {
 module.exports = {
   formatTime: formatTime,
   requestApi: requestApi,
+  requestData: requestData,
   baseUrl: baseUrl,
   checkIdCard: checkIdCard,
   checkPhone: checkPhone,

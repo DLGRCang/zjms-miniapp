@@ -5,19 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
-    newsInfo: [
-      {
-        id: 0,
-        content: '苏新亚调研指导高考准备…',
-      }, {
-        id: 1,
-        content: '华瑞锋调研旗党校工作',
-      }, {
-        id: 2,
-        content: '郝永耀深入基层走访联系人大...',
-      }
-    ],
+    imgUrl: app.globalData.imgUrl,
+    newsInfo: [],
     noticeInfo: [
       {
         id: 0,
@@ -562,15 +551,15 @@ Page({
         switch (tab) {
           case 0:
             //广播
-            util.pageJump('../../pages/publish/pages/radio/radio')
+            util.pageJump('/pages/publish/pages/radio/radio')
             break;
           case 1:
             //电视
-            util.pageJump('../../pages/publish/pages/tv/tv')
+            util.pageJump('/pages/publish/pages/tv/tv')
             break;
           case 2:
             //推优榜
-            util.pageJump('../../pages/publish/pages/pushBest/pushBest')
+            util.pageJump('/pages/publish/pages/pushBest/pushBest')
             break;
         }
         break;
@@ -578,13 +567,13 @@ Page({
       case 1:
         switch (tab) {
           case 0:
-            util.pageJump('../../pages/charm/pages/villageProduct/villageProduct')
+            util.pageJump('/pages/charm/pages/villageProduct/villageProduct')
             break;
           case 1:
-            util.pageJump('../../pages/charm/pages/historyCulture/historyCulture')
+            util.pageJump('/pages/charm/pages/historyCulture/historyCulture')
             break;
           case 2:
-            util.pageJump('../../pages/charm/pages/investment/investment')
+            util.pageJump('/pages/charm/pages/investment/investment')
             break;
         }
         break;
@@ -617,7 +606,7 @@ Page({
             break;
           case 8:
             console.log("乡村");
-			util.pageJump('../../pages/travel/pages/ruralTourism/ruralTourism')
+            util.pageJump('/pages/travel/pages/ruralTourism/ruralTourism')
 
             break;
         }
@@ -626,22 +615,22 @@ Page({
       case 3:
         switch (tab) {
           case 0:
-            util.pageJump('../../pages/food/pages/specialFood/specialFood')
+            util.pageJump('/pages/food/pages/specialFood/specialFood')
             break;
           case 1:
-            util.pageJump('../../pages/food/pages/economicsFood/economicsFood')
+            util.pageJump('/pages/food/pages/economicsFood/economicsFood')
             break;
           case 2:
-            util.pageJump('../../pages/food/pages/topFood/topFood')
+            util.pageJump('/pages/food/pages/topFood/topFood')
             break;
           case 3:
-            util.pageJump('../../pages/food/pages/nationFood/nationFood')
+            util.pageJump('/pages/food/pages/nationFood/nationFood')
             break;
           case 4:
-            util.pageJump('../../pages/food/pages/cultureFood/cultureFood')
+            util.pageJump('/pages/food/pages/cultureFood/cultureFood')
             break;
           case 5:
-            util.pageJump('../../pages/food/pages/animalFood/animalFood')
+            util.pageJump('/pages/food/pages/animalFood/animalFood')
             break;
         }
         break;
@@ -650,39 +639,39 @@ Page({
         switch (tab) {
           case 0:
             console.log("商场");
-			 util.pageJump('../../pages/economic/pages/market/market')
+            util.pageJump('/pages/economic/pages/market/market')
             break;
           case 1:
             console.log("农贸");
-			 util.pageJump('../../pages/economic/pages/farmerMarket/farmerMarket')
+            util.pageJump('/pages/economic/pages/farmerMarket/farmerMarket')
             break;
           case 2:
             console.log("户外");
-			util.pageJump('../../pages/economic/pages/outdoorStalls/outdoorStalls')
+            util.pageJump('/pages/economic/pages/outdoorStalls/outdoorStalls')
             break;
           case 3:
             console.log("二手");
-			util.pageJump('../../pages/economic/pages/secondHand/secondHand')
+            util.pageJump('/pages/economic/pages/secondHand/secondHand')
             break;
           case 4:
             console.log("农资");
-			util.pageJump('../../pages/economic/pages/farmerRetail/farmerRetail')
+            util.pageJump('/pages/economic/pages/farmerRetail/farmerRetail')
             break;
           case 5:
             console.log("会展");
-			util.pageJump('../../pages/economic/pages/exhibition/exhibition')
+            util.pageJump('/pages/economic/pages/exhibition/exhibition')
             break;
           case 6:
             console.log("消费");
-			util.pageJump('../../pages/economic/pages/protectRight/protectRight')
+            util.pageJump('/pages/economic/pages/protectRight/protectRight')
             break;
           case 7:
             console.log("消费促进");
-			util.pageJump('../../pages/economic/pages/promotion/promotion')
+            util.pageJump('/pages/economic/pages/promotion/promotion')
             break;
           case 8:
             console.log("知识产权");
-				util.pageJump('../../pages/economic/pages/intellectualProperty/intellectualProperty')
+            util.pageJump('/pages/economic/pages/intellectualProperty/intellectualProperty')
             break;
         }
         break;
@@ -690,34 +679,34 @@ Page({
       case 5:
         switch (tab) {
           case 0:
-            util.pageJump('../../pages/education/pages/primarySchool/primarySchool')
+            util.pageJump('/pages/education/pages/primarySchool/primarySchool')
             break;
           case 1:
-            util.pageJump('../../pages/education/pages/midSchool/midSchool')
+            util.pageJump('/pages/education/pages/midSchool/midSchool')
             break;
           case 2:
-            util.pageJump('../../pages/education/pages/studentHelp/studentHelp')
+            util.pageJump('/pages/education/pages/studentHelp/studentHelp')
             break;
           case 3:
-            util.pageJump('../../pages/education/pages/transfer/transfer')
+            util.pageJump('/pages/education/pages/transfer/transfer')
             break;
           case 4:
-            util.pageJump('../../pages/education/pages/library/library')
+            util.pageJump('/pages/education/pages/library/library')
             break;
           case 5:
-            util.pageJump('../../pages/education/pages/bookShop/bookShop')
+            util.pageJump('/pages/education/pages/bookShop/bookShop')
             break;
           case 6:
-            util.pageJump('../../pages/education/pages/mbSchool/mbSchool')
+            util.pageJump('/pages/education/pages/mbSchool/mbSchool')
             break;
           case 7:
-            util.pageJump('../../pages/education/pages/homeEducate/homeEducate')
+            util.pageJump('/pages/education/pages/homeEducate/homeEducate')
             break;
           case 8:
-            util.pageJump('../../pages/education/pages/agricultural/agricultural')
+            util.pageJump('/pages/education/pages/agricultural/agricultural')
             break;
           case 9:
-            util.pageJump('../../pages/education/pages/fitness/fitness')
+            util.pageJump('/pages/education/pages/fitness/fitness')
             break;
         }
         break;
@@ -726,22 +715,22 @@ Page({
         switch (tab) {
           case 0:
             //医院药店
-            util.pageJump('../../pages/medical/pages/hospital/hospital')
+            util.pageJump('/pages/medical/pages/hospital/hospital')
             break;
           case 1:
             //健康证
-            util.pageJump('../../pages/medical/pages/healthCard/healthCard')
+            util.pageJump('/pages/medical/pages/healthCard/healthCard')
             break;
           case 2:
             console.log("疫苗接种");
             break;
           case 3:
             //体检
-            util.pageJump('../../pages/medical/pages/healthCheck/healthCheck')
+            util.pageJump('/pages/medical/pages/healthCheck/healthCheck')
             break;
           case 4:
             //核酸检测
-            util.pageJump('../../pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck')
+            util.pageJump('/pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck')
             break;
           case 5:
             console.log("老年证");
@@ -751,7 +740,7 @@ Page({
             break;
           case 7:
             //福利院
-            util.pageJump('../../pages/medical/pages/welfareHouse/welfareHouse')
+            util.pageJump('/pages/medical/pages/welfareHouse/welfareHouse')
             break;
 
         }
@@ -763,25 +752,25 @@ Page({
             console.log("指引");
             break;
           case 1:
-            util.pageJump('../../pages/government/pages/flagLeader/flagLeader')
+            util.pageJump('/pages/government/pages/flagLeader/flagLeader')
             break;
           case 2:
             console.log("互通");
-			 util.pageJump('../../pages/government/pages/eachFlagTown/eachFlagTown')
+            util.pageJump('/pages/government/pages/eachFlagTown/eachFlagTown')
             break;
           case 3:
             console.log("调查问卷");
             break;
           case 4:
-            util.pageJump('../../pages/government/pages/instaShot/instaShot')
+            util.pageJump('/pages/government/pages/instaShot/instaShot')
             break;
           case 5:
             console.log("志愿者");
-			  util.pageJump('../../pages/government/pages/volunteerService/volunteerService')
+            util.pageJump('/pages/government/pages/volunteerService/volunteerService')
             break;
           case 6:
             console.log("创城");
-			  util.pageJump('../../pages/government/pages/cityAction/cityAction')
+            util.pageJump('/pages/government/pages/cityAction/cityAction')
             break;
           case 7:
             console.log("土地");
@@ -793,22 +782,22 @@ Page({
       case 8:
         switch (tab) {
           case 0:
-            util.pageJump('../../pages/help/pages/disabled/disabled')
+            util.pageJump('/pages/help/pages/disabled/disabled')
             break;
           case 1:
-            util.pageJump('../../pages/help/pages/insured/insured')
+            util.pageJump('/pages/help/pages/insured/insured')
             break;
           case 2:
-            util.pageJump('../../pages/help/pages/redcross/redcross')
+            util.pageJump('/pages/help/pages/redcross/redcross')
             break;
           case 3:
-            util.pageJump('../../pages/help/pages/dishonest/dishonest')
+            util.pageJump('/pages/help/pages/dishonest/dishonest')
             break;
           case 4:
-            util.pageJump('../../pages/help/pages/law/law')
+            util.pageJump('/pages/help/pages/law/law')
             break;
           case 5:
-            util.pageJump('../../pages/help/pages/woman/woman')
+            util.pageJump('/pages/help/pages/woman/woman')
             break;
         }
         break;
@@ -816,33 +805,33 @@ Page({
       case 9:
         switch (tab) {
           case 0:
-            util.pageJump('../../pages/life/pages/housekeeping/housekeeping')
+            util.pageJump('/pages/life/pages/housekeeping/housekeeping')
             break;
           case 1:
-            util.pageJump('../../pages/life/pages/property/property')
+            util.pageJump('/pages/life/pages/property/property')
             break;
           case 2:
-            util.pageJump('../../pages/life/pages/repair/repair')
+            util.pageJump('/pages/life/pages/repair/repair')
             break;
           case 3:
-            util.pageJump('../../pages/life/pages/job/job')
+            util.pageJump('/pages/life/pages/job/job')
             break;
           case 4:
-            util.pageJump('../../pages/life/pages/hairdressing/hairdressing')
+            util.pageJump('/pages/life/pages/hairdressing/hairdressing')
             break;
           case 5:
             console.log("代驾挪车");
-            // util.pageJump('../../pages/life/pages/moveCar/moveCar')
+            // util.pageJump('/pages/life/pages/moveCar/moveCar')
             break;
           case 6:
-            util.pageJump('../../pages/life/pages/car/car')
+            util.pageJump('/pages/life/pages/car/car')
             break;
           case 7:
-            util.pageJump('../../pages/life/pages/productionTransfer/productionTransfer')
+            util.pageJump('/pages/life/pages/productionTransfer/productionTransfer')
             console.log("生产转让");
             break;
           case 8:
-            util.pageJump('../../pages/life/pages/seafood/seafood')
+            util.pageJump('/pages/life/pages/seafood/seafood')
             console.log("9");
             break;
           case 9:
@@ -852,7 +841,7 @@ Page({
             console.log("11");
             break;
           case 11:
-            util.pageJump('../../pages/life/pages/finance/finance')
+            util.pageJump('/pages/life/pages/finance/finance')
             break;
           case 12:
             console.log("13");
@@ -865,17 +854,81 @@ Page({
     }
 
   },
-
+  //新闻
   //新闻列表
+  getNewsList() {
+    let url = 'https://api-cms.yjhlnews.cn/v1/classify_content/13/?sorce_type=0&limit=3';
+    util.requestData(url, 'GET', {}).then(res => {
+      console.log(res.data.data)
+      this.setData({
+        newsInfo: res.data.data
+      })
+    });
+  },
+  //跳转新闻列表页
   newsList: function () {
-    util.pageJump("../../pages/publish/pages/newsList/newsList")
+    util.pageJump("/pages/publish/pages/newsList/newsList")
   },
-  //新闻详情
+  //跳转新闻详情
   newsDetail: function (e) {
-    util.pageJumpTo('../../pages/publish/pages/newsDetail/newsDetail', 'id', e.currentTarget.dataset.id)
+    util.pageJumpTo('/pages/publish/pages/newsDetail/newsDetail', 'id', e.currentTarget.dataset.id)
   },
 
+  /**
+     * 生命周期函数--监听页面加载
+     */
+  onLoad: function (options) {
+    this.getNewsList();
+  },
 
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 
 
 })

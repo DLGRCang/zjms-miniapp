@@ -1,13 +1,14 @@
 /* pages/plugin/home/home.wxss */
-.user{
+.user {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 20rpx;
 }
-.setting{
-  width: 180rpx;
+
+.setting {
+  width: 140rpx;
   height: 60rpx;
   line-height: 60rpx;
   padding-left: 16rpx;
@@ -16,19 +17,34 @@
   color: #054FAC;
   margin-top: 20rpx;
 }
-.items{
+
+.login {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 30rpx;
+  border: 1rpx solid #054FAC;
+  border-radius: 10rpx;
+  color: #054FAC;
+  margin-top: 20rpx;
+}
+
+.items {
   font-size: 36rpx;
   font-weight: 500;
 }
-.items text{
+
+.items text {
   color: #054FAC;
 }
-.grid{
+
+.grid {
   border: 1rpx solid #F5F5F5;
   border-radius: 10rpx;
   padding-top: 40rpx;
   padding-bottom: 40rpx;
 }
-.text-left{
+
+.text-left {
   padding-left: 74rpx;
 }

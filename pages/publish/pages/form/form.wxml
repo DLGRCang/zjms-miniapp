@@ -6,7 +6,7 @@
 	<!-- 输入框 -->
 	<view class="cu-form-group" wx:for="{{3}}">
 		<view class="title">输入框</view>
-		<input placeholder="请输入内容" bindinput="title"></input>
+		<input placeholder="请输入内容" value="{{name}}" bindinput="title" data-id="{{index}}"></input>
 	</view>
 	<!-- 选择器 -->
 	<view class="cu-form-group">

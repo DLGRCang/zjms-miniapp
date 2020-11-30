@@ -67,5 +67,11 @@ padding-right: 90rpx;
 .icon-wrap .icon-item .item-text{
   text-align: center;
 }
-
+.textInfo{
+  display: inline-block;
+  white-space: nowrap; 
+  width:99%; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
 

@@ -7,10 +7,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isLogin: true,
+  },
+  //登录
+  goLogin: function (e) {
+    // util.pageJump('../../pages/userCenter/pages/login/login')
+    this.setData({
+      isLogin: true
+    });
+  },
+  //退出登录
+  loginOut: function () {
+    wx.setStorageSync("ysb-islogin", false);
+    this.setData({
+      isLogin: false
+    });
   },
   //个人信息
-  userinfo(){
+  userinfo() {
     util.pageJump('../../pages/userCenter/pages/userinfo/userinfo')
   },
   //我的订单

@@ -1,11 +1,10 @@
-<scroll-view scroll-y class="scrollPage">
-	<!-- 顶部图片 -->
-	<image src='{{imgUrl}}/image/basic.png' style='width:100%;height:434rpx'></image>
+<!-- 顶部图片 -->
+	<image src='{{imgUrl}}/image/basic.png' style='width:100%;height:340rpx'></image>
 
 	<!-- 实现左右联动效果 -->
 	<view class="flex">
 		<!-- 左边栏 -->
-		<view class="VerticalNav nav" style="height:calc(93vh - 420rpx)">
+		<view class="VerticalNav nav" style="height:calc(96vh - 283rpx)">
 			<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index" bindtap='tabSelect'
 				data-id="{{index}}">
 				<text>{{item.name}}</text>
@@ -14,7 +13,7 @@
 		</view>
 
 		<!-- 右边 -->
-		<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 540rpx)"
+		<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 350rpx)"
 			scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
 			<view class="padding-top padding-lr" wx:for="{{mainInfo}}" wx:key="item" id="main-{{index}}">
 				<view class="flex-sub text-start">
@@ -32,8 +31,8 @@
 							<view class="text-grey text-sm" bindtap="newsList">更多+</view>
 						</view>
 						<block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
-							<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
-								<text class="cuIcon-ticket text-red"></text> {{item.content}}
+							<view class="padding-bottom-sm textInfo" bindtap="newsDetail" data-id="{{item.id}}">
+								<text class="cuIcon-ticket text-red"></text> {{item.title}}
 							</view>
 						</block>
 					</view>
@@ -66,5 +65,3 @@
 			</view>
 		</scroll-view>
 	</view>
-
-</scroll-view>

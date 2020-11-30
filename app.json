@@ -1,6 +1,5 @@
 {
 	"pages": [
-		"pages/index/index",
 		"pages/basics/home/home",
 		"pages/about/home/home",
 		"pages/guide/home/home",
@@ -19,6 +18,7 @@
 			"root": "pages/userCenter",
 			"name": "个人中心",
 			"pages": [
+				"pages/login/login",
 				"pages/userinfo/userinfo",
 				"pages/order/order",
 				"pages/consult/consult",
@@ -154,6 +154,43 @@
 			]
 		}
 	],
+	"tabBar": {
+		"color": "#9A9A9A",
+		"selectedColor": "#054FAC",
+		"backgroundColor": "#FFF",
+		"height":"120rpx",
+		"list": [{
+      "pagePath": "pages/basics/home/home",
+      "text": "首页",
+      "iconPath": "/image/basics1.png",
+      "selectedIconPath": "/image/basics.png"
+    },
+    {
+      "pagePath": "pages/about/home/home",
+      "text": "预约",
+      "iconPath": "/image/about1.png",
+      "selectedIconPath": "/image/about.png"
+    },
+    {
+      "pagePath": "pages/guide/home/home",
+      "text": "办事指南",
+      "iconPath": "/image/guide1.png",
+      "selectedIconPath": "/image/guide.png"
+		},
+    {
+      "pagePath": "pages/pay/home/home",
+      "text": "缴费",
+      "iconPath": "/image/pay1.png",
+      "selectedIconPath": "/image/pay.png"
+		}, 
+		{
+      "pagePath": "pages/plugin/home/home",
+      "text": "我的",
+      "iconPath": "/image/plugin1.png",
+      "selectedIconPath": "/image/plugin.png"
+    }]
+
+	},
 	"window": {
 		"backgroundTextStyle": "light",
 		"navigationBarBackgroundColor": "#fff",

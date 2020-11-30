@@ -3,7 +3,7 @@ const app = getApp();
 const util = require('../../../../utils/util.js')
 Page({
   data: {
-    title:'',
+    name:'',
     index: null,
     picker: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
     pickerData:'',
@@ -15,7 +15,7 @@ Page({
   title(e) {
     console.log(e.detail.value);
     this.setData({
-      title: e.detail.value
+      name: e.detail.value
     })
   },
   //选择器
