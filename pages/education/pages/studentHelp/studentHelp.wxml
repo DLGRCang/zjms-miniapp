@@ -7,11 +7,7 @@
   <dot-title title="相关规则" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
 
   <view class="cont">
-    <view class="margin-bottom-lg" wx:for="{{dataList}}">
-      <view>{{item.info_content}}</view>
-      <view class="margin-top-xs text-grey text-sm">{{item.publishdate}}</view>
-      <view class="line"></view>
-    </view>
+    <item-image-text wx:for="{{dataList}}" isImg="{{false}}" obj="{{item}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
     <button class="bgColor">申请历史</button>
   </view>
 </view>

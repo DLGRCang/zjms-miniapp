@@ -5,5 +5,5 @@
   <view>{{newsInfo.title}}</view>
   <view>描述：{{newsInfo.des}}</view>
   <view>发布时间：{{newsInfo.publish_at}}</view>
-  内容：<rich-text>{{newsInfo.article.content}}</rich-text>
+  内容：<rich-text nodes="{{newsInfo.article.content}}"></rich-text>
 </view>

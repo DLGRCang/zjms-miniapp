@@ -4,6 +4,6 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/yinshiwenhua.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">
-	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isDate="true"
+	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isDate="true"
 		date="{{item.publishdate}}"></item-image-text>
 </view>

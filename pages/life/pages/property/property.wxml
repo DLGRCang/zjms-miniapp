@@ -7,15 +7,14 @@
   <dot-title title="小区通知" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
   <view class="cont">
     <view class="margin-bottom-lg" wx:for="{{dataList}}" wx:key="item">
-      <view>{{item.info_content}}</view>
-      <view class="margin-top-xs text-grey text-sm">{{item.publishdate}}</view>
-      <view class="line"></view>
+      <item-image-text  obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true" date="{{item.publishdate}}">
+    </item-image-text>
     </view>
     <!-- <view class="flex justify-center text-grey margin-bottom-xs">查看更多</view> -->
   </view>
   <dot-title title="上报历史" color="color" isMore="true" sign="{{infotypeid1}}"></dot-title>
   <view wx:for="{{dataList1}}" wx:key="item">
-    <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+    <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
     </item-image-text>
   </view>
 </view>

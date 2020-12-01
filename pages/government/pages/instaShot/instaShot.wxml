@@ -7,6 +7,6 @@
 <view class="padding">
 	<dot-title title="上报历史" color="title-color" isMore="true" sign="{{infotypeid}}"></dot-title>
 
-	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
+	<item-image-text wx:for="{{dataList}}"  obj="{{item}}" imgUrl="{{item.info_photos}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
 <button class="button-btn">结果查询</button>
 </view>

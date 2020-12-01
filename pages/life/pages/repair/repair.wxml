@@ -7,31 +7,31 @@
   <dot-title title="上报历史" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
   <view  wx:if="{{tabId==0}}">
     <view wx:for="{{dataList}}" wx:key="item">
-      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==1}}">
     <view wx:for="{{dataList}}" wx:key="item">
-      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==2}}">
     <view wx:for="{{dataList}}" wx:key="item">
-      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==3}}">
     <view wx:for="{{dataList}}" wx:key="item">
-      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>
   <view wx:if="{{tabId==4}}">
     <view wx:for="{{dataList}}" wx:key="item">
-      <item-image-text imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </view>

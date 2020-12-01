@@ -7,5 +7,5 @@
 <view class="padding">
 	<dot-title title="限制措施" color="title-color"></dot-title>
 
-	<item-image-text wx:for="{dataList"  itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+	<item-image-text wx:for="{{dataList}}"  obj="{{item}}"  itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
 </view>

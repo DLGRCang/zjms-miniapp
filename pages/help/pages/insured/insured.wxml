@@ -7,6 +7,6 @@
 <view class="padding">
 	<dot-title title="公示" color="title-color" isMore="true"></dot-title>
 
-	<item-image-text wx:for="{{dataList}}"  itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="{{true}}" date="{{item.publishdate}}"></item-image-text>
+	<item-image-text wx:for="{{dataList}}"  obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="{{true}}" date="{{item.publishdate}}"></item-image-text>
 <button class="button-btn">申请补助</button>
 </view>
