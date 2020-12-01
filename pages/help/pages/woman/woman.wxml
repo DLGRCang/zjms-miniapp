@@ -22,6 +22,8 @@
 		<text class="into"></text>
 	</view>
 	<dot-title title="活动展示" color="title-color" ></dot-title>
-	<item-image-text wx:for="{{3}}" itemTitle="活动名称" itemInfo="活动描述" isTab="true" itemTabs="{{itemTabs}}"></item-image-text>
+	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+</item-image-text>
 
 </view>

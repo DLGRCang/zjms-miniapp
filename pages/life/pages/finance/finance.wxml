@@ -3,18 +3,14 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/jinrong.png" style="width:100%;height:396rpx;"></image>
 <view class="margin-lr-lg padding-bottom-lg">
-  <dot-title title="银行" color="color" isMore="true"></dot-title>
-  <view class="cont">
-    <view wx:for="{{3}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="村镇银行" itemInfo="距您直线3.2公里" itemTabs="{{tabs}}" isTab="true" isImg="true">
-      </item-image-text>
-    </view>
-  </view>
-  <dot-title title="保险" color="color" isMore="true"></dot-title>
-  <view class="cont">
-    <view wx:for="{{3}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="新华保险" itemInfo="距您直线3.2公里" itemTabs="{{tabs}}" isTab="true" isImg="true">
-      </item-image-text>
-    </view>
-  </view>
+  <dot-title title="银行" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
+  <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+  </item-image-text>
+  <dot-title title="保险" color="color" isMore="true" sign="{{infotypeid1}}"></dot-title>
+
+  <item-image-text wx:for="{{dataList1}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+  </item-image-text>
+
 </view>

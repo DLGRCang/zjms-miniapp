@@ -4,9 +4,7 @@
 <image mode="widthFix" src="{{imgUrl}}/image/jiatingjiaoyu.png" style="width:100%;height:396rpx;"></image>
 
 <view class="margin-lr-lg padding-tb-lg">
-  <view wx:for="{{4}}" wx:key="item">
-    <item-image-text imgUrl="" itemTitle="全民健身" itemInfo="距您直线3.2公里" isImg="true" isDate="true" date="2020-06-09"
-      isLine="true">
-    </item-image-text>
-  </view>
+  <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+  </item-image-text>
 </view>

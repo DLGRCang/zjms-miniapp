@@ -9,10 +9,11 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-    tabs:['水果','蔬菜'],
     infotypeid: 'd7b8259d-c340-47f6-884d-64fc587ad936',
     page: 1,
     dataList: [],
+    infotypeid1:'02f55284-3738-4fd2-9d81-b8894db8f1da',//生鲜商家
+    dataList1: [],
   },
 
 
@@ -26,6 +27,12 @@ getDataList: function () {
         dataList: this.data.dataList.concat(dataList)
       })
       console.log(this.data.dataList);
+    })
+    data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+      this.setData({
+        dataList1: this.data.dataList1.concat(dataList)
+      })
+      console.log(this.data.dataLis1t);
     })
   },
   onLoad: function (options) {

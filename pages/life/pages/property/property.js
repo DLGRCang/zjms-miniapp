@@ -32,7 +32,7 @@ Page({
      //加载上报历史列表
      data.getArtelData(this.data.infotypeid1, this.data.page,5).then(dataList => {
       this.setData({
-        dataList1: this.data.dataList.concat(dataList)
+        dataList1: this.data.dataList1.concat(dataList)
       })
       console.log(this.data.dataList1);
     })

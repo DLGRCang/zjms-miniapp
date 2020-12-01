@@ -1,6 +1,7 @@
 // pages/economic/pages/farmerMarket/farmerMarket.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -10,15 +11,29 @@ Page({
 		imgUrl:app.globalData.imgUrl,
 		tabId: 0,
 		tabName: ['大型', '百货'],
-		num: 9
-	
+		num: 9,
+		infotypeid: '1dac28cf-1d63-4201-b7c7-3f499373e07e',
+    page:1,
+		dataList: [], //新闻列表
+		
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+     
+      
+			console.log(this.data.dataList);
+		})
+	},
 	onLoad: function (options) {
-
+		this.getDataList()
 	},
 
 	/**

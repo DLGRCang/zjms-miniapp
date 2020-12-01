@@ -17,7 +17,9 @@ Page({
   },
   selectTab:function(e){
 		this.setData({
-			tabId:e.detail.TabCur
+      dataList: [],
+      tabId:e.detail.TabCur
+      
     })
     if (this.data.tabId == 0) {
       this.setData({

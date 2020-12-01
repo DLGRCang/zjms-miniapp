@@ -4,24 +4,28 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/fuliyuan.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">
-	<dot-title title="福利院" color="title-color" isMore="true"></dot-title>
-	<item-image-text wx:for="{{2}}" itemTitle="安康综合福利院" itemInfo="安康综合福利院详情" isTab="true" itemTabs="{{tabName}}"></item-image-text>
+	<dot-title title="福利院" color="title-color" isMore="true" sign="{{infotypeid}}"></dot-title>
+	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}">
+	</item-image-text>
 
-	<dot-title title="养老院" color="title-color" isMore="true"></dot-title>
-	<view class="flex margin-bottom">
-		<image class="jingla-img radius margin-right"></image>
+	<dot-title title="养老院" color="title-color" isMore="true" sign="{{infotypeid1}}"></dot-title>
+	<view class="flex margin-bottom" wx:if="{{dataList1}}">
+		<image class="jingla-img radius margin-right" src="{{dataList1.info_photos}}"></image>
 
 		<view class="flex flex-direction  " style="max-width:550rpx">
-			<text class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}}">寿康养老院</text>
-			<text class="text-sm text-cut margin-bottom-sm">养老院详细描述</text>
+			<text class="text-black margin-bottom-xs text-df  {{dataList1.info_summary.length>0?'text-cut':'text-cut-two'}}">{{dataList1.info_content}}</text>
+			<text class="text-sm text-cut margin-bottom-sm">{{dataList1.info_summary}}</text>
 			<view>
-				<view class="cu-tag" wx:for="{{itemTabs}}" wx:key>{{itemTabs[index]}}</view>
+				<view class="cu-tag" wx:for="{{dataList1.infotypePname}}" wx:key>{{itemTabs[index]}}</view>
 			</view>
 			<text class="text-white text-df yanglao-yuyue round margin-top-sm">预约</text>
 		</view>
 
 
 	</view>
-	<dot-title title="敬老院" color="title-color" isMore="true"></dot-title>
-	<item-image-text wx:for="{{2}}" itemTitle="乌兰木伦镇敬老院" itemInfo="敬老院详情描述" isTab="true" itemTabs="{{tabName}}"></item-image-text>
+	<dot-title title="敬老院" color="title-color" isMore="true" sign="{{infotypeid2}}"></dot-title>
+	<item-image-text wx:for="{{dataList2}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}">
+	</item-image-text>
 </view>

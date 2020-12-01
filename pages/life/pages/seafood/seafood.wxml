@@ -3,12 +3,11 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/shengxian.png" style="width:100%;height:396rpx;"></image>
 <view class="margin-lr-lg">
-  <dot-title title="生鲜商家" color="color" isMore="true"></dot-title>
+  <dot-title title="生鲜商家" color="color" isMore="true" sign="{{infotypeid1}}"></dot-title>
   <view class="cont">
-    <view wx:for="{{3}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="生鲜商家" itemInfo="距您直线3.2公里" itemTabs="{{tabs}}" isTab="true" isImg="true">
-      </item-image-text>
-    </view>
+    <item-image-text wx:for="{{dataList1}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+      itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+    </item-image-text>
   </view>
   <dot-title title="生鲜需求" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
   <view class="margin-bottom-lg cont" style="padding:20rpx;">

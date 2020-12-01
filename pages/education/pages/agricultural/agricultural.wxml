@@ -4,11 +4,10 @@
 <image mode="widthFix" src="{{imgUrl}}/image/nongyejishu.png" style="width:100%;height:396rpx;"></image>
 <button class="button">专家咨询</button>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="农技培训" color="color" isMore="true"></dot-title>
+  <dot-title title="农技培训" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
 
-<view wx:for="{{4}}" wx:key="item">
-	<item-image-text imgUrl="" itemTitle="机械化耕地趋势" itemInfo="机械化耕地趋势" isImg="true" isTab="true" itemTabs="{{itemTabs}}" isLine="true">
+  <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
-</view>
 
 </view>

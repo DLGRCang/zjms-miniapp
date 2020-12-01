@@ -3,19 +3,12 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/zxx.png" style="width:100%;height:396rpx;"></image>
 <view class="margin-lr-lg">
-
-<block wx:for="{{type}}" wx:key="item">
-  <view class="title">
-    <dot-title title="{{item}}" color="color" isMore="true"  sign='小中学'></dot-title>
-  </view>
-  <view class="cont">
-    <view wx:for="{{info}}" wx:key="item" bindtap="goDetail" data-id="{{item.id}}">
-      <item-image-text imgUrl="" itemTitle="{{item.tit}}" itemInfo="{{item.cont}}" isImg="true" isTab="true"
-        itemTabs="{{itemTabs}}" isLine="true">
-      </item-image-text>
-    </view>
-  </view>
-</block>
-
-
+  <dot-title title="小学学校" color="color" isMore="true" sign='{{infotypeid}}'></dot-title>
+  <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+  </item-image-text>
+  <dot-title title="中学学校" color="color" isMore="true" sign='{{infotypeid1}}'></dot-title>
+  <item-image-text wx:for="{{dataList1}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+  </item-image-text>
 </view>

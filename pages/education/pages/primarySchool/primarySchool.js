@@ -1,6 +1,7 @@
 // pages/education/pages/primarySchool/primarySchool.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,23 +9,9 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-    type: ['小学学校', '中学学校'],
-    itemTabs: ['双语', '寄宿'],
-    info: [
-      {
-        id: 0,
-        tit: '111',
-        cont: '1111'
-      }, {
-        id: 1,
-        tit: '222222222',
-        cont: '2222222222'
-      }, {
-        id: 3,
-        tit: '3333333',
-        cont: '33333333333333'
-      }
-    ]
+    infotypeid: 'd0e21714-7349-4f1c-938b-52bff108c516',
+    page:1,
+		dataList: [], //新闻列表
   },
   goDetail(e) {
     console.log(e)
@@ -34,9 +21,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+  getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+			console.log(this.data.dataList);
+		})
+	},
+	onLoad: function (options) {
+		this.getDataList()
+	},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

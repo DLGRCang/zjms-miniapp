@@ -6,7 +6,8 @@
 <button class="button">会展备案</button>
 
 <view class="flex flex-direction padding-lg">
-	<dot-title title="会展信息" color="title-color"></dot-title>
-	<item-image-text wx:for="{{3}}" bindtap="exhibitionInfo" itemTitle="茶香四溢会展活动" itemInfo="距您直线3.2公里 · 火车站" isTab="true" itemTabs="{{tabName}}"></item-image-text>
+	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+</item-image-text>
 
 </view>

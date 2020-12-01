@@ -1,6 +1,7 @@
 // pages/help/pages/redcross/redcross.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,14 +9,25 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-		tabName:['补贴','专项']
+		infotypeid: '	ca111fd5-e9ee-4b13-98c9-fc00d3ce67a2',
+    page:1,
+		dataList: [], //新闻列表
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+			console.log(this.data.dataList);
+		})
+	},
 	onLoad: function (options) {
-
+		this.getDataList()
 	},
 
 	/**

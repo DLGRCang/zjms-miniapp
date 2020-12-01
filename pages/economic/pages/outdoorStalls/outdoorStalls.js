@@ -1,6 +1,7 @@
 // pages/economic/pages/outdoorStalls/outdoorStalls.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,14 +9,25 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-		lableName:['玩具','儿童'],
+		infotypeid: '155e9d3e-faeb-4f65-b60f-222554862f88',
+    page:1,
+		dataList: [], //新闻列表
 	},
 
-	/**
-	 * 生命周期函数--监听页面加载
-	 */
+  /**
+   * 生命周期函数--监听页面加载
+   */
+ getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+			console.log(this.data.dataList);
+		})
+	},
 	onLoad: function (options) {
-
+		this.getDataList()
 	},
 
 	/**

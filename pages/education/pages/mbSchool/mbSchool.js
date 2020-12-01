@@ -1,23 +1,46 @@
 // pages/education/pages/mbSchool/mbSchool.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,
-    itemTabs:['食宿','双语'],
+    imgUrl:app.globalData.imgUrl,
+    infotypeid: ' e9a0f15b-cb67-4f64-a344-1302691586b4',
+    infotypeid1: ' 7c81efe0-bbe2-4dab-9d70-86dee30b872a',
+    page:1,
+    dataList: [], //民办学校
+    dataList1: [], //相关规则
+   
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  getDataList: function () {
+    //加载数据列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+      this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+      console.log(this.data.dataList);
+    })
+    data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+      this.setData({
+        dataList1: this.data.dataList1.concat(dataList),
+      })
+      console.log(this.data.dataList1);
+    })
+
 
   },
-
+  onLoad: function (options) {
+    this.getDataList()
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

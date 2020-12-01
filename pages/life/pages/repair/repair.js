@@ -17,6 +17,7 @@ Page({
   },
   selectTab: function (e) {
     this.setData({
+      dataList: [],
       tabId: e.detail.TabCur
     })
     if (this.data.tabId == 0) {

@@ -1,20 +1,31 @@
 // pages/economic/pages/farmerRetail/farmerRetail.js
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-tabName:['牛肉','羊肉','水果']
+		infotypeid: '66957eec-9d77-4ecf-a4f0-916dd0f27cf4',
+    page:1,
+		dataList: [], //新闻列表
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
-
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+			console.log(this.data.dataList);
+		})
 	},
-
+	onLoad: function (options) {
+		this.getDataList()
+	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

@@ -4,16 +4,14 @@
 <image mode="widthFix" src="{{imgUrl}}/image/meifaxiyu.png" style="width:100%;height:396rpx;"></image>
 <tab bindmyevent="selectTab" tvColor="color" tabName="{{tabName}}"></tab>
 <view class="margin-lr-lg padding-tb-lg">
-  <view  wx:if="{{tabId==0}}">
-    <view wx:for="{{3}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="丽丽美发店" itemInfo="距您直线3.2公里" isImg="true" itemTabs="{{tabs}}" isTab="true" isLine="true">
-      </item-image-text>
-    </view>
+  <view wx:if="{{tabId==0}}">
+    <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+      itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+    </item-image-text>
   </view>
   <view wx:if="{{tabId==1}}">
-    <view wx:for="{{3}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="丽丽洗浴" itemInfo="距您直线3.2公里" isImg="true" itemTabs="{{tabss}}" isTab="true" isLine="true">
-      </item-image-text>
-    </view>
+    <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+      itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+    </item-image-text>
   </view>
 </view>

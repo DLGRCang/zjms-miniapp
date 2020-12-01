@@ -4,22 +4,18 @@
 <image mode="widthFix" src="{{imgUrl}}/image/minbanxuexiao.png" style="width:100%;height:396rpx;"></image>
 <button class="button">普惠性民校认定</button>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="民办学校" color="color" isMore="true"></dot-title>
+  <dot-title title="民办学校" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
 
   <view class="cont">
-    <view class="margin-bottom-lg" wx:for="{{8}}" wx:key="item">
-      <item-image-text imgUrl="" itemTitle="爱宝贝亲子班" itemInfo="距您直线3.2公里" isImg="true" isTab="true" itemTabs="{{itemTabs}}" isLine="true">
-  </item-image-text>
-    </view>
+    <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+      itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+    </item-image-text>
 
   </view>
-  <dot-title title="相关规则" color="color" isMore="true"></dot-title>
+  <dot-title title="相关规则" color="color" isMore="true" sign="{{infotypeid1}}"></dot-title>
 
   <view class="cont">
-    <view class="margin-bottom-lg" wx:for="{{8}}" wx:key="item">
-      <view>第一百二十八期 三合镇六合村第一季度 低保补助对外公示</view>
-      <view class="margin-top-xs text-grey text-sm">2020-06-09</view>
-      <view class="line"></view>
-    </view>
+    <item-image-text wx:for="{{dataList1}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isLine="true">
+    </item-image-text>
   </view>
 </view>

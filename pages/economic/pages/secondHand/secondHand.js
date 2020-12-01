@@ -1,6 +1,7 @@
 // pages/economic/pages/secondHand/secondHand.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,7 +9,13 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-		tabName: ['出售']
+		infotypeid: 'c84fffd5-dcc4-4d63-a770-0f5669a155a2',
+		infotypeid1: '7e517f20-9d2c-461c-8cc2-e0feeb5dd1f7',
+    page:1,
+		dataList: [], //二手车
+		dataList1: [], //二手房
+		
+
 	},
 
 	secondHandInfo: function () {
@@ -20,10 +27,24 @@ Page({
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function (options) {
-
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+			console.log(this.data.dataList);
+		})
+		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+			this.setData({
+        dataList1: this.data.dataList1.concat(dataList),
+      })
+			console.log(this.data.dataList1);
+		})
 	},
-
+	onLoad: function (options) {
+		this.getDataList()
+	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

@@ -1,6 +1,7 @@
 // pages/life/pages/job/job.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,15 +9,35 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-    tabs:['五险一金','双休'],
+   
+    infotypeid: 'd01b2805-c983-49d3-a57d-d51be819c631',
+    infotypeid1: '68077b19-aefe-4471-a2b6-88931342b993',
+    page:1,
+    dataList: [], //全职招聘
+    dataList1: [], //兼职招聘
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+  getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+			console.log(this.data.dataList);
+    })
+    data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+			this.setData({
+        dataList1: this.data.dataList1.concat(dataList),
+      })
+			console.log(this.data.dataList1);
+		})
+	},
+	onLoad: function (options) {
+		this.getDataList()
+	},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

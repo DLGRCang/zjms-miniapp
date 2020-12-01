@@ -1,6 +1,7 @@
 // pages/help/pages/woman/woman.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,14 +9,26 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-		itemTabs: ['食宿','双语']
+		infotypeid: '1ad27ea9-6ec9-4cbd-89d8-e2d5f8034a20',
+    page:1,
+		dataList: [], //新闻列表
+	
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+			console.log(this.data.dataList);
+		})
+	},
 	onLoad: function (options) {
-
+		this.getDataList()
 	},
 
 	/**

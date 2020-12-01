@@ -1,6 +1,7 @@
 // pages/life/pages/finance/finance.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -8,14 +9,33 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-    tabs:['ATM','人工'],
+    infotypeid: 'b9599c28-a954-412e-a34c-30c899dfe72f',//银行
+    page: 1,
+    dataList: [],
+    infotypeid1:'c1566dba-5a6d-48b8-bea2-7c4f0a9937c0',//保险
+    dataList1: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  getDataList: function () {
+    //加载新闻列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+      this.setData({
+        dataList: this.data.dataList.concat(dataList)
+      })
+      console.log(this.data.dataList);
+    })
+    data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+      this.setData({
+        dataList1: this.data.dataList1.concat(dataList)
+      })
+      console.log(this.data.dataLis1t);
+    })
+  },
   onLoad: function (options) {
-
+    this.getDataList();
   },
 
   /**
