@@ -1,0 +1,8 @@
+/* pages/publish/pages/officialNewsList/officialNewsList.wxss */
+.textInfo{
+  display: inline-block;
+  white-space: nowrap; 
+  width:99%; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+}

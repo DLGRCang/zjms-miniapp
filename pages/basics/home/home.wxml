@@ -32,7 +32,7 @@
 						</view>
 						<block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
 							<view class="padding-bottom-sm textInfo" bindtap="newsDetail" data-id="{{item.id}}">
-								<text class="cuIcon-ticket text-red"></text> {{item.title}}
+								<text class="cuIcon-hotfill text-red"></text> {{item.title}}
 							</view>
 						</block>
 					</view>
@@ -45,7 +45,7 @@
 					</view>
 					<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
 						<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
-							<text class="cuIcon-hotfill text-red"></text> {{item.content}}
+							<text class="cuIcon-ticket text-red"></text> {{item.content}}
 						</view>
 					</block>
 				</view>

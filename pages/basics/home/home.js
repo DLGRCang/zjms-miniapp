@@ -867,11 +867,11 @@ Page({
   },
   //跳转新闻列表页
   newsList: function () {
-    util.pageJump("/pages/publish/pages/newsList/newsList")
+    util.pageJump("/pages/publish/pages/officialNewsList/officialNewsList")
   },
   //跳转新闻详情
   newsDetail: function (e) {
-    util.pageJumpTo('/pages/publish/pages/newsDetail/newsDetail', 'id', e.currentTarget.dataset.id)
+    util.pageJumpTo('/pages/publish/pages/officialNewsDetail/officialNewsDetail', 'id', e.currentTarget.dataset.id)
   },
 
   /**

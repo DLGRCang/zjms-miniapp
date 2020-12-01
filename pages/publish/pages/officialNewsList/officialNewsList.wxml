@@ -1,0 +1,10 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">更多新闻</view>
+</cu-custom>
+<view class="margin-lg">
+  <block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
+    <view class="padding-bottom-sm textInfo" bindtap="newsDetail" data-id="{{item.id}}">
+      <text class="cuIcon-hotfill text-red"></text> {{item.title}}
+    </view>
+  </block>
+</view>

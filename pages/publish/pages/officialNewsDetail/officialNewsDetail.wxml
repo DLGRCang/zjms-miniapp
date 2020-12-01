@@ -1,0 +1,9 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">新闻详情</view>
+</cu-custom>
+<view class="margin-lg">
+  <view>{{newsInfo.title}}</view>
+  <view>描述：{{newsInfo.des}}</view>
+  <view>发布时间：{{newsInfo.publish_at}}</view>
+  内容：<rich-text>{{newsInfo.article.content}}</rich-text>
+</view>
