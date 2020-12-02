@@ -26,7 +26,6 @@ Page({
     let id = this.data.id;
     let url = 'https://api-cms.yjhlnews.cn/v1/c_article/'+id;
     util.requestData(url, 'GET', {}).then(res => {
-      console.log(res.data.data)
       this.setData({
         newsInfo: res.data.data
       })

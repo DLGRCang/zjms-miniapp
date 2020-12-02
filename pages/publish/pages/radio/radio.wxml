@@ -1,4 +1,4 @@
-<cu-custom bgColor="White" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">广播</view>
 </cu-custom>
 <view class="audio">
