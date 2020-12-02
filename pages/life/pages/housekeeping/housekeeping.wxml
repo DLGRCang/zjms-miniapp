@@ -4,24 +4,24 @@
 <image mode="widthFix" src="{{imgUrl}}/image/jiazheng-banner.png" style="width:100%;height:396rpx;"></image>
 <view class="margin-lr-lg padding-bottom-lg">
 
-  <dot-title title="搬家装修" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
-  <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  <dot-title title="搬家装修" color="color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
+  <item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
-  <dot-title title="保姆月嫂" color="color" isMore="true" sign="{{infotypeid1}}"></dot-title>
-  <item-image-text wx:for="{{dataList1}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  <dot-title title="保姆月嫂" color="color" isMore="true" sign="{{infotypeid1}}" type="3"></dot-title>
+  <item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
-  <dot-title title="保洁疏通" color="color" isMore="true" sign="{{infotypeid2}}"></dot-title>
-  <item-image-text wx:for="{{dataList2}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  <dot-title title="保洁疏通" color="color" isMore="true" sign="{{infotypeid2}}" type="3"></dot-title>
+  <item-image-text wx:for="{{dataList2}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
-  <dot-title title="家电维修" color="color" isMore="true" sign="{{infotypeid3}}"></dot-title>
-  <item-image-text wx:for="{{dataList3}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  <dot-title title="家电维修" color="color" isMore="true" sign="{{infotypeid3}}" type="3"></dot-title>
+  <item-image-text wx:for="{{dataList3}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
-  <dot-title title="修锁换锁" color="color" isMore="true" sign="{{infotypeid4}}"></dot-title>
-  <item-image-text wx:for="{{dataList4}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  <dot-title title="修锁换锁" color="color" isMore="true" sign="{{infotypeid4}}" type="3"></dot-title>
+  <item-image-text wx:for="{{dataList4}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
 </view>

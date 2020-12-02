@@ -4,5 +4,5 @@
     <view class="text-center padding-left-xs text-lg">{{title}}</view>
   </view>
   <view wx:if="{{isIcon}}"><text class="cuIcon-right text-grey text-bold"></text></view>
-  <view wx:if="{{isMore}}" class=" text-grey text-sm" bindtap="goMoreList" data-id="{{sign}}">更多<text class="cuIcon-add text-bold"></text></view>
+  <view wx:if="{{isMore}}" class=" text-grey text-sm" bindtap="goMoreList">更多<text class="cuIcon-add text-bold"></text></view>
 </view>

@@ -8,7 +8,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList:[]
+
+    dataList: [],
+    //  新闻类型
+    //  1.两行标题，日期
+    //  2.图片，两行标题，日期
+    //  3.图片、一行标题、一行内容、一行标签
+    //  4.1行标题、1行内容、日期
+    type: 1
   },
 
   /**
@@ -18,6 +25,11 @@ Page({
     var id = options.id;
     console.log("新闻列表id:")
     console.log(options.id)
+    console.log("新闻列表type:")
+    console.log(options.type)
+    this.setData({
+      type:options.type
+    })
     //加载新闻列表
     data.getArtelData(id).then(dataList => {
       this.setData({

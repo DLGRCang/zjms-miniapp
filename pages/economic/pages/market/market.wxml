@@ -4,5 +4,5 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/shangchangchaoshi.png" style="width:100%"></image>
 <tab bindmyevent="selectTab" tvColor="text-green" tabName="{{tabName}}"></tab>
-<item-image-text wx:for="{{dataList}}" itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isTab="true"
+<item-image-text wx:for="{{dataList}}" obj="{{item}}" itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isTab="true"
 	itemTabs="{{item.infotypePname}}"></item-image-text>

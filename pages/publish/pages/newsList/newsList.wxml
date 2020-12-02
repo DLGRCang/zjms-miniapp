@@ -1,3 +1,12 @@
-<cu-custom bgColor="White" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">列表</view>
 </cu-custom>
+<item-image-text wx:if="{{type==1}}" wx:for="{{dataList}}" obj="{{item}}" isImg="{{false}}"
+  itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+
+<item-image-text wx:if="{{type==1}}" wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
+  itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+
+<item-image-text wx:if="{{type==1}}" wx:for="{{dataList}}" imgUrl="{{item.info_photos}}"
+  itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" obj="{{item}}" isImg="true" isTab="true"
+  itemTabs="{{item.infotypePname}}" isLine="true"></item-image-text>

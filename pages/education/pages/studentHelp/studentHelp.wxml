@@ -4,7 +4,7 @@
 <image mode="widthFix" src="{{imgUrl}}/image/xueshengzizhu.png" style="width:100%;height:396rpx;"></image>
 <button class="button">资助申请</button>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="相关规则" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
+  <dot-title title="相关规则" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
 
   <view class="cont">
     <item-image-text wx:for="{{dataList}}" isImg="{{false}}" obj="{{item}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>

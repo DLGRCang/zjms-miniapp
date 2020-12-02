@@ -4,18 +4,18 @@
 <image mode="widthFix" src="{{imgUrl}}/image/minbanxuexiao.png" style="width:100%;height:396rpx;"></image>
 <button class="button">普惠性民校认定</button>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="民办学校" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
+  <dot-title title="民办学校" color="color" isMore="true" sign="{{infotypeid}}"  type="3"></dot-title>
 
   <view class="cont">
-    <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    <item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
       itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
     </item-image-text>
 
   </view>
-  <dot-title title="相关规则" color="color" isMore="true" sign="{{infotypeid1}}"></dot-title>
+  <dot-title title="相关规则" color="color" isMore="true" sign="{{infotypeid1}}" type="1"></dot-title>
 
   <view class="cont">
-    <item-image-text wx:for="{{dataList1}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isLine="true">
+    <item-image-text wx:for="{{dataList1}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true" date="{{item.putlishdate}}" isLine="true">
     </item-image-text>
   </view>
 </view>

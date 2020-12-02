@@ -7,7 +7,7 @@
 
 <view class="flex flex-direction padding-lg">
 	<dot-title title="检测机构" color="title-color"></dot-title>
-	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 	itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
 </item-image-text>
 

@@ -29,9 +29,19 @@ Component({
       value: false
     },
     //参数
-    sign:{
+    sign: {
       type: String,
       default: ''
+    },
+
+    //  新闻类型
+    //  1.两行标题，日期
+    //  2.图片，两行标题，日期
+    //  3.图片、一行标题、一行内容、一行标签
+    //  4.1行标题、1行内容、日期
+    type: {
+      type: Number,
+      default: 1
     },
 
   },
@@ -47,14 +57,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    goMoreList:function(e){
+    goMoreList: function (e) {
       console.log("更多列表")
       wx.navigateTo({
-        url: '/pages/publish/pages/newsList/newsList?id='+e.currentTarget.dataset.id,
+        url: '/pages/publish/pages/newsList/newsList?id=' + this.properties.sign+'&type='+this.properties.type,
       })
       // var myEventDetail = {} // detail对象，提供给事件监听函数
-			// var myEventOption = {} // 触发事件的选项
-			// this.triggerEvent('myevent', myEventDetail, myEventOption)
+      // var myEventOption = {} // 触发事件的选项
+      // this.triggerEvent('myevent', myEventDetail, myEventOption)
     }
   }
 })

@@ -3,8 +3,8 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/wentijianshen.png" style="width:100%;height:396rpx;"></image>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="体育场馆" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
-  <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  <dot-title title="体育场馆" color="color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
+  <item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
   <dot-title title="赛事" color="color" isMore="true"></dot-title>

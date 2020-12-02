@@ -4,8 +4,8 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/falvfuwu.png" style="width:100%"></image>
 <view class="padding">
-	<dot-title title="律师事务所" color="title-color" isMore="true" sign="{{infotypeid}}"></dot-title>
-	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	<dot-title title="律师事务所" color="title-color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
+	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
 	</item-image-text>
 	<dot-title title="法律咨询" color="title-color" isMore="true"></dot-title>

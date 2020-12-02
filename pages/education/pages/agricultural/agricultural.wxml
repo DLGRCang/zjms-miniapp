@@ -4,9 +4,9 @@
 <image mode="widthFix" src="{{imgUrl}}/image/nongyejishu.png" style="width:100%;height:396rpx;"></image>
 <button class="button">专家咨询</button>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="农技培训" color="color" isMore="true" sign="{{infotypeid}}"></dot-title>
+  <dot-title title="农技培训" color="color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
 
-  <item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  <item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
   </item-image-text>
 
