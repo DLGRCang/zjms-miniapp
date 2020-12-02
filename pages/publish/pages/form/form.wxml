@@ -1,62 +1,33 @@
-<cu-custom bgColor="bg-green" isBack="{{true}}">
-	<view slot="backText">返回</view>
-	<view slot="content">信息提交</view>
-</cu-custom>
-<view class="margin-xs">
-	<!-- 输入框 -->
-	<view class="cu-form-group" wx:for="{{3}}">
-		<view class="title">输入框</view>
-		<input placeholder="请输入内容" value="{{name}}" bindinput="title" data-id="{{index}}"></input>
-	</view>
-	<!-- 选择器 -->
-	<view class="cu-form-group">
-		<view class="title">普通选择</view>
-		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
-			<view class="picker">
-				{{index?picker[index]:'请选择'}}
+<view class="box">
+	<view wx:for="{{dataFrom}}" wx:key="{{index}}" wx:for-index="indexF">
+		<input type="text" wx:if="{{item.state == 1}}" placeholder="{{item.ch_name}}" bindinput="inputClick"
+			data-in="{{item.en_name}}" />
+		<view class="select" wx:if="{{item.state == 2}}" bindtap="selectClick" data-id="{{item.application_formId}}">
+			<view class="select-nei">
+				<text wx:if="{{selectName[indexF] == null}}">{{item.ch_name}}</text>
+				<text wx:if="{{selectName[indexF] != null}}">{{selectName[indexF]}}</text>
+				<text>></text>
 			</view>
-		</picker>
-	</view>
-	<!-- 日期 -->
-	<view class="cu-form-group">
-		<view class="title">日期选择</view>
-		<picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
-			<view class="picker">
-				{{date}}
+			<view class="select-option" wx:if="{{item.application_formId == selectTrue}}">
+				<view wx:for="{{item.zTreeDTOList}}" wx:for-item="itema" bindtap="optionClick" data-in="{{item.en_name}}"
+					data-value="{{itema.name}}" data-index="{{indexF}}">{{itema.name}}</view>
 			</view>
-		</picker>
-	</view>
-	<!-- 图片上传 -->
-	<view class="cu-bar bg-white">
-		<view class="action">
-			图片上传
 		</view>
-		<view class="action">
-			{{imgList.length}}/9
-		</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="grid col-4 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-					<text class="cuIcon-close"></text>
-				</view>
+		<radio-group class="block" wx:if="{{item.state == 3}}">
+			<view wx:for="{{item.zTreeDTOList}}" wx:for-item="items" bindtap="dxClick" data-in="{{item.en_name}}"
+				data-value="{{items.name}}">
+				{{items.name}}
+				<radio></radio>
 			</view>
-			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
-				<text class="cuIcon-cameraadd"></text>
+		</radio-group>
+		<view class="" wx:if="{{item.state == 4}}">
+			<view>{{item.ch_name}}</view>
+			<view wx:for="{{item.zTreeDTOList}}" wx:for-item="itemb" bindtap="duoxClick" data-in="{{item.en_name}}"
+				data-value="{{itemb.name}}">
+				<text class="title">{{itemb.name}}</text>
+				<checkbox></checkbox>
 			</view>
 		</view>
 	</view>
-	<!-- 文本框 -->
-	<view class="cu-form-group align-start">
-		<view class="title">文本框</view>
-		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="多行文本输入框"></textarea>
-	</view>
-
-	<!-- 提交 -->
-	<view class="padding flex flex-direction">
-		<button class="cu-btn bg-green margin-tb-sm lg">提交</button>
-	</view>
-	
+	<button bindtap="tjClick">提交</button>
 </view>

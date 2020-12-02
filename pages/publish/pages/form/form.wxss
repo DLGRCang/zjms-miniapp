@@ -1,10 +1,28 @@
 /* pages/publish/pages/form/form.wxss */
-.cu-form-group .title {
-  min-width: calc(4em + 30rpx);
+.box{
+  width: 100%;
+  height: 100%;
+  padding: 20rpx;
 }
-.cu-bar{
-  border-top: 1rpx solid #eee;
+input{
+  width: 100%;
+  border:1rpx solid #000;
 }
-.cu-form-group{
-  border-bottom: 1rpx solid #eee;
+.select{
+  width: 100%;
+  padding: 20rpx 0;
+}
+.select-nei{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #000;
+}
+.select-option{
+  border: 1px solid #000;
+}
+.block{
+  display: flex;
+  align-items: center;
 }

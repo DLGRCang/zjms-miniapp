@@ -2,8 +2,10 @@
   <view slot="content">新闻详情</view>
 </cu-custom>
 <view class="margin-lg">
-  <view>{{newsInfo.title}}</view>
-  <view>描述：{{newsInfo.des}}</view>
-  <view>发布时间：{{newsInfo.publish_at}}</view>
-  内容：<rich-text nodes="{{newsInfo.article.content}}"></rich-text>
+  <view class="margin-xs text-xxl text-bold text-center">{{newsInfo.title}}</view>
+  <view class="margin-tb-lg text-grey" style=" text-indent:2em;">{{newsInfo.des}}</view>
+
+  <rich-text nodes="{{newsInfo.article.content}}"></rich-text>
+  <view class="text-df text-grey fr margin-tb-lg">发布时间：{{newsInfo.publish_at}}</view>
+  <view></view>
 </view>

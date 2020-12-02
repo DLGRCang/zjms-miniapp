@@ -11,7 +11,7 @@ Page({
   },
   //登录
   goLogin: function (e) {
-    // util.pageJump('../../pages/userCenter/pages/login/login')
+    // util.pageJump('/pages/userCenter/pages/login/login')
     this.setData({
       isLogin: true
     });
@@ -25,35 +25,35 @@ Page({
   },
   //个人信息
   userinfo() {
-    util.pageJump('../../pages/userCenter/pages/userinfo/userinfo')
+    util.pageJump('/pages/userCenter/pages/userinfo/userinfo')
   },
   //我的订单
   myOrder() {
-    util.pageJump('../../pages/userCenter/pages/order/order')
+    util.pageJump('/pages/userCenter/pages/order/order')
   },
   //我的咨询
   myConsult() {
-    util.pageJump('../../pages/userCenter/pages/consult/consult')
+    util.pageJump('/pages/userCenter/pages/consult/consult')
   },
   //我的预约
   myAppointment() {
-    util.pageJump('../../pages/userCenter/pages/appointment/appointment')
+    util.pageJump('/pages/userCenter/pages/appointment/appointment')
   },
   //我的申请
   myApply() {
-    util.pageJump('../../pages/userCenter/pages/apply/apply')
+    util.pageJump('/pages/userCenter/pages/apply/apply')
   },
   //我的卡券
   myCard() {
-    util.pageJump('../../pages/userCenter/pages/card/card')
+    util.pageJump('/pages/userCenter/pages/card/card')
   },
   //我的参与
   myJoin() {
-    util.pageJump('../../pages/userCenter/pages/join/join')
+    util.pageJump('/pages/userCenter/pages/join/join')
   },
   //电话本
   myTel() {
-    util.pageJump('../../pages/userCenter/pages/tel/tel')
+    util.pageJump('/pages/userCenter/pages/tel/tel')
   },
 
   /**

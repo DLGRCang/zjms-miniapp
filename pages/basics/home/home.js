@@ -859,7 +859,6 @@ Page({
   getNewsList() {
     let url = 'https://api-cms.yjhlnews.cn/v1/classify_content/13/?sorce_type=0&limit=3';
     util.requestData(url, 'GET', {}).then(res => {
-      console.log(res.data.data)
       this.setData({
         newsInfo: res.data.data
       })
