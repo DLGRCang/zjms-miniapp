@@ -12,8 +12,21 @@ Page({
 		infotypeid: '155e9d3e-faeb-4f65-b60f-222554862f88',
     page:1,
 		dataList: [], //新闻列表
+		searchType: [{
+      title: '地摊区域',
+      content: ['距离1km内', '距离2km内', '距离3km内']
+    }, {
+      title: '地摊类型',
+      content: ['工艺品', '玩具', '小吃']
+    }]
 	},
-
+	onpickChange: function(e) {
+		let picker = this.data.searchType
+		this.data.searchType[e.detail.current].title = e.detail.pick
+		this.setData({
+			searchType: picker
+		})
+	},
   /**
    * 生命周期函数--监听页面加载
    */

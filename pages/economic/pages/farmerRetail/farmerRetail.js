@@ -9,6 +9,21 @@ Page({
 		infotypeid: '66957eec-9d77-4ecf-a4f0-916dd0f27cf4',
     page:1,
 		dataList: [], //新闻列表
+
+		searchType: [{
+      title: '距离排序',
+      content: ['距离1km内', '距离2km内', '距离3km内']
+    }, {
+      title: '选择类型',
+      content: ['生鲜水果', '农副产品', '肉食蛋奶']
+    }]
+	},
+	onpickChange: function(e) {
+		let picker = this.data.searchType
+		this.data.searchType[e.detail.current].title = e.detail.pick
+		this.setData({
+			searchType: picker
+		})
 	},
 
 	/**
