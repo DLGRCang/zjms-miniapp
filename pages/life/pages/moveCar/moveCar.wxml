@@ -9,6 +9,6 @@
   <dot-title title="相关政策" color="color" ></dot-title>
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
-
+   </item-image-text>
 </view>
 
