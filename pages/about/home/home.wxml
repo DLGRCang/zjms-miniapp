@@ -11,7 +11,7 @@
        <image class="icons" src="/image/yy1.png"></image>
        <view class="iconsInfo">就医预约</view>
       </view>
-      <view class="cuIcon-right text-grey"></view>
+      <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class="line"></view>
 
@@ -20,7 +20,7 @@
        <image class="icons" src="/image/yy2.png"></image>
        <view class="iconsInfo">体检预约</view>
       </view>
-      <view class="cuIcon-right text-grey"></view>
+      <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class="line"></view>
 
@@ -29,7 +29,7 @@
        <image class="icons" src="/image/yy3.png"></image>
        <view class="iconsInfo">核酸检测</view>
       </view>
-      <view class="cuIcon-right text-grey"></view>
+      <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class="line"></view>
 
@@ -38,7 +38,7 @@
        <image class="icons" src="/image/yy4.png"></image>
        <view class="iconsInfo">疫苗接种</view>
       </view>
-      <view class="cuIcon-right text-grey"></view>
+      <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class="line"></view>
 
@@ -47,7 +47,7 @@
        <image class="icons" src="/image/yy5.png"></image>
        <view class="iconsInfo">办事预约</view>
       </view>
-      <view class="cuIcon-right text-grey"></view>
+      <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class=""></view>
   </view>
