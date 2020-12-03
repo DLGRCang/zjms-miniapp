@@ -1,0 +1,19 @@
+.box {
+  margin-top: 20rpx;
+  border: 1rpx solid #F5F5F5;
+}
+
+.tit {
+  border-bottom: 1rpx solid #F5F5F5;
+  padding: 30rpx;
+}
+
+.icons {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.iconsInfo {
+  padding-top: 8rpx;
+  padding-left: 8rpx;
+}

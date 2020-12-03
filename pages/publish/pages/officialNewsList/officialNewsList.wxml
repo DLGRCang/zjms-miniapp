@@ -1,5 +1,5 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">更多新闻</view>
+  <view slot="content">伊旗新闻</view>
 </cu-custom>
 <view class="margin-lg">
   <block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
