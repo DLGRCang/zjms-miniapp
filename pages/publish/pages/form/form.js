@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    index:0,
     dataFrom:[],
     selectTrue:null,
     fromData:[],
@@ -20,15 +21,16 @@ Page({
     this.froms()
   },
   froms(){
+    let id = 'd3e43335-515b-4c99-871f-eb3c25b1f5a1'
    wx.request({
-     url: 'http://192.168.0.64:8004/InfoIssue/app/release/applicationform/getapplication_form_field/d3e43335-515b-4c99-871f-eb3c25b1f5a1',
+     url: 'http://192.168.31.101:8004/InfoIssue/app/release/applicationform/getapplication_form_field/'+id,
      success:res=>{
        console.log(res)
        var fromData = {}
        for(var i in res.data){
          fromData[res.data[i].en_name]=null
        }
-       //console.log(fromData)
+       console.log(fromData)
        this.setData({
         dataFrom:res.data,
         fromData:fromData
@@ -52,12 +54,12 @@ Page({
     }
    
   },
-
-  inputClick(e){
-    var s = e.target.dataset.in
+//输入框
+  title(e){
+    var id = e.target.dataset.id
     var fromData = this.data.fromData
     for(var key in fromData){
-      if(key == s){
+      if(key == id){
         fromData[key] = e.detail.value
       }
     }
@@ -65,21 +67,26 @@ Page({
       fromData:fromData
     })
   },
-
+  //选择器
+  PickerChange(e) {
+    console.log(this.data.dataFrom)
+    console.log(this.data.picker[e.detail.value]);
+    this.setData({
+      index: e.detail.value,
+      pickerData: this.data.picker[e.detail.value]
+    })
+  },
   optionClick(e){
     //console.log(e)
     var selectName = this.data.selectName
     //console.log(selectName)
     selectName[e.currentTarget.dataset.index]=e.currentTarget.dataset.value
-
     var fromData = this.data.fromData
     for(var key in fromData){
       if(key == e.currentTarget.dataset.in){
         fromData[key] = e.currentTarget.dataset.value
       }
     }
-
-
     this.setData({
       selectName:selectName,
       fromData:fromData
@@ -87,8 +94,8 @@ Page({
     
   },
 
-
-  dxClick(e){
+// 单选
+  singleChoice(e){
     //console.log(e)
     var fromData = this.data.fromData
     for(var key in fromData){
@@ -100,10 +107,8 @@ Page({
       fromData:fromData
     })
   },
-
-  duoxClick(e){
-    //console.log(e)
-   
+//复选
+  multipleChoice(e){
     if(this.data.duoxuan == ''){
       this.setData({
         duoxuan:e.currentTarget.dataset.value
@@ -113,7 +118,6 @@ Page({
         duoxuan:this.data.duoxuan+','+e.currentTarget.dataset.value
       })
     }
-    //console.log(this.data.duoxuan)
     var fromData = this.data.fromData
     for(var key in fromData){
       if(key == e.currentTarget.dataset.in){
@@ -123,7 +127,6 @@ Page({
     this.setData({
       fromData:fromData
     })
-    //console.log(this.data.fromData )
   },
 
   tjClick(){
