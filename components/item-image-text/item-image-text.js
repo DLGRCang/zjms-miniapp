@@ -1,9 +1,12 @@
 // components/item-image-text/item-image-text.js
-
+const app = getApp()
 Component({
 	options: {
 		addGlobalClass: true,
 		multipleSlots: true
+	},
+	data:{
+		baseImgUrl: app.globalData.baseImgUrl,
 	},
 	/**
 	 * 组件的属性列表

@@ -49,7 +49,7 @@ App({
   },
   
   globalData: {
-
+    baseImgUrl:'http://192.168.0.42:8004/InfoIssue/route/file/downloadfile/true/',
     imgUrl: 'https://wuliji2.wulanchabu.gov.cn/zjmsMiniAppImages',
     userInfo: null,
     ColorList: [{
