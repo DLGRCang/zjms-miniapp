@@ -722,7 +722,7 @@ Page({
             util.pageJump('/pages/medical/pages/healthCard/healthCard')
             break;
           case 2:
-            console.log("疫苗接种");
+            util.pageJump('/pages/medical/pages/vaccine/vaccine')
             break;
           case 3:
             //体检
@@ -734,9 +734,10 @@ Page({
             break;
           case 5:
             console.log("老年证");
+            util.pageJump('/pages/medical/pages/agednessCar/agednessCar')
             break;
           case 6:
-            console.log("高龄补助");
+            util.pageJump('/pages/medical/pages/oldAge/oldAge')
             break;
           case 7:
             //福利院
@@ -760,6 +761,7 @@ Page({
             break;
           case 3:
             console.log("调查问卷");
+            util.pageJump('/pages/government/pages/questionnaire/questionnaire')
             break;
           case 4:
             util.pageJump('/pages/government/pages/instaShot/instaShot')
@@ -774,6 +776,7 @@ Page({
             break;
           case 7:
             console.log("土地");
+            util.pageJump('/pages/government/pages/land/land')
             break;
 
         }
@@ -821,7 +824,7 @@ Page({
             break;
           case 5:
             console.log("代驾挪车");
-            // util.pageJump('/pages/life/pages/moveCar/moveCar')
+            util.pageJump('/pages/life/pages/moveCar/moveCar')
             break;
           case 6:
             util.pageJump('/pages/life/pages/car/car')

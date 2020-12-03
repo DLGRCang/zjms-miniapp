@@ -114,7 +114,10 @@
 				"pages/healthCard/healthCard",
 				"pages/healthCheck/healthCheck",
 				"pages/nucleicAcidCheck/nucleicAcidCheck",
-				"pages/welfareHouse/welfareHouse"
+				"pages/welfareHouse/welfareHouse",
+				"pages/vaccine/vaccine",
+				"pages/oldAge/oldAge",
+				"pages/agednessCar/agednessCar"
 			]
 		},
 		{
@@ -125,7 +128,9 @@
 				"pages/instaShot/instaShot",
 				"pages/cityAction/cityAction",
 				"pages/eachFlagTown/eachFlagTown",
-				"pages/volunteerService/volunteerService"
+				"pages/volunteerService/volunteerService",
+				"pages/questionnaire/questionnaire",
+				"pages/land/land"
 			]
 		},
 		{
