@@ -1,2 +1,12 @@
 <!--pages/government/pages/questionnaire/questionnaire.wxml-->
-<text>pages/government/pages/questionnaire/questionnaire.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">调查问卷</view>
+</cu-custom>
+<image mode="widthFix" src="{{imgUrl}}/image/wenjuandiaocha.png" style="width:100%"></image>
+<view class="padding-lr-xl">
+	
+<dot-title title="调查问卷" color="title-color"></dot-title>
+	<item-image-text wx:for="{{5}}" obj="{{item}}" isImg="{{false}}" itemTitle="调查问卷标题调查问卷标题调查问卷标题调查问卷标题调查问卷标题"
+		date="2020-02-03" isDate="true" isLine="true">
+	</item-image-text>
+</view>

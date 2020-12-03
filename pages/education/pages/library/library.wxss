@@ -7,3 +7,7 @@
 .color{
 	color:#6670E1;
 }
+.search::before{
+	font-family:"cuIcon" ;
+	content: "\e65c";
+}

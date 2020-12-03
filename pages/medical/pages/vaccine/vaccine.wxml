@@ -1,2 +1,12 @@
 <!--pages/medical/pages/vaccine/vaccine.wxml-->
-<text>pages/medical/pages/vaccine/vaccine.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">疫苗接种</view>
+</cu-custom>
+<image mode="widthFix" src="{{imgUrl}}/image/yimiaojiezhong.png" style="width:100%"></image>
+<view class="padding-lr-xl">
+	
+<dot-title title="疫苗信息" color="title-color"></dot-title>
+	<item-image-text wx:for="{{5}}" obj="{{item}}" isImg="{{false}}" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做"
+		date="2020-02-03" isDate="true" isLine="true">
+	</item-image-text>
+</view>

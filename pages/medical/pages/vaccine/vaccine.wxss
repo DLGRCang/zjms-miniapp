@@ -1,1 +1,8 @@
 /* pages/medical/pages/vaccine/vaccine.wxss */
+.bgColor {
+	background-color: #6670E1;
+	color: #ffffff;
+}
+.title-color{
+	color:#6670E1
+}
