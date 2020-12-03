@@ -5,7 +5,7 @@
 }
 .button{
   width: 610rpx;
-  height: 90rpx;
+
 	background-color: #2162B5;
 	color: #ffffff;
 	margin-top: -130rpx;

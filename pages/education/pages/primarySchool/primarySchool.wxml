@@ -7,11 +7,11 @@
   <view class="title">
     <dot-title title="幼儿园" color="color" isMore="true" type="3"></dot-title>
   </view>
-  <view class="cont">
+
     <view wx:for="{{dataList}}" wx:key="item" bindtap="goDetail" data-id="{{item.id}}">
       <item-image-text obj="{{item}}" itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}"
         isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
       </item-image-text>
-    </view>
+  
   </view>
 </view>
