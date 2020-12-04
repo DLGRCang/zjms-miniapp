@@ -432,7 +432,7 @@ Page({
           tab: 2
         },
         {
-          tit: "招聘求职",
+          tit: "就业服务",
           pic: "/image/66.png",
           tab: 3
         },

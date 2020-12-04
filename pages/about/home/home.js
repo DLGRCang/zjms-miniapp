@@ -12,7 +12,7 @@ Page({
   },
   //就医预约
   goHospital() {
-    console.log(this.data.imgUrl + '1')
+    util.pageJump('/pages/appointment/pages/hospital/hospital')
   },
   //体检预约
   goHealthy() {

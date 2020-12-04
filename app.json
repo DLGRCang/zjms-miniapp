@@ -8,6 +8,13 @@
 	],
 	"subpackages": [
 		{
+			"root": "pages/appointment",
+			"name": "预约",
+			"pages": [
+				"pages/hospital/hospital"
+			]
+		},
+		{
 			"root": "pages/guideDetail",
 			"name": "办事指南",
 			"pages": [
