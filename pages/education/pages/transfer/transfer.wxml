@@ -6,8 +6,7 @@
 <view class="margin-lr-lg padding-tb-lg">
   <dot-title title="申请规则" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
 
-  <view class="cont">
     <item-image-text wx:for="{{dataList}}" isImg="{{false}}" obj="{{item}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
     <!-- <button class="bgColor">申请历史</button> -->
-  </view>
+  
 </view>

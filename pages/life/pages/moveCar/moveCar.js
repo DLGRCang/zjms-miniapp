@@ -7,6 +7,7 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
+    tabName:["快速"]
   },
 
   /**

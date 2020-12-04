@@ -4,11 +4,8 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/daijianuoche.png" style="width:100%;height:396rpx;"></image>
 
-<view class="margin-lr-lg padding-tb-lg">
 
-  <dot-title title="相关政策" color="color" ></dot-title>
-	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
-   </item-image-text>
-</view>
-
+<dot-title title="相关政策" color="color"></dot-title>
+<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+  itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+</item-image-text>

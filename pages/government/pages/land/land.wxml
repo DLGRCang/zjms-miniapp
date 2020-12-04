@@ -4,7 +4,7 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/tudirenyang.png" style="width:100%;height:396rpx;"></image>
 
-<view class="margin-lr-lg padding-tb-lg">
+<view class="margin-lr-lg">
 
   <dot-title title="相关政策" color="color" ></dot-title>
   <item-image-text wx:for="{{5}}" obj="{{item}}" isImg="{{false}}" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做"

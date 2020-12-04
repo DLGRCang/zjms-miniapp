@@ -9,7 +9,7 @@
 }
 .button{
   width: 610rpx;
-  height: 98rpx;
+
 	background-color: #FFBE1A;
 	color: #ffffff;
 	margin-top: -130rpx;
