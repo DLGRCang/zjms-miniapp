@@ -10,7 +10,7 @@ const getArtelData = function (infotypeid,page,rows) {
 			rows: rows==undefined?10:rows,
 		}
 		util.requestApi('infocontent/listUserpageinfocontent', 'GET', data).then(res => {
-			let artelList = res.data.rows;
+			let artelList = res.data.rows==undefined?[]:res.data.rows;
 			resolve(artelList);
 		});
 	})
