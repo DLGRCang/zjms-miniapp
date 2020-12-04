@@ -3,6 +3,7 @@
 </cu-custom>
 <view class="audio">
   <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+  <video src="https://cms-play.yjhlnews.cn/live/radio.m3u8?auth_key=1604629152-0-0-f9ecb3e67f5221e37c61cef0a0263080"></video>
 </view>
 
 <button type="primary" bindtap="audioPlay">播放</button>

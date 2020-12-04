@@ -1,9 +1,1 @@
 /* pages/publish/pages/tv/tv.wxss */
-.videoView{
-  display: flex;
-  justify-content: center;
-}
-
-.button{
-  margin: 20rpx;
-}

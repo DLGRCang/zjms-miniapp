@@ -1,13 +1,8 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+
+=
+ <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">电视</view>
 </cu-custom>
-
-<view class='videoView'>
-  <video id="myVideo" src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"
-  autoplay="true"  enable-auto-rotation="true" binderror="videoErrorCallback"></video>
-</view>
-
-<view class='controlView'>
-  <button bindtap="bindPlay" class="button" type="primary">播放</button>
-  <button bindtap="bindPause" class="button" type="primary">暂停</button>
+<view>
+ <video id='myvideo' bindfullscreenchange="screenChange"  src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"  autoplay="true"></video>
 </view>

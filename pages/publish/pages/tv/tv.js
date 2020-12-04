@@ -36,13 +36,23 @@ Page({
   onReady: function () {
 
   },
-
+  screenChange(e){
+    let fullScreen = e.detail.fullScreen //值true为进入全屏，false为退出全屏
+    if (!fullScreen ){ //退出全屏
+      wx.navigateBack({
+        delta: 1
+      })
+    }else{ //进入全屏
+    
+    }
+ },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
     this.videoContext = wx.createVideoContext('myvideo', this);
     this.videoContext.requestFullScreen({ direction: 90 });
+   
   },
 
   /**
