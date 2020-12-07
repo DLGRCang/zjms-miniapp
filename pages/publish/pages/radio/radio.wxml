@@ -1,15 +1,19 @@
-<!-- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+<!-- <cu-custom bgColor="title" isBack="{{true}}">
   <view slot="content">广播</view>
 </cu-custom> -->
 
-<view class="flex flex-direction " style="width:100%;height:100%;background-image: url(../../../../image/audio_bg.png);background-repeat: no-repeat;background-size: 100% 100%;">
-  <!-- <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio> -->
-  <video id="myVideo" style="display: none" src="https://cms-play.yjhlnews.cn/live/radio.m3u8?auth_key=1604629152-0-0-f9ecb3e67f5221e37c61cef0a0263080"></video>
- 
-<image src="../../../../image/audio_logo.png">
+<view class="flex flex-direction align-center"
+  style="width:100%;height:100%;background-image: url({{imgUrl}}/image/audio_bg.png);background-repeat: no-repeat;background-size: 100% 100%;">
 
-</image>
-<image src="../../../../image/audio_btn_bg.png"></image>
-<!-- <button type="primary" bindtap="bindPlay">播放</button>
+  <video id="myVideo" style="display: none"
+    src="https://cms-play.yjhlnews.cn/live/radio.m3u8?auth_key=1604629152-0-0-f9ecb3e67f5221e37c61cef0a0263080"></video>
+
+  <image class="margin-top-xl" style="height:276rpx;width:552rpx" src="{{imgUrl}}/image/audio_logo.png"
+    mode="aspectFill"></image>
+  
+    <text  style="text-align: center;line-height: 260rpx;color:#ffffff;font-size: 45rpx;width:256rpx;height:260rpx; background-image:url({{imgUrl}}/image/audio_btn_bg.png);background-repeat: no-repeat;background-size: 256rpx 260rpx; margin-top:150rpx" >MF105.6</text>
+    <image bindtap="edit"  style="height:124rpx;width:124rpx;margin-top:180rpx" src="{{imgUrl}}/image/audio_edit.png"
+    mode="aspectFill"></image>
+  <!-- <button type="primary" bindtap="x">播放</button>
 <button type="primary" bindtap="bindPause">暂停</button> -->
 </view>
