@@ -1,6 +1,4 @@
-
-=
- <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">电视</view>
 </cu-custom>
 <view>

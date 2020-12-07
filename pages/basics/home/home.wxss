@@ -23,55 +23,69 @@
   background-color: #FFFFFF;
 }
 
-.VerticalBox{
+.VerticalBox {
   display: flex;
 }
 
-.VerticalMain{
+.VerticalMain {
   width: 80%;
-  background-color:  #FFFFFF;
+  background-color: #FFFFFF;
 }
 
+.search {
+z-index: 1;
+margin-top: -118rpx;
+}
 
-.active{
+.search view.cu-bar {
+  margin-top: 20rpx;
+}
+
+.active {
   background-color: #FFFFFF;
   color: #054FAC;
   font-weight: 700;
 }
-.active .son{
+
+.active .son {
   color: #E63E0E;
 }
-.text-blue{
+
+.text-blue {
   color: #0851AD;
 }
-.box{
-padding-right: 90rpx;
+
+.box {
+  padding-right: 90rpx;
 }
 
-.icon-wrap{
+.icon-wrap {
   width: 100%;
   margin: 40rpx 0 10rpx;
   display: flex;
   flex-wrap: wrap;
 }
-.icon-wrap .icon-item{
+
+.icon-wrap .icon-item {
   width: 33.3333%;
   flex-shrink: 1;
   padding-bottom: 30rpx;
 }
-.icon-wrap .icon-item .item-img{
+
+.icon-wrap .icon-item .item-img {
   display: flex;
   justify-content: center;
   margin-bottom: 8rpx;
 }
-.icon-wrap .icon-item .item-text{
+
+.icon-wrap .icon-item .item-text {
   text-align: center;
 }
-.textInfo{
-  display: inline-block;
-  white-space: nowrap; 
-  width:99%; 
-  overflow: hidden;
-  text-overflow:ellipsis;
-}
 
+.textInfo {
+  display: inline-block;
+  white-space: nowrap;
+  width: 99%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

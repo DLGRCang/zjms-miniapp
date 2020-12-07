@@ -857,6 +857,10 @@ Page({
     }
 
   },
+  //搜素
+  searchApp(e) {
+    console.log(e.detail.value)
+  },
   //新闻
   //新闻列表
   getNewsList() {

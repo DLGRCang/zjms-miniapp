@@ -1,12 +1,21 @@
-<!-- 顶部图片 -->
-	<image src='{{imgUrl}}/image/basic.png' style='width:100%;height:340rpx'></image>
 
+	<!-- 顶部图片 -->
+	<image src='{{imgUrl}}/image/basic.png' style='width:100%;height:340rpx'></image>
+	<!--搜索  -->
+	<view class="search">
+		<view class="cu-bar search">
+			<view class="search-form round">
+				<text class="cuIcon-search"></text>
+				<input type="text" placeholder="搜索应用功能" confirm-type="search" bindinput="searchApp"></input>
+			</view>
+		</view>
+	</view>
 	<!-- 实现左右联动效果 -->
 	<view class="flex">
 		<!-- 左边栏 -->
 		<view class="VerticalNav nav" style="height:calc(96vh - 283rpx)">
-			<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index" bindtap='tabSelect'
-				data-id="{{index}}">
+			<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index"
+				bindtap='tabSelect' data-id="{{index}}">
 				<text>{{item.name}}</text>
 				<text class="son">{{item.nick}}</text>
 			</view>
