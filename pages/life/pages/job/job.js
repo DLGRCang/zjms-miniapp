@@ -16,7 +16,9 @@ Page({
     dataList: [], //全职招聘
     dataList1: [], //兼职招聘
   },
-
+	jobAppointment() {
+		util.pageJump('/pages/life/pages/jobAppointment/jobAppointment')
+	},
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,0 +1,5 @@
+/* pages/life/pages/jobAppointment/jobAppointment.wxss */
+.color{
+  background-color: #0851AD;
+ color: #FFF;
+}

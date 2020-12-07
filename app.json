@@ -160,6 +160,7 @@
 				"pages/property/property",
 				"pages/repair/repair",
 				"pages/job/job",
+				"pages/jobAppointment/jobAppointment",
 				"pages/hairdressing/hairdressing",
 				"pages/moveCar/moveCar",
 				"pages/car/car",

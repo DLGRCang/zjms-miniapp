@@ -1,4 +1,9 @@
 /* pages/publish/pages/radio/radio.wxss */
+page{
+  width:100%;
+  height: 100%;
+  background-color: darkcyan;
+}
 .audio{
   display: flex;
   justify-content: center;

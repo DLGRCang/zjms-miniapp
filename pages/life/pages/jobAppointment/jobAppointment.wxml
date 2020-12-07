@@ -1,0 +1,85 @@
+<cu-custom bgColor="color" isBack="{{true}}">
+  <view slot="content">预审申请</view>
+</cu-custom>
+<view class="margin-xs">
+  <!-- 姓名 -->
+  <view class="cu-form-group">
+    <view class="title">姓名</view>
+    <input placeholder="请输入姓名" bindinput="getName"></input>
+  </view>
+  <!-- 性别 -->
+  <view class="cu-form-group">
+    <view class="title">性别</view>
+			<radio-group  bindchange="getSex">
+				男<radio class="margin-lr-sm" value="男"></radio>
+				女<radio class="margin-left-sm" value="女"></radio>
+			</radio-group>
+  </view>
+  <!-- 家庭住址 -->
+  <view class="cu-form-group">
+    <view class="title">家庭住址</view>
+    <input placeholder="请输入家庭住址" bindinput="getArea"></input>
+  </view>
+  <!-- 民族 -->
+  <view class="cu-form-group">
+		<view class="title">民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}">
+			<view class="picker">
+				{{index?nationList[index]:'请选择'}}
+			</view>
+		</picker>
+	</view>
+  <!-- 出生年月 -->
+  <view class="cu-form-group">
+    <view class="title">出生年月</view>
+    <picker mode="date" value="{{date}}" start="1900-01-01" end="2200-12-31" bindchange="DateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+  </view>
+  <!-- 联系电话 -->
+  <view class="cu-form-group">
+    <view class="title">联系电话</view>
+    <input placeholder="请输入电话" bindinput="getPhone"></input>
+  </view>
+  <!-- 文化程度 -->
+  <view class="cu-form-group">
+    <view class="title">文化程度</view>
+    <input placeholder="请输入文化程度" bindinput="getCulture"></input>
+  </view>
+    <!-- 身份证号 -->
+    <view class="cu-form-group">
+    <view class="title">身份证号</view>
+    <input placeholder="请输入身份证号" bindinput="getNumber"></input>
+  </view>
+    <!-- 人员类型 -->
+    <view class="cu-form-group">
+    <view class="title">人员类型</view>
+    <input placeholder="请输入人员类型" bindinput="getType"></input>
+  </view>
+    <!-- 培训专业 -->
+    <view class="cu-form-group">
+    <view class="title">培训专业</view>
+    <input placeholder="请输入培训专业" bindinput="getMajor"></input>
+  </view>
+    <!-- 培训地点 -->
+    <view class="cu-form-group">
+    <view class="title">培训地点</view>
+    <input placeholder="请输入培训地点" bindinput="getPlace"></input>
+  </view>
+  <!-- 就业意向 -->
+  <view class="cu-form-group align-start">
+    <view class="title">就业意向</view>
+    <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="getIntention" placeholder="请输入就业意向"></textarea>
+  </view>
+  <!-- 申请时间 -->
+  <view class="cu-form-group">
+    <view class="title">申请时间</view>
+    <view class="text-grey">{{subTime}}</view>
+  </view>
+  <!-- 提交 -->
+  <view class="padding flex flex-direction">
+    <button class="cu-btn bg-green margin-tb-sm lg" style="background-color: #0851AD;" bindtap="submit">提交</button>
+  </view>
+</view>
