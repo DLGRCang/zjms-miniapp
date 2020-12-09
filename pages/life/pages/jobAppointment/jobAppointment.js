@@ -8,116 +8,127 @@ Page({
 	 */
 	data: {
 		name: '',
-    sex: '',
-    area: '',
-    index: null,
-    nationList: app.globalData.nationList,
-    nation: '',
-    date: util.formatDate(new Date()),
-    phone:'',
-    culture:'',
-    cardNumber:'',
-    type:'',
-    major:'',
-    place:'',
-    intention: '',
-    subTime:util.formatDate(new Date())
+		sex: '',
+		area: '',
+		index: null,
+		nationList: app.globalData.nationList,
+		nation: '',
+		date: util.formatDate(new Date()),
+		phone: '',
+		culture: '',
+		cardNumber: '',
+		type: '',
+		major: '',
+		pxTime: '',
+		place: '',
+		intention: '',
+		subTime: util.formatDate(new Date())
 	},
- //姓名
- getName(e) {
-	this.setData({
-		name: e.detail.value
-	})
-},
-//性别
-getSex(e) {
-	this.setData({
-		sex: e.detail.value
-	})
-},
-//家庭住址
-getArea(e) {
-	this.setData({
-		area: e.detail.value
-	})
-},
-//民族
-getNation(e) {
-	this.setData({
-		index: e.detail.value,
-		nation: this.data.nationList[e.detail.value]
-	})
-},
-//出生年月
-DateChange(e) {
-	console.log(e.detail.value);
-	this.setData({
-		date: e.detail.value
-	})
-},
-//联系电话
-getPhone(e){
-this.setData({
-	phone: e.detail.value
-})
-},
-//文化程度
-getCulture(e){
-this.setData({
-	culture: e.detail.value
-})
-},
-//身份证号
-getCardNumber(e){
-this.setData({
-	cardNumber: e.detail.value
-})
-},
-//人员类型
-getType(e){
-this.setData({
-	type: e.detail.value
-})
-},
-//培训专业
-getMajor(e){
-this.setData({
-	major: e.detail.value
-})
-},
-//培训地点
-getPlace(e){
-this.setData({
-	place: e.detail.value
-})
-},
-//就业意向
-getIntention(e) {
-	console.log(e.detail.value);
-	this.setData({
-		intention: e.detail.value
-	})
-},
-submit() {
-	util.checkPhone(this.data.phone)
-	util.checkIdCard(this.data.cardNumber)
-	let formData = {
-		name:this.data.name,
-		sex:this.data.sex,
-		area:this.data.area,
-		nation:this.data.nation,
-		date:this.data.date,
-		phone:this.data.phone,
-		culture:this.data.culture,
-		cardNumber:this.data.cardNumber,
-		type:this.data.type,
-		major:this.data.major,
-		place:this.data.place,
-		intention:this.data.intention,
-		time:this.data.subTime
-	};
-	console.log(formData)
-},
+	//姓名
+	getName(e) {
+		this.setData({
+			name: e.detail.value
+		})
+	},
+	//性别
+	getSex(e) {
+		this.setData({
+			sex: e.detail.value
+		})
+	},
+	//家庭住址
+	getArea(e) {
+		this.setData({
+			area: e.detail.value
+		})
+	},
+	//民族
+	getNation(e) {
+		this.setData({
+			index: e.detail.value,
+			nation: this.data.nationList[e.detail.value]
+		})
+	},
+	//出生年月
+	DateChange(e) {
+		this.setData({
+			date: e.detail.value
+		})
+	},
+	//联系电话
+	getPhone(e) {
+		this.setData({
+			phone: e.detail.value
+		})
+	},
+	//文化程度
+	getCulture(e) {
+		this.setData({
+			culture: e.detail.value
+		})
+	},
+	//身份证号
+	getCardNumber(e) {
+		this.setData({
+			cardNumber: e.detail.value
+		})
+	},
+	//人员类型
+	getType(e) {
+		this.setData({
+			type: e.detail.value
+		})
+	},
+	//培训专业
+	getMajor(e) {
+		this.setData({
+			major: e.detail.value
+		})
+	},
+	getPXtime(e) {
+		this.setData({
+			pxTime: e.detail.value
+		})
+	},
+	//培训地点
+	getPlace(e) {
+		this.setData({
+			place: e.detail.value
+		})
+	},
+	//就业意向
+	getIntention(e) {
+		this.setData({
+			intention: e.detail.value
+		})
+	},
+	submit() {
+		// util.checkPhone(this.data.phone)
+		// util.checkIdCard(this.data.cardNumber)
+		let formData = {
+			application_id:'d3e43335-515b-4c99-871f-eb3c25b1f5a1',
+			name: this.data.name,
+			sex: this.data.sex,
+			address: this.data.area,
+			national: this.data.nation,
+			birthdate: this.data.date,
+			phone: this.data.phone,
+			educationlevel: this.data.culture,
+			IDCard: this.data.cardNumber,
+			personneltype: this.data.type,
+			training_professional: this.data.major,
+			training_time: this.data.pxTime,
+			training_address: this.data.place,
+			Employment_intention: this.data.intention,
+			apply_time: this.data.subTime
+		};
+		console.log(formData)
+		let formDateList = [];
+		formDateList.push(formData)
+		util.requestData('http://192.168.31.101:8004/InfoIssue/app/release/applicationFormTable/saveApplicationFormTable', 'POST', formDateList).then(res => {
+			console.log(res)
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

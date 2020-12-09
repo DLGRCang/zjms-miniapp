@@ -1,0 +1,10 @@
+/* pages/publish/pages/search/search.wxss */
+item.none{
+  display: none;
+}
+.themes{
+  margin-top: 100rpx;
+}
+.iconBg{
+  background-color: #F8F8F8;
+}

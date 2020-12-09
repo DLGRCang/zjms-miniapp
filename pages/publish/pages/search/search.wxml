@@ -1,0 +1,18 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">搜索</view>
+</cu-custom>
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索菜单" confirm-type="search" bindinput="searchMenu"></input>
+  </view>
+</view>
+<view class="cu-list grid col-3 themes">
+  <view class="cu-item iconBg" wx:for="{{menuList}}" wx:key wx:if="{{item.isShow}}" bindtap="goDetail" data-url="{{item.url}}">
+    <!-- <text class="lg text-gray">{{item.icon}}</text> -->
+    <view class="flex justify-center align-center">
+      <image src="{{item.icon}}" style='width:100rpx;height:100rpx;'></image>
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>

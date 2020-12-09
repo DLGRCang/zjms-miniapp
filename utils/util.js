@@ -24,7 +24,7 @@ const formatNumber = n => {
 }
 
 let baseUrl = 'http://192.168.0.42:8004/InfoIssue/app/release/'; //测试(赵雪融)
-// let baseUrl = 'http://127.0.0.1:8004/InfoIssue/';//测试(本地)（严冬）
+// let baseUrl = 'http://127.0.0.1:8004/InfoIssue/';//测试(本地)（谷雨）
 // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
 // let baseUrl = 'http://******/';//预发布
 // let baseUrl = 'https://*****/';//线上
@@ -74,7 +74,7 @@ const requestData = function (url, method, data = {}) {
   return new Promise(function (resolve, reject) {
     wx.request({
       header: {
-        'content-type': meth == 'POST' ? 'application/x-www-form-urlencoded' : 'application/json'
+        'content-type': 'application/json'
       },
       url:  url,
       data: data,
