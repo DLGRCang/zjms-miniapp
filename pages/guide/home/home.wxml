@@ -1,6 +1,6 @@
 <!--pages/test/test.wxml-->
-<cu-custom bgColor="bg-white" isBack="{{false}}">
-  <view slot="content" class="text-xl text-black text-bold">办事指南</view>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
+  <view slot="content">办事指南</view>
 </cu-custom>
 
 <tab class="padding-lr-lg" tabName="{{tabName}}" bindmyevent="selectTab"></tab>

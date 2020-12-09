@@ -481,11 +481,11 @@ Page({
           pic: "/image/75.png",
           tab: 12
         },
-        {
-          tit: "爱车养护",
-          pic: "/image/76.png",
-          tab: 13
-        },
+        // {
+        //   tit: "爱车养护",
+        //   pic: "/image/76.png",
+        //   tab: 13
+        // },
         {
           tit: "公租房",
           pic: "/image/77.png",
@@ -853,9 +853,9 @@ Page({
           case 12:
             console.log("13");
             break;
-          case 13:
-            console.log("14");
-            break;
+          // case 13:
+          //   console.log("14");
+          //   break;
           case 14:
             console.log("公租房");
             break;

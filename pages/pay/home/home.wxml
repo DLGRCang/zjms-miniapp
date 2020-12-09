@@ -1,4 +1,4 @@
-<cu-custom bgColor="bgColor">
+<cu-custom bgColor="bg-gradual-blue">
   <view class="text-bold" slot="content">缴费</view>
 </cu-custom>
 <view style="padding-bottom:150rpx;">
