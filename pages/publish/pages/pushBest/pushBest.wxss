@@ -1,4 +1,7 @@
 /* pages/publish/pages/pushBest/pushBest.wxss */
+page{
+	padding-bottom: 100rpx;
+}
 .grid {
 	display: -webkit-flex;
 	display: flex;
@@ -33,13 +36,16 @@
 	width: 90rpx;
 	margin-top: 5rpx;
 }
+.btn-bg {
+background-color: white;
+position:fixed;
+width: 100%;
+bottom:0;
+}
 .button-btn {
-	position:absolute;
-	bottom:0;
-
 	background-color: #2161b5;
 	color: #ffffff;
-	width: 690rpx;
-	margin: 0 30rpx 20rpx 30rpx;
+	width: 650rpx;
 	font-size: 34rpx;
 }
+
