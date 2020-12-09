@@ -34,7 +34,7 @@
 
 .search {
 z-index: 1;
-margin-top: -118rpx;
+margin-top: -120rpx;
 }
 
 .search view.cu-bar {

@@ -456,16 +456,16 @@ Page({
           pic: "/image/71.png",
           tab: 8
         },
-        {
-          tit: "生活缴费",
-          pic: "/image/72.png",
-          tab: 9
-        },
-        {
-          tit: "通信服务",
-          pic: "/image/73.png",
-          tab: 10
-        },
+        // {
+        //   tit: "生活缴费",
+        //   pic: "/image/72.png",
+        //   tab: 9
+        // },
+        // {
+        //   tit: "通信服务",
+        //   pic: "/image/73.png",
+        //   tab: 10
+        // },
         {
           tit: "金融服务",
           pic: "/image/74.png",
@@ -480,6 +480,11 @@ Page({
           tit: "爱车养护",
           pic: "/image/76.png",
           tab: 13
+        },
+        {
+          tit: "公租房",
+          pic: "/image/77.png",
+          tab: 14
         },
       ],
     },
@@ -576,10 +581,11 @@ Page({
       case 2:
         switch (tab) {
           case 0:
-            console.log("一知名");
+            util.pageJump('/pages/travel/pages/scenicSpot/scenicSpot')
             break;
           case 1:
-            console.log("天气");
+            console.log("pages/weather/weather");
+            util.pageJump('/pages/travel/pages/weather/weather')
             break;
           case 2:
             console.log("飞机");
@@ -594,7 +600,7 @@ Page({
             console.log("酒店");
             break;
           case 6:
-            console.log("厕所");
+            util.pageJump('/pages/travel/pages/toilet/toilet')
             break;
           case 7:
             console.log("充电侧");
@@ -826,18 +832,16 @@ Page({
             break;
           case 7:
             util.pageJump('/pages/life/pages/productionTransfer/productionTransfer')
-            console.log("生产转让");
             break;
           case 8:
             util.pageJump('/pages/life/pages/seafood/seafood')
-            console.log("9");
             break;
-          case 9:
-            console.log("10");
-            break;
-          case 10:
-            console.log("11");
-            break;
+          // case 9:
+          //   console.log("10");
+          //   break;
+          // case 10:
+          //   console.log("11");
+          //   break;
           case 11:
             util.pageJump('/pages/life/pages/finance/finance')
             break;
@@ -847,14 +851,17 @@ Page({
           case 13:
             console.log("14");
             break;
+          case 14:
+            console.log("公租房");
+            break;
         }
         break;
     }
 
   },
   //搜素
-  searchApp(e) {
-    console.log(e.detail.value)
+  searchApp() {
+    util.pageJump('/pages/publish/pages/search/search')
   },
   //新闻
   //新闻列表

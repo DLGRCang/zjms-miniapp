@@ -6,7 +6,7 @@
 		<view class="cu-bar search">
 			<view class="search-form round">
 				<text class="cuIcon-search"></text>
-				<input type="text" placeholder="搜索应用功能" confirm-type="search" bindinput="searchApp"></input>
+				<input type="text" placeholder="搜索应用功能" confirm-type="search" bindfocus="searchApp"></input>
 			</view>
 		</view>
 	</view>
@@ -21,8 +21,8 @@
 			</view>
 		</view>
 
-		<!-- 右边 -->
-		<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 350rpx)"
+		<!-- 右边 background-color: #F8F8F8; -->
+		<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 350rpx);"
 			scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
 			<view class="padding-top padding-lr" wx:for="{{mainInfo}}" wx:key="item" id="main-{{index}}">
 				<view class="flex-sub text-start">
