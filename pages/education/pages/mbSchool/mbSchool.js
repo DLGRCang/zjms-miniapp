@@ -12,7 +12,7 @@ Page({
     infotypeid: ' e9a0f15b-cb67-4f64-a344-1302691586b4',
     infotypeid1: ' 7c81efe0-bbe2-4dab-9d70-86dee30b872a',
     page:1,
-    dataList: [], //民办学校
+    dataList: [], //校外培训机构
     dataList1: [], //相关规则
    
 

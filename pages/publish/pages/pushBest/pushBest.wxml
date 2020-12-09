@@ -3,18 +3,22 @@
 </cu-custom>
 <tab padding-lr-lg tabName="{{tabName}}" bindmyevent="selectTab" tvColor="text-blue"></tab>
 <view class="grid" style="padding: 33rpx;">
-	<view class="flex align-center flex-direction margin-bottom-lg" wx:for="{{4}}" wx:key style="height: 470rpx;">
+	<view class="flex align-center flex-direction margin-bottom-lg" wx:for="{{10}}" wx:key style="height: 420rpx;">
 		<view class="bg-grey margin-xs w_h">
 			<image mode="aspectFit" class="w_h" src="{{imgUrl}}"></image>
 		</view>
-		<view class="flex bg-white round center round_bg">
+		<!-- <view class="flex bg-white round center round_bg">
 			<view class="flex center bg-blue round round_bg_tv">投票</view>
-		</view>
-		<text>最美家庭名称</text>
-		<view class="flex margin-xs">
+		</view> -->
+		<text class="margin-top-sm">最美家庭名称</text>
+		<!-- <view class="flex margin-xs">
 			<view class="text-sm text-blue">票数：12369</view>
 			<view class="text-sm text-blue">排名：12</view>
-		</view>
+		</view> -->
 
 	</view>
+
+</view>
+<view class="bg-width padding">
+	<button class="button-btn">申请</button>
 </view>

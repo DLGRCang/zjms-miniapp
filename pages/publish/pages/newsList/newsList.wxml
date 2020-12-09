@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-white" isBack="{{true}}">
   <view slot="content">列表</view>
 </cu-custom>
 <item-image-text wx:if="{{type==1}}" wx:for="{{dataList}}" obj="{{item}}" isImg="{{false}}"

@@ -13,6 +13,14 @@ Page({
     page:1,
 		dataList: [], //新闻列表
 	},
+	openXyLink:function(){
+		  wx.navigateToMiniProgram({
+			      appId: 'wx5a161b9b42305c0a',
+			      path: 'pages/index/main?number=188188',
+			      success: function (res) { },
+			      fail: function (res) { }
+			    })
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载

@@ -33,3 +33,13 @@
 	width: 90rpx;
 	margin-top: 5rpx;
 }
+.button-btn {
+	position:absolute;
+	bottom:0;
+
+	background-color: #2161b5;
+	color: #ffffff;
+	width: 690rpx;
+	margin: 0 30rpx 20rpx 30rpx;
+	font-size: 34rpx;
+}

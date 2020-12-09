@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "parser":"/components/parser/parser"
-  }
+  },
+  "navigationBarTextStyle": "black"
   
 }

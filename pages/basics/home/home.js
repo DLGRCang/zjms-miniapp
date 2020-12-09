@@ -253,7 +253,7 @@ Page({
           tab: 5
         },
         {
-          tit: "民办学校",
+          tit: "校外培训机构",
           pic: "/image/37.png",
           tab: 6
         },
