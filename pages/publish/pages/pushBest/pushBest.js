@@ -6,6 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    StatusBar:app.globalData.StatusBar,
+    CustomBar: app.globalData.CustomBar,
     imgUrl: app.globalData.imgUrl,
     tabName: ["最美家庭", "新时代好少年", "三八红旗手"]
   },

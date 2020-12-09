@@ -14,7 +14,7 @@
         <image src="{{imgUrl}}/image/wentijianshen.png" style="height:276rpx;width:200rpx;"></image>
       </view>
       <view class="margin-tb-xs">没有此人 更高…</view>
-      <view class="text-sm text-grey">借阅 203 次</view>
+      <view class="text-sm text-grey">浏览 203 次</view>
     </view>
   </view>
   <dot-title title="演出" color="color" isMore="true"></dot-title>
@@ -24,7 +24,7 @@
         <image src="{{imgUrl}}/image/wentijianshen.png" style="height:276rpx;width:200rpx;"></image>
       </view>
       <view class="margin-tb-xs">没有此人 更高…</view>
-      <view class="text-sm text-grey">借阅 203 次</view>
+      <view class="text-sm text-grey">浏览 203 次</view>
     </view>
   </view>
 </view>

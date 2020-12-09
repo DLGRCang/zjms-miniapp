@@ -306,19 +306,14 @@ Page({
           tab: 4
         },
         {
-          tit: "老年证",
-          pic: "/image/46.png",
-          tab: 5
-        },
-        {
           tit: "高龄补助",
           pic: "/image/47.png",
-          tab: 6
+          tab: 5
         },
         {
           tit: "福利院",
           pic: "/image/48.png",
-          tab: 7
+          tab: 6
         }
       ],
     },
@@ -427,7 +422,7 @@ Page({
           tab: 1
         },
         {
-          tit: "报修服务",
+          tit: "保修服务",
           pic: "/image/65.png",
           tab: 2
         },
@@ -738,14 +733,14 @@ Page({
             //核酸检测
             util.pageJump('/pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck')
             break;
+          // case 5:
+          //   console.log("老年证");
+          //   util.pageJump('/pages/medical/pages/agednessCar/agednessCar')
+          //   break;
           case 5:
-            console.log("老年证");
-            util.pageJump('/pages/medical/pages/agednessCar/agednessCar')
-            break;
-          case 6:
             util.pageJump('/pages/medical/pages/oldAge/oldAge')
             break;
-          case 7:
+          case 6:
             //福利院
             util.pageJump('/pages/medical/pages/welfareHouse/welfareHouse')
             break;

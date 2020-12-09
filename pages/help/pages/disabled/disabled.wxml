@@ -3,7 +3,7 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">残疾人</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/canjiren.png" style="width:100%"></image>
-<button  class="button">伤残鉴定</button>
+<button  class="button">贫困残疾人(子女)高校生救助申请</button>
 
 <view class="flex flex-direction padding-lg">
 	<dot-title title="残疾证发放" color="title-color"></dot-title>
