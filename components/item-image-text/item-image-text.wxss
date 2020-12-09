@@ -7,9 +7,9 @@
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
-		color: #929292;
+		color: #FFFFFF;
 		border-radius: 5rpx;
-		border: 1px solid #929292;
+		border: 1px solid #E1E1E1;
 		height: 30rpx;
 		font-family: Helvetica Neue, Helvetica, sans-serif;
 		white-space: nowrap;

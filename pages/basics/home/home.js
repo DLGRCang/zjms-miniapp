@@ -422,7 +422,7 @@ Page({
           tab: 1
         },
         {
-          tit: "报修服务",
+          tit: "保修服务",
           pic: "/image/65.png",
           tab: 2
         },

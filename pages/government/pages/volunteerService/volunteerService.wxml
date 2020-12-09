@@ -3,7 +3,7 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">志愿者服务</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/zhiyuanzhefuwu.png" style="width:100%"></image>
-<button class="button">报名志愿者</button>
+
 <view class="flex flex-direction padding-tb-xl padding-sm">
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 	itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
