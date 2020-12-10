@@ -4,13 +4,13 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/ershoujiaoyi.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">
-	<dot-title title="二手车" color="title-color" isMore="true" bind:myevent="secondHandInfo" sign="{{infotypeid}}" type="3"></dot-title>
-	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	<dot-title title="二手车" color="title-color" isMore="true"  sign="{{infotypeid}}" type="3" dtype="2"></dot-title>
+	<item-image-text type="2" wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
 	</item-image-text>
 	<button class="button-btn">我要发布</button>
-	<dot-title title="二手房" color="title-color" isMore="true" sign="{{infotypeid1}}" type="3"></dot-title>
-	<item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	<dot-title title="二手房" color="title-color" isMore="true" sign="{{infotypeid1}}" type="3" dtype="2"></dot-title>
+	<item-image-text type="2" wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
 	</item-image-text>
 	<button class="button-btn">我要发布</button>

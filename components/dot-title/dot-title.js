@@ -43,6 +43,10 @@ Component({
       type: Number,
       default: 1
     },
+    dtype: {
+      type: Number,
+      default:0
+    },
 
   },
 
@@ -60,8 +64,8 @@ Component({
     goMoreList: function (e) {
       console.log("更多列表")
       wx.navigateTo({
-        url: '/pages/publish/pages/newsList/newsList?id=' + this.properties.sign+'&type='+this.properties.type,
-      })
+        url: '/pages/publish/pages/newsList/newsList?id=' + this.properties.sign+'&type='+this.properties.type+'&dtype='+this.properties.dtype,
+      }) 
       // var myEventDetail = {} // detail对象，提供给事件监听函数
       // var myEventOption = {} // 触发事件的选项
       // this.triggerEvent('myevent', myEventDetail, myEventOption)
