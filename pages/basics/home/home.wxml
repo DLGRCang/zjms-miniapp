@@ -1,6 +1,7 @@
 
 	<!-- 顶部图片 -->
-	<image src='{{imgUrl}}/image/basic.png' style='width:100%;height:340rpx'></image>
+	<!-- <image src='{{imgUrl}}/image/basic.png' style='width:100%;height:340rpx'></image> -->
+	<image src='/image/index1.png' mode="scaleToFill" style='width:100%;height:340rpx'></image>
 	<!--搜索  -->
 	<view class="search">
 		<view class="cu-bar search">

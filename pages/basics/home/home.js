@@ -500,7 +500,7 @@ Page({
   // 切换左边菜单并联动右边
   tabSelect(e) {
     this.setData({
-      TabCur: e.currentTarget.dataset.id,
+      TabCur: e.currentTarget.dataset.id, 
       MainCur: e.currentTarget.dataset.id,
       VerticalNavTop: (e.currentTarget.dataset.id - 1) * 50
     })

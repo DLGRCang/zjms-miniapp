@@ -11,8 +11,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    pageTabs: ["地图", "列表"],
+    index: 0,
     longitude: '',
     latitude: '',
+    address: '',
+    toiletList: [],
+    mapw: '100%',
+    maph: '0',
+    scale: '16',
+    markers: [],
   },
 
   /**
@@ -59,11 +67,26 @@ Page({
             }
           })
         } else {
-          //调用wx.getLocation的API
           this.getAddress();
         }
       }
     });
+    wx.getSystemInfo({
+      success: res => {
+        var mapw = res.windowWidth
+        var maph = res.windowHeight
+        this.setData({
+          maph: maph + 'px',
+        })
+      }
+    })
+    //this.toilets();
+    this.getToilet();
+  },
+  selectTab: function (e) {
+    this.setData({
+      index: e.detail.TabCur
+    })
   },
   //获取定位信息
   getAddress() {
@@ -72,15 +95,12 @@ Page({
     wx.getLocation({
       type: 'wgs84',
       success: function (res) {
-        console.log(res)
-        console.log(111111111111111111111111111)
         var lat = res.latitude;
         var lon = res.longitude;
         //根据坐标获取当前位置名称，腾讯地图逆地址解析
         qqmapsdk.reverseGeocoder({
           location: { latitude: lat, longitude: lon },
           success: function (res) {
-            console.log(res)
             var address = res.result.address;
             that.setData({
               latitude: lat,
@@ -90,6 +110,35 @@ Page({
         });
       }
     });
+  },
+  //点击回到初始位置
+  clickControl(e) {
+    let mpCtx = wx.createMapContext("map");
+    mpCtx.moveToLocation();
+
+  },
+  //获取厕所信息
+  getToilet: function () {
+    var that = this;
+    qqmapsdk.search({
+      keyword: '厕所',
+      success: res => {
+        console.log(res.data)
+        var mark = []
+        for (let i in res.data) {
+          mark.push({
+            title: res.data[i].title,
+            id: i,
+            longitude: res.data[i].location.lng,
+            latitude: res.data[i].location.lat,
+          })
+        }
+        this.setData({
+          markers: mark,
+          toiletList: res.data
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

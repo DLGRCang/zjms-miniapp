@@ -1,1 +1,11 @@
 /* pages/travel/pages/toilet/toilet.wxss */
+.color{
+  color: #054FAC;
+}
+.focus{
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  bottom: 160rpx;
+  right: 80rpx;
+}
