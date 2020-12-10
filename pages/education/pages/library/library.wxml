@@ -8,9 +8,10 @@
     <text class="search margin-right-xs"></text>
     <input maxlength="12" placeholder="请输入搜索书籍关键字" type="text"></input>
   </view>
-  
-  <dot-title title="通知公告" color="color" ></dot-title>
-  <item-image-text wx:for="{{5}}" obj="{{item}}" isImg="{{false}}" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做"
-		date="2020-02-03" isDate="true" isLine="true">
-	</item-image-text>
+
+  <dot-title title="通知公告" color="color"></dot-title>
+
+  <item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}"
+    itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+
 </view>

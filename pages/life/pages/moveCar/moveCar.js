@@ -1,5 +1,6 @@
 // pages/life/pages/moveCar/moveCar.js
 const app=getApp()
+const data = require('../../../../utils/data.js')
 Page({
 
   /**
@@ -7,15 +8,27 @@ Page({
    */
   data: {
     imgUrl:app.globalData.imgUrl,
-    tabName:["快速"]
+    tabName:["快速"],
+    infotypeid: '23fc9463-05b5-49ab-be2e-2823573cf59f',
+    page:1,
+		dataList: [], //新闻列表
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				dataList: this.data.dataList.concat(dataList)
+			})
+			console.log(this.data.dataList);
+		})
+	},
+	onLoad: function (options) {
+		this.getDataList()
+	},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

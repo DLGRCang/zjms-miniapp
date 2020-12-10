@@ -8,7 +8,7 @@
 <view class="margin-lr-lg">
 
 <dot-title title="相关政策" color="title-color" ></dot-title>
-<item-image-text wx:for="{{5}}" obj="{{item}}" isImg="{{false}}" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做"
-	date="2020-02-03" isDate="true" isLine="true">
-</item-image-text>
+<view class="padding-lr-sm padding-tb">
+<item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}" itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
+</view>
 </view>

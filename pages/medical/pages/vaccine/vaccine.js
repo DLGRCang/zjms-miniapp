@@ -1,5 +1,6 @@
 // pages/medical/pages/vaccine/vaccine.js
 const app=getApp()
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -7,13 +8,25 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
+		infotypeid: 'c299e400-95f5-4d18-a639-149160e06d3c',
+    page:1,
+		dataList: [], //新闻列表
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
+	getDataList: function () {
+		//加载数据列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				dataList: this.data.dataList.concat(dataList)
+			})
+			console.log(this.data.dataList);
+		})
+	},
 	onLoad: function (options) {
-
+		this.getDataList()
 	},
 
 	/**
