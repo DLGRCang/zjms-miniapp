@@ -18,7 +18,13 @@ Component({
 
 
 		},
-		
+			//点击跳转到详情的类型
+			//1.普通新闻详情
+			//2.顺风车详情
+			type: {
+				type: Number,
+				default: 0
+			},
 		//图片url
 		imgUrl: {
 			type: String,
@@ -76,12 +82,16 @@ Component({
 	},
 	methods:{
 		gotoDetail:function(){
-			console.log("点击跳转");
-			wx.navigateTo({
-				
-				url: "/pages/publish/pages/newsDetail/newsDetail?info_content="+this.properties.obj.info_content+"&info_source="+this.properties.obj.info_source+"&publishdate="+this.properties.obj.publishdate+"&info_detail="+encodeURIComponent(this.properties.obj.info_detail),
-			})
-		
+			console.log("点击跳转"+this.properties.type);
+			if (this.properties.type==0) {
+				wx.navigateTo({
+					url: "/pages/publish/pages/newsDetail/newsDetail?info_content="+this.properties.obj.info_content+"&info_source="+this.properties.obj.info_source+"&publishdate="+this.properties.obj.publishdate+"&info_detail="+encodeURIComponent(this.properties.obj.info_detail),
+				})
+			}else if (this.properties.type==2) {
+				wx.navigateTo({
+					url: "/pages/componentPage/pages/carInfo/carInfo?infoContentId="+this.properties.obj.infoContentId,
+				})
+			}
 		}
 	
 	}

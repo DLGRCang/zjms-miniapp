@@ -8,10 +8,10 @@
     <dot-title title="{{tabName[0]}}" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
     <view class="margin-bottom-lg cont">
       <view wx:for="{{dataList}}" wx:key="item">
-        <item-image-text obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
+        <item-image-text type="2" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
           date="{{item.publishdate}}"></item-image-text>
       </view>
-      <button>发布信息</button>
+   
     </view>
   </view>
 
@@ -19,10 +19,10 @@
     <dot-title title="{{tabName[1]}}" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
     <view class="margin-bottom-lg cont">
       <view wx:for="{{dataList}}" wx:key="item">
-        <item-image-text obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
+        <item-image-text type="2" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
           date="{{item.publishdate}}"></item-image-text>
       </view>
-      <button>发布信息</button>
+ 
     </view>
   </view>
 
@@ -30,10 +30,10 @@
     <dot-title title="{{tabName[2]}}" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
     <view class="margin-bottom-lg">
       <view wx:for="{{dataList}}" wx:key="item">
-        <item-image-text obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
+        <item-image-text type="2" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
           date="{{item.publishdate}}"></item-image-text>
       </view>
-      <button>发布信息</button>
+   
     </view>
   </view>
 
@@ -41,10 +41,11 @@
     <dot-title title="{{tabName[3]}}" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
     <view class="margin-bottom-lg">
       <view wx:for="{{dataList}}" wx:key="item">
-        <item-image-text obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
+        <item-image-text type="2" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true"
           date="{{item.publishdate}}"></item-image-text>
       </view>
-      <button>发布信息</button>
+      
     </view>
   </view>
+  <button class="margin-top">发布信息</button>
 </view>

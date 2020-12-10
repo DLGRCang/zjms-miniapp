@@ -4,7 +4,9 @@
 		"pages/about/home/home",
 		"pages/guide/home/home",
 		"pages/pay/home/home",
-		"pages/plugin/home/home"
+		"pages/plugin/home/home",
+		"pages/componentPage/pages/carInfo/carInfo"
+
 	],
 	"subpackages": [
 		{
@@ -172,6 +174,7 @@
 				"pages/productionTransfer/productionTransfer"
 			]
 		}
+		
 	],
 	"tabBar": {
 		"color": "#9A9A9A",
