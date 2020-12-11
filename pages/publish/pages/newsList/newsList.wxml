@@ -9,4 +9,4 @@
 
 <item-image-text type="{{dtype}}" wx:if="{{type==3}}" wx:for="{{dataList}}" imgUrl="{{item.info_photos}}"
   itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" obj="{{item}}" isImg="true" isTab="true"
-  itemTabs="{{item.infotypePname}}" isLine="true"></item-image-text>
+  itemTabs="{{item.infoTypeLabel}}" isLine="true"></item-image-text>

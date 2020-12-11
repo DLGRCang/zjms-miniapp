@@ -6,7 +6,7 @@
 <view class="padding">
 	<dot-title title="律师事务所" color="title-color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
 	</item-image-text>
 	<dot-title title="法律咨询" color="title-color" isMore="true"></dot-title>
 	<view class="flex" wx:for="{{2}}">

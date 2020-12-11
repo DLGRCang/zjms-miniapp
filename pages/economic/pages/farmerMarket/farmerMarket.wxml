@@ -7,7 +7,7 @@
 <view class="flex flex-direction padding-lg">
 	<dot-title title="备案市场" color="title-color"></dot-title>
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
 	</item-image-text>
 
 </view>

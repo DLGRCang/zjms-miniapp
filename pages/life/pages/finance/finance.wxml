@@ -5,12 +5,12 @@
 <view class="margin-lr-lg padding-bottom-lg">
   <dot-title title="银行" color="color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
   <item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
   </item-image-text>
   <dot-title title="保险" color="color" isMore="true" sign="{{infotypeid1}}" type="3"></dot-title>
 
   <item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infotypePname}}" isLine="true">
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
   </item-image-text>
 
 </view>
