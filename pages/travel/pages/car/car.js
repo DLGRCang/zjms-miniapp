@@ -1,4 +1,4 @@
-// pages/travel/pages/scenicSpot/scenicSpot.js
+// pages/travel/pages/car/car.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
@@ -7,7 +7,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
+    imgUrl: app.globalData.imgUrl,
+    date: util.formatDate(new Date()),
+    leaveAreaList:['鄂尔多斯','北  京','天  津','上  海','呼和浩特','包  头','集  宁',],
+    arriveAreaList:['鄂尔多斯','北  京','天  津','上  海','呼和浩特','包  头','集  宁',],
+  },
+//出发时间
+  DateChange(e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  //出发地
+  leaveArea(e) {
+    this.setData({
+      index1: e.detail.value
+    })
+  },
+  //到达地
+  arriveArea(e) {
+    this.setData({
+      index2: e.detail.value
+    })
   },
 
   /**

@@ -69,6 +69,10 @@
 				"pages/scenicSpot/scenicSpot",
 				"pages/weather/weather",
 				"pages/toilet/toilet",
+				"pages/hotel/hotel",
+				"pages/electric/electric",
+				"pages/train/train",
+				"pages/car/car",
 				"pages/ruralTourism/ruralTourism"
 			]
 		},

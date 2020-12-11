@@ -1,13 +1,15 @@
-// pages/travel/pages/scenicSpot/scenicSpot.js
+// pages/travel/pages/hotel/hotel.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const data = require('../../../../utils/data.js')
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    imgUrl:app.globalData.imgUrl,
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		imgUrl:app.globalData.imgUrl,
+    tab: ['停车场'],
   },
 
   /**

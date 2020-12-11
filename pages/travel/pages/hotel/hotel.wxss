@@ -1,0 +1,16 @@
+/* pages/travel/pages/hotel/hotel.wxss */
+.bgColor {
+	background-color: #6670E1;
+	color: #ffffff;
+}
+.title{
+  margin-top: 60rpx;
+  margin-left: 20rpx;
+}
+.color{
+	color:#6670E1;
+}
+.cont{
+  border: 1rpx solid #F5F5F5;
+  padding: 10rpx;
+}

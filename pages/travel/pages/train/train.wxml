@@ -1,0 +1,51 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content">飞机火车</view>
+</cu-custom>
+<view class="margin-lg">
+
+  <view class="mainContent">
+    <view class="cu-list grid col-2 text-lg ">
+      <view wx:for="{{name}}" wx:key="index" class="cu-item {{index==chooseIndex?'title':'titles'}}" bindtap="choose"
+        data-id="{{index}}">{{item}}</view>
+    </view>
+    <view class="flex justify-between padding-lr-sm margin-tb-lg">
+      <view class="text-xxl area">
+        <picker bindchange="leaveArea" value="{{index1}}" range="{{leaveAreaList}}">
+          <view class="picker">
+            {{index1?leaveAreaList[index1]:'鄂尔多斯'}}
+          </view>
+        </picker>
+      </view>
+      <view class="area">
+        <image wx:if="{{chooseIndex==0}}" src="{{imgUrl}}/image/air.png"></image>
+        <image wx:if="{{chooseIndex==1}}" src="{{imgUrl}}/image/train.png"></image>
+      </view>
+      <view class="text-xxl area">
+        <picker bindchange="arriveArea" value="{{index2}}" range="{{arriveAreaList}}">
+          <view class="picker">
+            {{index2?arriveAreaList[index2]:'北京'}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="padding-lr-sm margin-top-xs flex justify-between">
+      <view class="">出发日期</view>
+      <view class="">
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="padding-sm margin-top-xs">
+      <button>查询</button>
+    </view>
+  </view>
+  <dot-title title="车站动态" color="color" isMore="true"></dot-title>
+  <view class="mainContent">
+    <item-image-text wx:for="{{5}}" itemTitle="11111111111" isImg="{{false}}" isDate="true" date="2020-06-09"
+      isLine="true">
+    </item-image-text>
+  </view>
+</view>

@@ -500,7 +500,7 @@ Page({
   // 切换左边菜单并联动右边
   tabSelect(e) {
     this.setData({
-      TabCur: e.currentTarget.dataset.id, 
+      TabCur: e.currentTarget.dataset.id,
       MainCur: e.currentTarget.dataset.id,
       VerticalNavTop: (e.currentTarget.dataset.id - 1) * 50
     })
@@ -584,31 +584,28 @@ Page({
             util.pageJump('/pages/travel/pages/scenicSpot/scenicSpot')
             break;
           case 1:
-            console.log("pages/weather/weather");
             util.pageJump('/pages/travel/pages/weather/weather')
             break;
           case 2:
-            console.log("飞机");
+            util.pageJump("/pages/travel/pages/train/train");
             break;
           case 3:
-            console.log("汽车");
+            util.pageJump("/pages/travel/pages/car/car");
             break;
           case 4:
             console.log("公交");
             break;
           case 5:
-            console.log("酒店");
+            util.pageJump("/pages/travel/pages/hotel/hotel");
             break;
           case 6:
             util.pageJump('/pages/travel/pages/toilet/toilet')
             break;
           case 7:
-            console.log("充电侧");
+            util.pageJump('/pages/travel/pages/electric/electric')
             break;
           case 8:
-            console.log("乡村");
             util.pageJump('/pages/travel/pages/ruralTourism/ruralTourism')
-
             break;
         }
         break;
