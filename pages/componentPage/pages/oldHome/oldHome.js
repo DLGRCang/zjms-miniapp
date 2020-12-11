@@ -1,17 +1,32 @@
 // pages/componentPage/pages/oldHome/oldHome.js
+const app=getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-
+		imgUrl: app.globalData.imgUrl,
+		baseImgUrl: app.globalData.baseImgUrl,
+		data:null
+	},
+	getData:function(infoContentId){
+	
+		 util.requestApi('infocontent/getinfocontent/'+infoContentId, 'GET', '').then(res => {
+			 this.setData({
+				 data:res.data
+			 })
+		});
+	
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		var id = options.infoContentId;
+		this.getData(id);
 
 	},
 
