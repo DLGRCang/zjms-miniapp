@@ -1,0 +1,29 @@
+<!--pages/life/pages/jobPerson/jobPerson.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">详情</view>
+</cu-custom>
+<view class="padding-xl">
+	<text class="title">目标职位</text>
+	<view class="flex align-center margin-top">
+		<image mode="aspectFit" src="{{baseImgUrl}}/image/touxiang.png" class="round" style="width: 40rpx;height: 40rpx;">
+		</image>
+		<text class="margin-left-sm">史蒂夫</text>
+		<text style="margin-left: auto;">2020-06-03发布</text>
+	</view>
+	<dot-title title="联系电话" color="title-color"></dot-title>
+	<view class="flex align-center justify-between padding">
+		<text>史蒂夫 1848455266</text>
+		<text class="help-icon2"></text>
+	</view>
+	<dot-title class="" title="毕业学校" color="title-color"></dot-title>
+	<view class="padding ">中国石油大学</view>
+	<dot-title class="" title="毕业时间" color="title-color"></dot-title>
+	<view class="padding">2018-09</view>
+	<dot-title class="" title="工作年限" color="title-color"></dot-title>
+	<view class="padding">两年</view>
+	<dot-title class="" title="简　　历" color="title-color"></dot-title>
+	<view class="flex margin-bottom-xl padding">
+		<text >个人简历.doc</text>
+		<text class="title-color" style="margin-left:auto">点击查看</text>
+	</view>
+</view>

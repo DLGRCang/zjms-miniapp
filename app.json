@@ -7,8 +7,6 @@
 		"pages/plugin/home/home",
 		"pages/componentPage/pages/carInfo/carInfo",
 		"pages/componentPage/pages/oldHome/oldHome"
-
-
 	],
 	"subpackages": [
 		{
@@ -116,7 +114,8 @@
 				"pages/mbSchool/mbSchool",
 				"pages/homeEducate/homeEducate",
 				"pages/agricultural/agricultural",
-				"pages/fitness/fitness"
+				"pages/fitness/fitness",
+				"pages/schoolInfo/schoolInfo"
 			]
 		},
 		{
@@ -172,10 +171,11 @@
 				"pages/car/car",
 				"pages/finance/finance",
 				"pages/seafood/seafood",
-				"pages/productionTransfer/productionTransfer"
+				"pages/productionTransfer/productionTransfer",
+				"pages/jobPerson/jobPerson",
+				"pages/jobEmployment/jobEmployment"
 			]
 		}
-		
 	],
 	"tabBar": {
 		"color": "#9A9A9A",

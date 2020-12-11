@@ -1,0 +1,24 @@
+<!--pages/life/pages/jobEmployment/jobEmployment.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content">详情</view>
+</cu-custom>
+<view class="padding-xl">
+	<text class="title">招聘java工程师两年以上经营</text>
+	<view class="flex align-center margin-top">
+		<image mode="aspectFit" src="{{baseImgUrl}}/image/touxiang.png" class="round" style="width: 40rpx;height: 40rpx;"></image>
+		<text class="margin-left-sm">成迈信息科技有限公司</text>
+		<text style="margin-left: auto;">2020-09-10发布</text>
+	</view>
+	<dot-title class="table" title="联系电话" color="title-color"></dot-title>
+	<view class="flex align-center justify-between padding">
+		<text>15265856654</text>
+		<text class="help-icon2"></text>
+	</view>
+	<dot-title class="table" title="公司福利" color="title-color"></dot-title>
+	<view class="padding">五险，双休，福利</view>
+	<dot-title class="table" title="岗位描述" color="title-color"></dot-title>
+	<rich-text nodes="{{data.info_detail}}" class="flex padding" >      头器色度次族斯江里而志我从列想容新千色二阶却制道般革电几根面好影数团感业为决重各干去于。一前题清例在线线海信改细日除家为路其生图方八受同很线万常了对内方么般他心毛化山然理革都市化志价过周不化者都院四但张它来矿识来或多任业素果得起步切必段会几量王任道断家叫划明情完强里最油学现具线引反细商管色华。断养最头入习知军广果性四报没他养她最知素红采件明身。</rich-text>
+	
+	<button class="button-btn">申请职位</button>
+</view>
+

@@ -18,3 +18,12 @@
   border-radius: 10rpx;
   padding: 8rpx;
 }
+.button-btn {
+	background-color: #EE6967;
+	color: #ffffff;
+	margin: 0 30rpx 50rpx 30rpx;
+	font-size: 34rpx;
+}
+.title-color{
+	color:#EE6967
+}

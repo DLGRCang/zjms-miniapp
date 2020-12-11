@@ -4,6 +4,6 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/qizhenhutong.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">
-<item-image-text bindtap="openXyLink" wx:for="{{1}}"  imgUrl="../../../../image/village_photo.png" obj="{{item}}"  itemTitle="乌兰木伦镇"  isDate="true" date="188188"></item-image-text>
+<item-image-text bindtap="openXyLink" wx:for="{{1}}"  imgUrl="../../../../image/about.png"  obj="{{item}}"  itemTitle="乌兰木伦镇"  isDate="true" date="188188"></item-image-text>
 </view>
 
