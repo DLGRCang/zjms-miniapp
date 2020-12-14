@@ -1,77 +1,75 @@
-
-	<!-- 顶部图片 -->
-	<!-- <image src='{{imgUrl}}/image/basic.png' style='width:100%;height:340rpx'></image> -->
-	<image src='/image/index1.png' mode="scaleToFill" style='width:100%;height:340rpx'></image>
-	<!--搜索  -->
-	<view class="search">
-		<view class="cu-bar search">
-			<view class="search-form round">
-				<text class="cuIcon-search"></text>
-				<input type="text" placeholder="搜索应用功能" confirm-type="search" bindfocus="searchApp"></input>
-			</view>
+<!-- 顶部图片 -->
+<image src='{{imgUrl}}/image/index1.png' mode="scaleToFill" style='width:100%;height:340rpx'></image>
+<!--搜索  -->
+<view class="search">
+	<view class="cu-bar search">
+		<view class="search-form round">
+			<text class="cuIcon-search"></text>
+			<input type="text" placeholder="搜索应用功能" confirm-type="search" bindfocus="searchApp"></input>
 		</view>
 	</view>
-	<!-- 实现左右联动效果 -->
-	<view class="flex">
-		<!-- 左边栏 -->
-		<view class="VerticalNav nav" style="height:calc(96vh - 283rpx)">
-			<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index"
-				bindtap='tabSelect' data-id="{{index}}">
-				<text>{{item.name}}</text>
-				<text class="son">{{item.nick}}</text>
-			</view>
+</view>
+<!-- 实现左右联动效果 -->
+<view class="flex">
+	<!-- 左边栏 -->
+	<view class="VerticalNav nav" style="height:calc(96vh - 283rpx)">
+		<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index"
+			bindtap='tabSelect' data-id="{{index}}">
+			<text>{{item.name}}</text>
+			<text class="son">{{item.nick}}</text>
 		</view>
+	</view>
 
-		<!-- 右边 background-color: #F8F8F8; -->
-		<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 350rpx);"
-			scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
-			<view class="padding-top padding-lr" wx:for="{{mainInfo}}" wx:key="item" id="main-{{index}}">
-				<view class="flex-sub text-start">
-					<view class="text-xl margin-bottom-sm">
-						<text class="text-blue text-bold">{{item.name}}{{item.nick}}</text>
-					</view>
-					<view class="margin-bottom-sm" style="text-indent:2em;"><text>{{item.introduce}}</text></view>
+	<!-- 右边 background-color: #F8F8F8; -->
+	<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 350rpx);"
+		scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+		<view class="padding-top padding-lr" wx:for="{{mainInfo}}" wx:key="item" id="main-{{index}}">
+			<view class="flex-sub text-start">
+				<view class="text-xl margin-bottom-sm">
+					<text class="text-blue text-bold">{{item.name}}{{item.nick}}</text>
 				</view>
-				<!-- 首页伊旗发布 -->
-				<view class="" wx:if="{{item.id===0}}">
-					<!-- 新闻 -->
-					<view class="">
-						<view class="flex justify-between margin-bottom-sm">
-							<view class="text-lg">伊旗新闻</view>
-							<view class="text-grey text-sm" bindtap="newsList">更多+</view>
-						</view>
-						<block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
-							<view class="padding-bottom-sm textInfo" bindtap="newsDetail" data-id="{{item.id}}">
-								<text class="cuIcon-hotfill text-red"></text> {{item.title}}
-							</view>
-						</block>
+				<view class="margin-bottom-sm" style="text-indent:2em;"><text>{{item.introduce}}</text></view>
+			</view>
+			<!-- 首页伊旗发布 -->
+			<view class="" wx:if="{{item.id===0}}">
+				<!-- 新闻 -->
+				<view class="">
+					<view class="flex justify-between margin-bottom-sm">
+						<view class="text-lg">伊旗新闻</view>
+						<view class="text-grey text-sm" bindtap="newsList">更多+</view>
 					</view>
-					<!-- 公告 -->
-					<view class="margin-tb-lg">
-						<view class="flex justify-between margin-bottom-sm">
-							<view>通知公告</view>
-							<view class="text-grey text-sm" bindtap="newsList">更多+</view>
-						</view>
-					</view>
-					<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
-						<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
-							<text class="cuIcon-hotfill text-red"></text> {{item.content}}
+					<block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
+						<view class="padding-bottom-sm textInfo" bindtap="newsDetail" data-id="{{item.id}}">
+							<text class="cuIcon-hotfill text-red"></text> {{item.title}}
 						</view>
 					</block>
 				</view>
-				<!-- 宫格 cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl -->
-				<view class="icon-wrap">
-					<!-- 图文 -->
-					<block wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
-						<view class="icon-item" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
-							<view class="item-img">
-								<image src="{{imgUrl}}{{items.pic}}" style='width:100rpx;height:100rpx;'>
-								</image>
-							</view>
-							<view class="item-text"><text class="text-black">{{items.tit}}{{items.nick}}</text></view>
-						</view>
-					</block>
+				<!-- 公告 -->
+				<view class="margin-tb-lg">
+					<view class="flex justify-between margin-bottom-sm">
+						<view>通知公告</view>
+						<view class="text-grey text-sm" bindtap="newsList">更多+</view>
+					</view>
 				</view>
+				<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
+					<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
+						<text class="cuIcon-hotfill text-red"></text> {{item.content}}
+					</view>
+				</block>
 			</view>
-		</scroll-view>
-	</view>
+			<!-- 宫格 cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl -->
+			<view class="icon-wrap">
+				<!-- 图文 -->
+				<block wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
+					<view class="icon-item" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
+						<view class="item-img">
+							<image src="{{imgUrl}}{{items.pic}}" style='width:100rpx;height:100rpx;'>
+							</image>
+						</view>
+						<view class="item-text"><text class="text-black">{{items.tit}}{{items.nick}}</text></view>
+					</view>
+				</block>
+			</view>
+		</view>
+	</scroll-view>
+</view>
