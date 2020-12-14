@@ -23,12 +23,14 @@ Page({
    */
   getDataList: function () {
 		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-        dataList: this.data.dataList.concat(dataList),
+    util.requestApi('schoolinformation/listpagepreschooleducation/', 'GET', '').then(res => {
+ 
+      this.setData({
+        dataList:res.data.rows
       })
-			console.log(this.data.dataList);
-		})
+      console.log(this.data.dataList)
+   });
+   
 	},
 	onLoad: function (options) {
 		this.getDataList()

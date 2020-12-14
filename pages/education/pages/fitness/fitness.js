@@ -8,10 +8,15 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+    baseImgUrl:app.globalData.baseImgUrl,
 		imgUrl:app.globalData.imgUrl,
     infotypeid: '529180a7-4c03-4caa-81b5-e6d07f95beb5',
     page:1,
-		dataList: [], //新闻列表
+    dataList: [], //新闻列表
+    dataList1: [], //赛事列表
+    dataList2: [], //演出列表
+    infotypeid1:'6bed2759-8b6a-4240-9c51-f79369b4c138&page',//赛事
+    infotypeid2:'9782bccc-e789-4874-84c0-b03584a9e7d7'//演出
   },
 
   /**

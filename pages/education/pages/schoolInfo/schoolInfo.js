@@ -1,18 +1,32 @@
 // pages/education/pages/schoolInfo/schoolInfo.js
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+	
+		data: null
 
+	},
+	getDataList: function (schoolInformationId) {
+		//加载数据列表
+		util.requestApi('schoolinformation/getschoolinformation/' + schoolInformationId, 'GET', '').then(res => {
+			this.setData({
+				data: res.data
+			})
+
+			console.log(this.data.data)
+		});
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+	
+		this.getDataList(options.schoolInformationId);
 	},
 
 	/**

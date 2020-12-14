@@ -4,14 +4,12 @@ const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
-	data: {
-		imgUrl:app.globalData.imgUrl,
-    infotypeid: '2ab7f5af-a837-4fa7-9e0d-7bbc0a9580d1',
-    infotypeid1: 'd62ab2e0-dffd-43fd-bbb6-c45f29cbe61e',
-    page:1,
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgUrl: app.globalData.imgUrl,
+
     dataList: [], //小学学校
     dataList1: [], //中学学校
   },
@@ -23,23 +21,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-        dataList: this.data.dataList.concat(dataList),
+    //加载数据列表
+    util.requestApi('schoolinformation/listPageMiddlePrimarySchool/2', 'GET', '').then(res => {
+
+      this.setData({
+        dataList: res.data.rows
       })
-			console.log(this.data.dataList);
-    })
-    data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
-			this.setData({
-        dataList1: this.data.dataList1.concat(dataList),
+      console.log(this.data.dataList)
+    });
+    util.requestApi('schoolinformation/listPageMiddlePrimarySchool/3', 'GET', '').then(res => {
+
+      this.setData({
+        dataList1: res.data.rows
       })
-			console.log(this.data.dataList1);
-		})
-	},
-	onLoad: function (options) {
-		this.getDataList()
-	},
+      console.log(this.data.dataList)
+    });
+  },
+  onLoad: function (options) {
+    this.getDataList()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

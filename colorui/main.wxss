@@ -3824,9 +3824,13 @@ scroll-view.cu-steps .cu-item {
 }
 
 .text-cut {
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	text-overflow: -o-ellipsis-lastline;
 	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	line-clamp: 1;
+	-webkit-box-orient: vertical;
 }
 
 .text-cut-two {

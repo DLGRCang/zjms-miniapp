@@ -91,6 +91,10 @@ Component({
 				wx.navigateTo({
 					url: "/pages/componentPage/pages/carInfo/carInfo?infoContentId="+this.properties.obj.infoContentId,
 				})
+			}else if (this.properties.type==3) {
+				wx.navigateTo({
+					url: "/pages/education/pages/schoolInfo/schoolInfo?schoolInformationId="+this.properties.obj.schoolInformationId,
+				})
 			}
 		}
 	

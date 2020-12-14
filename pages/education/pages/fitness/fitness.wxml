@@ -9,21 +9,21 @@
   </item-image-text>
   <dot-title title="赛事" color="color" isMore="true"></dot-title>
   <view class="flex justify-between">
-    <view wx:for="{{3}}" wx:key="item">
+    <view wx:for="{{datalist1}}" wx:key="item">
       <view>
-        <image src="{{imgUrl}}/image/wentijianshen.png" style="height:276rpx;width:200rpx;"></image>
+        <image src="{{baseImgUrl}}{{item_photos}}" style="height:276rpx;width:200rpx;"></image>
       </view>
-      <view class="margin-tb-xs">没有此人 更高…</view>
+      <view class="margin-tb-xs">{{item.info_content}}</view>
       <view class="text-sm text-grey">浏览 203 次</view>
     </view>
   </view>
   <dot-title title="演出" color="color" isMore="true"></dot-title>
   <view class="flex justify-between">
-    <view wx:for="{{3}}" wx:key="item">
+    <view wx:for="{{datalist2}}" wx:key="item">
       <view>
-        <image src="{{imgUrl}}/image/wentijianshen.png" style="height:276rpx;width:200rpx;"></image>
+        <image src="{{baseImgUrl}}{{item_photos}}" style="height:276rpx;width:200rpx;"></image>
       </view>
-      <view class="margin-tb-xs">没有此人 更高…</view>
+      <view class="margin-tb-xs">{{item.info_content}}</view>
       <view class="text-sm text-grey">浏览 203 次</view>
     </view>
   </view>

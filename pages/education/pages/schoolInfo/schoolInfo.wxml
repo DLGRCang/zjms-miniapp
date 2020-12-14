@@ -4,7 +4,7 @@
 </cu-custom>
 <image style="width: 100%; height: 380rpx;background-color: #dedede;"></image>
 <view class="padding-lr-lg flex flex-direction">
-	<text class="text-lg margin-top-sm">学校名称</text>
+	<text class="text-lg margin-top-sm">{{data.schoolName}}</text>
 	<view class="margin-tb">
 		<view class="cu-tag bg-cyan light">双语</view>
 		<view class="cu-tag bg-cyan light">兴趣</view>
