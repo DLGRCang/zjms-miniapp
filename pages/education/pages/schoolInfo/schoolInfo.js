@@ -1,13 +1,16 @@
 // pages/education/pages/schoolInfo/schoolInfo.js
 const util = require('../../../../utils/util.js')
+const app=getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-	
-		data: null
+		baseImgUrl:app.globalData.baseImgUrl,
+		data: null,
+
+		
 
 	},
 	getDataList: function (schoolInformationId) {
@@ -15,9 +18,9 @@ Page({
 		util.requestApi('schoolinformation/getschoolinformation/' + schoolInformationId, 'GET', '').then(res => {
 			this.setData({
 				data: res.data
+			
 			})
-
-			console.log(this.data.data)
+		
 		});
 	},
 

@@ -2,15 +2,14 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-black text-xl text-black text-bold">详情</view>
 </cu-custom>
-<image style="width: 100%; height: 380rpx;background-color: #dedede;"></image>
-<view class="padding-lr-lg flex flex-direction">
+<image style="width: 100%; height: 380rpx;background-color: #dedede;" mode="scaleToFill"  src="{{baseImgUrl}}{{data.photo}}"></image>
+<view class="padding-lr-lg flex flex-direction padding-bottom-xl">
 	<text class="text-lg margin-top-sm">{{data.schoolName}}</text>
 	<view class="margin-tb">
-		<view class="cu-tag bg-cyan light">双语</view>
-		<view class="cu-tag bg-cyan light">兴趣</view>
+		<view wx:for="{{data.schoolLabels}}" class="cu-tag bg-cyan light">{{item}}</view>
 	</view>
 	<view class="flex margin-tb-sm">
-		<text class="icon text-black">香花路武状元白丁香巷89号</text>
+		<text class="icon text-black">{{data.schoolScope}}</text>
 		<text class="into" style="margin-left: auto;"></text>
 	</view>
 
@@ -28,24 +27,17 @@
 		<text>第三步：办理入校</text>
 	</view>
 	<dot-title title="师资力量" color="title-color"></dot-title>
-	<view class="flex margin-tb" wx:for="{{2}}">
-		<image src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
+	<view class="flex margin-tb" wx:for="{{data.facultyList}}">
+		<image src="{{baseImgUrl}}{{item.photo}}" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
 		<view class="flex flex-direction">
-			<text class="text-black text-df margin-bottom-sm" >张宏昌</text>
-			<text class="text-grey text-df ">12年教学经验 ｜ 优秀教师 ｜ 特级教师</text>
+			<text class="text-black text-df margin-bottom-sm" >{{item.teacherName}}</text>
+			<text class="text-grey text-df ">{{item.experience}}</text>
 		</view>
 	</view>
 	<dot-title title="硬件设备" color="title-color"></dot-title>
-	<view class="padding">
-		<text class="text-grey margin-right">图书馆</text>
-		<text>藏书30万册</text>
+	<view wx:for="{{data.supportFacility}}" class="padding">
+		<text class="text-grey margin-right">{{item.facilityName}}</text>
+		<text>{{item.facilityDescribe}}</text>
 	</view>
-	<view class="padding">
-		<text class="text-grey margin-right">实验室</text>
-		<text>全市科技实验室</text>
-	</view>
-	<view class="padding margin-bottom-xl">
-		<text class="text-grey margin-right">体育馆</text>
-		<text>全国最大体育馆：包含羽毛球、篮球等</text>
-	</view>
+
 </view>
