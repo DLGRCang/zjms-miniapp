@@ -1,0 +1,8 @@
+/* pages/government/pages/guide/guide.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+.color{
+	color:#EE6967;
+}

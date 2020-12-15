@@ -749,6 +749,7 @@ Page({
         switch (tab) {
           case 0:
             console.log("指引");
+            util.pageJump('/pages/government/pages/guide/guide')
             break;
           case 1:
             util.pageJump('/pages/government/pages/flagLeader/flagLeader')

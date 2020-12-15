@@ -146,7 +146,8 @@
 				"pages/eachFlagTown/eachFlagTown",
 				"pages/volunteerService/volunteerService",
 				"pages/questionnaire/questionnaire",
-				"pages/land/land"
+				"pages/land/land",
+				"pages/guide/guide"
 			]
 		},
 		{
