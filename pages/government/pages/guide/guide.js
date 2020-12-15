@@ -1,4 +1,5 @@
 // pages/government/pages/guide/guide.js
+const app=getApp()
 Page({
 
 	/**
@@ -6,7 +7,8 @@ Page({
 	 */
 	data: {
 		tabName: ["1楼", "2楼", "3楼", "4楼"],
-		index:1
+		index:1,
+		 CustomBar: app.globalData.CustomBar,
 	},
 	selectTab: function(e) {
 		this.setData({
