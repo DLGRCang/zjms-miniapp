@@ -5,12 +5,12 @@
 <image mode="widthFix" src="{{imgUrl}}/image/fuliyuan.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">
 	<dot-title title="福利院" color="title-color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
-	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	<item-image-text type="4" wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}">
 	</item-image-text>
 
 	<dot-title title="养老院" color="title-color" isMore="true" sign="{{infotypeid1}}" type="3"></dot-title>
-	<view class="flex margin-bottom" wx:if="{{dataList1}}">
+	<view bindtap="goInfo" data-id="{{dataList1.infoContentId}}" class="flex margin-bottom" wx:if="{{dataList1}}">
 		<image class="jingla-img radius margin-right" src="{{dataList1.info_photos}}"></image>
 
 		<view class="flex flex-direction  " style="max-width:550rpx">
@@ -25,7 +25,7 @@
 
 	</view>
 	<dot-title title="敬老院" color="title-color" isMore="true" sign="{{infotypeid2}}" type="3"></dot-title>
-	<item-image-text wx:for="{{dataList2}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	<item-image-text type="4" wx:for="{{dataList2}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}">
 	</item-image-text>
 </view>

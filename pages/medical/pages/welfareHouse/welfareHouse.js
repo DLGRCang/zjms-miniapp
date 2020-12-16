@@ -17,6 +17,11 @@ Page({
 		infotypeid2: 'de8f6d41-3e0c-4b18-a7ea-e14207022c97',
 		dataList2: [], //敬老院列表
 	},
+	goInfo:function(e){
+		wx.navigateTo({
+			url: "/pages/componentPage/pages/oldHome/oldHome?infoContentId="+ e.currentTarget.dataset.id,
+		})
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载

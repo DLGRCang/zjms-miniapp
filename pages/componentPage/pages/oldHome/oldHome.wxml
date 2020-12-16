@@ -13,6 +13,6 @@
 	</view>
 
 	<dot-title title="福利院信息" color="title-color"></dot-title>
-	<rich-text class="padding" nodes=""></rich-text>
+	<rich-text class="padding" nodes="{{data.info_detail}}"></rich-text>
 </view>
 
