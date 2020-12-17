@@ -39,7 +39,7 @@ const requestApi = function (url, method, data = {}) {
   return new Promise(function (resolve, reject) {
     wx.request({
       header: {
-        'content-type': meth == 'POST' ? 'application/x-www-form-urlencoded' : 'application/json'
+        'content-type': 'application/json'
       },
       url: baseUrl + url,
       data: data,

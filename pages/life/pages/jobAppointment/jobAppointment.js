@@ -125,7 +125,7 @@ Page({
 		console.log(formData)
 		let formDateList = [];
 		formDateList.push(formData)
-		util.requestData('http://192.168.31.101:8004/InfoIssue/app/release/applicationFormTable/saveApplicationFormTable', 'POST', formDateList).then(res => {
+		util.requestApi('applicationFormTable/saveApplicationFormTable', 'POST', formDateList).then(res => {
 			console.log(res)
 		})
 	},
