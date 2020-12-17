@@ -844,7 +844,7 @@ Page({
             util.pageJump('/pages/life/pages/finance/finance')
             break;
           case 12:
-            console.log("13");
+            util.pageJump('/pages/life/pages/film/film')
             break;
           // case 13:
           //   console.log("14");

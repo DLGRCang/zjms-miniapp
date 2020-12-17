@@ -178,6 +178,7 @@
 				"pages/seafood/seafood",
 				"pages/productionTransfer/productionTransfer",
 				"pages/jobPerson/jobPerson",
+				"pages/film/film",
 				"pages/jobEmployment/jobEmployment"
 			]
 		}
