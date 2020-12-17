@@ -1,7 +1,9 @@
 <!--pages/government/pages/guide/guide.wxml-->
+
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content">政务大厅指引</view>
 </cu-custom>
+
 <view class="cu-custom " style=" height: 610rpx; width:100%;">
 	<view style="position: fixed;top:{{CustomBar}};">
 		<tab class="padding-lr-lg" tvColor="color" tabName="{{tabName}}" bindmyevent="selectTab"></tab>
@@ -11,27 +13,35 @@
 </view>
 
 
-<view class="flex padding">
-	<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">A 区</view>
-	<text class="text-df">总服务台（咨询导引、叫号取号、投诉受理、失物认领、志愿服务站）</text>
-</view>
-<view class="flex padding">
-	<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">B 区</view>
-	<text class="text-df">公安交管（车辆管理业务）、公安户政（伊金霍洛旗、康巴什区）24小时自助服务区</text>
-</view>
-<view class="flex padding">
-	<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">C 区</view>
-	<text class="text-df">公安出入境（中国公民出入境证件办理、外国人停居留证件办理）</text>
-</view>
-<view class="flex padding">
-	<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">D 区</view>
-	<text class="text-df">咨询导引台</text>
-</view>
-<view class="flex padding">
-	<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">E 区</view>
-	<text class="text-df">工商银行、鄂尔多斯体检保健中心（驾驶人员体检）、母婴室</text>
-</view>
-<view class="flex padding margin-bottom-xl">
-	<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">F 区</view>
-	<text class="text-df">税务服务区（伊金霍洛旗、康巴什区）、市长热线</text>
-</view>
+<scroll-view scroll-y="true" style="height: 600rpx;">
+	<view class="flex padding">
+		<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">A
+			区</view>
+		<text class="text-df">总服务台（咨询导引、叫号取号、投诉受理、失物认领、志愿服务站）</text>
+	</view>
+	<view class="flex padding">
+		<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">B
+			区</view>
+		<text class="text-df">公安交管（车辆管理业务）、公安户政（伊金霍洛旗、康巴什区）24小时自助服务区</text>
+	</view>
+	<view class="flex padding">
+		<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">C
+			区</view>
+		<text class="text-df">公安出入境（中国公民出入境证件办理、外国人停居留证件办理）</text>
+	</view>
+	<view class="flex padding">
+		<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">D
+			区</view>
+		<text class="text-df">咨询导引台</text>
+	</view>
+	<view class="flex padding">
+		<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">E
+			区</view>
+		<text class="text-df">工商银行、鄂尔多斯体检保健中心（驾驶人员体检）、母婴室</text>
+	</view>
+	<view class="flex padding margin-bottom-xl">
+		<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">F
+			区</view>
+		<text class="text-df">税务服务区（伊金霍洛旗、康巴什区）、市长热线</text>
+	</view>
+</scroll-view>
