@@ -117,9 +117,8 @@ Page({
     mpCtx.moveToLocation();
 
   },
-  //获取厕所信息
+  //获取厕所信息‘
   getToilet: function () {
-    var that = this;
     qqmapsdk.search({
       keyword: '电影院',
       success: res => {

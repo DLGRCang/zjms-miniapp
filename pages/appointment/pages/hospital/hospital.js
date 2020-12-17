@@ -4,7 +4,7 @@ Page({
   data: {
     name:'',
     index: null,
-    picker: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
+    picker: ['111', '222', '333'],
     pickerData:'',
     date: '2018-12-25',
     imgList: [],
