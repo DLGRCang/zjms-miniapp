@@ -295,11 +295,11 @@ Page({
           pic: "/image/43.png",
           tab: 2
         },
-        {
-          tit: "体检",
-          pic: "/image/44.png",
-          tab: 3
-        },
+        // {
+        //   tit: "体检",
+        //   pic: "/image/44.png",
+        //   tab: 3
+        // },
         {
           tit: "核酸检测",
           pic: "/image/45.png",
