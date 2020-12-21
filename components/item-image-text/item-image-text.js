@@ -84,6 +84,7 @@ Component({
 		},
 	},
 	methods:{
+
 		gotoDetail:function(){
 			console.log("点击跳转"+this.properties.type);
 			if (this.properties.type==0) {
