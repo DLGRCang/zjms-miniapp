@@ -14,10 +14,12 @@ Page({
 		tabId: 0,
 		tabName: ['访客', '合作社'],
 		lableName: ['大型', '便民'],
-		infotypeid: 'bb4d4622-8a26-4c48-a50d-7f1c9743813c',
+		infotypeid: 'bb4d4622-8a26-4c48-a50d-7f1c9743813c', //合作社
+		infotypeid1: 'c020b82c-4488-481f-a10a-58747c3e8fc7', //村情乡貌
 		page: 1,
 		artelList: [], //合作社列表
-		villageGoods:[],
+		artelList1: [], //村情乡貌列表
+		villageGoods: [],//村有好货
 	},
 	selectTab: function (e) {
 		this.setData({
@@ -36,15 +38,16 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.getVillageGoods();
+		this.getVillageDataList();
 	},
 	//加载村有好货列表
 	getVillageGoods: function () {
 		util.requestApi('products/listpageproducts', 'GET', data).then(res => {
-		this.setData({
-			villageGoods:res.data.rows,
+			this.setData({
+				villageGoods: res.data.rows,
 
-		})
-		console.log(this.data.villageGoods);
+			})
+			console.log(this.data.villageGoods);
 		});
 	},
 	//加载一村一品合作社列表
@@ -56,7 +59,15 @@ Page({
 			console.log(this.data.artelList);
 		})
 	},
-
+	//加载村情乡貌社列表
+	getVillageDataList: function () {
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				artelList1: this.data.artelList1.concat(dataList)
+			})
+			console.log(this.data.artelList1);
+		})
+	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成

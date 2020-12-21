@@ -49,7 +49,7 @@ App({
   },
 
   globalData: {
-    baseImgUrl: 'http://192.168.1.114:8004/InfoIssue/route/file/downloadfile/true/',
+    baseImgUrl: 'http://192.168.1.111:8004/InfoIssue/route/file/downloadfile/true/',
     // imgUrl: 'https://wuliji2.wulanchabu.gov.cn/zjmsMiniAppImages',()
     imgUrl: 'https://yiqi.sucstep.com/InfoIssue/miniapp',
     userInfo: null,

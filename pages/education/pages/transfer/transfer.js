@@ -13,7 +13,28 @@ Page({
     page:1,
 		dataList: [], //新闻列表
   },
+  uploadFile:function(){
+    wx.chooseImage({
+      success (res) {
+        const tempFilePaths = res.tempFilePaths
 
+//http://219.159.20.229:443/GovNetMS_Interface/file/appUploadFile
+        wx.uploadFile({
+          url: 'http://192.168.1.114:8004/InfoIssue/app/release/file/uploadfile', //仅为示例，非真实的接口地址
+          filePath: tempFilePaths[0],
+          name: 'file',
+          formData: {
+            'token': ''
+          },
+          success (res){
+            const data = res.data
+            console.log(res)
+            //do something
+          },
+        })
+      }
+    })
+  } ,
   /**
    * 生命周期函数--监听页面加载
    */

@@ -1,5 +1,5 @@
 <!--components/item-image-text/item-image-text.wxml-->
-<view class="flex padding" bindtap="gotoDetail">
+<view class="flex padding" bindtap="{{type==8}}?gotoDetail">
 	<image class="radius margin-right" wx:if="{{isImg}}" src="{{baseImgUrl}}{{imgUrl}}" style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"
 	></image>
 	<view class="flex flex-direction  ">

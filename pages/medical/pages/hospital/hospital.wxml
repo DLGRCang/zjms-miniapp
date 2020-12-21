@@ -1,3 +1,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-xl text-black text-bold">医院药店</view>
 </cu-custom>
+<tab bindmyevent="selectTab" tvColor="text-green" tabName="{{tabName}}"></tab>
+<view class="padding">
+<item-image-text type="8" bindtap="goDetail" wx:for="{{dataList}}" isImg="{{true}}" imgUrl="{{item.accessory_photo}}" obj="{{item}}"  itemTitle="{{item.medicalName}}"  isDate="true" date="开放时间：{{item.businessHours}}"></item-image-text>
+</view>

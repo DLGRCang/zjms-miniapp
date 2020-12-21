@@ -20,10 +20,10 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-// let baseUrl = 'http://192.168.1.109:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
-// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+let baseUrl = 'http://192.168.1.108:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
+// let baseUrl = 'http://192.168.1.111:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
 // let baseUrl = 'http://127.0.0.1:8004/InfoIssue/';//测试(本地)（谷雨）
-let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
+// let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
 // let baseUrl = 'http://******/';//预发布
 // let baseUrl = 'https://*****/';//线上
 //内部请求方法
