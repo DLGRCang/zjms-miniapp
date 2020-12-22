@@ -1,0 +1,13 @@
+/* pages/help/pages/applyDisabilityCertificate/applyDisabilityCertificate.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+checkbox .wx-checkbox-input {
+  width: 30rpx;
+	height: 30rpx;
+	margin-right: 15rpx;
+}
+radio {
+		transform:scale(0.7);
+}

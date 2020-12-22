@@ -1,0 +1,54 @@
+<!--pages/help/pages/applyDisabilityCertificate/applyDisabilityCertificate.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">申请残疾证</view>
+</cu-custom>
+<view class="padding">
+
+	<view class="title padding text-lg">残疾类型：</view>
+	<checkbox-group bindchange="radioChange" data-key="disabilityType">
+		<checkbox wx:for="{{disabilityTypes}}" wx:key="item" class="padding" value="{{item}}">{{item}}</checkbox>
+	</checkbox-group>
+	<view class="cu-form-group margin-top">
+		<view class="title">出生年月：</view>
+		<picker mode="date" start="1900-01-01" end="2022-12-31" bindchange="dataChange" data-key="birthday">
+			<view class="picker">
+				{{birthday?birthday:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	
+	<view class="cu-form-group">
+		<view class="title">联系人或监护人姓名</view>
+		<input placeholder="请输入联系人或监护人姓名" bindinput="putData" data-key="contactName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="男" checked="true"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+	</view>
+	<!--婚姻-->
+	<view class="cu-form-group">
+		<view class="title">婚姻状况：</view>
+		<radio-group bindchange="radioChange" data-key="marital">
+			已婚<radio class="margin-lr-sm" value="已婚" checked="true"></radio>
+			未婚<radio class="margin-left-sm" value="未婚"></radio>
+			离异<radio class="margin-left-sm" value="未婚"></radio>
+		</radio-group>
+	</view>
+	<!--申领类型-->
+
+	<view class="title padding text-lg">申领类型:</view>
+	<radio-group class="padding-lr " bindchange="radioChange" data-key="marital">
+		<view>
+			<radio class="margin-right-xs" value="新申请" checked="true"></radio>新申请
+		</view>
+		<view> <radio class="margin-right-xs" value="换领申请"></radio>换领申请
+		</view>
+		<view> <radio class="margin-right-xs" value="补领申请"></radio>补领申请
+		</view>
+	</radio-group>
+
+</view>

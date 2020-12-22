@@ -21,8 +21,8 @@ const formatNumber = n => {
 }
 
 // let baseUrl = 'http://192.168.1.108:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
-// let baseUrl = 'http://192.168.1.111:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
-let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
+let baseUrl = 'http://192.168.1.111:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+// let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 
 // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
 //内部请求方法
@@ -31,7 +31,7 @@ const requestApi = function (url, method, data = {}) {
   if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
     meth = 'GET' //不传情况下默认'GET'
   }
-  if (getApp().globalData.userInfo != null) {//已登陆情况下必传参数（项目需要看情况而定）
+  if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
     data['token'] = getApp().globalData.userInfo.token;
     data['uid'] = getApp().globalData.userInfo.uid;
   }
@@ -64,7 +64,7 @@ const requestData = function (url, method, data = {}) {
   if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
     meth = 'GET' //不传情况下默认'GET'
   }
-  if (getApp().globalData.userInfo != null) {//已登陆情况下必传参数（项目需要看情况而定）
+  if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
     data['token'] = getApp().globalData.userInfo.token;
     data['uid'] = getApp().globalData.userInfo.uid;
   }
@@ -73,7 +73,7 @@ const requestData = function (url, method, data = {}) {
       header: {
         'content-type': 'application/json'
       },
-      url:  url,
+      url: url,
       data: data,
       method: meth,
       success: function (res) {
@@ -127,6 +127,15 @@ const checkEmail = function (data) {
     return true;
   }
 }
+//弹出提示框
+const showToast = function (msg) {
+  wx.showToast({
+    title: msg,
+    icon: 'success',
+    mask: true,
+    duration:1500
+  })
+}
 
 //根据身份证号判断生日
 const getBirthday = function (data) {
@@ -154,7 +163,7 @@ const pageJump = function (url) {
 //跳转页面(带id)
 //name(参数)value（参数值）
 //例pageJumpTo（‘url’，‘id’，‘1’）
-const pageJumpTo = function (url, name, value={}) {
+const pageJumpTo = function (url, name, value = {}) {
   wx.navigateTo({
     url: url + '?' + name + "=" + value,
   })
@@ -178,7 +187,7 @@ const getParams = function getUrlkey(url) {
 
 module.exports = {
   formatTime: formatTime,
-  formatDate:formatDate,
+  formatDate: formatDate,
   requestApi: requestApi,
   requestData: requestData,
   baseUrl: baseUrl,
@@ -190,5 +199,6 @@ module.exports = {
   callPhone: callPhone,
   pageJump: pageJump,
   pageJumpTo: pageJumpTo,
-  getParams: getParams
+  getParams: getParams,
+  showToast: showToast
 }

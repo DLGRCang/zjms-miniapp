@@ -45,9 +45,9 @@ Page({
 
 	},
 	PickerChange(e) {
-		console.log(this.data.datePicker[e.detail.value]);
+
 		this.setData({
-			pickerData: this.data.datePicker[e.detail.value]
+			pickerData: e.detail.value
 		})
 	},
 	//提交数据

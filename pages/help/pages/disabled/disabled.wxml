@@ -15,7 +15,7 @@
 			<text class="text-black text-df margin-bottom-xl">已发放</text>
 		</view>
 	</view>
-	<button class="button-btn">申请残疾证</button>
+	<button bindtap="applyDisabilityCertificate" class="button-btn">申请残疾证</button>
 	<!-- 残疾补助 -->
 	<dot-title title="残疾补助" color="title-color"></dot-title>
 	<view class="flex" wx:for="{{2}}">

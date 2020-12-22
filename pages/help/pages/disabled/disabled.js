@@ -10,6 +10,11 @@ Page({
 		imgUrl:app.globalData.imgUrl,
 
   },
+  //申请残疾证
+  applyDisabilityCertificate(){
+    util.pageJump('/pages/help/pages/applyDisabilityCertificate/applyDisabilityCertificate')
+  
+  },
 
   /**
    * 生命周期函数--监听页面加载
