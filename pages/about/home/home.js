@@ -16,7 +16,7 @@ Page({
   },
   //体检预约
   goHealthy() {
-    console.log(this.data.imgUrl + '2')
+    util.pageJump('/pages/appointment/pages/healthy/healthy')
   },
   //核酸检测
   goTesting() {

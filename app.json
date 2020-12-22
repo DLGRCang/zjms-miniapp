@@ -13,7 +13,8 @@
 			"root": "pages/appointment",
 			"name": "预约",
 			"pages": [
-				"pages/hospital/hospital"
+				"pages/hospital/hospital",
+				"pages/healthy/healthy"
 			]
 		},
 		{

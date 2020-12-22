@@ -1,0 +1,41 @@
+<!--pages/appointment/pages/healthy/healthy.wxml-->
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+	<view slot="content">体检预约</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">可预约日期</view>
+		<picker bindchange="PickerChange" range="{{datePicker}}">
+			<view class="picker">
+				{{pickerData?pickerData:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">真实姓名</view>
+		<input placeholder="请输入姓名" bindinput="putData" data-key="name"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">身份证号</view>
+		<input placeholder="请输入身份证号" bindinput="putData" data-key="idCard"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话</view>
+		<input placeholder="请输入联系电话" bindinput="putData" data-key="phone"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">所属区域</view>
+		<input placeholder="请输入所属区域" bindinput="putData" data-key="area"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">详细地址</view>
+		<input placeholder="请输入详细地址" bindinput="putData" data-key="address"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">执照名称</view>
+		<input placeholder="请输入执照名称" bindinput="putData" data-key="license"></input>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>
