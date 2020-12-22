@@ -123,11 +123,28 @@ Page({
 			apply_time: this.data.subTime
 		};
 		console.log(formData)
-		let formDateList = [];
-		formDateList.push(formData)
-		util.requestApi('applicationFormTable/saveApplicationFormTable', 'POST', formDateList).then(res => {
-			console.log(res)
-		})
+		util.requestApi('applicationFormTable/saveApplicationFormTable', 'POST', formData).then(res => {
+			if(res.statusCode==200){
+				console.log(res)
+				wx.showToast({
+          title: "提交成功",
+          icon: 'success',
+					mask: true,
+					success(res){
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 2
+							})
+						}, 1000)		
+					}
+        });			
+			}else{
+				wx.showToast({
+          title: '请检查数据',
+					icon: 'error',
+        })
+			}
+		}) 
 	},
 	/**
 	 * 生命周期函数--监听页面加载
