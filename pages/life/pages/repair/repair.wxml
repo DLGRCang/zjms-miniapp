@@ -3,8 +3,8 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/baoxiu.png" style="width:100%;height:396rpx;"></image>
 <tab bindmyevent="selectTab" tvColor="color" tabName="{{tabName}}"></tab>
-<view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="保修历史" color="color" isMore="true" sign="{{infotypeid}}" type="2"></dot-title>
+<view class="margin-lr-lg">
+  <dot-title title="保修历史" color="color" isMore="{{false}}" sign="{{infotypeid}}" type="2"></dot-title>
   <view  wx:if="{{tabId==0}}">
     <view wx:for="{{dataList}}" wx:key="item">
       <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
