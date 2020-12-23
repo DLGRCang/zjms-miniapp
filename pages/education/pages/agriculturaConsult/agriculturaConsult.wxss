@@ -1,0 +1,4 @@
+/* pages/education/pages/agriculturaConsult/agriculturaConsult.wxss */
+radio {
+	transform:scale(0.7);
+}

@@ -120,7 +120,8 @@
 				"pages/homeEducate/homeEducate",
 				"pages/agricultural/agricultural",
 				"pages/fitness/fitness",
-				"pages/schoolInfo/schoolInfo"
+				"pages/schoolInfo/schoolInfo",
+				"pages/agriculturaConsult/agriculturaConsult"
 			]
 		},
 		{

@@ -4,34 +4,35 @@ const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
-	data: {
-		imgUrl:app.globalData.imgUrl,
-    itemTabs:['机械','电子'],
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgUrl: app.globalData.imgUrl,
+    itemTabs: ['机械', '电子'],
     infotypeid: '7452a716-b25f-42c3-a3c9-6d54b04450f5',
-    page:1,
-		dataList: [], //新闻列表
-   
-
+    page: 1,
+    dataList: [], //新闻列表
   },
-
+  //专家咨询
+  agriculturaConsult() {
+    util.pageJump('/pages/education/pages/agriculturaConsult/agriculturaConsult')
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
+    //加载数据列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+      this.setData({
         dataList: this.data.dataList.concat(dataList),
       })
-			console.log(this.data.dataList);
-		})
-	},
-	onLoad: function (options) {
-		this.getDataList()
-	},
+      console.log(this.data.dataList);
+    })
+  },
+  onLoad: function (options) {
+    this.getDataList()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

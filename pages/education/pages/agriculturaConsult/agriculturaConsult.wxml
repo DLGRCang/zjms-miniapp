@@ -1,0 +1,34 @@
+<!--pages/education/pages/agriculturaConsult/agriculturaConsult.wxml-->
+<cu-custom bgColor="bg-green" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">专家咨询</view>
+</cu-custom>
+<view class="padding">
+	<view class="title padding text-lg">咨询专家：</view>
+	<radio-group class="padding-lr-xs" style="width:100%" bindchange="radioChange">
+		<view wx:for="{{specialist}}" wx:key="item" class="flex align-center margin-bottom">
+			<view class="flex margin-right">
+				<image mode="aspectFill" src="{{baseImageUrl}}{{item.specialistPhoto}}" class=" margin-lr-sm"
+					style="width: 100rpx;height:130rpx;min-width: 100rpx;" ></image>
+				<view class="flex flex-direction">
+					<text class="text-black text-df" style="margin-bottom: 4rpx;">{{item.specialistName}}</text>
+					<text class="text-gray text-sm" style="margin-top:auto">{{item.specialistIntroduction}}3</text>
+				</view>
+			</view>
+			<view style="margin-left:auto;">
+				<radio value="{{item.specialistId}} "></radio>
+			</view>
+		</view>
+
+	</radio-group>
+	<view class="cu-form-group">
+		<view class="title">咨询标题：</view>
+		<input placeholder="请输标题" bindinput="putData" data-key="title"></input>
+	</view>
+	<view class="padding text-lg">
+		<view class="title margin-bottom-sm">咨询内容：</view>
+		<textarea  placeholder="请输要咨询的内容" bindinput="putData" data-key="content"></textarea>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-green margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

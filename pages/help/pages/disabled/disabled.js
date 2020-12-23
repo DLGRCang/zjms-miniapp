@@ -13,7 +13,6 @@ Page({
   //申请残疾证
   applyDisabilityCertificate(){
     util.pageJump('/pages/help/pages/applyDisabilityCertificate/applyDisabilityCertificate')
-  
   },
 
   /**
