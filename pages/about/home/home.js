@@ -16,7 +16,7 @@ Page({
   },
   //体检预约
   goHealthy() {
-    util.pageJump('/pages/appointment/pages/healthy/healthy')
+    util.pageJump('/pages/appointment/pages/healthy/healthy?type=0&title=体检预约')
   },
   //核酸检测
   goTesting() {

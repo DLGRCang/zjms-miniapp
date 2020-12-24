@@ -11,8 +11,8 @@
 	<view class="cu-form-group">
 		<view class="title">性别：</view>
 		<radio-group bindchange="radioChange" data-key="sex">
-			男<radio class="margin-lr-sm" value="男" checked="true"></radio>
-			女<radio class="margin-left-sm" value="女"></radio>
+			男<radio class="margin-lr-sm" value="m" checked="true"></radio>
+			女<radio class="margin-left-sm" value="f"></radio>
 		</radio-group>
 	</view>
 	<view class="cu-form-group">
@@ -37,9 +37,9 @@
 	<view class="cu-form-group">
 		<view class="title">婚姻状况：</view>
 		<radio-group bindchange="radioChange" data-key="marital">
-			已婚<radio class="margin-lr-sm" value="已婚" checked="true"></radio>
-			未婚<radio class="margin-left-sm" value="未婚"></radio>
-			离异<radio class="margin-left-sm" value="未婚"></radio>
+			已婚<radio class="margin-lr-sm" value="married" checked="true"></radio>
+			未婚<radio class="margin-left-sm" value="spinsterhood"></radio>
+			离异<radio class="margin-left-sm" value="divorced"></radio>
 		</radio-group>
 	</view>
 	<view class="cu-form-group">
@@ -74,7 +74,7 @@
 	<view class="title padding text-lg">残疾类型：</view>
 	<checkbox-group bindchange="radioChange" data-key="disabilityType" >
 		<view style="display:inline" wx:for="{{disabilityTypes}}" wx:key="item" class="padding" >
-			<checkbox   value="{{item}}"></checkbox>{{item}}
+			<checkbox   value="{{item.value}}"></checkbox>{{item.name}}
 		</view> 
 
 	</checkbox-group>
@@ -83,13 +83,13 @@
 	<view class="title padding text-lg">申领类型:</view>
 	<radio-group class="padding-lr " bindchange="radioChange" data-key="marital">
 		<view>
-			<radio class="margin-right-xs" value="新申请" checked="true"></radio>新申请
+			<radio class="margin-right-xs" value="xsq" checked="true"></radio>新申请
 		</view>
 		<view>
-			<radio class="margin-right-xs" value="换领申请"></radio>换领申请
+			<radio class="margin-right-xs" value="hlsq"></radio>换领申请
 		</view>
 		<view>
-			<radio class="margin-right-xs" value="补领申请"></radio>补领申请
+			<radio class="margin-right-xs" value="bbsq"></radio>补办申请
 		</view>
 	</radio-group>
 	

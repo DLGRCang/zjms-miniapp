@@ -18,7 +18,6 @@
 				<radio value="{{item.specialistId}} "></radio>
 			</view>
 		</view>
-
 	</radio-group>
 	<view class="cu-form-group">
 		<view class="title">咨询标题：</view>

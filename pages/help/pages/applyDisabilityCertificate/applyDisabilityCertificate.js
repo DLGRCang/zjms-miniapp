@@ -5,7 +5,27 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		disabilityTypes: ['视力残疾', '听力残疾', '语言残疾', '肢体残疾', '智力残疾', '精神残疾'], //残疾类型(多选)
+		disabilityTypes: [{
+				name: '视力残疾',
+				value: 'slcj'
+			},
+			{
+				name: '听力残疾',
+				value: 'slcj'
+			}, {
+				name: '语言残疾',
+				value: 'yycj'
+			}, {
+				name: '肢体残疾',
+				value: 'ztcj'
+			}, {
+				name: '智力残疾',
+				value: 'zlcj'
+			}, {
+				name: '精神残疾',
+				value: 'jscj'
+			}
+		], //残疾类型(多选)
 
 		idCard: '', //身份证号
 		name: '', //姓名

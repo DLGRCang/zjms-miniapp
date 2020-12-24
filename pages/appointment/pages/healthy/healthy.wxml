@@ -1,6 +1,6 @@
 <!--pages/appointment/pages/healthy/healthy.wxml-->
 <cu-custom bgColor="bg-blue" isBack="{{true}}">
-	<view slot="content">体检预约</view>
+	<view slot="content">{{title}}</view>
 </cu-custom>
 <view class="padding">
 	<view class="cu-form-group">

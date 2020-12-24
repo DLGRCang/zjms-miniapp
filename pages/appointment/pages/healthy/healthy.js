@@ -7,6 +7,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		title:'',
+		type:'',
 		dataList: [],
 		datePicker: [],
 		pickerData: '',
@@ -20,7 +22,7 @@ Page({
 
 	},
 	//加载可预约日期列表
-	getDate() {
+	getDate() { 
 		util.requestApi('appointmentmanage/listAppointmentDate', 'GET', '').then(res => {
 			this.setData({
 				dataList: res.data
@@ -45,23 +47,24 @@ Page({
 
 	},
 	PickerChange(e) {
-
 		this.setData({
-			pickerData: e.detail.value
+			pickerData:this.data.datePicker[e.detail.value]
 		})
+
 	},
 	//提交数据
 	commitData(){
 		let data={
 			appointmentDate:this.data.pickerData,
-			area_appertain:this.data.area,
+			areaAppertain:this.data.area,
 			idCard:this.data.idCard,
-			license_name:this.data.license ,
+			licenseName:this.data.license ,
 			particularAddress :this.data.address ,
 			userName:this.data.name ,
-			user_phone:this.data.phone ,
+			userPhone:this.data.phone ,
+			appointmentType:this.data.type,
 		}
-
+		console.log(data)
 		util.requestApi('appointmentexamination/saveappointmentexamination', 'POST',data).then(res => {
 			console.log(res)
 			if(res.statusCode==200){
@@ -79,6 +82,14 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
+	
+		let type=options.type;
+		let title=options.title;
+
+		this.setData({
+			type:type,
+			title:title
+		})
 		this.getDate()
 	},
 

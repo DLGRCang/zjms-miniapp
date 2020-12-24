@@ -717,7 +717,8 @@ Page({
             break;
           case 1:
             //健康证
-            util.pageJump('/pages/medical/pages/healthCard/healthCard')
+            util.pageJump('/pages/appointment/pages/healthy/healthy?type=1&title=健康证申请')
+            // util.pageJump('/pages/medical/pages/healthCard/healthCard')
             break;
           case 2:
             util.pageJump('/pages/medical/pages/vaccine/vaccine')

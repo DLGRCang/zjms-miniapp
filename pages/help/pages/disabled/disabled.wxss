@@ -4,18 +4,64 @@
 	color: #ffffff;
 }
 
-.button{
+.button {
 	background-color: #EE6967;
 	color: #ffffff;
 	margin: -120rpx 70rpx 0 70rpx;
 	font-size: 34rpx;
 }
+
 .button-btn {
 	background-color: #EE6967;
 	color: #ffffff;
 	margin: 0 30rpx 50rpx 30rpx;
 	font-size: 34rpx;
 }
-.title-color{
-	color:#EE6967
+
+.title-color {
+	color: #EE6967
+}
+
+.into {
+	font-family: cuIcon;
+	content: "\e6a3";
+}
+
+.into::after {
+	font-family: "cuIcon";
+	content: "\e6a3";
+	color: #D8D8D8;
+}
+
+.help-text {
+	font-size: 32rpx;
+	color: #000000;
+
+}
+
+/* 申请残疾证 */
+.help-icon1::before {
+	font-family: "cuIcon";
+	content: "\e6b7";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+
+/* 申请残疾补助 */
+.help-icon2::before {
+	font-family: "cuIcon";
+	content: "\e6bd";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+
+/* 申请贫困残疾人(子女)高校生补助 */
+.help-icon3::before {
+	font-family: "cuIcon";
+	content: "\e6f1";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
 }

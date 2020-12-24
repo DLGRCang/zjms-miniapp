@@ -10,7 +10,10 @@ Page({
 		imgUrl:app.globalData.imgUrl,
 
 	},
-
+ //体检预约
+ goHealthy() {
+	util.pageJump('/pages/appointment/pages/healthy/healthy?type=0&title=健康证申请')
+},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
