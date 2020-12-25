@@ -11,7 +11,7 @@
 	<view class="cu-form-group">
 		<view class="title">性别：</view>
 		<radio-group bindchange="radioChange" data-key="sex">
-			男<radio class="margin-lr-sm" value="m" checked="true"></radio>
+			男<radio class="margin-lr-sm" value="m"></radio>
 			女<radio class="margin-left-sm" value="f"></radio>
 		</radio-group>
 	</view>
@@ -22,7 +22,7 @@
 
 	<view class="cu-form-group">
 		<view class="title">出生年月：</view>
-		<picker mode="date" start="1900-01-01" end="2022-12-31" bindchange="dataChange" data-key="birthday">
+		<picker mode="date" start="1900-01-01" end="date" bindchange="radioChange" data-key="birthday">
 			<view class="picker">
 				{{birthday?birthday:'请选择'}}
 			</view>
@@ -37,7 +37,7 @@
 	<view class="cu-form-group">
 		<view class="title">婚姻状况：</view>
 		<radio-group bindchange="radioChange" data-key="marital">
-			已婚<radio class="margin-lr-sm" value="married" checked="true"></radio>
+			已婚<radio class="margin-lr-sm" value="married"></radio>
 			未婚<radio class="margin-left-sm" value="spinsterhood"></radio>
 			离异<radio class="margin-left-sm" value="divorced"></radio>
 		</radio-group>
@@ -81,9 +81,9 @@
 
 	<!--申领类型-->
 	<view class="title padding text-lg">申领类型:</view>
-	<radio-group class="padding-lr " bindchange="radioChange" data-key="marital">
+	<radio-group class="padding-lr " bindchange="radioChange" data-key="applicationType">
 		<view>
-			<radio class="margin-right-xs" value="xsq" checked="true"></radio>新申请
+			<radio class="margin-right-xs" value="xsq" ></radio>新申请
 		</view>
 		<view>
 			<radio class="margin-right-xs" value="hlsq"></radio>换领申请

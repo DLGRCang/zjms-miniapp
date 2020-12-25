@@ -1,4 +1,5 @@
 // pages/help/pages/applyDisabilityCertificate/applyDisabilityCertificate.js
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
@@ -54,8 +55,8 @@ Page({
 			contactName: this.data.contactName,
 			contactNumber: this.data.contactNumber,
 			disName: this.data.name,
-			disabilityTypes: this.data.disabilityType,
-			guardianOrContactNumber: this.data.guardianOrContactNumber,
+			disabilityTypes: this.data.disabilityType.toString(),
+			guardianOrContactNumber: this.data.contactName,
 			idNumber: this.data.idCard,
 			maritalStatus: this.data.marital,
 			nativePlace: this.data.nativePlace,
