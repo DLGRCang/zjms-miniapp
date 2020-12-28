@@ -1,6 +1,6 @@
 <!--pages/economic/pages/promotion/promotion.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">消费促进活动</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">商业活动</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/xiaofeicujinhuodong.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">

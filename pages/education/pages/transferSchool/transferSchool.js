@@ -1,37 +1,43 @@
-// pages/medical/pages/oldAge/oldAge.js
-const util = require('../../../../utils/util.js')
-const app=getApp()
-const data = require('../../../../utils/data.js')
+// pages/education/pages/transferSchool/transferSchool.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,
-		infotypeid: '10ebefa9-cf46-4ffd-8cc4-b0be98f415ac',
-    page:1,
-		dataList: [], //新闻列表
-		
+		gradeList:['一年级','二年级','三年级','四年级','五年级','六年级','初一','初二','初三','高一','高二','高三'],
+		grade:'',
 	},
-  //申请高龄补助
-  oldAgeSubsidy(){
-    util.pageJump('/pages/medical/pages/oldAgeSubsidy/oldAgeSubsidy')
-  },
+	//获取年级
+	getGrade(e) {
+		this.setData({
+			grade: this.data.gradeList[e.detail.value]
+		})
+	},
+	//提交数据
+	commitData() {
+		let data = {
+
+		}
+		console.log(data)
+		util.requestApi('schoolinformation/savetransferschool', 'POST', data).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+				wx.navigateBack({
+					delta: 1
+				})
+				util.showToast("提交成功")
+
+			} else {
+				util.showToast("提交失败")
+			}
+		});
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-				dataList: this.data.dataList.concat(dataList)
-			})
-			console.log(this.data.dataList);
-		})
-	},
 	onLoad: function (options) {
-		this.getDataList()
+
 	},
 
 	/**

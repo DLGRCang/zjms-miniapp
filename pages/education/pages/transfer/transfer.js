@@ -4,21 +4,25 @@ const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
-	data: {
-		imgUrl:app.globalData.imgUrl,
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgUrl: app.globalData.imgUrl,
     infotypeid: ' 97efc93d-0bd7-43a9-9761-239e264fec65',
-    page:1,
-		dataList: [], //新闻列表
+    page: 1,
+    dataList: [], //新闻列表
   },
-  uploadFile:function(){
+  //申请转学
+  applytransferSchool() {
+    util.pageJump('/pages/education/pages/transferSchool/transferSchool')
+  },
+  uploadFile: function () {
     wx.chooseImage({
-      success (res) {
+      success(res) {
         const tempFilePaths = res.tempFilePaths
 
-//http://219.159.20.229:443/GovNetMS_Interface/file/appUploadFile
+        //http://219.159.20.229:443/GovNetMS_Interface/file/appUploadFile
         wx.uploadFile({
           url: 'http://192.168.1.114:8004/InfoIssue/app/release/file/uploadfile', //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
@@ -26,7 +30,7 @@ Page({
           formData: {
             'token': ''
           },
-          success (res){
+          success(res) {
             const data = res.data
             console.log(res)
             //do something
@@ -34,22 +38,22 @@ Page({
         })
       }
     })
-  } ,
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-				dataList: this.data.dataList.concat(dataList)
-			})
-			console.log(this.data.dataList);
-		})
-	},
-	onLoad: function (options) {
-		this.getDataList()
-	},
+    //加载数据列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+      this.setData({
+        dataList: this.data.dataList.concat(dataList)
+      })
+      console.log(this.data.dataList);
+    })
+  },
+  onLoad: function (options) {
+    this.getDataList()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,0 +1,83 @@
+<!--pages/education/pages/transferSchool/transferSchool.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">转学申请</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">学生姓名：</view>
+		<input placeholder="请输入学生姓名" bindinput="putData" data-key="name"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="m"></radio>
+			女<radio class="margin-left-sm" value="f"></radio>
+		</radio-group>
+	</view>
+	<!-- 民族 -->
+	<view class="cu-form-group">
+		<view class="title">民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-key="nation">
+			<view class="picker">
+				{{nation?nation:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">身份证号：</view>
+		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="idCard"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">户籍地址所在地：</view>
+		<input style="display:block" placeholder="请输入户籍地址所在地：" bindinput="putData" data-key="permanentResidenceAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">现家庭住址：</view>
+		<input style="display:block" placeholder="请输入现家庭住址：" bindinput="putData" data-key="permanentResidenceAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">监护人姓名：</view>
+		<input placeholder="请输入监护人姓名" bindinput="putData" data-key="userName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">监护人联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="phone"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">监护人工作单位：</view>
+		<input type="number" placeholder="请输入监护人工作单位" bindinput="putData" data-key="phone"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">转学理由：</view>
+		<input style="display:block" placeholder="请输入转学理由：" bindinput="putData" data-key="permanentResidenceAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">学籍号：</view>
+		<input type="number" placeholder="请输入学籍号" bindinput="putData" data-key="phone"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">学校id：</view>
+		<input type="number" placeholder="请输入学校id" bindinput="putData" data-key="schoolInformationId"></input>
+	</view>
+	<!-- 年级 -->
+	<view class="cu-form-group">
+		<view class="title">年级</view>
+		<picker bindchange="getGrade" value="{{index}}" range="{{gradeList}}" data-key="grade">
+			<view class="picker">
+				{{grade?grade:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">原就读学校联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="phone"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">原就读学校：</view>
+		<input style="display:block" placeholder="请输入原就读学校：" bindinput="putData" data-key="permanentResidenceAddress"></input>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

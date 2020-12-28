@@ -15,7 +15,9 @@ Page({
 		name: '',
 		idCard: '',
 		phone: '',
-		area: '',
+		areas: ['阿勒腾席热镇','乌兰木伦镇','伊金霍洛镇','设札萨克镇','纳林陶亥镇','红庆河镇','苏布尔嘎镇'],//区域列表
+		pickerArea: '',//选中区域
+
 		address: '',
 		license: ''
 
@@ -50,13 +52,18 @@ Page({
 		this.setData({
 			pickerData:this.data.datePicker[e.detail.value]
 		})
+	},
+	AreaChange(e) {
+		this.setData({
+			pickerArea:this.data.areas[e.detail.value],
 
+		})
 	},
 	//提交数据
 	commitData(){
 		let data={
 			appointmentDate:this.data.pickerData,
-			areaAppertain:this.data.area,
+			areaAppertain:this.data.pickerArea,
 			idCard:this.data.idCard,
 			licenseName:this.data.license ,
 			particularAddress :this.data.address ,

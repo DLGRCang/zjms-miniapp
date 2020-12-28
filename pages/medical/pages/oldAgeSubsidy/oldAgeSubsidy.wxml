@@ -1,0 +1,77 @@
+<!--pages/medical/pages/oldAgeSubsidy/oldAgeSubsidy.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">高龄补助申请</view>
+</cu-custom>
+<view class="padding">
+	<view class="margin-bottom-sm">
+		<view class="title margin-bottom-sm">申请补贴标准:</view>
+		<text class="text-red">75-79周岁100元;80-99周岁150元;100（含）周岁以上600元</text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">姓名：</view>
+		<input placeholder="请输入姓名" bindinput="putData" data-key="userName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="userSex">
+			男<radio class="margin-lr-sm" value="m"></radio>
+			女<radio class="margin-left-sm" value="f"></radio>
+		</radio-group>
+	</view>
+	<!-- 民族 -->
+	<view class="cu-form-group">
+		<view class="title">民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-key="nation">
+			<view class="picker">
+				{{nation?nation:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">身份证号：</view>
+		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="idCard"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="contactPhone"></input>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">户籍地址(现住址)：</view>
+		<input style="display:block" placeholder="请输入地址" bindinput="putData" data-key="permanentResidenceAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">受委托人姓名：</view>
+		<input placeholder="请输入受委托人姓名" bindinput="putData" data-key="principalName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">受委托人性别：</view>
+		<radio-group bindchange="radioChange" data-key="principalSex">
+			男<radio class="margin-lr-sm" value="m"></radio>
+			女<radio class="margin-left-sm" value="f"></radio>
+		</radio-group>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">受委托人身份证号：</view>
+		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="principalIdCard"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">受委托人联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="phone"></input>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">受委托人户籍地址(现住址)：</view>
+		<input style="display:block" placeholder="请输入地址" bindinput="principalNowAddress"
+			data-key="permanentResidenceAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">与申请人关系：</view>
+		<input style="display:block" placeholder="请输入与申请人关系" bindinput="putData" data-key="relationship"></input>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

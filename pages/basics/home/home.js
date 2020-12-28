@@ -205,7 +205,7 @@ Page({
           tab: 6
         },
         {
-          tit: "活动促销",
+          tit: "商业活动",
           pic: "/image/29.png",
           tab: 7
         },

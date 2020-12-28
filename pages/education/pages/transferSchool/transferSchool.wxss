@@ -1,0 +1,5 @@
+/* pages/education/pages/transferSchool/transferSchool.wxss */
+.bgColor {
+	background-color: #2162B5;
+	color: #ffffff;
+}

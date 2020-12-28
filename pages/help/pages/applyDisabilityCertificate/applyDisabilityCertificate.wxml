@@ -16,7 +16,7 @@
 		</radio-group>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">身份证号</view>
+		<view class="title">身份证号：</view>
 		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="idCard"></input>
 	</view>
 
@@ -29,7 +29,7 @@
 		</picker>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">联系电话</view>
+		<view class="title">联系电话：</view>
 		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="phone"></input>
 	</view>
 
@@ -43,32 +43,32 @@
 		</radio-group>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">监护人姓名</view>
+		<view class="title">监护人姓名：</view>
 		<input placeholder="请输入监护人姓名" bindinput="putData" data-key="contactName"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">文化程度</view>
+		<view class="title">文化程度：</view>
 		<input placeholder="请输文化程度" bindinput="putData" data-key="standardCulture"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">籍贯</view>
+		<view class="title">籍贯：</view>
 		<input placeholder="请输入籍贯" bindinput="putData" data-key="nativePlace"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">户籍地址</view>
+		<view class="title">户籍地址：</view>
 		<input placeholder="请输入户籍地址" bindinput="putData" data-key="permanentResidenceAddress"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">邮政编码</view>
+		<view class="title">邮政编码：</view>
 		<input type="number" placeholder="请输入邮政编码" bindinput="putData" data-key="postCode"></input>
 	</view>
 
 	<view class="cu-form-group">
-		<view class="title">现住址</view>
+		<view class="title">现住址：</view>
 		<input type="number" placeholder="请输入现住址" bindinput="putData" data-key="presentAddress"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">与申请人关系</view>
+		<view class="title">与申请人关系：</view>
 		<input type="number" placeholder="请输与申请人关系" bindinput="putData" data-key="relationshipWithRheApplican"></input>
 	</view>
 	<view class="title padding text-lg">残疾类型：</view>
@@ -80,7 +80,7 @@
 	</checkbox-group>
 
 	<!--申领类型-->
-	<view class="title padding text-lg">申领类型:</view>
+	<view class="title padding text-lg">申领类型：</view>
 	<radio-group class="padding-lr " bindchange="radioChange" data-key="applicationType">
 		<view>
 			<radio class="margin-right-xs" value="xsq" ></radio>新申请

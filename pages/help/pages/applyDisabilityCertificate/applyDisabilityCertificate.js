@@ -66,6 +66,8 @@ Page({
 			relationshipWithRheApplican: this.data.relationshipWithRheApplican,
 			sex: this.data.sex,
 			standardCulture: this.data.standardCulture,
+			filename:'',//文件名
+			pictureName:'',//图片名
 		}
 		console.log(data)
 		util.requestApi('disabilitycertificate/savedisabilitycertificate', 'POST', data).then(res => {
@@ -94,9 +96,6 @@ Page({
 		this.setData({
 			[key]: e.detail.value
 		})
-		console.log(this.data.disabilityType)
-		console.log(this.data.sex)
-		console.log(this.data.marital)
 	},
 	/**
 	 * 生命周期函数--监听页面加载

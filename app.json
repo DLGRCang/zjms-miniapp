@@ -121,7 +121,8 @@
 				"pages/agricultural/agricultural",
 				"pages/fitness/fitness",
 				"pages/schoolInfo/schoolInfo",
-				"pages/agriculturaConsult/agriculturaConsult"
+				"pages/agriculturaConsult/agriculturaConsult",
+				"pages/transferSchool/transferSchool"
 			]
 		},
 		{
@@ -135,7 +136,8 @@
 				"pages/welfareHouse/welfareHouse",
 				"pages/vaccine/vaccine",
 				"pages/oldAge/oldAge",
-				"pages/agednessCar/agednessCar"
+				"pages/agednessCar/agednessCar",
+				"pages/oldAgeSubsidy/oldAgeSubsidy"
 			]
 		},
 		{
