@@ -3,7 +3,17 @@
 </cu-custom>
 <view class="padding">
   <view class="main margin-top-lg padding-tb-xs text-xxl">{{info_content}}</view>
-  <view class="main text-grey">时间：{{publishdate}}  来源：{{info_source}}</view>
-  <rich-text nodes="{{info_detail}}"></rich-text>
+  <view class="main text-grey">时间：{{publishdate}}  来源：{{info_source}}</view>  
+  <rich-text nodes="{{info_detail}}" class="main margin-lg"></rich-text>
   <!-- <parser class="main margin-lg" html="{{info_detail}}" /> -->
+  <view class="margin-top-xs text-xxl flex">
+  <view class="cuIcon-appreciate {{praise}}" bindtap="goPraise"></view>
+  <!-- <view class="cuIcon-appreciatefill"></view> -->
+  <view class="cuIcon-forward"></view>
+  <button class="" open-type='share'>
+    <text class="cuIcon-forward text-grey"></text>
+  </button>
+  <!-- <view class="cuIcon-forwardfill"></view> -->
+  <view class="cuIcon-comment"></view>
+</view>
 </view>
