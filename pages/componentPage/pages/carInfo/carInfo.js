@@ -13,7 +13,7 @@ Page({
 	},
 	getData:function(infoContentId){
 	
-		 util.requestApi('infocontent/getinfocontent/'+infoContentId, 'GET', '').then(res => {
+		 util.requestApi('infocontent/getinfocontent/'+infoContentId, 'GET', {}).then(res => {
 			 this.setData({
 				 data:res.data
 			 })

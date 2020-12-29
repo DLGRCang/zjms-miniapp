@@ -41,6 +41,7 @@ Page({
         util.showToast("提交成功")
         wx.setStorageSync("isLogin", true);
         wx.setStorageSync("token", res.data.result.token);
+        wx.setStorageSync("userId", res.data.result.userinfo.id);
         wx.setStorageSync("isLogin", true);
         that.setData({
           isLogin: wx.getStorageSync("isLogin")

@@ -22,7 +22,7 @@ Page({
    */
   getDataList: function () {
 		//加载数据列表
-    util.requestApi('schoolinformation/listpagepreschooleducation/', 'GET', '').then(res => {
+    util.requestApi('schoolinformation/listpagepreschooleducation/', 'GET', {}).then(res => {
   
       this.setData({
         dataList:res.data.rows

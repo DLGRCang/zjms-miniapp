@@ -17,7 +17,6 @@ Page({
 		phone: '',
 		areas: ['阿勒腾席热镇','乌兰木伦镇','伊金霍洛镇','设札萨克镇','纳林陶亥镇','红庆河镇','苏布尔嘎镇'],//区域列表
 		pickerArea: '',//选中区域
-
 		address: '',
 		license: ''
 
@@ -25,7 +24,7 @@ Page({
 	},
 	//加载可预约日期列表
 	getDate() { 
-		util.requestApi('appointmentmanage/listAppointmentDate', 'GET', '').then(res => {
+		util.requestApi('appointmentmanage/listAppointmentDate', 'GET',{}).then(res => {
 			this.setData({
 				dataList: res.data
 			})
@@ -81,7 +80,7 @@ Page({
 				util.showToast("提交成功")
 				
 			}else{
-				util.showToast("提交失败")
+				util.showToast(res.data.msg)
 			}
 		});
 	},

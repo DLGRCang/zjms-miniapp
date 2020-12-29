@@ -33,8 +33,8 @@
 		<input style="display:block" placeholder="请输入现家庭住址：" bindinput="putData" data-key="currentAddress"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">户籍地址所在地：</view>
-		<input style="display:block" placeholder="请输入户籍地址所在地：" bindinput="putData" data-key="domicilePlace"></input>
+		<view class="title">户籍所在地：</view>
+		<input style="display:block" placeholder="请输入户籍所在地" bindinput="putData" data-key="domicilePlace"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">监护人姓名：</view>
@@ -50,7 +50,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">转学理由：</view>
-		<input style="display:block" placeholder="请输入转学理由：" bindinput="putData" data-key="transferReason"></input>
+		<input style="display:block" placeholder="请输入转学理由" bindinput="putData" data-key="transferReason"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">学籍号：</view>
