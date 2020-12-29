@@ -297,7 +297,7 @@ Page({
         url: '/pages/help/pages/law/law',
         isShow: true
       },{
-        name: '女性关互',
+        name: '女性关护',
         icon: app.globalData.imgUrl + '/image/62.png',
         url: '/pages/help/pages/woman/woman',
         isShow: true

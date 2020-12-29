@@ -17,13 +17,10 @@
         </view>
       </view>
     </view>
-    <view class="setting" wx:if="{{isLogin}}" bindtap='loginOut'>
-      <!-- <text class="cuIcon-settingsfill"></text> -->
-      退出登录
-    </view>
-    <view class="login" wx:else bindtap="goLogin">
-      登    录
-    </view>
+    <view>
+    <button class="setting" wx:if="{{isLogin}}"  bindtap='loginOut'>退出登录</button>
+    <button  class="login" wx:else  open-type="getUserInfo" bindgetuserinfo="goLogin">登录</button>
+  </view>
   </view>
   <!-- 功能组 -->
   <view class="margin-tb-lg">

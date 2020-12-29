@@ -49,6 +49,8 @@ App({
   },
 
   globalData: {
+    isLogin:false,
+  
     baseImgUrl: 'https://yiqi.sucstep.com/InfoIssue/route/file/downloadfile/true/',
     // imgUrl: 'https://wuliji2.wulanchabu.gov.cn/zjmsMiniAppImages',()
     imgUrl: 'https://yiqi.sucstep.com/InfoIssue/miniapp',

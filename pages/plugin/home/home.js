@@ -7,21 +7,56 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLogin: true,
+    isLogin: wx.getStorageSync("isLogin")
   },
-  //登录
+  //微信登录
   goLogin: function (e) {
-    // util.pageJump('/pages/userCenter/pages/login/login')
-    this.setData({
-      isLogin: true
+    let that = this;
+    wx.login({
+      success(res) {
+        that.userInfoHandler(res.code);
+      }
+    })
+  },
+  userInfoHandler(code) {
+    let that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        that.putUserData(code, res.iv, res.encryptedData)
+      }
+    })
+  },
+  //服务器登录
+  putUserData(code, iv, encryptedData) {
+    let that = this;
+    let data = {
+      code: code,
+      iv: iv,
+      encryptedData: encryptedData,
+      type: '1',
+    }
+    util.requestApi('http://172.16.20.65:8003/app/sign/checkCoderelease', 'post', data).then(res => {
+      console.log(res)
+      if (res.data.code == 200) {
+        util.showToast("提交成功")
+        wx.setStorageSync("isLogin", true);
+        wx.setStorageSync("token", res.data.result.token);
+        wx.setStorageSync("isLogin", true);
+        that.setData({
+          isLogin: wx.getStorageSync("isLogin")
+        })
+      } else {
+        util.showToast("登录失败")
+      }
     });
   },
   //退出登录
   loginOut: function () {
-    wx.setStorageSync("ysb-islogin", false);
+    wx.setStorageSync("isLogin", false);
     this.setData({
-      isLogin: false
-    });
+      isLogin: wx.getStorageSync("isLogin")
+    })
+
   },
   //个人信息
   userinfo() {

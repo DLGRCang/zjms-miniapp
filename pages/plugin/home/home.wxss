@@ -5,28 +5,33 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: 20rpx;
+
 }
 
 .setting {
-  width: 140rpx;
+
   height: 60rpx;
   line-height: 60rpx;
-  padding-left: 16rpx;
+  margin-left: auto;
   border: 1rpx solid #054FAC;
   border-radius: 10rpx;
   color: #054FAC;
   margin-top: 20rpx;
+  font-size: 30rpx;
 }
 
 .login {
-  width: 120rpx;
+
   height: 60rpx;
   line-height: 60rpx;
-  padding-left: 30rpx;
+
   border: 1rpx solid #054FAC;
   border-radius: 10rpx;
   color: #054FAC;
   margin-top: 20rpx;
+  font-size: 30rpx;
+  margin-left: auto;
+
 }
 
 .items {
