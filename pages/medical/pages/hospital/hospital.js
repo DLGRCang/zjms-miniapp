@@ -21,7 +21,7 @@ Page({
 
   },
   getData() {
-		util.requestApi('medical/listpagemedical', 'GET', '').then(res => {
+		util.requestApi('medical/listpagemedical', 'GET', {}).then(res => {
 
       let allList=[]
       allList=res.data.rows;

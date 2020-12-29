@@ -15,8 +15,8 @@
 	<view class="cu-form-group">
 		<view class="title">性别：</view>
 		<radio-group bindchange="radioChange" data-key="userSex">
-			男<radio class="margin-lr-sm" value="m"></radio>
-			女<radio class="margin-left-sm" value="f"></radio>
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
 		</radio-group>
 	</view>
 	<!-- 民族 -->
@@ -39,7 +39,7 @@
 
 	<view class="cu-form-group">
 		<view class="title">户籍地址(现住址)：</view>
-		<input style="display:block" placeholder="请输入地址" bindinput="putData" data-key="permanentResidenceAddress"></input>
+		<input style="display:block" placeholder="请输入地址" bindinput="putData" data-key="nowAddress"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">受委托人姓名：</view>
@@ -49,8 +49,8 @@
 	<view class="cu-form-group">
 		<view class="title">受委托人性别：</view>
 		<radio-group bindchange="radioChange" data-key="principalSex">
-			男<radio class="margin-lr-sm" value="m"></radio>
-			女<radio class="margin-left-sm" value="f"></radio>
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
 		</radio-group>
 	</view>
 	<view class="cu-form-group">
@@ -59,13 +59,13 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">受委托人联系电话：</view>
-		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="phone"></input>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="principalContactPhone"></input>
 	</view>
 
 	<view class="cu-form-group">
 		<view class="title">受委托人户籍地址(现住址)：</view>
-		<input style="display:block" placeholder="请输入地址" bindinput="principalNowAddress"
-			data-key="permanentResidenceAddress"></input>
+		<input style="display:block" placeholder="请输入地址" bindinput="putData"
+			data-key="principalNowAddress"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">与申请人关系：</view>

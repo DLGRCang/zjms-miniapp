@@ -1,5 +1,6 @@
 // pages/medical/pages/oldAgeSubsidy/oldAgeSubsidy.js
 const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
@@ -10,7 +11,7 @@ Page({
 		nation: '', //选中的民族列表
 		contactPhone:'',//联系电话
 		idCard:'',//身份证号
-		idCanowAddress:'',//户籍地址（现住址）
+		nowAddress:'',//户籍地址（现住址）
 		idCanoprincipalContactPhone:'',//受委托人联系电话
 		principalIdCard:'',//受委托人身份证号
 		principalName:'',//受委托人姓名
@@ -43,10 +44,10 @@ Page({
 	//提交数据
 	commitData() {
 		let data = {
-			attachment:'',//身份证附件
+			attachment:'22',//身份证附件
 			contactPhone:this.data.contactPhone,
 			idCard:this.data.idCard,
-			idCanowAddress:this.data.idCanowAddress,
+			nowAddress:this.data.nowAddress,
 			principalContactPhone:this.data.principalContactPhone,
 			principalIdCard:this.data.principalIdCard,
 			principalName:this.data.principalName,
@@ -68,7 +69,7 @@ Page({
 				util.showToast("提交成功")
 
 			} else {
-				util.showToast("提交失败")
+				util.showToast(res.data.msg)
 			}
 		});
 	},

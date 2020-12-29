@@ -22,14 +22,14 @@ Page({
    */
   getDataList: function () {
     //加载数据列表
-    util.requestApi('schoolinformation/listPageMiddlePrimarySchool/2', 'GET', '').then(res => {
+    util.requestApi('schoolinformation/listPageMiddlePrimarySchool/2', 'GET', {}).then(res => {
 
       this.setData({
         dataList: res.data.rows
       })
       console.log(this.data.dataList)
     });
-    util.requestApi('schoolinformation/listPageMiddlePrimarySchool/3', 'GET', '').then(res => {
+    util.requestApi('schoolinformation/listPageMiddlePrimarySchool/3', 'GET', {}).then(res => {
 
       this.setData({
         dataList1: res.data.rows

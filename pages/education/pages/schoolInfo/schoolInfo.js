@@ -15,7 +15,7 @@ Page({
 	},
 	getDataList: function (schoolInformationId) {
 		//加载数据列表
-		util.requestApi('schoolinformation/getschoolinformation/' + schoolInformationId, 'GET', '').then(res => {
+		util.requestApi('schoolinformation/getschoolinformation/' + schoolInformationId, 'GET', {}).then(res => {
 			this.setData({
 				data: res.data
 			

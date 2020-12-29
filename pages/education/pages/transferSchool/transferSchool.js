@@ -1,4 +1,5 @@
 // pages/education/pages/transferSchool/transferSchool.js
+const util = require('../../../../utils/util.js')
 const app = getApp()
 Page({
 
@@ -8,11 +9,11 @@ Page({
 	data: {
 		nationList: app.globalData.nationList,
 		gradeList: ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级', '初一', '初二', '初三', '高一', '高二', '高三'],
-		accessory1: '', //监护人居住证明（①购房合同及缴款收据原件、复印件；
-		accessory2: '', //房产证原件、复印件；
-		accessory3: '', //旗外户籍租房提供居住证及近三个月水、电、燃气其中一项收据即可；
-		accessory4: '', //旗内户籍租房提供社区居住证明及近三个月水、电、燃气其中一项收据即可
-		photo: '', //学生、家长或其他监护人居民户口簿照片附件 ,
+		accessory1: '1', //监护人居住证明（①购房合同及缴款收据原件、复印件；
+		accessory2: '1', //房产证原件、复印件；
+		accessory3: '1', //旗外户籍租房提供居住证及近三个月水、电、燃气其中一项收据即可；
+		accessory4: '1', //旗内户籍租房提供社区居住证明及近三个月水、电、燃气其中一项收据即可
+		photo: '1', //学生、家长或其他监护人居民户口簿照片附件 ,
 		currentAddress: '', //现家庭住址
 		domicilePlace: '', //户籍所在地
 		grade: '', //年级
@@ -92,7 +93,7 @@ Page({
 				util.showToast("提交成功")
 
 			} else {
-				util.showToast("提交失败")
+				util.showToast(res.data.msg)
 			}
 		});
 	},
