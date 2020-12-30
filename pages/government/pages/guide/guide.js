@@ -1,11 +1,12 @@
 // pages/government/pages/guide/guide.js
-const app=getApp()
+const app = getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		imgUrl: app.globalData.imgUrl,
 		tabName: ["1楼", "2楼", "3楼", "4楼"],
 		index:1,
 		 CustomBar: app.globalData.CustomBar,
