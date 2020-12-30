@@ -16,25 +16,16 @@ Page({
   applytransferSchool() {
     util.pageJump('/pages/education/pages/transferSchool/transferSchool')
   },
+  //选择文件并上传
   uploadFile: function () {
-    wx.chooseImage({
+    wx.chooseMessageFile({
+      count: 1,
+      type: 'all',
       success(res) {
-        const tempFilePaths = res.tempFilePaths
-
-        //http://219.159.20.229:443/GovNetMS_Interface/file/appUploadFile
-        wx.uploadFile({
-          url: 'http://192.168.1.114:8004/InfoIssue/app/release/file/uploadfile', //仅为示例，非真实的接口地址
-          filePath: tempFilePaths[0],
-          name: 'file',
-          formData: {
-            'token': ''
-          },
-          success(res) {
-            const data = res.data
-            console.log(res)
-            //do something
-          },
-        })
+        const tempFilePaths = res.tempFiles
+        util.uploadFile('http://192.168.1.114:8004/InfoIssue/app/file/uploadfile',tempFilePaths[0].path,{}).then(res => {
+          console.log(res)
+        });
       }
     })
   },

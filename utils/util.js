@@ -21,10 +21,11 @@ const formatNumber = n => {
 }
 
 // let baseUrl = 'http://192.168.1.107:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
-// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
 // let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 
-let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
+// let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
+let uploadUrl='http://192.168.1.114:8004/InfoIssue/app/file/uploadfile'//文件上传地址
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
   let meth = method.toUpperCase()
@@ -33,7 +34,7 @@ const requestApi = function (url, method, data = {}) {
   }
   // if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
 
-    data['userId'] =  wx.getStorageSync("userId")?wx.getStorageSync("userId"):"";
+  data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
   // }
   return new Promise(function (resolve, reject) {
     wx.request({
@@ -66,7 +67,7 @@ const requestData = function (url, method, data = {}) {
     meth = 'GET' //不传情况下默认'GET'
   }
   // if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
-    data['userId'] =  wx.getStorageSync("userId")?wx.getStorageSync("userId"):"";
+  data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
   // }
   return new Promise(function (resolve, reject) {
     wx.request({
@@ -90,6 +91,31 @@ const requestData = function (url, method, data = {}) {
       }
     })
   })
+}
+//文件上传接口
+const uploadFile = function (filePath) {
+  wx.showLoading({
+    title: '上传中...'
+  });
+  return new Promise((resolve, reject) => {
+    wx.uploadFile({
+      url: uploadUrl,
+      filePath: filePath,
+      name: 'file',
+      formData: {},
+      header: {
+        'token': wx.getStorageSync("token")
+      },
+      success: (res) => {
+        wx.hideLoading();
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          resolve(res.data)
+        } else {
+          reject(res)
+        }
+      }
+    })
+  });
 }
 
 //身份证号校验
@@ -134,7 +160,7 @@ const showToast = function (msg) {
     title: msg,
     icon: 'success',
     mask: true,
-    duration:1500
+    duration: 1500
   })
 }
 
@@ -191,6 +217,7 @@ module.exports = {
   formatDate: formatDate,
   requestApi: requestApi,
   requestData: requestData,
+  uploadFile: uploadFile,
   baseUrl: baseUrl,
   checkIdCard: checkIdCard,
   checkPhone: checkPhone,
