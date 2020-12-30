@@ -3,3 +3,14 @@
   display: flex;
   justify-content: center;
 }
+.praise{
+  color: red;
+}
+button{
+  background-color: #fff;
+  width: 88rpx;
+  padding-left: -400rpx;
+}
+button::after {
+  border: none;
+}
