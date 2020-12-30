@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageTabs:["办理中", "已办结", "被退回"],
+    pageTabs:["预约中", "已完成", "未成功"],
   },
 	selectTab:function(e){
 		console.log(e.detail.TabCur)

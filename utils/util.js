@@ -21,10 +21,10 @@ const formatNumber = n => {
 }
 
 // let baseUrl = 'http://192.168.1.107:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
-let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
 // let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 
-// let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
+let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
   let meth = method.toUpperCase()
@@ -32,15 +32,15 @@ const requestApi = function (url, method, data = {}) {
     meth = 'GET' //不传情况下默认'GET'
   }
   // if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
-    data['token'] =  wx.getStorageSync("token")?wx.getStorageSync("token"):"1";
-    data['userId'] =  wx.getStorageSync("userId")?wx.getStorageSync("userId"):"2";
+
+    data['userId'] =  wx.getStorageSync("userId")?wx.getStorageSync("userId"):"";
   // }
   return new Promise(function (resolve, reject) {
     wx.request({
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'token': wx.getStorageSync("token")
       },
-      // url: url,
       url: baseUrl + url,
       data: data,
       method: meth,
@@ -65,14 +65,14 @@ const requestData = function (url, method, data = {}) {
   if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
     meth = 'GET' //不传情况下默认'GET'
   }
-  if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
-    data['token'] = getApp().globalData.userInfo.token;
-    data['uid'] = getApp().globalData.userInfo.uid;
-  }
+  // if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
+    data['userId'] =  wx.getStorageSync("userId")?wx.getStorageSync("userId"):"";
+  // }
   return new Promise(function (resolve, reject) {
     wx.request({
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'token': wx.getStorageSync("token")
       },
       url: url,
       data: data,
