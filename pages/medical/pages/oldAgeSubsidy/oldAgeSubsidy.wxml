@@ -33,6 +33,11 @@
 		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="idCard"></input>
 	</view>
 	<view class="cu-form-group">
+		<view class="title">身份证附件：</view>
+		<input class="text-cut" disabled="false"  placeholder="身份证双面扫描件" value="{{fileName}}"></input>
+		<text bindtap="uploadFile" class="file margin-left"></text>
+	</view>
+	<view class="cu-form-group">
 		<view class="title">联系电话：</view>
 		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="contactPhone"></input>
 	</view>

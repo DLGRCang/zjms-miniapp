@@ -20,8 +20,8 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-// let baseUrl = 'http://192.168.1.107:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
-let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+let baseUrl = 'http://192.168.1.110:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
+// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
 // let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 
 // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
@@ -103,6 +103,7 @@ const uploadFile = function (filePath) {
       filePath: filePath,
       name: 'file',
       formData: {},
+      timeout:2*60*1000,
       header: {
         'token': wx.getStorageSync("token")
       },
@@ -113,6 +114,11 @@ const uploadFile = function (filePath) {
         } else {
           reject(res)
         }
+      },
+      fail: function (res) {
+        //错误信息统一处理操作
+        wx.hideLoading();
+        reject(res)
       }
     })
   });

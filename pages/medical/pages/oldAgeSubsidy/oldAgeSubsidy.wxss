@@ -3,3 +3,11 @@
 	background-color: #2B83F4;
 	color: #ffffff;
 }
+.file:before{
+	font-family: "cuIcon";
+	content: "\e739";
+	color: #2B83F4;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+
+}

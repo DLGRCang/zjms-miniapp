@@ -7,6 +7,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		fileName:'',
 		nationList: app.globalData.nationList, //民族
 		nation: '', //选中的民族列表
 		contactPhone:'',//联系电话
@@ -41,6 +42,19 @@ Page({
 			nation: this.data.nationList[e.detail.value]
 		})
 	},
+	//选择文件并上传
+  uploadFile: function () {
+    wx.chooseMessageFile({
+      count: 1,
+      type: 'all',
+      success(res) {
+        const tempFilePaths = res.tempFiles
+        util.uploadFile(tempFilePaths[0].path).then(res => {
+          console.log(res)
+        });
+      }
+    })
+  },
 	//提交数据
 	commitData() {
 		let data = {

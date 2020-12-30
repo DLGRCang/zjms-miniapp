@@ -16,19 +16,7 @@ Page({
   applytransferSchool() {
     util.pageJump('/pages/education/pages/transferSchool/transferSchool')
   },
-  //选择文件并上传
-  uploadFile: function () {
-    wx.chooseMessageFile({
-      count: 1,
-      type: 'all',
-      success(res) {
-        const tempFilePaths = res.tempFiles
-        util.uploadFile('http://192.168.1.114:8004/InfoIssue/app/file/uploadfile',tempFilePaths[0].path,{}).then(res => {
-          console.log(res)
-        });
-      }
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
