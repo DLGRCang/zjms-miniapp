@@ -2,7 +2,6 @@
 const util = require('../../../../utils/util.js')
 
 Page({
-
 	/**
 	 * 页面的初始数据
 	 */
@@ -19,8 +18,6 @@ Page({
 		pickerArea: '',//选中区域
 		address: '',
 		license: ''
-
-
 	},
 	//加载可预约日期列表
 	getDate() { 
@@ -32,7 +29,6 @@ Page({
 			for (let i = 0; i < this.data.dataList.length; i++) {
 				dateList.push((this.data.dataList)[i].appointmentDate)
 			}
-
 			this.setData({
 				datePicker: dateList
 			})

@@ -20,8 +20,8 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-let baseUrl = 'http://192.168.1.110:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
-// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+// let baseUrl = 'http://192.168.1.110:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
+let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
 // let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 
 // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
@@ -37,6 +37,10 @@ const requestApi = function (url, method, data = {}) {
   data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
   // }
   return new Promise(function (resolve, reject) {
+
+    wx.showLoading({
+      title: '请稍等...'
+    });
     wx.request({
       header: {
         'content-type': 'application/json',
@@ -46,12 +50,14 @@ const requestApi = function (url, method, data = {}) {
       data: data,
       method: meth,
       success: function (res) {
+        wx.hideLoading();
         //返回信息统一处理操作
 
         //resolve用于具体调用中
         resolve(res)
       },
       fail: function (res) {
+        wx.hideLoading();
         //错误信息统一处理操作
 
         reject(res)
@@ -62,6 +68,9 @@ const requestApi = function (url, method, data = {}) {
 
 //外部请求方法
 const requestData = function (url, method, data = {}) {
+  wx.showLoading({
+    title: '请稍等...'
+  });
   let meth = method.toUpperCase()
   if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
     meth = 'GET' //不传情况下默认'GET'
@@ -79,12 +88,14 @@ const requestData = function (url, method, data = {}) {
       data: data,
       method: meth,
       success: function (res) {
+        wx.hideLoading();
         //返回信息统一处理操作
 
         //resolve用于具体调用中
         resolve(res)
       },
       fail: function (res) {
+        wx.hideLoading();
         //错误信息统一处理操作
 
         reject(res)
