@@ -21,34 +21,12 @@ Page({
    */
   onLoad: function (options) {
     var id = options.id;
-<<<<<<< HEAD
-    var info_content=options.info_content;
-    var info_source=options.info_source;
-    var info_detail=decodeURIComponent(options.info_detail);
-    var publishdate=options.publishdate;
-
-   
-=======
     var info_content = options.info_content;
     var info_source = options.info_source;
     var info_detail = decodeURIComponent(options.info_detail);
     var publishdate = options.publishdate;
->>>>>>> dev
     this.setData({
       id: id,
-<<<<<<< HEAD
-      info_content:info_content,
-      info_source:info_source,
-      info_detail:info_detail.replace(/\<img/gi,'< img style="width:100% height:auto mode:widthFix"'),
-      publishdate:publishdate
-
-    })
-    
-   console.log(this.data.info_detail);
-  },
-  getDetail: function (id) {
-    //根据id查询
-=======
       info_content: info_content,
       info_source: info_source,
       info_detail: info_detail,
@@ -56,7 +34,6 @@ Page({
 
     })
     console.log(info_detail);
->>>>>>> dev
   },
  //点赞
  goPraise() {
