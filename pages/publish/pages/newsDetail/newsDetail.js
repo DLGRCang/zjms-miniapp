@@ -25,18 +25,19 @@ Page({
     var info_source=options.info_source;
     var info_detail=decodeURIComponent(options.info_detail);
     var publishdate=options.publishdate;
-    
+
    
     this.setData({
      
       id: id,
       info_content:info_content,
       info_source:info_source,
-      info_detail:info_detail,
+      info_detail:info_detail.replace(/\<img/gi,'< img style="width:100% height:auto mode:widthFix"'),
       publishdate:publishdate
 
     })
-   console.log(info_detail);
+    
+   console.log(this.data.info_detail);
   },
   getDetail: function (id) {
     //根据id查询

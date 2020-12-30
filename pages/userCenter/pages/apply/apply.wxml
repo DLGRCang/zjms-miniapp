@@ -1,2 +1,23 @@
 <!--pages/userCenter/pages/apply/apply.wxml-->
-<text>pages/userCenter/pages/apply/apply.wxml</text>
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">我的申请</view>
+</cu-custom>
+<tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
+<view class="margin-lg">
+  <view class="flex justify-between margin-lg" wx:for="{{3}}">
+    <view class="flex">
+      <view class="padding-xs">
+        <view class="text-lg text-bold">
+          健康证申请
+        </view>
+        <view class="text-sm text-grey margin-top-sm">
+          2020-06-09 09:00
+        </view>
+      </view>
+    </view>
+    <view style="padding-top:30rpx">
+      <text class="cuIcon-right text-grey"></text>
+    </view>
+  </view>
+
+</view>

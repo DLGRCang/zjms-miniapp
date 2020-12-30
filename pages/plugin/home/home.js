@@ -35,13 +35,13 @@ Page({
       encryptedData: encryptedData,
       type: '1',
     }
-    util.requestApi('http://172.16.20.65:8003/app/sign/checkCoderelease', 'post', data).then(res => {
+    util.requestData('http://172.16.20.65:8003/app/sign/checkCoderelease', 'post', data).then(res => {
       console.log(res)
       if (res.data.code == 200) {
         util.showToast("提交成功")
         wx.setStorageSync("isLogin", true);
-        wx.setStorageSync("token", res.data.result.token);
-        wx.setStorageSync("userId", res.data.result.userinfo.id);
+        wx.setStorageSync("token", res.data.result.data.token);
+        wx.setStorageSync("userId", res.data.result.data.userInfo.id);
         wx.setStorageSync("isLogin", true);
         that.setData({
           isLogin: wx.getStorageSync("isLogin")

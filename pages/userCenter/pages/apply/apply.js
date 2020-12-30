@@ -1,12 +1,17 @@
 // pages/userCenter/pages/apply/apply.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageTabs:["申请中", "已完成", "未成功"],
   },
+	selectTab:function(e){
+		console.log(e.detail.TabCur)
+	},
 
   /**
    * 生命周期函数--监听页面加载
