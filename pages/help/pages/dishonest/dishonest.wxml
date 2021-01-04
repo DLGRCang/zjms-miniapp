@@ -7,5 +7,24 @@
 <view class="padding">
 	<dot-title title="限制措施" color="title-color"></dot-title>
 
-	<item-image-text wx:for="{{dataList}}"  obj="{{item}}"  itemTitle="{{item.info_content}}" isImg="{{false}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+	<item-image-text wx:for="{{dataList}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}"
+		isDate="true" date="{{item.publishdate}}"></item-image-text>
+
+	<dot-title title="人员公示" color="title-color"></dot-title>
+	<view class="flex padding-lr margin-bottom-lg">
+		<view class="text-grey">姓名</view>
+		<view class="text-grey"  style="margin-left:auto;padding-right:166rpx">证件号码</view>
+	</view>
+	<swiper class="padding-lr"  vertical="true" autoplay="true" circular="true"
+		interval="2000" display-multiple-items='4'>
+			<block wx:for='{{dishonestList}}'>
+				<swiper-item >
+					<view  class="flex">
+						<text >{{item.name}}</text>
+						<text  style="margin-left:auto">{{item.num}}</text>
+					</view>
+				</swiper-item>
+			</block>
+
+	</swiper>
 </view>
