@@ -12,7 +12,7 @@
 
 	<dot-title title="人员公示" color="title-color"></dot-title>
 	<view class="flex padding-lr margin-bottom-lg">
-		<view class="text-grey">姓名</view>
+		<view class="text-grey">姓名/名称</view>
 		<view class="text-grey"  style="margin-left:auto;padding-right:166rpx">证件号码</view>
 	</view>
 	<swiper class="padding-lr"  vertical="true" autoplay="true" circular="true"
