@@ -51,7 +51,8 @@ App({
   globalData: {
     isLogin:false,
   
-    baseImgUrl: 'https://yiqi.sucstep.com/InfoIssue/route/file/downloadfile/true/',
+    baseImgUrl: 'http://192.168.1.104:8004/InfoIssue/route/file/downloadfile/true/',
+    // baseImgUrl: 'https://yiqi.sucstep.com/InfoIssue/route/file/downloadfile/true/',
     // imgUrl: 'https://wuliji2.wulanchabu.gov.cn/zjmsMiniAppImages',()
     imgUrl: 'https://yiqi.sucstep.com/InfoIssue/miniapp',
     userInfo: null,
