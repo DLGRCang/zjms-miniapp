@@ -1,19 +1,32 @@
-<cu-custom bgColor="bg-white" isBack="{{true}}">
+<import src="../../../../wxParse/wxParse.wxml"/>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">详情</view>
 </cu-custom>
 <view class="padding">
   <view class="main margin-top-lg padding-tb-xs text-xxl">{{info_content}}</view>
-  <view class="main text-grey">时间：{{publishdate}}  来源：{{info_source}}</view>  
-  <rich-text nodes="{{info_detail}}" class="main margin-lg"></rich-text>
+  <view class="main text-grey">时间：{{publishdate}}  来源：{{info_source}}</view>
+  <!-- <rich-text nodes="{{info_detail}}" class="main margin-lg"></rich-text> -->
   <!-- <parser class="main margin-lg" html="{{info_detail}}" /> -->
-  <view class="margin-top-xs text-xxl flex">
-  <view class="cuIcon-appreciate {{praise}}" bindtap="goPraise"></view>
-  <!-- <view class="cuIcon-appreciatefill"></view> -->
-  <view class="cuIcon-forward"></view>
-  <button class="" open-type='share'>
-    <text class="cuIcon-forward text-grey"></text>
-  </button>
-  <!-- <view class="cuIcon-forwardfill"></view> -->
-  <view class="cuIcon-comment"></view>
+  <view>
+    <template is="wxParse" data="{{wxParseData:dataHtml.nodes}}" />
+  </view>
+<view class="margin-top-lg" wx:if="{{info_videos==='' || info_videos===null || info_videos === undefined}}">
 </view>
+<view class="margin-top-lg" wx:else>
+  <video src="{{imgUrl}}/{{info_videos}}" autoplay="true" style="width: 100vw;"></video>
+</view>
+
+<!-- 评论 -->
+  <view class="cu-bar input">
+    <input type="text" placeholder="发表您的评论"></input>
+    <view class="action padding-left-lg" bindtap="goPraise">
+      <text class="cuIcon-appreciate {{praise}}"></text>
+    </view>
+    <view class="action padding-lr-lg">
+      <text class="cuIcon-forward text-grey"></text>
+    </view>
+    <view class="action">
+      <text class="cuIcon-comment text-grey"></text>
+    </view>
+  </view>
 </view>

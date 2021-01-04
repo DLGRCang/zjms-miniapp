@@ -89,7 +89,7 @@ Component({
 			console.log("点击跳转"+this.properties.type);
 			if (this.properties.type==0) {
 				wx.navigateTo({
-					url: "/pages/publish/pages/newsDetail/newsDetail?info_content="+this.properties.obj.info_content+"&info_source="+this.properties.obj.info_source+"&publishdate="+this.properties.obj.publishdate+"&info_detail="+encodeURIComponent(this.properties.obj.info_detail),
+					url: "/pages/publish/pages/newsDetail/newsDetail?info_content="+this.properties.obj.info_content+"&info_source="+this.properties.obj.info_source+"&publishdate="+this.properties.obj.publishdate+"&info_videos="+encodeURIComponent(this.properties.obj.info_videos)+"&info_detail="+encodeURIComponent(this.properties.obj.info_detail),
 				})
 			}else if (this.properties.type==2) {
 				wx.navigateTo({

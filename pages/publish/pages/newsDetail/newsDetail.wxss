@@ -1,8 +1,10 @@
 /* pages/publish/pages/newsDetail/newsDetail.wxss */
+@import "../../../../wxParse/wxParse.wxss";
 .main{
   display: flex;
   justify-content: center;
 }
+
 .praise{
   color: red;
 }
@@ -13,4 +15,14 @@ button{
 }
 button::after {
   border: none;
+}
+.input{
+  padding-top: 20rpx;
+  border-top: 1rpx solid #F5F5F5;
+}
+
+input{
+  background-color:  #F2F2F2;
+  padding-left:15rpx;
+  border-radius: 10rpx;
 }
