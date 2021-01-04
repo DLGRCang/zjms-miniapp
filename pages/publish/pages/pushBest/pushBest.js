@@ -1,5 +1,6 @@
 // pages/publish/pages/pushBest/pushBest.js
 const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
@@ -9,18 +10,36 @@ Page({
     StatusBar:app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     imgUrl: app.globalData.imgUrl,
-    tabName: ["最美家庭", "新时代好少年", "三八红旗手"]
+    TabCur: 0,
+    tabName: ["最美家庭", "新时代好少年", "三八红旗手"],
+    homeList:[],
+    baseImgUrl:app.globalData.baseImgUrl,
   },
   //切换顶部tab
   selectTab: function (e) {
-    TabCur: e.currentTarget.dataset.id;
-    console.log("点击了第几个Tab:" + e.detail.TabCur)
+
+    this.setData({
+      TabCur: e.detail.TabCur
+    })
+  },
+  getBestHome(){
+    util.requestApi('beautifulfamily/listbeautifulfamily', 'GET', {}).then(res => {
+
+			console.log(res)
+			if (res.statusCode == 200) {
+        this.setData({
+          homeList:res.data
+        })
+			} else {
+        util.showToast("数据加载失败");
+			}
+		});
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getBestHome()
   },
 
   /**

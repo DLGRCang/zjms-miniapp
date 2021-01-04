@@ -12,12 +12,21 @@ Page({
 	selectTab:function(e){
 		console.log(e.detail.TabCur)
 	},
+  getData(){
+		util.requestApi('personapply/getPersonApplyList/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+	
+			} else {
 
+			}
+		});
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getData()
   },
 
   /**

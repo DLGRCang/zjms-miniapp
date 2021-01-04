@@ -3,14 +3,12 @@
 </cu-custom>
 <tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
 <view class="margin-lg">
-  <view class="flex justify-between margin-lg" wx:for="{{3}}">
+  <view class="flex justify-between margin-lg" wx:for="{{dataList}}">
     <view class="flex">
       <view class="padding-xs">
-        <view class="text-lg text-bold">
-          咨询问题
-        </view>
+        <view class="text-lg text-bold">{{item.advisoryContent}}</view>
         <view class="text-sm text-grey margin-top-sm">
-          2020-06-09 09:00
+          {{item.advisoryDate}}
         </view>
       </view>
     </view>

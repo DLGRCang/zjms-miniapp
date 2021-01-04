@@ -1,1 +1,4 @@
 /* pages/userCenter/pages/apply/apply.wxss */
+.color{
+  color: #054FAC;
+}
