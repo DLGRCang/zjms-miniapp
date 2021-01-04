@@ -21,8 +21,13 @@ const formatNumber = n => {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 let baseUrl = 'http://192.168.1.104:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
 // let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+=======
+// let baseUrl = 'http://192.168.1.110:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
+let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
+>>>>>>> dev
 =======
 // let baseUrl = 'http://192.168.1.110:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
 let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
