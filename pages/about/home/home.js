@@ -24,6 +24,7 @@ Page({
   },
   //疫苗接种
   goVaccination() {
+    util.pageJump('/pages/appointment/pages/vaccine/vaccine')
     console.log(this.data.imgUrl + '4')
   },
   //办事预约

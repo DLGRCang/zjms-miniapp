@@ -14,7 +14,8 @@
 			"name": "预约",
 			"pages": [
 				"pages/hospital/hospital",
-				"pages/healthy/healthy"
+				"pages/healthy/healthy",
+				"pages/vaccine/vaccine"
 			]
 		},
 		{

@@ -35,23 +35,23 @@ Page({
 			}
 		});
   },
-  goInfo(){
-    util.pageJump('/pages/userCenter/pages/consultResult/consultResult')
+  goInfo(e){
+    util.pageJump('/pages/userCenter/pages/consultResult/consultResult?obj='+JSON.stringify(e.currentTarget.dataset.item))
   },
 	selectTab:function(e){
     console.log(e.detail.TabCur)
     this.setData({
       state:e.detail.TabCur
     })
-    // if(e.detail.TabCur==0){
+    if(e.detail.TabCur==0){
       this.setData({
         dataList:this.data.dataList0
       })
-    // }else{
-    //   this.setData({
-    //     dataList:this.data.dataList1
-    //   })
-    // }
+    }else{
+      this.setData({
+        dataList:this.data.dataList1
+      })
+    }
   },
   
 

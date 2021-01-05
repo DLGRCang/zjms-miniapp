@@ -2,3 +2,11 @@
 <cu-custom bgColor="White" isBack="{{true}}">
   <view slot="content">咨询回复</view>
 </cu-custom>
+<view class="padding flex flex-direction">
+  <text class="text-grey padding-left">咨询标题</text>
+  <text class="padding">{{item.advisoryTitle}}</text>
+  <text class="text-grey padding-left">咨询内容</text>
+  <textarea class="margin padding-sm" style="border: 1rpx solid gray;width:auto;">{{item.advisoryContent}}</textarea>
+  <text class="text-grey padding-left">专家回复</text>
+<textarea class="margin padding-sm" style="border: 1rpx solid gray;width:auto;">{{item.revertContent}}</textarea>
+</view>

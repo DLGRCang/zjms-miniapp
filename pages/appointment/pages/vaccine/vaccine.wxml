@@ -1,0 +1,22 @@
+<!--pages/appointment/pages/vaccine/vaccine.wxml-->
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+	<view slot="content">疫苗接种</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">可预约日期</view>
+		<picker bindchange="PickerChange" range="{{datePicker}}">
+			<view class="picker">
+				{{pickerData?pickerData:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">可预约时段</view>
+		<picker bindchange="PickerScopeChange" range="{{dateScopePicker}}">
+			<view class="picker">
+				{{pickerScopeData?pickerScopeData:'请选择'}}
+			</view>
+		</picker>
+	</view>
+</view>

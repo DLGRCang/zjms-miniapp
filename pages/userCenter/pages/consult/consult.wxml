@@ -3,7 +3,7 @@
 </cu-custom>
 <tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
 <view class="margin-lg">
-  <view bindtap="{{state==1?'goInfo':''}}" class="flex justify-between margin-lg" wx:for="{{dataList}}">
+  <view bindtap="{{state==1?'goInfo':''}}" data-item="{{item}}" class="flex justify-between margin-lg" wx:for="{{dataList}}">
     <view class="flex">
       <view class="padding-xs">
         <view class="text-lg text-bold">{{item.advisoryContent}}</view>
