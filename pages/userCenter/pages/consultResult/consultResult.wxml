@@ -1,0 +1,4 @@
+<!--pages/userCenter/pages/consultResult/consultResult.wxml-->
+<cu-custom bgColor="White" isBack="{{true}}">
+  <view slot="content">咨询回复</view>
+</cu-custom>

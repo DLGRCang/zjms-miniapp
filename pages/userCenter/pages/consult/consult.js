@@ -30,24 +30,28 @@ Page({
           dataList1:dataLi1,
           dataList:dataLi0
         })
-
-	
 			} else {
           util.showToast("数据获取失败")
 			}
 		});
   },
+  goInfo(){
+    util.pageJump('/pages/userCenter/pages/consultResult/consultResult')
+  },
 	selectTab:function(e){
     console.log(e.detail.TabCur)
-    if(e.detail.TabCur==0){
+    this.setData({
+      state:e.detail.TabCur
+    })
+    // if(e.detail.TabCur==0){
       this.setData({
         dataList:this.data.dataList0
       })
-    }else{
-      this.setData({
-        dataList:this.data.dataList1
-      })
-    }
+    // }else{
+    //   this.setData({
+    //     dataList:this.data.dataList1
+    //   })
+    // }
   },
   
 
