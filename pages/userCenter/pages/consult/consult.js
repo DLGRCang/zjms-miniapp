@@ -30,15 +30,19 @@ Page({
           dataList1:dataLi1,
           dataList:dataLi0
         })
-
-	
 			} else {
           util.showToast("数据获取失败")
 			}
 		});
   },
+  goInfo(e){
+    util.pageJump('/pages/userCenter/pages/consultResult/consultResult?obj='+JSON.stringify(e.currentTarget.dataset.item))
+  },
 	selectTab:function(e){
     console.log(e.detail.TabCur)
+    this.setData({
+      state:e.detail.TabCur
+    })
     if(e.detail.TabCur==0){
       this.setData({
         dataList:this.data.dataList0

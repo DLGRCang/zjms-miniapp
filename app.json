@@ -14,7 +14,8 @@
 			"name": "预约",
 			"pages": [
 				"pages/hospital/hospital",
-				"pages/healthy/healthy"
+				"pages/healthy/healthy",
+				"pages/vaccine/vaccine"
 			]
 		},
 		{
@@ -36,7 +37,8 @@
 				"pages/apply/apply",
 				"pages/card/card",
 				"pages/join/join",
-				"pages/tel/tel"
+				"pages/tel/tel",
+				"pages/consultResult/consultResult"
 			]
 		},
 		{
@@ -228,16 +230,16 @@
 			}
 		]
 	},
-	"plugins":{
-    "routePlan":{
-      "version":"1.0.11",
-      "provider":"wx50b5593e81dd937a"
+	"plugins": {
+		"routePlan": {
+			"version": "1.0.11",
+			"provider": "wx50b5593e81dd937a"
 		},
 		"chooseLocation": {
-      "version": "1.0.5",
-      "provider": "wx76a9a06e5b4e693e"
-    }
-  },
+			"version": "1.0.5",
+			"provider": "wx76a9a06e5b4e693e"
+		}
+	},
 	"permission": {
 		"scope.userLocation": {
 			"desc": "你的位置信息将用于小程序定位"

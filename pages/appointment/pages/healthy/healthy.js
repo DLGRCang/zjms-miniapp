@@ -22,6 +22,7 @@ Page({
 	//加载可预约日期列表
 	getDate() { 
 		util.requestApi('appointmentmanage/listAppointmentDate', 'GET',{}).then(res => {
+			if (res.statusCode==200) {
 			this.setData({
 				dataList: res.data
 			})
@@ -32,6 +33,9 @@ Page({
 			this.setData({
 				datePicker: dateList
 			})
+		}else{
+			util.showToast("预约日期加载失败");
+		}
 		});
 	},
 	putData(e) {
