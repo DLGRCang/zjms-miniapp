@@ -82,6 +82,7 @@ Page({
 			studentNumber: this.data.studentNumber,
 			transferReason: this.data.transferReason,
 			userName: this.data.userName,
+			userId:wx.getStorageSync("userId"),
 		}
 		console.log(data)
 		util.requestApi('schoolinformation/savetransferschool', 'POST', data).then(res => {

@@ -14,7 +14,10 @@ Page({
     dataList:[],//显示列表
   },
   getData(){
-		util.requestApi('consult/getConsultByUserId/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
+    let data={
+      userId:wx.getStorageSync("userId"),
+    }
+		util.requestApi('consult/getConsultByUserId/'+ wx.getStorageSync("userId"), 'GET', data).then(res => {
       let dataLi0=[]
       let dataLi1=[]
 			if (res.statusCode == 200) {

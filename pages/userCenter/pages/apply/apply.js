@@ -13,7 +13,10 @@ Page({
 		console.log(e.detail.TabCur)
 	},
   getData(){
-		util.requestApi('personapply/getPersonApplyList/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
+    let data={
+      userId:wx.getStorageSync("userId"),
+    }
+		util.requestApi('personapply/getPersonApplyList/'+ wx.getStorageSync("userId"), 'GET', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 	
