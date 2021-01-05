@@ -1,0 +1,37 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">志愿者报名</view>
+</cu-custom>
+<view class="padding-lg">
+  <!-- 姓名 -->
+  <view class="cu-form-group">
+		<view class="title">真实姓名：</view>
+		<input placeholder="请输入真实姓名" bindinput="putData" data-key="name"></input>
+  </view>
+  	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">年龄：</view>
+		<input placeholder="请输入年龄" bindinput="putData" data-key="age"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">家庭住址：</view>
+		<input type="number" placeholder="请输入现住址" bindinput="putData" data-key="address"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">工作时长：</view>
+		<input placeholder="请输入工作时长" bindinput="putData" data-key="worktime"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">个人特长：</view>
+		<input type="number" placeholder="请输入现住址" bindinput="putData" placeholder="请输入个人特长" data-key="specialty"></input>
+  </view>
+  <view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

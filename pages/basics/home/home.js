@@ -593,7 +593,7 @@ Page({
             util.pageJump("/pages/travel/pages/car/car");
             break;
           case 4:
-            console.log("公交");
+            util.pageJump("/pages/travel/pages/bus/bus");
             break;
           case 5:
             util.pageJump("/pages/travel/pages/hotel/hotel");

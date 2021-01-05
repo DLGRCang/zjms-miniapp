@@ -20,9 +20,9 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-// let baseUrl = 'http://192.168.1.104:8004/InfoIssue/app/release/'; //测试(赵雪融，刘翔宇)
-let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(赵雪融，王益兴)
-// let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
+// let baseUrl = 'http://192.168.1.104:8004/InfoIssue/app/release/'; //测试(刘翔宇)
+// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(王益兴)
+ let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
 let uploadUrl='http://192.168.1.114:8004/InfoIssue/app/file/uploadfile'//文件上传地址
 
@@ -33,8 +33,7 @@ const requestApi = function (url, method, data = {}) {
     meth = 'GET' //不传情况下默认'GET'
   }
   // if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
-
-  data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
+  // data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
   // }
   return new Promise(function (resolve, reject) {
 
@@ -193,7 +192,7 @@ const getGender = function (data) {
 //拨打电话
 const callPhone = function (phoneNumber) {
   wx.makePhoneCall({
-    phoneNumber: 'phoneNumber',
+    phoneNumber: phoneNumber,
   })
 }
 
@@ -229,6 +228,29 @@ const getParams = function getUrlkey(url) {
   }
 }
 
+//请求返回提示
+const returnCode = function(code,num){
+  if(code==num){
+    wx.showToast({
+      title: "提交成功",
+      icon: 'success',
+      mask: true,
+      success(res){
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 2
+          })
+        }, 1000)		
+      }
+    });			
+  }else{
+    wx.showToast({
+      title: '请检查数据',
+      icon: 'error',
+    })
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
@@ -245,5 +267,6 @@ module.exports = {
   pageJump: pageJump,
   pageJumpTo: pageJumpTo,
   getParams: getParams,
-  showToast: showToast
+  showToast: showToast,
+  returnCode: returnCode
 }

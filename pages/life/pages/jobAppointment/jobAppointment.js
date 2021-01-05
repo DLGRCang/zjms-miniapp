@@ -124,26 +124,7 @@ Page({
 		};
 		console.log(formData)
 		util.requestApi('applicationFormTable/saveApplicationFormTable', 'POST', formData).then(res => {
-			if(res.statusCode==200){
-				console.log(res)
-				wx.showToast({
-          title: "提交成功",
-          icon: 'success',
-					mask: true,
-					success(res){
-						setTimeout(() => {
-							wx.navigateBack({
-								delta: 2
-							})
-						}, 1000)		
-					}
-        });			
-			}else{
-				wx.showToast({
-          title: '请检查数据',
-					icon: 'error',
-        })
-			}
+			util.returnCode(res.statusCode,200)
 		}) 
 	},
 	/**

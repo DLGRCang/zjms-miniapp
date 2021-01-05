@@ -1,34 +1,34 @@
 // pages/government/pages/volunteerService/volunteerService.js
-const data = require('../../../../utils/data.js')
-const app=getApp()
+const util = require('../../../../utils/util.js')
+const app = getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,  
-		infotypeid: '7422da54-ee83-49e1-84b4-131acbfedef5',
-    page:1,
-		dataList: [], //新闻列表
-	
-
+		imgUrl: app.globalData.imgUrl,
+		dataList: [], 
 	},
 
-	/**
-	 * 生命周期函数--监听页面加载
-	 */
 	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-        dataList: this.data.dataList.concat(dataList),
-      })
-			console.log(this.data.dataList);
+		let that = this;
+		util.requestApi('volunteersservice/listvolunteersservice', 'GET', {}).then(res => {
+			console.log(res.data)
+			that.setData({
+				dataList: res.data
+			})
 		})
 	},
+	goApplication(e) {
+		console.log()
+		util.pageJumpTo("/pages/government/pages/volunteApplication/volunteApplication","id",e.target.dataset.id)
+	},
+		/**
+	 * 生命周期函数--监听页面加载
+	 */
 	onLoad: function (options) {
-		this.getDataList()
+		this.getDataList();
 	},
 
 	/**

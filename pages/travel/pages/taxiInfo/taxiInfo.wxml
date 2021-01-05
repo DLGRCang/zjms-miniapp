@@ -1,0 +1,48 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">出租车信息</view>
+</cu-custom>
+<view class="padding-lg">
+  <view class="cu-bar search">
+    <view class="search-form round">
+      <input class="padding-left-sm" type="text" placeholder="请输入车牌号" bindinput="getKey"></input>
+      <view class="cuIcon-search padding-right-sm" bindtap="goSearch"></view>
+    </view>
+  </view>
+  <dot-title title="查询结果" color="color"></dot-title>
+  <view class="box" wx:if="{{taxiDetail===null || taxiDetail===''}}">
+    <view>暂无查询信息</view>
+  </view>
+  <view class="box" wx:else>
+    <block wx:for="{{taxiDetail}}" wx:key>
+      <view class="flex justify-between">
+        <view>姓名：</view>
+        <view class="text-grey">{{item.the_driver}}</view>
+      </view>
+      <view class="flex justify-between padding-tb-sm">
+        <view>车牌号:</view>
+        <view class="text-grey">{{item.license_plate_number}}</view>
+      </view>
+      <view class="flex justify-between">
+        <view>联系方式:</view>
+        <view class="text-grey" bindtap="goPhone" data-phone="{{item.phone}}">{{item.phone}}</view>
+      </view>
+    </block>
+  </view>
+  <dot-title title="所有车主" color="color"></dot-title>
+  <block wx:for="{{taxiInfo}}" wx:key>
+    <view class="box">
+      <view class="flex justify-between">
+        <view>姓名：</view>
+        <view class="text-grey">{{item.the_driver}}</view>
+      </view>
+      <view class="flex justify-between padding-tb-sm">
+        <view>车牌号:</view>
+        <view class="text-grey">{{item.license_plate_number}}</view>
+      </view>
+      <view class="flex justify-between">
+        <view>联系方式:</view>
+        <view class="text-grey" bindtap="goPhone" data-phone="{{item.phone}}">{{item.phone}}</view>
+      </view>
+    </view>
+  </block>
+</view>

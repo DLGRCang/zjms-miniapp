@@ -1,0 +1,16 @@
+/* pages/travel/pages/bus/bus.wxss */
+
+.bgColor {
+	background-color: #EE954A;
+	color: #ffffff;
+}
+.color{
+	color:#EE954A;
+}
+.cont{
+	border: 1rpx solid #F5F5F5;
+}
+.box {
+  margin-top: 20rpx;
+  border: 1rpx solid #F5F5F5;
+}
