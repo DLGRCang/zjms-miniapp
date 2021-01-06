@@ -19,13 +19,6 @@
 			]
 		},
 		{
-			"root": "pages/guideDetail",
-			"name": "常用服务",
-			"pages": [
-			
-			]
-		},
-		{
 			"root": "pages/userCenter",
 			"name": "个人中心",
 			"pages": [
