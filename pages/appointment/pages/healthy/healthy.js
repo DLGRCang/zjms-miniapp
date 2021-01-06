@@ -69,6 +69,7 @@ Page({
 			userName:this.data.name ,
 			userPhone:this.data.phone ,
 			appointmentType:this.data.type,
+			userId:wx.getStorageSync("userId"),
 		}
 		console.log(data)
 		util.requestApi('appointmentexamination/saveappointmentexamination', 'POST',data).then(res => {

@@ -71,6 +71,7 @@ Page({
 			userName:this.data.userName,
 			userNation:this.data.nation,
 			userSex:this.data.userSex,
+			userId:wx.getStorageSync("userId"),
 
 		}
 		console.log(data)

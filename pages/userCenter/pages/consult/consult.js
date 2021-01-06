@@ -14,6 +14,7 @@ Page({
     dataList:[],//显示列表
   },
   getData(){
+
 		util.requestApi('consult/getConsultByUserId/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
       let dataLi0=[]
       let dataLi1=[]

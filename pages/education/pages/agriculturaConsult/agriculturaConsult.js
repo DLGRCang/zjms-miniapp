@@ -41,6 +41,7 @@ Page({
 			advisoryContent:this.data.content,
 			advisoryTitle:this.data.title,
 			specialistId:this.data.speciaId,
+			userId:wx.getStorageSync("userId"),
 		}
 		console.log(data)
 		util.requestApi('consult/saveconsult', 'POST',data).then(res => {
