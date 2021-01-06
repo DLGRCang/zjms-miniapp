@@ -14,6 +14,13 @@ Page({
     tabName: ["最美家庭", "新时代好少年", "三八红旗手"],
     homeList:[],
     baseImgUrl:app.globalData.baseImgUrl,
+   
+  },
+  apply(){
+    //申请最美家庭
+    if(this.data.TabCur==0){
+      util.pageJump('/pages/publish/pages/applyBestFamily/applyBestFamily')
+    }
   },
   //切换顶部tab
   selectTab: function (e) {

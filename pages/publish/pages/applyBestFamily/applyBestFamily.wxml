@@ -1,0 +1,68 @@
+<!--pages/publish/pages/applyBestFamily/applyBestFamily.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">申请最美家庭</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">家庭住址：</view>
+		<input placeholder="请输入家庭住址" bindinput="putData" data-key="address"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">最美家庭类别：</view>
+		<input placeholder="请输入类别" bindinput="putData" data-key="beautifulFamilyType"></input>
+	</view>
+	<view class="title padding text-lg">主要事迹简介</view>
+	<textarea class="margin-lr padding-sm" style="border:1px solid grey;width:auto" placeholder="请输入主要事迹简介"
+		bindinput="putData" data-key="briefIntroductionofMainEvents"></textarea>
+	<view class="cu-form-group">
+		<view class="title">家庭电话：</view>
+		<input type="number" placeholder="请输入家庭电话" bindinput="putData" data-key="homeTelephone"></input>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">家庭成员数：</view>
+		<input type="number" placeholder="请输入家庭成员数" bindinput="putData" data-key="numberPeople"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">最美家庭照：</view>
+		<input class="text-cut" disabled="false"  placeholder="请上传照片" value="{{fileState}}"></input>
+		<text bindtap="uploadFile" class="file margin-left"></text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">户主姓名：</view>
+		<input placeholder="请输入户主姓名" bindinput="putData" data-key="householdName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">户主身份证号：</view>
+		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="idNumber"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">户主性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+	</view>
+	<!-- 民族 -->
+	<view class="cu-form-group">
+		<view class="title">民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-key="nation">
+			<view class="picker">
+				{{nation?nation:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">户主电话：</view>
+		<input type="number" placeholder="请输入户主电话" bindinput="putData" data-key="phoneNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">户主文化程度：</view>
+		<input placeholder="请输入文化程度" bindinput="putData" data-key="standardCulture"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">户主工作单位及职务：</view>
+		<input placeholder="工作单位及职务" bindinput="putData" data-key="workUnit"></input>
+	</view>
+</view>

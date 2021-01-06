@@ -49,7 +49,7 @@ Page({
       type: 'all',
       success(res) {
         const tempFilePaths = res.tempFiles
-        util.uploadFile(tempFilePaths[0].path).then(res => {
+        util.uploadFile(tempFilePaths[0].path,'file').then(res => {
           console.log(res)
         });
       }

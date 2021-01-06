@@ -20,11 +20,12 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-// let baseUrl = 'http://192.168.1.104:8004/InfoIssue/app/release/'; //测试(刘翔宇)
+let baseUrl = 'http://192.168.1.119:8004/InfoIssue/app/release/'; //测试(刘翔宇)
 // let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(王益兴)
- let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
+//  let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
-let uploadUrl='http://192.168.1.114:8004/InfoIssue/app/file/uploadfile'//文件上传地址
+// let uploadUrl='http://192.168.1.114:8004/InfoIssue/app/file/uploadfile'//文件上传地址
+let uploadUrl='http://192.168.1.119:8004/InfoIssue/app/file/uploadimage'//图片上传地址
 
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
@@ -96,14 +97,13 @@ const requestData = function (url, method, data = {}) {
       fail: function (res) {
         wx.hideLoading();
         //错误信息统一处理操作
-
         reject(res)
       }
     })
   })
 }
 //文件上传接口
-const uploadFile = function (filePath) {
+const uploadFile = function (filePath,name) {
   wx.showLoading({
     title: '上传中...'
   });
@@ -111,7 +111,7 @@ const uploadFile = function (filePath) {
     wx.uploadFile({
       url: uploadUrl,
       filePath: filePath,
-      name: 'file',
+      name: name,
       formData: {},
       timeout:2*60*1000,
       header: {
@@ -119,16 +119,13 @@ const uploadFile = function (filePath) {
       },
       success: (res) => {
         wx.hideLoading();
-        if (res.statusCode >= 200 && res.statusCode < 300) {
-          resolve(res.data)
-        } else {
-          reject(res)
-        }
+          resolve(res)
       },
-      fail: function (res) {
+      fail: (res)=> {
         //错误信息统一处理操作
         wx.hideLoading();
         reject(res)
+        this.showToast('上传失败')
       }
     })
   });

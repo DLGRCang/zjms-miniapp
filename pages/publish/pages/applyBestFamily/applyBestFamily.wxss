@@ -1,0 +1,13 @@
+/* pages/publish/pages/applyBestFamily/applyBestFamily.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+.file:before{
+	font-family: "cuIcon";
+	content: "\e739";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+
+}

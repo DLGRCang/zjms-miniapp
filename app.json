@@ -53,7 +53,8 @@
 				"pages/officialNewsList/officialNewsList",
 				"pages/officialNewsDetail/officialNewsDetail",
 				"pages/search/search",
-				"pages/form/form"
+				"pages/form/form",
+				"pages/applyBestFamily/applyBestFamily"
 			]
 		},
 		{

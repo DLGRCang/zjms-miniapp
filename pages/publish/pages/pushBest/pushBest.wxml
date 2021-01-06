@@ -37,5 +37,5 @@
 
 </view>
 <view class="bg-width padding btn-bg">
-	<button class="button-btn">申请</button>
+	<button bindtap="apply" class="button-btn">申请</button>
 </view>
