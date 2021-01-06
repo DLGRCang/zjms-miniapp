@@ -7,18 +7,7 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     newsInfo: [],
-    noticeInfo: [
-      {
-        id: 0,
-        content: '伊旗自来水公司2020年6月份…',
-      }, {
-        id: 1,
-        content: '伊金霍洛旗2020年中考通知',
-      }, {
-        id: 2,
-        content: '关于65岁以上老人申领补贴通知',
-      }
-    ],
+    noticeInfo: [],
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom,
@@ -39,11 +28,11 @@ Page({
           pic: "/image/2.png",
           tab: 1
         },
-        {
-          tit: "推优榜",
-          pic: "/image/3.png",
-          tab: 2
-        },
+        // {
+        //   tit: "推优榜",
+        //   pic: "/image/3.png",
+        //   tab: 2
+        // },
       ]
     }, {
       id: 1,
@@ -325,6 +314,11 @@ Page({
       introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
+          tit: "办事指南",
+          pic: "/image/78.png",
+          tab: 8
+        },
+        {
           tit: "大厅指引",
           pic: "/image/49.png",
           tab: 0
@@ -557,10 +551,10 @@ Page({
             //电视
             util.pageJump('/pages/publish/pages/tv/tv')
             break;
-          case 2:
-            //推优榜
-            util.pageJump('/pages/publish/pages/pushBest/pushBest')
-            break;
+          // case 2:
+          //   //推优榜
+          //   util.pageJump('/pages/publish/pages/pushBest/pushBest')
+          //   break;
         }
         break;
       //魅力伊旗
@@ -778,6 +772,10 @@ Page({
             console.log("土地");
             util.pageJump('/pages/government/pages/land/land')
             break;
+          case 8:
+            console.log("办事指南");
+            util.pageJump('/pages/government/pages/thingsGuide/thingsGuide')
+            break;
 
         }
         break;
@@ -858,6 +856,10 @@ Page({
     }
 
   },
+  //推优榜
+  goGoodList() {
+    util.pageJump('/pages/publish/pages/pushBest/pushBest')
+  },
   //搜素
   searchApp() {
     util.pageJump('/pages/publish/pages/search/search')
@@ -879,6 +881,19 @@ Page({
   //跳转新闻详情
   newsDetail: function (e) {
     util.pageJumpTo('/pages/publish/pages/officialNewsDetail/officialNewsDetail', 'id', e.currentTarget.dataset.id)
+  },
+  ///通知公告
+  //通知公告列表
+  getNoticeList() {
+
+  },
+  //跳转通知列表页
+  noticeList: function () {
+
+  },
+  //跳转通知详情
+  noticeDetail: function (e) {
+
   },
 
   /**

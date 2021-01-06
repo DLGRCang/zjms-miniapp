@@ -20,9 +20,9 @@
 		},
 		{
 			"root": "pages/guideDetail",
-			"name": "办事指南",
+			"name": "常用服务",
 			"pages": [
-				"pages/guideInfo/guideInfo"
+			
 			]
 		},
 		{
@@ -156,7 +156,9 @@
 				"pages/volunteApplication/volunteApplication",
 				"pages/questionnaire/questionnaire",
 				"pages/land/land",
-				"pages/guide/guide"
+				"pages/guide/guide",
+				"pages/thingsGuide/thingsGuide",
+				"pages/guideInfo/guideInfo"
 			]
 		},
 		{
@@ -212,7 +214,7 @@
 			},
 			{
 				"pagePath": "pages/guide/home/home",
-				"text": "办事指南",
+				"text": "常用服务",
 				"iconPath": "/image/guide1.png",
 				"selectedIconPath": "/image/guide.png"
 			},

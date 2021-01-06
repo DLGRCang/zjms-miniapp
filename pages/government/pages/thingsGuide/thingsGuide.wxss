@@ -1,0 +1,23 @@
+/* pages/government/pages/thingsGuide/thingsGuide.wxss */
+.cu-item {
+	height: 90rpx;
+	display: inline-block;
+	line-height: 90rpx;
+	font-size: 30rpx;
+	font-weight: bold;
+	margin: 0 10rpx;
+	padding: 0 20rpx;
+}
+.search_type{
+	font-weight:600;
+	font-size: 25rpx;
+}
+.search_type::after{
+	font-family: "cuIcon";
+	content: "\e661";
+	padding: 5rpx;
+}
+.search_type_selected::after{
+	font-family: "cuIcon";
+	content: "\e6de";
+}

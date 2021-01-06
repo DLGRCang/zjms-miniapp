@@ -1,6 +1,6 @@
 <!--pages/guideDetail/pages/guideInfo/guideInfo.wxml-->
-<cu-custom bgColor="bg-white" isBack="{{true}}">
-  <view slot="content" class="text-xl text-black text-bold">办事指南</view>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content" >办事指南详情</view>
 </cu-custom>
 <view class="padding-xl flex flex-direction">
 	<text class="flex align-center text-blue text-xl title">防空地下室易地建设许可证</text>

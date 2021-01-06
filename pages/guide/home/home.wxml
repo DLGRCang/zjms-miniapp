@@ -1,19 +1,30 @@
-<!--pages/test/test.wxml-->
-<cu-custom bgColor="bg-gradual-blue" isBack="{{false}}">
-  <view slot="content">办事指南</view>
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">常用服务</view>
 </cu-custom>
-
-<tab class="padding-lr-lg" tabName="{{tabName}}" bindmyevent="selectTab"></tab>
-
-<type-picker style="margin: 30rpx;" pickType="{{searchType}}" bind:pickChange="onpickChange"></type-picker>
-
-<view class="flex  align-start justify-between margin-bottom-xl padding-left-xl padding-right-lg" wx:for="{{3}}" wx:key="index" bindtap="guideDetail" data-id="{{index}}">
-  <view>
-    <view class="text-blue text-lg .margin-bottom-sm text-cut text-bold" style="width:450rpx">烟花爆竹经烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可营许可
+<view class="margin-lg">
+  <view class="box">
+    <view class="text-grey tit">常用服务</view>
+    <view class="cu-list grid col-3 padding-tb-sm">
+      <view class="cu-item iconBg" wx:for="{{commonApp}}" wx:key bindtap="goDetail" data-url="{{item.url}}">
+        <view class="flex justify-center align-center">
+          <image src="{{item.icon}}" style='width:100rpx;height:100rpx;'></image>
+        </view>
+        <text>{{item.name}}</text>
+      </view>
     </view>
-    <view class="text-grey  text-cut" style="width:450rpx"><text
-        class="text-df padding-right-xs cuIcon-forward text-red"></text>烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可烟花爆竹经营许可</view>
   </view>
-  <view class="bg-gradual-blue  radius text-center padding-xs"><text
-      class="padding-right-xs cuIcon-footprint"></text>跑0次事项</view>
+  <view class="box margin-tb-lg">
+    <view class="text-grey tit">历史服务</view>
+    <view class="cu-list grid col-3 padding-tb-sm">
+      <view class="cu-item iconBg" wx:for="{{historyApp}}" wx:key bindtap="goDetail" data-url="{{item.url}}">
+        <view class="flex justify-center align-center">
+          <image src="{{item.icon}}" style='width:100rpx;height:100rpx;'></image>
+        </view>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+
+
+  </view>
+
 </view>

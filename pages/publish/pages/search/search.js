@@ -427,14 +427,13 @@ Page({
         url: '',
         isShow: true
       },
+      {
+        name: '办事指南',
+        icon: app.globalData.imgUrl + '/image/78.png',
+        url: '',
+        isShow: true
+      },
     ],
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
   },
   //查询
   searchMenu(e) {
@@ -456,6 +455,13 @@ Page({
   //跳转
   goDetail(e) {
     util.pageJump(e.currentTarget.dataset.url)
+  },
+
+   /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

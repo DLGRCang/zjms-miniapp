@@ -1,17 +1,37 @@
 /* pages/component/nav/nav.wxss */
-.VerticalNav.nav {
+.head{
+  position: relative;
+}
+.search {
+  position: absolute;
+  top: 380rpx;
+  left: 5%;
+  right: 5%;
+}
+.round {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+}
+.round input{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+}
+
+.nav {
   width: 20%;
-  white-space: initial;
+  /* white-space: initial; */
   display: flex;
   flex-direction: column;
 }
 
-.VerticalNav.nav .nav-item {
+.nav .nav-item {
   width: 100%;
   background-color: #F7F8F9;
-  border: none;
   position: relative;
-  top: -7rpx;
   font-size: 30rpx;
   flex: 1;
   display: flex;
@@ -19,26 +39,14 @@
   align-items: center;
 }
 
-.VerticalNav.nav .nav-item.cur {
+.nav .nav-item.cur {
   background-color: #FFFFFF;
 }
 
-.VerticalBox {
-  display: flex;
-}
 
 .VerticalMain {
   width: 80%;
   background-color: #FFFFFF;
-}
-
-.search {
-z-index: 1;
-margin-top: -120rpx;
-}
-
-.search view.cu-bar {
-  margin-top: 20rpx;
 }
 
 .active {

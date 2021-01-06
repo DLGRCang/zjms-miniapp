@@ -1,9 +1,9 @@
-<!-- 顶部图片 -->
-<image src='{{imgUrl}}/image/index1.png' mode="scaleToFill" style='width:100%;height:340rpx'></image>
-<!--搜索  -->
-<view class="search">
-	<view class="cu-bar search">
-		<view class="search-form round">
+<view class="head">
+	<!-- 顶部图片 -->
+	<image src='{{imgUrl}}/image/index1.png' mode="scaleToFill" style='width:100%;height:470rpx'></image>
+	<!--搜索  -->
+	<view class="search">
+		<view class="flex round">
 			<text class="cuIcon-search"></text>
 			<input type="text" placeholder="搜索应用功能" confirm-type="search" bindfocus="searchApp"></input>
 		</view>
@@ -12,12 +12,15 @@
 <!-- 实现左右联动效果 -->
 <view class="flex">
 	<!-- 左边栏 -->
-	<view class="VerticalNav nav" style="height:calc(96vh - 283rpx)">
+	<view class="nav">
+		<!-- <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}"
+			style="height:calc(100vh - 375rpx)"> -->
 		<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index"
 			bindtap='tabSelect' data-id="{{index}}">
 			<text>{{item.name}}</text>
 			<text class="son">{{item.nick}}</text>
 		</view>
+	<!-- </scroll-view> -->
 	</view>
 
 	<!-- 右边 background-color: #F8F8F8; -->
@@ -48,8 +51,11 @@
 				<view class="margin-tb-lg">
 					<view class="flex justify-between margin-bottom-sm">
 						<view>通知公告</view>
-						<view class="text-grey text-sm" bindtap="newsList">更多+</view>
+						<view class="text-grey text-sm" bindtap="noticeList">更多+</view>
 					</view>
+				</view>
+				<view bindtap="goGoodList">
+					<image src="/image/tuiyoubang.png" style="height:120rpx;"></image>
 				</view>
 				<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
 					<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
