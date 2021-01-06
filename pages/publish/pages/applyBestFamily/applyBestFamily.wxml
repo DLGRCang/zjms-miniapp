@@ -11,7 +11,7 @@
 		<view class="title">最美家庭类别：</view>
 		<input placeholder="请输入类别" bindinput="putData" data-key="beautifulFamilyType"></input>
 	</view>
-	<view class="title padding text-lg">主要事迹简介</view>
+	<view class="title padding text-lg">主要事迹简介：</view>
 	<textarea class="margin-lr padding-sm" style="border:1px solid grey;width:auto" placeholder="请输入主要事迹简介"
 		bindinput="putData" data-key="briefIntroductionofMainEvents"></textarea>
 	<view class="cu-form-group">
@@ -64,5 +64,8 @@
 	<view class="cu-form-group">
 		<view class="title">户主工作单位及职务：</view>
 		<input placeholder="工作单位及职务" bindinput="putData" data-key="workUnit"></input>
+	</view>
+		<view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>
 	</view>
 </view>
