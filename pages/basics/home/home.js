@@ -743,37 +743,30 @@ Page({
       case 7:
         switch (tab) {
           case 0:
-            console.log("指引");
             util.pageJump('/pages/government/pages/guide/guide')
             break;
           case 1:
             util.pageJump('/pages/government/pages/flagLeader/flagLeader')
             break;
           case 2:
-            console.log("互通");
             util.pageJump('/pages/government/pages/eachFlagTown/eachFlagTown')
             break;
           case 3:
-            console.log("调查问卷");
             util.pageJump('/pages/government/pages/questionnaire/questionnaire')
             break;
           case 4:
             util.pageJump('/pages/government/pages/instaShot/instaShot')
             break;
           case 5:
-            console.log("志愿者");
             util.pageJump('/pages/government/pages/volunteerService/volunteerService')
             break;
           case 6:
-            console.log("创城");
             util.pageJump('/pages/government/pages/cityAction/cityAction')
             break;
           case 7:
-            console.log("土地");
             util.pageJump('/pages/government/pages/land/land')
             break;
           case 8:
-            console.log("办事指南");
             util.pageJump('/pages/government/pages/thingsGuide/thingsGuide')
             break;
 
@@ -821,7 +814,6 @@ Page({
             util.pageJump('/pages/life/pages/hairdressing/hairdressing')
             break;
           case 5:
-            console.log("代驾挪车");
             util.pageJump('/pages/life/pages/moveCar/moveCar')
             break;
           case 6:

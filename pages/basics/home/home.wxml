@@ -56,6 +56,7 @@
 				</view>
 				<view bindtap="goGoodList">
 					<image src="/image/tuiyoubang.png" style="height:120rpx;"></image>
+					<!-- <image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx;"></image> -->
 				</view>
 				<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
 					<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">

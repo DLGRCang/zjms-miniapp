@@ -52,22 +52,22 @@ Page({
       {
         name: '飞机火车',
         icon: app.globalData.imgUrl + '/image/9.png',
-        url: '',
+        url: '/pages/travel/pages/train/train',
       },
       {
         name: '长途汽车',
         icon: app.globalData.imgUrl + '/image/10.png',
-        url: '',
+        url: '/pages/travel/pages/car/car',
       },
       {
         name: '公交出租',
         icon: app.globalData.imgUrl + '/image/11.png',
-        url: '',
+        url: '/pages/travel/pages/bus/bus',
       },
       {
         name: '酒店宾馆',
         icon: app.globalData.imgUrl + '/image/12.png',
-        url: '',
+        url: '/pages/travel/pages/hotel/hotel',
       },
 		],
 	},

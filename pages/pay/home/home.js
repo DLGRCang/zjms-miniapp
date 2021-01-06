@@ -71,7 +71,7 @@ Page({
   waterFee() {//高铁
     wx.navigateToMiniProgram({
       appId: 'wxf6076a6c59a2f14e',
-      path: '',
+      path: 'pages/travel/large-screen/index.html?p=40&wx_city_id=150600',
       success: function (res) { },
       fail: function (res) { }
     })

@@ -61,25 +61,25 @@ Page({
       {
         name: '飞机火车',
         icon: app.globalData.imgUrl + '/image/9.png',
-        url: '',
+        url: '/pages/travel/pages/train/train',
         isShow: true
       },
       {
         name: '长途汽车',
         icon: app.globalData.imgUrl + '/image/10.png',
-        url: '',
+        url: '/pages/travel/pages/car/car',
         isShow: true
       },
       {
         name: '公交出租',
         icon: app.globalData.imgUrl + '/image/11.png',
-        url: '',
+        url: '/pages/travel/pages/bus/bus',
         isShow: true
       },
       {
         name: '酒店宾馆',
         icon: app.globalData.imgUrl + '/image/12.png',
-        url: '',
+        url: '/pages/travel/pages/hotel/hotel',
         isShow: true
       },
       {
@@ -91,7 +91,7 @@ Page({
       {
         name: '找充电桩',
         icon: app.globalData.imgUrl + '/image/14.png',
-        url: '',
+        url: '/pages/travel/pages/electric/electric',
         isShow: true
       },
       {
@@ -430,7 +430,7 @@ Page({
       {
         name: '办事指南',
         icon: app.globalData.imgUrl + '/image/78.png',
-        url: '',
+        url: '/pages/government/pages/thingsGuide/thingsGuide',
         isShow: true
       },
     ],
