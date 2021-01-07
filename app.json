@@ -167,7 +167,9 @@
 				"pages/dishonest/dishonest",
 				"pages/law/law",
 				"pages/woman/woman",
-				"pages/applyDisabilityCertificate/applyDisabilityCertificate"
+				"pages/applyDisabilityCertificate/applyDisabilityCertificate",
+				"pages/applyDisabilitySubsidy/applyDisabilitySubsidy",
+				"pages/applySisabledChildrenHelp/applySisabledChildrenHelp"
 			]
 		},
 		{

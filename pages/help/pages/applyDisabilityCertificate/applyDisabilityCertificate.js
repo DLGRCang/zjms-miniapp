@@ -49,6 +49,7 @@ Page({
 	//提交数据
 	commitData() {
 		let data = {
+			userId:wx.getStorageSync("userId"),
 			applicationDate: this.data.currentDate,
 			applicationType: this.data.applicationType,
 			birthday: this.data.birthday,

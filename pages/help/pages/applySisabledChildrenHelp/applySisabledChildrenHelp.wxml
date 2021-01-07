@@ -1,0 +1,5 @@
+<!--pages/help/pages/applySisabledChildrenHelp/applySisabledChildrenHelp.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">申请贫困残疾人(子女)高校生救助</view>
+</cu-custom>
+

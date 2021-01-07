@@ -14,7 +14,14 @@ Page({
   applyDisabilityCertificate(){
     util.pageJump('/pages/help/pages/applyDisabilityCertificate/applyDisabilityCertificate')
   },
-
+ //申请残疾补助
+ applyDisabilitySubsidy(){
+  util.pageJump('/pages/help/pages/applyDisabilitySubsidy/applyDisabilitySubsidy')
+},
+ //申请残疾补助
+ applySisabledChildrenHelp(){
+  util.pageJump('/pages/help/pages/applySisabledChildrenHelp/applySisabledChildrenHelp')
+},
   /**
    * 生命周期函数--监听页面加载
    */

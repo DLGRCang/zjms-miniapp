@@ -9,11 +9,11 @@
 		<text class="help-text help-icon1">申请残疾证</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
+	<view bindtap="applyDisabilitySubsidy" class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon2">申请残疾补助</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
+	<view bindtap="applySisabledChildrenHelp" class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon3">申请贫困残疾人(子女)高校生救助</text>
 		<text class="into"></text>
 	</view>

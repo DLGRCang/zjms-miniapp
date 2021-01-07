@@ -1,0 +1,5 @@
+/* pages/help/pages/applySisabledChildrenHelp/applySisabledChildrenHelp.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
