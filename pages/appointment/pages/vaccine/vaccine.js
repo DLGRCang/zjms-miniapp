@@ -32,11 +32,12 @@ Page({
 		this.getDateScope()
 	},
 	PickerScopeChange(e) {
-		console.log(this.data.dateScopePicker)
+
 		this.setData({
 			pickerScopeData: this.data.dateScopePicker[e.detail.value],
 			pickerScopeDataValue: this.data.dateScopePickerValue[e.detail.value].bookBeginDateTime
 		})
+
 	},
 	//加载可预约日期列表
 	getDate: function () {
@@ -67,7 +68,7 @@ Page({
 		util.requestApi('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
 			console.log(res.data)
 			if (res.statusCode == 200) {
-				if(!res.data.length==0){
+				if (res.data.length == 0) {
 					util.showToast("该日期已约满")
 					return
 				}
@@ -94,7 +95,7 @@ Page({
 	//提交数据
 	commitData() {
 
-		if(!planDate){
+		if (!this.data.planDate) {
 			util.showToast("可预约时段不能为空")
 		}
 
@@ -107,14 +108,19 @@ Page({
 			info: this.data.info,
 		}
 		console.log(data)
-		
+
 		util.requestApi('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
-				wx.navigateBack({
-					delta: 1
-				})
-				util.showToast("提交成功")
+				if (res.data.status == "success") {
+					wx.navigateBack({
+						delta: 1
+					})
+					util.showToast("提交成功")
+				}else{
+					util.showToast(res.data.message)
+				}
+
 			} else {
 				util.showToast(res.data.msg)
 			}

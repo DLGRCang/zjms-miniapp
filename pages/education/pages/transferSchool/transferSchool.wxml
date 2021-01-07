@@ -48,6 +48,28 @@
 		<view class="title">监护人工作单位：</view>
 		<input type="number" placeholder="请输入监护人工作单位" bindinput="putData" data-key="guardianCompany"></input>
 	</view>
+
+	<view class="cu-form-group">
+		<view class="title">监护人居住证明：</view>
+		<input class="text-cut" disabled="false" placeholder="选择类型并上传" value="{{fileState}}"></input>
+		<text bindtap="uploadFile" class="file margin-left"></text>
+	</view>
+	<text class="text-red padding-lr">请选择居住证明类型:</text>
+	<radio-group class="margin-tb-sm padding-left-sm"  bindchange="radioChange" data-key="applicationType">
+		<view class="flex align-center margin-bottom-xs">
+			<radio class="margin-right-xs" value="xsq"></radio>购房合同及缴款收据原件、复印件
+		</view>
+		<view class="flex align-center margin-bottom-xs">
+			<radio class="margin-right-xs" value="hlsq"></radio>房产证原件、复印件
+		</view>
+		<view  class="flex align-center margin-bottom-sm">
+			<radio class="margin-right-xs" value="bbsq"></radio>旗外户籍租房提供居住证及近三个月水、电、燃气其中一项收据即可
+		</view>
+		<view class="flex align-center">
+			<radio class="margin-right-xs" value="bbsq"></radio>旗内户籍租房提供社区居住证明及近三个月水、电、燃气其中一项收据即可
+		</view>
+	</radio-group>
+
 	<view class="cu-form-group">
 		<view class="title">转学理由：</view>
 		<input style="display:block" placeholder="请输入转学理由" bindinput="putData" data-key="transferReason"></input>

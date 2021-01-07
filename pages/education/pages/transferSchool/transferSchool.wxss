@@ -3,3 +3,14 @@
 	background-color: #2162B5;
 	color: #ffffff;
 }
+.file:before{
+	font-family: "cuIcon";
+	content: "\e739";
+	color: #2162B5;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+
+}
+radio {
+	transform:scale(0.7);
+}

@@ -7,6 +7,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		fileState:'待上传',//居住证明上传状态
+		filePath:'',//文件上传成功返回数据
 		nationList: app.globalData.nationList,
 		gradeList: ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级', '初一', '初二', '初三', '高一', '高二', '高三'],
 		accessory1: '1', //监护人居住证明（①购房合同及缴款收据原件、复印件；
@@ -97,6 +99,32 @@ Page({
 				util.showToast(res.data.msg)
 			}
 		});
+	},
+	//选择文件并上传
+	uploadFile: function () {
+		let that = this
+		wx.chooseMessageFile({
+			count: 1,
+			type: 'image',
+			success(res) {
+				const tempFilePaths = res.tempFiles
+				util.uploadFile(tempFilePaths[0].path, 'image').then(res => {
+					console.log(res)
+					if (res.statusCode == 200) {
+						let obj = JSON.parse(res.data)
+		
+						that.setData({
+							fileState: '上传成功',
+							filePath: obj.data
+						})
+					} else {
+						that.setData({
+							fileState: '上传失败',
+						})
+					}
+				});
+			},
+		})
 	},
 	/**
 	 * 生命周期函数--监听页面加载
