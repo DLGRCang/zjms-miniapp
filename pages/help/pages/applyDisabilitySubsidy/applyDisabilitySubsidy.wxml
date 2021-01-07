@@ -1,0 +1,73 @@
+<!--pages/help/pages/applyDisabilitySubsidy/applyDisabilitySubsidy.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">申请残疾补助</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">申请人姓名：</view>
+		<input placeholder="请输入申请人姓名" bindinput="putData" data-key="userName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">申请人性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="m"></radio>
+			女<radio class="margin-left-sm" value="f"></radio>
+		</radio-group>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="contactNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">户籍地址：</view>
+		<input placeholder="请输入户籍地址" bindinput="putData" data-key="permanentResidenceAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">残疾证号：</view>
+		<input type="number" placeholder="请输入残疾证号" bindinput="putData" data-key="disabledPersonNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">疾病名称：</view>
+		<input placeholder="请输入疾病名称" bindinput="putData" data-key="diseaseName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">治疗机构：</view>
+		<input placeholder="请输入治疗机构" bindinput="putData" data-key="treatmentFacility"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">监护人姓名：</view>
+		<input placeholder="请输入监护人姓名" bindinput="putData" data-key="guardianName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">与残疾人关系：</view>
+		<input placeholder="请输入与残疾人关系" bindinput="putData" data-key="personalRelationship"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">医疗报销金额（元）：</view>
+		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="amountOfMedicalReimbursement"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">救助金额（元）：</view>
+		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="amountOfSalvage"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">保险公司报销（元）：</view>
+		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="reimbursementInsurance"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">医保报销个人自付（元）：</view>
+		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="reimbursementlExpenses"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">核减后自付（元）：</view>
+		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="sinceThePay"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">可补费用总额（元）：</view>
+		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="totalReimbursableExpenses"></input>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>
