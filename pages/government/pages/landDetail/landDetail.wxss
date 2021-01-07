@@ -1,4 +1,4 @@
-/* pages/government/pages/land/land.wxss */
+/* pages/government/pages/landDetail/landDetail.wxss */
 .bgColor {
 	background-color:#A6CF5F;
 	color: #ffffff;

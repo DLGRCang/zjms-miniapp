@@ -1,6 +1,6 @@
-// pages/pay/home/home.js
+// pages/government/pages/landDetail/landDetail.js
 const app = getApp()
-const util = require('../../../utils/util.js')
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
@@ -8,35 +8,26 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-
+    id: "",
+    detailInfo:null,
   },
-  //就医预约
-  goHospital() {
-    util.pageJump('/pages/appointment/pages/hospital/hospital')
-  },
-  //体检预约
-  goHealthy() {
-    util.pageJump('/pages/appointment/pages/healthy/healthy?type=0&title=体检预约')
-  },
-  //核酸检测
-  goTesting() {
-    console.log(this.data.imgUrl + '3')
-  },
-  //疫苗接种
-  goVaccination() {
-    util.pageJump('/pages/appointment/pages/vaccine/vaccine')
-    console.log(this.data.imgUrl + '4')
-  },
-  //办事预约
-  goAppointment() {
-    util.pageJump('/pages/appointment/pages/thingsAppointment/thingsAppointment')
-  },
-
+	getInfo() {
+		let that = this;
+		util.requestApi('landadoption/getlandadoption/'+this.data.id, 'GET', {}).then(res => {
+			console.log(res.data)
+			that.setData({
+				detailInfo: res.data
+			})
+		})
+	},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id
+    })
+    this.getInfo() 
   },
 
   /**

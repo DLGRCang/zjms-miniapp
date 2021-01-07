@@ -9,10 +9,12 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     date: util.formatDate(new Date()),
-    leaveAreaList:['鄂尔多斯','北  京','天  津','上  海','呼和浩特','包  头','集  宁',],
-    arriveAreaList:['鄂尔多斯','北  京','天  津','上  海','呼和浩特','包  头','集  宁',],
+    leaveAreaList: ['阿镇'],
+    arriveAreaList: null,
+    arrArea: '北京',
+    carInfo: null
   },
-//出发时间
+  //出发时间
   DateChange(e) {
     this.setData({
       date: e.detail.value
@@ -26,16 +28,35 @@ Page({
   },
   //到达地
   arriveArea(e) {
+    let arriveAreaList = this.data.arriveAreaList;
     this.setData({
-      index2: e.detail.value
+      index2: e.detail.value,
+      arrArea: arriveAreaList[e.detail.value]
     })
   },
-
+  getInfo() {
+    let that = this;
+    util.requestApi('longbus/listlongbusbyterminal/' + this.data.arrArea, 'GET', {}).then(res => {
+      if (res.data.length > 0) {
+        that.setData({
+          carInfo: res.data
+        })
+      }
+    })
+  },
+  getArriveAreaList() {
+    let that = this;
+    util.requestApi('longbus/listterminal', 'GET', {}).then(res => {
+      that.setData({
+        arriveAreaList: res.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getArriveAreaList();
   },
 
   /**

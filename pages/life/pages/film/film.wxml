@@ -10,7 +10,15 @@
 		<cover-image class="focus" src='/image/focus.png' bindtap='clickControl'></cover-image>
 	</map>
 </view>
-<view class="margin-lg" wx:for="{{toiletList}}" else>
-	<view class="text-xl text-bold">{{item.address}}</view>
-	<view class="margin-top-xs text-grey">距您{{item._distance}}米</view>
+<view class="margin-lg box" wx:for="{{toiletList}}" else>
+	<view bindtap="goRoute" data-name="{{item.title}}" data-lat="{{item.location.lat}}"
+		data-lng="{{item.location.lng}}">
+		<view class="text-xxl text-bold">{{item.title}}</view>
+		<view class=" margin-top-xs">{{item.address}}</view>
+		<view class=" margin-top-xs text-blue">{{item.category}}</view>
+		<view class="flex justify-between  text-grey">
+			<view class="margin-top-xs">距您{{item._distance}}米</view>
+			<view class="cuIcon-right"></view>
+		</view>
+	</view>
 </view>

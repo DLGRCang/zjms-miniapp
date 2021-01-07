@@ -5,9 +5,11 @@
 <image mode="widthFix" src="{{imgUrl}}/image/tudirenyang.png" style="width:100%;height:396rpx;"></image>
 
 <view class="margin-lr-lg">
-
-  <dot-title title="相关政策" color="color" ></dot-title>
-  <item-image-text wx:for="{{5}}" obj="{{item}}" isImg="{{false}}" itemTitle="这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做"
-		date="2020-02-03" isDate="true" isLine="true">
-	</item-image-text>
+  <dot-title title="相关政策" color="color"></dot-title>
+  <block wx:for="{{listInfo}}" wx:key>
+    <view class="box" bindtap="getDetail" data-id="{{item.landAdoptionId}}">
+      <view>{{item.title}}</view>
+      <view class="text-grey margin-top-sm">{{item.release_date}}</view>
+    </view>
+  </block>
 </view>

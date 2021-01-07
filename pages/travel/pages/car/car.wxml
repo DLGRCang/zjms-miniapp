@@ -10,7 +10,7 @@
       <view class="text-xxl area">
         <picker bindchange="leaveArea" value="{{index1}}" range="{{leaveAreaList}}">
           <view class="picker">
-            {{index1?leaveAreaList[index1]:'鄂尔多斯'}}
+            {{index1?leaveAreaList[index1]:'阿镇'}}
           </view>
         </picker>
       </view>
@@ -20,7 +20,7 @@
       <view class="text-xxl area">
         <picker bindchange="arriveArea" value="{{index2}}" range="{{arriveAreaList}}">
           <view class="picker">
-            {{index2?arriveAreaList[index2]:'北京'}}
+            {{index2?arriveAreaList[index2]:'呼市'}}
           </view>
         </picker>
       </view>
@@ -36,7 +36,43 @@
       </view>
     </view>
     <view class="padding-sm margin-top-xs">
-      <button>查询</button>
+      <button bindtap="getInfo">查询</button>
     </view>
+    <view class="padding-sm text-red text-sm">
+      <view>备注：</view>
+      <view class="padding-tb-sm">阿镇——新街 每30分钟发一班 票价：12元</view>
+      <view>阿镇——上湾 每30分钟发一班 票价：15元</view>
+    </view>
+  </view>
+  <dot-title title="查询结果" color="color"></dot-title>
+  <view class="box" wx:if="{{carInfo===null || carInfo===''}}">
+    <view>暂无查询信息</view>
+  </view>
+  <view wx:else>
+    <block wx:for="{{carInfo}}" wx:key>
+      <view class="box">
+        <view class="flex justify-between">
+          <view>发车时间：</view>
+          <view class="text-grey">{{item.departure_time}}</view>
+        </view>
+        <view class="flex justify-between padding-top-sm">
+          <view>始发站:</view>
+          <view class="text-grey" wx:if="{{item.lof_departure!=''||item.lof_departure!=null}}">{{item.lof_departure}}</view>
+          <view class="text-grey" else>阿镇</view>
+        </view>
+        <view class="flex justify-between padding-top-sm">
+          <view>终点站:</view>
+          <view class="text-grey">{{item.the_terminal}}</view>
+        </view>
+        <view class="flex justify-between padding-top-sm" wx:if="{{item.way!=''||item.way!=null}}">
+          <view>途经:</view>
+          <view class="text-grey">{{item.way}}</view>
+        </view>
+        <view class="flex justify-between padding-top-sm">
+          <view>票价:</view>
+          <view class="text-grey">{{item.price}}元</view>
+        </view>
+      </view>
+    </block>
   </view>
 </view>

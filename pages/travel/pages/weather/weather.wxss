@@ -1,1 +1,8 @@
 /* pages/travel/pages/weather/weather.wxss */
+.bgColor{
+  background-color: rgb(63, 89, 209);
+  color: #fff;
+}
+.cont{
+  
+}

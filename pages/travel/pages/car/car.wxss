@@ -34,3 +34,8 @@ button{
   color: #fff;
   background-color: #1375F3;
 }
+.box {
+  margin-top: 20rpx;
+  border: 1rpx solid #F5F5F5;
+  padding:20rpx;
+}

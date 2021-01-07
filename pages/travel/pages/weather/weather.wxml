@@ -1,2 +1,5 @@
-<!--pages/travel/pages/weather/weather.wxml-->
-<text>pages/travel/pages/weather/weather.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content">伊旗天气</view>
+</cu-custom>
+<view class="cont">
+</view>

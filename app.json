@@ -15,7 +15,8 @@
 			"pages": [
 				"pages/hospital/hospital",
 				"pages/healthy/healthy",
-				"pages/vaccine/vaccine"
+				"pages/vaccine/vaccine",
+				"pages/thingsAppointment/thingsAppointment"
 			]
 		},
 		{
@@ -150,6 +151,7 @@
 				"pages/volunteApplication/volunteApplication",
 				"pages/questionnaire/questionnaire",
 				"pages/land/land",
+				"pages/landDetail/landDetail",
 				"pages/guide/guide",
 				"pages/thingsGuide/thingsGuide",
 				"pages/guideInfo/guideInfo"

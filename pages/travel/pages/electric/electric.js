@@ -140,6 +140,20 @@ Page({
       }
     })
   },
+  goRoute(e){
+    console.log(e)
+    let plugin = requirePlugin('routePlan');
+		let key = 'O5QBZ-JLYL6-3MTSA-E3BN3-YAWD7-A3FXI';
+		let referer = '一手办';
+		let endPoint = JSON.stringify({  
+			'name': e.currentTarget.dataset.name,
+			'latitude': e.currentTarget.dataset.lat,
+			'longitude': e.currentTarget.dataset.lng
+		});
+		wx.navigateTo({
+			url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+		});
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

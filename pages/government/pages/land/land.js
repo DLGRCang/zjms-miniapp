@@ -1,5 +1,6 @@
 // pages/government/pages/land/land.js
 const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
@@ -7,13 +8,26 @@ Page({
 	 */
 	data: {
 		imgUrl: app.globalData.imgUrl,
+		listInfo: [],
 	},
-
+	getInfo() {
+		let that = this;
+		util.requestApi('landadoption/listlandadoption', 'GET', {}).then(res => {
+			console.log(res.data)
+			that.setData({
+				listInfo: res.data
+			})
+		})
+	},
+	getDetail(e) {
+		console.log(e.currentTarget.dataset.id)
+		util.pageJumpTo("/pages/government/pages/landDetail/landDetail","id",e.currentTarget.dataset.id)
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.getInfo();
 	},
 
 	/**
