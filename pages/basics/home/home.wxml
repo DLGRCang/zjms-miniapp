@@ -48,12 +48,12 @@
 					</block>
 				</view>
 				<!-- 公告 -->
-				<view class="margin-tb-lg">
+				<!-- <view class="margin-tb-lg">
 					<view class="flex justify-between margin-bottom-sm">
 						<view>通知公告</view>
 						<view class="text-grey text-sm" bindtap="noticeList">更多+</view>
 					</view>
-				</view>
+				</view> -->
 				<view bindtap="goGoodList">
 					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx;"></image>
 				</view>

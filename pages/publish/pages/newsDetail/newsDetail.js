@@ -8,6 +8,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
+    baseImgUrl:app.globalData.baseImgUrl,
     id: 0,
     info: [],
     info_content: '',

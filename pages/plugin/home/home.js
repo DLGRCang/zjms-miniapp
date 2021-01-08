@@ -35,7 +35,7 @@ Page({
       encryptedData: encryptedData,
       type: '1',
     }
-    util.requestData('https://yiqi.sucstep.com/app/sign/checkCoderelease', 'post', data).then(res => {
+    util.httpRequest('https://yiqi.sucstep.com/app/sign/checkCoderelease', 'post', data).then(res => {
       console.log(res)
       if (res.data.code == 200) {
         util.showToast("提交成功")

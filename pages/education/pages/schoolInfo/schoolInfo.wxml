@@ -16,14 +16,14 @@
 	<dot-title title="入学流程" color="title-color"></dot-title>
 	<view class="padding">
 		<text class="text-red margin-right">1</text>
-		<text>第一步：体检证明</text>
+		<text>第一步：体检</text>
 	</view>
 	<view class="padding">
 		<text class="text-red margin-right">2</text>
 		<text>第二步：报名登记</text>
 	</view>
 	<view class="padding">
-		<text class="text-red margin-right">2</text>
+		<text class="text-red margin-right">3</text>
 		<text>第三步：办理入校</text>
 	</view>
 	<dot-title title="师资力量" color="title-color"></dot-title>
@@ -34,7 +34,7 @@
 			<text class="text-grey text-df ">{{item.experience}}</text>
 		</view>
 	</view>
-	<dot-title title="硬件设备" color="title-color"></dot-title>
+	<dot-title title="教学设施" color="title-color"></dot-title>
 	<view wx:for="{{data.supportFacility}}" class="padding">
 		<text class="text-grey margin-right">{{item.facilityName}}</text>
 		<text>{{item.facilityDescribe}}</text>
