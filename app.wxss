@@ -3,6 +3,7 @@
 
 page {
 	background: #ffffff;
+	min-width: 80%;
 }
 
 .line {

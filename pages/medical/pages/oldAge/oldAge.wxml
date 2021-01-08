@@ -7,8 +7,9 @@
 
 <view class="margin-lg">
 
-<dot-title title="相关政策" color="title-color" ></dot-title>
-<view class="padding-lr-sm padding-tb">
-<item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}" itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
-</view>
+  <dot-title title="相关政策" color="title-color"></dot-title>
+  <view class="padding-lr-sm padding-tb">
+    <item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}"
+      itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+  </view>
 </view>

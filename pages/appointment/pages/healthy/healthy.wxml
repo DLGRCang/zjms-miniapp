@@ -43,3 +43,4 @@
 	<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
 </view>
 </view>
+<bottom></bottom>

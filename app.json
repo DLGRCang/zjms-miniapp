@@ -258,7 +258,8 @@
 		"item-image-text": "/components/item-image-text/item-image-text",
 		"tab": "/components/tab/tab",
 		"dot-title": "/components/dot-title/dot-title",
-		"type-picker": "/components/type-picker/type-picker"
+		"type-picker": "/components/type-picker/type-picker",
+		"bottom": "/components/bottom/bottom"
 	},
 	"sitemapLocation": "sitemap.json"
 }

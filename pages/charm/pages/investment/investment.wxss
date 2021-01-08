@@ -1,6 +1,7 @@
 /* pages/charm/pages/investment/investment.wxss */
 page {
   background-color: #FFFFFF;
+
 }
 .contents{
   background-color: #FFFFFF;

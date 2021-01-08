@@ -1,0 +1,7 @@
+<!--components/botton/bottom.wxml-->
+<view style="height:100rpx;padding:10px">
+	<view class="flex padding bottom-bg align-center">
+		<view style="text-align:center;color:#BEBEBE;font-size:24rpx">主管单位：伊金霍洛旗大数据发展局</view>
+		<view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">内蒙古大云智通科技有限公司主办</view>
+	</view>
+</view>

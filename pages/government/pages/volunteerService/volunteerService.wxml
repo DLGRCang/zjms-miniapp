@@ -13,3 +13,4 @@
 	</view>
 	<button style="background-color: #EE6967;align-self:center;margin-left:auto;" class="cu-btn round {{shadow?'shadow':''}} text-white" bindtap="goApplication" data-id="{{item.volunteersServiceId}}">报名</button>
 </view>
+<bottom></bottom>
