@@ -4,6 +4,10 @@
 </cu-custom>
 <view class="padding">
 	<view class="cu-form-group">
+		<view class="title">家庭名称：</view>
+		<input placeholder="请输入家庭名称" bindinput="putData" data-key="familyName"></input>
+	</view>
+	<view class="cu-form-group">
 		<view class="title">家庭住址：</view>
 		<input placeholder="请输入家庭住址" bindinput="putData" data-key="address"></input>
 	</view>

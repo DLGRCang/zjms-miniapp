@@ -9,5 +9,7 @@
 	color: #EE6967;
 	margin-right: 10rpx;
 	font-size: 40rpx;
-
+}
+radio {
+	transform:scale(0.7);
 }

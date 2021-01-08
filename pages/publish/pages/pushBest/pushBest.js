@@ -13,6 +13,8 @@ Page({
     TabCur: 0,
     tabName: ["最美家庭", "新时代好少年", "三八红旗手"],
     homeList:[],
+    getWomanpacesetterList:[],
+    getGoodboyrList:[],
     baseImgUrl:app.globalData.baseImgUrl,
    
   },
@@ -28,7 +30,13 @@ Page({
     this.setData({
       TabCur: e.detail.TabCur
     })
+    if(e.detail.TabCur==2){
+      this.getWomanpacesetter()
+    }else if(e.detail.TabCur==1){
+      this.getGoodboyr()
+    }
   },
+  //获取最美家庭
   getBestHome(){
     util.requestApi('beautifulfamily/listbeautifulfamily', 'GET', {}).then(res => {
 
@@ -36,6 +44,33 @@ Page({
 			if (res.statusCode == 200) {
         this.setData({
           homeList:res.data
+        })
+			} else {
+        util.showToast("数据加载失败");
+			}
+		});
+  },
+  //获取三八红旗手
+  getWomanpacesetter(){
+    util.requestApi('womanpacesetter/listpagewomanpacesetter', 'GET', {}).then(res => {
+
+			console.log(res)
+			if (res.statusCode == 200) {
+        this.setData({
+          getWomanpacesetterList:res.data.rows
+        })
+			} else {
+        util.showToast("数据加载失败");
+			}
+		});
+  },
+  //获取新时代好少年
+  getGoodboyr(){
+    util.requestApi('goodboy/listpagegoodboy', 'GET', {}).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+        this.setData({
+          getGoodboyrList:res.data.rows
         })
 			} else {
         util.showToast("数据加载失败");

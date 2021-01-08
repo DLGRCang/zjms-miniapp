@@ -72,7 +72,7 @@ Page({
 			userId:wx.getStorageSync("userId"),
 		}
 		console.log(data)
-		util.requestData('app/appointmentexamination/saveappointmentexamination', 'POST',data).then(res => {
+		util.requestData('appointmentexamination/saveappointmentexamination', 'POST',data).then(res => {
 			console.log(res)
 			if(res.statusCode==200){
 				wx.navigateBack({

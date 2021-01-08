@@ -30,7 +30,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">联系电话：</view>
-		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="phone"></input>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="contactNumber"></input>
 	</view>
 
 	<!--婚姻-->
