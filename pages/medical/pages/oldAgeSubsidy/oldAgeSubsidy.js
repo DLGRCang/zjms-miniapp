@@ -89,7 +89,7 @@ uploadFile: function () {
 
 		}
 		console.log(data)
-		util.requestData('http://192.168.1.111:8004/InfoIssue/app/subsidies/savesubsidies', 'POST', data).then(res => {
+		util.requestData('subsidies/savesubsidies', 'POST', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 				wx.navigateBack({

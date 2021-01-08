@@ -15,7 +15,7 @@ Page({
   },
   getData(){
 
-		util.requestData('http://192.168.1.111:8004/InfoIssue/app/consult/getConsultByUserId/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
+		util.requestData('consult/getConsultByUserId/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
       let dataLi0=[]
       let dataLi1=[]
 			if (res.statusCode == 200) {

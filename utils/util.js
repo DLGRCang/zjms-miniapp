@@ -19,15 +19,15 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-
+let base='http://192.168.1.111:8004/InfoIssue/app/'
 // let baseUrl = 'http://192.168.1.119:8004/InfoIssue/app/release/'; //测试(刘翔宇)
-// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(王益兴)
+let baseUrl = base+'release/'; //测试(王益兴)
 // let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 
 
-  let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//公司
+  // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//公司
 // let uploadUrl='http://192.168.1.114:8004/InfoIssue/app/file/uploadfile'//文件上传地址
-let uploadUrl='http://192.168.1.111:8004/InfoIssue/app/file/uploadimage'//图片上传地址
+let uploadUrl=base+'file/uploadimage'//图片上传地址
 
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
@@ -86,7 +86,7 @@ const requestData = function (url, method, data = {}) {
         'content-type': 'application/json',
         'token': wx.getStorageSync("token")
       },
-      url: url,
+      url:  base+url,
       data: data,
       method: meth,
       success: function (res) {

@@ -21,7 +21,7 @@ Page({
 	},
 	//加载可预约日期列表
 	getDate() { 
-		util.requestData('http://192.168.1.111:8004/InfoIssue/app/appointmentmanage/listAppointmentDate', 'GET',{}).then(res => {
+		util.requestData('appointmentmanage/listAppointmentDate', 'GET',{}).then(res => {
 			if (res.statusCode==200) {
 			this.setData({
 				dataList: res.data
@@ -72,7 +72,7 @@ Page({
 			userId:wx.getStorageSync("userId"),
 		}
 		console.log(data)
-		util.requestData('http://192.168.1.111:8004/InfoIssue/app/appointmentexamination/saveappointmentexamination', 'POST',data).then(res => {
+		util.requestData('app/appointmentexamination/saveappointmentexamination', 'POST',data).then(res => {
 			console.log(res)
 			if(res.statusCode==200){
 				wx.navigateBack({
