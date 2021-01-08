@@ -103,6 +103,39 @@ const requestData = function (url, method, data = {}) {
     })
   })
 }
+//网络请求
+const httpRequest = function (url, method, data = {}) {
+  wx.showLoading({
+    title: '请稍等...'
+  });
+  let meth = method.toUpperCase()
+  if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
+    meth = 'GET' //不传情况下默认'GET'
+  }
+  return new Promise(function (resolve, reject) {
+    wx.request({
+      header: {
+        'content-type': 'application/json',
+        'token': wx.getStorageSync("token")
+      },
+      url: url,
+      data: data,
+      method: meth,
+      success: function (res) {
+        wx.hideLoading();
+        //返回信息统一处理操作
+
+        //resolve用于具体调用中
+        resolve(res)
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        //错误信息统一处理操作
+        reject(res)
+      }
+    })
+  })
+}
 //文件上传接口
 const uploadFile = function (filePath, name) {
   wx.showLoading({
@@ -260,6 +293,7 @@ module.exports = {
   formatDate: formatDate,
   requestApi: requestApi,
   requestData: requestData,
+  httpRequest: httpRequest,
   uploadFile: uploadFile,
   baseUrl: baseUrl,
   checkIdCard: checkIdCard,
