@@ -7,17 +7,61 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageTabs:["预约中", "已完成", "未成功"],
-  },
-	selectTab:function(e){
-		console.log(e.detail.TabCur)
-	},
+    pageTabs: ["预约成功", "预约失败"],
+    state: 1,
+    dataList: [],
+    dataList1: [],
+    dataList2: [],
 
+  },
+  selectTab: function (e) {
+    this.setData({
+      state: e.detail.TabCur,
+      dataList: []
+    })
+    if (e.detail.TabCur == 0) {
+      this.setData({
+        dataList: this.data.dataList1
+      })
+    } else {
+      this.setData({
+        dataList: this.data.dataList2
+      })
+    }
+    console.log(this.data.dataList)
+  },
+  getData() {
+    let data = {
+      userId: wx.getStorageSync("userId"),
+      applyCategory: '1'
+    }
+    util.requestApi('personapply/getPersonApplyList', 'GET', data).then(res => {
+      console.log(res)
+      let dataLi1 = []
+      let dataLi2 = []
+      if (res.statusCode == 200) {
+        for (let i = 0; i < res.data.length; i++) {
+          if (res.data[i].state = 1) {
+            dataLi1.push(res.data[i])
+          } else {
+            dataLi2.push(res.data[i])
+          }
+        }
+        this.setData({
+          dataList1: dataLi1,
+          dataList2: dataLi2,
+          dataList: dataLi1
+        })
+      } else {
+
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData()
   },
 
   /**

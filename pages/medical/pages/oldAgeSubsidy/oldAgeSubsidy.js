@@ -7,7 +7,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		fileName:'',
+		fileState:'待上传',
 		nationList: app.globalData.nationList, //民族
 		nation: '', //选中的民族列表
 		contactPhone:'',//联系电话
@@ -21,6 +21,7 @@ Page({
 		relationship:'',//与申请人关系
 		userName:'',//申请人姓名
 		userSex:'',//性别
+		attachment:'',//身份证附件
 	},
 	putData(e) {
 		let key = e.currentTarget.dataset.key
@@ -42,23 +43,36 @@ Page({
 			nation: this.data.nationList[e.detail.value]
 		})
 	},
-	//选择文件并上传
-  uploadFile: function () {
-    wx.chooseMessageFile({
-      count: 1,
-      type: 'all',
-      success(res) {
-        const tempFilePaths = res.tempFiles
-        util.uploadFile(tempFilePaths[0].path,'file').then(res => {
-          console.log(res)
-        });
-      }
-    })
-  },
+//选择文件并上传
+uploadFile: function () {
+	let that = this
+	wx.chooseMessageFile({
+		count: 1,
+		type: 'image',
+		success(res) {
+			const tempFilePaths = res.tempFiles
+			util.uploadFile(tempFilePaths[0].path, 'image').then(res => {
+				console.log(res)
+				if (res.statusCode == 200) {
+					let obj = JSON.parse(res.data)
+	
+					that.setData({
+						fileState: '上传成功',
+						attachment: obj.data
+					})
+				} else {
+					that.setData({
+						fileState: '上传失败',
+					})
+				}
+			});
+		},
+	})
+},
 	//提交数据
 	commitData() {
 		let data = {
-			attachment:'22',//身份证附件
+			attachment:this.data.attachment,//身份证附件
 			contactPhone:this.data.contactPhone,
 			idCard:this.data.idCard,
 			nowAddress:this.data.nowAddress,
@@ -75,7 +89,7 @@ Page({
 
 		}
 		console.log(data)
-		util.requestApi('subsidies/savesubsidies', 'POST', data).then(res => {
+		util.requestData('http://192.168.1.111:8004/InfoIssue/app/subsidies/savesubsidies', 'POST', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 				wx.navigateBack({
