@@ -19,15 +19,14 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-let base='http://192.168.1.111:8004/InfoIssue/app/'
-// let baseUrl = 'http://192.168.1.119:8004/InfoIssue/app/release/'; //测试(刘翔宇)
-let baseUrl = base+'release/'; //测试(王益兴)
-// let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
+let base = 'http://192.168.1.111:8004/InfoIssue/app/' //王益兴
+// let base = 'http://192.168.1.119:8004/InfoIssue/app/' //刘翔宇
+// let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
+// let base = 'http://192.168.31.101:8004/InfoIssue/app/' //谷宇
 
-
-  // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//公司
-// let uploadUrl='http://192.168.1.114:8004/InfoIssue/app/file/uploadfile'//文件上传地址
-let uploadUrl=base+'file/uploadimage'//图片上传地址
+let baseUrl = base + 'release/'
+let uploadFileUrl='file/uploadfile'//文件上传地址
+let uploadUrl = base + 'file/uploadimage' //图片上传地址
 
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
@@ -86,7 +85,7 @@ const requestData = function (url, method, data = {}) {
         'content-type': 'application/json',
         'token': wx.getStorageSync("token")
       },
-      url:  base+url,
+      url: base + url,
       data: data,
       method: meth,
       success: function (res) {
@@ -105,7 +104,7 @@ const requestData = function (url, method, data = {}) {
   })
 }
 //文件上传接口
-const uploadFile = function (filePath,name) {
+const uploadFile = function (filePath, name) {
   wx.showLoading({
     title: '上传中...'
   });
@@ -115,15 +114,15 @@ const uploadFile = function (filePath,name) {
       filePath: filePath,
       name: name,
       formData: {},
-      timeout:2*60*1000,
+      timeout: 2 * 60 * 1000,
       header: {
         'token': wx.getStorageSync("token")
       },
       success: (res) => {
         wx.hideLoading();
-          resolve(res)
+        resolve(res)
       },
-      fail: (res)=> {
+      fail: (res) => {
         //错误信息统一处理操作
         wx.hideLoading();
         reject(res)
@@ -228,32 +227,32 @@ const getParams = function getUrlkey(url) {
 }
 
 //请求返回提示
-const returnCode = function(code,num){
-  if(code==num){
+const returnCode = function (code, num) {
+  if (code == num) {
     wx.showToast({
       title: "提交成功",
       icon: 'success',
       mask: true,
-      success(res){
+      success(res) {
         setTimeout(() => {
           wx.navigateBack({
             delta: 2
           })
-        }, 1000)		
+        }, 1000)
       }
-    });			
-  }else{
+    });
+  } else {
     wx.showToast({
       title: '请检查数据',
       icon: 'error',
     })
   }
 }
-const isNull = function(str) {
+const isNull = function (str) {
   if (typeof (str) == "undefined" || str == null || str === "")
-      return true;
+    return true;
   else
-      return false;
+    return false;
 };
 
 module.exports = {
