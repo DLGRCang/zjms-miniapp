@@ -14,25 +14,26 @@
 		<!-- <view class="flex bg-white round center round_bg">
 			<view class="flex center bg-blue round round_bg_tv">投票</view>
 		</view> -->
-		<text class="margin-top-sm">{{item.householdName}}</text>
+		<text class="margin-top-sm">{{item.familyName}}</text>
 		<!-- <view class="flex margin-xs">
 			<view class="text-sm text-blue">票数：12369</view>
 			<view class="text-sm text-blue">排名：12</view>
 		</view> -->
 
 	</view>
-	<view wx:if="{{TabCur==1}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{4}}" wx:key style="height: 420rpx;">
+	<view wx:if="{{TabCur==1}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{getGoodboyrList}}" wx:key style="height: 420rpx;">
 		<view class="bg-grey margin-xs w_h">
-			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.filePath}}"></image>
+			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.studentsPhotos}}"></image>
 		</view>
-		<text class="margin-top-sm">新时代好少年</text>
+		<text class="margin-top-sm">{{item.studentName}}</text>
 	</view>
-	<view wx:if="{{TabCur==2}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{6}}" wx:key style="height: 420rpx;">
+
+	<view wx:if="{{TabCur==2}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{getWomanpacesetterList}}" wx:key style="height: 420rpx;">
 		<view class="bg-grey margin-xs w_h">
-			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.filePath}}"></image>
+			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.applicantPhotoa}}"></image>
 		</view>
 
-		<text class="margin-top-sm">三八红旗手</text>
+		<text class="margin-top-sm">{{item.userName}}</text>
 	</view>
 
 </view>

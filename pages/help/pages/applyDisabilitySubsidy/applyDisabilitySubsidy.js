@@ -1,4 +1,5 @@
 // pages/help/pages/applyDisabilitySubsidy/applyDisabilitySubsidy.js
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**

@@ -23,6 +23,7 @@ Page({
 		sex: '', //户主性别
 		standardCulture: '', //户主文化程度
 		workUnit: '', //户主工作单位及职务
+		familyName: '', //最美家庭名称
 	},
 	putData(e) {
 		let key = e.currentTarget.dataset.key
@@ -62,6 +63,7 @@ Page({
 			sex:this.data.sex,
 			standardCulture:this.data.standardCulture,
 			workUnit:this.data.workUnit,
+			familyName:this.data.familyName,
 		}
 		console.log(data)
 		util.requestApi('beautifulfamily/savebeautifulfamily', 'POST', data).then(res => {
