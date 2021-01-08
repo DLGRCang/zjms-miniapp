@@ -1,0 +1,30 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">失信人员查询</view>
+</cu-custom>
+<image mode="widthFix" src="{{imgUrl}}/image/shixinrenyuan.png" style="width:100%"></image>
+<view class="padding-lg">
+  <view class="cu-bar search">
+    <view class="search-form round">
+      <input class="padding-left-sm" type="text" placeholder="请输入身份证号" bindinput="getKey"></input>
+      <view class="cuIcon-search padding-right-sm" bindtap="goSearch"></view>
+    </view>
+  </view>
+  <dot-title title="查询结果" color="color"></dot-title>
+  <view class="box" wx:if="{{dishonestList===null || dishonestList===''}}">
+    <view>暂无查询信息</view>
+  </view>
+  <view wx:else>
+    <block wx:for="{{dishonestList}}" wx:key>
+      <view class="box">
+        <view class="flex justify-between">
+        <view>姓名：</view>
+        <view class="text-grey">{{item.dishonestName}}</view>
+      </view>
+      <view class="flex justify-between margin-top-sm">
+        <view>身份证号:</view>
+        <view class="text-grey">{{item.idCardNumber}}</view>
+      </view>
+      </view>  
+    </block>
+  </view>
+</view>

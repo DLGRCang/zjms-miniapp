@@ -1,0 +1,13 @@
+/* pages/help/pages/dishonestSearch/dishonestSearch.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+.color{
+  color: #EE6967;
+}
+.box {
+  margin-top: 20rpx;
+  border: 1rpx solid #F5F5F5;
+  padding:20rpx;
+}
