@@ -77,7 +77,7 @@ const requestData = function (url, method, data = {}) {
     meth = 'GET' //不传情况下默认'GET'
   }
   // if (getApp().globalData.userInfo != null) { //已登陆情况下必传参数（项目需要看情况而定）
-  data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
+  // data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
   // }
   return new Promise(function (resolve, reject) {
     wx.request({
