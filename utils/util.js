@@ -22,9 +22,15 @@ const formatNumber = n => {
 
 // let baseUrl = 'http://192.168.1.119:8004/InfoIssue/app/release/'; //测试(刘翔宇)
 <<<<<<< HEAD
+<<<<<<< HEAD
 let baseUrl = 'http://192.168.1.111:8004/InfoIssue/app/release/'; //测试(王益兴)
 //  let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
 // let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
+=======
+// let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(王益兴)
+let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
+//  let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/release/'//测试地址（公司）
+>>>>>>> dev
 =======
 // let baseUrl = 'http://192.168.1.114:8004/InfoIssue/app/release/'; //测试(王益兴)
 let baseUrl = 'http://192.168.31.101:8004/InfoIssue/app/release/'//测试 （谷雨）
