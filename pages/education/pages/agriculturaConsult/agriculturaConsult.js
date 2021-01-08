@@ -44,7 +44,7 @@ Page({
 			userId:wx.getStorageSync("userId"),
 		}
 		console.log(data)
-		util.requestApi('consult/saveconsult', 'POST',data).then(res => {
+		util.requestData('consult/saveconsult', 'POST',data).then(res => {
 			console.log(res)
 			if(res.statusCode==200){
 				wx.navigateBack({

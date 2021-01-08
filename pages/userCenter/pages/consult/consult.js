@@ -15,7 +15,7 @@ Page({
   },
   getData(){
 
-		util.requestApi('consult/getConsultByUserId/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
+		util.requestData('consult/getConsultByUserId/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
       let dataLi0=[]
       let dataLi1=[]
 			if (res.statusCode == 200) {
@@ -42,7 +42,8 @@ Page({
 	selectTab:function(e){
     console.log(e.detail.TabCur)
     this.setData({
-      state:e.detail.TabCur
+      state:e.detail.TabCur,
+      dataList:[]
     })
     if(e.detail.TabCur==0){
       this.setData({

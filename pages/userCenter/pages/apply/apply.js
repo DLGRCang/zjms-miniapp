@@ -17,7 +17,8 @@ Page({
   //tab切换事件
   selectTab:function(e){
     this.setData({
-      state:e.detail.TabCur
+      state:e.detail.TabCur,
+      dataList:[]
     })
     if(e.detail.TabCur==0){
       this.setData({
@@ -35,8 +36,12 @@ Page({
   },
   
   getData(){
-		util.requestApi('personapply/getPersonApplyList/'+ wx.getStorageSync("userId"), 'GET', {}).then(res => {
-
+    let data={
+      userId:wx.getStorageSync("userId"),
+      applyCategory:'0'
+    }
+		util.requestApi('personapply/getPersonApplyList', 'GET', data).then(res => {
+      console.log(res)
       let dataLi0=[]
       let dataLi1=[]
       let dataLi2=[]
@@ -44,7 +49,7 @@ Page({
         for(let i=0;i<res.data.length;i++){
           if(res.data[i].state==0){
           dataLi0.push(res.data[i])
-          }else if(res.data[i].state==1){
+          }else if(res.data[i].state==2){
             dataLi1.push(res.data[i])
           }else{
             dataLi2.push(res.data[i])

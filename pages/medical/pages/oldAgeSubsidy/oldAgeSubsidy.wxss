@@ -3,6 +3,9 @@
 	background-color: #2B83F4;
 	color: #ffffff;
 }
+radio {
+		transform:scale(0.7);
+}
 .file:before{
 	font-family: "cuIcon";
 	content: "\e739";

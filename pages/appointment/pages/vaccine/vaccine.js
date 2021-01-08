@@ -44,7 +44,7 @@ Page({
 		let data = {
 			fun: "getDate"
 		}
-		util.requestApi('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
+		util.requestData('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
 			console.log()
 			if (res.statusCode == 200) {
 				let dateList = [];
@@ -65,7 +65,7 @@ Page({
 			fun: "bookDate",
 			bookDate: this.data.pickerData
 		}
-		util.requestApi('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
+		util.requestData('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
 			console.log(res.data)
 			if (res.statusCode == 200) {
 				if (res.data.length == 0) {
@@ -109,7 +109,7 @@ Page({
 		}
 		console.log(data)
 
-		util.requestApi('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
+		util.requestData('vaccineinoculate/getVaccineInoculate', 'GET', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 				if (res.data.status == "success") {
