@@ -12,32 +12,7 @@ Page({
 		infotypeid: '	80bcd380-3aa9-4a35-bc38-4e242193ab81',
     page: 1,
     dataList: [],
-    dishonestList:[
-				{
-				 name:"张三阿",
-				 num:"152629166525666666"
-				},
-				{
-					name: "王欧五",
-					num: "152629166525666666"
-				},
-				{
-					name: "赵柳",
-					num: "152629166525666666"
-				},
-				{
-					name: "奇奇",
-					num: "152629166525666666"
-				},
-				{
-					name: "苏帮",
-					num: "152629166525666666"
-				},
-				{
-					name: "王小二",
-					num: "152629166525666666"
-				},
-			 ]
+    dishonestList:null,
 		 
 	},
 
@@ -52,9 +27,22 @@ Page({
       })
       console.log(this.data.dataList);
     })
-  },
+	},
+	getInfo() {
+    let that = this;
+    util.requestApi('dishonestpeople/listpagedishonestpeople', 'GET', {}).then(res => {
+      console.log(res.data.rows)
+      that.setData({
+				dishonestList: res.data.rows
+      })
+    })
+	},
+	goSearch(){
+		util.pageJump("/pages/help/pages/dishonestSearch/dishonestSearch")
+	},
   onLoad: function (options) {
-    this.getDataList();
+		this.getDataList();
+		this.getInfo();
   },
 
 	/**

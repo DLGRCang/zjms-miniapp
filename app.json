@@ -165,6 +165,7 @@
 				"pages/insured/insured",
 				"pages/redcross/redcross",
 				"pages/dishonest/dishonest",
+				"pages/dishonestSearch/dishonestSearch",
 				"pages/law/law",
 				"pages/woman/woman",
 				"pages/applyDisabilityCertificate/applyDisabilityCertificate",
