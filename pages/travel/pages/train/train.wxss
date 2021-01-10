@@ -27,7 +27,7 @@
 .area{
   width: 29%;
 }
-image{
+.iconImg{
   margin-left: 50rpx;
   width: 80rpx;
   height: 80rpx;
