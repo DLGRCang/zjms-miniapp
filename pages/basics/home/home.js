@@ -6,6 +6,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
+    imgList:[1,2,3],
     newsInfo: [],
     noticeInfo: [],
     StatusBar: app.globalData.StatusBar,
@@ -16,7 +17,7 @@ Page({
       name: '伊旗',
       nick: '发布',
       title: "伊金霍洛发布",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         // {
         //   tit: "听广播",
@@ -39,7 +40,7 @@ Page({
       name: '魅力',
       nick: '伊旗',
       title: "魅力伊旗",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "一村一品",
@@ -63,7 +64,7 @@ Page({
       name: '旅游',
       nick: '出行',
       title: "旅游出行",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "知名景点",
@@ -117,7 +118,7 @@ Page({
       name: '食在',
       nick: '伊旗',
       title: "食在伊旗",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "特色美食",
@@ -156,7 +157,7 @@ Page({
       name: '经济',
       nick: '活动',
       title: "经济活动",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "商场超市",
@@ -209,7 +210,7 @@ Page({
       name: '教育',
       nick: '文体',
       title: "教育文体",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "学前教育",
@@ -267,7 +268,7 @@ Page({
       name: '医疗',
       nick: '康养',
       title: "医疗康养",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "医院药店",
@@ -311,7 +312,7 @@ Page({
       name: '政务',
       nick: '服务',
       title: "政务服务",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "办事指南",
@@ -365,7 +366,7 @@ Page({
       name: '维权',
       nick: '助困',
       title: "维权助困",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "残疾人",
@@ -403,7 +404,7 @@ Page({
       name: '生活',
       nick: '服务',
       title: "生活服务",
-      introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
           tit: "家政服务",
@@ -853,7 +854,7 @@ Page({
     util.pageJump('/pages/publish/pages/pushBest/pushBest')
   },
   //广播
-  goRadio(){
+  goRadio() {
     util.pageJump('/pages/publish/pages/radio/radio')
   },
   //搜素

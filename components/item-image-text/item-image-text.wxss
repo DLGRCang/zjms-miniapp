@@ -7,7 +7,7 @@
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
-		color: #FFFFFF;
+		color: #000;
 		border-radius: 5rpx;
 		border: 1px solid #E1E1E1;
 		height: 30rpx;
