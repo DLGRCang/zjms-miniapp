@@ -25,7 +25,7 @@ Page({
   detailNews() {
     let id = this.data.id;
     let url = 'https://api-cms.yjhlnews.cn/v1/c_article/'+id;
-    util.requestData(url, 'GET', {}).then(res => {
+    util.httpRequest(url, 'GET', {}).then(res => {
       this.setData({
         newsInfo: res.data.data
       })

@@ -1,8 +1,8 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
   <view slot="content">飞机火车</view>
 </cu-custom>
+<image src="{{imgUrl}}/image/feijihuoche.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lg">
-
   <view class="mainContent">
     <view class="cu-list grid col-2 text-lg ">
       <view wx:for="{{name}}" wx:key="index" class="cu-item {{index==chooseIndex?'title':'titles'}}" bindtap="choose"

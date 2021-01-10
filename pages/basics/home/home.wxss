@@ -1,13 +1,39 @@
 /* pages/component/nav/nav.wxss */
-.head{
+.head {
   position: relative;
 }
+
 .search {
   position: absolute;
-  top: 380rpx;
+  top: 290rpx;
   left: 5%;
   right: 5%;
 }
+
+.video {
+  width: 100%;
+}
+
+.radio {
+  margin-top: 20rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid #F5F5F5;
+  padding: 18rpx;
+}
+
+.radio .btn {
+  color: #054FAC;
+  font-weight: bold;
+  border: 4rpx solid #054FAC;
+  border-radius: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left: 2rpx;
+  margin-top: 40rpx;
+  margin-left: 60rpx;
+}
+
 .round {
   background: rgba(255, 255, 255, 0.8);
   color: #000;
@@ -15,7 +41,8 @@
   line-height: 70rpx;
   padding-left: 20rpx;
 }
-.round input{
+
+.round input {
   height: 70rpx;
   line-height: 70rpx;
   padding-left: 20rpx;
