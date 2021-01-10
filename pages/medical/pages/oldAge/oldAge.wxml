@@ -8,8 +8,10 @@
 <view class="margin-lr-lg padding-tb-lg">
 
   <dot-title title="相关政策" color="title-color"></dot-title>
-  <view class="padding-lr-sm padding-tb">
-    <item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}"
-      itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+  <!-- <item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}"
+      itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text> -->
+  <view class="box margin-bottom-sm">
+    <view class="title margin-bottom-sm">申请补贴标准:</view>
+    <text class="text-red">75-79周岁100元;80-99周岁150元;100（含）周岁以上600元</text>
   </view>
 </view>

@@ -3,12 +3,19 @@
 	background-color: #2B83F4;
 	color: #ffffff;
 }
-.button{
-	background-color:#2B83F4;
+
+.button {
+	background-color: #2B83F4;
 	color: #ffffff;
 	margin: -120rpx 70rpx 0 70rpx;
 	font-size: 34rpx;
 }
-.title-color{
-	color:#2B83F4
+
+.title-color {
+	color: #2B83F4
+}
+
+.box {
+	padding: 15rpx;
+	border: 1rpx solid #F5F5F5;
 }

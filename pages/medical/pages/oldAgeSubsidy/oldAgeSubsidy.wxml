@@ -3,10 +3,6 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">高龄补助申请</view>
 </cu-custom>
 <view class="padding">
-	<view class="margin-bottom-sm">
-		<view class="title margin-bottom-sm">申请补贴标准:</view>
-		<text class="text-red">75-79周岁100元;80-99周岁150元;100（含）周岁以上600元</text>
-	</view>
 	<view class="cu-form-group">
 		<view class="title">姓名：</view>
 		<input placeholder="请输入姓名" bindinput="putData" data-key="userName"></input>

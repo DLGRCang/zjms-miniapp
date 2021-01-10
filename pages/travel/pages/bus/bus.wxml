@@ -3,16 +3,17 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/gongjiaochuzu.png" style="width:100%;height:396rpx;"></image>
 <view class="margin-lr-lg">
-  <dot-title title="公交讯息" color="color"></dot-title>
-  <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="goBus">
-    <view class="flex">
-      <view class="cuIcon-order text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
-      <view class="padding-left-sm">公交路线</view>
-    </view>
-    <view class="cuIcon-right text-grey text-bold" style="padding-top: 14rpx;"></view>
-  </view>
   <dot-title title="出租讯息" color="color"></dot-title>
   <view class="box">
+    <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="goTaxiInfo">
+      <view class="flex">
+        <view class="cuIcon-taxi text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
+        <view class="padding-left-sm">出租车主</view>
+      </view>
+      <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
+    </view>
+    
+    <view class="line"></view>
     <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="">
       <view class="flex">
         <view class="cuIcon-deliver text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
@@ -21,14 +22,7 @@
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class="line"></view>
-    <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="goTaxiInfo">
-      <view class="flex">
-        <view class="cuIcon-taxi text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
-        <view class="padding-left-sm">出租车信息</view>
-      </view>
-      <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
-    </view>
-    <view class="line"></view>
+
     <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="">
       <view class="flex">
         <view class="cuIcon-goods text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
@@ -37,6 +31,14 @@
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class="margin-top-xs"></view>
+  </view>
+  <dot-title title="公交讯息" color="color"></dot-title>
+  <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="goBus">
+    <view class="flex">
+      <view class="cuIcon-order text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
+      <view class="padding-left-sm">公交路线</view>
+    </view>
+    <view class="cuIcon-right text-grey text-bold" style="padding-top: 14rpx;"></view>
   </view>
 </view>
 <bottom></bottom>
