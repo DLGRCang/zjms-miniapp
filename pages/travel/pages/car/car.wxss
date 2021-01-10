@@ -1,10 +1,10 @@
 /* pages/travel/pages/car/car.wxss */
 .bgColor{
-  background-color: #1375F3;
+  background-color: #2B83F4;
   color: #ffffff;
 }
 .color{
-  color: #1375F3;
+  color: #2B83F4;
 }
 .mainContent{
   border: 1rpx solid #F5F5F5;
@@ -15,14 +15,14 @@
   height: 92rpx;
   line-height: 92rpx;
 padding-left: 280rpx;
-  border: 1rpx solid #1375F3;
-  background-color: #1375F3;
+  border: 1rpx solid #2B83F4;
+  background-color: #2B83F4;
   color: #fff;
 }
 .area{
   width: 29%;
 }
-image{
+.iconImg{
   margin-left: 50rpx;
   width: 80rpx;
   height: 80rpx;
@@ -32,7 +32,7 @@ button{
   height: 96rpx;
   line-height: 96rpx;
   color: #fff;
-  background-color: #1375F3;
+  background-color: #2B83F4;
 }
 .box {
   margin-top: 20rpx;

@@ -18,16 +18,16 @@ Page({
       title: "伊金霍洛发布",
       introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
-        {
-          tit: "听广播",
-          pic: "/image/1.png",
-          tab: 0
-        },
-        {
-          tit: "看电视",
-          pic: "/image/2.png",
-          tab: 1
-        },
+        // {
+        //   tit: "听广播",
+        //   pic: "/image/1.png",
+        //   tab: 0
+        // },
+        // {
+        //   tit: "看电视",
+        //   pic: "/image/2.png",
+        //   tab: 1
+        // },
         // {
         //   tit: "推优榜",
         //   pic: "/image/3.png",
@@ -851,6 +851,10 @@ Page({
   //推优榜
   goGoodList() {
     util.pageJump('/pages/publish/pages/pushBest/pushBest')
+  },
+  //广播
+  goRadio(){
+    util.pageJump('/pages/publish/pages/radio/radio')
   },
   //搜素
   searchApp() {

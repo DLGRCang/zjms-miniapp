@@ -1,6 +1,12 @@
 <view class="head">
 	<!-- 顶部图片 -->
-	<image src='{{imgUrl}}/image/index1.png' mode="scaleToFill" style='width:100%;height:470rpx'></image>
+	<!-- <image src='{{imgUrl}}/image/index1.png' mode="scaleToFill" style='width:100%;height:470rpx'></image> -->
+	<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
+		autoplay="true" interval="5000" duration="500">
+		<swiper-item wx:for="{{3}}" wx:key>
+			<image src="{{imgUrl}}/image/index1.png" mode="aspectFill"></image>
+		</swiper-item>
+	</swiper>
 	<!--搜索  -->
 	<view class="search">
 		<view class="flex round">
@@ -20,7 +26,7 @@
 			<text>{{item.name}}</text>
 			<text class="son">{{item.nick}}</text>
 		</view>
-	<!-- </scroll-view> -->
+		<!-- </scroll-view> -->
 	</view>
 
 	<!-- 右边 background-color: #F8F8F8; -->
@@ -53,15 +59,31 @@
 						<view>通知公告</view>
 						<view class="text-grey text-sm" bindtap="noticeList">更多+</view>
 					</view>
-				</view> -->
-				<view bindtap="goGoodList">
-					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx;"></image>
 				</view>
 				<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
 					<view class="padding-bottom-sm" bindtap="newsDetail" data-id="{{item.id}}">
 						<text class="cuIcon-hotfill text-red"></text> {{item.content}}
 					</view>
-				</block>
+				</block> -->
+
+				<!-- 推优榜 -->
+				<view bindtap="goGoodList">
+					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx;"></image>
+				</view>
+				<!-- 电视 -->
+				<video class="video" id='myvideo' controls
+					src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"
+					autoplay="true"></video>
+				<!-- 广播 -->
+				<view class="radio flex">
+					<view><image src="{{imgUrl}}/image/fm.png" style="height:120rpx;width:120rpx;"></image></view>
+					<view class="padding-top-sm padding-left-lg">
+						<view class="text-bold">伊金霍洛旗智慧声音</view>
+						<view class="margin-top-sm text-grey text-sm">FM102.3</view>
+					</view>
+					<view class="btn" bindtap="goRadio"><text class="cuIcon-stop"></text></view>
+				</view>
+
 			</view>
 			<!-- 宫格 cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl -->
 			<view class="icon-wrap">
