@@ -2596,7 +2596,7 @@ swiper.round-dot .wx-swiper-dot.wx-swiper-dot-active {
 }
 
 .screen-swiper {
-	min-height: 375rpx;
+	min-height: 355rpx;
 }
 
 .screen-swiper image,

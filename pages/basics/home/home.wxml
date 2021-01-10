@@ -3,7 +3,7 @@
 	<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
 		autoplay="true" interval="5000" duration="500">
 		<swiper-item wx:for="{{imgList}}" wx:key>
-			<image src="{{imgUrl}}/image/index{{item}}.png" mode="aspectFill" style='width:100%;height:470rpx'></image>
+			<image src="{{imgUrl}}/image/index{{item}}.png" mode="widthFix" style='width:100%;height:470rpx'></image>
 		</swiper-item>
 	</swiper>
 	<!--搜索  -->
