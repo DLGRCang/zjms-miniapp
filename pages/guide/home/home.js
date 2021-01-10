@@ -19,24 +19,59 @@ Page({
 				url: '/pages/publish/pages/tv/tv',
 			},
 			{
-				name: '推优榜',
-				icon: app.globalData.imgUrl + '/image/3.png',
-				url: '/pages/publish/pages/pushBest/pushBest',
-			}, {
-        name: '一村一品',
-        icon: app.globalData.imgUrl + '/image/4.png',
-        url: '/pages/charm/pages/villageProduct/villageProduct',
-      },
-      {
-        name: '历史文化',
-        icon: app.globalData.imgUrl + '/image/5.png',
-        url: '/pages/charm/pages/historyCulture/historyCulture',
-      },
-      {
-        name: '投资兴业',
-        icon: app.globalData.imgUrl + '/image/6.png',
-        url: '/pages/charm/pages/investment/investment',
-      },
+				name: '长途汽车',
+				icon: app.globalData.imgUrl + '/image/10.png',
+				url: '/pages/travel/pages/car/car',
+			},
+			{
+				name: '公交出租',
+				icon: app.globalData.imgUrl + '/image/11.png',
+				url: '/pages/travel/pages/bus/bus',
+			},
+			{
+				name: '身边公厕',
+				icon: app.globalData.imgUrl + '/image/13.png',
+				url: '/pages/travel/pages/toilet/toilet',
+			},
+			{
+				name: '找充电桩',
+				icon: app.globalData.imgUrl + '/image/14.png',
+				url: '/pages/travel/pages/electric/electric',
+			},
+			{
+				name: '农业技术',
+				icon: app.globalData.imgUrl + '/image/39.png',
+				url: '/pages/education/pages/agricultural/agricultural',
+			},
+			{
+				name: '中小学',
+				icon: app.globalData.imgUrl + '/image/32.png',
+				url: '/pages/education/pages/midSchool/midSchool',
+			},
+			{
+				name: '高龄补助',
+				icon: app.globalData.imgUrl + '/image/47.png',
+				url: '/pages/medical/pages/oldAge/oldAge',
+			},
+			// {
+			// 	name: '推优榜',
+			// 	icon: app.globalData.imgUrl + '/image/3.png',
+			// 	url: '/pages/publish/pages/pushBest/pushBest',
+			// }, {
+      //   name: '一村一品',
+      //   icon: app.globalData.imgUrl + '/image/4.png',
+      //   url: '/pages/charm/pages/villageProduct/villageProduct',
+      // },
+      // {
+      //   name: '历史文化',
+      //   icon: app.globalData.imgUrl + '/image/5.png',
+      //   url: '/pages/charm/pages/historyCulture/historyCulture',
+      // },
+      // {
+      //   name: '投资兴业',
+      //   icon: app.globalData.imgUrl + '/image/6.png',
+      //   url: '/pages/charm/pages/investment/investment',
+      // },
 		],
 		historyApp: [
 			{

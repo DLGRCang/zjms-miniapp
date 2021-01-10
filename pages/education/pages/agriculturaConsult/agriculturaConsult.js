@@ -29,7 +29,7 @@ Page({
 	},
 	//获取专家列表
 	getSpecialist() {
-		util.requestApi('specialist/listspecialist', 'GET', {}).then(res => {
+		util.requestData('specialist/listspecialist', 'GET', {}).then(res => {
 			console.log(res)
 			this.setData({
 				specialist: res.data
