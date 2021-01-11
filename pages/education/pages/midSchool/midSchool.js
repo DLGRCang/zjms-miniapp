@@ -13,17 +13,13 @@ Page({
     dataList: [], //小学学校
     dataList1: [], //中学学校
   },
-  goDetail(e) {
-    console.log(e)
-    util.pageJumpTo('../schoolDetail/schoolDetail', 'id', e.currentTarget.dataset.id)
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   getDataList: function () {
     //加载数据列表
     util.requestApi('schoolinformation/listPageMiddlePrimarySchool/2', 'GET', {}).then(res => {
-
+      console.log(res.data)
       this.setData({
         dataList: res.data.rows
       })

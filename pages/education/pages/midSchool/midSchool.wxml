@@ -9,7 +9,7 @@
     isLine="true" type="3">
   </item-image-text>
   <dot-title title="中学" color="color" isMore="{{false}}" sign='{{infotypeid1}}' type="3"></dot-title>
-  <item-image-text bindtap="goDetail" data-id="3" wx:for="{{dataList1}}" wx:key="item" obj="{{item}}" itemTitle="{{item.schoolName}}"
+  <item-image-text data-id="3" wx:for="{{dataList1}}" wx:key="item" obj="{{item}}" itemTitle="{{item.schoolName}}"
     itemInfo="{{item.introduction}}" isImg="true" imgUrl="{{item.photo}}" isTab="true" itemTabs="{{item.schoolLabels}}"
     isLine="true" type="3">
   </item-image-text>
