@@ -1,10 +1,21 @@
 // components/botton/botton.js
 Component({
+		options: {
+		addGlobalClass: true,
+		multipleSlots: true
+	},
 	/**
 	 * 组件的属性列表
 	 */
 	properties: {
-
+			deptStr1: {
+				type: String,
+				default: ''
+			},
+			deptStr2: {
+				type: String,
+				default: ''
+			},
 	},
 
 	/**
