@@ -77,4 +77,4 @@
     </block>
   </view>
 </view>
-<bottom></bottom>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="主办单位：蒙古大云智通科技有限公司"></bottom>

@@ -1,4 +1,9 @@
 /* pages/travel/pages/car/car.wxss */
+page {
+  min-height: 100%;
+  display:flex;
+  flex-direction: column;
+}
 .bgColor{
   background-color: #2B83F4;
   color: #ffffff;
