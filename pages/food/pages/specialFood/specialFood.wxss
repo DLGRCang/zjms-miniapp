@@ -1,5 +1,9 @@
 /* pages/food/pages/specialFood/specialFood.wxss */
-
+page{
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
 .bgColor {
   background-color: #EE6967;
   color: #ffffff;

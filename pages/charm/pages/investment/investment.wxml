@@ -6,15 +6,18 @@
 <view wx:if="{{tabBar===0}}">
   <block wx:for="{{artelList}}" wx:for-item="item" wx:key="item">
     <view class="contents">
-      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true"
+        isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </block>
 </view>
+
 <view wx:if="{{tabBar===1}}">
   <block wx:for="{{artelList}}" wx:for-item="item" wx:key="item">
     <view class="contents">
-      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true"
+        isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </block>
@@ -22,10 +25,10 @@
 <view wx:if="{{tabBar===2}}">
   <block wx:for="{{artelList}}" wx:for-item="item" wx:key="item">
     <view class="contents">
-      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true" isDate="true" date="{{item.publishdate}}">
+      <item-image-text imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="true"
+        isDate="true" date="{{item.publishdate}}">
       </item-image-text>
     </view>
   </block>
 </view>
-
-<bottom></bottom>
+<bottom style="margin-top:auto"></bottom>
