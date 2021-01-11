@@ -1,5 +1,9 @@
 /* pages/travel/pages/bus/bus.wxss */
-
+page {
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
 .bgColor {
 	background-color: #EE954A;
 	color: #ffffff;

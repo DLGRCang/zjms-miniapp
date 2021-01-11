@@ -32,6 +32,6 @@
 		<input type="number" placeholder="请输入现住址" bindinput="putData" placeholder="请输入个人特长" data-key="specialty"></input>
   </view>
   <view class="padding flex flex-direction">
-		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
 	</view>
 </view>

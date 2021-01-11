@@ -10,6 +10,6 @@
     <text style="font-weight: 800;color: orange">商家入驻</text>
   </view>
 </view>
-<view class="margin-lr-lg" style="border-bottom: 2rpx solid #f5f5f5" wx:for="{{5}}" wx:key="index">
+<view class="margin-lr-lg"  wx:for="{{5}}" wx:key="index">
   <item-image-text imgUrl="" itemTitle="店铺名称" itemInfo="万达商圈 距您4.3公里" itemTabs="{{tabs}}" isImg="true" isStar="true" starNum="5"></item-image-text>
 </view>
