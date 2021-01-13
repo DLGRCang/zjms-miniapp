@@ -48,7 +48,9 @@
 				"pages/officialNewsDetail/officialNewsDetail",
 				"pages/search/search",
 				"pages/form/form",
-				"pages/applyBestFamily/applyBestFamily"
+				"pages/applyBestFamily/applyBestFamily",
+				"pages/applyWomanpacesetter/applyWomanpacesetter",
+				"pages/applyGoodboyr/applyGoodboyr"
 			]
 		},
 		{

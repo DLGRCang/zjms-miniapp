@@ -1,0 +1,54 @@
+<!--pages/publish/pages/applyGoodboyr/applyGoodboyr.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">申请新时代好少年</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">姓名：</view>
+		<input placeholder="请输入户主姓名" bindinput="putData" data-key="studentName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+	</view>
+	<!-- 民族 -->
+	<view class="cu-form-group">
+		<view class="title">民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-key="nation">
+			<view class="picker">
+				{{nation?nation:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">年龄：</view>
+		<input type="number" placeholder="请输入身份证号" bindinput="putData" data-key="age"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">照片：</view>
+		<input class="text-cut" disabled="false" placeholder="请上传照片" value="{{fileState}}"></input>
+		<text bindtap="uploadFile" class="file margin-left"></text>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">学校：</view>
+		<input placeholder="请输入学校名称" bindinput="putData" data-key="schoolName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">类型</view>
+		<picker bindchange="getType" value="{{index}}" range="{{goodBoyTypeList}}" data-key="goodBoyType">
+			<view class="picker">
+				{{goodBoyType?goodBoyType:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="title padding text-lg">主要事迹：</view>
+	<textarea class="margin-lr padding-sm" style="border:1px solid grey;width:auto" placeholder="请输入主要事迹简介"
+		bindinput="putData" data-key="mainStory"></textarea>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

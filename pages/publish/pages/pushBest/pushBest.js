@@ -2,26 +2,36 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
+    baseImgUrl:app.globalData.baseImgUrl,
     StatusBar:app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     imgUrl: app.globalData.imgUrl,
     TabCur: 0,
     tabName: ["最美家庭", "新时代好少年", "三八红旗手"],
-    homeList:[],
-    getWomanpacesetterList:[],
-    getGoodboyrList:[],
-    baseImgUrl:app.globalData.baseImgUrl,
+    homeList:[],//最美家庭列表
+    getWomanpacesetterList:[],//三八红旗手列表
+    getGoodboyrList:[],//新时代好少年列表
    
   },
   apply(){
     //申请最美家庭
     if(this.data.TabCur==0){
       util.pageJump('/pages/publish/pages/applyBestFamily/applyBestFamily')
+      return
+    }
+     //申请新时代好少年
+     if(this.data.TabCur==1){
+      util.pageJump('/pages/publish/pages/applyGoodboyr/applyGoodboyr')
+      return
+    }
+     //申请三八红旗手
+     if(this.data.TabCur==2){
+      util.pageJump('/pages/publish/pages/applyWomanpacesetter/applyWomanpacesetter')
+      return
     }
   },
   //切换顶部tab
@@ -34,6 +44,8 @@ Page({
       this.getWomanpacesetter()
     }else if(e.detail.TabCur==1){
       this.getGoodboyr()
+    }else if(e.detail.TabCur==0){
+      this.getBestHome()
     }
   },
   //获取最美家庭

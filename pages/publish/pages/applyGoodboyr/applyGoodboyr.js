@@ -1,5 +1,5 @@
-// pages/publish/pages/applyBestFamily/applyBestFamily.js
-const app = getApp()
+// pages/publish/pages/applyGoodboyr/applyGoodboyr.js
+const app=getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
@@ -7,23 +7,18 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		goodBoyTypeList:['爱国爱党','敬老爱亲','助人为乐','热心公益','勤学感恩','创新创造','自强自立','热爱劳动','保护环境','弘扬中华优秀文化'],
 		nationList: app.globalData.nationList, //民族
 		fileState: '待上传', //文件名称
-		//申请最美家庭
-		address: '', //家庭住址
-		beautifulFamilyType: '', //最美家庭类别
-		briefIntroductionofMainEvents: '', //主要事件介绍
-		filePath: '', //文件上传路径
-		homeTelephone: '', //家庭电话
-		householdName: '', //户主姓名
-		idNumber: '', //户主身份证号
+		age: '', //年龄
+		goodBoyType: '', //类型
+		mainStory: '', //主要事迹
 		nation: '', //民族
-		numberPeople: '', //家庭成员数
-		phoneNumber: '', //户主电话
-		sex: '', //户主性别
-		standardCulture: '', //户主文化程度
-		workUnit: '', //户主工作单位及职务
-		familyName: '', //最美家庭名称
+		schoolName: '', //学校名称
+		sex: '', //性别
+		studentName: '', //姓名
+		studentsPhotos: '', //照片
+		attachment: '', //附件
 	},
 	putData(e) {
 		let key = e.currentTarget.dataset.key
@@ -45,29 +40,29 @@ Page({
 			nation: this.data.nationList[e.detail.value]
 		})
 	},
-		//提交数据
+	//获取类型
+	getType(e) {
+		this.setData({
+			goodBoyType: this.data.goodBoyTypeList[e.detail.value]
+		})
+	},
+	//提交数据
 	commitData() {
 		let data = {
 			userId:wx.getStorageSync("userId"),
-			auditStatus:'0',
-			applicationDate: util.formatDate(new Date()), //申请日期
-			address:this.data.address,
-			beautifulFamilyType:this.data.beautifulFamilyType,
-			briefIntroductionofMainEvents:this.data.briefIntroductionofMainEvents,
-			filePath:this.data.filePath,
-			homeTelephone:this.data.homeTelephone,
-			householdName:this.data.householdName,
-			idNumber:this.data.idNumber,
+			attachment:this.data.attachment,
+			age:this.data.age,
+			goodBoyType:this.data.goodBoyType,
+			mainStory:this.data.mainStory,
 			nation:this.data.nation,
-			numberPeople:this.data.numberPeople,
-			phoneNumber:this.data.phoneNumber,
+			schoolName:this.data.schoolName,
 			sex:this.data.sex,
-			standardCulture:this.data.standardCulture,
-			workUnit:this.data.workUnit,
-			familyName:this.data.familyName,
+			studentName:this.data.studentName,
+			studentsPhotos:this.data.studentsPhotos,
+
 		}
 		console.log(data)
-		util.requestApi('beautifulfamily/savebeautifulfamily', 'POST', data).then(res => {
+		util.requestApi('goodboy/savegoodboy', 'POST', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 				wx.navigateBack({
@@ -95,7 +90,7 @@ Page({
 		
 						that.setData({
 							fileState: '上传成功',
-							filePath: obj.data
+							studentsPhotos: obj.data
 						})
 					} else {
 						that.setData({

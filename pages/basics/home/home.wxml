@@ -61,10 +61,10 @@
 				</block> -->
 
 				<!-- 推优榜 -->
-				<!-- <view bindtap="goGoodList">
+				<view bindtap="goGoodList">
 					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx;"></image>
-				</view> -->
-				<!-- 电视 autoplay="true" -->
+				</view>
+				<!-- 电视 -->
 				<view class="text-lg margin-tb-sm">看电视</view>
 				<video class="video" id='myvideo' controls
 					src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"></video>
