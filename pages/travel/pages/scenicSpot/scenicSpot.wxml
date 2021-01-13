@@ -3,18 +3,21 @@
 </cu-custom>
 <image src="{{imgUrl}}/image/zhimingjingdian.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lr-lg">
-  <dot-title title="景区风采" color="red" isMore="true"></dot-title>
+  <dot-title title="景区风采" color="red"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
-    <view class="info" wx:for="{{6}}" wx:key="item">
-      <image src="{{imgUrl}}/image/zhimingjingdian.png"></image>
-      <view class="margin-top-xs padding-left-sm">知名景点名称</view>
-      <view class="margin-top-xs padding-left-sm">
-        <text class="text-sm text-grey">服务星级：</text>
-        <text class="cuIcon-favorfill lg text-yellow" wx:for="{{4}}" wx:key="item"></text>
+    <block wx:for="{{infoList}}" wx:key="item">
+      <view class="info" bindtap="goDetail" data-id="{{item.attractionsId}}">
+        <image src="{{baseImgUrl}}{{item.files}}"></image>
+        <view class="margin-top-xs padding-left-sm">{{item.name}}</view>
+        <view class="margin-top-xs padding-left-sm">
+          <!-- <text class="text-sm text-grey">服务星级：</text>
+          <text class="cuIcon-favorfill lg text-yellow" wx:for="{{4}}" wx:key="item"></text> -->
+          <text class="text-sm text-grey textInfo">{{item.address}}</text>
+        </view>
       </view>
-    </view>
+    </block>
   </scroll-view>
-  <dot-title title="景区直播" color="red" isMore="true"></dot-title>
+  <!-- <dot-title title="景区直播" color="red" isMore="true"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{6}}" wx:key="item">
       <view style="position: relative;">
@@ -23,8 +26,8 @@
       </view>
       <view class="margin-top-xs padding-left-sm">知名景点名称</view>
     </view>
-  </scroll-view>
-  <dot-title title="游客动态" color="red" isMore="true"></dot-title>
+  </scroll-view> -->
+  <!-- <dot-title title="游客动态" color="red" isMore="true"></dot-title>
 	<view class="flex" wx:for="{{4}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
 		<view class="flex flex-direction">
@@ -35,7 +38,7 @@
     <view style="margin-left:280rpx;">
       <text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="item"></text>
     </view>
-	</view>
+	</view> -->
 
 
 </view>

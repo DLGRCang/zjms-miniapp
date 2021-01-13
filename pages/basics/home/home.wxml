@@ -7,13 +7,11 @@
 		</swiper-item>
 	</swiper>
 	<!--搜索  -->
-	<!-- <view class="search">
-		<view class="flex round">
-			<text class="cuIcon-search"></text>
-			<input type="text" placeholder="搜索应用功能" confirm-type="search" bindfocus="searchApp"></input>
-		</view>
-	</view> -->
+	<view class="serarch" bindtap="searchApp">
+		<text class="cuIcon-search text-bold"></text>
+	</view>
 </view>
+
 <!-- 实现左右联动效果 -->
 <view class="flex">
 	<!-- 左边栏 -->
@@ -66,15 +64,16 @@
 				<!-- <view bindtap="goGoodList">
 					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx;"></image>
 				</view> -->
-				<!-- 电视 -->
+				<!-- 电视 autoplay="true" -->
 				<view class="text-lg margin-tb-sm">看电视</view>
 				<video class="video" id='myvideo' controls
-					src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"
-					autoplay="true"></video>
+					src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"></video>
 				<!-- 广播 -->
 				<view class="text-lg margin-tb-sm">听广播</view>
 				<view class="radio flex">
-					<view><image src="{{imgUrl}}/image/fm.png" style="height:120rpx;width:120rpx;"></image></view>
+					<view>
+						<image src="{{imgUrl}}/image/fm.png" style="height:120rpx;width:120rpx;"></image>
+					</view>
 					<view class="padding-top-sm padding-left-lg">
 						<view class="text-bold">伊金霍洛旗智慧声音</view>
 						<view class="margin-top-sm text-grey text-sm">FM102.3</view>

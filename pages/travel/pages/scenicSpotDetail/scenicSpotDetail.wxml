@@ -1,0 +1,54 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">景区详情</view>
+</cu-custom>
+<view>
+  <image src="{{baseImgUrl}}{{infoDetail.files}}" mode='widthFix' style="height：375px;width:100%;"></image>
+</view>
+<view class="padding-lg">
+  <view class="text-xxl text-bold margin-top-sm">{{infoDetail.name}}</view>
+  <view class="text-grey margin-tb-sm">
+    <rich-text nodes="{{infoDetail.scenic_spot_introduction}}"></rich-text>
+  </view>
+  <view class="flex justify-between box">
+    <view class="">
+      <text class="cuIcon-location"></text>
+      <text class="padding-left-sm">{{infoDetail.address}}</text>
+    </view>
+    <view class="">
+      <text class="cuIcon-right text-grey"></text>
+    </view>
+  </view>
+  <dot-title id="goMore" title="景点信息" color="color"></dot-title>
+  <view class="box">
+    <view class="flex ">
+      <view>联系电话</view>
+      <view class="padding-left-lg text-grey">{{infoDetail.phone}}</view>
+    </view>
+    <view class="flex margin-top-sm">
+      <view>开放时间</view>
+      <view class="padding-left-lg text-grey">{{infoDetail.start_time}}——{{infoDetail.end_time}}</view>
+    </view>
+  </view>
+
+  <dot-title id="goMore" title="景区公告" color="color"></dot-title>
+  <view class="box">
+    <rich-text nodes="{{infoDetail.announcement}}"></rich-text>
+  </view>
+
+  <dot-title id="goMore" title="优待政策" color="color"></dot-title>
+
+  <view class="box">
+    <rich-text nodes="{{infoDetail.preferential_policy}}"></rich-text>
+  </view>
+
+  <dot-title id="goMore" title="游玩攻略" color="color"></dot-title>
+  <view class="box">
+    <rich-text nodes="{{infoDetail.play_strategy}}"></rich-text>
+  </view>
+
+  <dot-title id="goMore" title="服务设施" color="color"></dot-title>
+  <view class="box">
+    <rich-text nodes="{{infoDetail.service_facilities}}"></rich-text>
+  </view>
+
+</view>

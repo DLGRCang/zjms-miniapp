@@ -1,13 +1,17 @@
 /* pages/component/nav/nav.wxss */
 .head {
-  position: relative;
+position: relative;
 }
-
-.search {
+.serarch{
   position: absolute;
-  top: 290rpx;
-  left: 5%;
-  right: 5%;
+  top: 15%;
+  left: 3%;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 10rpx;
+  border-radius: 50rpx;
+  background-color: rgba(182, 179, 179,0.5);
 }
 
 .video {

@@ -1,2 +1,3 @@
-<!--pages/userCenter/pages/tel/tel.wxml-->
-<text>pages/userCenter/pages/tel/tel.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">电话本</view>
+</cu-custom>

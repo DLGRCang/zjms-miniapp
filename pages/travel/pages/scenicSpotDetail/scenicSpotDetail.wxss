@@ -1,0 +1,9 @@
+/* pages/travel/pages/scenicSpotDetail/scenicSpotDetail.wxss */
+.color{
+color: skyblue;
+}
+.box {
+  padding: 20rpx;
+  border: 1rpx solid #F5F5F5;
+  border-radius: 10rpx;
+}

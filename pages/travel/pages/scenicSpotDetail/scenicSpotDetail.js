@@ -1,4 +1,4 @@
-// pages/travel/pages/weather/weather.js
+// pages/travel/pages/scenicSpotDetail/scenicSpotDetail.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
@@ -9,27 +9,28 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl:app.globalData.baseImgUrl,
+    id: '',
+    infoDetail: null
+  },
 
-  },
-  getInfo() {
-    let that = this;
-    let data ={
-      fcsttype:'1'
-    }
-    util.requestApi('getWeather/getFcstlnRegion', 'GET', data).then(res => {
-      console.log(res.data.DS)
-      that.setData({
-        weatherInfo: res
-      })
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getInfo() 
+    this.setData({
+      id: options.id
+    })
+    this.getInfo()
   },
-
+  getInfo() {
+    let that = this;
+    util.requestApi('attractions/getattractions/'+this.data.id, 'GET', {}).then(res => {
+      console.log(res.data)
+      that.setData({
+        infoDetail: res.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -76,6 +77,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

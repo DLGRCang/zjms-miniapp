@@ -1,4 +1,6 @@
 // pages/userCenter/pages/tel/tel.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**

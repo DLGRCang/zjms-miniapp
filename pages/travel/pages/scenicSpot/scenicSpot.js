@@ -7,14 +7,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
+    imgUrl: app.globalData.imgUrl,
+    baseImgUrl:app.globalData.baseImgUrl,
+    infoList: null
   },
-
+  getInfo() {
+    let that = this;
+    util.requestApi('attractions/listattractions', 'GET', {}).then(res => {
+      console.log(res.data)
+      that.setData({
+        infoList: res.data
+      })
+    })
+  },
+  goDetail(e) {
+    console.log(e.currentTarget.dataset.id)
+    util.pageJumpTo("/pages/travel/pages/scenicSpotDetail/scenicSpotDetail","id",e.currentTarget.dataset.id)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getInfo();
   },
 
   /**

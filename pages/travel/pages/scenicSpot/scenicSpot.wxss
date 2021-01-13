@@ -13,6 +13,8 @@
 }
 
 .info {
+  width: 278rpx;
+  height: 192rpx;
   display: inline-block;
   margin-right: 20rpx;
   border: 1rpx solid #F5F5F5;
@@ -37,4 +39,11 @@
   position: absolute;
   top: 20rpx;
   right: 20rpx;
+}
+.textInfo {
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
