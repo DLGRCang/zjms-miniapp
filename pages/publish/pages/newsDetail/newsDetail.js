@@ -126,7 +126,7 @@ Page({
   },
   onShareTimeline(e) {
     return {
-      title: "xxxxxxxxx",
+      title: "一手办",
       query: '//pages/publish/pages/newsDetail/newsDetail',
     }
   },

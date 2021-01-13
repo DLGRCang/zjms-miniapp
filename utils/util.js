@@ -24,7 +24,7 @@ const formatNumber = n => {
 // let base = 'http://192.168.31.101:8004/InfoIssue/app/' //谷宇
 let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
 let baseUrl = base + 'release/'
-let uploadFileUrl='file/uploadfile'//文件上传地址
+let uploadFileUrl = 'file/uploadfile'//文件上传地址
 let uploadUrl = base + 'file/uploadimage' //图片上传地址
 
 //内部请求方法
@@ -287,6 +287,25 @@ const isNull = function (str) {
     return false;
 };
 
+
+/*
+  腾讯地图路线规划
+  name 名称  lat 维度 lng 经度
+*/
+const routePlan = function (name, lat, lng) {
+  let plugin = requirePlugin('routePlan');
+  const key = 'O5QBZ-JLYL6-3MTSA-E3BN3-YAWD7-A3FXI';
+  const referer = '一手办';
+  let endPoint = JSON.stringify({
+    'name': name,
+    'latitude': lat,
+    'longitude': lng
+  });
+  wx.navigateTo({
+    url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+  });
+}
+
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
@@ -306,5 +325,6 @@ module.exports = {
   getParams: getParams,
   showToast: showToast,
   returnCode: returnCode,
-  isNull: isNull
+  isNull: isNull,
+  routePlan: routePlan
 }

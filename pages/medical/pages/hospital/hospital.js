@@ -21,31 +21,34 @@ Page({
 
   },
   getData() {
-		util.requestApi('medical/listpagemedical', 'GET', {}).then(res => {
-
-      let allList=[]
-      allList=res.data.rows;
+    util.requestApi('medical/listpagemedical', 'GET', {}).then(res => {
+      console.log(res)
+      let allList = []
+      allList = res.data.rows;
 
       for (let index = 0; index < allList.length; index++) {
-        if(allList[index].type!=this.data.tabId+1){
-          allList.splice(index, 1); 
+        if (allList[index].type != this.data.tabId + 1) {
+          allList.splice(index, 1);
           index--
         }
       }
       this.setData({
-        dataList:allList
+        dataList: allList
       })
 
-      });
+    });
   },
-  goDetail(){
-    console.log("跳转到地图详情");
+  goDetail() {
+    let dataList = this.data.dataList;
+    for (let i = 0; i < dataList.length; i++) {
+      util.routePlan(dataList[i].introduction,dataList[i].latitude,dataList[i].longitude)    
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   this.getData()
+    this.getData()
   },
 
   /**

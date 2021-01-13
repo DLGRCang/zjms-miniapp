@@ -29,6 +29,14 @@ Page({
   goTaxiInfo(){
     util.pageJump('/pages/travel/pages/taxiInfo/taxiInfo')
   },
+  appCar() {
+    wx.navigateToMiniProgram({
+      appId: 'wxaf35009675aa0b2a',
+      path: '',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

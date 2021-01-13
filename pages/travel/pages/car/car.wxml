@@ -4,9 +4,9 @@
 <image src="{{imgUrl}}/image/changtuqiche.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lg">
   <view class="mainContent">
-    <view class="title">
+    <!-- <view class="title">
       长途汽车
-    </view>
+    </view> -->
     <view class="flex justify-between padding-lr-sm margin-tb-lg">
       <view class="text-xxl area">
         <picker bindchange="leaveArea" value="{{index1}}" range="{{leaveAreaList}}">

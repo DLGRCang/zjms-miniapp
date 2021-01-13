@@ -34,6 +34,11 @@ Page({
         title: '伊金霍洛旗供暖费',
         goDetail: 'hotFee'
       },
+      {
+        url: app.globalData.imgUrl + '/image/wuyefei.png',
+        title: '伊金霍洛旗物业费',
+        goDetail: 'wuyeFee'
+      },
     ],
   },
   //联通缴费

@@ -23,7 +23,7 @@
       <text class="cuIcon-appreciate {{praise}}"></text>
     </view>
     <view class="action padding-lr-lg">
-      <text class="cuIcon-forward text-grey"></text>
+      <text class="cuIcon-favor text-grey"></text>
     </view>
     <view class="action">
       <text class="cuIcon-comment text-grey"></text>

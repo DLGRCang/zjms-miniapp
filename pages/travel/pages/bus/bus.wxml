@@ -14,7 +14,7 @@
     </view>
     
     <view class="line"></view>
-    <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="">
+    <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="appCar">
       <view class="flex">
         <view class="cuIcon-deliver text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
         <view class="padding-left-sm">在线约车</view>
