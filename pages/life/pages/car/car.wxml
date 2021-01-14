@@ -47,5 +47,5 @@
       
     </view>
   </view>
-  <button class="margin-top">发布信息</button>
+  <!-- <button class="margin-top">发布信息</button> -->
 </view>

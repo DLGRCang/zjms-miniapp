@@ -64,6 +64,12 @@ Page({
       status: false,
     })
   },
+  //评论
+  comment(){
+
+  },
+
+  
   showModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target

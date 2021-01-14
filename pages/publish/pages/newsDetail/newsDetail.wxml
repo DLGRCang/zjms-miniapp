@@ -1,4 +1,4 @@
-<import src="../../../../wxParse/wxParse.wxml"/>
+<import src="../../../../wxParse/wxParse.wxml" />
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">详情</view>
 </cu-custom>
@@ -10,22 +10,25 @@
   <view>
     <template is="wxParse" data="{{wxParseData:dataHtml.nodes}}" />
   </view>
-<view class="margin-top-lg" wx:if="{{info_videos==='' || info_videos===null || info_videos === undefined}}">
-</view>
-<view class="margin-top-lg" wx:else>
-  <video src="{{baseImgUrl}}{{info_videos}}" autoplay="true" style="width: 100vw;"></video>
-</view>
+  <view class="margin-top-lg" wx:if="{{info_videos==='' || info_videos===null || info_videos === undefined}}">
+  </view>
+  <view class="margin-top-lg" wx:else>
+    <video src="{{baseImgUrl}}{{info_videos}}" autoplay="true" style="width: 100vw;"></video>
+  </view>
 
-<!-- 评论 -->
+  <!-- 评论 -->
   <view class="cu-bar input">
-    <input type="text" placeholder="发表您的评论"></input>
-    <view class="action padding-left-lg" bindtap="goPraise">
+    <view class="search-form">
+      <input type="text" placeholder="发表您的评论" confirm-type="search"></input>
+      <view class="submit" bindtap="comment">发表</view>
+    </view>
+    <view class="action" bindtap="goPraise">
       <text class="cuIcon-appreciate {{praise}}"></text>
     </view>
-    <view class="action padding-lr-lg">
+    <view class="action">
       <text class="cuIcon-favor text-grey"></text>
     </view>
-    <view class="action">
+    <view class="action padding-left-sm">
       <text class="cuIcon-comment text-grey"></text>
     </view>
   </view>

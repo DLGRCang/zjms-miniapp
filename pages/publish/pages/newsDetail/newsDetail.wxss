@@ -1,28 +1,45 @@
 /* pages/publish/pages/newsDetail/newsDetail.wxss */
 @import "../../../../wxParse/wxParse.wxss";
-.main{
+
+.main {
   display: flex;
   justify-content: center;
 }
 
-.praise{
+.praise {
   color: red;
 }
-button{
+
+button {
   background-color: #fff;
   width: 88rpx;
   padding-left: -400rpx;
 }
+
 button::after {
   border: none;
 }
-.input{
+
+.input {
   padding-top: 20rpx;
   border-top: 1rpx solid #F5F5F5;
 }
 
-input{
-  background-color:  #F2F2F2;
-  padding-left:15rpx;
+input {
+  background-color: #F2F2F2;
+  padding-left: 1rpx;
   border-radius: 10rpx;
+}
+
+.submit {
+  font-size: 28rpx;
+  width: 76rpx;
+  padding-left: 10rpx;
+  margin-right: 12rpx;
+  line-height: 50rpx;
+  background-color: #8799a3;
+  color: #fff;
+  height: 50rpx;
+
+  border-radius: 50rpx;
 }
