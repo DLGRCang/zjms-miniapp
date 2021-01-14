@@ -12,12 +12,11 @@ Page({
     infotypeid: 'a771710c-a822-4984-aef0-042d54293759',
     page:1,
 		dataList: [], //新闻列表
-    
+    key:'',
+    bookList:null
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+
   getDataList: function () {
 		//加载数据列表
 		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
@@ -26,7 +25,28 @@ Page({
 			})
 			console.log(this.data.dataList);
 		})
-	},
+  },
+  getKey(e){
+    console.log(e.detail.value)
+    this.setData({
+      key:e.detail.value
+    })
+  },
+  goSearch(){
+    let that = this;
+    let data= {
+      q:this.data.key
+    };
+    util.requestApi('library/searchLibrary', 'GET', data).then(res => {
+      console.log(res.data.bookList)
+      that.setData({
+        bookList: res.data.bookList
+      })
+    })
+  },
+    /**
+   * 生命周期函数--监听页面加载
+   */
 	onLoad: function (options) {
 		this.getDataList()
 	},

@@ -11,13 +11,28 @@ Page({
     name: ['伊旗航班', '伊旗火车'],
     chooseIndex: 0,
     date: util.formatDate(new Date()),
-    leaveAreaList:['鄂尔多斯','北  京','天  津','上  海','呼和浩特','包  头','集  宁',],
-    arriveAreaList:['鄂尔多斯','北  京','天  津','上  海','呼和浩特','包  头','集  宁',],
+    leaveAreaList: ['鄂尔多斯'],
+    arriveAreaList: null,
+    airInfo:null,
+    arrArea: '北京',
   },
   choose(e) {
+    console.log(e.currentTarget.dataset.id)
     this.setData({
       chooseIndex: e.currentTarget.dataset.id,
     })
+    if (e.currentTarget.dataset.id == 1) {
+      wx.navigateToMiniProgram({
+        appId: 'wxa51f55ab3b2655b9',
+        path: '',
+        success: function (res) { },
+        fail: function (res) { 
+          wx.navigateBack({
+            delta: 1
+          })
+        }
+      })
+    }
   },
   DateChange(e) {
     this.setData({
@@ -34,6 +49,26 @@ Page({
   arriveArea(e) {
     this.setData({
       index2: e.detail.value
+    })
+  },
+  //飞机到达城市
+  getArriveAreaList() {
+    let that = this;
+    util.requestApi('flight/listtocity', 'GET', {}).then(res => {
+      that.setData({
+        arriveAreaList: res.data
+      })
+    })
+  },
+  //查询航班信息（根据到达城市）
+  getInfo() {
+    let that = this;
+    util.requestApi('flight/listflightbytocity/' + this.data.arrArea, 'GET', {}).then(res => {
+      if (res.data.length > 0) {
+        that.setData({
+          carInfo: res.data
+        })
+      }
     })
   },
   /**

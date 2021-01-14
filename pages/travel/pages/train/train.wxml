@@ -39,9 +39,46 @@
       </view>
     </view>
     <view class="padding-sm margin-top-xs">
-      <button>查询</button>
+      <button bindtap="getInfo">查询</button>
     </view>
   </view>
+  <dot-title title="查询结果" color="color"></dot-title>
+  <view class="box" wx:if="{{airInfo===null || airInfo===''}}">
+    <view>暂无查询信息</view>
+  </view>
+  <view wx:else>
+    <block wx:for="{{airInfo}}" wx:key>
+      <view class="box">
+        <view class="flex justify-between">
+          <view>发车时间：</view>
+          <view class="text-grey">{{item.starting_time}}</view>
+        </view>
+        <view class="flex justify-between">
+          <view>到达时间：</view>
+          <view class="text-grey">{{item.arrival_time}}</view>
+        </view>
+        <view class="flex justify-between padding-top-sm">
+          <view>始发城市:</view>
+          <view class="text-grey" wx:if="{{item.from_city!=''||item.from_city!=null}}">{{item.from_city}}
+          </view>
+          <view class="text-grey" else>鄂尔多斯</view>
+        </view>
+        <view class="flex justify-between padding-top-sm">
+          <view>到达城市:</view>
+          <view class="text-grey">{{item.to_city}}</view>
+        </view>
+        <view class="flex justify-between padding-top-sm" wx:if="{{item.way!=''||item.way!=null}}">
+          <view>班期:</view>
+          <view class="text-grey">{{item.schedule}}</view>
+        </view>
+        <view class="flex justify-between padding-top-sm">
+          <view>航班号:</view>
+          <view class="text-grey">{{item.flight_no}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
   <dot-title title="车站动态" color="color" isMore="true"></dot-title>
   <view class="mainContent">
     <item-image-text wx:for="{{5}}" itemTitle="11111111111" isImg="{{false}}" isDate="true" date="2020-06-09"
