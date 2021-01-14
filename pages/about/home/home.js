@@ -20,10 +20,11 @@ Page({
   },
   //核酸检测
   goTesting() {
-    console.log(this.data.imgUrl + '3')
+    util.pageJump('/pages/appointment/pages/nucleic/nucleic')
   },
   //疫苗接种
   goVaccination() {
+   
     util.pageJump('/pages/appointment/pages/vaccine/vaccine')
     console.log(this.data.imgUrl + '4')
   },

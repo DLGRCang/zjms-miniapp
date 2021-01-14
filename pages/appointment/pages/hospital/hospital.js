@@ -2,90 +2,162 @@ const app = getApp();
 const util = require('../../../../utils/util.js')
 Page({
   data: {
-    name:'',
-    index: null,
-    picker: ['111', '222', '333'],
-    pickerData:'',
-    date: '2018-12-25',
-    imgList: [],
-    modalName: null,
-    textareaValue: ''
+    deptList: [], //科室数组
+    deptName: '', //选中的科室
+    deptId: '', //选中的科室id
+    docList: [], //医生数组
+    docName: '', //选中的医生
+    docId: '', //选中的医生id
+    docList: [], //医生数组
+    docName: '', //选中的医生
+    docId: '', //选中的医生id
+    timeList: [], //号源日期数组
+    timeValue: '', //选中的号源日期
+    regTimeTypes: [{
+        id: 1,
+        value: '上午'
+      }, {
+        id: 2,
+        value: '下午'
+      }, {
+        id: 3,
+        value: '晚上',
+      },
+
+      {
+        id: 6,
+        value: '全天',
+      },
+
+    ],
+
+    regTimeType: '',
+    mobilephone: '',
+    cardNo: '',
   },
-  //输入框
-  title(e) {
-    console.log(e.detail.value);
+  putData(e) {
+    let key = e.currentTarget.dataset.key
+    console.log(key)
     this.setData({
-      name: e.detail.value
+      [key]: e.detail.value
     })
   },
-  //选择器
-  PickerChange(e) {
-    console.log(this.data.picker[e.detail.value]);
+  radioChange(e) {
+    let key = e.currentTarget.dataset.key
+    console.log(key)
+    console.log(e.detail.value)
     this.setData({
-      index: e.detail.value,
-      pickerData: this.data.picker[e.detail.value]
+      [key]: e.detail.value
     })
   },
-  //日期
-  DateChange(e) {
-    console.log(e.detail.value);
-    this.setData({
-      date: e.detail.value
-    })
+  //提交数据
+  commitData() {
+    let data = {
+      name: this.data.name,
+      userId: wx.getStorageSync("userId"),
+      doctorIdFromHIS: this.data.docId,
+      deptIdFromHIS: this.data.deptId,
+      regDate: this.data.timeValue,
+      regTimeType: this.data.regTimeType,
+      mobilephone: this.data.mobilephone,
+      cardNo: this.data.cardNo,
+    }
+    console.log(data)
+    util.requestData('hospitalappointment/getAppointment?func=hospitalize', 'GET', data).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        if (res.data.resultStatus == 1) {
+          wx.navigateBack({
+            delta: 1
+          })
+          util.showToast("提交成功")
+        } else {
+          util.showToast(res.data.resultDesc)
+        }
+
+      } else {
+        util.showToast(res.data.msg)
+      }
+    });
   },
-  //图片上传
-  ChooseImage() {
-    wx.chooseImage({
-      count: 4, //默认9
-      sizeType: ['original', 'compressed'], 
-      sourceType: ['album'],
-      success: (res) => {
-        console.log(res.tempFilePaths);
-        if (this.data.imgList.length != 0) {
+  //获取科室列表
+  getDepartmentList() {
+    util.requestData('hospitalappointment/getDepartmentInfo?func=' + '&userId=' + wx.getStorageSync("userId"), 'GET', {}).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        this.setData({
+          deptList: res.data.ListDepartmentInfo
+        })
+
+      } else {
+        util.showToast("科室信息加载失败");
+      }
+    });
+  },
+  deptChange(e) {
+    this.setData({
+      deptName: this.data.deptList[e.detail.value].name,
+      deptId: this.data.deptList[e.detail.value].deptIdFromHIS,
+      docList: [],
+      docName: '',
+      docId: '',
+      timeList: [],
+      timeValue: '',
+    })
+    this.getDepartmentDoctorInfo()
+  },
+  //获取医生列表
+  getDepartmentDoctorInfo() {
+    util.requestData('hospitalappointment/getDepartmentDoctorInfo?func=&deptIdFromHIS=' + this.data.deptId + '&userId=' + wx.getStorageSync("userId"), 'GET', {}).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        this.setData({
+          docList: res.data.deptDoctorList
+        })
+
+      } else {
+        util.showToast("科室医生信息加载失败");
+      }
+    });
+  },
+  docChange(e) {
+    this.setData({
+      docName: this.data.docList[e.detail.value].doctorName,
+      docId: this.data.docList[e.detail.value].doctorCode,
+      timeList: [],
+      timeValue: '',
+    })
+    this.getDoctorAppoinmentCount()
+  },
+  //获取医生号源
+  getDoctorAppoinmentCount() {
+    util.requestData('hospitalappointment/getDoctorAppoinmentCount?func=&doctorIdFromHIS=' + this.data.docId + '&userId=' + wx.getStorageSync("userId"), 'GET', {}).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        if (res.data.ListDoctorAppoinmentCount.length > 0) {
           this.setData({
-            imgList: this.data.imgList.concat(res.tempFilePaths)
+            timeList: res.data.ListDoctorAppoinmentCount
           })
         } else {
-          this.setData({
-            imgList: res.tempFilePaths
-          })
+          util.showToast("没号了");
         }
+
+
+      } else {
+        util.showToast("医生号源加载失败");
       }
     });
   },
-  ViewImage(e) {
-    wx.previewImage({
-      urls: this.data.imgList,
-      current: e.currentTarget.dataset.url
-    });
-  },
-  DelImg(e) {
-    wx.showModal({
-      // title: '召唤师',
-      content: '确定要删除吗？',
-      cancelText: '再想想',
-      confirmText: '确定',
-      success: res => {
-        if (res.confirm) {
-          this.data.imgList.splice(e.currentTarget.dataset.index, 1);
-          this.setData({
-            imgList: this.data.imgList
-          })
-        }
-      }
-    })
-  },
-  //文本框
-  textareaInput(e) {
-    console.log(e.detail.value);
+  timeChange(e) {
     this.setData({
-      textareaValue: e.detail.value
+      timeValue: this.data.timeList[e.detail.value].regDate,
+
     })
+
   },
-  submit() {
-    let formData = {
-    
-    };
-    console.log(formData)
-  },
+  onLoad(options) {
+    this.getDepartmentList()
+
+  }
+
 })

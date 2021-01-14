@@ -16,7 +16,9 @@
 				"pages/hospital/hospital",
 				"pages/healthy/healthy",
 				"pages/vaccine/vaccine",
-				"pages/thingsAppointment/thingsAppointment"
+				"pages/thingsAppointment/thingsAppointment",
+				"pages/nucleic/nucleic",
+				"pages/nucleicForm/nucleicForm"
 			]
 		},
 		{
@@ -157,7 +159,8 @@
 				"pages/landDetail/landDetail",
 				"pages/guide/guide",
 				"pages/thingsGuide/thingsGuide",
-				"pages/guideInfo/guideInfo"
+				"pages/guideInfo/guideInfo",
+				"pages/instaShotReport/instaShotReport"
 			]
 		},
 		{

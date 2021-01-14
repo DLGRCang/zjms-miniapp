@@ -1,8 +1,8 @@
+<!--pages/appointment/pages/nucleic/nucleic.wxml-->
 <cu-custom bgColor="bg-blue" isBack="{{true}}">
-	<view slot="content">就医预约</view>
+	<view slot="content">核酸检测</view>
 </cu-custom>
-<view class="margin-xs">
-	<!-- 输入框 -->
+<view class="padding">
 	<view class="cu-form-group">
 		<view class="title">姓名：</view>
 		<input placeholder="请输入姓名" bindinput="putData" data-key="name"></input>
@@ -15,16 +15,6 @@
 		<view class="title">联系电话</view>
 		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="mobilephone"></input>
 	</view>
-	<!-- 选择器 -->
-	<view class="cu-form-group">
-		<view class="title">选择科室</view>
-		<picker bindchange="deptChange" value="{{index}}" range="{{deptList}}" range-key="{{'name'}}">
-			<view class="picker">
-				{{deptName?deptName:'请选择'}}
-			</view>
-		</picker>
-	</view>
-	<!-- 选择器 -->
 	<view class="cu-form-group">
 		<view class="title">选择医生</view>
 		<picker bindchange="docChange" value="{{index}}" range="{{docList}}" range-key="{{'doctorName'}}">
@@ -47,11 +37,8 @@
 		<view style="display:inline" wx:for="{{regTimeTypes}}" wx:key="item" class="padding">
 			<radio class="radio" value="{{item.id}}"></radio>{{item.value}}
 		</view>
-
 	</radio-group>
-
 	<view class="padding flex flex-direction">
 		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
 	</view>
-
 </view>

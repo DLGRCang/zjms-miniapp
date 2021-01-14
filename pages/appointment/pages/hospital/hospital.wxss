@@ -1,1 +1,4 @@
 /* pages/appointment/pages/hospital/hospital.wxss */
+radio {
+		transform:scale(0.7);
+}

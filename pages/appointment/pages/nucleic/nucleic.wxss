@@ -1,0 +1,4 @@
+/* pages/appointment/pages/nucleic/nucleic.wxss */
+radio {
+	transform:scale(0.7);
+}

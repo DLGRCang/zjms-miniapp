@@ -1,0 +1,4 @@
+<!--pages/appointment/pages/nucleicForm/nucleicForm.wxml-->
+<cu-custom bgColor="bg-blue" isBack="{{true}}">
+	<view slot="content">核酸申请表</view>
+</cu-custom>

@@ -3,7 +3,7 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">随手拍</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/ruishoupai.png" style="width:100%"></image>
-<button class="button">问题上报</button>
+<button bindtap="instaShotReport" class="button">问题上报</button>
 <view class="padding">
 	<dot-title title="上报历史" color="title-color" isMore="true" sign="{{infotypeid}}" type="2"></dot-title>
 
