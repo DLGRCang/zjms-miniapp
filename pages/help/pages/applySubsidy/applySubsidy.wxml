@@ -1,0 +1,60 @@
+<!--pages/help/pages/applySubsidy/applySubsidy.wxml-->
+<cu-custom bgColor="bg-pink" isBack="{{true}}">
+	<view slot="content">申请补贴</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">姓名：</view>
+		<input placeholder="请输入姓名" bindinput="putData" data-key="userName"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">家庭住址：</view>
+		<input placeholder="家庭住址" bindinput="putData" data-key="address"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+	</view>
+	<!-- 民族 -->
+	<view class="cu-form-group">
+		<view class="title">民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-key="nation">
+			<view class="picker">
+				{{nation?nation:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">年龄：</view>
+		<input type="number" placeholder="请输入身份证号" bindinput="putData" data-key="age"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="contactNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">身份证号：</view>
+		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="idNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">职级：</view>
+		<input placeholder="请输入职级" bindinput="putData" data-key="rankLevel"></input>
+	</view>
+	<view class="title text-lg" style="padding:30rpx 30rpx 10rpx 30rpx">申请原因：</view>
+	<checkbox-group class="" bindchange="radioChange" data-key="reasonApplying">
+		<view style="height:60rpx" wx:for="{{reasonApplyings}}" wx:key="item" class="padding">
+			<checkbox value="{{item}}"></checkbox>{{item}}
+		</view>
+
+	</checkbox-group>
+	<view class="title padding text-lg margin-top">备注：</view>
+	<textarea class="margin-lr padding-sm" style="border:1px solid grey;width:auto" placeholder="请输入备注"
+		bindinput="putData" data-key="remark"></textarea>
+		<view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

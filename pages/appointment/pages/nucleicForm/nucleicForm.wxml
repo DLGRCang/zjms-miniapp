@@ -21,7 +21,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">职业：</view>
-		<input  placeholder="请输入职业" bindinput="putData" data-key="userProfession"></input>
+		<input placeholder="请输入职业" bindinput="putData" data-key="userProfession"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">身份证号</view>
@@ -87,7 +87,8 @@
 		</radio-group>
 	</view>
 	<view class="form-group">
-		<radio-group bindchange="radioChange" data-key="contactDeterioratePatient">发病前10天接触过突然发病、高热、白细胞剧增，在未使用抗菌药物或仅适用青霉素情况下，病情迅速恶化的病人：
+		<radio-group bindchange="radioChange" data-key="contactDeterioratePatient">
+			发病前10天接触过突然发病、高热、白细胞剧增，在未使用抗菌药物或仅适用青霉素情况下，病情迅速恶化的病人：
 			有<radio class="margin-lr-sm" value="有"></radio>
 			无<radio class="margin-left-sm" value="无"></radio>
 		</radio-group>
@@ -149,18 +150,19 @@
 		</radio-group>
 	</view>
 	<view class="form-group">
-		<radio-group bindchange="radioChange" data-key="whetherContactPatient"> 近14天内是否曾接触过来自境外、上述国内省市区，或来自有病例报告社区发热或呼吸道症状的患者：
+		<radio-group bindchange="radioChange" data-key="whetherContactPatient">
+			近14天内是否曾接触过来自境外、上述国内省市区，或来自有病例报告社区发热或呼吸道症状的患者：
 			有<radio class="margin-lr-sm" value="有"></radio>
 			无<radio class="margin-left-sm" value="无"></radio>
 		</radio-group>
-		
+
 	</view>
 	<view class="form-group">
 		<radio-group bindchange="radioChange" data-key="whetherFever">近期有无发热情况：
 			有<radio class="margin-lr-sm" value="有"></radio>
 			无<radio class="margin-left-sm" value="无"></radio>
 		</radio-group>
-		
+
 	</view>
 	<view class="form-group">
 		<radio-group bindchange="radioChange" data-key="whetherInsulateObserve">是否处于隔离医学观察期内（未满14天）：
@@ -168,7 +170,7 @@
 			无<radio class="margin-left-sm" value="无"></radio>
 		</radio-group>
 	</view>
-	
+
 	<view class="padding flex flex-direction">
 		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
 	</view>

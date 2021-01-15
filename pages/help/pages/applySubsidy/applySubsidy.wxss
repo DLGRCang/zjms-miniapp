@@ -1,0 +1,9 @@
+/* pages/help/pages/applySubsidy/applySubsidy.wxss */
+checkbox .wx-checkbox-input {
+	transform:scale(0.7);
+
+}
+radio .wx-radio-input {
+	transform:scale(0.7);
+
+}
