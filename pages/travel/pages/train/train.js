@@ -13,7 +13,7 @@ Page({
     date: util.formatDate(new Date()),
     leaveAreaList: ['鄂尔多斯'],
     arriveAreaList: null,
-    airInfo:null,
+    airInfo: null,
     arrArea: '北京',
   },
   choose(e) {
@@ -26,7 +26,7 @@ Page({
         appId: 'wxa51f55ab3b2655b9',
         path: '',
         success: function (res) { },
-        fail: function (res) { 
+        fail: function (res) {
           wx.navigateBack({
             delta: 1
           })
@@ -55,6 +55,7 @@ Page({
   getArriveAreaList() {
     let that = this;
     util.requestApi('flight/listtocity', 'GET', {}).then(res => {
+      console.log(res)
       that.setData({
         arriveAreaList: res.data
       })
@@ -75,7 +76,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getArriveAreaList()
   },
 
   /**
