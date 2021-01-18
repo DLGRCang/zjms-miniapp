@@ -2,3 +2,176 @@
 <cu-custom bgColor="bg-blue" isBack="{{true}}">
 	<view slot="content">核酸申请表</view>
 </cu-custom>
+<view class="padding-lr">
+	<view class="cu-form-group">
+		<view class="title">姓名：</view>
+		<input placeholder="请输入户主姓名" bindinput="putData" data-key="userName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="userSex">
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">年龄：</view>
+		<input type="number" placeholder="请输入年龄" bindinput="putData" data-key="userAge"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">职业：</view>
+		<input placeholder="请输入职业" bindinput="putData" data-key="userProfession"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">身份证号</view>
+		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="userIdCard"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="phoneNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">当日温度：</view>
+		<input type="number" placeholder="请输入当日温度" bindinput="putData" data-key="todayTemperature"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">发热天数：</view>
+		<input type="number" placeholder="请输入发热天数" bindinput="putData" data-key="feverNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">最高体温：</view>
+		<input type="number" placeholder="请输入最高体温" bindinput="putData" data-key="highestTemperature"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">现居住地：</view>
+		<input placeholder="请输入现居住地" bindinput="putData" data-key="nowAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">近14天去过何地：</view>
+		<input placeholder="请输入地点" bindinput="putData" data-key="passPlace"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">检测目的：</view>
+		<input placeholder="请输入检测目的" bindinput="putData" data-key="detectionPurpose"></input>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="abdominalPain">腹痛：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="assembleInfectionPerson">
+			聚集性发病（2周内在小范围如家庭、办公室、学校班级等场所，出现2例及以上发热和/或呼吸道症状的病例）：
+			是<radio class="margin-lr-sm" value="是"></radio>
+			否<radio class="margin-left-sm" value="否"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="breathDifficulty">呼吸困难：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="caseFieldTravel">近14天内有无境外或国内有病例报告社区旅居史：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="chestPain">胸痛：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="contactDeterioratePatient">
+			发病前10天接触过突然发病、高热、白细胞剧增，在未使用抗菌药物或仅适用青霉素情况下，病情迅速恶化的病人：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="contactInfectionPerson">近14天内有无与新型冠状病毒感染者、无症状感染者（核酸检测阳性者）接触史：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="contactWildlife">发病前10天去过野外或接触过野生动物：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="contactpPlagueCorrelation">发病前10天接触过来自鼠疫疫区的动物及制品：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="diarrhea">腹泻：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="dryCough">干咳：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="lymphTumefaction">淋巴结肿大：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="mosquitoBite">
+			发病前10天被昆虫叮咬过：
+			是<radio class="margin-lr-sm" value="是"></radio>
+			否<radio class="margin-left-sm" value="否"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="passPlagueField">
+			发病前10天是否到过动物鼠疫流行区：
+			是<radio class="margin-lr-sm" value="是"></radio>
+			否<radio class="margin-left-sm" value="否"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="userWeak">乏力：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="whetherContactPatient">
+			近14天内是否曾接触过来自境外、上述国内省市区，或来自有病例报告社区发热或呼吸道症状的患者：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="whetherFever">近期有无发热情况：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+
+	</view>
+	<view class="form-group">
+		<radio-group bindchange="radioChange" data-key="whetherInsulateObserve">是否处于隔离医学观察期内（未满14天）：
+			有<radio class="margin-lr-sm" value="有"></radio>
+			无<radio class="margin-left-sm" value="无"></radio>
+		</radio-group>
+	</view>
+
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

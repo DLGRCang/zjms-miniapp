@@ -3,7 +3,7 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">核酸检测</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/hesuanjiance.png" style="width:100%"></image>
-<button class="button">结果查询</button>
+<button bindtap="nucleicForm" class="button">核酸申请表</button>
 
 <view class="flex flex-direction padding-lg">
 	<dot-title title="检测机构" color="title-color"></dot-title>

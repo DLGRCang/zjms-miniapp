@@ -14,8 +14,6 @@ Page({
     let that = this;
     wx.login({
       success(res) {
-        console.log("----code---------")
-        console.log(res.code)
         that.userInfoHandler(res.code);
       }
     })

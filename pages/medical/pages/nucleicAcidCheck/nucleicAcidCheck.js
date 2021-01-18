@@ -13,7 +13,10 @@ Page({
     page:1,
 		dataList: [], //新闻列表
 	},
-
+	//核酸表单
+	nucleicForm(){
+		util.pageJump('/pages/appointment/pages/nucleicForm/nucleicForm')
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

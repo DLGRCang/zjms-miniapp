@@ -176,7 +176,8 @@
 				"pages/woman/woman",
 				"pages/applyDisabilityCertificate/applyDisabilityCertificate",
 				"pages/applyDisabilitySubsidy/applyDisabilitySubsidy",
-				"pages/applySisabledChildrenHelp/applySisabledChildrenHelp"
+				"pages/applySisabledChildrenHelp/applySisabledChildrenHelp",
+				"pages/applySubsidy/applySubsidy"
 			]
 		},
 		{

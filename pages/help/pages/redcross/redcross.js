@@ -29,6 +29,11 @@ Page({
 	onLoad: function (options) {
 		this.getDataList()
 	},
+	//申请补贴
+	applySubsidy(){
+		util.pageJump('/pages/help/pages/applySubsidy/applySubsidy')
+
+	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成

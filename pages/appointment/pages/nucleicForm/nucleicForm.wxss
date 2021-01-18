@@ -1,1 +1,12 @@
 /* pages/appointment/pages/nucleicForm/nucleicForm.wxss */
+radio {
+	transform:scale(0.7);
+}
+.form-group {
+	background-color: var(--white);
+	padding: 20rpx 30rpx;
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1rpx solid #eee;
+
+}
