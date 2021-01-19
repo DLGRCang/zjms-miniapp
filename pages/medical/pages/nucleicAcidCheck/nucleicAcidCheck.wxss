@@ -1,4 +1,7 @@
 /* pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck.wxss */
+page{
+	height: 100%;
+}
 .bgColor {
 	background-color: #6670E1;
 	color: #ffffff;

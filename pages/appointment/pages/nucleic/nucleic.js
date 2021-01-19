@@ -1,6 +1,7 @@
 // pages/appointment/pages/nucleic/nucleic.js
 const app = getApp();
 const util = require('../../../../utils/util.js')
+
 Page({
 
 	/**
