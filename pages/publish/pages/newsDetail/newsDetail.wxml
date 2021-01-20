@@ -15,21 +15,20 @@
   <view class="margin-top-lg" wx:else>
     <video src="{{baseImgUrl}}{{info_videos}}" autoplay="true" style="width: 100vw;"></video>
   </view>
-
-  <!-- 评论 -->
-  <view class="cu-bar input">
-    <view class="search-form">
-      <input type="text" placeholder="发表您的评论" confirm-type="search"></input>
-      <view class="submit" bindtap="comment">发表</view>
-    </view>
-    <view class="action" bindtap="goPraise">
-      <text class="cuIcon-appreciate {{praise}}"></text>
-    </view>
-    <view class="action">
-      <text class="cuIcon-favor text-grey"></text>
-    </view>
-    <view class="action padding-left-sm">
-      <text class="cuIcon-comment text-grey"></text>
-    </view>
+</view>
+<!-- 评论 -->
+<view class="cu-bar input" style="margin-top:auto;margin-bottom:20rpx;">
+  <view class="search-form">
+    <input type="text" placeholder="发表您的评论" confirm-type="search"></input>
+    <view class="submit" bindtap="comment">发表</view>
+  </view>
+  <view class="action" bindtap="goPraise">
+    <text class="cuIcon-appreciate {{praise}}"></text>
+  </view>
+  <view class="action">
+    <text class="cuIcon-favor text-grey"></text>
+  </view>
+  <view class="action padding-left-sm">
+    <text class="cuIcon-comment text-grey"></text>
   </view>
 </view>
