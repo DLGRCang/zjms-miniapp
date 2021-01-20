@@ -176,7 +176,7 @@ Page({
         },
         {
           tit: "二手交易",
-          pic: "/image/25.png",
+          pic: "/image/27.png",
           tab: 3
         },
         {
@@ -186,7 +186,7 @@ Page({
         },
         {
           tit: "会展活动",
-          pic: "/image/27.png",
+          pic: "/image/25.png",
           tab: 5
         },
         {
