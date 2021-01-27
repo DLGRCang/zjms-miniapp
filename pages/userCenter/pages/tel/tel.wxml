@@ -1,3 +1,26 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">电话本</view>
 </cu-custom>
+<view class="padding-lg">
+  <block wx:for="{{phoneList}}" wx:key>
+    <view class="box">
+      <view class="flex justify-between">
+        <view> 部门：</view>
+        <view class="text-grey">{{item.dept}}</view>
+      </view>
+      <view class="flex justify-between margin-top-sm">
+        <view>所在区域：</view>
+        <view class="text-grey">{{item.area}}</view>
+      </view>
+      <view class="flex justify-between margin-top-sm">
+        <view>电话：</view>
+        <view class="text-grey" bindtap="goTel" data-tel="{{item.phone}}">{{item.phone}}</view>
+      </view>
+      <view wx:if="{{item.remark==''}}"></view>
+      <view class="flex justify-between margin-top-sm" wx:else>
+        <view>备注：</view>
+        <view class="text-grey">{{item.remark}}</view>
+      </view>
+    </view>
+  </block>
+</view>

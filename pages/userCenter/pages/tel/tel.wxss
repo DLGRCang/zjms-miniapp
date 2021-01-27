@@ -1,1 +1,6 @@
 /* pages/userCenter/pages/tel/tel.wxss */
+.box {
+  margin-top: 20rpx;
+  border: 1rpx solid #F5F5F5;
+  padding:20rpx;
+}
