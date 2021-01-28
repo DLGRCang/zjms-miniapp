@@ -36,6 +36,10 @@ Page({
   loansForm(){
     util.pageJump('/pages/life/pages/financeLoans/financeLoans')
   },
+  //金融产品
+  productsForm(){
+    util.pageJump('/pages/life/pages/financeProducts/financeProducts')
+  },
   /**
    * 生命周期函数--监听页面加载
    */

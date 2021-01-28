@@ -1,7 +1,7 @@
 <!--pages/life/pages/financeProductsForm/financeProductsForm.wxml-->
 
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">贷款申请</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">产品申请</view>
 </cu-custom>
 <view class="padding-lr-xl">
 	<tab bindmyevent="selectTab" tvColor="color" tabName="{{tabName}}"></tab>

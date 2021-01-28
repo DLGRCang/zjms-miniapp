@@ -1,4 +1,6 @@
 // pages/life/pages/financeProductsForm/financeProductsForm.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
