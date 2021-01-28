@@ -205,7 +205,10 @@
 				"pages/productionTransfer/productionTransfer",
 				"pages/jobPerson/jobPerson",
 				"pages/film/film",
-				"pages/jobEmployment/jobEmployment"
+				"pages/jobEmployment/jobEmployment",
+				"pages/financeLoans/financeLoans",
+				"pages/financeProducts/financeProducts",
+				"pages/financeProductsForm/financeProductsForm"
 			]
 		}
 	],

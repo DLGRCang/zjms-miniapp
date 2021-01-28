@@ -2387,7 +2387,7 @@ button.icon.lg {
 	width: 100%;
 	line-height: 1.2em;
 	flex: 1;
-	font-size: 28rpx;
+	font-size: 30rpx;
 	padding: 0;
 }
 

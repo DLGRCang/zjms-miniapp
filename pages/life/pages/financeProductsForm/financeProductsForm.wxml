@@ -1,0 +1,51 @@
+<!--pages/life/pages/financeProductsForm/financeProductsForm.wxml-->
+
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">贷款申请</view>
+</cu-custom>
+<view class="padding-lr-xl">
+	<tab bindmyevent="selectTab" tvColor="color" tabName="{{tabName}}"></tab>
+	<dot-title title="基本信息" color="color"></dot-title>
+	<view wx:if="{{tabId==0}}" class="radius" style="border: #f5f5f5 solid 1px;">
+		<view class="cu-form-group">
+			<view class="title">姓名：</view>
+			<input placeholder="请输入申请人姓名" bindinput="putData" data-key="name"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">身份证号：</view>
+			<input type="idcard" placeholder="请输入申请人身份证号" bindinput="putData" data-key="name"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">手机号：</view>
+			<input type="number" placeholder="请输入申请人手机号" bindinput="putData" data-key="name"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">验证码：</view>
+			<input type="number" placeholder="请输入短信验证码" bindinput="putData" data-key="name"></input>
+			<button style="font-size: 26rpx;  background-color: #EE6967; color: #fff;margin-left: auto;">获取验证码</button>
+		</view>
+	</view>
+	<view wx:if="{{tabId==1}}" class="radius" style="border: #f5f5f5 solid 1px;">
+		<view class="cu-form-group">
+			<view class="title">企业名称：</view>
+			<input placeholder="请输入企业名称" bindinput="putData" data-key="name"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">信用代码：</view>
+			<input placeholder="请输入信用代码" bindinput="putData" data-key="name"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">联系人：</view>
+			<input placeholder="请输入联系人姓名" bindinput="putData" data-key="name"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">手机号：</view>
+			<input type="number" placeholder="请输入联系人手机号" bindinput="putData" data-key="name"></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">验证码：</view>
+			<input type="number" placeholder="请输入短信验证码" bindinput="putData" data-key="name"></input>
+			<button style="font-size: 26rpx;  background-color: #EE6967; color: #fff;margin-left: auto;">获取验证码</button>
+		</view>
+	</view>
+	</view>

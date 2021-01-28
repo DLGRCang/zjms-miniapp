@@ -1,5 +1,5 @@
 <!--components/tab.wxml-->
-<view class="flex text-center nav">
+<view class="flex text-center nav" style="border-bottom: 1px solid #F5F5F5 ;">
 	<view class="flex-sub" wx:for="{{tabName}}" wx:key="index"> 
 		<view class="cu-item  {{index==TabCur?tvColor:'cu-item_no'}}"  bindtap="tabSelect"
 		 data-id="{{index}}">

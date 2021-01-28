@@ -10,5 +10,5 @@
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
 	</item-image-text>
-		<canvas canvas-id="myQrcode" style="width: 200px;height: 200px; margin: auto;"></canvas>
+		<canvas canvas-id="myQrcode" style="width: 200px;height: 200px; margin: auto;display:none" ></canvas>
 </view>

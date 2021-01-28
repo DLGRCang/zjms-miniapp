@@ -4,35 +4,50 @@ const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
-	data: {
-		imgUrl:app.globalData.imgUrl,
-    infotypeid: 'b9599c28-a954-412e-a34c-30c899dfe72f',//银行
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgUrl: app.globalData.imgUrl,
+    infotypeid: 'b9599c28-a954-412e-a34c-30c899dfe72f', //政策通知
     page: 1,
     dataList: [],
-    infotypeid1:'c1566dba-5a6d-48b8-bea2-7c4f0a9937c0',//保险
-    dataList1: [],
+    financialSupermarket: [{
+      'name': '伊旗建设银行',
+      'img': 'jiansheyinhang.png'
+    }, {
+      'name': '金谷村镇银行',
+      'img': 'jinguyinhang.png'
+    }, {
+      'name': '工商银行',
+      'img': 'gongshangyinhang.png'
+    }, {
+      'name': '伊旗农业银行',
+      'img': 'nongyeyinhang.png'
+    }, {
+      'name': '招商银行',
+      'img': 'zhaoshangyinhang.png'
+    }, {
+      'name': '邮政银行',
+      'img': 'youzhengyinhang.png'
+    }, ]
   },
-
+  //贷款申请
+  loansForm(){
+    util.pageJump('/pages/life/pages/financeLoans/financeLoans')
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   getDataList: function () {
     //加载新闻列表
-    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+    data.getArtelData(this.data.infotypeid, this.data.page, 3).then(dataList => {
       this.setData({
         dataList: this.data.dataList.concat(dataList)
       })
       console.log(this.data.dataList);
     })
-    data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
-      this.setData({
-        dataList1: this.data.dataList1.concat(dataList)
-      })
-      console.log(this.data.dataLis1t);
-    })
+
   },
   onLoad: function (options) {
     this.getDataList();

@@ -1,0 +1,9 @@
+/* pages/life/pages/financeLoans/financeLoans.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+
+.color{
+	color:#EE6967;
+}
