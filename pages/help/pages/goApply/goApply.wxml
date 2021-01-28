@@ -1,0 +1,37 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl">申请庇护</view>
+</cu-custom>
+<view class="head"></view>
+<view class="padding-lg">
+  <view class="theme">
+    <view class="box flex justify-between">
+      <view>
+        <image src="" style="width:184rpx;height:184rpx"></image>
+      </view>
+      <view class="padding-left-sm">
+        <view class="text-xl">伊金霍洛旗婚姻家庭矛盾纠纷调解室</view>
+        <view class="margin-tb-sm text-sm">
+          <text class="text-brown">地址：</text><text class="text-grey">伊金霍洛旗辰元大厦A座10楼1003办公室</text>
+        </view>
+        <view class="text-sm">
+          <text class="text-brown">管辖机构：</text><text class="text-grey">伊金霍洛旗婚姻家庭矛盾纠纷调解室</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <dot-title title="事件描述" color="color"></dot-title>
+    <view class="cu-form-group">
+      <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textInfo" 
+        placeholder="请详细描述您的问题，稍后将会有律师给您回复。"></textarea>
+    </view>
+  </view>
+  <view>
+    <dot-title title="材料上传" color="color"></dot-title>
+    <view class="box flex justify-between">
+      <view><text class="text-grey">材料上传：</text><text class="text-gray">请选择上传材料</text></view>
+      <view class="color text-bold">请选择</view>
+    </view>
+  </view>
+  <button class="bgColor margin-tb-lg" bindtap="submit">确认提交</button>
+</view>

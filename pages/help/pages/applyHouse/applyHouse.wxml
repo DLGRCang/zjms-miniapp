@@ -1,0 +1,26 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl">庇护所申请</view>
+</cu-custom>
+<view class="head">
+</view>
+<view class="theme">
+  <view class="cu-bar search">
+    <view class="search-form">
+      <input class="padding-left-sm" type="text" placeholder="请输入单位名称" bindinput="getKey"></input>
+      <view class="cuIcon-search padding-right-sm" bindtap="goSearch"></view>
+    </view>
+  </view>
+  <block wx:for="{{5}}">
+    <view class="item">
+      <view class="box flex justify-between">
+        <view>
+          <view class="text-xl">伊金霍洛旗婚姻家庭矛盾纠纷调解室</view>
+          <view class="text-grey margin-top-sm">伊金霍洛旗辰元大厦A座10楼…</view>
+        </view>
+        <view class="margin-top-sm" bindtap="goApply" data-id="1">
+          <image class="icon" src="./../../../../image/icon-1.png"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

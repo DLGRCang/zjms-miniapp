@@ -1,0 +1,24 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl">{{type}}</view>
+</cu-custom>
+<view class="head"></view>
+<view class="theme padding-lr-lg">
+  <view class="box">
+    <view class="flex">
+      <view>
+        <image src="../../../../image/icon-1.png" style="width:160rpx;height:160rpx;"></image>
+      </view>
+      <view class="margin-left-sm">
+        <view class="text-xl text-bold">张一山</view>
+        <view class="text-grey margin-top-sm">擅长领域：亲子关系、婚恋关系</view>
+        <view class=" margin-top-sm">执业证号：10060000082000197</view>
+        <view class=" margin-top-sm">级别：国家二级心理咨询师</view>
+        <view class="margin-top-sm flex">
+          <button class="btn">电话咨询</button>
+          <button class="btn margin-left-sm">在线咨询</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

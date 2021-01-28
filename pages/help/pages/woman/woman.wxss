@@ -32,10 +32,10 @@
 	color: #000000;
 
 }
-/* 在线求助 */
+/* 快速求助 */
 .help-icon1::before{
 	font-family: "cuIcon";
-	content: "\e6ff";
+	content: "\e753";
 	color: #EE6967;
 	margin-right: 10rpx;
 	font-size: 40rpx;
@@ -48,18 +48,34 @@
 	margin-right: 10rpx;
 	font-size: 40rpx;
 	}
-/* 在线和解 */
+/* 法律咨询 */
 .help-icon3::before{
 	font-family: "cuIcon";
-	content: "\e78d";
+	content: "\e6cc";
 	color: #EE6967;
 	margin-right: 10rpx;
 	font-size: 40rpx;
 }
-/* 二癌救助 */
+/* 在线调解 */
 .help-icon4::before{
 	font-family: "cuIcon";
-	content: "\e6f1";
+	content: "\e7d4";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+/* 庇护所申请 */
+.help-icon5::before{
+	font-family: "cuIcon";
+	content: "\e6ff";
+	color: #EE6967;
+	margin-right: 10rpx;
+	font-size: 40rpx;
+}
+/* 人身安全保护令申请 */
+.help-icon6::before{
+	font-family: "cuIcon";
+	content: "\e769";
 	color: #EE6967;
 	margin-right: 10rpx;
 	font-size: 40rpx;

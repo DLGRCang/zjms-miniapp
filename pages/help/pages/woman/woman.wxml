@@ -4,26 +4,38 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/nvxingguanhu.png" style="width:100%"></image>
 <view class="padding">
+	<dot-title title="维权法规" color="title-color"></dot-title>
+	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
+	</item-image-text>
+	<dot-title title="心灵港湾" color="title-color"></dot-title>
+	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
+	</item-image-text>
 	<dot-title title="咨询求助" color="title-color"></dot-title>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
-		<text class="help-text help-icon1">在线求助</text>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="fasthelp">
+		<text class="help-text help-icon1">快速求助</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="goConsult" data-type="心理咨询">
 		<text class="help-text help-icon2">心理咨询</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
-		<text class="help-text help-icon3">在线调解</text>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="goConsult" data-type="法律咨询">
+		<text class="help-text help-icon3">法律咨询</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 80rpx 30rpx; ">
-		<text class="help-text help-icon4">二癌救助</text>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="onlineHelp">
+		<text class="help-text help-icon4">在线调解</text>
 		<text class="into"></text>
 	</view>
-	<dot-title title="活动展示" color="title-color" ></dot-title>
-	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-	itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
-</item-image-text>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="applyHouse">
+		<text class="help-text help-icon5">庇护所申请</text>
+		<text class="into"></text>
+	</view>
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 80rpx 30rpx; " bindtap="applySafe">
+		<text class="help-text help-icon6">人身安全保护令申请</text>
+		<text class="into"></text>
+	</view>
 
 </view>
