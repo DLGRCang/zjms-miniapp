@@ -1,2 +1,46 @@
-<!--pages/help/pages/fasthelp/fasthelp.wxml-->
-<text>pages/help/pages/fasthelp/fasthelp.wxml</text>
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl">快速求助</view>
+</cu-custom>
+<view class="head"></view>
+<view class="theme padding-lr-lg">
+  <view class="flex">
+    <view class="dot"></view>
+    <view class="margin-left-sm text-white text-xl">一键拨打</view>
+  </view>
+  <view class="flex justify-between margin-top-sm">
+    <view class="flex text-white tel" bindtap="goTel" data-tel="110">
+      <view class=" text-xl">警务求助110</view>
+      <view class="text-xxl  margin-left-lg"><text class="cuIcon-phone"></text></view>
+    </view>
+    <view class="flex text-white tel" bindtap="goTel" data-tel="0477 8821148">
+      <view class="text-xl">红庆河司法所</view>
+      <view class="text-xxl margin-left-lg"><text class="cuIcon-phone"></text></view>
+    </view>
+  </view>
+  <view class="margin-lg"></view>
+  <scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'color cur':''}}" wx:for="{{tab}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+
+  <block wx:for="{{5}}">
+    <view class="box flex justify-between">
+      <view>
+        <view class="text-xl">伊金霍洛旗妇女联合会</view>
+        <view class="text-grey margin-top-sm">0477-8969304</view>
+      </view>
+      <view class="margin-top-sm flex">
+        <view bindtap="goTel" data-tel="1" class="margin-left-sm">
+          <image class="icon" src="./../../../../image/icon-3.png"></image>
+        </view>
+        <view bindtap="goArea" data-id="1" class="margin-lr-sm">
+          <image class="icon" src="./../../../../image/icon-4.png"></image>
+        </view>
+      </view>
+    </view>
+
+  </block>
+</view>
