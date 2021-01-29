@@ -1,6 +1,7 @@
 // pages/help/pages/womanEvidence/womanEvidence.js
+const recordManager = wx.getRecorderManager()
+const innerAudioContext = wx.createInnerAudioContext();
 Page({
-
 	/**
 	 * 页面的初始数据
 	 */
@@ -9,8 +10,69 @@ Page({
 		evidenceName: '',
 		imgList: [],
 		videoList: [],
-		src: ''
+		voiceLong: '',
+		voiceSrc: '',
+		voiceStatus: 's 点击播放',
 	},
+	//开始录音
+	startrecord() {
+
+		console.log("开始录音" + new Date())
+		this.centerTime = new Date();
+		recordManager.start({
+			duration: 600000,
+			format: 'mp3'
+		})
+		wx.showLoading({
+			title: '录音中...',
+		})
+	},
+	//结束录音
+	endrecord() {
+		let that = this
+		recordManager.stop()
+		wx.hideLoading()
+		//停止录音回调
+		recordManager.onStop(function (res) {
+			var path = res.tempFilePath
+			that.setData({
+				voiceLong: (res.duration) / 1000,
+				voiceSrc: path,
+			})
+
+		})
+	},
+	//播放录音
+	showVoice() {
+		let that=this
+		// if (_self.isPlayVoice) {
+		// 	this.audioStatus = '录音'
+		// 	//正在播放
+		// 	innerAudioContext.stop();
+		// 	_self.isPlayVoice = false;
+		// } else {
+		// 	this.audioStatus = '播放中...'
+		innerAudioContext.src = this.data.voiceSrc;
+
+		innerAudioContext.play();
+		innerAudioContext.onPlay(function () {
+			that.setData({
+				voiceStatus: "s  播放中..."
+			})
+		})
+		innerAudioContext.onEnded(function () {
+			that.setData({
+				voiceStatus: "s  点击播放"
+			})
+		})
+		// 	_self.audioStatus = '录音'
+		// })
+		// InnerAudioContext.onError((res) => {
+		// 	console.log(res);
+		// })
+		// }
+	},
+	//切换证据类型
 	typeChange(e) {
 		this.setData({
 			evidenceName: this.data.evidenceList[e.detail.value],
@@ -63,7 +125,7 @@ Page({
 		wx.previewMedia({
 			sources: [{
 				url: e.currentTarget.dataset.url,
-				type:  e.currentTarget.dataset.type
+				type: e.currentTarget.dataset.type
 			}],
 		});
 	},
@@ -75,18 +137,18 @@ Page({
 			confirmText: '确定',
 			success: res => {
 				if (res.confirm) {
-					if(e.currentTarget.dataset.type=='video'){
+					if (e.currentTarget.dataset.type == 'video') {
 						this.data.videoList.splice(e.currentTarget.dataset.index, 1);
 						this.setData({
 							videoList: this.data.videoList
 						})
-					}else{
+					} else {
 						this.data.imgList.splice(e.currentTarget.dataset.index, 1);
 						this.setData({
 							imgList: this.data.imgList
 						})
 					}
-				
+
 				}
 			}
 		})

@@ -54,8 +54,8 @@
 	<dot-title title="录音" color="title-color"></dot-title>
 	<view class="cu-form-group padding-left-sm align-start margin-top">
 		<view class="title" style="margin:0">录音：</view>
-		<view class="cuIcon-rankfill bg-pink radius margin-right padding-left" style="height:60rpx;flex:1;line-height:60rpx">  60s</view>
-		<view class="flex align-center" style="margin-left:auto ">
+		<view bindtap="showVoice"  class="cuIcon-rankfill bg-pink radius margin-right padding-left" style="height:60rpx;flex:1;line-height:60rpx">  {{voiceLong}}{{voiceStatus}}</view>
+		<view bindlongpress="startrecord" bindtouchend="endrecord" class="flex align-center" style="margin-left:auto " >
 			<text class="cuIcon-voice round bg-pink text-center" style="width:60rpx;height:60rpx;line-height:60rpx"></text>
 			<text class="text-xs margin-left-xs">按住\n录制</text>
 		</view>
