@@ -6,23 +6,35 @@
 <button bindtap="evidence" class="button">证据留存</button>
 <view class="padding">
 	<dot-title title="维权法规" color="title-color"></dot-title>
-	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
-	</item-image-text>
+	<view class="box">
+		<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
+			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
+			itemTabs="{{item.infoTypeLabel}}" isLine="true">
+		</item-image-text>
+		<view class="text-center text-grey text-xl margin-top-lg" bindtap="goMore" data-sign="维权法规">查看更多</view>
+	</view>
+
 	<dot-title title="心灵港湾" color="title-color"></dot-title>
-	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
-	</item-image-text>
+	<view class="box">
+		<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
+			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
+			itemTabs="{{item.infoTypeLabel}}" isLine="true">
+		</item-image-text>
+		<view class="text-center text-grey text-xl margin-top-lg" bindtap="goMore" data-sign="心灵港湾">查看更多</view>
+	</view>
+
 	<dot-title title="咨询求助" color="title-color"></dot-title>
 	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="fasthelp">
 		<text class="help-text help-icon1">快速求助</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="goConsult" data-type="心理咨询">
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="goConsult"
+		data-type="心理咨询">
 		<text class="help-text help-icon2">心理咨询</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="goConsult" data-type="法律咨询">
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="goConsult"
+		data-type="法律咨询">
 		<text class="help-text help-icon3">法律咨询</text>
 		<text class="into"></text>
 	</view>

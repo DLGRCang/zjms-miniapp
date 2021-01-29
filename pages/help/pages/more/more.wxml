@@ -1,0 +1,25 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl">{{sign}}</view>
+</cu-custom>
+<view class="padding-lr-lg">
+  <scroll-view scroll-x class="bg-white nav margin-bottom-lg">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'color cur':''}}" wx:for="{{tab}}" wx:key bindtap="tabSelect"
+        data-id="{{index}}">
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+ <block wx:for="{{5}}">
+  <view class="flex justify-between margin-top-sm">
+    <view>
+      <image src="" style="width:130rpx;height:130rpx;"></image>
+    </view>
+    <view class="margin-left-sm">
+      <view>这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做</view>
+      <view class="margin-top-sm text-grey text-sm">2020-06-09</view>
+    </view>
+  </view>
+  <view class="line"></view>
+ </block>
+</view>
