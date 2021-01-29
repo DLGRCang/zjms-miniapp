@@ -1,0 +1,6 @@
+/* pages/help/pages/womanEvidence/womanEvidence.wxss */
+.bgColor {
+	background-color:
+		#EE6967;
+	color: #ffffff;
+}

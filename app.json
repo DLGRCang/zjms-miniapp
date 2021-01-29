@@ -185,7 +185,8 @@
 				"pages/applyDisabilityCertificate/applyDisabilityCertificate",
 				"pages/applyDisabilitySubsidy/applyDisabilitySubsidy",
 				"pages/applySisabledChildrenHelp/applySisabledChildrenHelp",
-				"pages/applySubsidy/applySubsidy"
+				"pages/applySubsidy/applySubsidy",
+				"pages/womanEvidence/womanEvidence"
 			]
 		},
 		{

@@ -3,6 +3,7 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">女性关护</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/nvxingguanhu.png" style="width:100%"></image>
+<button bindtap="evidence" class="button">证据留存</button>
 <view class="padding">
 	<dot-title title="维权法规" color="title-color"></dot-title>
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"

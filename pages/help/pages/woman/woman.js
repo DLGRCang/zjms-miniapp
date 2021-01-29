@@ -25,6 +25,9 @@ Page({
 			console.log(this.data.dataList);
 		})
 	},
+	evidence() {
+		util.pageJump('../womanEvidence/womanEvidence')
+	},
 	// 咨询求助
 	fasthelp() {
 		util.pageJump('../fasthelp/fasthelp')

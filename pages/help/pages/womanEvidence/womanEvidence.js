@@ -1,20 +1,13 @@
-// pages/life/pages/financeLoans/financeLoans.js
-const app = getApp()
-const util = require('../../../../utils/util.js')
+// pages/help/pages/womanEvidence/womanEvidence.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		tabName: ['个人申请', '企业申请'],
-		tabId:0,
+
 	},
-	selectTab: function (e) {
-    this.setData({
-      tabId: e.detail.TabCur
-    })
-  },
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

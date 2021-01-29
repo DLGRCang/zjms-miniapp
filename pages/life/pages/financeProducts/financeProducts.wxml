@@ -14,7 +14,7 @@
 			</view>
 		</view>
 		<button style="background-color: #EE6967;align-self:center;margin-left:auto;height:56rpx;line-height: 56rpx;"
-			class="cu-btn round {{shadow?'shadow':''}} text-white padding-lr text-center" bindtap="goApplication"
+			class="cu-btn round {{shadow?'shadow':''}} text-white padding-lr text-center" bindtap="requestProducts"
 			data-id="{{item.volunteersServiceId}}">申请</button>
 	</view>
 </view>

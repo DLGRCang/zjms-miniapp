@@ -1,4 +1,6 @@
 // pages/life/pages/financeProducts/financeProducts.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
@@ -7,7 +9,11 @@ Page({
 	data: {
 
 	},
-
+	 //产品申请
+	 requestProducts(){
+    util.pageJump('/pages/life/pages/financeProductsForm/financeProductsForm')
+  },
+	
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
