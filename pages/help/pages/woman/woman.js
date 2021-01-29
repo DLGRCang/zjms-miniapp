@@ -32,14 +32,13 @@ Page({
 	fasthelp() {
 		util.pageJump('../fasthelp/fasthelp')
 	},
-	psychologyConsult() {
-		util.pageJump('../psychologyConsult/psychologyConsult')
-	},
 	goConsult(e) {
 		console.log(e.currentTarget.dataset.type)
 		util.pageJumpTo('../lawConsult/lawConsult','type',e.currentTarget.dataset.type)
 	},
-
+	onlineHelp() {
+		util.pageJump('../onlineHelp/onlineHelp')
+	},
 	applyHouse() {
 		util.pageJump('../applyHouse/applyHouse')
 	},
