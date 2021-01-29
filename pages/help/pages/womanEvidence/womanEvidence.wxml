@@ -1,0 +1,4 @@
+<!--pages/help/pages/womanEvidence/womanEvidence.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">证据留存</view>
+</cu-custom>
