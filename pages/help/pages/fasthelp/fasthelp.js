@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrl: app.globalData.imgUrl,
     tab:["妇联求助", "公安求助", "法院求助", "调解求助"],
     TabCur: 0,
     scrollLeft:0

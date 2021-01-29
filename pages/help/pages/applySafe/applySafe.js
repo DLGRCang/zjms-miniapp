@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrl: app.globalData.imgUrl,
   },
   getKey(e) {
     console.log(e.detail.value)

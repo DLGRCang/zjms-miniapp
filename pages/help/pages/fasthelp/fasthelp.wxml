@@ -34,10 +34,10 @@
       </view>
       <view class="margin-top-sm flex">
         <view bindtap="goTel" data-tel="1" class="margin-left-sm">
-          <image class="icon" src="./../../../../image/icon-3.png"></image>
+          <image class="icon" src="{{imgUrl}}/image/icon-3.png"></image>
         </view>
         <view bindtap="goArea" data-id="1" class="margin-lr-sm">
-          <image class="icon" src="./../../../../image/icon-4.png"></image>
+          <image class="icon" src="{{imgUrl}}/image/icon-4.png"></image>
         </view>
       </view>
     </view>

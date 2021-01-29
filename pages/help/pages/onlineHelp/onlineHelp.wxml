@@ -18,9 +18,9 @@
           <view class="text-grey margin-top-sm">伊金霍洛旗辰元大厦A座10楼…</view>
         </view>
         <view class="margin-top-sm flex" >
-          <view bindtap="goTel" data-id="tel"><image class="icon" src="./../../../../image/icon-3.png"></image></view>
-         <view class=" margin-lr-sm" bindtap="goNotice" ><image class="icon" src="./../../../../image/icon-2.png"></image></view>
-          <view bindtap="goArea" data-id="1"><image class="icon" src="./../../../../image/icon-4.png"></image></view>
+          <view bindtap="goTel" data-id="tel"><image class="icon" src="{{imgUrl}}/image/icon-3.png"></image></view>
+         <view class=" margin-lr-sm" bindtap="goNotice" ><image class="icon" src="{{imgUrl}}/image/icon-2.png"></image></view>
+          <view bindtap="goArea" data-id="1"><image class="icon" src="{{imgUrl}}/image/icon-4.png"></image></view>
         </view>
       </view>
     </view>
