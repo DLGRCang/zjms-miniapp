@@ -4,3 +4,16 @@
 		#EE6967;
 	color: #ffffff;
 }
+.title-color {
+	color:#EE6967
+}
+.check{
+	color:#EE6967;
+	margin-left:auto
+}
+.check::after{
+	content: '';
+	font-family: cuIcon;
+	content: "\e6a3";
+}
+

@@ -2,3 +2,71 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">证据留存</view>
 </cu-custom>
+<view class="padding-lr-xl">
+	<view class="flex align-center">
+		<dot-title title="照片" color="title-color" />
+		<text bindtap="" class="check">查看证据库</text>
+	</view>
+	<!-- 选择器 -->
+	<view class="cu-form-group padding-left-sm">
+		<view class="title">证据类型：</view>
+		<picker bindchange="typeChange" value="{{index}}" range="{{evidenceList}}" style="padding:0">
+			<view class="text-pink text-right">
+				{{evidenceName?evidenceName:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view></view>
+	<view class="cu-form-group padding-left-sm align-start margin-top">
+		<view class="title" style="margin:0">图片：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<3}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+
+	</view>
+
+	<dot-title title="视频" color="title-color"></dot-title>
+
+	<view class="cu-form-group padding-left-sm align-start margin-top">
+		<view class="title" style="margin:0">视频：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{videoList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="video"
+				data-url="{{videoList[index]}}">
+				<video class="bg-img" src='{{videoList[index]}}' object-fit="fill"></video>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="video">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseVideo" wx:if="{{videoList.length<3}}">
+				<text class="cuIcon-video"></text>
+			</view>
+		</view>
+	</view>
+	<dot-title title="录音" color="title-color"></dot-title>
+	<view class="cu-form-group padding-left-sm align-start margin-top">
+		<view class="title" style="margin:0">录音：</view>
+		<view class="cuIcon-rankfill bg-pink radius margin-right padding-left" style="height:60rpx;flex:1;line-height:60rpx">  60s</view>
+		<view class="flex align-center" style="margin-left:auto ">
+			<text class="cuIcon-voice round bg-pink text-center" style="width:60rpx;height:60rpx;line-height:60rpx"></text>
+			<text class="text-xs margin-left-xs">按住\n录制</text>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="margin:0">本地上传：</view>
+		<input placeholder="请选择上传音频" disabled="false"></input>
+		<view class="text-pink text-right">请选择</view>
+	</view>
+	<dot-title title="阐述" color="title-color"></dot-title>
+	<view class="cu-form-group">
+		<textarea placeholder="请输入您想记录的自我阐述"></textarea>
+	</view>
+</view>
