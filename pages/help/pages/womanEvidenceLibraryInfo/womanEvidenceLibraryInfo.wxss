@@ -1,0 +1,9 @@
+/* pages/help/pages/womanEvidenceLibraryInfo/womanEvidenceLibraryInfo.wxss */
+.bgColor {
+	background-color:
+		#EE6967;
+	color: #ffffff;
+}
+.title-color {
+	color:#EE6967
+}

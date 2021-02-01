@@ -1,0 +1,58 @@
+<!--pages/help/pages/womanEvidenceLibraryInfo/womanEvidenceLibraryInfo.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">证据库</view>
+</cu-custom>
+<view class="padding-lr-xl">
+	<view class="flex align-center">
+		<dot-title title="照片" color="title-color" />
+	</view>
+	<!-- 选择器 -->
+	<view class="cu-form-group padding-left-sm">
+		<view class="title">证据类型：</view>
+		<view class="text-right">医疗证明	</view>
+	</view>
+	<view></view>
+	<view class="cu-form-group padding-left-sm align-start margin-top">
+		<view class="title" style="margin:0">图片：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{3}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{imgList[index]}}">
+				<image src='../../../../image/basics.png' mode='aspectFill'></image>
+			</view>
+		</view>
+
+	</view>
+
+	<dot-title title="视频" color="title-color"></dot-title>
+
+	<view class="cu-form-group padding-left-sm align-start margin-top">
+		<view class="title" style="margin:0">视频：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{videoList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="video"
+				data-url="{{videoList[index]}}">
+				<video class="bg-img" src='' object-fit="fill"></video>
+			</view>
+		
+		</view>
+	</view>
+	<dot-title title="录音" color="title-color"></dot-title>
+	<view class="cu-form-group padding-left-sm align-start margin-top">
+		<view class="title" style="margin:0">录音：</view>
+		<view bindtap="showVoice" class="cuIcon-rankfill bg-pink radius margin-right padding-left"
+			style="height:60rpx;flex:1;line-height:60rpx"> {{voiceLong}}{{voiceStatus}}</view>
+		<view bindlongpress="startrecord" bindtouchend="endrecord" class="flex align-center" style="margin-left:auto ">
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title" style="margin:0">本地上传：</view>
+		<input disabled="false"></input>
+
+	</view>
+	<dot-title title="阐述" color="title-color"></dot-title>
+	<view class="cu-form-group">
+		<textarea disabled="false"></textarea>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="deleteData">删除本条记录</button>
+	</view>
+</view>

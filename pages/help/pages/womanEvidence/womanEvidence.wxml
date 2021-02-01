@@ -5,7 +5,7 @@
 <view class="padding-lr-xl">
 	<view class="flex align-center">
 		<dot-title title="照片" color="title-color" />
-		<text bindtap="" class="check">查看证据库</text>
+		<text bindtap="evidenceLibrary" class="check">查看证据库</text>
 	</view>
 	<!-- 选择器 -->
 	<view class="cu-form-group padding-left-sm">

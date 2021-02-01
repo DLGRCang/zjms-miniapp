@@ -187,7 +187,9 @@
 				"pages/applyDisabilitySubsidy/applyDisabilitySubsidy",
 				"pages/applySisabledChildrenHelp/applySisabledChildrenHelp",
 				"pages/applySubsidy/applySubsidy",
-				"pages/womanEvidence/womanEvidence"
+				"pages/womanEvidence/womanEvidence",
+				"pages/womanEvidenceLibrary/womanEvidenceLibrary",
+				"pages/womanEvidenceLibraryInfo/womanEvidenceLibraryInfo"
 			]
 		},
 		{

@@ -1,0 +1,12 @@
+/* pages/help/pages/womanEvidenceLibrary/womanEvidenceLibrary.wxss */
+page{
+	height: 100%;
+}
+.bgColor {
+	background-color:
+		#EE6967;
+	color: #ffffff;
+}
+.title-color {
+	color:#EE6967
+}

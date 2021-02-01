@@ -1,6 +1,7 @@
 // pages/help/pages/womanEvidence/womanEvidence.js
 const recordManager = wx.getRecorderManager()
 const innerAudioContext = wx.createInnerAudioContext();
+const util = require('../../../../utils/util.js')
 Page({
 	/**
 	 * 页面的初始数据
@@ -10,9 +11,13 @@ Page({
 		evidenceName: '',
 		imgList: [],
 		videoList: [],
-		voiceLong: '',
+		voiceLong: ''+'s',
 		voiceSrc: '',
-		voiceStatus: 's 点击播放',
+		voiceStatus: ' 点击播放',
+	},
+	//证据库
+	evidenceLibrary() {
+		util.pageJump('../womanEvidenceLibrary/womanEvidenceLibrary')
 	},
 	//开始录音
 	startrecord() {
@@ -44,33 +49,19 @@ Page({
 	},
 	//播放录音
 	showVoice() {
-		let that=this
-		// if (_self.isPlayVoice) {
-		// 	this.audioStatus = '录音'
-		// 	//正在播放
-		// 	innerAudioContext.stop();
-		// 	_self.isPlayVoice = false;
-		// } else {
-		// 	this.audioStatus = '播放中...'
+		let that = this
 		innerAudioContext.src = this.data.voiceSrc;
-
 		innerAudioContext.play();
 		innerAudioContext.onPlay(function () {
 			that.setData({
-				voiceStatus: "s  播放中..."
+				voiceStatus: "  播放中..."
 			})
 		})
 		innerAudioContext.onEnded(function () {
 			that.setData({
-				voiceStatus: "s  点击播放"
+				voiceStatus: "  点击播放"
 			})
 		})
-		// 	_self.audioStatus = '录音'
-		// })
-		// InnerAudioContext.onError((res) => {
-		// 	console.log(res);
-		// })
-		// }
 	},
 	//切换证据类型
 	typeChange(e) {
