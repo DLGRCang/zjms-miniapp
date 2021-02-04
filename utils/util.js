@@ -18,10 +18,10 @@ const formatDate = date => {
   return [year, month, day].map(formatNumber).join('-')
 }
 
-// let base = 'http://192.168.1.111:8004/InfoIssue/app/' //王益兴
+let base = 'http://192.168.1.107:8004/InfoIssue/app/' //王益兴
 // let base = 'http://192.168.1.113:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.31.101:8004/InfoIssue/app/' //谷宇
-let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
+// let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
 let baseUrl = base + 'release/'
 let uploadFileUrl = 'file/uploadfile'//文件上传地址
 let uploadUrl = base + 'file/uploadimage' //图片上传地址
