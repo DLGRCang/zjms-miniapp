@@ -1,5 +1,4 @@
 // const app = getApp();
-// 日期 年/月/日 时:分:秒
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -9,8 +8,6 @@ const formatTime = date => {
   const second = date.getSeconds()
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
-
-// 日期  年-月-日
 const formatDate = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -18,8 +15,12 @@ const formatDate = date => {
   return [year, month, day].map(formatNumber).join('-')
 }
 
-let base = 'http://192.168.1.107:8004/InfoIssue/app/' //王益兴
-// let base = 'http://192.168.1.113:8004/InfoIssue/app/' //刘翔宇
+const formatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+// let base = 'http://192.168.1.107:8004/InfoIssue/app/' //王益兴
+let base = 'http://192.168.1.113:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.31.101:8004/InfoIssue/app/' //谷宇
 // let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
 let baseUrl = base + 'release/'
@@ -36,6 +37,7 @@ const requestApi = function (url, method, data = {}) {
   // data['userId'] = wx.getStorageSync("userId") ? wx.getStorageSync("userId") : "";
   // }
   return new Promise(function (resolve, reject) {
+
     wx.showLoading({
       title: '请稍等...'
     });
@@ -100,7 +102,6 @@ const requestData = function (url, method, data = {}) {
     })
   })
 }
-
 //网络请求
 const httpRequest = function (url, method, data = {}) {
   wx.showLoading({
@@ -134,7 +135,6 @@ const httpRequest = function (url, method, data = {}) {
     })
   })
 }
-
 //文件上传接口
 const uploadFile = function (filePath, name) {
   wx.showLoading({
@@ -176,7 +176,6 @@ const checkIdCard = function (data) {
     return true;
   }
 }
-
 //手机号校验
 const checkPhone = function (data) {
   if (!(/^1[345678]\d{9}$/.test(data))) {
@@ -189,7 +188,6 @@ const checkPhone = function (data) {
     return true;
   }
 }
-
 //邮箱校验
 const checkEmail = function (data) {
   if (!(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(data))) {
@@ -202,7 +200,6 @@ const checkEmail = function (data) {
     return true;
   }
 }
-
 //弹出提示框
 const showToast = function (msg) {
   wx.showToast({
@@ -222,7 +219,6 @@ const getBirthday = function (data) {
 const getGender = function (data) {
   return (data.substring(17, 18) % 2 == 0) ? '女' : '男';
 }
-
 //拨打电话
 const callPhone = function (phoneNumber) {
   wx.makePhoneCall({
@@ -284,7 +280,6 @@ const returnCode = function (code, num) {
     })
   }
 }
-
 const isNull = function (str) {
   if (typeof (str) == "undefined" || str == null || str === "")
     return true;
@@ -311,31 +306,6 @@ const routePlan = function (name, lat, lng) {
   });
 }
 
-// 获取位置信息
-let QQMapWX = require('../libs/qqmap/qqmap-wx-jssdk.min');
-let qqmapsdk = new QQMapWX({
-  key: 'O5QBZ-JLYL6-3MTSA-E3BN3-YAWD7-A3FXI'
-});
-const getAddress = function () {
-  return new Promise((resolve, reject) => {
-    wx.getLocation({
-      type: 'wgs84',
-      success: function (res) {
-        var lat = res.latitude;
-        var lon = res.longitude;
-        //根据坐标获取当前位置名称，腾讯地图逆地址解析
-        qqmapsdk.reverseGeocoder({
-          location: { latitude: lat, longitude: lon },
-          success: function (res) {
-            var address = res.result.address;
-            resolve(res.result)
-          }
-        });
-      }
-    })
-  })
-}
-
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
@@ -356,6 +326,5 @@ module.exports = {
   showToast: showToast,
   returnCode: returnCode,
   isNull: isNull,
-  routePlan: routePlan,
-  getAddress: getAddress
+  routePlan: routePlan
 }
