@@ -1,0 +1,17 @@
+<!--pages/help/pages/womanEvidenceLibrary/womanEvidenceLibrary.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">证据库</view>
+</cu-custom>
+<view class="flex padding-lg flex-direction" style="height: 100%;">
+	<view class="flex">
+		<text class="text-gray" style="line-height:60rpx">时间编号</text>
+		<text class="text-red" style="margin-left: auto;">编辑</text>
+	</view>
+	<image src="../../../../image/none.png" style="width: 252rpx;height: 252rpx;margin:auto"></image>
+
+	<view bindtap="evidenceLibraryInfo" wx:for="{{3}}" class="flex align-center padding-lg" >
+		<image src="../../../../image/rectangle_icon.png" style="width: 12rpx;height: 12rpx;"></image>
+		<text class="text-df margin-left-sm">2020-12-30 12:22:00</text>
+		<text catchtap="delete" class="text-red padding" style="margin-left: auto;">删除</text>
+	</view>
+</view>

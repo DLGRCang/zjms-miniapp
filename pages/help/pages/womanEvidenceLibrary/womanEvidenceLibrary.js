@@ -1,5 +1,4 @@
-// pages/economic/pages/protectRight/protectRight.js
-const app = getApp()
+// pages/help/pages/womanEvidenceLibrary/womanEvidenceLibrary.js
 const util = require('../../../../utils/util.js')
 Page({
 
@@ -7,18 +6,16 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,
 
 	},
-	//消费者维权
-	protectRightConsumer(){
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+	//证据库
+	evidenceLibraryInfo() {
+		util.pageJump('../womanEvidenceLibraryInfo/womanEvidenceLibraryInfo')
 	},
-	//经营者维权
-	protectRightOperator(){
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+	//删除
+	delete(){
+		console.log('删除')
 	},
-
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

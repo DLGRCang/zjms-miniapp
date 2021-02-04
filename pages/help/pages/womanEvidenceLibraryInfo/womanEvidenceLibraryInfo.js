@@ -1,24 +1,39 @@
-// pages/economic/pages/protectRight/protectRight.js
-const app = getApp()
-const util = require('../../../../utils/util.js')
+// pages/help/pages/womanEvidenceLibraryInfo/womanEvidenceLibraryInfo.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,
-
+		voiceStatus: ' 点击播放',
+		imgList: [],
+		videoList: [],
 	},
-	//消费者维权
-	protectRightConsumer(){
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+	//播放录音
+	showVoice() {
+		let that = this
+		innerAudioContext.src = this.data.voiceSrc;
+		innerAudioContext.play();
+		innerAudioContext.onPlay(function () {
+			that.setData({
+				voiceStatus: "  播放中..."
+			})
+		})
+		innerAudioContext.onEnded(function () {
+			that.setData({
+				voiceStatus: "  点击播放"
+			})
+		})
 	},
-	//经营者维权
-	protectRightOperator(){
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+	//视频预览/图片预览
+	ViewVideo(e) {
+		wx.previewMedia({
+			sources: [{
+				url: e.currentTarget.dataset.url,
+				type: e.currentTarget.dataset.type
+			}],
+		});
 	},
-
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

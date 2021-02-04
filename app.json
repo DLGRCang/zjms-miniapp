@@ -106,7 +106,9 @@
 				"pages/protectRight/protectRight",
 				"pages/promotion/promotion",
 				"pages/intellectualProperty/intellectualProperty",
-				"pages/exhibitionInfo/exhibitionInfo"
+				"pages/exhibitionInfo/exhibitionInfo",
+				"pages/protectRightConsumer/protectRightConsumer",
+				"pages/protectRightOperator/protectRightOperator"
 			]
 		},
 		{
@@ -187,7 +189,9 @@
 				"pages/applyDisabilitySubsidy/applyDisabilitySubsidy",
 				"pages/applySisabledChildrenHelp/applySisabledChildrenHelp",
 				"pages/applySubsidy/applySubsidy",
-				"pages/womanEvidence/womanEvidence"
+				"pages/womanEvidence/womanEvidence",
+				"pages/womanEvidenceLibrary/womanEvidenceLibrary",
+				"pages/womanEvidenceLibraryInfo/womanEvidenceLibraryInfo"
 			]
 		},
 		{

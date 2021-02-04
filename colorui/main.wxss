@@ -2362,7 +2362,7 @@ button.icon.lg {
 .cu-form-group .title {
 	text-align: justify;
 	padding-right: 30rpx;
-	font-size: 30rpx;
+	font-size: 32rpx;
 	position: relative;
 	height: 60rpx;
 	line-height: 60rpx;
@@ -3443,7 +3443,7 @@ scroll-view.cu-steps .cu-item {
 
 .bg-yellow {
 	background-color: var(--yellow);
-	color: var(--black);
+	color: var(--white);
 }
 
 .bg-olive {
