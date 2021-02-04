@@ -10,6 +10,14 @@ Page({
 		imgUrl:app.globalData.imgUrl,
 
 	},
+	//消费者维权
+	protectRightConsumer(){
+		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+	},
+	//经营者维权
+	protectRightOperator(){
+		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载

@@ -106,7 +106,9 @@
 				"pages/protectRight/protectRight",
 				"pages/promotion/promotion",
 				"pages/intellectualProperty/intellectualProperty",
-				"pages/exhibitionInfo/exhibitionInfo"
+				"pages/exhibitionInfo/exhibitionInfo",
+				"pages/protectRightConsumer/protectRightConsumer",
+				"pages/protectRightOperator/protectRightOperator"
 			]
 		},
 		{

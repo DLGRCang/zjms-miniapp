@@ -1,0 +1,5 @@
+/* pages/economic/pages/protectRightOperator/protectRightOperator.wxss */
+.bgColor {
+	background-color: #FFBE1A;
+	color: #ffffff;
+}

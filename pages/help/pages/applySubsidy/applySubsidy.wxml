@@ -54,7 +54,7 @@
 	<view class="title padding text-lg margin-top">备注：</view>
 	<textarea class="margin-lr padding-sm" style="border:1px solid grey;width:auto" placeholder="请输入备注"
 		bindinput="putData" data-key="remark"></textarea>
-		<view class="padding flex flex-direction">
+	<view class="padding flex flex-direction">
 		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>
 	</view>
 </view>

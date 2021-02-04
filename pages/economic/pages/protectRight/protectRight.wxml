@@ -14,7 +14,7 @@
 		</view>
 	</view>
 
-	<button class="button-btn">消费者维权</button>
+	<button bindtap="protectRightConsumer" class="button-btn">消费者维权</button>
 	<dot-title title="经营者侵权" color="title-color"></dot-title>
 	<view class="flex" wx:for="{{2}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
@@ -25,5 +25,5 @@
 		</view>
 	</view>
 
-<button class="button-btn">经营者侵权</button>
+<button bindtap="protectRightOperator" class="button-btn">经营者侵权</button>
 </view>
