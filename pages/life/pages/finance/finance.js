@@ -9,36 +9,19 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-    infotypeid: 'b9599c28-a954-412e-a34c-30c899dfe72f', //政策通知
+    baseImgUrl: app.globalData.baseImgUrl,
+    infotypeid: '7d89ee07-a15a-4bf3-9b16-01ecd9365d9f', //政策通知
     page: 1,
     dataList: [],
-    financialSupermarket: [{
-      'name': '伊旗建设银行',
-      'img': 'jiansheyinhang.png'
-    }, {
-      'name': '金谷村镇银行',
-      'img': 'jinguyinhang.png'
-    }, {
-      'name': '工商银行',
-      'img': 'gongshangyinhang.png'
-    }, {
-      'name': '伊旗农业银行',
-      'img': 'nongyeyinhang.png'
-    }, {
-      'name': '招商银行',
-      'img': 'zhaoshangyinhang.png'
-    }, {
-      'name': '邮政银行',
-      'img': 'youzhengyinhang.png'
-    }, ]
+    financialSupermarket: []
   },
   //贷款申请
   loansForm(){
     util.pageJump('/pages/life/pages/financeLoans/financeLoans')
   },
   //金融产品
-  productsForm(){
-    util.pageJump('/pages/life/pages/financeProducts/financeProducts')
+  productsForm(e){
+    util.pageJump('/pages/life/pages/financeProducts/financeProducts?institutions_id='+e.currentTarget.dataset.institutions_id)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -51,7 +34,13 @@ Page({
       })
       console.log(this.data.dataList);
     })
-
+    //加载金融机构列表
+    util.requestApi('institutionslist/listinstitutionslist','GET', {}).then(res => {
+      this.setData({
+        financialSupermarket: res.data
+      })
+      console.log(this.data.financialSupermarket);
+    })
   },
   onLoad: function (options) {
     this.getDataList();

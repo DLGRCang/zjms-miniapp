@@ -7,18 +7,32 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		baseImgUrl: app.globalData.baseImgUrl,
+		financeProducts:[],//金融产品列表
+		
 	},
 	 //产品申请
-	 requestProducts(){
-    util.pageJump('/pages/life/pages/financeProductsForm/financeProductsForm')
+	 requestProducts(e){
+    util.pageJump('/pages/life/pages/financeProductsForm/financeProductsForm?productId='+e.currentTarget.dataset.id+"&productName="+e.currentTarget.dataset.name)
   },
-	
+	getDataList: function (institutions_id) {
+		let data={
+			institutions_id:institutions_id,
+		}
+    //加载产品机构列表
+    util.requestApi('financialadmin/listpagefinancialadmin','GET', data).then(res => {
+      this.setData({
+        financeProducts: res.data.rows
+      })
+      console.log(this.data.financeProducts);
+    })
+  },
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		console.log(options)
+		this.getDataList(options.institutions_id)
 	},
 
 	/**

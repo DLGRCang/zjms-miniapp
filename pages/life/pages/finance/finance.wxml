@@ -11,9 +11,9 @@
   <dot-title title="金融超市" color="color" isMore="{{false}}" sign="{{infotypeid1}}" type="3"></dot-title>
 
   <view class="grid">
-    <view bindtap="productsForm" wx:for="{{financialSupermarket}}" wx:key="index" class="grid-item">
-      <image src="../../../../image/{{item.img}}"   style="width:132rpx;height:132rpx"></image>
-      <text>{{item.name}}</text>
+    <view bindtap="productsForm" data-institutions_id="{{item.institutionsListId}}" wx:for="{{financialSupermarket}}" wx:key="index" class="grid-item">
+      <image src="{{baseImgUrl}}{{item.picture}}" mode="aspectFit"   style="width:132rpx;height:132rpx"></image>
+      <text class="margin-top-sm text-cut">{{item.institutionName}}</text>
     </view>
 
   </view>

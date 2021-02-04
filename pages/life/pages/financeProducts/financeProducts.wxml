@@ -3,18 +3,18 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">金融产品</view>
 </cu-custom>
 <view class="padding">
-	<view wx:for="{{3}}" wx:key class="flex padding" bindtap="gotoDetail" style="border-bottom:#f5f5f5 solid 1px ">
-		<image class="radius margin-right" src="../../../../image/jiansheyinhang.png"
+	<view wx:for="{{financeProducts}}" wx:key class="flex padding" bindtap="gotoDetail" style="border-bottom:#f5f5f5 solid 1px ">
+		<image class="radius margin-right" src="{{baseImgUrl}}{{item.picture}}"
 			style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
 		<view class="flex flex-direction  " style="max-width:550rpx">
-			<text class="text-black margin-bottom-xs text-df">小微快贷</text>
-			<text class="text-sm text-cut text-red">￥300万元</text>
+			<text class="text-black margin-bottom-xs text-df">{{item.name}}</text>
+			<text class="text-sm text-cut text-red">￥{{item.money}}</text>
 			<view style="margin-top:auto">
-				<text style="height:40rpx" class="cu-tag padding-lr-sm text-xs text-center" wx:for="{{3}}" wx:key="index">快捷</text>
+				<text style="height:40rpx" class="cu-tag padding-lr-sm text-xs text-center" wx:for-item="it" wx:for="{{[item.lables]}}">{{it}}</text>
 			</view>
 		</view>
-		<button style="background-color: #EE6967;align-self:center;margin-left:auto;height:56rpx;line-height: 56rpx;"
+		<button  style="background-color: #EE6967;align-self:center;margin-left:auto;height:56rpx;line-height: 56rpx;"
 			class="cu-btn round {{shadow?'shadow':''}} text-white padding-lr text-center" bindtap="requestProducts"
-			data-id="{{item.volunteersServiceId}}">申请</button>
+			data-id="{{item.financialAdminId}}" 	data-name="{{item.name}}">{{item.name}}申请</button>
 	</view>
 </view>

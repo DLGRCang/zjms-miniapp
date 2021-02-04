@@ -9,20 +9,29 @@ Page({
 	 */
 	data: {
 		imgUrl: app.globalData.imgUrl,
-		infotypeid: '1ad27ea9-6ec9-4cbd-89d8-e2d5f8034a20',
+		infotypeid: '6d20ba42-25ee-4fab-9135-591929484c89',//维权法规
+		infotypeid1: '1ad27ea9-6ec9-4cbd-89d8-e2d5f8034a20',//心灵港湾
 		page: 1,
-		dataList: [], //新闻列表
+		dataList: [], //维权法规
+		dataList1: [], //心灵港湾
 
 	},
 
-	// 获取新闻列表信息
+	// 获取维权法规列表/心灵港湾
 	getDataList: function () {
-		//加载数据列表
+		//加载维权法规列表
 		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
 			this.setData({
 				dataList: this.data.dataList.concat(dataList),
 			})
 			console.log(this.data.dataList);
+		})
+		//加载心灵港湾列表
+		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+			this.setData({
+				dataList1: this.data.dataList1.concat(dataList1),
+			})
+			console.log(this.data.dataList1);
 		})
 	},
 	//证据库
