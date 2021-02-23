@@ -65,6 +65,7 @@ Page({
 			this.setData({
 				artelList1: this.data.artelList1.concat(dataList)
 			})
+			console.log("/////////////");
 			console.log(this.data.artelList1);
 		})
 	},
