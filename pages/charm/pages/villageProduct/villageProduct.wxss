@@ -26,7 +26,7 @@
 	font-size: 26rpx;
 	margin-bottom: 15rpx;
 	padding-left: 10rpx;
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.5);
 
 }
 
