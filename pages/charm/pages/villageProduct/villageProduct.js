@@ -61,7 +61,7 @@ Page({
 	},
 	//加载村情乡貌社列表
 	getVillageDataList: function () {
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
 			this.setData({
 				artelList1: this.data.artelList1.concat(dataList)
 			})
