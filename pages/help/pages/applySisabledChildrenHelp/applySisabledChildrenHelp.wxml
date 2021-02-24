@@ -2,4 +2,103 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">申请贫困残疾人(子女)高校生救助</view>
 </cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">姓名：</view>
+		<input placeholder="请输入姓名" bindinput="putData" data-key="disabledName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">性别：</view>
+		<radio-group bindchange="radioChange" data-key="sex">
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">年龄：</view>
+		<input type="number" placeholder="请输入年龄" bindinput="putData" data-key="age"></input>
+	</view>
+		<!-- 民族 -->
+		<view class="cu-form-group">
+		<view class="title">民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-key="national">
+			<view class="picker">
+				{{national?national:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">学历：</view>
+		<input placeholder="请输入学历" bindinput="putData" data-key="record"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="contactNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">家庭住址：</view>
+		<input placeholder="请输入家庭住址" bindinput="putData" data-key="homeAddress"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">家庭总人口：</view>
+		<input type="number" placeholder="请输家庭总人口" bindinput="putData" data-key="householdPopulation"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">家庭残疾人数：</view>
+		<input type="number" placeholder="请输家庭残疾人数" bindinput="putData" data-key="familiesDisabilitiesNum"></input>
+	</view>
 
+	<view class="cu-form-group">
+		<view class="title">与学生关系：</view>
+		<input placeholder="请输入关系" bindinput="putData" data-key="relationshipStudents"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">学生姓名：</view>
+		<input placeholder="请输入学生人姓名" bindinput="putData" data-key="studentName"></input>
+	</view>
+	<!-- 性别 -->
+	<view class="cu-form-group">
+		<view class="title">学生性别：</view>
+		<radio-group bindchange="radioChange" data-key="studentSex">
+			男<radio class="margin-lr-sm" value="男"></radio>
+			女<radio class="margin-left-sm" value="女"></radio>
+		</radio-group>
+	</view>
+		<!-- 民族 -->
+		<view class="cu-form-group">
+		<view class="title">学生民族</view>
+		<picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-key="studentNational">
+			<view class="picker">
+				{{studentNational?studentNational:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">出生年月：</view>
+		<picker mode="date" start="1900-01-01" end="date" bindchange="BirDateChange" data-key="stdBirth">
+			<view class="picker">
+				{{stdBirth?stdBirth:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">录取日期：</view>
+		<picker mode="date" start="1900-01-01" end="date" bindchange="DateChange" data-key="admissionDate">
+			<view class="picker">
+				{{admissionDate?admissionDate:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">录取院校及专业：</view>
+		<input placeholder="请输入录取院校及专业" bindinput="putData" data-key="admissionInstitutionAndMajor"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">就读费用：</view>
+		<input type="digit" placeholder="请输入就读费用" bindinput="putData" data-key="studyFee"></input>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

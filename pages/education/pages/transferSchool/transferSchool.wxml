@@ -46,7 +46,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">监护人工作单位：</view>
-		<input type="number" placeholder="请输入监护人工作单位" bindinput="putData" data-key="guardianCompany"></input>
+		<input  placeholder="请输入监护人工作单位" bindinput="putData" data-key="guardianCompany"></input>
 	</view>
 
 	<view class="cu-form-group">

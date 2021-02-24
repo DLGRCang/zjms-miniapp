@@ -21,7 +21,7 @@
   </view>
   <view class="cu-form-group">
 		<view class="title">家庭住址：</view>
-		<input type="number" placeholder="请输入现住址" bindinput="putData" data-key="address"></input>
+		<input placeholder="请输入现住址" bindinput="putData" data-key="address"></input>
   </view>
   <view class="cu-form-group">
 		<view class="title">工作时长：</view>
@@ -29,7 +29,7 @@
   </view>
   <view class="cu-form-group">
 		<view class="title">个人特长：</view>
-		<input type="number" placeholder="请输入现住址" bindinput="putData" placeholder="请输入个人特长" data-key="specialty"></input>
+		<input placeholder="请输入现住址" bindinput="putData" placeholder="请输入个人特长" data-key="specialty"></input>
   </view>
   <view class="padding flex flex-direction">
 		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>

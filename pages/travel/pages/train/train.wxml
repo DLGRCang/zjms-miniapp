@@ -28,16 +28,16 @@
         </picker>
       </view>
     </view>
-    <view class="padding-lr-sm margin-top-xs flex justify-between">
+    <!-- <view class="padding-lr-sm margin-top-xs flex justify-between">
       <view class="">出发日期</view>
       <view class="">
-        <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2025-09-01" bindchange="DateChange">
           <view class="picker">
             {{date}}
           </view>
         </picker>
       </view>
-    </view>
+    </view> -->
     <view class="padding-sm margin-top-xs">
       <button bindtap="getInfo">查询</button>
     </view>
