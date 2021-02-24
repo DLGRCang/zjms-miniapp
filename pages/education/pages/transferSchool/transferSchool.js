@@ -7,8 +7,9 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		fileState:'待上传',//居住证明上传状态
-		filePath:'',//文件上传成功返回数据
+		schools: [],
+		fileState: '待上传', //居住证明上传状态
+		filePath: '', //文件上传成功返回数据
 		nationList: app.globalData.nationList,
 		gradeList: ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级', '初一', '初二', '初三', '高一', '高二', '高三'],
 		accessory1: '1', //监护人居住证明（①购房合同及缴款收据原件、复印件；
@@ -26,6 +27,7 @@ Page({
 		nation: '', //民族
 		originalSchool: '', //原就读学校名称
 		originalSchoolPhone: '', //原就读学校联系电话
+		schoolInformationName: '', //学校
 		schoolInformationId: '', //学校id
 		sex: '', //性别
 		studentNumber: '', //学籍号
@@ -34,6 +36,22 @@ Page({
 
 
 
+	},
+	//获取学校列表
+	getSchools() {
+		util.requestApi('schoolinformation/listschoolinformation', 'GET', {}).then(res => {
+			this.setData({
+				schools: res.data
+			})
+			console.log(res)
+		})
+	},
+	//获取学校
+	getSchool(e) {
+		this.setData({
+			schoolInformationName: this.data.schools[e.detail.value].schoolName,
+			schoolInformationId: this.data.schools[e.detail.value].schoolInformationId
+		})
 	},
 	//获取民族
 	getNation(e) {
@@ -84,7 +102,7 @@ Page({
 			studentNumber: this.data.studentNumber,
 			transferReason: this.data.transferReason,
 			userName: this.data.userName,
-			userId:wx.getStorageSync("userId"),
+			userId: wx.getStorageSync("userId"),
 		}
 		console.log(data)
 		util.requestApi('schoolinformation/savetransferschool', 'POST', data).then(res => {
@@ -113,7 +131,7 @@ Page({
 					console.log(res)
 					if (res.statusCode == 200) {
 						let obj = JSON.parse(res.data)
-		
+
 						that.setData({
 							fileState: '上传成功',
 							filePath: obj.data
@@ -131,7 +149,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.getSchools()
 	},
 
 	/**

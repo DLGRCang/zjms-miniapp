@@ -79,8 +79,12 @@
 		<input type="number" placeholder="请输入学籍号" bindinput="putData" data-key="studentNumber"></input>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">学校id：</view>
-		<input type="number" placeholder="请输入学校id" bindinput="putData" data-key="schoolInformationId"></input>
+		<view class="title">学校</view>
+		<picker bindchange="getSchool" value="{{index}}" range="{{schools}}" range-key="schoolName">
+			<view class="picker">
+				{{schoolInformationName?schoolInformationName:'请选择'}}
+			</view>
+		</picker>
 	</view>
 	<!-- 年级 -->
 	<view class="cu-form-group">
