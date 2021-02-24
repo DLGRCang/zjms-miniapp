@@ -16,8 +16,9 @@
     <video src="{{baseImgUrl}}{{info_videos}}" autoplay="true" style="width: 100vw;"></video>
   </view>
 </view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：蒙古大云智通科技有限公司"></bottom>
 <!-- 评论 -->
-<view class="cu-bar input" style="margin-top:auto;margin-bottom:20rpx;">
+<!-- <view class="cu-bar input" style="margin-top:auto;margin-bottom:20rpx;">
   <view class="search-form">
     <input type="text" placeholder="发表您的评论" confirm-type="search"></input>
     <view class="submit" bindtap="comment">发表</view>
@@ -31,4 +32,4 @@
   <view class="action padding-left-sm">
     <text class="cuIcon-comment text-grey"></text>
   </view>
-</view>
+</view> -->
