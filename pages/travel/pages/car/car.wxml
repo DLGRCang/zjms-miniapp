@@ -20,13 +20,13 @@
       </view>
       <view class="text-xxl area">
         <picker bindchange="arriveArea" value="{{index2}}" range="{{arriveAreaList}}">
-          <view class="picker">
+          <view class="picker text-right" >
             {{index2?arriveAreaList[index2]:'呼市'}}
           </view>
         </picker>
       </view>
     </view>
-    <view class="padding-lr-sm margin-top-xs flex justify-between">
+    <!-- <view class="padding-lr-sm margin-top-xs flex justify-between">
       <view class="">出发日期</view>
       <view class="">
         <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
@@ -35,7 +35,7 @@
           </view>
         </picker>
       </view>
-    </view>
+    </view> -->
     <view class="padding-sm margin-top-xs">
       <button bindtap="getInfo">查询</button>
     </view>

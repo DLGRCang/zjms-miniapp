@@ -65,11 +65,11 @@
 
 	<view class="cu-form-group">
 		<view class="title">现住址：</view>
-		<input type="number" placeholder="请输入现住址" bindinput="putData" data-key="presentAddress"></input>
+		<input  placeholder="请输入现住址" bindinput="putData" data-key="presentAddress"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">与申请人关系：</view>
-		<input type="number" placeholder="请输与申请人关系" bindinput="putData" data-key="relationshipWithRheApplican"></input>
+		<input  placeholder="请输与申请人关系" bindinput="putData" data-key="relationshipWithRheApplican"></input>
 	</view>
 	<view class="title padding text-lg">残疾类型：</view>
 	<checkbox-group bindchange="radioChange" data-key="disabilityType" >

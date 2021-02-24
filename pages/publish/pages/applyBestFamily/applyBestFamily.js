@@ -83,12 +83,13 @@ Page({
 	//选择文件并上传
 	uploadFile: function () {
 		let that = this
-		wx.chooseMessageFile({
+		wx.chooseImage({
 			count: 1,
-			type: 'image',
+			sizeType: ['original', 'compressed'],
+			sourceType: ['album'],
 			success(res) {
-				const tempFilePaths = res.tempFiles
-				util.uploadFile(tempFilePaths[0].path, 'image').then(res => {
+				const tempFilePaths = res.tempFilePaths
+				util.uploadFile(tempFilePaths[0], 'image').then(res => {
 					console.log(res)
 					if (res.statusCode == 200) {
 						let obj = JSON.parse(res.data)

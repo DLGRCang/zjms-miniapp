@@ -41,7 +41,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">最高体温：</view>
-		<input type="number" placeholder="请输入最高体温" bindinput="putData" data-key="highestTemperature"></input>
+		<input type="digit" placeholder="请输入最高体温" bindinput="putData" data-key="highestTemperature"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">现居住地：</view>
