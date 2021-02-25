@@ -11,9 +11,9 @@ Page({
 		evidenceName: '',
 		imgList: [],
 		videoList: [],
-		voiceLong: ''+'s',
+		voiceLong: '',
 		voiceSrc: '',
-		voiceStatus: ' 点击播放',
+		voiceStatus: '',
 	},
 	//证据库
 	evidenceLibrary() {
@@ -41,7 +41,8 @@ Page({
 		recordManager.onStop(function (res) {
 			var path = res.tempFilePath
 			that.setData({
-				voiceLong: (res.duration) / 1000,
+				voiceLong:" "+Math.ceil((res.duration) / 1000)+" ″ ",
+				voiceStatus:"点击播放",
 				voiceSrc: path,
 			})
 
