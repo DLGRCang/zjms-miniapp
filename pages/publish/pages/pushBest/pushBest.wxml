@@ -3,7 +3,7 @@
 </cu-custom>
 
 <view class="cu-custom" style="height:100rpx;background:#ffffff">
-	<tab style="position:fixed;top:{{CustomBar}};background:#ffffff;width:100%;padding-bottom:10rpx" padding-lr-lg
+	<tab class="cu-bar" style="position:fixed;top:{{CustomBar}};background:#ffffff;width:100%;padding-bottom:10rpx" padding-lr-lg
 		tabName="{{tabName}}" bindmyevent="selectTab" tvColor="text-blue"></tab>
 </view>
 <view class="grid" style="padding: 31rpx;">
