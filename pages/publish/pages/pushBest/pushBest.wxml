@@ -2,12 +2,12 @@
 	<view slot="content" class="text-xl">推优榜</view>
 </cu-custom>
 
-<view class="cu-custom" style="height:100rpx;background:#ffffff">
-	<tab style="position:fixed;top:{{CustomBar}};background:#ffffff;width:100%;padding-bottom:10rpx" padding-lr-lg
-		tabName="{{tabName}}" bindmyevent="selectTab" tvColor="text-blue"></tab>
+<view style="height:100rpx;background:#ffffff">
+	<tab style="position:fixed;top:{{CustomBar}};background:#ffffff;width:100%;padding-bottom:10rpx;z-index: 9999" tabName="{{tabName}}" bindmyevent="selectTab" tvColor="text-blue"></tab>
 </view>
 <view class="grid" style="padding: 31rpx;">
-	<view wx:if="{{TabCur==0}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{homeList}}" wx:key style="height: 420rpx;">
+	<view wx:if="{{TabCur==0}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{homeList}}" wx:key
+		style="height: 420rpx;">
 		<view class="bg-grey margin-xs w_h">
 			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.filePath}}"></image>
 		</view>
@@ -21,14 +21,16 @@
 		</view> -->
 
 	</view>
-	<view wx:if="{{TabCur==1}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{getGoodboyrList}}" wx:key style="height: 420rpx;">
+	<view wx:if="{{TabCur==1}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{getGoodboyrList}}"
+		wx:key style="height: 420rpx;">
 		<view class="bg-grey margin-xs w_h">
 			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.studentsPhotos}}"></image>
 		</view>
 		<text class="margin-top-sm">{{item.studentName}}</text>
 	</view>
 
-	<view wx:if="{{TabCur==2}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{getWomanpacesetterList}}" wx:key style="height: 420rpx;">
+	<view wx:if="{{TabCur==2}}" class="flex align-center flex-direction margin-bottom-lg"
+		wx:for="{{getWomanpacesetterList}}" wx:key style="height: 420rpx;">
 		<view class="bg-grey margin-xs w_h">
 			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.applicantPhotoa}}"></image>
 		</view>
