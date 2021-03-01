@@ -4,6 +4,7 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/nongxuchanpinanquan.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">
+	<dot-title title="农畜产品安全信息" color="color" ></dot-title>
 	<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" obj="{{item}}" itemTitle="{{item.info_content}}"
 		isDate="true" date="{{item.publishdate}}"></item-image-text>
 </view>

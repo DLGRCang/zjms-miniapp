@@ -12,10 +12,6 @@ Page({
     page:1,
 		dataList: [], //新闻列表
   },
-  goDetail(e) {
-    console.log(e)
-    util.pageJumpTo('../schoolDetail/schoolDetail', 'id', e.currentTarget.dataset.id)
-  },
 
   /**
    * 生命周期函数--监听页面加载

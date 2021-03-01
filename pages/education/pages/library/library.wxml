@@ -40,10 +40,11 @@
           <view class="text-grey">{{item.subject}}</view>
         </view>
       </view>
+。
     </block>
   </view>
-  <dot-title title="通知公告" color="color"></dot-title>
+  <!-- <dot-title title="通知公告" color="color"></dot-title>
   <item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}"
-    itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
+    itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text> -->
 
 </view>

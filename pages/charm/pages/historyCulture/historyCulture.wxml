@@ -4,9 +4,9 @@
 <image src="{{imgUrl}}/image/history.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lr-lg">
   <!-- 民族文化 -->
-  <!-- <dot-title  title="民族文化" color="text-red"></dot-title> -->
+  <dot-title  title="民族文化" color="text-red"></dot-title>
   <!-- 内容展示 -->
-  <!-- <view class="contents padding-tb-lg">
+  <view class="contents padding-tb-lg">
     <view class="flex justify-between">
       <view class="flex justify-contents ">
         <view class="sText text-sm flex justify-center">译</view>
@@ -22,7 +22,7 @@
       </view>
       <view class="text-grey">你好! <text class="cuIcon-notification text-red"></text></view>
     </view>
-  </view> -->
+  </view>
 
   <!-- 历史追溯 -->
   <dot-title  title="历史追溯" color="text-red"></dot-title>

@@ -3,3 +3,7 @@
 	background-color: #A6CF5F;
 	color: #ffffff;
 }
+.color{
+	color: #A6CF5F;
+	
+}
