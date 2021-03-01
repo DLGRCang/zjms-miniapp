@@ -26,7 +26,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">年龄：</view>
-		<input type="number" placeholder="请输入身份证号" bindinput="putData" data-key="age"></input>
+		<input type="number" placeholder="请输入年龄" bindinput="putData" data-key="age"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">照片：</view>
@@ -35,7 +35,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">学历：</view>
-		<input placeholder="请输入通讯地址" bindinput="putData" data-key="education"></input>
+		<input placeholder="请输入学历" bindinput="putData" data-key="education"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">文化程度：</view>

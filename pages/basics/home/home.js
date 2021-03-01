@@ -203,7 +203,11 @@ Page({
           tit: "知识产权",
           pic: "/image/30.png",
           tab: 8
-        }
+        },     {
+          tit: "金融服务",
+          pic: "/image/74.png",
+          tab: 9
+        },
       ],
     }, {
       id: 5,
@@ -461,11 +465,11 @@ Page({
         //   pic: "/image/73.png",
         //   tab: 10
         // },
-        {
-          tit: "金融服务",
-          pic: "/image/74.png",
-          tab: 11
-        },
+        // {
+        //   tit: "金融服务",
+        //   pic: "/image/74.png",
+        //   tab: 11
+        // },
         {
           tit: "电影剧院",
           pic: "/image/75.png",
@@ -666,6 +670,10 @@ Page({
             console.log("知识产权");
             util.pageJump('/pages/economic/pages/intellectualProperty/intellectualProperty')
             break;
+            case 9:
+              console.log("金融服务");
+              util.pageJump('/pages/life/pages/finance/finance')
+              break;
         }
         break;
       //教育文体
@@ -832,9 +840,9 @@ Page({
           // case 10:
           //   console.log("11");
           //   break;
-          case 11:
-            util.pageJump('/pages/life/pages/finance/finance')
-            break;
+          // case 11:
+          //   util.pageJump('/pages/life/pages/finance/finance')
+          //   break;
           case 12:
             util.pageJump('/pages/life/pages/film/film')
             break;
