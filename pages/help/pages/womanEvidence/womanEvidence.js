@@ -21,7 +21,6 @@ Page({
 	},
 	//开始录音
 	startrecord() {
-
 		console.log("开始录音" + new Date())
 		this.centerTime = new Date();
 		recordManager.start({

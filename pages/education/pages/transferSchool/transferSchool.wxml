@@ -30,7 +30,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">现家庭住址：</view>
-		<input style="display:block" placeholder="请输入现家庭住址：" bindinput="putData" data-key="currentAddress"></input>
+		<input style="display:block" placeholder="请输入现家庭住址" bindinput="putData" data-key="currentAddress"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">户籍所在地：</view>
@@ -101,7 +101,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">原就读学校：</view>
-		<input style="display:block" placeholder="请输入原就读学校：" bindinput="putData" data-key="originalSchool"></input>
+		<input style="display:block" placeholder="请输入原就读学校" bindinput="putData" data-key="originalSchool"></input>
 	</view>
 	<view class="padding flex flex-direction">
 		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
