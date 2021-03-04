@@ -12,7 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageTabs: ["地图", "列表"],
+    pageTabs: ["列表", "地图"],
     index: 0,
     longitude: '',
     latitude: '',
