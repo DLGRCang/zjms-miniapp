@@ -18,14 +18,17 @@ Page({
     }, {
       title: '服务部门',
       content: ['住房和城乡建设局', '自然资源局', '公安局', '教育局']
-    }]
+    }],
+    initPersonItems:[],//事项列表
   },
   //切换顶部tab
   selectTab: function (e) {
     this.setData({
       TabCur: e.detail.TabCur
     })
+    this.getData()
   },
+  //切换条件
   onpickChange: function (e) {
     let picker = this.data.searchType
     this.data.searchType[e.detail.current].title = e.detail.pick
@@ -34,13 +37,25 @@ Page({
     })
   },
   guideDetail(e) {
-    util.pageJumpTo('/pages/government/pages/guideInfo/guideInfo', 'id', e.currentTarget.dataset.id)
+    util.pageJumpTo('/pages/government/pages/guideInfo/guideInfo', 'applicationId', e.currentTarget.dataset.id)
+  },
+  //获取事项列表
+  getData() {
+    let data={
+      type:this.data.TabCur
+    }
+    util.requestApi('application/initPersonItems', 'GET', data).then(res => {
+      console.log(res)
+      this.setData({
+        initPersonItems:res.data
+      })
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData()
   },
 
   /**

@@ -3,8 +3,9 @@
   <view slot="content" >办事指南详情</view>
 </cu-custom>
 <view class="padding-xl flex flex-direction">
-	<text class="flex align-center text-blue text-xl title">防空地下室易地建设许可证</text>
-	<text class="text-xl content-title">办理单位</text>
+	<text class="flex align-center text-blue text-xl title">{{project_name}}</text>
+	<rich-text nodes="{{project_instructions}}" class="main margin-lg"></rich-text>
+	<!-- <text class="text-xl content-title">办理单位</text>
 	<text class="text-df content margin-sm">市人防办</text>
 	
 	<text class="text-xl content-title">承诺期限</text>
@@ -12,5 +13,8 @@
 	
 	<text class="text-xl content-title">受理条件</text>
 	<text>政府旗长苏新亚调研指导高考准备工作及部分学校和卫生系统重点项目建设情况。政府副旗长闫彩煜，政府办公室主任李金锋及各有关部门负责人陪同调研。在市一中伊金霍洛校区高考考点，苏新亚重点查看了考场布置、视频监控、疫情防控等情况，听取各部门考前准备工作汇报，详细了解了高考人数、校园安保、后勤保障等高考前准备情况。
-	</text>
+	</text> -->
+</view>
+<view class="bg-width padding btn-bg">
+	<button bindtap="apply" class="button-btn">申请预审</button>
 </view>

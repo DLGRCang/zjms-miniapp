@@ -1,4 +1,7 @@
 /* pages/guideDetail/pages/guideInfo/guideInfo.wxss */
+page{
+	padding-bottom: 100rpx;
+}
 .title {
 	margin-bottom: 72rpx;
 	font-weight: bold;
@@ -26,3 +29,16 @@
 	margin-bottom: 62rpx;
 
 }
+.btn-bg {
+	background-color: white;
+	position:fixed;
+	width: 100%;
+	bottom:0;
+	}
+	.button-btn {
+		background-color: #2161b5;
+		color: #ffffff;
+		width: 650rpx;
+		font-size: 34rpx;
+	}
+	
