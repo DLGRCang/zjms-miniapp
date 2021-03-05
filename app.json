@@ -44,6 +44,7 @@
 				"pages/radio/radio",
 				"pages/tv/tv",
 				"pages/pushBest/pushBest",
+				"pages/pushBestDetail/pushBestDetail",
 				"pages/newsList/newsList",
 				"pages/newsDetail/newsDetail",
 				"pages/officialNewsList/officialNewsList",
