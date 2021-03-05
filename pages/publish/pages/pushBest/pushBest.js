@@ -89,6 +89,13 @@ Page({
 			}
 		});
   },
+  goDetail(e){
+    console.log(e.currentTarget.dataset.id)
+    console.log(e.currentTarget.dataset.tab)
+    wx.navigateTo({
+      url: '/pages/publish/pages/pushBestDetail/pushBestDetail?id='+e.currentTarget.dataset.id+'&tab='+e.currentTarget.dataset.tab,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

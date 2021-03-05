@@ -1,0 +1,267 @@
+<import src="../../../../wxParse/wxParse.wxml" />
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content" class="text-xl">{{tab}}</view>
+</cu-custom>
+<view class="padding-lg">
+  <view wx:if="{{tab==='最美家庭'}}">
+    <view class="">
+      <view class="margin-bottom-sm flex">
+        <view>
+          户主姓名：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.householdName}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          名族：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.nation}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          家庭成员数：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.numberPeople}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          电话号码：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.phoneNumber}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          家庭电话：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.homeTelephone}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          性别：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.sex}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          文化程度：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.standardCulture}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          户主工作单位及职务：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.workUnit}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          家庭住址 ：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.address}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          申请日期：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.applicationDate}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm flex">
+        <view>
+          最美家庭类别：
+        </view>
+        <view class="text-grey">
+          {{familyDetail.beautifulFamilyType}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm">主要事迹简介：</view>
+      <template is="wxParse" data="{{wxParseData:dataHtml.nodes}}" />
+    </view>
+  </view>
+
+  <view wx:else>
+    <view class="">
+      <view class="margin-bottom-sm flex">
+        <view>
+          姓名：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.userName }}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          性别：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.sex}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          出生日期：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.birthday}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          名族：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.nation}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          学历：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.education}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          政治面貌：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.politicsStatus}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          手机号：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.cellphone}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          固定电话：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.fixedlineTelephone}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          通讯地址：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.contactAddress}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          邮编：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.postalCode}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          工作单位：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.workUnit }}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          职务：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.dutuies}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          职级：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.rankLever}}
+        </view>
+      </view>   
+      <view class="margin-bottom-sm flex">
+        <view>
+          推荐方式：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.recommendWays}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          推荐单位：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.recommendedUnits}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          推荐人：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.referrerName}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm flex">
+        <view>
+          填报时间：
+        </view>
+        <view class="text-grey">
+          {{sbDetail.fillTime}}
+        </view>
+      </view>
+
+      <view class="margin-bottom-sm">
+        <view>
+          主要获奖情况：
+        </view>
+        <view class="margin-bottom-sm text-grey">
+          {{sbDetail.majoAwards}}
+        </view>
+      </view>
+      <view class="margin-bottom-sm">主要事迹简介：</view>
+      <template is="wxParse" data="{{wxParseData:dataHtmls.nodes}}" />
+
+
+
+    </view>
+  </view>
+</view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
