@@ -2,6 +2,7 @@
 	<view slot="content">就医预约</view>
 </cu-custom>
 <view class="margin-xs">
+	<view class="text-xxl text-center">伊旗人民医院</view>
 	<!-- 输入框 -->
 	<view class="cu-form-group">
 		<view class="title">姓名：</view>
