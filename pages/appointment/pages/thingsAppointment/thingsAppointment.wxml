@@ -2,3 +2,13 @@
 	<view slot="backText">返回</view>
 	<view slot="content">办事预约</view>
 </cu-custom>
+<view class="padding-lg">
+	<view wx:if="{{waitInfo==null}}">
+		请稍后再查
+	</view>
+	<view wx:else>
+		排队人数：{{waitInfo.total}}个；
+		等候人数：{{waitInfo.waiting}}个；
+		正处理人数：{{waitInfo.processing}}个
+	</view>
+</view>
