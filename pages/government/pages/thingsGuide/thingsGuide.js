@@ -11,43 +11,109 @@ Page({
     TabCur: 0, //标签选中项
     searchType: [{
       title: '服务主题',
-      content: ['生育收养', '民族宗教', '教育科研']
+      id: '',
+      content: []
     }, {
       title: '事项类型',
-      content: ['事项类型A', 'B事项类型', '事项C类型']
+      id: '',
+      content: []
     }, {
       title: '服务部门',
-      content: ['住房和城乡建设局', '自然资源局', '公安局', '教育局']
+      id: '',
+      content: []
     }],
-    initPersonItems:[],//事项列表
+    initPersonItems: [], //事项列表
+    deptList: [], //部门列表
   },
   //切换顶部tab
   selectTab: function (e) {
     this.setData({
       TabCur: e.detail.TabCur
     })
-    this.getData()
+    this.getDataCondition()
   },
   //切换条件
   onpickChange: function (e) {
     let picker = this.data.searchType
-    this.data.searchType[e.detail.current].title = e.detail.pick
+    this.data.searchType[e.detail.current].title = e.detail.pick.dictionaryName,
+    this.data.searchType[e.detail.current].id = e.detail.pick.dictionaryId
     this.setData({
       searchType: picker
     })
+    this.getDataCondition()
   },
   guideDetail(e) {
     util.pageJumpTo('/pages/government/pages/guideInfo/guideInfo', 'applicationId', e.currentTarget.dataset.id)
   },
-  //获取事项列表
-  getData() {
-    let data={
-      type:this.data.TabCur
+  //获取部门列表
+  getDeptData() {
+    let data = {
+      type: this.data.TabCur
     }
-    util.requestApi('application/initPersonItems', 'GET', data).then(res => {
+    util.requestApi('department/listdepartment/0', 'GET', data).then(res => {
+      let bbb = JSON.parse(JSON.stringify(res).replace(/departmentName/g, "dictionaryName"));
+      let aaa = JSON.parse(JSON.stringify(bbb).replace(/departmentId/g, "dictionaryId"));
+      console.log(aaa)
+      let data = this.data.searchType;
+      data[2].content = aaa.data;
+      this.setData({
+        searchType: data
+      })
+    });
+  },
+  //服务主题列表
+  getThemeData() {
+    let data = {
+      type: this.data.TabCur
+    }
+    util.requestApi('dictionary/listdictionary/2b91d267-0bb1-48cd-8a7c-ce3c79ca2470', 'GET', data).then(res => {
+      console.log(res)
+      let data = this.data.searchType;
+      data[0].content = res.data;
+      this.setData({
+        searchType: data
+      })
+    });
+  },
+  //事项类型列表
+  getTypeData() {
+    let data = {
+      type: this.data.TabCur
+    }
+    util.requestApi('dictionary/listdictionary/d2b75819-3e7c-4210-a296-77f3cc0c25ca', 'GET', data).then(res => {
+      console.log(res)
+      let data = this.data.searchType;
+      data[1].content = res.data;
+      this.setData({
+        searchType: data
+      })
+    });
+  },
+  // //获取事项列表
+  // getData() {
+  //   let data = {
+  //     type: this.data.TabCur
+  //   }
+  //   util.requestApi('application/initPersonItems', 'GET', data).then(res => {
+  //     console.log(res)
+  //     this.setData({
+  //       initPersonItems: res.data
+  //     })
+  //   });
+  // },
+  //获取事项列表根据条件
+  getDataCondition() {
+    let data = {
+      type: this.data.TabCur,
+      departmentId: this.data.searchType[2].id,//部门id
+      itemSubject:this.data.searchType[0].id,//主题id
+      applicationType: this.data.searchType[1].id,//事项类型id
+    }
+    console.log(data)
+    util.requestApi('application/filterPersonItems', 'GET', data).then(res => {
       console.log(res)
       this.setData({
-        initPersonItems:res.data
+        initPersonItems: res.data
       })
     });
   },
@@ -55,7 +121,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData()
+    this.getDataCondition()
+    this.getThemeData()
+    this.getTypeData()
+    this.getDeptData()
   },
 
   /**

@@ -7,14 +7,13 @@
     wx:for="{{pickType}}"
     wx:key="index"
     range="{{item.content}}" 
+    range-key="{{SearchCur==2?'departmentName':'dictionaryName'}}" 
     data-val="{{item.content}}"
   >
     <view
       class="text-df text-cut search_type {{index==SearchCur?'search_type_selected text-blue':''}}" 
       bindtap="searchSelect" 
       data-id="{{index}}"
-    >
-      {{item.title}}
-    </view>
+    >{{item.title}}</view>
   </picker>
 </view>

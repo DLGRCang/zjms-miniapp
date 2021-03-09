@@ -163,7 +163,8 @@
 				"pages/guide/guide",
 				"pages/thingsGuide/thingsGuide",
 				"pages/guideInfo/guideInfo",
-				"pages/instaShotReport/instaShotReport"
+				"pages/instaShotReport/instaShotReport",
+				"pages/guideCommint/guideCommint"
 			]
 		},
 		{

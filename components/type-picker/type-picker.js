@@ -8,7 +8,8 @@ Component({
   },
   data: {
 		SearchCur: -1, //筛选条件选中项
-		pickIndex: 0
+    pickIndex: 0,
+
   },
   methods: {
     //检索条件切换
@@ -16,6 +17,7 @@ Component({
       this.setData({
         SearchCur: e.currentTarget.dataset.id,
       })
+    
     },
     PickerChange(e) {
       this.setData({

@@ -1,0 +1,5 @@
+/* pages/government/pages/guideCommint/guideCommint.wxss */
+page{
+	padding-bottom: 100rpx;
+}
+
