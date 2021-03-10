@@ -79,10 +79,19 @@
     </block>
   </view>
 
-  <dot-title title="车站动态" color="color" isMore="true"></dot-title>
+  <dot-title title="车站动态" color="color"></dot-title>
   <view class="mainContent">
-    <item-image-text wx:for="{{5}}" itemTitle="11111111111" isImg="{{false}}" isDate="true" date="2020-06-09"
+    <item-image-text itemTitle="鄂尔多斯国际机场航线新增鄂尔多斯 西安 MU2246 烟台 MU9968航线。" isImg="{{false}}" isDate="true"
+      date="【航线】" isLine="true">
+    </item-image-text>
+    <item-image-text itemTitle="鄂尔多斯由于天气原因，航班全部取消，由此带来的不便我们深表歉意。" isImg="{{false}}" isDate="true" date="【航班】"
       isLine="true">
     </item-image-text>
+    <item-image-text itemTitle="3月15日前需要前往北京的旅客需要持7日核酸检测阴性报告进站出站，出行的旅客请提前安排核酸检测。" isImg="{{false}}" isDate="true"  date="【火车站】" isLine="true">
+    </item-image-text>
+    <item-image-text itemTitle="鄂尔多斯火车站设立了应急救护角、应急救护点并配备AED急救设备，为生命保驾护航。" isImg="{{false}}" isDate="true"
+      date="【火车站】" isLine="true">
+    </item-image-text>
+
   </view>
 </view>

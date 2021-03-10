@@ -890,15 +890,23 @@ Page({
   ///通知公告
   //通知公告列表
   getNoticeList() {
-
+    let url = 'https://yiqi.sucstep.com/InfoIssue/app/release/infocontent/getListTypeInfoContent?rows=3&page=1';
+    util.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res)
+      this.setData({
+        noticeInfo: res.data.data
+      })
+    });
   },
   //跳转通知列表页
   noticeList: function () {
-
+    wx.navigateTo({
+      url: '/pages/publish/pages/newsList/newsList?id=' + this.properties.sign+'&type='+this.properties.type+'&dtype='+this.properties.dtype,
+    }) 
   },
   //跳转通知详情
   noticeDetail: function (e) {
-
+    util.pageJumpTo("/pages/publish/pages/newsDetail/newsDetail", 'id', e.currentTarget.dataset.id)
   },
 
   /**
