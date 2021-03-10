@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabName: ["个人办事", "法人办事"],
+    tabName: ["法人办事","个人办事"],
     TabCur: 0, //标签选中项
     searchType: [{
       title: '服务主题',
