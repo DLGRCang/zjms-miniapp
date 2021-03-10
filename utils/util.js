@@ -20,7 +20,11 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 // let base = 'http://192.168.1.106:8004/InfoIssue/app/' //王益兴
+<<<<<<< Updated upstream
 // let base = 'http://192.168.1.110:8004/InfoIssue/app/' //刘翔宇
+=======
+let base = 'http://192.168.1.104:8004/InfoIssue/app/' //刘翔宇
+>>>>>>> Stashed changes
 // let base = 'http://192.168.31.101:8004/InfoIssue/app/' //谷宇
 let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
 let baseUrl = base + 'release/'

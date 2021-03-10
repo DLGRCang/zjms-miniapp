@@ -50,7 +50,7 @@ App({
 
   globalData: {
     isLogin:false,
-    // baseImgUrl: 'http://192.168.1.100:8004/InfoIssue/route/file/downloadfile/true/',
+    // baseImgUrl: 'http://192.168.1.113:8004/InfoIssue/route/file/downloadfile/true/',
     baseImgUrl: 'https://yiqi.sucstep.com/InfoIssue/route/file/downloadfile/false/',
     imgUrl: 'https://yiqi.sucstep.com/InfoIssue/miniapp',
     userInfo: null,
