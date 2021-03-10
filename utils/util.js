@@ -19,13 +19,13 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-// let base = 'http://192.168.1.107:8004/InfoIssue/app/' //王益兴
-// let base = 'http://192.168.1.113:8004/InfoIssue/app/' //刘翔宇
+let base = 'http://192.168.1.106:8004/InfoIssue/app/' //王益兴
+// let base = 'http://192.168.1.110:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.31.101:8004/InfoIssue/app/' //谷宇
-let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
+// let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
 let baseUrl = base + 'release/'
-let uploadFileUrl = 'file/uploadfile'//文件上传地址
-let uploadUrl = base + 'file/uploadimage' //图片上传地址
+let uploadFileUrl = base+'file/uploadfile'//文件上传地址
+let uploadUrlImage = base + 'file/uploadimage' //图片上传地址
 
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
@@ -136,13 +136,41 @@ const httpRequest = function (url, method, data = {}) {
   })
 }
 //文件上传接口
+const uploadFile1 = function (filePath, name) {
+  wx.showLoading({
+    title: '上传中...'
+  });
+  return new Promise((resolve, reject) => {
+    wx.uploadFile({
+      url: uploadFileUrl,
+      filePath: filePath,
+      name: name,
+      formData: {},
+      timeout: 2 * 60 * 1000,
+      header: {
+        'token': wx.getStorageSync("token")
+      },
+      success: (res) => {
+        wx.hideLoading();
+        resolve(res)
+      },
+      fail: (res) => {
+        //错误信息统一处理操作
+        wx.hideLoading();
+        reject(res)
+        this.showToast('上传失败')
+      }
+    })
+  });
+}
+//图片文件上传接口
 const uploadFile = function (filePath, name) {
   wx.showLoading({
     title: '上传中...'
   });
   return new Promise((resolve, reject) => {
     wx.uploadFile({
-      url: uploadUrl,
+      url: uploadUrlImage,
       filePath: filePath,
       name: name,
       formData: {},
@@ -313,6 +341,7 @@ module.exports = {
   requestData: requestData,
   httpRequest: httpRequest,
   uploadFile: uploadFile,
+  uploadFile1: uploadFile1,
   baseUrl: baseUrl,
   checkIdCard: checkIdCard,
   checkPhone: checkPhone,

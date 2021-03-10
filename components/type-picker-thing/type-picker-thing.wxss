@@ -1,0 +1,13 @@
+.search_type{
+	font-weight:600;
+	font-size: 25rpx;
+}
+.search_type::after{
+	font-family: "cuIcon";
+	content: "\e661";
+	padding: 5rpx;
+}
+.search_type_selected::after{
+	font-family: "cuIcon";
+	content: "\e6de";
+}

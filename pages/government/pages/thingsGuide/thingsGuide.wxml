@@ -5,7 +5,7 @@
 
 <tab class="padding-lr-lg" tabName="{{tabName}}" bindmyevent="selectTab"></tab>
 
-<type-picker style="margin: 30rpx;" pickType="{{searchType}}" bind:pickChange="onpickChange"></type-picker>
+<type-picker-thing style="margin: 30rpx;" pickType="{{searchType}}" bind:pickChange="onpickChange"></type-picker-thing>
 
 <view class="flex  align-start justify-between margin-bottom-xl padding-left-xl padding-right-lg" wx:for="{{initPersonItems}}" wx:key="index" bindtap="guideDetail" data-id="{{item.applicationId}}">
   <view>
