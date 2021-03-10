@@ -18,6 +18,7 @@ Page({
     airInfo: null,
     arrArea: '北京',
   },
+  // 切换
   choose(e) {
     console.log(e.currentTarget.dataset.id)
     this.setData({
@@ -36,11 +37,6 @@ Page({
       })
     }
   },
-  DateChange(e) {
-    this.setData({
-      date: e.detail.value
-    })
-  },
   //出发地
   leaveArea(e) {
     this.setData({
@@ -57,7 +53,7 @@ Page({
   getArriveAreaList() {
     let that = this;
     util.requestApi('flight/listtocity', 'GET', {}).then(res => {
-      console.log(res)
+      console.log('到达城市：'+res.data)
       that.setData({
         arriveAreaList: res.data
       })
@@ -67,9 +63,11 @@ Page({
   getInfo() {
     let that = this;
     util.requestApi('flight/listflightbytocity/' + this.data.arrArea, 'GET', {}).then(res => {
-      if (res.data.length > 0) {
+      console.log('结果数据：'+res.data)
+      console.log(res)
+      if (res.data.data != null ) {
         that.setData({
-          carInfo: res.data
+          airInfo: res.data
         })
       }
     })

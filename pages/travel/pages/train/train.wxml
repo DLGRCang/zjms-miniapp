@@ -10,11 +10,12 @@
     </view>
     <view class="flex justify-between padding-lr-sm margin-tb-lg">
       <view class="text-xxl area">
-        <picker bindchange="leaveArea" value="{{index1}}" range="{{leaveAreaList}}">
+        <!-- <picker bindchange="leaveArea" value="{{index1}}" range="{{leaveAreaList}}">
           <view class="picker">
             {{index1?leaveAreaList[index1]:'鄂尔多斯'}}
           </view>
-        </picker>
+        </picker> -->
+        <view>鄂尔多斯</view>
       </view>
       <view class="area">
         <image class="iconImg" wx:if="{{chooseIndex==0}}" src="{{imgUrl}}/image/air.png"></image>
@@ -23,7 +24,7 @@
       <view class="text-xxl area">
         <picker bindchange="arriveArea" value="{{index2}}" range="{{arriveAreaList}}">
           <view class="picker">
-            {{index2?arriveAreaList[index2]:'北京'}}
+            {{index2?arriveAreaList[index2]:'请选择'}}
           </view>
         </picker>
       </view>
@@ -53,7 +54,7 @@
           <view>发车时间：</view>
           <view class="text-grey">{{item.starting_time}}</view>
         </view>
-        <view class="flex justify-between">
+        <view class="flex justify-between padding-top-sm">
           <view>到达时间：</view>
           <view class="text-grey">{{item.arrival_time}}</view>
         </view>
@@ -66,10 +67,6 @@
         <view class="flex justify-between padding-top-sm">
           <view>到达城市:</view>
           <view class="text-grey">{{item.to_city}}</view>
-        </view>
-        <view class="flex justify-between padding-top-sm" wx:if="{{item.way!=''||item.way!=null}}">
-          <view>班期:</view>
-          <view class="text-grey">{{item.schedule}}</view>
         </view>
         <view class="flex justify-between padding-top-sm">
           <view>航班号:</view>
