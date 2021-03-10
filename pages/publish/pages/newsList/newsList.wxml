@@ -10,3 +10,5 @@
 <item-image-text type="{{dtype}}" wx:if="{{type==3}}" wx:for="{{dataList}}" imgUrl="{{item.info_photos}}"
   itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" obj="{{item}}" isImg="true" isTab="true"
   itemTabs="{{item.infoTypeLabel}}" isLine="true"></item-image-text>
+  <item-image-text type="{{dtype}}"  wx:if="{{type==4}}" wx:for="{{dataList}}" obj="{{item}}" isImg="{{false}}"
+  itemTitle="{{item.info_content}}"  itemTitle="{{item.info_content}}"  itemInfo="{{item.info_summary}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
