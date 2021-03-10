@@ -289,6 +289,7 @@
 		"tab": "/components/tab/tab",
 		"dot-title": "/components/dot-title/dot-title",
 		"type-picker": "/components/type-picker/type-picker",
+		"type-picker-thing": "/components/type-picker-thing/type-picker-thing",
 		"bottom": "/components/bottom/bottom"
 	},
 	"sitemapLocation": "sitemap.json"
