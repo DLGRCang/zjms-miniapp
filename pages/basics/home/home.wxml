@@ -55,7 +55,7 @@
 					</view>
 				</view>
 				<block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
-					<view class="padding-bottom-sm" bindtap="noticeDetail" data-id="{{item.infoContentId}}" data-obj="{{item}}">
+					<view class="padding-bottom-sm textInfo" bindtap="noticeDetail" data-id="{{item.infoContentId}}" data-obj="{{item}}">
 						<text class="cuIcon-hotfill text-red"></text> {{item.info_content}}
 					</view>
 				</block>

@@ -1,7 +1,5 @@
-<!-- <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content">政务大厅指引</view>
-</cu-custom> -->
-<web-view src="https://api.huokejinglingvip.com/wechat/get_mini_construction_site_info?id=31&is_mini=2&user_id=5"></web-view>
+<web-view src="https://yun.kujiale.com/design/3FO47N88AC3D/show"></web-view>
+
 <!-- <view class="cu-custom " style=" height: 610rpx; width:100%;">
 	<view style="position: fixed;top:{{CustomBar}};">
 		<tab class="padding-lr-lg" tvColor="color" tabName="{{tabName}}" bindmyevent="selectTab"></tab>
