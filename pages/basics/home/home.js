@@ -900,7 +900,7 @@ Page({
   //跳转通知列表页
   noticeList: function () {
     wx.navigateTo({
-      url: '/pages/publish/pages/newsList/newsList?id=6b18a9d4-470d-4683-90e8-e098122d28c2'+'&type=1'
+      url: '/pages/publish/pages/newsList/newsList?id=1c3e25d9-0e0b-4eb6-ad4e-a7be6f5c8485'+'&type=1'
     }) 
   },
   //跳转通知详情
