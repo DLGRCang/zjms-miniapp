@@ -1,4 +1,5 @@
-<web-view src="https://yun.kujiale.com/design/3FO47N88AC3D/show"></web-view>
+<!-- <web-view src="https://yun.kujiale.com/design/3FO47N88AC3D/show"></web-view> -->
+<web-view src="https://yiqi.sucstep.com/static/hall.html"></web-view>
 
 <!-- <view class="cu-custom " style=" height: 610rpx; width:100%;">
 	<view style="position: fixed;top:{{CustomBar}};">
@@ -6,11 +7,11 @@
 		<image src="{{imgUrl}}/image/government_guide{{index}}.jpg" data-src="" bindtap="previewImage"></image>
 	</view>
 
-</view>
+</view>  
 
 
 <scroll-view scroll-y="true" style="height: 600rpx;">
-	<view class="flex padding">
+	<view class="flex padding">  
 		<view class="flex bgColor radius align-center justify-center margin-right text-df" style="width: 88rpx;height: 70rpx;flex-shrink: 0;">A
 			区</view>
 		<text class="text-df">总服务台（咨询导引、叫号取号、投诉受理、失物认领、志愿服务站）</text>
