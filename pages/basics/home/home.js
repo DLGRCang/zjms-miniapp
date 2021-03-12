@@ -890,7 +890,7 @@ Page({
   ///通知公告
   //通知公告列表
   getNoticeList() {
-    util.requestApi('infocontent/getListTypeInfoContent?rows=3&page=1', 'GET', {}).then(res => {
+    util.requestApi('infocontent/getListTypeInfoContent?page=1&rows=3', 'GET', {}).then(res => {
       console.log(res)
       this.setData({
         noticeInfo: res.data.rows
