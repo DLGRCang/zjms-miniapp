@@ -850,7 +850,7 @@ Page({
           //   console.log("14");
           //   break;
           case 14:
-            console.log("公租房");
+            util.pageJump('/pages/life/pages/publicRentalHousing/publicRentalHousing')
             break;
         }
         break;
