@@ -30,7 +30,15 @@ Page({
     this.setData({
       TabCur: e.detail.TabCur
     })
+    let data = this.data.searchType;
+      data[0].content = [];
+      data[0].title='服务主题'
+      data[0].id=''
+      this.setData({
+        searchType: data
+      })
     this.getDataCondition()
+    this.getThemeData()
   },
   //切换条件
   onpickChange: function (e) {
@@ -66,7 +74,7 @@ Page({
     let data = {
       type: this.data.TabCur
     }
-    util.requestApi('dictionary/listdictionary/2b91d267-0bb1-48cd-8a7c-ce3c79ca2470', 'GET', data).then(res => {
+    util.requestApi('application/itemSubjectList', 'GET', data).then(res => {
       console.log(res)
       let data = this.data.searchType;
       data[0].content = res.data;
@@ -138,6 +146,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
 
   },
 
