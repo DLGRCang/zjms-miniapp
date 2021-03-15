@@ -1,4 +1,4 @@
-// pages/food/pages/specialFood/specialFood.js
+// pages/food/pages/foodDetail/foodDetail.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
@@ -7,30 +7,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: app.globalData.imgUrl,
-    baseImgUrl: app.globalData.baseImgUrl,
-    specialFoodList: null,
+    id: '',
+    foodInfo: null,
   },
-
-  specialFoodList() {
-    let url = 'http://192.168.1.106:8084/shop/app/release/api/shopmanagement/listpageshopmanagement';
+  getFoodInfo(){
+    let url = 'http://192.168.1.106:8084/shop/app/release/api/shopmanagement/getshopmanagement/'+this.data.id;
     util.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data.rows)
+      console.log(res.data)
       this.setData({
-        specialFoodList: res.data.rows
+        foodInfo: res.data
       })
     });
   },
-  goDetail(e){
-    console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.specialFoodList()
+    console.log(options)
+    this.setData({
+      id: options.id
+    })
+    this.getFoodInfo()
   },
 
   /**

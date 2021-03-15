@@ -20,11 +20,18 @@
   <view class="tit">
     <dot-title title="伊旗绝味" color="red"></dot-title>
   </view>
-
-  <view wx:for="{{5}}" wx:key="item">
-    <item-image-text imgUrl="" itemTitle="店铺名称" itemInfo="距您直线3.2公立" isImg="true" isStar="true" starNum="5" isLine="true">
-    </item-image-text>
-  </view>
-
+  <block wx:for="{{specialFoodList}}" wx:key="item">
+    <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.shopManagementId}}">
+      <view>
+        <image class="radius margin-right" src="{{baseImgUrl}}{{item.storeImage}}"
+          style="width:160rpx;height:160rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+      </view>
+      <view class="">
+        <view>{{item.shopName}}</view>
+        <view class="padding-tb-sm text-grey text-sm">{{item.shopAddress}}</view>
+        <view><text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="index"></text></view>
+      </view>
+    </view>
+  </block>
 </view>
 <bottom style="margin-top:auto"></bottom>

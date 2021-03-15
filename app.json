@@ -91,6 +91,7 @@
 				"pages/topFood/topFood",
 				"pages/nationFood/nationFood",
 				"pages/cultureFood/cultureFood",
+				"pages/foodDetail/foodDetail",
 				"pages/animalFood/animalFood"
 			]
 		},

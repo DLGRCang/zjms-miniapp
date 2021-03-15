@@ -1,0 +1,9 @@
+/* pages/food/pages/foodDetail/foodDetail.wxss */
+.bgColor {
+  background-color: #EE6967;
+  color: #ffffff;
+}
+
+.red {
+  color: #EE6967;
+}
