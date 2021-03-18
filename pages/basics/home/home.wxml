@@ -10,6 +10,9 @@
 	<view class="serarch" bindtap="searchApp">
 		<text class="cuIcon-search text-bold"></text>
 	</view>
+	<view class="tell" bindtap="goTell">
+		<text class="cuIcon-dianhua"></text>
+	</view>
 </view>
 
 <!-- 实现左右联动效果 -->

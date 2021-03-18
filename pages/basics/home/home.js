@@ -6,7 +6,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-    imgList:[1,2,3],
+    imgList: [1, 2, 3],
     newsInfo: [],
     noticeInfo: [],
     StatusBar: app.globalData.StatusBar,
@@ -203,7 +203,7 @@ Page({
           tit: "知识产权",
           pic: "/image/30.png",
           tab: 8
-        },     {
+        }, {
           tit: "金融服务",
           pic: "/image/74.png",
           tab: 9
@@ -670,10 +670,10 @@ Page({
             console.log("知识产权");
             util.pageJump('/pages/economic/pages/intellectualProperty/intellectualProperty')
             break;
-            case 9:
-              console.log("金融服务");
-              util.pageJump('/pages/life/pages/finance/finance')
-              break;
+          case 9:
+            console.log("金融服务");
+            util.pageJump('/pages/life/pages/finance/finance')
+            break;
         }
         break;
       //教育文体
@@ -857,6 +857,10 @@ Page({
     }
 
   },
+  // 投诉电话
+  goTell() {
+    util.callPhone('12345')
+  },
   //推优榜
   goGoodList() {
     util.pageJump('/pages/publish/pages/pushBest/pushBest')
@@ -900,14 +904,14 @@ Page({
   //跳转通知列表页
   noticeList: function () {
     wx.navigateTo({
-      url: '/pages/publish/pages/newsList/newsList?id=1c3e25d9-0e0b-4eb6-ad4e-a7be6f5c8485'+'&type=1'
-    }) 
+      url: '/pages/publish/pages/newsList/newsList?id=1c3e25d9-0e0b-4eb6-ad4e-a7be6f5c8485' + '&type=1'
+    })
   },
   //跳转通知详情
   noticeDetail: function (e) {
-    let obj=e.currentTarget.dataset.obj
+    let obj = e.currentTarget.dataset.obj
     wx.navigateTo({
-      url: "/pages/publish/pages/newsDetail/newsDetail?info_content="+obj.info_content+"&info_source="+obj.info_source+"&publishdate="+obj.publishdate+"&info_videos="+encodeURIComponent(obj.info_videos)+"&info_detail="+encodeURIComponent(obj.info_detail),
+      url: "/pages/publish/pages/newsDetail/newsDetail?info_content=" + obj.info_content + "&info_source=" + obj.info_source + "&publishdate=" + obj.publishdate + "&info_videos=" + encodeURIComponent(obj.info_videos) + "&info_detail=" + encodeURIComponent(obj.info_detail),
     })
 
   },

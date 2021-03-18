@@ -1,8 +1,9 @@
 /* pages/component/nav/nav.wxss */
 .head {
-position: relative;
+  position: relative;
 }
-.serarch{
+
+.serarch {
   position: absolute;
   top: 15%;
   left: 3%;
@@ -11,7 +12,22 @@ position: relative;
   line-height: 50rpx;
   padding-left: 10rpx;
   border-radius: 50rpx;
-  background-color: rgba(182, 179, 179,0.5);
+  background-color: rgba(182, 179, 179, 0.5);
+}
+
+.tell {
+  position: fixed;
+  z-index: 999999;
+  right: 2%;
+  bottom: 3%;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 40rpx;
+  color: #fff;
+  padding-left: 20rpx;
+  border-radius: 50rpx;
+  background-color: rgb(5, 59, 236);
 }
 
 .video {
