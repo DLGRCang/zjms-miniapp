@@ -1,10 +1,7 @@
 // pages/travel/pages/train/train.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
-const plugin = requirePlugin('WechatSI')
-
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -72,45 +69,6 @@ Page({
       }
     })
   },
-
-  // 转语音  
-  // <button bindtap='start'>开始</button>
-  // <button bindtap='end'>结束</button>
-  start: function (e) {
-    var that = this;
-    var content = "【导语】:3月9日0—24时,31个省(自治区、直辖市)和新疆生产建设兵团报告新增确诊病例5例,均为境外输入病例(上海2例,河南1例,广东1例,陕西1例);无新增死亡...";
-    plugin.textToSpeech({
-      lang: "zh_CN",
-      tts: true,
-      content: content,
-      success: function (res) {
-        console.log(res);
-        console.log("音频地址", res.filename);
-        that.setData({
-          src: res.filename
-        })
-        that.yuyinPlay();
-      }
-    })
-  },
-  //播放语音
-  yuyinPlay: function (e) {
-    if (this.data.src == '') {
-      console.log(暂无语音);
-      return;
-    }
-    //设置音频地址
-    this.innerAudioContext.src = this.data.src
-    //播放音频
-    this.innerAudioContext.play();
-  },
-
-  // 结束语音
-  end: function (e) {
-    //暂停音频
-    this.innerAudioContext.pause();
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -122,15 +80,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    //创建内部 audio 上下文 InnerAudioContext 对象。
-    this.innerAudioContext = wx.createInnerAudioContext();
-    this.innerAudioContext.onError(function (res) {
-      console.log(res);
-      wx.showToast({
-        title: '语音播放失败',
-        icon: 'none',
-      })
-    })
+   
   },
 
   /**

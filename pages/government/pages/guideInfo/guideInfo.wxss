@@ -41,4 +41,17 @@ page{
 		width: 650rpx;
 		font-size: 34rpx;
 	}
+	.redio{
+		position: absolute;
+		top: 15%;
+		left: 88%;
+		width: 80rpx;
+		height: 80rpx;
+		font-size: 45rpx;
+		color: #ffffff;
+		line-height: 80rpx;
+		padding-left: 18rpx;
+		border-radius: 50rpx;
+		background-color: rgb(152, 219, 51);
+	}
 	
