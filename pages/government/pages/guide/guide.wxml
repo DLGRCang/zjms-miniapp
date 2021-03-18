@@ -6,7 +6,6 @@
 		<tab class="padding-lr-lg" tvColor="color" tabName="{{tabName}}" bindmyevent="selectTab"></tab>
 		<image src="{{imgUrl}}/image/government_guide{{index}}.jpg" data-src="" bindtap="previewImage"></image>
 	</view>
-
 </view>  
 
 
