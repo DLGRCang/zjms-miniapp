@@ -539,21 +539,24 @@ Page({
     }
   },
 
-
   //去详情页
   goDetail: function (e) {
+    let that = this;
     let id = e.currentTarget.dataset.id;
     let tab = e.currentTarget.dataset.tab;
+    let tit = e.currentTarget.dataset.tit;
     switch (id) {
       //伊旗发布
       case 0:
         switch (tab) {
           case 0:
             //广播
+            that.sum(tit)
             util.pageJump('/pages/publish/pages/radio/radio')
             break;
           case 1:
             //电视
+            that.sum(tit)
             util.pageJump('/pages/publish/pages/tv/tv')
             break;
           // case 2:
@@ -566,12 +569,15 @@ Page({
       case 1:
         switch (tab) {
           case 0:
+            that.sum(tit)
             util.pageJump('/pages/charm/pages/villageProduct/villageProduct')
             break;
           case 1:
+            that.sum(tit)
             util.pageJump('/pages/charm/pages/historyCulture/historyCulture')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump('/pages/charm/pages/investment/investment')
             break;
         }
@@ -580,30 +586,39 @@ Page({
       case 2:
         switch (tab) {
           case 0:
+            that.sum(tit)
             util.pageJump('/pages/travel/pages/scenicSpot/scenicSpot')
             break;
           case 1:
+            that.sum(tit)
             util.pageJump('/pages/travel/pages/weather/weather')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump("/pages/travel/pages/train/train");
             break;
           case 3:
+            that.sum(tit)
             util.pageJump("/pages/travel/pages/car/car");
             break;
           case 4:
+            that.sum(tit)
             util.pageJump("/pages/travel/pages/bus/bus");
             break;
           case 5:
+            that.sum(tit)
             util.pageJump("/pages/travel/pages/hotel/hotel");
             break;
           case 6:
+            that.sum(tit)
             util.pageJump('/pages/travel/pages/toilet/toilet')
             break;
           case 7:
+            that.sum(tit)
             util.pageJump('/pages/travel/pages/electric/electric')
             break;
           case 8:
+            that.sum(tit)
             util.pageJump('/pages/travel/pages/ruralTourism/ruralTourism')
             break;
         }
@@ -612,21 +627,27 @@ Page({
       case 3:
         switch (tab) {
           case 0:
+            that.sum(tit)
             util.pageJump('/pages/food/pages/specialFood/specialFood')
             break;
           case 1:
+            that.sum(tit)
             util.pageJump('/pages/food/pages/economicsFood/economicsFood')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump('/pages/food/pages/topFood/topFood')
             break;
           case 3:
+            that.sum(tit)
             util.pageJump('/pages/food/pages/nationFood/nationFood')
             break;
           case 4:
+            that.sum(tit)
             util.pageJump('/pages/food/pages/cultureFood/cultureFood')
             break;
           case 5:
+            that.sum(tit)
             util.pageJump('/pages/food/pages/animalFood/animalFood')
             break;
         }
@@ -636,42 +657,52 @@ Page({
         switch (tab) {
           case 0:
             console.log("商场");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/market/market')
             break;
           case 1:
             console.log("农贸");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/farmerMarket/farmerMarket')
             break;
           case 2:
             console.log("户外");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/outdoorStalls/outdoorStalls')
             break;
           case 3:
             console.log("二手");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/secondHand/secondHand')
             break;
           case 4:
             console.log("农资");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/farmerRetail/farmerRetail')
             break;
           case 5:
             console.log("会展");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/exhibition/exhibition')
             break;
           case 6:
             console.log("消费");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/protectRight/protectRight')
             break;
           case 7:
             console.log("消费促进");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/promotion/promotion')
             break;
           case 8:
             console.log("知识产权");
+            that.sum(tit)
             util.pageJump('/pages/economic/pages/intellectualProperty/intellectualProperty')
             break;
           case 9:
             console.log("金融服务");
+            that.sum(tit)
             util.pageJump('/pages/life/pages/finance/finance')
             break;
         }
@@ -680,33 +711,43 @@ Page({
       case 5:
         switch (tab) {
           case 0:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/primarySchool/primarySchool')
             break;
           case 1:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/midSchool/midSchool')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/studentHelp/studentHelp')
             break;
           case 3:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/transfer/transfer')
             break;
           case 4:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/library/library')
             break;
           case 5:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/bookShop/bookShop')
             break;
           case 6:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/mbSchool/mbSchool')
             break;
           case 7:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/homeEducate/homeEducate')
             break;
           case 8:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/agricultural/agricultural')
             break;
           case 9:
+            that.sum(tit)
             util.pageJump('/pages/education/pages/fitness/fitness')
             break;
         }
@@ -716,33 +757,41 @@ Page({
         switch (tab) {
           case 0:
             //医院药店
+            that.sum(tit)
             util.pageJump('/pages/medical/pages/hospital/hospital')
             break;
           case 1:
             //健康证
+            that.sum(tit)
             util.pageJump('/pages/appointment/pages/healthy/healthy?type=1&title=健康证申请')
             // util.pageJump('/pages/medical/pages/healthCard/healthCard')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump('/pages/medical/pages/vaccine/vaccine')
             break;
           case 3:
             //体检
+            that.sum(tit)
             util.pageJump('/pages/medical/pages/healthCheck/healthCheck')
             break;
           case 4:
             //核酸检测
+            that.sum(tit)
             util.pageJump('/pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck')
             break;
           // case 5:
           //   console.log("老年证");
+          //   that.sum(tit)
           //   util.pageJump('/pages/medical/pages/agednessCar/agednessCar')
           //   break;
           case 5:
+            that.sum(tit)
             util.pageJump('/pages/medical/pages/oldAge/oldAge')
             break;
           case 6:
             //福利院
+            that.sum(tit)
             util.pageJump('/pages/medical/pages/welfareHouse/welfareHouse')
             break;
 
@@ -752,30 +801,39 @@ Page({
       case 7:
         switch (tab) {
           case 0:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/guide/guide')
             break;
           case 1:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/flagLeader/flagLeader')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/eachFlagTown/eachFlagTown')
             break;
           case 3:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/questionnaire/questionnaire')
             break;
           case 4:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/instaShot/instaShot')
             break;
           case 5:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/volunteerService/volunteerService')
             break;
           case 6:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/cityAction/cityAction')
             break;
           case 7:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/land/land')
             break;
           case 8:
+            that.sum(tit)
             util.pageJump('/pages/government/pages/thingsGuide/thingsGuide')
             break;
 
@@ -785,21 +843,27 @@ Page({
       case 8:
         switch (tab) {
           case 0:
+            that.sum(tit)
             util.pageJump('/pages/help/pages/disabled/disabled')
             break;
           case 1:
+            that.sum(tit)
             util.pageJump('/pages/help/pages/insured/insured')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump('/pages/help/pages/redcross/redcross')
             break;
           case 3:
+            that.sum(tit)
             util.pageJump('/pages/help/pages/dishonest/dishonest')
             break;
           case 4:
+            that.sum(tit)
             util.pageJump('/pages/help/pages/law/law')
             break;
           case 5:
+            that.sum(tit)
             util.pageJump('/pages/help/pages/woman/woman')
             break;
         }
@@ -808,30 +872,39 @@ Page({
       case 9:
         switch (tab) {
           case 0:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/housekeeping/housekeeping')
             break;
           case 1:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/property/property')
             break;
           case 2:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/repair/repair')
             break;
           case 3:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/job/job')
             break;
           case 4:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/hairdressing/hairdressing')
             break;
           case 5:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/moveCar/moveCar')
             break;
           case 6:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/car/car')
             break;
           case 7:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/productionTransfer/productionTransfer')
             break;
           case 8:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/seafood/seafood')
             break;
           // case 9:
@@ -844,12 +917,14 @@ Page({
           //   util.pageJump('/pages/life/pages/finance/finance')
           //   break;
           case 12:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/film/film')
             break;
           // case 13:
           //   console.log("14");
           //   break;
           case 14:
+            that.sum(tit)
             util.pageJump('/pages/life/pages/publicRentalHousing/publicRentalHousing')
             break;
         }
@@ -914,6 +989,13 @@ Page({
       url: "/pages/publish/pages/newsDetail/newsDetail?info_content=" + obj.info_content + "&info_source=" + obj.info_source + "&publishdate=" + obj.publishdate + "&info_videos=" + encodeURIComponent(obj.info_videos) + "&info_detail=" + encodeURIComponent(obj.info_detail),
     })
 
+  },
+  // 统计数据
+  sum(tit){
+    let obj = {businesName:tit}
+    util.requestApi('businesstatistic/savebusinesstatistic', 'POST', obj).then(res => {
+     
+    });
   },
 
   /**

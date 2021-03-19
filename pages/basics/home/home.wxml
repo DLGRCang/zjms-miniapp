@@ -89,7 +89,7 @@
 			<view class="icon-wrap">
 				<!-- 图文 -->
 				<block wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
-					<view class="icon-item" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}">
+					<view class="icon-item" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}" data-tit="{{items.tit}}">
 						<view class="item-img">
 							<image src="{{imgUrl}}{{items.pic}}" style='width:100rpx;height:100rpx;'>
 							</image>
