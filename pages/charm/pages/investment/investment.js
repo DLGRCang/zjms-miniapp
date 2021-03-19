@@ -39,7 +39,12 @@ Page({
     }
     this.getDataList();
   },
-
+  //测试点击量
+  getDataTest() {
+    util.requestApi('businesstatistic/businesStatisticTop', 'GET', {}).then(res => {
+      console.log(res)
+    });
+  },
   getDataList: function () {
     //加载一村一品合作社列表
     data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
@@ -53,6 +58,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // this.getDataTest();
     this.getDataList();
   },
 
