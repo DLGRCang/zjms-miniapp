@@ -60,9 +60,7 @@
         </view>
         <view class="flex justify-between padding-top-sm">
           <view>始发城市:</view>
-          <view class="text-grey" wx:if="{{item.from_city!=''||item.from_city!=null}}">{{item.from_city}}
-          </view>
-          <view class="text-grey" else>鄂尔多斯</view>
+          <view class="text-grey">{{item.from_city}}</view>
         </view>
         <view class="flex justify-between padding-top-sm">
           <view>到达城市:</view>

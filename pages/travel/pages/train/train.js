@@ -50,7 +50,7 @@ Page({
   getArriveAreaList() {
     let that = this;
     util.requestApi('flight/listtocity', 'GET', {}).then(res => {
-      console.log('到达城市：'+res.data)
+      console.log('到达城市：' + res.data)
       that.setData({
         arriveAreaList: res.data
       })
@@ -60,13 +60,11 @@ Page({
   getInfo() {
     let that = this;
     util.requestApi('flight/listflightbytocity/' + this.data.arrArea, 'GET', {}).then(res => {
-      console.log('结果数据：'+res.data)
-      console.log(res)
-      if (res.data.data != null ) {
-        that.setData({
-          airInfo: res.data
-        })
-      }
+      console.log('结果数据：' + res.data)
+      console.log(res.data)
+      that.setData({
+        airInfo: res.data
+      })
     })
   },
   /**
@@ -80,7 +78,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**

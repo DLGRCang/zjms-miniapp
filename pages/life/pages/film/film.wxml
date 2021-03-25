@@ -1,4 +1,4 @@
-<!--pages/life/pages/film/film.wxml-->
+ <!--pages/life/pages/film/film.wxml-->
 <text>pages/life/pages/film/film.wxml</text>
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
 	<view slot="content">电影剧院</view>
