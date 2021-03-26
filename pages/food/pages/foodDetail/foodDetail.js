@@ -11,7 +11,7 @@ Page({
     foodInfo: null,
   },
   getFoodInfo(){
-    let url = 'http://192.168.1.106:8084/shop/app/release/api/shopmanagement/getshopmanagement/'+this.data.id;
+    let url = 'http://192.168.1.111:8084/shop/app/release/api/commoditymanagement/listpagecommoditymanagement?storeId='+this.data.id;
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
       this.setData({

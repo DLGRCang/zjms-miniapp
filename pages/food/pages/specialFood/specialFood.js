@@ -9,11 +9,23 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
+    xcFoodList:null,
     specialFoodList: null,
   },
 
+  xcFoodList() {
+    let baseUrl = 'https://yiqi.sucstep.com/'
+    let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '小吃快餐';
+    util.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res.data.rows)
+      this.setData({
+        xcFoodList: res.data.rows
+      })
+    });
+  },
   specialFoodList() {
-    let url = 'http://192.168.1.106:8084/shop/app/release/api/shopmanagement/listpageshopmanagement';
+    let baseUrl = 'https://yiqi.sucstep.com/'
+    let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '特色菜';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({
@@ -21,16 +33,17 @@ Page({
       })
     });
   },
-  goDetail(e){
-    console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
-  },
+  // goDetail(e){
+  //   console.log(e.currentTarget.dataset.id)
+  //   util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
+  // },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.specialFoodList()
+    this.xcFoodList()
   },
 
   /**

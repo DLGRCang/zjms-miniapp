@@ -11,5 +11,17 @@
   </view>
 </view> -->
 <view class="margin-lr-lg"  wx:for="{{5}}" wx:key="index">
-  <item-image-text imgUrl="" itemTitle="店铺名称" itemInfo="万达商圈 距您4.3公里" itemTabs="{{tabs}}" isImg="true" isStar="true" starNum="5"></item-image-text>
+  <block wx:for="{{foodList}}" wx:key="item">
+    <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.shopManagementId}}">
+      <view>
+        <image class="radius margin-right" src="{{baseImgUrl}}{{item.storeImage}}"
+          style="width:160rpx;height:160rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+      </view>
+      <view class="">
+        <view>{{item.shopName}}</view>
+        <view class="padding-tb-sm text-grey text-sm">{{item.shopAddress}}</view>
+        <view><text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="index"></text></view>
+      </view>
+    </view>
+  </block>
 </view>

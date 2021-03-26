@@ -30,3 +30,10 @@ page{
  border-top-left-radius:8rpx;
  border-top-right-radius:8rpx;
 }
+.textInfo {
+  /* display: inline-block; */
+  white-space: nowrap;
+  width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -2,6 +2,7 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
   data: {
+    foodList:null,
     searchType: [{
       title: '全部美食',
       content: ['全部美食', '火锅', '烧烤', '蛋糕']
@@ -20,9 +21,20 @@ Page({
 			searchType: picker
 		})
 	},
-  onLoad: function (options) {
 
-  },
+ foodList() {
+  let baseUrl = 'https://yiqi.sucstep.com/'
+  let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '西餐';
+  util.httpRequest(url, 'GET', {}).then(res => {
+    console.log(res.data.rows)
+    this.setData({
+      foodList: res.data.rows
+    })
+  });
+},
+onLoad: function (options) {
+  this.foodList()
+},
   onReady: function () {
 
   },

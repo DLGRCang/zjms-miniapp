@@ -344,6 +344,7 @@ module.exports = {
   httpRequest: httpRequest,
   uploadFile: uploadFile,
   uploadFile1: uploadFile1,
+  base:base,
   baseUrl: baseUrl,
   checkIdCard: checkIdCard,
   checkPhone: checkPhone,

@@ -42,8 +42,10 @@ Page({
   },
   //到达地
   arriveArea(e) {
+    let that = this
     this.setData({
-      index2: e.detail.value
+      index2: e.detail.value,
+      arrArea:that.data.arriveAreaList[e.detail.value]
     })
   },
   //飞机到达城市

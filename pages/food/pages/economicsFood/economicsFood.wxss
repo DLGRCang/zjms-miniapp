@@ -15,3 +15,10 @@
   margin-right: 4rpx;
   font-size: 18rpx;
 }
+.textInfo {
+  /* display: inline-block; */
+  white-space: nowrap;
+  width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
