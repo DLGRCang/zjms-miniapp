@@ -2,7 +2,6 @@
 const app = getApp()
 const util = require('../../../utils/util.js')
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -12,9 +11,7 @@ Page({
   
   //微信登录
   goLogin: function (e) {
-
     util.pageJump('../face/face')
-
   },
 
   
@@ -26,7 +23,7 @@ Page({
     })
   },
   onShow(){
-    console.log("-------------"+ wx.getStorageSync("isLogin"))
+    //更新登录按钮状态
     this.setData({
       isLogin: wx.getStorageSync("isLogin")
     })
@@ -68,14 +65,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
 

@@ -9,6 +9,7 @@ Page({
 		type: 1,
 		name: '',
 		idCard: '',
+		access_token: '',
 
 	},
 	putData(e) {
@@ -22,7 +23,7 @@ Page({
 		let key = e.currentTarget.dataset.key
 		console.log(e.detail.value)
 		this.setData({
-			[key]:Number(e.detail.value)
+			[key]: Number(e.detail.value)
 		})
 	},
 	faceid() {
@@ -39,15 +40,20 @@ Page({
 			util.showToast('身份证错误')
 			return
 		}
-	
+
 		wx.startFacialRecognitionVerify({
+
 			name: this.data.name,
 			idCardNumber: this.data.idCard,
 			checkAliveType: this.data.type,
-			success() {
+			success(res) {
+				that.setData({
+					access_token: res.verifyResult
+				})
+				console.log(res)
+				console.log(res.verifyResult)
 				console.log('识别成功')
 				that.goLogin();
-
 			},
 			fail(res) {
 				util.showToast('登录失败，请重试')
@@ -61,7 +67,6 @@ Page({
 	},
 	//微信登录
 	goLogin: function (e) {
-
 		let that = this;
 		wx.login({
 			success(res) {
@@ -77,6 +82,7 @@ Page({
 			}
 		})
 	},
+
 	//服务器登录
 	putUserData(code, iv, encryptedData) {
 		let that = this;
@@ -87,15 +93,17 @@ Page({
 			type: '1',
 		}
 		util.httpRequest('https://yiqi.sucstep.com/app/sign/checkCoderelease', 'post', data).then(res => {
-			// util.httpRequest('http://192.168.1.114:8002/app/sign/checkCoderelease', 'post', data).then(res => {
 			console.log(res)
+			
+
 			if (res.data.code == 200) {
 				util.showToast("登录成功")
-				console.log("提交成功")
 				wx.setStorageSync("isLogin", true);
 				wx.setStorageSync("token", res.data.result.data.token);
 				wx.setStorageSync("userId", res.data.result.data.userInfo.id);
 				wx.setStorageSync("isLogin", true);
+				wx.setStorageSync("name", that.data.name); //姓名	
+				wx.setStorageSync("idCard", that.data.idCard); //身份证号
 				that.setData({
 					isLogin: wx.getStorageSync("isLogin")
 				})

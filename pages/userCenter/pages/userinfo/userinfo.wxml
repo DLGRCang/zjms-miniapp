@@ -5,7 +5,7 @@
   <view class="text-bold text-xxl margin-tb-lg">基础信息</view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">姓名</view>
-    <view class="flex-twice">张三</view>
+    <view class="flex-twice">{{name}}</view>
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">性别</view>
@@ -21,7 +21,7 @@
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">身份证号</view>
-    <view class="flex-twice">152365499712441582</view>
+    <view class="flex-twice">{{idCard}}</view>
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">绑定手机号</view>

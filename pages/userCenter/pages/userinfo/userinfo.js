@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      name:wx.getStorageSync('name'),//姓名
+      idCard:wx.getStorageSync('idCard'),//身份证号
   },
 
   /**
