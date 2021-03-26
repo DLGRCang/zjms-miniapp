@@ -1,0 +1,19 @@
+/* pages/plugin/face/face.wxss */
+page{
+	height:100%;
+}
+.bgColor {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.faceIcon::after {
+	content: "\e6b7";
+	font-family: cuIcon;
+	font-size: 170rpx;
+	color: gray;
+}
+
+radio {
+	transform: scale(0.7);
+}

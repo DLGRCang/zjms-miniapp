@@ -3804,7 +3804,9 @@ scroll-view.cu-steps .cu-item {
 .text-xsl {
 	font-size: 120rpx;
 }
-
+.text-bold{
+	font: bold;
+}
 .text-Abc {
 	text-transform: Capitalize;
 }

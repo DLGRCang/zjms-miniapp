@@ -1,0 +1,22 @@
+<!--pages/plugin/face/face.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-black text-xl text-black text-bold">人脸识别登录</view>
+</cu-custom>
+<view style="height:90%" class="flex flex-direction padding-xl align-center">
+  <text class="faceIcon margin-xl"></text>
+  <view class="text-df">请进行人脸识别登录验证</view>
+
+  <view class="flex flex-direction margin-top margin-bottom-xl" style="width:100%">
+    <text class="text-lg">姓名：</text>
+    <input bindinput="putData" class="margin-top text-xl text-bold"   data-key="name"/>
+    <view class="bg-gray" style="width:100%;height:1px"></view>
+    <text class="text-lg margin-top-xl">身份证号：</text>
+    <input bindinput="putData" class="margin-top text-xl text-bold"  data-key="idCard"/>
+    <view class="bg-gray margin-bottom-xl" style="width:100%;height:1px"></view>
+  </view>
+  <radio-group bindchange="radioChange" style="width:100%" class="flex align-center"  data-key="type">
+    <radio checked="true" value="1"></radio>反光识别
+    <radio style="margin-left:auto" value="0"></radio> 读数识别
+  </radio-group>
+  <button bindtap="faceid" class="bg-green text-lg"  style="margin-top:100rpx;width:100%" >开始人脸识别验证</button>
+</view>
