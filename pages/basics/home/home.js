@@ -203,7 +203,8 @@ Page({
           tit: "知识产权",
           pic: "/image/30.png",
           tab: 8
-        }, {
+        }, 
+        {
           tit: "金融服务",
           pic: "/image/74.png",
           tab: 9

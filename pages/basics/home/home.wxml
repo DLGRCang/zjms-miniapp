@@ -72,7 +72,7 @@
 				<video class="video" id='myvideo' controls
 					src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"></video>
 				<!-- 广播 -->
-				<view class="text-lg margin-tb-sm">听广播</view>
+				<view class="text-lg margin-tb-sm">伊旗之声</view>
 				<view class="radio flex">
 					<view>
 						<image src="{{imgUrl}}/image/fm.png" style="height:120rpx;width:120rpx;"></image>
