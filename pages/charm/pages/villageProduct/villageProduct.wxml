@@ -8,7 +8,7 @@
 <block wx:if="{{tabId==0}}">
 	<text class="flex village-icon margin-top">村情乡貌</text>
 	<view class="grid padding">
-		<view class="flex justify-center align-center margin-bottom" style=" width: 335rpx;height: 200rpx;"
+		<view bindtap="goDetail" data-obj="{{item}}" class="flex justify-center align-center margin-bottom" style=" width: 335rpx;height: 200rpx;"
 			wx:for="{{artelList1}}" wx:key>
 			<view class="flex align-end "
 				style="border-radius:10rpx; width: 100%;height: 100%; background: url({{baseImgUrl}}{{item.info_photos}}) no-repeat left top;">
