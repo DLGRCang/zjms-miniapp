@@ -45,27 +45,27 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">医疗报销金额（元）：</view>
-		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="amountOfMedicalReimbursement"></input>
+		<input type="digit" placeholder="请输入金额" bindinput="putData" data-key="amountOfMedicalReimbursement"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">救助金额（元）：</view>
-		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="amountOfSalvage"></input>
+		<input type="digit" placeholder="请输入金额" bindinput="putData" data-key="amountOfSalvage"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">保险公司报销（元）：</view>
-		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="reimbursementInsurance"></input>
+		<input type="digit" placeholder="请输入金额" bindinput="putData" data-key="reimbursementInsurance"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">医保报销个人自付（元）：</view>
-		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="reimbursementlExpenses"></input>
+		<input type="digit" placeholder="请输入金额" bindinput="putData" data-key="reimbursementlExpenses"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">核减后自付（元）：</view>
-		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="sinceThePay"></input>
+		<input type="digit" placeholder="请输入金额" bindinput="putData" data-key="sinceThePay"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">可补费用总额（元）：</view>
-		<input type="number" placeholder="请输入金额" bindinput="putData" data-key="totalReimbursableExpenses"></input>
+		<input type="digit" placeholder="请输入金额" bindinput="putData" data-key="totalReimbursableExpenses"></input>
 	</view>
 	<view class="padding flex flex-direction">
 		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">提交</button>

@@ -48,7 +48,11 @@
 		<view class="title">监护人工作单位：</view>
 		<input  placeholder="请输入监护人工作单位" bindinput="putData" data-key="guardianCompany"></input>
 	</view>
-
+	<view class="cu-form-group">
+		<view class="title">学生或监护人户口簿：</view>
+		<input class="text-cut" disabled="false" placeholder="选择类型并上传" value="{{photoState}}"></input>
+		<text bindtap="uploadFilePhoto" class="file margin-left"></text>
+	</view>
 	<view class="cu-form-group">
 		<view class="title">监护人居住证明：</view>
 		<input class="text-cut" disabled="false" placeholder="选择类型并上传" value="{{fileState}}"></input>
