@@ -5,4 +5,4 @@
 <image mode="widthFix" src="{{imgUrl}}/image/shangchangchaoshi.png" style="width:100%"></image>
 <tab bindmyevent="selectTab" tvColor="text-green" tabName="{{tabName}}"></tab>
 <item-image-text wx:for="{{dataList}}" obj="{{item}}" itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isTab="true"
-	itemTabs="{{item.infoTypeLabel}}"></item-image-text>
+	itemTabs="{{item.infoTypeLabel}}" imgUrl="{{item.info_photos}}" isImg="{{true}}"></item-image-text>

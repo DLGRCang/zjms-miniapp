@@ -9,14 +9,11 @@ Page({
 	data: {
 		schools: [],
 		fileState: '待上传', //居住证明上传状态
-		filePath: '', //文件上传成功返回数据
+		accessory: '', //监护人居住证明
 		nationList: app.globalData.nationList,
 		gradeList: ['一年级', '二年级', '三年级', '四年级', '五年级', '六年级', '初一', '初二', '初三', '高一', '高二', '高三'],
-		accessory1: '1', //监护人居住证明（①购房合同及缴款收据原件、复印件；
-		accessory2: '1', //房产证原件、复印件；
-		accessory3: '1', //旗外户籍租房提供居住证及近三个月水、电、燃气其中一项收据即可；
-		accessory4: '1', //旗内户籍租房提供社区居住证明及近三个月水、电、燃气其中一项收据即可
-		photo: '1', //学生、家长或其他监护人居民户口簿照片附件 ,
+		photoState: '待上传', //学生、家长或其他监护人居民户口簿照片附件上传状态 ,
+		photo: '', //学生、家长或其他监护人居民户口簿照片附件 ,
 		currentAddress: '', //现家庭住址
 		domicilePlace: '', //户籍所在地
 		grade: '', //年级
@@ -82,10 +79,7 @@ Page({
 	//提交数据
 	commitData() {
 		let data = {
-			accessory1: this.data.accessory1,
-			accessory2: this.data.accessory2,
-			accessory3: this.data.accessory3,
-			accessory4: this.data.accessory4,
+			accessory: this.data.accessory,
 			photo: this.data.photo,
 			currentAddress: this.data.currentAddress,
 			domicilePlace: this.data.domicilePlace,
@@ -118,7 +112,34 @@ Page({
 			}
 		});
 	},
-	//选择文件并上传
+	//选择文件并上传户口本
+	uploadFilePhoto: function () {
+		let that = this
+		wx.chooseImage({
+			count: 1,
+			sizeType: ['original', 'compressed'],
+			sourceType: ['album'],
+			success(res) {
+				const tempFilePaths = res.tempFilePaths
+				util.uploadFile(tempFilePaths[0], 'image').then(res => {
+					console.log(res)
+					if (res.statusCode == 200) {
+						let obj = JSON.parse(res.data)
+
+						that.setData({
+							photoState: '上传成功',
+							photo: obj.data
+						})
+					} else {
+						that.setData({
+							photoState: '上传失败',
+						})
+					}
+				});
+			},
+		})
+	},
+	//选择文件并上传居住证明
 	uploadFile: function () {
 		let that = this
 		wx.chooseImage({
@@ -134,7 +155,7 @@ Page({
 
 						that.setData({
 							fileState: '上传成功',
-							filePath: obj.data
+							accessory: obj.data
 						})
 					} else {
 						that.setData({
