@@ -13,6 +13,7 @@ Page({
     tab:'',
     familyDetail:{},
     sbDetail:{},
+    newDetail:{},
   },
 
   /**
@@ -25,6 +26,7 @@ Page({
     })
     this.getFamilyDetailInfo()
     this.getWomanpacesetterDetailInfo()
+    this.getNewDetailInfo()
   },
   // 获取最美家庭详情
   getFamilyDetailInfo(){
@@ -48,6 +50,23 @@ Page({
         WxParse.wxParse('dataHtmls', 'html', res.data.mainStory, this, 5)
         this.setData({
           sbDetail:res.data
+        })
+			} else {
+        util.showToast("数据加载失败");
+			}
+		});
+  },
+   // 获取新时代好少年详情
+   getNewDetailInfo(){
+    util.requestApi('goodboy/getgoodboy/'+this.data.id, 'GET', {}).then(res => {
+      console.log(1111111111111111)
+      console.log(res.data)
+      console.log(res)   
+      console.log(1111111111111)
+			if (res.statusCode == 200) {
+        WxParse.wxParse('dataHtml', 'html', res.data.mainStory, this, 5)
+        this.setData({
+          newDetail:res.data
         })
 			} else {
         util.showToast("数据加载失败");

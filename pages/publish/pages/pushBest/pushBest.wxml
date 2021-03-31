@@ -18,7 +18,7 @@
 	<!-- 新时代好少年 -->
 	<view wx:if="{{TabCur==1}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{getGoodboyrList}}"
 		wx:key style="height: 420rpx;">
-		<view class="bg-grey margin-xs w_h" data-id="{{item.womanPaceSetterId}}" data-tab="新时代好少年">
+		<view class="bg-grey margin-xs w_h" bindtap="goDetail" data-id="{{item.goodBoyId}}" data-tab="新时代好少年">
 			<image mode="aspectFill" class="w_h" src="{{baseImgUrl}}{{item.studentsPhotos}}"></image>
 		</view>
 		<text class="margin-top-sm">{{item.studentName}}</text>
