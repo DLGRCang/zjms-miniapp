@@ -5,7 +5,79 @@
 <!-- <button class="button" bindtap="uploadFile">转学申请</button> -->
 <button class="button" bindtap="applytransferSchool">转学申请</button>
 <view class="margin-lr-lg padding-tb-lg">
-  <dot-title title="申请规则" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
-    <item-image-text wx:for="{{dataList}}" isImg="{{false}}" obj="{{item}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
-    <!-- <button class="bgColor">申请历史</button> -->
+  <dot-title title="申请规则" color="color"></dot-title>
+  <view class="flex">
+    <view class="cu-avatar sm round bg-blue">1</view>
+    <view class="margin-left-sm text-bold text-xl">向教育局教育股提出转学申请</view>
+  </view>
+  <view class="margin-top-sm" style="margin-left:70rpx;">
+    学生监护人在规定时间内持相关材料向教育局教育股提出转学申请
+  </view>
+  <view class="margin-top-sm text-bold">
+    一、受理转学时间
+  </view>
+  <view class="margin-top-sm">
+    一般为每学年二月份、八月份（学校开学前俩周办理）
+  </view>
+  <view class="margin-top-sm text-bold">
+    二、需要提供材料
+  </view>
+  <view class="margin-top-sm">
+    （1）学生、家长或其监护人居民户口簿原件、复印件；
+  </view>
+  <view class="margin-top-sm">
+    （2）监护人居住证明
+  </view>
+  <view class="margin-left-lg padding-left-sm">
+    <view>
+      1）购房合同及缴款收据原件、复印件；
+    </view>
+    <view>
+      2）房产证、复印件；
+    </view>
+    <view>
+      3）旗外户籍租房提供居住证及近三个月水、电、燃气其中一项收据即可；
+    </view>
+    <view>
+      4）旗内户籍租房提供社区居住证明及近三个月水、电、燃气其中一项收据即可。
+    </view>
+  </view>
+  <view class="flex margin-top-sm">
+    <view class="cu-avatar sm round bg-blue">2</view>
+    <view class="margin-left-sm text-bold text-xl">审核材料</view>
+  </view>
+  <view class="margin-top-sm" style="margin-left:70rpx;">
+    教育局审核材料后予以登记。
+  </view>
+  <view class="flex margin-top-sm">
+    <view class="cu-avatar sm round bg-blue">3</view>
+    <view class="margin-left-sm text-bold text-xl">统一分配</view>
+  </view>
+  <view class="margin-top-sm" style="margin-left:70rpx;">
+    开学前，教育局统一分配转学生，打印转学派遣单。
+  </view>
+  <view class="flex margin-top-sm">
+    <view class="cu-avatar sm round bg-blue">4</view>
+    <view class="margin-left-sm text-bold text-xl">就读报道</view>
+  </view>
+  <view class="margin-top-sm" style="margin-left:70rpx;">
+    学生监护人持派遣单到所分配就读学校报道。
+  </view>
+  <view class="flex margin-top-sm">
+    <view class="cu-avatar sm round bg-blue">5</view>
+    <view class="margin-left-sm text-bold text-xl">电子档案调档</view>
+  </view>
+  <view class="margin-top-sm" style="margin-left:70rpx;">
+    学校和教育局再在全国学籍系统中为转学生办理电子档案调档工作，学校为转学生接续管理学籍档案。
+  </view>
+  <view class="text-bold text-xl" style="margin-top:100rpx;">
+    备注：
+  </view>
+  <view class="margin-top-sm">
+    <view>1.学生转学只能在同一年级办理，不得跨年级转学。</view>
+    <view style="margin-top:10rpx;">2.个学段起始年级第一学期不得转学。</view>
+    <view style="margin-top:10rpx;">3.为防止中、高考一命，影响全市正常的考试招生秩序。初三年级上学期只允许市内转学；初三年级下学期、高三年级俩学期除转出市外的情况外，均不得转学。</view>
+    <view style="margin-top:10rpx;">4.高中学生转学，需到市教育局基教科办理相关手续。</view>
+  </view>
 </view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
