@@ -12,11 +12,11 @@ Page({
 	},
 	//消费者维权
 	protectRightConsumer(){
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+		util.pageJumpTo('../protectRightConsumer/protectRightConsumer?id=2b729e70-7c3f-4109-9416-944d5f0cb3af')
 	},
 	//经营者维权
 	protectRightOperator(){
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer')
+		util.pageJumpTo('../protectRightConsumer/protectRightConsumer?id=df05d2f6-ec02-47af-969d-fdec1dfb6a32')
 	},
 
 	/**

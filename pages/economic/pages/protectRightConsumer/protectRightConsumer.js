@@ -3,7 +3,7 @@ const util = require('../../../../utils/util.js')
 const app = getApp()
 let QQMapWX = require('../../../../libs/qqmap/qqmap-wx-jssdk.min');
 let qqmapsdk = new QQMapWX({
-  key: 'O5QBZ-JLYL6-3MTSA-E3BN3-YAWD7-A3FXI'
+	key: 'O5QBZ-JLYL6-3MTSA-E3BN3-YAWD7-A3FXI'
 });
 Page({
 
@@ -11,7 +11,6 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		location: '', //当前位置
 		currentDate: util.formatDate(new Date), //当前日期
 		imgUrl: '', //附件地址
 		files: '',
@@ -20,46 +19,67 @@ Page({
 		title: '', //投诉标题
 		details: '', //投诉内容
 		address: '', //投诉地点
+		application_id: '', //
 
 	},
 	getAddress() {
-    var that = this;
-    //获取当前位置
-    wx.getLocation({
+		var that = this;
+		//获取当前位置
+		wx.getLocation({
 			type: 'wgs84',
-			
-      success: function (res) {
-        var lat = res.latitude;
-        var lon = res.longitude;
-        //根据坐标获取当前位置名称，腾讯地图逆地址解析
-        qqmapsdk.reverseGeocoder({
-          location: { latitude: lat, longitude: lon },
-          success: function (res) {
+
+			success: function (res) {
+				var lat = res.latitude;
+				var lon = res.longitude;
+				//根据坐标获取当前位置名称，腾讯地图逆地址解析
+				qqmapsdk.reverseGeocoder({
+					location: {
+						latitude: lat,
+						longitude: lon
+					},
+					success: function (res) {
 						var address = res.result.address;
 						console.log(address)
-            that.setData({
-							location:address,
-              latitude: lat,
-              longitude: lon,
-            })
+						that.setData({
+							address: address,
+							latitude: lat,
+							longitude: lon,
+						})
 					}
-					
-        });
+
+				});
 			},
 		});
-	
-  },
+
+	},
 	//提交数据
 	commitData() {
-		let data = {
-			userId: this.data.userId,
-			beComplainted: this.data.beComplainted,
-			title: this.data.title,
-			details: this.data.details,
-			complaintTime: this.data.currentDate,
-			address: this.data.address,
-			files: this.data.files,
+		let data = {}
+
+		if (this.data.application_id == "2b729e70-7c3f-4109-9416-944d5f0cb3af") {
+			 data = {
+				user_id: this.data.userId,
+				be_complainted: this.data.beComplainted,
+				title: this.data.title,
+				details: this.data.details,
+				complaint_time: this.data.currentDate,
+				address: this.data.address,
+				files: this.data.files,
+				application_id: this.data.application_id,
+			}
+		} else {
+			 data = {
+				user_id: this.data.userId,
+				// be_complainted: this.data.beComplainted,
+				title: this.data.title,
+				// details: this.data.details,
+				complaint_time: this.data.currentDate,
+				address: this.data.address,
+				files: this.data.files,
+				application_id: this.data.application_id,
+			}
 		}
+
 		console.log(data)
 		util.requestApi('applicationFormTable/saveApplicationFormTable', 'POST', data).then(res => {
 			console.log(res)
@@ -142,6 +162,9 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.getAddress()
+		this.setData({
+			application_id: options.id
+		})
 	},
 
 	/**

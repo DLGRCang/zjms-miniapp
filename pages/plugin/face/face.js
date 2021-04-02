@@ -28,42 +28,43 @@ Page({
 	},
 	faceid() {
 		let that = this
-		if (this.data.name == '') {
-			util.showToast('姓名不能为空')
-			return
-		}
-		if (this.data.idCard == '') {
-			util.showToast('身份证号为空')
-			return
-		}
-		if (!util.checkIdCard(this.data.idCard)) {
-			util.showToast('身份证错误')
-			return
-		}
+		this.goLogin()
+		// if (this.data.name == '') {
+		// 	util.showToast('姓名不能为空')
+		// 	return
+		// }
+		// if (this.data.idCard == '') {
+		// 	util.showToast('身份证号为空')
+		// 	return
+		// }
+		// if (!util.checkIdCard(this.data.idCard)) {
+		// 	util.showToast('身份证错误')
+		// 	return
+		// }
 
-		wx.startFacialRecognitionVerify({
+		// wx.startFacialRecognitionVerify({
 
-			name: this.data.name,
-			idCardNumber: this.data.idCard,
-			checkAliveType: this.data.type,
-			success(res) {
-				that.setData({
-					access_token: res.verifyResult
-				})
-				console.log(res)
-				console.log(res.verifyResult)
-				console.log('识别成功')
-				that.goLogin();
-			},
-			fail(res) {
-				util.showToast('登录失败，请重试')
-				console.log("res" + JSON.stringify(res))
-				console.log('识别失败' + res.verifyResult)
-			},
-			complete(com) {
-				console.log("com" + JSON.stringify(com))
-			}
-		})
+		// 	name: this.data.name,
+		// 	idCardNumber: this.data.idCard,
+		// 	checkAliveType: this.data.type,
+		// 	success(res) {
+		// 		that.setData({
+		// 			access_token: res.verifyResult
+		// 		})
+		// 		console.log(res)
+		// 		console.log(res.verifyResult)
+		// 		console.log('识别成功')
+		// 		that.goLogin();
+		// 	},
+		// 	fail(res) {
+		// 		util.showToast('登录失败，请重试')
+		// 		console.log("res" + JSON.stringify(res))
+		// 		console.log('识别失败' + res.verifyResult)
+		// 	},
+		// 	complete(com) {
+		// 		console.log("com" + JSON.stringify(com))
+		// 	}
+		// })
 	},
 	//微信登录
 	goLogin: function (e) {
@@ -94,7 +95,7 @@ Page({
 		}
 		util.httpRequest('https://yiqi.sucstep.com/app/sign/checkCoderelease', 'post', data).then(res => {
 			console.log(res)
-			
+
 
 			if (res.data.code == 200) {
 				util.showToast("登录成功")

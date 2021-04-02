@@ -9,7 +9,7 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-		infotypeid: '	80bcd380-3aa9-4a35-bc38-4e242193ab81',
+		infotypeid: '80bcd380-3aa9-4a35-bc38-4e242193ab81',
     page: 1,
     dataList: [],
     dishonestList:null,
