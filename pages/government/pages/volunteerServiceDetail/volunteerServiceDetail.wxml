@@ -1,0 +1,12 @@
+<!--pages/government/pages/volunteerServiceDetail/volunteerServiceDetail.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">志愿者服务详情</view>
+</cu-custom>
+<view class="padding flex flex-direction	align-center">
+	<view class="margin-top-lg text-xl text-pink text-bold "> {{title}}</view>
+	<view class="text-gray margin">报名时间：{{time}}</view>
+
+	<image src="{{baseImgUrl}}{{picture_url}}"></image>
+	<view style="width:100%" class="margin-top-lg text-lg"> {{content}}</view>
+	<view style="width:100%" class="margin-top-xl">报名人数：{{num}}</view>
+</view>
