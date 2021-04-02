@@ -9,14 +9,23 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-    tab: ['停车场'],
+    hotelList:null,
   },
-
+  hotelList() {
+    let baseUrl = 'https://yiqi.sucstep.com/'
+    let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '酒店宾馆';
+    util.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res.data.rows)
+      this.setData({
+        hotelList: res.data.rows
+      })
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+this.hotelList()
   },
 
   /**

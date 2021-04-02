@@ -2,7 +2,7 @@
   <view slot="content" class="text-white text-xl text-black text-bold">学前教育</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/xqjy.png" style="width:100%;height:396rpx;"></image>
-<button class="button">幼儿园分布</button>
+<button class="button" bindtap="golist">幼儿园分布</button>
 <view class="padding-lg">
   <view class="title">
     <dot-title title="幼儿园" color="color" isMore="{{false}}" type="3"></dot-title>

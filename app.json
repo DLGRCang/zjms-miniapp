@@ -119,6 +119,7 @@
 			"name": "教育文体",
 			"pages": [
 				"pages/primarySchool/primarySchool",
+				"pages/primarySchoolList/primarySchoolList",
 				"pages/midSchool/midSchool",
 				"pages/schoolDetail/schoolDetail",
 				"pages/studentHelp/studentHelp",

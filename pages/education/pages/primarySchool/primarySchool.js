@@ -26,7 +26,10 @@ Page({
       console.log(this.data.dataList)
    });
    
-	},
+  },
+  golist(){
+    util.pageJump('../primarySchoolList/primarySchoolList')
+  },
 	onLoad: function (options) {
 		this.getDataList()
 	},

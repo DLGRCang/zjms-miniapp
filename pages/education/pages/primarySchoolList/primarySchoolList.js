@@ -1,4 +1,4 @@
-// pages/travel/pages/toilet/toilet.js
+// pages/education/pages/primarySchoolList/primarySchoolList.js
 const app = getApp()
 const data = require('../../../../utils/data.js')
 const util = require('../../../../utils/util.js')
@@ -12,15 +12,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    pageTabs: ["列表", "地图"],
-    index: 0,
     longitude: '',
     latitude: '',
     address: '',
-    toiletList: [],
+    list: [],
     mapw: '100%',
     maph: '0',
-    scale: '16',
+    scale: '15',
     markers: [],
   },
 
@@ -121,7 +119,7 @@ Page({
   //获取厕所信息‘
   getToilet: function () {
     qqmapsdk.search({
-      keyword: '电影院',
+      keyword: '幼儿园',
       success: res => {
         console.log(res.data)
         var mark = []
@@ -135,24 +133,12 @@ Page({
         }
         this.setData({
           markers: mark,
-          toiletList: res.data
+          list: res.data
         })
       }
     })
   },
-  goRoute(e){
-    util.routePlan(e.currentTarget.dataset.name,e.currentTarget.dataset.lat,e.currentTarget.dataset.lng)
-  },
-  goTicket(){
-    wx.navigateToMiniProgram({
-      appId: 'wx938b41d0d7e8def0',
-      path: '',
-      success: function (res) {
 
-      },
-      fail: function (res) { }
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

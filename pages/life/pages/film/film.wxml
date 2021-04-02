@@ -1,17 +1,15 @@
- <!--pages/life/pages/film/film.wxml-->
-<text>pages/life/pages/film/film.wxml</text>
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
 	<view slot="content">电影剧院</view>
 </cu-custom>
 <tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
 <view wx:if="{{index===0}}">
 	<view class="margin-lg box" wx:for="{{toiletList}}">
-		<view bindtap="goRoute" data-name="{{item.title}}" data-lat="{{item.location.lat}}"
-			data-lng="{{item.location.lng}}">
-			<view class="text-xxl text-bold">{{item.title}}</view>
+		<view>
+			<view class="text-xxl text-bold" bindtap="goTicket">{{item.title}}</view>
 			<view class=" margin-top-xs">{{item.address}}</view>
 			<view class=" margin-top-xs text-blue">{{item.category}}</view>
-			<view class="flex justify-between  text-grey">
+			<view class="flex justify-between  text-grey" bindtap="goRoute" data-name="{{item.title}}" data-lat="{{item.location.lat}}"
+			data-lng="{{item.location.lng}}">
 				<view class="margin-top-xs">距您{{item._distance}}米</view>
 				<view class="cuIcon-right"></view>
 			</view>

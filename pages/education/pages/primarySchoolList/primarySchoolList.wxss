@@ -1,0 +1,11 @@
+/* pages/education/pages/primarySchoolList/primarySchoolList.wxss */
+.color{
+  color: #054FAC;
+}
+.focus{
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  bottom: 160rpx;
+  right: 80rpx;
+}

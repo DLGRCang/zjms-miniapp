@@ -14,3 +14,10 @@
   border: 1rpx solid #F5F5F5;
   padding: 10rpx;
 }
+.textInfo {
+  /* display: inline-block; */
+  white-space: nowrap;
+  width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

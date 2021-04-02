@@ -1,0 +1,9 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+	<view slot="content">幼儿园分布</view>
+</cu-custom>
+<view>
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"
+		style="width:100%;height:{{maph}}" scale="{{scale}}" show-location='true'>
+		<cover-image class="focus" src='/image/focus.png' bindtap='clickControl'></cover-image>
+	</map>
+</view>
