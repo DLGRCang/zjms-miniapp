@@ -1,0 +1,44 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">问题上报</view>
+</cu-custom>
+
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">标题：</view>
+		<input placeholder="请输入标题" bindinput="putData" data-key="title"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">问题类别：</view>
+		<input placeholder="请输入问题类别" bindinput="putData" data-key="type"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">内容：</view>
+		<input placeholder="请输入内容" bindinput="putData" data-key="contents"></input>
+  </view>
+  
+  <view class="cu-form-group">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/9
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub margin-top-sm">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<10}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  <view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+
+</view>

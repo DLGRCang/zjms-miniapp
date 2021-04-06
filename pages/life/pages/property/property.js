@@ -37,6 +37,9 @@ Page({
       console.log(this.data.dataList1);
     })
   },
+  problem(){
+    util.pageJump('../problem/problem')
+  },
   onLoad: function (options) {
     this.getDataList();
   },

@@ -1,0 +1,8 @@
+/* pages/life/pages/problem/problem.wxss */
+.bgColor {
+	background-color: #2162B5;
+	color: #ffffff;
+}
+.color{
+	color:#2162B5;
+}
