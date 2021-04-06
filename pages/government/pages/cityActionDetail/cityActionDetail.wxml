@@ -1,0 +1,10 @@
+<!--pages/government/pages/cityActionDetail/cityActionDetail.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">创城行动详情</view>
+</cu-custom>
+<view class="padding flex flex-direction	align-center">
+	<view class="margin-top-lg text-xl text-blue text-bold "> {{title}}</view>
+	<view class="text-gray margin">活动周期：{{time}}</view>
+	<view class="text-gray">活动主题：{{topic}}</view>
+	<rich-text style="width:100%" nodes="{{details}}" class="main margin-lg"></rich-text>
+</view>

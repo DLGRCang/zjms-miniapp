@@ -19,17 +19,14 @@
 			data-id="{{item.volunteersServiceId}}">报名</button>
 	</view>
 	<dot-title title="报名历史" color="title-color"></dot-title>
-	<view wx:for="{{historydataList}}" wx:key class="flex padding" bindtap="gotoDetail">
+	<view wx:for="{{historydataList}}" wx:key class="flex padding" >
 		<image class="radius margin-right" src="{{baseImgUrl}}{{item.picture_url}}"
 			style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
-		<view class="flex flex-direction  " style="max-width:350rpx">
+		<view class="flex flex-direction  ">
 			<text
 				class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{item.title}}</text>
 			<view class="text-grey text-sm" style="margin-top:auto">{{item.time}}</view>
 			<text class="text-sm text-cut" style="margin-top:auto">报名人数：{{item.num}}</text>
 		</view>
-		<button style="background-color: #EE6967;align-self:center;margin-left:auto;"
-			class="cu-btn round {{shadow?'shadow':''}} text-white" bindtap="goApplication"
-			data-id="{{item.volunteersServiceId}}">报名</button>
 	</view>
 </view>

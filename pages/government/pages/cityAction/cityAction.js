@@ -1,31 +1,37 @@
 // pages/government/pages/cityAction/cityAction.js
 const app = getApp()
-const data = require('../../../../utils/data.js')
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		tabName: ['停车场','可预约'],
-		imgUrl:app.globalData.imgUrl,  
-		infotypeid: '908656ab-83b1-4056-95c3-58e00eced070',
-    page:1,
-		dataList: [], //新闻列表
+		imgUrl: app.globalData.imgUrl,
+		dataList: [], //数据列表
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+		util.requestApi('gencityaction/listgencityaction', 'GET', {}).then(res => {
 			this.setData({
-        dataList: this.data.dataList.concat(dataList),
-      })
-			console.log(this.data.dataList);
-		})
+				dataList: res.data
+			})
+			console.log(this.data.dataList)
+		});
 	},
+	//创城行动详情
+	gotoDetail(e) {
+		util.pageJump('/pages/government/pages/cityActionDetail/cityActionDetail?details=' + encodeURIComponent(e.currentTarget.dataset.details) + '&title=' + e.currentTarget.dataset.title + '&time=' + e.currentTarget.dataset.time + '&topic=' + e.currentTarget.dataset.topic)
+	},
+	//申请报名
+	goApplication(e) {
+		console.log()
+		util.pageJumpTo("/pages/government/pages/cityActionApply/cityActionApply","id",e.target.dataset.id)
+	},
+
 	onLoad: function (options) {
 		this.getDataList()
 	},

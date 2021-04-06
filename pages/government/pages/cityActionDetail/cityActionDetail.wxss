@@ -1,0 +1,5 @@
+/* pages/government/pages/cityActionDetail/cityActionDetail.wxss */
+.bgColor {
+	background-color: #2B83F4;
+	color: #ffffff;
+}

@@ -168,7 +168,9 @@
 				"pages/guideInfo/guideInfo",
 				"pages/instaShotReport/instaShotReport",
 				"pages/guideCommint/guideCommint",
-				"pages/volunteerServiceDetail/volunteerServiceDetail"
+				"pages/volunteerServiceDetail/volunteerServiceDetail",
+				"pages/cityActionDetail/cityActionDetail",
+				"pages/cityActionApply/cityActionApply"
 			]
 		},
 		{
