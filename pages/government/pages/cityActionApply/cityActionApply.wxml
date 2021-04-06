@@ -1,0 +1,22 @@
+<!--pages/government/pages/cityActionApply/cityActionApply.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">申请报名</view>
+</cu-custom>
+<view class="padding-lg">
+  <!-- 姓名 -->
+  <view class="cu-form-group">
+		<view class="title">姓名：</view>
+		<input placeholder="请输入姓名" bindinput="putData" data-key="name"></input>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">身份证号：</view>
+		<input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-key="idcard"></input>
+  </view>
+	<view class="cu-form-group">
+    <view class="title">申请材料：</view>
+    <view bindtap="addFile" class="padding-tb text-blue text-lg">{{fileState}}</view>
+  </view>
+  <view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
+</view>

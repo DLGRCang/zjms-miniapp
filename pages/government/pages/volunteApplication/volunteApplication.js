@@ -32,6 +32,7 @@ Page({
   },
   commitData: function () {
     let data = {
+      userId:wx.getStorageSync("userId"),
       name: this.data.name,//姓名
       sex: this.data.sex,//性别
       age: this.data.age,//年龄
@@ -39,7 +40,8 @@ Page({
       worktime: this.data.worktime,//工作时间
       specialty: this.data.specialty//特长
     };
-    util.requestApi('volunteerapplication/savevolunteerapplication/'+this.data.id, 'POST', data).then(res => {
+    console.log(data)
+    util.requestData('volunteerapplication/savevolunteerapplication/'+this.data.id, 'POST', data).then(res => {
       util.returnCode(res.statusCode,200)
     })
   },

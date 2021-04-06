@@ -3,14 +3,30 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">志愿者服务</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/zhiyuanzhefuwu.png" style="width:100%"></image>
-<view wx:for="{{dataList}}" wx:key class="flex padding" bindtap="gotoDetail">
-	<image class="radius margin-right" src="{{baseImgUrl}}{{imgUrl}}"
-		style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
-	<view  class="flex flex-direction  " style="max-width:550rpx">
-		<text class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{item.title}}</text>
-		<view class="text-grey text-sm" style="margin-top:auto">{{item.time}}</view>
-		<text class="text-sm text-cut" style="margin-top:auto">报名人数：{{item.num}}</text>
+<view class="padding">
+	<dot-title title="志愿者服务" color="title-color"></dot-title>
+	<view bindtap="goDetail" wx:for="{{dataList}}" wx:key class="flex padding" data-id="{{item.volunteersServiceId}}" bindtap="gotoDetail">
+		<image class="radius margin-right" src="{{baseImgUrl}}{{item.picture_url}}"
+			style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+		<view class="flex flex-direction  " style="max-width:350rpx">
+			<text
+				class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{item.title}}</text>
+			<view class="text-grey text-sm" style="margin-top:auto">{{item.time}}</view>
+			<text class="text-sm text-cut" style="margin-top:auto">报名人数：{{item.num}}</text>
+		</view>
+		<button style="background-color: #EE6967;align-self:center;margin-left:auto;"
+			class="cu-btn round {{shadow?'shadow':''}} text-white" bindtap="goApplication"
+			data-id="{{item.volunteersServiceId}}">报名</button>
 	</view>
-	<button style="background-color: #EE6967;align-self:center;margin-left:auto;" class="cu-btn round {{shadow?'shadow':''}} text-white" bindtap="goApplication" data-id="{{item.volunteersServiceId}}">报名</button>
+	<dot-title title="报名历史" color="title-color"></dot-title>
+	<view wx:for="{{historydataList}}" wx:key class="flex padding" >
+		<image class="radius margin-right" src="{{baseImgUrl}}{{item.picture_url}}"
+			style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+		<view class="flex flex-direction  ">
+			<text
+				class="text-black margin-bottom-xs text-df  {{itemInfo.length>0?'text-cut':'text-cut-two'}} ">{{item.title}}</text>
+			<view class="text-grey text-sm" style="margin-top:auto">{{item.time}}</view>
+			<text class="text-sm text-cut" style="margin-top:auto">报名人数：{{item.num}}</text>
+		</view>
+	</view>
 </view>
-<bottom></bottom>

@@ -1,36 +1,42 @@
-// pages/economic/pages/exhibition/exhibition.js
-const app = getApp()
+// pages/government/pages/volunteerServiceDetail/volunteerServiceDetail.js
 const util = require('../../../../utils/util.js')
-const data = require('../../../../utils/data.js')
+const app = getApp()
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl: app.globalData.imgUrl,
-		infotypeid: '8ae324c1-8d20-4ecd-b367-79488d664c58',
-		page: 1,
-		dataList: [], //新闻列表
+		baseImgUrl: app.globalData.baseImgUrl,
+		id:'',
+		title:'',//标题
+		content:'',//内容	
+		num:'',//报名人数
+		picture_url:'',//图片
+		time:'',//时间
 	},
-	//跳转至详情页
-	exhibitionInfo: function () {
-		util.pageJump('../../../../pages/economic/pages/exhibitionInfo/exhibitionInfo')
+	getDataList: function () {
+		let that = this;
+		util.requestApi('volunteersservice/getvolunteersservice/'+this.data.id, 'GET', {}).then(res => {
+			that.setData({
+				title: res.data.title,
+				content: res.data.content,
+				picture_url: res.data.picture_url,
+				time: res.data.time,
+			})
+			console.log(res)
+		})
 	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-				dataList: this.data.dataList.concat(dataList),
-			})
-			console.log(this.data.dataList);
-		})
-	},
 	onLoad: function (options) {
+		this.setData({
+			id:options.id
+		})
 		this.getDataList()
+		
+
 	},
 
 	/**

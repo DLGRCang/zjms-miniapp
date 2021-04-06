@@ -3,6 +3,9 @@
 	background-color: #EE6967;
 	color: #ffffff;
 }
+.title-color{
+	color:#EE6967
+}
 .button{
 	background-color: #EE6967;
 	color: #ffffff;

@@ -1,0 +1,5 @@
+/* pages/government/pages/volunteerServiceDetail/volunteerServiceDetail.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}

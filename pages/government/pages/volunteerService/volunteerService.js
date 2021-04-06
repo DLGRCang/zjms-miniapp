@@ -7,16 +7,30 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		baseImgUrl: app.globalData.baseImgUrl,
 		imgUrl: app.globalData.imgUrl,
 		dataList: [], 
+		historydataList: [], 
 	},
-
+	//志愿者服务详情
+	gotoDetail(e){
+		util.pageJump('/pages/government/pages/volunteerServiceDetail/volunteerServiceDetail?id='+e.currentTarget.dataset.id)
+	},
 	getDataList: function () {
 		let that = this;
 		util.requestApi('volunteersservice/listvolunteersservice', 'GET', {}).then(res => {
-			console.log(res.data)
 			that.setData({
 				dataList: res.data
+			})
+		})
+	},
+	//获取报名历史
+	getHistoryDataList: function () {
+		let that = this;
+		util.requestApi('volunteersservice/listvolunteers/'+wx.getStorageSync('userId'), 'GET', {}).then(res => {
+			console.log(res.data)
+			that.setData({
+				historydataList: res.data
 			})
 		})
 	},
@@ -29,6 +43,7 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.getDataList();
+		this.getHistoryDataList();
 	},
 
 	/**

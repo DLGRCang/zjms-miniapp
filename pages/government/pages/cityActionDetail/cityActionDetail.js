@@ -1,36 +1,32 @@
-// pages/economic/pages/exhibition/exhibition.js
-const app = getApp()
-const util = require('../../../../utils/util.js')
-const data = require('../../../../utils/data.js')
+// pages/government/pages/cityActionDetail/cityActionDetail.js
+var WxParse = require('../../../../wxParse/wxParse.js');
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl: app.globalData.imgUrl,
-		infotypeid: '8ae324c1-8d20-4ecd-b367-79488d664c58',
-		page: 1,
-		dataList: [], //新闻列表
+		details: '',//详情
+		title: '',//标题
+		time: '',//活动周期
+		topic: ''//活动主题
 	},
-	//跳转至详情页
-	exhibitionInfo: function () {
-		util.pageJump('../../../../pages/economic/pages/exhibitionInfo/exhibitionInfo')
-	},
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-				dataList: this.data.dataList.concat(dataList),
-			})
-			console.log(this.data.dataList);
-		})
-	},
 	onLoad: function (options) {
-		this.getDataList()
+	
+		let that = this;
+		let detail=decodeURIComponent(options.details);
+		WxParse.wxParse('dataHtml', 'html', detail, that, 5)
+		this.setData({
+			details:detail,
+			title:options.title,
+			time:options.time,
+			topic:options.topic,
+		})
+	
 	},
 
 	/**

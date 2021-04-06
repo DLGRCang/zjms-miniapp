@@ -15,7 +15,7 @@ Page({
     dataList: [], //新闻列表
     dataList1: [], //赛事列表
     dataList2: [], //演出列表
-    infotypeid1:'6bed2759-8b6a-4240-9c51-f79369b4c138&page',//赛事
+    infotypeid1:'6bed2759-8b6a-4240-9c51-f79369b4c138',//赛事
     infotypeid2:'9782bccc-e789-4874-84c0-b03584a9e7d7'//演出
   },
 
@@ -23,12 +23,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   getDataList: function () {
-		//加载数据列表
+		//加载体育场馆数据列表
 		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
 			this.setData({
         dataList: this.data.dataList.concat(dataList),
       })
 			console.log(this.data.dataList);
+    })
+    	//加载赛事数据列表
+		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+			this.setData({
+        dataList1: this.data.dataList1.concat(dataList),
+      })
+			console.log(this.data.dataList1);
+    })
+    	//加载演出数据列表
+		data.getArtelData(this.data.infotypeid2, this.data.page).then(dataList => {
+			this.setData({
+        dataList2: this.data.dataList2.concat(dataList),
+      })
+			console.log(this.data.dataList2);
 		})
 	},
 	onLoad: function (options) {
