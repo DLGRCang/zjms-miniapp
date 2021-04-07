@@ -20,7 +20,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 // let base = 'http://192.168.1.112:8004/InfoIssue/app/' //王益兴
-// let base = 'http://192.168.1.110:8004/InfoIssue/app/' //刘翔宇
+// let base = 'http://192.168.1.111:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.1.104:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.1.114:8004/InfoIssue/app/' //姜园
 

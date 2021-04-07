@@ -11,7 +11,7 @@
 		<text class="cuIcon-search text-bold"></text>
 	</view>
 	<view class="tell" bindtap="goTell">
-		<text class="cuIcon-dianhua"></text>
+		<image src="../../../image/12345.png" mode="widthFix"></image>
 	</view>
 </view>
 
