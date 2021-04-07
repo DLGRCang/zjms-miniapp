@@ -24,7 +24,7 @@ Page({
 
   foodList() {
     let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '职工餐厅';
+    let url =  baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '职工餐厅';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({

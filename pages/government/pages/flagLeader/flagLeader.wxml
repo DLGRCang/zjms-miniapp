@@ -5,10 +5,10 @@
 <image mode="widthFix" src="{{imgUrl}}/image/qizhangrexian.png" style="width:100%"></image>
 <view class="padding">
 	<dot-title title="联系方式" color="title-color"></dot-title>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
+	<!-- <view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon1">微信</text>
 		<text class="into">{{contactInfo.wechat}}</text>
-	</view>
+	</view> -->
 	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon2">电话</text>
 		<text class="into">{{contactInfo.phone}}</text>

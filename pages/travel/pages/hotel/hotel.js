@@ -4,16 +4,16 @@ const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
-	data: {
-		imgUrl:app.globalData.imgUrl,
-    hotelList:null,
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgUrl: app.globalData.imgUrl,
+    hotelList: null,
   },
   hotelList() {
     let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '酒店宾馆';
+    let url = baseUrl + 'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '酒店';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({
@@ -25,7 +25,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-this.hotelList()
+    this.hotelList()
   },
 
   /**

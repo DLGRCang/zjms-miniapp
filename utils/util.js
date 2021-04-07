@@ -22,7 +22,7 @@ const formatNumber = n => {
 // let base = 'http://192.168.1.112:8004/InfoIssue/app/' //王益兴
 // let base = 'http://192.168.1.111:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.1.104:8004/InfoIssue/app/' //刘翔宇
-// let base = 'http://192.168.1.114:8004/InfoIssue/app/' //姜园
+// let base = 'http://192.168.1.114:8004/InfoIssue/app/' //姜园 
 
 let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
 let baseUrl = base + 'release/'

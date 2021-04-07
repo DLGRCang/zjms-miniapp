@@ -15,7 +15,7 @@ Page({
 
   xcFoodList() {
     let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '小吃快餐';
+    let url = baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '小吃快餐';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({
@@ -25,7 +25,7 @@ Page({
   },
   specialFoodList() {
     let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = 'http://192.168.1.111:8084/shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '特色菜';
+    let url =  baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '特色菜';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({

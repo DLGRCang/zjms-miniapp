@@ -2,7 +2,7 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content" class="text-xl" wx:if="{{tab==='最美家庭'}}">{{familyDetail.householdName}}家庭</view>
   <view slot="content" class="text-xl" wx:if="{{tab==='新时代好少年'}}">{{newDetail.studentName}}</view>
-  <view slot="content" class="text-xl" wx:else>{{tab}}{{sbDetail.userName}}</view>
+  <view slot="content" class="text-xl" wx:if="{{tab==='三八红旗手'}}">{{tab}}{{sbDetail.userName}}</view>
 </cu-custom>
 <view class="padding-lg">
 
@@ -175,7 +175,7 @@
     </view>
   </view>
 
-  <view wx:else>
+  <view wx:if="{{tab==='三八红旗手'}}">
     <view class="">
       <image class="margin-bottom-sm" mode="scaleToFill" src="{{baseImgUrl}}{{sbDetail.applicantPhotoa}}"></image>
       <view class="margin-bottom-sm flex">
