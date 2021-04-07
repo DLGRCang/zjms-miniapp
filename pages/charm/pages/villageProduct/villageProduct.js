@@ -16,6 +16,7 @@ Page({
 		lableName: ['大型', '便民'],
 		infotypeid: 'bb4d4622-8a26-4c48-a50d-7f1c9743813c', //合作社
 		infotypeid1: 'c020b82c-4488-481f-a10a-58747c3e8fc7', //村情乡貌
+		infotypeid2: '0d12fb62-f311-43a5-a9a0-11c17fc353d8', //村有好货
 		page: 1,
 		artelList: [], //合作社列表
 		artelList1: [], //村情乡貌列表
@@ -46,15 +47,14 @@ Page({
 		this.getVillageGoods();
 		this.getVillageDataList();
 	},
-	//加载村有好货列表
+	//加载村有好货
 	getVillageGoods: function () {
-		util.requestApi('products/listpageproducts', 'GET', data).then(res => {
+		data.getArtelData(this.data.infotypeid2, this.data.page).then(dataList => {
 			this.setData({
-				villageGoods: res.data.rows,
-
+				villageGoods: this.data.villageGoods.concat(dataList)
 			})
 			console.log(this.data.villageGoods);
-		});
+		})
 	},
 	//加载一村一品合作社列表
 	getDataList: function () {

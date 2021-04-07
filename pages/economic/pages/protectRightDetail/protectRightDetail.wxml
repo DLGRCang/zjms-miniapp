@@ -1,0 +1,12 @@
+<!--pages/economic/pages/protectRightDetail/protectRightDetail.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">详情</view>
+</cu-custom>
+
+<view class="padding flex flex-direction	align-center">
+	<view class="margin-top-lg text-xl text-pink text-bold "> {{data.title}}</view>
+	<view class="text-gray margin">维权时间：{{data.complaint_time}}</view>
+	<view style="width:100%" class="margin-top-lg text-lg"> {{data.details}}</view>
+	<view style="width:100%" class="margin-top-xl">地点：{{data.address}}</view>
+	<image src="{{baseImgUrl}}{{data.files}}"></image>
+</view>

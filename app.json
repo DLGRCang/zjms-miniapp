@@ -111,7 +111,8 @@
 				"pages/intellectualProperty/intellectualProperty",
 				"pages/exhibitionInfo/exhibitionInfo",
 				"pages/protectRightConsumer/protectRightConsumer",
-				"pages/protectRightOperator/protectRightOperator"
+				"pages/protectRightOperator/protectRightOperator",
+				"pages/protectRightDetail/protectRightDetail"
 			]
 		},
 		{
