@@ -51,7 +51,7 @@
     <!-- 身份证号 -->
     <view class="cu-form-group">
     <view class="title">身份证号</view>
-    <input placeholder="请输入身份证号" bindinput="getNumber"></input>
+    <input type="idcard" placeholder="请输入身份证号" bindinput="getNumber"></input>
   </view>
     <!-- 人员类型 -->
     <view class="cu-form-group">
