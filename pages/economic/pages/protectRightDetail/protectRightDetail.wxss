@@ -1,0 +1,5 @@
+/* pages/economic/pages/protectRightDetail/protectRightDetail.wxss */
+.bgColor {
+	background-color: #FFBE1A;
+	color: #ffffff;
+}

@@ -1,12 +1,8 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
 	<view slot="content" class="text-xl">推优榜</view>
 </cu-custom>
-
-<view style="height:100rpx;background:#ffffff">
-	<tab style="position: fixed; top: 109rpx; background: #ffffff; width: 100%; padding-bottom: 10rpx; z-index: 9999; left: 2rpx"
-		tabName="{{tabName}}" bindmyevent="selectTab" tvColor="text-blue"></tab>
-</view>
-<view class="grid" style="padding: 31rpx;">
+<tab style="position: fixed; height:100rpx; z-index: 9999;background: #ffffff;width: 100%;" bindmyevent="selectTab" tabName="{{tabName}}"></tab>
+<view class="grid" style="padding: 31rpx;margin-top:100rpx" >
 	<!-- 最美家庭 -->
 	<view wx:if="{{TabCur==0}}" class="flex align-center flex-direction margin-bottom-lg" wx:for="{{homeList}}" wx:key
 		style="height: 420rpx;">
