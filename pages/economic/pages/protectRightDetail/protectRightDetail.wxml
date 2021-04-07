@@ -7,6 +7,7 @@
 	<view class="margin-top-lg text-xl text-pink text-bold "> {{data.title}}</view>
 	<view class="text-gray margin">维权时间：{{data.complaint_time}}</view>
 	<view style="width:100%" class="margin-top-lg text-lg"> {{data.details}}</view>
-	<view style="width:100%" class="margin-top-xl">地点：{{data.address}}</view>
+	<view style="width:100%" class="margin-top-xl">投诉地点：{{data.address}}</view>
+	<view style="width:100%" class="margin-top-xl">投诉对象：{{data.be_complainted}}</view>
 	<image src="{{baseImgUrl}}{{data.files}}"></image>
 </view>
