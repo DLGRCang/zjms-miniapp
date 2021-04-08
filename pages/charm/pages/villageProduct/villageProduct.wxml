@@ -20,7 +20,7 @@
 	<!-- 村有好货 -->
 
 	<text class="flex village-icon margin-top">村有好货</text>
-	<view  class="padding  {{num%4==2?'grid':'grid1'}} ">
+	<view  class="padding  {{villageGoods.length%4==2?'grid':'grid1'}} ">
 		<view  bindtap="goDetail" data-obj="{{item}}" class="flex flex-direction text-center grid-item margin-bottom" wx:for="{{villageGoods}}" wx:key>
 			<image src="{{baseImgUrl}}{{item.info_photos}}" style="width: 150rpx;height: 110rpx;"></image>
 			<text class="align-center text-sm margin-top-xs">{{item.info_content}}</text>

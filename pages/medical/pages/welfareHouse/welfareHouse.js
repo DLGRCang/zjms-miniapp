@@ -8,6 +8,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		baseImgUrl:app.globalData.baseImgUrl,
 		imgUrl:app.globalData.imgUrl,
 		page:1,
 		infotypeid: '3b4f1a0a-99a1-4f46-bba9-6a7343dcba2a',
