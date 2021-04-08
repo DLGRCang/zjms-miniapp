@@ -15,7 +15,7 @@
 
 		<view class="flex flex-direction  " style="max-width:550rpx">
 			<text class="text-black margin-bottom-xs text-df  {{dataList1.info_summary.length>0?'text-cut':'text-cut-two'}}">{{dataList1.info_content}}</text>
-			<text class="text-sm text-cut margin-bottom-sm">{{dataList1.info_summary}}</text>
+			<text class="text-sm text-cut-two margin-bottom-sm">{{dataList1.info_summary}}</text>
 			<view style="margin-top:auto">
 				<view class="cu-tag" wx:for="{{dataList1.infotypePname}}" wx:key>{{itemTabs[index]}}</view>
 			</view>
