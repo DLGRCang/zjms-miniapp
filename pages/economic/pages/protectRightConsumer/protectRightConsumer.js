@@ -142,7 +142,8 @@ Page({
 			success: res => {
 				if (res.confirm) {
 					this.setData({
-						imgUrl: ''
+						imgUrl: '',
+						files: '',
 					})
 				}
 			}
