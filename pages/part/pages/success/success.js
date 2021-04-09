@@ -1,6 +1,7 @@
-// pages/travel/pages/scenicSpot/scenicSpot.js
+// pages/part/pages/success/success.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const part = require('../../../../utils/part.js')
 Page({
 
   /**
@@ -9,26 +10,13 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    infoList: null
   },
-  getInfo() {
-    let that = this;
-    util.requestApi('attractions/listattractions', 'GET', {}).then(res => {
-      console.log(res.data)
-      that.setData({
-        infoList: res.data
-      })
-    })
-  },
-  goDetail(e) {
-    console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo("/pages/travel/pages/scenicSpotDetail/scenicSpotDetail", "id", e.currentTarget.dataset.id)
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getInfo();
+
   },
 
   /**

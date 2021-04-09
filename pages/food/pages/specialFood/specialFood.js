@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: app.globalData.imgUrl,
-    baseImgUrl: app.globalData.baseImgUrl,
+    imgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
+    baseImgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
     xcFoodList:null,
     specialFoodList: null,
   },

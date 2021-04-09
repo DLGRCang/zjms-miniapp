@@ -1,0 +1,60 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">个人中心</view>
+</cu-custom>
+<view class="head"></view>
+<view class="padding-lg">
+  <view class="flex userInfo">
+    <view class="flex">
+      <image mode="aspectFit" class="images" src="{{imgUrl}}/image/touxiang.png" style="width: 92rpx;height: 92rpx;">
+      </image>
+      <view class="flex flex-direction margin-left-sm text-white">
+        <text class="margin-bottom-xs" style="font-size:38rpx;">张宏昌</text>
+        <text class="margin-bottom-xs" style="font-size:22rpx;">所在支部：红十字党支部</text>
+        <text class="margin-bottom-xl" style="font-size:22rpx;">报道社区：红十字会社区/报道</text>
+      </view>
+    </view>
+    <view class="userCenter" bindtap="goUserCenter">修改头像</view>
+  </view>
+  <view class="title">
+
+      <view class="flex justify-between  text-bold padding-sm margin-top-sm" >
+        <view class="flex">
+          <image class="icons" src="../../../../image/part1.png"></image>
+          <view class="iconsInfo">已经认领社区活动</view>
+        </view>
+        <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
+      </view>
+      <view class="line"></view>
+
+      <view class="flex justify-between  text-bold padding-sm margin-top-sm" >
+        <view class="flex">
+          <image class="icons" src="../../../../image/part2.png"></image>
+          <view class="iconsInfo">已经认领社区服务</view>
+        </view>
+        <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
+      </view>
+      <view class="line"></view>
+
+      <view class="flex justify-between text-bold padding-sm margin-top-sm" bindtap="goHospital">
+        <view class="flex">
+          <image class="icons" src="../../../../image/part3.png"></image>
+          <view class="iconsInfo">已经认领政策咨询</view>
+        </view>
+        <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
+      </view>
+      <view class="line"></view>
+
+      <view class="flex justify-between text-bold padding-sm margin-tb-sm" bindtap="goHospital">
+        <view class="flex">
+          <image class="icons" src="../../../../image/part4.png" ></image>
+          <view class="iconsInfo">我的积分</view>
+        </view>
+        <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
+      </view>
+
+  </view>
+  <view class="padding flex flex-direction margin-top-lg" style="margin-bottom:30rpx;">
+      <button class="cu-btn margin-tb-sm lg" bindtap="submit" style="background-color: #B81C24;color: #ffffff;">退出登录</button>
+    </view>
+</view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

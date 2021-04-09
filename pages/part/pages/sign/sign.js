@@ -1,6 +1,7 @@
-// pages/travel/pages/scenicSpot/scenicSpot.js
+// pages/part/pages/sign/sign.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const part = require('../../../../utils/part.js')
 Page({
 
   /**
@@ -8,27 +9,31 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-    baseImgUrl: app.globalData.baseImgUrl,
-    infoList: null
+    phone:'',
+    password:'',
   },
-  getInfo() {
-    let that = this;
-    util.requestApi('attractions/listattractions', 'GET', {}).then(res => {
-      console.log(res.data)
-      that.setData({
-        infoList: res.data
-      })
+  // 获取电话
+  getPhone(e){
+    this.setData({
+      phone: e.detail.value
     })
   },
-  goDetail(e) {
-    console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo("/pages/travel/pages/scenicSpotDetail/scenicSpotDetail", "id", e.currentTarget.dataset.id)
+  getPassword(e){
+    this.setData({
+      password: e.detail.value
+    })
+  },
+  goRegister(){
+    util.pageJump("../register/register")
+  },
+  submit(){
+    util.pageJump('../homepage/homepage')
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getInfo();
+
   },
 
   /**
