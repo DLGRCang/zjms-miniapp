@@ -12,7 +12,23 @@ Page({
     page: 1,
     dataList: [],
     imgUrl: app.globalData.imgUrl,
+    name:'',
+    show:false,
+    item:['幼儿园','初高中','大学']
 
+  },
+  confirm(e){
+    console.log("点击确定")
+    console.log(e.detail.chooseItem)
+  },
+  cancel(){
+    console.log("点击取消")
+  },
+  goForm() {
+    this.setData({
+      show:true
+    })
+    // util.pageJump('../studentHelpApply/studentHelpApply')
   },
 
   /**
@@ -42,7 +58,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(this.data.name)
   },
 
   /**
@@ -64,7 +80,7 @@ Page({
    */
   onPullDownRefresh: function () {
     this.setData({
-      page:1
+      page: 1
     })
     this.getDataList();
   },
@@ -74,7 +90,7 @@ Page({
    */
   onReachBottom: function () {
     this.setData({
-      page:page++
+      page: page++
     })
     this.getDataList();
   },

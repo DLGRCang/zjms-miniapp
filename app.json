@@ -133,7 +133,8 @@
 				"pages/fitness/fitness",
 				"pages/schoolInfo/schoolInfo",
 				"pages/agriculturaConsult/agriculturaConsult",
-				"pages/transferSchool/transferSchool"
+				"pages/transferSchool/transferSchool",
+				"pages/studentHelpApply/studentHelpApply"
 			]
 		},
 		{

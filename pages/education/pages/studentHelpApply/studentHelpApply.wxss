@@ -1,0 +1,12 @@
+/* pages/education/pages/studentHelpApply/studentHelpApply.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+
+.button {
+	width: 610rpx;
+	background-color: #EE6967;
+	color: #ffffff;
+	font-size: 34rpx;
+}
