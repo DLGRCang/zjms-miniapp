@@ -18,7 +18,7 @@ Page({
   //退出登录
   loginOut: function () {
     wx.setStorageSync("isLogin", false);
-    wx.setStorageSync("token", '');
+    wx.setStorageSync("token", "");
     this.setData({
       isLogin: wx.getStorageSync("isLogin")
     })

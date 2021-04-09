@@ -1,0 +1,15 @@
+<!--components/chooseModal/chooseModal.wxml-->
+<view class="mask" wx:if='{{show}}'>
+	<view class="bg">
+		<view class="title">{{title}}</view>
+		<radio-group bindchange="chooseItem">
+			<view class="item" wx:for="{{choose}}">
+				<radio value="{{index}}"  class="radio"></radio>   {{item}}
+			</view>
+		</radio-group>
+		<view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' bindtap='cancel'>取消</view>
+      <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm'>确定</view>
+    </view>
+	</view>
+</view>
