@@ -19,7 +19,7 @@ Page({
   },
   confirm(e){
     console.log("点击确定")
-    console.log(e.detail.chooseItem)
+    util.pageJump('../studentHelpApply/studentHelpApply?type='+(Number(e.detail.chooseItem)+1))
   },
   cancel(){
     console.log("点击取消")
@@ -28,7 +28,6 @@ Page({
     this.setData({
       show:true
     })
-    // util.pageJump('../studentHelpApply/studentHelpApply')
   },
 
   /**

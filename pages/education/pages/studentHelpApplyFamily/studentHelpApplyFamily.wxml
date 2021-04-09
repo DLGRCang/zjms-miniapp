@@ -1,0 +1,29 @@
+<!--pages/education/pages/studentHelpApplyFamily/studentHelpApplyFamily.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">添加家庭成员</view>
+</cu-custom>
+<view class="padding">
+ 
+  <view wx:for="{{familyList}}" class="padding-tb-sm" style="	border-bottom: 1rpx dashed pink">
+    <view class="cu-form-group">
+      <view class="title">姓名：</view>
+      <input placeholder="请输入姓名" bindinput="putData" data-id="{{index}}" data-key="familyMemberName"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">身份证号：</view>
+      <input type="idcard" placeholder="请输入身份证号" bindinput="putData" data-id="{{index}}" data-key="familyMemberIdCard"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">与本关系：</view>
+      <input placeholder="请输入关系" bindinput="putData" data-id="{{index}}" data-key="familyMemberRelation"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">工作或学习单位：</view>
+      <input placeholder="请输入单位" bindinput="putData" data-id="{{index}}" data-key="workLearnUnit"></input>
+    </view>
+  </view>
+  <view class="flex between margin-top-xl">
+  <button bindtap="add" class="buttonAdd">添加</button>
+  <button bindtap="finish" class="button">完成</button>
+</view>
+</view>
