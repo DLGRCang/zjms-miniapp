@@ -476,11 +476,11 @@ Page({
           pic: "/image/75.png",
           tab: 12
         },
-        // {
-        //   tit: "爱车养护",
-        //   pic: "/image/76.png",
-        //   tab: 13
-        // },
+        {
+          tit: "在职党员",
+          pic: "/image/78.png",
+          tab: 13
+        },
         {
           tit: "公租房",
           pic: "/image/77.png",
@@ -921,9 +921,10 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/life/pages/film/film')
             break;
-          // case 13:
-          //   console.log("14");
-          //   break;
+          case 13:
+            that.sum(tit)
+            util.pageJump('/pages/part/pages/sign/sign')
+            break;
           case 14:
             that.sum(tit)
             util.pageJump('/pages/life/pages/publicRentalHousing/publicRentalHousing')

@@ -229,6 +229,15 @@
 				"pages/financeProductsForm/financeProductsForm",
 				"pages/publicRentalHousing/publicRentalHousing"
 			]
+		},	{
+			"root": "pages/part",
+			"name": "在职党员",
+			"pages": [
+				"pages/sign/sign",
+				"pages/register/register",
+				"pages/homepage/homepage",
+				"pages/success/success"
+			]
 		}
 	],
 	"tabBar": {

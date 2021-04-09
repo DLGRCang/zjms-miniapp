@@ -1,0 +1,76 @@
+/* pages/part/pages/success/success.wxss */
+.bgColor {
+  background-color: #B81C24;
+  color: #ffffff;
+}
+
+.color {
+  color: #B81C24;
+}
+
+.head {
+  height: 240rpx;
+  background-color: #B81C24;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  z-index: -1000;
+}
+
+.userInfo {
+  position: absolute;
+  top: 140rpx;
+}
+
+.images {
+  width: 100rpx;
+  height: 100rpx;
+  border: 6rpx solid #ffffff;
+  border-radius: 50%;
+}
+
+.userCenter {
+  width: 140rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 26rpx;
+  margin-left: 120rpx;
+  margin-top: 30rpx;
+}
+.title {
+  border: 1rpx solid #ffffff;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 6rpx 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4rpx;
+  margin-top: -70rpx;
+  margin-bottom: 150rpx;
+}
+.list {
+  width: 10rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid ;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}
+.line{
+  border-bottom: 1rpx solid #F2F2F2;
+	height: 2rpx;
+  width: 90%;
+	margin: 10rpx auto;
+}
+.box {
+  border: 1rpx solid #F5F5F5;
+}
+
+.icons {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.iconsInfo {
+  padding-left: 20rpx;
+  font-size: 38rpx;
+}

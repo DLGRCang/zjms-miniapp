@@ -9,6 +9,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
+    baseImgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
     hotelList: null,
   },
   hotelList() {
