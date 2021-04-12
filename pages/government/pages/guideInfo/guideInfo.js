@@ -11,6 +11,7 @@ Page({
     project_name: '', //事项名称
     project_instructions: '', //办事指南
     src: '',
+    icon:'playfill'
   },
   //获取事项详情
   getData() {
@@ -26,11 +27,26 @@ Page({
     util.pageJump('/pages/government/pages/guideCommint/guideCommint?applicationId=' + this.data.applicationId)
   },
 
+  change(e){
+    console.log(e.currentTarget.dataset.id)
+    if(e.currentTarget.dataset.id==='playfill'){
+      this.start()
+      this.setData({
+        icon:'stop'
+      })
+    }else{
+      this.setData({
+        icon:'playfill'
+      })
+      this.end()
+    }    
+  },
 
   // 转语音  
   start: function (e) {
     var that = this;
-    var content = this.data.project_name;
+    // var content = this.data.project_name;
+    var content = '核发居民身份证，事项名称，核发居民身份证，基本编码，000709004000，实施编码，11152728011741808d4000709004000，实施主体，伊金霍洛旗公安局，实施主体编码，11152728011741808d，实施主体性质，法定机关，联办机构，无，事项类型，行政确认，办件类型，承诺件，服务对象，自然人，办理形式。窗口办理网上申报'
     plugin.textToSpeech({
       lang: "zh_CN",
       tts: true,
@@ -90,7 +106,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面显示
-   */
+   */ 
   onShow: function () {
 
   },
@@ -99,14 +115,20 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.end()
+    this.setData({
+      icon:'playfill'
+    })
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.end()
+    this.setData({
+      icon:'playfill'
+    })
   },
 
   /**

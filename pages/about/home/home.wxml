@@ -6,41 +6,41 @@
   <!-- <image src="{{imgUrl}}/image/marry.png" style="width:100%;height:130px;"></image> -->
   <view class="box">
     <view class="text-grey tit">综合预约</view>
-    <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goHospital">
+    <!-- <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goHospital">
       <view class="flex">
        <image class="icons" src="{{imgUrl}}/image/yy1.png"></image>
        <view class="iconsInfo">就医预约</view>
       </view>
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
-    <view class="line"></view>
+    <view class="line"></view> -->
 
-    <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goHealthy">
+    <!-- <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goHealthy">
       <view class="flex">
        <image class="icons" src="{{imgUrl}}/image/yy2.png"></image>
        <view class="iconsInfo">体检预约</view>
       </view>
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
-    <view class="line"></view>
+    <view class="line"></view> -->
 
-    <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goTesting">
+    <!-- <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goTesting">
       <view class="flex">
        <image class="icons" src="{{imgUrl}}/image/yy3.png"></image>
        <view class="iconsInfo">核酸检测</view>
       </view>
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
-    <view class="line"></view>
+    <view class="line"></view> -->
 
-    <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goVaccination">
+    <!-- <view class="flex justify-between text-xl text-bold padding-sm margin-top-sm" bindtap="goVaccination">
       <view class="flex">
        <image class="icons" src="{{imgUrl}}/image/yy4.png"></image>
        <view class="iconsInfo">疫苗接种</view>
       </view>
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
-    <view class="line"></view>
+    <view class="line"></view> -->
 
     <view class="flex justify-between text-xl text-bold padding-sm margin-bottom-sm" bindtap="goAppointment">
       <view class="flex">

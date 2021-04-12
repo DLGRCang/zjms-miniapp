@@ -7,7 +7,7 @@
 	<rich-text nodes="{{project_instructions}}" class="main margin-lg"></rich-text>
 
 	<view class="redio">
-		<view class="cuIcon-notificationfill" bindtap='start'></view>
+		<view class="cuIcon-{{icon}}" bindtap='change' data-id="{{icon}}"></view>
 	</view>
 
 </view>
