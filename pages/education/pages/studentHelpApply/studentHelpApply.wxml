@@ -3,5 +3,5 @@
   <view slot="content" class="text-white text-xl text-black text-bold">资助申请</view>
 </cu-custom>
 <view class="padding">
-  <button bindtap="finish" class="button">完成</button>
+  <view bindtap="addFamily">添加家庭成员</view>
 </view>

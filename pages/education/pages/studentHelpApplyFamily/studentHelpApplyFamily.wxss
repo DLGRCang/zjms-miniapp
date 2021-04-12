@@ -1,0 +1,19 @@
+/* pages/education/pages/studentHelpApplyFamily/studentHelpApplyFamily.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+
+.button {
+	width: 240rpx;
+	background-color: #EE6967;
+	color: #ffffff;
+	font-size: 30rpx;
+}
+.buttonAdd {
+	width: 240rpx;
+	background-color: #fff;
+	color: #EE6967;
+	font-size: 30rpx;
+	border:2px solid #EE6967;
+}

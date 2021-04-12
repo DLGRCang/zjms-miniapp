@@ -134,7 +134,8 @@
 				"pages/schoolInfo/schoolInfo",
 				"pages/agriculturaConsult/agriculturaConsult",
 				"pages/transferSchool/transferSchool",
-				"pages/studentHelpApply/studentHelpApply"
+				"pages/studentHelpApply/studentHelpApply",
+				"pages/studentHelpApplyFamily/studentHelpApplyFamily"
 			]
 		},
 		{
