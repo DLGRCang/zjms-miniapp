@@ -77,10 +77,6 @@
 		</radio-group>
 	</view>
 	<view class="cu-form-group">
-		<view class="title">户籍所在地：</view>
-		<input placeholder="请输入户籍所在地" bindinput="putData" data-key="registeredPlace"></input>
-	</view>
-	<view class="cu-form-group">
 		<view class="title">本人联系方式：</view>
 		<input type="number" placeholder="请输入本人联系方式" bindinput="putData" data-key="personContact"></input>
 	</view>

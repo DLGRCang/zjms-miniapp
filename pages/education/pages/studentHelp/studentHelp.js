@@ -19,7 +19,15 @@ Page({
   },
   confirm(e){
     console.log("点击确定")
-    util.pageJump('../studentHelpApply/studentHelpApply?type='+(Number(e.detail.chooseItem)+1))
+    if(e.detail.chooseItem==0){
+      util.pageJump('../studentHelpApply/studentHelpApply')
+    }
+    if(e.detail.chooseItem==1){
+      util.pageJump('../studentHelpApply2/studentHelpApply2')
+    }
+    if(e.detail.chooseItem==2){
+      util.pageJump('../studentHelpApply3/studentHelpApply3')
+    }
   },
   cancel(){
     console.log("点击取消")

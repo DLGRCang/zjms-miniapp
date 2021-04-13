@@ -1,0 +1,12 @@
+/* pages/education/pages/studentHelpApply3/studentHelpApply3.wxss */
+.bgColor {
+	background-color: #EE6967;
+	color: #ffffff;
+}
+radio {
+	transform:scale(0.7);
+}
+.into::before{
+	font-family: "cuicon";
+	content: "\e6a3";
+}
