@@ -5,5 +5,5 @@
 <image mode="widthFix" src="{{imgUrl}}/image/qizhenhutong.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">
 	<item-image-text bindtap="openXyLink" wx:for="{{artelList1}}" isImg="{{true}}" imgUrl="{{item.info_photos}}" obj="{{item}}"
-		itemTitle="{{item.info_content}}" isDate="true" date="9081250466"></item-image-text>
+		itemTitle="{{item.info_content}}" isDate="true" date="672958"></item-image-text>
 </view>

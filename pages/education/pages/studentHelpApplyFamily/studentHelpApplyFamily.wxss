@@ -10,10 +10,23 @@
 	color: #ffffff;
 	font-size: 30rpx;
 }
+
 .buttonAdd {
 	width: 240rpx;
 	background-color: #fff;
 	color: #EE6967;
 	font-size: 30rpx;
-	border:2px solid #EE6967;
+	border: 2px solid #EE6967;
+}
+
+.delete {
+	font-size:40rpx;
+	color: red;
+}
+
+.delete::before {
+	font-family: "cuIcon";
+	content: "\e646";
+	padding: 10rpx;
+
 }

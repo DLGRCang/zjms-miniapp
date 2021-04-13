@@ -135,7 +135,8 @@
 				"pages/agriculturaConsult/agriculturaConsult",
 				"pages/transferSchool/transferSchool",
 				"pages/studentHelpApply/studentHelpApply",
-				"pages/studentHelpApplyFamily/studentHelpApplyFamily"
+				"pages/studentHelpApplyFamily/studentHelpApplyFamily",
+				"pages/studentHelpApply2/studentHelpApply2"
 			]
 		},
 		{
@@ -229,7 +230,8 @@
 				"pages/financeProductsForm/financeProductsForm",
 				"pages/publicRentalHousing/publicRentalHousing"
 			]
-		},	{
+		},
+		{
 			"root": "pages/part",
 			"name": "在职党员",
 			"pages": [

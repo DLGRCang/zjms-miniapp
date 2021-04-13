@@ -1,4 +1,4 @@
-// pages/education/pages/studentHelpApply/studentHelpApply.js
+// pages/education/pages/studentHelpApply2/studentHelpApply2.js
 const util = require('../../../../utils/util.js')
 const app=getApp()
 Page({
@@ -16,26 +16,21 @@ Page({
 		studentSex: '', //学生性别
 		studentIdCard: '', //身份证号
 		studentNational: '', //民族
-		enrollmentNumber: '', //学籍号
 		entranceYearSeason: '', //入学年月
 		studentGrade: '', //年级
 		studentClass: '', //班级
 		countriesInputting: '', //是否国家级建档立卡贫困户
-		registeredPlace: '', //户籍坐在地
 		personContact: '', //本人联系方式
 		guardianName: '', //监护人姓名
 		guardianContact: '', //监护人联系方式
+		registeredPlace: '', //户籍所在地
 		registrationNature: '', //户籍性质
-		whetherResidence: '', //是否住校
 		incomeSource: '', //主要收入来源
+		familyIncomeCapita: '', //家庭年人均收入
 		whetherLow: '', //是否低保户
-		fundAmonunt: '', //申请金额
 		nowFamilyAddress: '', //家庭现住址
-		fundCardNumber: '', //资助卡号
-		identifyTime: '', //识别时间
-		supportResponsible: '', //帮扶责任人姓名
-		responsibleUnit: '', //帮扶责任人工作单位
-		responsibleContact: '', //帮扶责任人联系方式
+		applyBook: '', //申请书
+		applyReason: '', //申请理由
 		studentPhoto: '', //学生照片
 
 	},
@@ -43,7 +38,7 @@ Page({
 	//提交数据
 	commitData() {
 		let data = {
-			applyType:1,
+			applyType:2,
 			userId: wx.getStorageSync("userId"),
 			schoolName:this.data.schoolName,
 			entranceYear: (this.data.entranceYearSeason.split('-')[0]), //入学年份
@@ -52,26 +47,21 @@ Page({
 			studentSex:this.data.studentSex,
 			studentIdCard:this.data.studentIdCard,
 			studentNational:this.data.studentNational,
-			enrollmentNumber:this.data.enrollmentNumber,
 			entranceYearSeason:this.data.entranceYearSeason,
 			studentGrade:this.data.studentGrade,
 			studentClass:this.data.studentClass,
 			countriesInputting:this.data.countriesInputting,
-			registeredPlace:this.data.registeredPlace,
-			fundAmonunt:this.data.fundAmonunt,
 			personContact:this.data.personContact,
 			guardianName:this.data.guardianName,
 			guardianContact:this.data.guardianContact,
+			registeredPlace:this.data.registeredPlace,
 			registrationNature:this.data.registrationNature,
-			whetherResidence:this.data.whetherResidence,
 			incomeSource:this.data.incomeSource,
 			whetherLow:this.data.whetherLow,
+			familyIncomeCapita:this.data.familyIncomeCapita,
 			nowFamilyAddress:this.data.nowFamilyAddress,
-			fundCardNumber:this.data.fundCardNumber,
-			identifyTime:this.data.identifyTime,
-			supportResponsible:this.data.supportResponsible,
-			responsibleUnit:this.data.responsibleUnit,
-			responsibleContact:this.data.responsibleContact,
+			applyBook:this.data.applyBook,
+			applyReason:this.data.applyReason,
 			studentPhoto:this.data.studentPhoto,
 			applyState:0,
 			studentFamilyVo:this.data.familyList,

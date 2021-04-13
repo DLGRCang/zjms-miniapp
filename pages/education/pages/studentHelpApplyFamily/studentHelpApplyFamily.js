@@ -7,7 +7,14 @@ Page({
 	data: {
 		familyList: [],
 		falily: null,
-	
+
+	},
+	delete(e) {
+		let list = this.data.familyList;
+		list.splice(e.currentTarget.dataset.id,1)
+		this.setData({
+			familyList:list
+		})
 	},
 	add() {
 		let list = this.data.familyList
@@ -20,21 +27,16 @@ Page({
 	putData(e) {
 		let key = e.currentTarget.dataset.key
 		let id = e.currentTarget.dataset.id
-		// console.log(key)
-		// this.setData({
-		// 	[key]: e.detail.value
-		// })
 		let list = this.data.familyList
 
-
 		let family = this.data.familyList[id]
-		if (key.match('familyMemberName')) {
+		if (key == 'familyMemberName') {
 			family.familyMemberName = e.detail.value
-		} else if (key.match('familyMemberIdCard')) {
+		} else if (key == 'familyMemberIdCard') {
 			family.familyMemberIdCard = e.detail.value
-		} else if (key.match('familyMemberRelation')) {
+		} else if (key == 'familyMemberRelation') {
 			family.familyMemberRelation = e.detail.value
-		} else if (key.match('workLearnUnit')) {
+		} else if (key == 'workLearnUnit') {
 			family.workLearnUnit = e.detail.value
 		}
 
@@ -42,14 +44,13 @@ Page({
 		this.setData({
 			familyList: list
 		})
-		console.log(this.data.familyList)
 	},
 	finish() {
 		let pages = getCurrentPages(); //获取当前页面js里面的pages里的所有信息。
 		let prevPage = pages[pages.length - 2];
 		//prevPage 是获取上一个页面的js里面的pages的所有信息。 -2 是上一个页面，-3是上上个页面以此类推。
 		prevPage.setData({ // 将我们想要传递的参数在这里直接setData。上个页面就会执行这里的操作。
-			name: '想象', // 这里是修改了上一个页面数据:name
+			familyList: this.data.familyList // 这里是修改了上一个页面数据:name
 		})
 		wx.navigateBack({
 			delta: '1' // 返回上一级页面。
@@ -59,7 +60,10 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		console.log(options.familyList)
+		this.setData({
+			familyList: JSON.parse(options.familyList)
+		})
 	},
 
 	/**
