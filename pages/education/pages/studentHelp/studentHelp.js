@@ -14,7 +14,7 @@ Page({
     imgUrl: app.globalData.imgUrl,
     name:'',
     show:false,
-    item:['幼儿园','初高中','大学']
+    item:['幼儿小学','初高中','大学']
 
   },
   confirm(e){

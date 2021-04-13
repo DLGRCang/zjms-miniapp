@@ -28,7 +28,7 @@ Page({
 	openXyLink: function () {
 		wx.navigateToMiniProgram({
 			appId: 'wx5a161b9b42305c0a',
-			path: 'pages/index/main?number=9081250466',
+			path: 'pages/index/main?number=672958',
 			success: function (res) {},
 			fail: function (res) {}
 		})

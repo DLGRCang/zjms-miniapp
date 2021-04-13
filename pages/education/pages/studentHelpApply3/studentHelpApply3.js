@@ -1,5 +1,4 @@
 // pages/education/pages/studentHelpApply3/studentHelpApply3.js
-// pages/education/pages/studentHelpApply2/studentHelpApply2.js
 const util = require('../../../../utils/util.js')
 const app = getApp()
 Page({

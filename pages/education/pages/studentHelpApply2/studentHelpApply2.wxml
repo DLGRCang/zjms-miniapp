@@ -110,8 +110,11 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">户籍性质：</view>
-		<input placeholder="请输入户籍性质" bindinput="putData" data-key="registrationNature"></input>
-	</view>
+		<radio-group bindchange="radioChange" data-key="registrationNature">
+			<radio class="margin-lr-sm" value="农村"></radio>农村
+			<radio class="margin-left-sm" value="非农"></radio>非农
+		</radio-group>
+  </view>
 	<view class="cu-form-group">
 		<view class="title">主要收入来源：</view>
 		<input placeholder="请输入主要收入来源" bindinput="putData" data-key="incomeSource"></input>

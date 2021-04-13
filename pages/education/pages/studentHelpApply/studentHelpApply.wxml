@@ -90,14 +90,17 @@
     <input type="number" placeholder="请输入监护人联系方式" bindinput="putData" data-key="guardianContact"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title">户籍性质：</view>
-    <input placeholder="请输入户籍性质" bindinput="putData" data-key="registrationNature"></input>
+		<view class="title">户籍性质：</view>
+		<radio-group bindchange="radioChange" data-key="registrationNature">
+			<radio class="margin-lr-sm" value="农村"></radio>农村
+			<radio class="margin-left-sm" value="非农"></radio>非农
+		</radio-group>
   </view>
   <view class="cu-form-group">
 		<view class="title">是否住校：</view>
 		<radio-group bindchange="radioChange" data-key="whetherResidence">
-			<radio class="margin-lr-sm" value="是"></radio>是
-			<radio class="margin-left-sm" value="否"></radio>否
+			<radio class="margin-lr-sm" value="是"></radio>住校
+			<radio class="margin-left-sm" value="否"></radio>跑校
 		</radio-group>
   </view>
   <view class="cu-form-group">

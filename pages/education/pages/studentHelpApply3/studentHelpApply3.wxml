@@ -3,7 +3,7 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">资助申请</view>
 </cu-custom>
 <view class="padding">
-	
+
 	<view class="cu-form-group">
 		<view class="title">学生姓名：</view>
 		<input placeholder="请输入学生姓名" bindinput="putData" data-key="studentName"></input>
@@ -39,7 +39,10 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">户籍性质：</view>
-		<input placeholder="请输入户籍性质" bindinput="putData" data-key="registrationNature"></input>
+		<radio-group bindchange="radioChange" data-key="registrationNature">
+			<radio class="margin-lr-sm" value="农村"></radio>农村
+			<radio class="margin-left-sm" value="非农"></radio>非农
+		</radio-group>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">考生号：</view>
@@ -55,15 +58,29 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">录取层级：</view>
-		<input placeholder="请输入专科或本科" bindinput="putData" data-key="admissionLevel"></input>
+		<radio-group bindchange="radioChange" data-key="admissionLevel">
+			<radio class="margin-lr-sm" value="专科"></radio>专科
+			<radio class="margin-left-sm" value="本科"></radio>本科
+		</radio-group>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">学制：</view>
 		<input placeholder="请输入学制" bindinput="putData" data-key="educational"></input>
 	</view>
+
 	<view class="cu-form-group">
 		<view class="title">困难类型：</view>
-		<input placeholder="请输入困难类型" bindinput="putData" data-key="difficultType"></input>
+		<radio-group bindchange="radioChange" data-key="difficultType">
+			<view class="margin-top">
+				<radio class="margin-left-sm" value="城乡低保家庭子女"></radio>城乡低保家庭子女
+			</view>
+			<view>
+				<radio class="margin-left-sm" value="建档立卡贫困家庭子女"></radio>建档立卡贫困家庭子女
+			</view>
+			<view class="margin-bottom">
+				<radio class="margin-left-sm" value="孤儿"></radio>孤儿
+			</view>
+		</radio-group>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">监护人姓名：</view>
@@ -78,13 +95,13 @@
 		<input type="number" placeholder="低保/ 建档立卡/孤儿序号" bindinput="putData" data-key="establishArchiveNumber"></input>
 	</view>
 	<view class="cu-form-group">
-    <view class="title">低保/ 建档立卡/孤儿凭证审核时间：</view>
-    <picker mode="date"  start="2000-01-01" end="date" bindchange="radioChange" data-key="establishArchiveDate">
-      <view class="picker">
-        {{establishArchiveDate?establishArchiveDate:'请选择'}}
-      </view>
-    </picker>
-  </view>
+		<view class="title">低保/ 建档立卡/孤儿凭证审核时间：</view>
+		<picker mode="date" start="2000-01-01" end="date" bindchange="radioChange" data-key="establishArchiveDate">
+			<view class="picker">
+				{{establishArchiveDate?establishArchiveDate:'请选择'}}
+			</view>
+		</picker>
+	</view>
 	<view class="cu-form-group">
 		<view class="title">与申请人关系：</view>
 		<input placeholder="请输入关系" bindinput="putData" data-key="applyPersonRelation"></input>
@@ -102,7 +119,7 @@
 
 
 
-	
+
 	<view class="cu-form-group">
 		<view class="title ">学生照片：</view>
 		<view class="margin-top-lg " style="position:relative;width:69%;height:200rpx;">
