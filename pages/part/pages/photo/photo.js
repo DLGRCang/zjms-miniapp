@@ -1,4 +1,4 @@
-// pages/part/pages/homepage/homepage.js
+// pages/part/pages/photo/photo.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const part = require('../../../../utils/part.js')
@@ -10,15 +10,26 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
+    nowDate:util.formatDate(new Date),
+    title:'',
+    content:'',
+    type:['喵喵喵', '汪汪汪', '哼唧哼唧'],
+    date: '请选择',
   },
-  // 个人中心
-  goUserCenter(){
-    util.pageJump('../success/success')
+
+  getType(e) {
+    console.log(e);
+    this.setData({
+      index: e.detail.value
+    })
   },
-  // 党员随手拍
-  goDetail(){
-    util.pageJump('../photo/photo')
+
+  getDate(e) {
+    this.setData({
+      date: e.detail.value
+    })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

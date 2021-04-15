@@ -3,7 +3,7 @@
 </cu-custom>
 <view class="padding-lr-lg">
   <view class="padding-lr-lg">
-    <image src="{{imgUrl}}/image/78.png" mode="widthFix" style='width:160rpx;height:160rpx;margin-top:50rpx;'></image>
+    <image src="{{imgUrl}}/image/79.png" mode="widthFix" style='width:160rpx;height:160rpx;margin-top:50rpx;'></image>
     <view class="text-bold margin-top-lg" style='font-size:48rpx;'>
       我为群众办实事
     </view>
@@ -17,7 +17,7 @@
         <view class="text-center padding-left-xs text-lg">注册需完善一下信息</view>
       </view>
     </view>
-
+    
     <view class="flex margin-top-lg" style="font-size:32rpx;">
       <view class="text-bold">党员姓名</view>
       <input class="text-grey margin-left-lg" type="number" placeholder="请输入注册党员电话" bindinput="getPhone"></input>

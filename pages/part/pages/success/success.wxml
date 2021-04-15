@@ -19,7 +19,7 @@
 
       <view class="flex justify-between  text-bold padding-sm margin-top-sm" >
         <view class="flex">
-          <image class="icons" src="../../../../image/part1.png"></image>
+          <image class="icons" src="{{imgUrl}}/image/part1.png"></image>
           <view class="iconsInfo">已经认领社区活动</view>
         </view>
         <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
@@ -28,7 +28,7 @@
 
       <view class="flex justify-between  text-bold padding-sm margin-top-sm" >
         <view class="flex">
-          <image class="icons" src="../../../../image/part2.png"></image>
+          <image class="icons" src="{{imgUrl}}/image/part2.png"></image>
           <view class="iconsInfo">已经认领社区服务</view>
         </view>
         <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
@@ -37,7 +37,7 @@
 
       <view class="flex justify-between text-bold padding-sm margin-top-sm" bindtap="goHospital">
         <view class="flex">
-          <image class="icons" src="../../../../image/part3.png"></image>
+          <image class="icons" src="{{imgUrl}}/image/part3.png"></image>
           <view class="iconsInfo">已经认领政策咨询</view>
         </view>
         <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
@@ -46,7 +46,7 @@
 
       <view class="flex justify-between text-bold padding-sm margin-tb-sm" bindtap="goHospital">
         <view class="flex">
-          <image class="icons" src="../../../../image/part4.png" ></image>
+          <image class="icons" src="{{imgUrl}}/image/part4.png" ></image>
           <view class="iconsInfo">我的积分</view>
         </view>
         <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
