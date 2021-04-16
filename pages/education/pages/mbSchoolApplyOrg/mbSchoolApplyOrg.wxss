@@ -1,0 +1,5 @@
+/* pages/education/pages/mbSchoolApplyOrg/mbSchoolApplyOrg.wxss */
+.bgColor {
+	background-color: #A6CF5F;
+	color: #ffffff;
+}

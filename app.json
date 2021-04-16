@@ -137,7 +137,12 @@
 				"pages/studentHelpApply/studentHelpApply",
 				"pages/studentHelpApplyFamily/studentHelpApplyFamily",
 				"pages/studentHelpApply2/studentHelpApply2",
-				"pages/studentHelpApply3/studentHelpApply3"
+				"pages/studentHelpApply3/studentHelpApply3",
+				"pages/mbSchoolApply/mbSchoolApply",
+				"pages/mbSchoolApplyPersonal/mbSchoolApplyPersonal",
+				"pages/mbSchoolApplyOrg/mbSchoolApplyOrg",
+				"pages/mbSchoolApplyTeacher/mbSchoolApplyTeacher",
+				"pages/mbSchoolApplyFacility/mbSchoolApplyFacility"
 			]
 		},
 		{

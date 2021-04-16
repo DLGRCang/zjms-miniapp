@@ -1,0 +1,4 @@
+<!--pages/education/pages/mbSchoolApplyOrg/mbSchoolApplyOrg.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">举办者（社会组织）基本情况</view>
+</cu-custom>

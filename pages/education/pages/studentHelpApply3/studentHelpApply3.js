@@ -61,20 +61,6 @@ Page({
 			guardianContact: this.data.guardianContact,
 			studentPhoto: this.data.studentPhoto,
 			applyState: 0,
-
-			putData(e) {
-				let key = e.currentTarget.dataset.key
-				this.setData({
-					[key]: e.detail.value
-				})
-			},
-			radioChange(e) {
-				let key = e.currentTarget.dataset.key
-				console.log(key)
-				this.setData({
-					[key]: e.detail.value
-				})
-			},
 		}
 		console.log(data)
 		util.requestApi('studentsubsidize/savestudentsubsidize', 'POST', data).then(res => {

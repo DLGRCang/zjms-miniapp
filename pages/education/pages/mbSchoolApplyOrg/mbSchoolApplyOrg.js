@@ -1,5 +1,4 @@
-// pages/help/pages/womanEvidenceLibrary/womanEvidenceLibrary.js
-const util = require('../../../../utils/util.js')
+// pages/education/pages/mbSchoolApplyOrg/mbSchoolApplyOrg.js
 Page({
 
 	/**
@@ -8,24 +7,12 @@ Page({
 	data: {
 
 	},
-	getData() {
-		util.requestApi('preserveevidence/listpagepreserveevidence', 'GET', {}).then(res => {
-			console.log(res)
-		});
-	},
-	//证据库详情
-	evidenceLibraryInfo() {
-		util.pageJump('../womanEvidenceLibraryInfo/womanEvidenceLibraryInfo')
-	},
-	//删除
-	delete() {
-		console.log('删除')
-	},
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.getData()
+
 	},
 
 	/**
