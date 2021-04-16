@@ -244,7 +244,8 @@
 				"pages/sign/sign",
 				"pages/register/register",
 				"pages/homepage/homepage",
-				"pages/success/success"
+				"pages/success/success",
+				"pages/photo/photo"
 			]
 		}
 	],

@@ -3,7 +3,7 @@
 </cu-custom>
 <view class="padding-lr-lg">
   <view class="padding-lr-lg">
-    <image src="{{imgUrl}}/image/78.png" mode="widthFix" style='width:160rpx;height:160rpx;margin-top:100rpx;'></image>
+    <image src="{{imgUrl}}/image/79.png" mode="widthFix" style='width:160rpx;height:160rpx;margin-top:100rpx;'></image>
     <view class="text-bold margin-top-lg" style='font-size:48rpx;'>
       我为群众办实事
     </view>

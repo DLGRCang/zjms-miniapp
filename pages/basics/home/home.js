@@ -478,7 +478,7 @@ Page({
         },
         {
           tit: "在职党员",
-          pic: "/image/78.png",
+          pic: "/image/80.png",
           tab: 13
         },
         {
