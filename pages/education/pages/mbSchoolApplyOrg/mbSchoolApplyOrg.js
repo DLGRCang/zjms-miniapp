@@ -5,14 +5,82 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		organizerInformation:[]
 	},
+	putData(e) {
+		let key = e.currentTarget.dataset.key
+		let id = e.currentTarget.dataset.id
+		let list = this.data.organizerInformation
+		let item = this.data.organizerInformation[id]
+		if (key == 'creditCode') {
+			item.creditCode = e.detail.value
+		} 
+		else if (key == 'juridical') {
+			item.juridical = e.detail.value
+		}
+		else if (key == 'juridicalPhoneAddress') {
+			item.juridicalPhoneAddress = e.detail.value
+		}
+		else if (key == 'privateSchoolId') {
+			item.privateSchoolId = e.detail.value
+		}
+		else if (key == 'sponsorContactPhone') {
+			item.sponsorContactPhone = e.detail.value
+		}
+		else if (key == 'sponsorCreditStatus') {
+			item.sponsorCreditStatus = e.detail.value
+		}
+		else if (key == 'sponsorDetailedAddress') {
+			item.sponsorDetailedAddress = e.detail.value
+		}
+		else if (key == 'sponsorName') {
+			item.sponsorName = e.detail.value
+		}
 
+		list[id] = item
+		this.setData({
+			organizerInformation: list
+		})
+	},
+	delete(e) {
+		let list = this.data.organizerInformation;
+		list.splice(e.currentTarget.dataset.id, 1)
+		this.setData({
+			organizerInformation: list
+		})
+	},
+	add() {
+	
+		let list = this.data.organizerInformation
+		if(list.length<1){
+			let item = {}
+			list.push(item)
+			this.setData({
+				organizerInformation: list
+			})
+			console.log(this.data.organizerInformation)
+		}
+	
+	},
+	finish() {
+		let pages = getCurrentPages(); //获取当前页面js里面的pages里的所有信息。
+		let prevPage = pages[pages.length - 2];
+		//prevPage 是获取上一个页面的js里面的pages的所有信息。 -2 是上一个页面，-3是上上个页面以此类推。
+		prevPage.setData({ // 将我们想要传递的参数在这里直接setData。上个页面就会执行这里的操作。
+			organizerInformation: this.data.organizerInformation // 这里是修改了上一个页面数据:name
+		})
+		wx.navigateBack({
+			delta: '1' // 返回上一级页面。
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		console.log(options.organizerInformation)
+		this.setData({
+			organizerInformation: JSON.parse(options.organizerInformation)
+		})
 	},
 
 	/**

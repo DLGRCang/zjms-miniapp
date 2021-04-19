@@ -3,15 +3,28 @@
   <view slot="content" class="text-white text-xl text-black text-bold">人员（个人）基本情况</view>
 </cu-custom>
 <view class="padding">
-  <view wx:for="{{personalInformationList}}" class="padding-tb-sm" style="	border-bottom: 1rpx dashed pink">
+
+  <view wx:for="{{personalInformationList}}" class="padding-tb-sm" style="	border-bottom: 1rpx dashed green">
     <view bindtap="delete" data-id="{{index}}" class="flex flex-direction  align-end ">
       <text class="delete padding-top-sm"></text>
     </view>
     <view class="cu-form-group">
-      <view class="title">附件(文件)：</view>
-      <view bindtap="addFile" data-id="{{index}}" style="max-width:400rpx" data-key="attachment"
-        class="padding-tb text-blue text-lg">
-        {{item.attachment?item.attachment:'请选择'}}</view>
+      <view class="title">姓名：</view>
+      <input  value="{{item.personName}}" placeholder="请输入姓名" bindinput="putData" data-id="{{index}}"
+        data-key="personName"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">学生性别：</view>
+      <radio-group bindchange="radioChange" data-id="{{index}}" data-key="personSex">
+        <radio class="margin-lr-sm" value="男"></radio>男
+        <radio class="margin-left-sm" value="女"></radio>女
+      </radio-group>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">身份证号：</view>
+      <input type="idcard" value="{{item.idCard}}" placeholder="请输入身份证号" bindinput="putData" data-id="{{index}}"
+        data-key="idCard"></input>
     </view>
     <view class="cu-form-group">
       <view class="title">出生年月：</view>
@@ -27,16 +40,24 @@
       <input type="number" value="{{item.contactPhone}}" placeholder="请输入联系电话" bindinput="putData" data-id="{{index}}"
         data-key="contactPhone "></input>
     </view>
+    <!-- 民族 -->
     <view class="cu-form-group">
-      <view class="title">邮政编码：</view>
-      <input type="number" value="{{item.dawkCode}}" placeholder="请输入邮政编码" bindinput="putData" data-id="{{index}}"
-        data-key="dawkCode"></input>
+      <view class="title">民族</view>
+      <picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-id="{{index}}" data-key="national">
+        <view class="picker">
+          {{item.national?item.national:'请选择'}}
+        </view>
+      </picker>
     </view>
     <view class="cu-form-group">
-      <view class="title">详细地址：</view>
-      <input value="{{item.detailedAddress}}" placeholder="请输入详细地址" bindinput="putData" data-id="{{index}}"
-        data-key="detailedAddress"></input>
+      <view class="title">附件(文件)：</view>
+      <view bindtap="addFile" data-id="{{index}}" style="max-width:400rpx" data-key="attachment"
+        class="padding-tb text-blue text-lg">
+        {{item.attachment?item.attachment:'请选择'}}</view>
     </view>
+
+
+
     <view class="cu-form-group">
       <view class="title">学历：</view>
       <input value="{{item.education}}" placeholder="请输入学历" bindinput="putData" data-id="{{index}}"
@@ -49,10 +70,17 @@
         <input value="{{item.graduationInformation}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
           data-key="graduationInformation"></input></view>
     </view>
+
     <view class="cu-form-group">
-      <view class="title">身份证号：</view>
-      <input type="idcard" value="{{item.idCard}}" placeholder="请输入身份证号" bindinput="putData" data-id="{{index}}"
-        data-key="idCard"></input>
+      <view class="title">邮政编码：</view>
+      <input type="number" value="{{item.dawkCode}}" placeholder="请输入邮政编码" bindinput="putData" data-id="{{index}}"
+        data-key="dawkCode"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">详细地址：</view>
+      <input value="{{item.detailedAddress}}" placeholder="请输入详细地址" bindinput="putData" data-id="{{index}}"
+        data-key="detailedAddress"></input>
     </view>
     <view class="cu-form-group">
       <view class="title">职务职称：</view>
@@ -60,28 +88,7 @@
         data-key="jobTitle"></input>
     </view>
 
-    <!-- 民族 -->
-    <view class="cu-form-group">
-      <view class="title">民族</view>
-      <picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-id="{{index}}" data-key="national">
-        <view class="picker">
-          {{item.national?item.national:'请选择'}}
-        </view>
-      </picker>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">姓名：</view>
-      <input t value="{{item.personName}}" placeholder="请输入姓名" bindinput="putData" data-id="{{index}}"
-        data-key="personName"></input>
-    </view>
-   
-    <view class="cu-form-group">
-      <view class="title">学生性别：</view>
-      <radio-group bindchange="radioChange" data-id="{{index}}" data-key="personSex">
-        <radio class="margin-lr-sm" value="男"></radio>男
-        <radio class="margin-left-sm" value="女"></radio>女
-      </radio-group>
-    </view>
+
     <view class="cu-form-group">
       <view class="title">人员类型：</view>
       <radio-group bindchange="radioChange" data-id="{{index}}" data-key="personType">
