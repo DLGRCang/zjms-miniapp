@@ -1,0 +1,58 @@
+<!--pages/education/pages/mbSchoolApplyOrg/mbSchoolApplyOrg.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">举办者（社会组织）基本情况</view>
+</cu-custom>
+<view class="padding">
+  <view wx:for="{{organizerInformation}}" class="padding-tb-sm" style="	border-bottom: 1rpx dashed green">
+    <view bindtap="delete" data-id="{{index}}" class="flex flex-direction  align-end ">
+      <text class="delete padding-top-sm"></text>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">社会统一信用代码：</view>
+      <input  value="{{item.creditCode}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="creditCode"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">社会组织法定代表人：</view>
+      <input  value="{{item.juridical}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="juridical"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">法定代表人住址及电话：</view>
+      <input  value="{{item.juridicalPhoneAddress}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="juridicalPhoneAddress"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">拟定学校id：</view>
+      <input  value="{{item.privateSchoolId}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="privateSchoolId"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">举办者单位联系电话：</view>
+      <input type="number"  value="{{item.sponsorContactPhone}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="sponsorContactPhone"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">举办者信用状况：</view>
+      <input type=""  value="{{item.sponsorCreditStatus}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="sponsorCreditStatus"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">举办者详细办公地址：</view>
+      <input type=""  value="{{item.sponsorDetailedAddress}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="sponsorDetailedAddress"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">举办者名称：</view>
+      <input type=""  value="{{item.sponsorName}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="sponsorName"></input>
+    </view>
+
+
+  </view>
+  <view class="flex between margin-top-xl">
+    <button bindtap="add" class="buttonAdd">添加</button>
+    <button bindtap="finish" class="button">完成</button>
+  </view>
+</view>

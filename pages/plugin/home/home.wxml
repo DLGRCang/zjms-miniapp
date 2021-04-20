@@ -36,9 +36,9 @@
       <view bindtap="myCard" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-vipcard"></text> 我的卡券</view>
       <view bindtap="myJoin" class="items"><text class="cuIcon-comment"></text> 我的参与</view>
     </view>
-    <view class="grid col-2 margin-tb text-left">
-      <view class="items"><text class="cuIcon-addressbook"></text> 电话本  </view>
-      <view bindtap="myTel" style="padding-left:90rpx;color:grey;">158人<text class="cuIcon-right"></text></view>
+    <view class="grid col-2 margin-tb text-center">
+      <view bindtap="myTel" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-addressbook"></text> 电话本　</view>
+      <view bindtap="myOpinion" class="items"><text class="cuIcon-ticket"></text> 意见反馈</view>
     </view>
   </view>
 </view>

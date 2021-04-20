@@ -1,0 +1,32 @@
+/* pages/education/pages/mbSchoolApplyTeacher/mbSchoolApplyTeacher.wxss */
+.bgColor {
+	background-color: #A6CF5F;
+	color: #ffffff;
+}
+.button {
+	width: 240rpx;
+	background-color: #A6CF5F;
+	color: #ffffff;
+	font-size: 30rpx;
+}
+
+.buttonAdd {
+	width: 240rpx;
+	background-color: #fff;
+	color: #A6CF5F;
+	font-size: 30rpx;
+	border: 2px solid #A6CF5F;
+}
+.delete {
+	font-size:40rpx;
+	color: red;
+}
+
+.delete::before {
+	font-family: "cuIcon";
+	content: "\e646";
+	padding: 10rpx;
+}
+radio {
+	transform:scale(0.7);
+}

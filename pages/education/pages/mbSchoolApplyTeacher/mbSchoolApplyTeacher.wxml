@@ -1,0 +1,71 @@
+<!--pages/education/pages/mbSchoolApplyTeacher/mbSchoolApplyTeacher.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">教师</view>
+</cu-custom>
+<view class="padding">
+  <view wx:for="{{teacherList}}" class="padding-tb-sm" style="	border-bottom: 1rpx dashed green">
+    <view bindtap="delete" data-id="{{index}}" class="flex flex-direction  align-end ">
+      <text class="delete padding-top-sm"></text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">姓名：</view>
+      <input value="{{item.teacherName}}" placeholder="请输入姓名" bindinput="putData" data-id="{{index}}"
+        data-key="teacherName"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">学生性别：</view>
+      <radio-group bindchange="radioChange" data-id="{{index}}" data-key="teacherSex">
+        <radio class="margin-lr-sm" value="男"></radio>男
+        <radio class="margin-left-sm" value="女"></radio>女
+      </radio-group>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">年龄：</view>
+      <input type="number" value="{{item.teacherAge}}" placeholder="请输入年龄" bindinput="putData" data-id="{{index}}"
+        data-key="teacherAge"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">职称：</view>
+      <input value="{{item.teacherTitle}}" placeholder="请输入职称" bindinput="putData" data-id="{{index}}"
+        data-key="teacherTitle"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">任教学科：</view>
+      <input value="{{item.teachingSubject}}" placeholder="请输入学科" bindinput="putData" data-id="{{index}}"
+        data-key="teachingSubject"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">教龄：</view>
+      <input value="{{item.teachAge}}" placeholder="请输入教龄" bindinput="putData" data-id="{{index}}"
+        data-key="teachAge"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">状态：</view>
+      <radio-group bindchange="radioChange" data-id="{{index}}" data-key="state">
+        <radio class="margin-lr-sm" value="在职"></radio>在职
+        <radio class="margin-left-sm" value="离职"></radio>离职
+      </radio-group>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">拟定学校id：</view>
+      <input value="{{item.privateSchoolId}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="privateSchoolId"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">人事关系所在单位：</view>
+      <input value="{{item.personnelRelationsUnit}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="personnelRelationsUnit"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">学历：</view>
+      <input value="{{item.education}}" placeholder="请输入学历" bindinput="putData" data-id="{{index}}"
+        data-key="education"></input>
+    </view>
+  </view>
+
+  <view class="flex between margin-top-xl">
+    <button bindtap="add" class="buttonAdd">添加</button>
+    <button bindtap="finish" class="button">完成</button>
+  </view>
+</view>

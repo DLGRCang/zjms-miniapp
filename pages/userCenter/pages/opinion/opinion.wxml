@@ -1,0 +1,12 @@
+<!--pages/userCenter/pages/opinion/opinion.wxml-->
+<cu-custom bgColor="bg-gradual-blue"  isBack="{{true}}">
+  <view slot="content">意见反馈</view>
+</cu-custom>
+<view class="padding">
+	<view class="title padding text-lg">意见反馈：</view>
+	<textarea class="margin-lr padding-sm" style="border:1px solid grey;width:auto" placeholder="请输入内容"
+		bindinput="putData"></textarea>
+		<view class="padding flex flex-direction">
+		<button  class="cu-btn bg-gradual-blue margin-tb-xl lg" bindtap="commitData">提交</button>
+	</view>
+</view>

@@ -1,4 +1,4 @@
-// pages/help/pages/womanEvidenceLibrary/womanEvidenceLibrary.js
+// pages/userCenter/pages/opinion/opinion.js
 const util = require('../../../../utils/util.js')
 Page({
 
@@ -6,26 +6,38 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		content:''
 	},
-	getData() {
-		util.requestApi('preserveevidence/listpagepreserveevidence', 'GET', {}).then(res => {
-			console.log(res)
+	putData(e) {
+		this.setData({
+			content: e.detail.value
+		})
+	},
+  commitData(){
+		if(this.data.content==""){
+			util.showToast('内容不能为空')
+			return
+		}
+		wx.showToast({
+			title: '提交成功',
+			icon: 'success',
+			duration: 500,
+			mask: true,
+			success: function() {
+				setTimeout(function() {
+					//要延时执行的代码
+					wx.navigateBack({
+						delta: 1
+					})
+				}, 500) //延迟时间
+			},
 		});
-	},
-	//证据库详情
-	evidenceLibraryInfo() {
-		util.pageJump('../womanEvidenceLibraryInfo/womanEvidenceLibraryInfo')
-	},
-	//删除
-	delete() {
-		console.log('删除')
-	},
+  },
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.getData()
+
 	},
 
 	/**

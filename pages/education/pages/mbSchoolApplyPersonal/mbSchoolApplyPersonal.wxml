@@ -1,0 +1,141 @@
+<!--pages/education/pages/mbSchoolApplyPersonall/mbSchoolApplyPersonall.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">人员（个人）基本情况</view>
+</cu-custom>
+<view class="padding">
+
+  <view wx:for="{{personalInformationList}}" class="padding-tb-sm" style="	border-bottom: 1rpx dashed green">
+    <view bindtap="delete" data-id="{{index}}" class="flex flex-direction  align-end ">
+      <text class="delete padding-top-sm"></text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">姓名：</view>
+      <input  value="{{item.personName}}" placeholder="请输入姓名" bindinput="putData" data-id="{{index}}"
+        data-key="personName"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">学生性别：</view>
+      <radio-group bindchange="radioChange" data-id="{{index}}" data-key="personSex">
+        <radio class="margin-lr-sm" value="男"></radio>男
+        <radio class="margin-left-sm" value="女"></radio>女
+      </radio-group>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">身份证号：</view>
+      <input type="idcard" value="{{item.idCard}}" placeholder="请输入身份证号" bindinput="putData" data-id="{{index}}"
+        data-key="idCard"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">出生年月：</view>
+      <picker mode="date" start="1900-01-01" end="date" bindchange="radioChange" data-key="birthDate"
+        data-id="{{index}}">
+        <view class="picker">
+          {{item.birthDate?item.birthDate:'请选择'}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">联系电话：</view>
+      <input type="number" value="{{item.contactPhone}}" placeholder="请输入联系电话" bindinput="putData" data-id="{{index}}"
+        data-key="contactPhone "></input>
+    </view>
+    <!-- 民族 -->
+    <view class="cu-form-group">
+      <view class="title">民族</view>
+      <picker bindchange="getNation" value="{{index}}" range="{{nationList}}" data-id="{{index}}" data-key="national">
+        <view class="picker">
+          {{item.national?item.national:'请选择'}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">附件(文件)：</view>
+      <view bindtap="addFile" data-id="{{index}}" style="max-width:400rpx" data-key="attachment"
+        class="padding-tb text-blue text-lg">
+        {{item.attachment?item.attachment:'请选择'}}</view>
+    </view>
+
+
+
+    <view class="cu-form-group">
+      <view class="title">学历：</view>
+      <input value="{{item.education}}" placeholder="请输入学历" bindinput="putData" data-id="{{index}}"
+        data-key="education"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="">何时毕业于何学校何院（系）何专业：</view>
+      <view class="cu-form-group">
+        <input value="{{item.graduationInformation}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+          data-key="graduationInformation"></input></view>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">邮政编码：</view>
+      <input type="number" value="{{item.dawkCode}}" placeholder="请输入邮政编码" bindinput="putData" data-id="{{index}}"
+        data-key="dawkCode"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">详细地址：</view>
+      <input value="{{item.detailedAddress}}" placeholder="请输入详细地址" bindinput="putData" data-id="{{index}}"
+        data-key="detailedAddress"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">职务职称：</view>
+      <input t value="{{item.jobTitle}}" placeholder="请输入职务职称" bindinput="putData" data-id="{{index}}"
+        data-key="jobTitle"></input>
+    </view>
+
+
+    <view class="cu-form-group">
+      <view class="title">人员类型：</view>
+      <radio-group bindchange="radioChange" data-id="{{index}}" data-key="personType">
+        <view class="">
+          <radio class="margin-lr-xs" value="举办者"></radio>举办者
+          <radio value="法人"></radio>法人
+        </view>
+        <view class="">
+          <radio class="margin-lr-xs" value="会计"></radio>会计　
+          <radio value="出纳"></radio>出纳
+        </view>
+        <view>
+          <radio class="margin-lr-xs" value="负责人(校长)"></radio>负责人(校长)
+        </view>
+
+      </radio-group>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">个人简历(文件)：</view>
+      <view style="max-width:350rpx" bindtap="addFile" data-id="{{index}}" data-key="personalResume"
+        class="padding-tb text-blue text-lg">
+        {{item.personalResume?item.personalResume:'请选择'}}</view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">人事关系所在单位：</view>
+      <input t value="{{item.personnelRelationsUnit}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="personnelRelationsUnit"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">政治面貌：</view>
+      <input t value="{{item.politicalScape}}" placeholder="请输入政治面貌" bindinput="putData" data-id="{{index}}"
+        data-key="politicalScape"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title"> 拟定学校（培训机构）ID ：</view>
+      <input t value="{{item.privateSchoolId}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="privateSchoolId"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title"> 户口所在地 ：</view>
+      <input t value="{{item.registeredResidence}}" placeholder="请输入" bindinput="putData" data-id="{{index}}"
+        data-key="registeredResidence"></input>
+    </view>
+
+  </view>
+  <view class="flex between margin-top-xl">
+    <button bindtap="add" class="buttonAdd">添加</button>
+    <button bindtap="finish" class="button">完成</button>
+  </view>
+</view>

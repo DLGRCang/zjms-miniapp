@@ -17,6 +17,10 @@ Page({
    
 
   },
+  //机构申请
+  apply(){
+    util.pageJump('../mbSchoolApply/mbSchoolApply')
+  },
 
   /**
    * 生命周期函数--监听页面加载
