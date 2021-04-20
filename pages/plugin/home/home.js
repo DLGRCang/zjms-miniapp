@@ -62,6 +62,10 @@ Page({
   myTel() {
     util.pageJump('/pages/userCenter/pages/tel/tel')
   },
+  //意见反馈
+  myOpinion() {
+    util.pageJump('/pages/userCenter/pages/opinion/opinion')
+  },
 
   /**
    * 生命周期函数--监听页面加载

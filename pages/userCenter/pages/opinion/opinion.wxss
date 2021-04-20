@@ -1,0 +1,4 @@
+/* pages/userCenter/pages/opinion/opinion.wxss */
+.color{
+  color: #054FAC;
+}

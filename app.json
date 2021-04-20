@@ -35,7 +35,8 @@
 				"pages/card/card",
 				"pages/join/join",
 				"pages/tel/tel",
-				"pages/consultResult/consultResult"
+				"pages/consultResult/consultResult",
+				"pages/opinion/opinion"
 			]
 		},
 		{
