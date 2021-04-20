@@ -21,7 +21,7 @@ Page({
 		wx.showToast({
 			title: '提交成功',
 			icon: 'success',
-			duration: 1000,
+			duration: 500,
 			mask: true,
 			success: function() {
 				setTimeout(function() {
@@ -29,7 +29,7 @@ Page({
 					wx.navigateBack({
 						delta: 1
 					})
-				}, 1000) //延迟时间
+				}, 500) //延迟时间
 			},
 		});
   },
