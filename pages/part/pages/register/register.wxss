@@ -23,3 +23,13 @@
   width: 100%;
   margin: 30rpx auto;
 }
+.textInfo {
+  display: inline-block;
+  white-space: nowrap;
+  width: 150rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.area input{
+  width: 100rpx;
+}

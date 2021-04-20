@@ -240,6 +240,7 @@
 				"pages/register/register",
 				"pages/homepage/homepage",
 				"pages/success/success",
+				"pages/search/search",
 				"pages/photo/photo"
 			]
 		}

@@ -1,0 +1,28 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">支部查询</view>
+</cu-custom>
+<view class="padding-lr-lg">
+  <image src="{{imgUrl}}/image/79.png" mode="widthFix" style='width:160rpx;height:160rpx;margin-top:50rpx;'></image>
+  <view class="text-bold margin-top-lg" style='font-size:48rpx;'>
+    我为群众办实事
+  </view>
+  <view class="text-grey" style='margin-top:15rpx;font-size:24rpx;'>
+    搜索您所在的支部关键字
+  </view>
+</view>
+  <view class="margin-top-sm">
+    <view class="cu-bar bg-white search">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="请输入支部关键字" confirm-type="search" bindinput="getSearch"></input>
+      </view>
+    </view>
+  </view>
+  <view class="margin-top-xl padding-lr-lg" wx:for="{{infoList}}" wx:key='item'>
+    <view bindtap="goRegister" data-key="{{item.NAME}}" data-id="{{item.DEPARTMENT_ID}}">{{item.NAME}}</view>
+    <view class="line"></view>
+  </view>
+
+
+
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
