@@ -1,7 +1,7 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">个人信息</view>
 </cu-custom>
-<view class="margin-lg">
+<view class="margin-lr-lg">
   <view class="text-bold text-xxl margin-tb-lg">基础信息</view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">姓名</view>
@@ -9,28 +9,29 @@
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">性别</view>
-    <view class="flex-twice">男</view>
+    <view class="flex-twice">{{sex}}</view>
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">出生日期</view>
-    <view class="flex-twice">1998-10-01</view>
+    <view class="flex-twice">{{birthday}}</view>
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
-    <view class="flex-sub">民族</view>
-    <view class="flex-twice">汉族</view>
+    <view class="flex-sub">年龄</view>
+    <view class="flex-twice">{{age}}</view>
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">身份证号</view>
     <view class="flex-twice">{{idCard}}</view>
   </view>
-  <!-- <view class="flex p-xs margin-tb-xs text-lg">
-    <view class="flex-sub">绑定手机号</view>
-    <view class="flex-twice" style="padding-left:30rpx;">16604716666</view>
-    <view class="text-blue">更换</view>
-  </view> -->
   <view class="margin-tb-xs text-lg">
-    <view class="flex-sub">我的二维码</view>
-    <image class="userinfo" src="../../../../image/userinfo.png" mode="aspectFit"></image>
+    <view class="flex-sub ">我的二维码</view>
+    <canvas canvas-id="myQrcode" style="width: 260px;height: 260px; margin: auto;"></canvas>
   </view>
+  <view class="text-bold text-xxl">安全设置</view>
+	<view class="cu-form-group">
+		<view class="title">30天免登录</view>
+		<switch checked="{{choose}}" bindchange="chooseChange"></switch>
+	</view>
+
 </view>
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

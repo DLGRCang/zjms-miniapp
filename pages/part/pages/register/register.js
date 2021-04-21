@@ -29,6 +29,7 @@ Page({
     area: '',
     COMMUNITY_TOGETHER: '',
     DEPT_ID: '',
+    id:'',
     PASSWORD: '',
     PASSWORDS: '',
   },
@@ -62,7 +63,7 @@ Page({
         ADDRESS: this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号',
         IDENTITY: this.data.IDENTITY,
         COMMUNITY_TOGETHER: this.data.COMMUNITY_TOGETHER,
-        DEPT_ID: this.data.DEPT_ID,
+        DEPT_ID: this.data.id,
         PASSWORD: this.data.PASSWORD
       }
       console.log(data)
@@ -71,7 +72,7 @@ Page({
       part.httpRequest(url, 'POST', {}).then(res => {
         console.log(res.data)
         if (res.data.code == 200) {
-          // util.pageJump('../success/success')
+          util.pageJump('../sign/sign')
         } else {
           let msg = res.data.msg
           wx.showToast({

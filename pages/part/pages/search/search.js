@@ -24,7 +24,6 @@ Page({
   },
   // 返回注册
   goRegister(e){
-    util.pageJumpTo('../register/register','key',e.currentTarget.dataset.key)
     wx.navigateTo({
       url: '../register/register?key='+e.currentTarget.dataset.key+'&id='+e.currentTarget.dataset.id,
     })

@@ -32,7 +32,15 @@ Page({
   },
   //个人信息
   userinfo() {
-    util.pageJump('/pages/userCenter/pages/userinfo/userinfo')
+    if(this.data.isLogin){
+      util.pageJump('/pages/userCenter/pages/userinfo/userinfo')
+    }else{
+      wx.showToast({
+        title: '请登录',
+        icon:'none'
+      })
+    }
+    
   },
   //我的订单
   myOrder() {

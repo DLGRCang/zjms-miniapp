@@ -47,6 +47,7 @@ Page({
       console.log(res.data.code)
       if (res.data.code == 200) {
         util.pageJump('../homepage/homepage')
+        wx.setStorageSync("isPartLogin", true);
       } else {
         let msg = res.data.msg
         wx.showToast({

@@ -26,7 +26,7 @@ const formatNumber = n => {
 
 let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
 let baseUrl = base + 'release/'
-let uploadFileUrl = base+'file/uploadfile'//文件上传地址
+let uploadFileUrl = base + 'file/uploadfile'//文件上传地址
 let uploadUrlImage = base + 'file/uploadimage' //图片上传地址
 
 //内部请求方法
@@ -249,6 +249,23 @@ const getBirthday = function (data) {
 const getGender = function (data) {
   return (data.substring(17, 18) % 2 == 0) ? '女' : '男';
 }
+
+// 根据身份证号计算年龄
+const getAge = function (identify) {
+  if (identify != null && identify != '') {
+    //获取年龄
+    var myDate = new Date();
+    var month = myDate.getMonth() + 1;
+    var day = myDate.getDate();
+    var age = myDate.getFullYear() - identify.substring(6, 10) - 1;
+    if (identify.substring(10, 12) < month || identify.substring(10, 12) == month && identify.substring(12, 14) <= day) {
+      age++;
+    }
+    return age;
+  }
+}
+
+
 //拨打电话
 const callPhone = function (phoneNumber) {
   wx.makePhoneCall({
@@ -344,13 +361,14 @@ module.exports = {
   httpRequest: httpRequest,
   uploadFile: uploadFile,
   uploadFile1: uploadFile1,
-  base:base,
-  uploadUrlImage:uploadUrlImage,
+  base: base,
+  uploadUrlImage: uploadUrlImage,
   baseUrl: baseUrl,
   checkIdCard: checkIdCard,
   checkPhone: checkPhone,
   checkEmail: checkEmail,
   getBirthday: getBirthday,
+  getAge: getAge,
   getGender: getGender,
   callPhone: callPhone,
   pageJump: pageJump,
