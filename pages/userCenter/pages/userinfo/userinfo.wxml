@@ -8,10 +8,6 @@
     <view class="flex-twice">{{name}}</view>
   </view>
   <view class="flex p-xs margin-tb-xs text-lg">
-    <view class="flex-sub">性别</view>
-    <view class="flex-twice">{{sex}}</view>
-  </view>
-  <view class="flex p-xs margin-tb-xs text-lg">
     <view class="flex-sub">出生日期</view>
     <view class="flex-twice">{{birthday}}</view>
   </view>
@@ -25,7 +21,7 @@
   </view>
   <view class="margin-tb-xs text-lg">
     <view class="flex-sub ">我的二维码</view>
-    <canvas canvas-id="myQrcode" style="width: 260px;height: 260px; margin: auto;"></canvas>
+    <canvas canvas-id="myQrcode" style="width: 280px;height: 280px; margin: auto;"></canvas>
   </view>
   <view class="text-bold text-xxl">安全设置</view>
 	<view class="cu-form-group">

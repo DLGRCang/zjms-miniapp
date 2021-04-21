@@ -10,7 +10,6 @@ Page({
    */
   data: {
     name: wx.getStorageSync('name'),
-    sex: util.getGender(wx.getStorageSync('idCard')),
     idCard: wx.getStorageSync('idCard'),
     birthday: util.getBirthday(wx.getStorageSync('idCard')),
     age: util.getAge(wx.getStorageSync('idCard')),
@@ -27,8 +26,8 @@ Page({
   erCode() {
     new QRCode('myQrcode', {
       text: this.data.name + this.data.sex + this.data.idCard + this.data.birthday + this.data.age,
-      width: 260,
-      height: 260,
+      width: 280,
+      height: 280,
       padding: 10, // 生成二维码四周自动留边宽度，不传入默认为0
       correctLevel: QRCode.CorrectLevel.L, // 二维码可辨识度
       callback: (res) => {
