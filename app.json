@@ -247,7 +247,11 @@
 				"pages/homepage/homepage",
 				"pages/success/success",
 				"pages/search/search",
-				"pages/photo/photo"
+				"pages/photo/photo",
+				"pages/sQMore/sQMore",
+				"pages/sHMore/sHMore",
+				"pages/zCMore/zCMore",
+				"pages/myJF/myJF"
 			]
 		}
 	],

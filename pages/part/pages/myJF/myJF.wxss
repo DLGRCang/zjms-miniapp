@@ -1,0 +1,55 @@
+/* pages/part/pages/myJF/myJF.wxss */
+.bgColor {
+  background-color: #B81C24;
+  color: #ffffff;
+}
+
+.color {
+  color: #B81C24;
+}
+
+.head {
+  height: 240rpx;
+  background-color: #B81C24;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  z-index: -1000;
+}
+.list {
+  width: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid ;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}
+
+.userInfo {
+  margin-top: -200rpx;
+  font-size: 40rpx;
+  color: #ffffff;
+}
+.mainInfo{
+  margin-top: 50rpx;
+  padding: 0 15rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #ffffff;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 6rpx 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10rpx;
+}
+
+.line{
+  border-bottom: 1rpx solid #F2F2F2;
+	height: 2rpx;
+  width: 100%;
+	margin: 30rpx auto;
+}
+
+.textInfo {
+  display: inline-block;
+  white-space: nowrap;
+  width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

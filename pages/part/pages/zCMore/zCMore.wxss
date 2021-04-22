@@ -1,0 +1,91 @@
+/* pages/part/pages/zCMore/zCMore.wxss */
+.bgColor {
+  background-color: #B81C24;
+  color: #ffffff;
+}
+
+.color {
+  color: #B81C24;
+}
+
+
+.head {
+  height: 240rpx;
+  background-color: #B81C24;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  z-index: -1000;
+}
+
+.userInfo {
+  position: absolute;
+  top: 140rpx;
+}
+
+.images {
+  width: 100rpx;
+  height: 100rpx;
+  border: 6rpx solid #ffffff;
+  border-radius: 50%;
+}
+
+.userCenter {
+  width: 140rpx;
+  height: 64rpx;
+  border: 1rpx solid #ffffff;
+  border-radius: 10rpx;
+  line-height: 64rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 26rpx;
+  margin-left: 120rpx;
+  margin-top: 30rpx;
+}
+
+.title {
+  height: 76rpx;
+  border: 1rpx solid #ffffff;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 6rpx 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4rpx;
+  margin-top: -70rpx;
+}
+.list {
+  width: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid ;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}
+.line{
+  border-bottom: 1rpx solid #F2F2F2;
+	height: 2rpx;
+  width: 100%;
+	margin: 30rpx auto;
+}
+.sign{
+  position: absolute;
+  width: 120rpx;
+  height: 64rpx;
+  border: 1rpx solid #ffffff;
+  border-radius: 10rpx;
+  background-color: #B81C24;
+  color: #ffffff;
+  line-height: 64rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  right: 30rpx;
+  bottom: 20rpx;
+}
+.textInfo {
+  display: inline-block;
+  white-space: nowrap;
+  width: 280rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,56 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl">我的积分</view>
+</cu-custom>
+<view class="head"></view>
+<view class="padding-lg">
+  <view class="flex justify-between  userInfo">
+    <view style="margin-left：10rpx;">当前积分： 1980</view>
+    <view style="margin-right：10rpx;">当前排名： 1980</view>
+  </view>
+  <view class="mainInfo">
+    <view class="flex justify-between margin-top-lg">
+      <view class="flex justify-contents">
+        <view class="list color"></view>
+        <view class="text-center padding-left-xs" style="font-size: 36rpx;">社区活动</view>
+      </view>
+      <view class="color" bindtap="goSQMore">积分规则</view>
+    </view>
+    <view class=" padding-lr-sm">
+      <view class="flex justify-between margin-top-lg text-lg">
+        <view>登录积分</view>
+        <view class="color text-bold"> +1</view>
+      </view>
+      <view class="line"></view>
+      <view class="flex justify-between margin-top-lg text-lg">
+        <view>完成社区活动</view>
+        <view class="color text-bold"> +1</view>
+      </view>
+      <view class="line"></view>
+      <view class="flex justify-between margin-top-lg text-lg">
+        <view>完成生活服务</view>
+        <view class="color text-bold"> +1</view>
+      </view>
+      <view class="line"></view>
+      <view class="flex justify-between margin-top-lg text-lg">
+        <view>完成政策咨询</view>
+        <view class="color text-bold"> +1</view>
+      </view>
+      <view class="line"></view>
+      <view class="flex justify-between margin-top-lg text-lg">
+        <view>登录积分</view>
+        <view class="color text-bold"> +1</view>
+      </view>
+      <view class="line"></view>
+      <view class="flex justify-between margin-top-lg text-lg">
+        <view>登录积分</view>
+        <view class="color text-bold"> +1</view>
+      </view>
+      <view class="line"></view>
+      <view class="flex justify-between margin-tb-lg text-lg">
+        <view>登录积分</view>
+        <view class="color text-bold"> +1</view>
+      </view>
+    </view>
+  </view>
+  <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
+</view>

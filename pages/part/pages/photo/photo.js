@@ -10,26 +10,128 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    nowDate:util.formatDate(new Date),
-    title:'',
-    content:'',
-    type:['喵喵喵', '汪汪汪', '哼唧哼唧'],
+    nowDate: util.formatDate(new Date),
+    title: '',
+    content: '',
+    type: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
     date: '请选择',
+    imgList: [],
   },
 
+  // 获取标题
+  getTitle(e) {
+    this.setData({
+      title: e.detail.value
+    })
+  },
+  // 获取内容
+  getContent(e) {
+    this.setData({
+      content: e.detail.value
+    })
+  },
+
+  // 获取类型
   getType(e) {
-    console.log(e);
     this.setData({
       index: e.detail.value
     })
   },
-
+  // 获取时间
   getDate(e) {
     this.setData({
       date: e.detail.value
     })
   },
 
+
+  // 数据提交
+  submit() {
+
+  },
+  // 选择图片
+  ChooseImage() {
+    wx.chooseImage({
+      count: 9, //默认9
+      sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album'], //从相册选择
+      success: (res) => {
+        console.log(res.tempFiles.length)
+        if (this.data.imgList.length != 0) {
+          this.setData({
+            imgList: this.data.imgList.concat(res.tempFilePaths)
+          })
+          // for (i = 0; i < res.tempFiles.length; i++) {
+          //   wx.uploadFile({
+          //     url: util.uploadUrlImage,
+          //     filePath: tempFilePaths[i],
+          //     name: 'uploadfile_ant',
+          //     formData: {
+          //     },
+          //     header: {
+          //       "Content-Type": "multipart/form-data"
+          //     },
+          //     success: function (res) {
+          //       var data = JSON.parse(res.data);
+          //       console.log(data);
+          //     },
+          //     fail: function (res) {
+          //       wx.hideToast();
+          //       wx.showModal({
+          //         title: '错误提示',
+          //         content: '上传图片失败',
+          //         showCancel: false,
+          //         success: function (res) { }
+          //       })
+          //     }
+          //   });
+          // }
+        } else {
+          this.setData({
+            imgList: res.tempFilePaths
+          })
+        }
+      }
+    });
+  },
+  // 回显
+  ViewImage(e) {
+    wx.previewImage({
+      urls: this.data.imgList,
+      current: e.currentTarget.dataset.url
+    });
+  },
+  DelImg(e) {
+    wx.showModal({
+      // title: '召唤师',
+      content: '确定要删除吗？',
+      cancelText: '再看看',
+      confirmText: '确定',
+      success: res => {
+        if (res.confirm) {
+          this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+          this.setData({
+            imgList: this.data.imgList
+          })
+        }
+      }
+    })
+  },
+  //提交数据
+  commitData() {
+    let data = {
+      content: this.data.contents,
+      picture_url: this.data.imgList,
+      title: this.data.title,
+      type: this.data.type
+
+    }
+    console.log(data)
+    util.requestData('problemreport/saveproblemreport', 'POST', data).then(res => {
+      console.log(res)
+      util.returnCode(res.statusCode, 200)
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

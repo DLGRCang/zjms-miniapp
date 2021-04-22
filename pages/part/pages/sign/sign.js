@@ -43,11 +43,14 @@ Page({
     }
     console.log(data)
     part.httpRequest(url, 'POST', data).then(res => {
-      console.log(res.data)
-      console.log(res.data.code)
+      console.log(res.data.data)
       if (res.data.code == 200) {
-        util.pageJump('../homepage/homepage')
         wx.setStorageSync("isPartLogin", true);
+        wx.setStorageSync('userInfo', res.data.data)
+        wx.setStorageSync("token-header", res.data.data.token);
+        wx.setStorageSync("userTocken", res.data.data.userToken);
+        wx.setStorageSync("userName", res.data.data.USER_NAME);
+        util.pageJump('../homepage/homepage')
       } else {
         let msg = res.data.msg
         wx.showToast({

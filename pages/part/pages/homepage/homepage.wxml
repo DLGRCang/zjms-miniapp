@@ -8,7 +8,7 @@
       <image mode="aspectFit" class="images" src="{{imgUrl}}/image/touxiang.png" style="width: 92rpx;height: 92rpx;">
       </image>
       <view class="flex flex-direction margin-left-sm text-white">
-        <text class="margin-bottom-xs" style="font-size:38rpx;">张宏昌</text>
+        <text class="margin-bottom-xs" style="font-size:38rpx;">{{userName}}</text>
         <text class="margin-bottom-xs" style="font-size:22rpx;">所在支部：红十字党支部</text>
         <text class="margin-bottom-xl" style="font-size:22rpx;">报道社区：红十字会社区/报道</text>
       </view>
@@ -28,7 +28,7 @@
       <view class="list color"></view>
       <view class="text-center padding-left-xs text-lg">社区活动</view>
     </view>
-    <view class="color" bindtap="goRegister">显示更多</view>
+    <view class="color" bindtap="goSQMore">显示更多</view>
   </view>
   <view class="margin-top-xl">
     <view style="position: relative;">
@@ -57,7 +57,7 @@
       <view class="list color"></view>
       <view class="text-center padding-left-xs text-lg">生活服务</view>
     </view>
-    <view class="color" bindtap="goRegister">显示更多</view>
+    <view class="color" bindtap="goSHMore">显示更多</view>
   </view>
   <view class="margin-top-xl">
     <view class="flex">
@@ -83,7 +83,7 @@
       <view class="list color"></view>
       <view class="text-center padding-left-xs text-lg">政策咨询</view>
     </view>
-    <view class="color" bindtap="goRegister">显示更多</view>
+    <view class="color" bindtap="goZCMore">显示更多</view>
   </view>
   <view class="flex margin-top-xl" wx:for="{{4}}">
     <image src="{{imgUrl}}/image/search.png" style="width:40rpx;height:40rpx;"></image>

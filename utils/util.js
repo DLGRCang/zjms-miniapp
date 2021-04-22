@@ -234,7 +234,7 @@ const checkEmail = function (data) {
 const showToast = function (msg) {
   wx.showToast({
     title: msg,
-    icon: 'success',
+    icon: 'none',
     mask: true,
     duration: 1500
   })

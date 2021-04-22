@@ -31,7 +31,6 @@
         <view><text class="cuIcon-right text-xxl"></text></view>
       </view>
     </picker>
-
   </view>
   <view class="line"></view>
 
@@ -58,5 +57,28 @@
   </view>
   <view class="line"></view>
 
+  <view class="flex justify-contents">
+    <view class="list color"></view>
+    <view class="text-center padding-left-xs text-lg">现场照片 <text class="text-sm text-grey">(最多三张)</text></view>
+  </view>
+  <view class="cu-form-group margin-bottom-lg">
+    <view class="grid col-4 grid-square flex-sub margin-top-sm">
+      <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <image src='{{imgList[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<10}}">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
+  </view>
 
+
+  <view class="padding-lg flex flex-direction ">
+    <button class="cu-btn lg" bindtap="submit" style="background-color: #B81C24;color: #ffffff;">提交</button>
+  </view>
 </view>
+
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

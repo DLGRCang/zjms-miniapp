@@ -15,7 +15,9 @@ const httpRequest = function (url, method, data = {}) {
     wx.request({
       header: {
         'content-type': 'application/json',
-        'token': wx.getStorageSync("token")
+        'token-header': wx.getStorageSync("token-header"),
+        'user-token-header': wx.getStorageSync("userToken"),
+        'user-name-header': wx.getStorageSync("userName")
       },
       url: url,
       data: data,
@@ -73,7 +75,7 @@ const returnCode = function (code, num) {
 
 module.exports = {
   baseUrl: baseUrl,
-  httpRequest:httpRequest,
+  httpRequest: httpRequest,
   showToast: showToast,
   returnCode: returnCode
 

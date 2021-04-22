@@ -1,17 +1,17 @@
 <!--pages/plugin/face/face.wxml-->
-<cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content" class="text-black text-xl text-black text-bold">人脸识别登录</view>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content" class="text-xl">人脸识别登录</view>
 </cu-custom>
 <view style="height:90%" class="flex flex-direction padding-xl align-center">
   <image class="margin-xl" style="width:200rpx;height:200rpx" src="../../../image/face_icon.png"></image>
   <view class="text-df">请进行人脸识别登录验证</view>
 
   <view class="flex flex-direction margin-top margin-bottom-xl" style="width:100%">
-    <text class="text-lg">姓名：</text>
-    <input bindinput="putData" class="margin-top text-xl text-bold"   data-key="name" value=""/>
+    <text class="text-lg text-bold">姓名：</text>
+    <input bindinput="putData" class="margin-top text-xl " placeholder="请输入真实姓名"  data-key="name" value=""/>
     <view class="bg-gray" style="width:100%;height:1px"></view>
-    <text class="text-lg margin-top-xl">身份证号：</text>
-    <input bindinput="putData" class="margin-top text-xl text-bold"  data-key="idCard"  value=""/>
+    <text class="text-lg margin-top-xl text-bold">身份证号：</text>
+    <input bindinput="putData" class="margin-top text-xl " placeholder="请输入身份证号" data-key="idCard"  value=""/>
     <view class="bg-gray margin-bottom-xl" style="width:100%;height:1px"></view>
   </view>
   <radio-group bindchange="radioChange" style="width:100%" class="flex align-center"  data-key="type">

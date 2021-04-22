@@ -12,6 +12,25 @@ Page({
     baseImgUrl: app.globalData.baseImgUrl,
   },
 
+  goSQMore() {
+    util.pageJump('../sQMore/sQMore')
+  },
+  goSHMore() {
+    util.pageJump('../sHMore/sHMore')
+  },
+  goZCMore() {
+    util.pageJump('../zCMore/zCMore')
+  },
+  goMyJF() {
+    util.pageJump('../myJF/myJF')
+  },
+  // 退出登录
+  goExit() {
+    wx.clearStorageSync()
+    wx.switchTab({
+      url:'/pages/basics/home/home'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
