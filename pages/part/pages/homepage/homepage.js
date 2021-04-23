@@ -33,10 +33,7 @@ Page({
       bd: '已报到'
     })
   },
-  // 分享
-  goShare(){
-
-  },
+ 
 
   // 社区活动
   getActiveList() {
@@ -100,7 +97,7 @@ Page({
     util.pageJump('../success/success')
   },
   // 党员随手拍
-  goDetail() {
+  goPhoto() {
     util.pageJump('../photo/photo')
   },
   // 详情

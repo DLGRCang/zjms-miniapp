@@ -65,7 +65,7 @@
     </view>
   </view>
 
-  <view class="margin-top-lg" bindtap="goDetail">
+  <view class="margin-top-lg" bindtap="goPhoto">
     <image src="{{imgUrl}}/image/part-part.png" mode="aspectFit" style="height:100rpx;width:672rpx;"></image>
   </view>
 
