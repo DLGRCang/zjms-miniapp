@@ -4,7 +4,8 @@
 <view class="padding-lg" >
   <view class="margin-top-xl" wx:for="{{5}}">
     <view class="flex">
-      <view wx:for="{{2}}">
+      <block wx:for="{{2}}">
+      <view bindtap="goDetail" data-id="社区">
         <image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" style="width: 330rpx;height: 330rpx;"></image>
         <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
           青少年眼科义诊活动
@@ -18,6 +19,7 @@
           <text class="padding-left-sm textInfo">此次活动的具体位置信息展示区域</text>
         </view>
       </view>
+    </block>
     </view>
     <view class="line"></view>
   </view>

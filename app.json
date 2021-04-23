@@ -251,7 +251,8 @@
 				"pages/sQMore/sQMore",
 				"pages/sHMore/sHMore",
 				"pages/zCMore/zCMore",
-				"pages/myJF/myJF"
+				"pages/myJF/myJF",
+				"pages/detail/detail"
 			]
 		}
 	],

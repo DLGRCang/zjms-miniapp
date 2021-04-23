@@ -30,7 +30,7 @@
     </view>
     <view class="color" bindtap="goSQMore">显示更多</view>
   </view>
-  <view class="margin-top-xl">
+  <view class="margin-top-xl" bindtap="goDetail" data-id="社区">
     <view style="position: relative;">
       <image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" style="width: 670rpx;height: 400rpx;"></image>
       <view class="sign">已结束</view>
@@ -61,20 +61,22 @@
   </view>
   <view class="margin-top-xl">
     <view class="flex">
-      <view wx:for="{{2}}">
-        <image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" style="width: 330rpx;height: 330rpx;"></image>
-        <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
-          青少年眼科义诊活动
+      <block wx:for="{{2}}">
+        <view bindtap="goDetail" data-id="社区">
+          <image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" style="width: 330rpx;height: 330rpx;"></image>
+          <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
+            青少年眼科义诊活动
+          </view>
+          <view class="margin-top-sm text-grey" style="font-size:26rpx;">
+            <text class="cuIcon-time text-bold"></text>
+            <text class="padding-left-sm textInfo">2020-06-20 14:30 至 2020-06-20 16:30</text>
+          </view>
+          <view class="margin-top-sm text-grey" style="font-size:26rpx;">
+            <text class="cuIcon-locationfill text-bold"></text>
+            <text class="padding-left-sm textInfo">此次活动的具体位置信息展示区域</text>
+          </view>
         </view>
-        <view class="margin-top-sm text-grey" style="font-size:26rpx;">
-          <text class="cuIcon-time text-bold"></text>
-          <text class="padding-left-sm textInfo">2020-06-20 14:30 至 2020-06-20 16:30</text>
-        </view>
-        <view class="margin-top-sm text-grey" style="font-size:26rpx;">
-          <text class="cuIcon-locationfill text-bold"></text>
-          <text class="padding-left-sm textInfo">此次活动的具体位置信息展示区域</text>
-        </view>
-      </view>
+      </block>
     </view>
     <view class="line"></view>
   </view>
@@ -85,7 +87,9 @@
     </view>
     <view class="color" bindtap="goZCMore">显示更多</view>
   </view>
-  <view class="flex margin-top-xl" wx:for="{{4}}">
+
+  <block wx:for="{{4}}">
+  <view class="flex margin-top-xl" bindtap="goDetail" data-id="社区">
     <image src="{{imgUrl}}/image/search.png" style="width:40rpx;height:40rpx;"></image>
     <view class="margin-left-sm">
       <view class="text-bold" style="font-size:36rpx;">
@@ -101,6 +105,7 @@
       </view>
     </view>
   </view>
+</block>
 
 </view>
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

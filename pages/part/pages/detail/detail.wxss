@@ -1,0 +1,25 @@
+/* pages/part/pages/detail/detail.wxss */
+.bgColor {
+  background-color: #B81C24;
+  color: #ffffff;
+}
+
+.color {
+  color: #B81C24;
+}
+
+.line{
+  border-bottom: 1rpx solid #F2F2F2;
+	height: 2rpx;
+  width: 100%;
+	margin: 30rpx auto;
+}
+
+.list {
+  width: 10rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid ;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}

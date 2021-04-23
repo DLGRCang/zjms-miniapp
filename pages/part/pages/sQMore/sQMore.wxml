@@ -2,7 +2,7 @@
   <view slot="content" class="text-white text-xl text-bold">社区活动</view>
 </cu-custom>
 <view class="padding-lg" wx:for="{{5}}">
-  <view class="margin-top-xl">
+  <view class="margin-top-xl" bindtap="goDetail" data-id="社区">
     <view style="position: relative;">
       <image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" style="width: 670rpx;height: 400rpx;"></image>
       <view class="sign">已结束</view>
