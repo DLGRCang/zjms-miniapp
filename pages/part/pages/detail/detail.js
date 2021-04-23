@@ -10,9 +10,29 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
+    baseUrl: 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/',
     id:'',
+    SQ:''
   },
 
+  geInfo(){
+    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/TaskTrends/totasktrendinfoJsAct?PLAN_ID='+this.data.id;
+    part.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res.data.code)
+      console.log(res.data.data)
+      if (res.data.code == 200) {
+        this.setData({
+          SQ:res.data.data[0]
+        })
+      } else {
+        let msg = res.data.msg
+        wx.showToast({
+          title: msg,
+          icon: 'none'
+        })
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -20,6 +40,7 @@ Page({
     this.setData({
       id: options.id
     })
+    this.geInfo()
   },
 
   /**

@@ -8,19 +8,35 @@
   color: #B81C24;
 }
 
+.nav .cu-item {
+	height: 68rpx;
+	display: inline-block;
+	line-height: 68rpx;
+	margin: 0 30rpx;
+	padding: 0 20rpx;
+}
 
-.head {
-  height: 240rpx;
+.cu-item {
+  width: 180rpx;
+  height: 64rpx;
+}
+
+.tab {
+  color: #ffffff;
   background-color: #B81C24;
-  border-bottom-left-radius: 30rpx;
-  border-bottom-right-radius: 30rpx;
-  z-index: -1000;
+  border-radius: 15rpx;
 }
 
-.userInfo {
-  position: absolute;
-  top: 140rpx;
+.contInfo{
+  width: 10%;
 }
+
+
+
+
+
+
+
 
 .images {
   width: 100rpx;
