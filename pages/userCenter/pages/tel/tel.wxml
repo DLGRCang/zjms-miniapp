@@ -1,8 +1,14 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">电话本</view>
 </cu-custom>
-<view class="padding-lg">
-  <block wx:for="{{phoneList}}" wx:key>
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="部门搜索" confirm-type="search" bindinput="searchMenu"></input>
+  </view>
+</view>
+<view class="padding-lr-lg" style="margin-top:{{CustomBar}}px">
+  <block wx:for="{{phoneList}}" wx:key wx:if="{{item.isShow}}">
     <view class="box">
       <view class="flex justify-between">
         <view> 部门：</view>

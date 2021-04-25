@@ -28,7 +28,7 @@ Page({
 	},
 	faceid() {
 		// 测试登录
-		this.goLogin()
+		// this.goLogin()
 
 
 		let that = this
