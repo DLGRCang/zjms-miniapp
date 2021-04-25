@@ -21,6 +21,10 @@ Page({
     })
   });
 },
+goDetail(e){
+  console.log(e.currentTarget.dataset.id)
+  util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
+},
   /**
    * 生命周期函数--监听页面加载
    */

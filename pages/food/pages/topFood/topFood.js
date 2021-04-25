@@ -4,7 +4,7 @@ Page({
   data: {
     imgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
     baseImgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
-    foodList:null,
+    foodList: null,
     searchType: [{
       title: '全部美食',
       content: ['全部美食', '火锅', '烧烤', '蛋糕']
@@ -16,27 +16,33 @@ Page({
       content: ['智能排序', '价格', '评价', '配送时间']
     }]
   },
-  onpickChange: function(e) {
-		let picker = this.data.searchType
-		this.data.searchType[e.detail.current].title = e.detail.pick
-		this.setData({
-			searchType: picker
-		})
-	},
-
- foodList() {
-  let baseUrl = 'https://yiqi.sucstep.com/'
-  let url =  baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '西餐';
-  util.httpRequest(url, 'GET', {}).then(res => {
-    console.log(res.data.rows)
+  onpickChange: function (e) {
+    let picker = this.data.searchType
+    this.data.searchType[e.detail.current].title = e.detail.pick
     this.setData({
-      foodList: res.data.rows
+      searchType: picker
     })
-  });
-},
-onLoad: function (options) {
-  this.foodList()
-},
+  },
+
+  foodList() {
+    let baseUrl = 'https://yiqi.sucstep.com/'
+    let url = baseUrl + 'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '西餐';
+    util.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res.data.rows)
+      this.setData({
+        foodList: res.data.rows
+      })
+    });
+  },
+  
+  goDetail(e) {
+    console.log(e.currentTarget.dataset.id)
+    util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
+  },
+
+  onLoad: function (options) {
+    this.foodList()
+  },
   onReady: function () {
 
   },

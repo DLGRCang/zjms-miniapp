@@ -34,6 +34,10 @@ Page({
       })
     });
   },
+  goDetail(e){
+    console.log(e.currentTarget.dataset.id)
+    util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
+  },
   onLoad: function (options) {
     this.foodList()
   },
