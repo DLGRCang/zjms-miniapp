@@ -10,8 +10,9 @@ Page({
     applicationId: '', //事项id
     project_name: '', //事项名称
     project_instructions: '', //办事指南
+    text: '',
     src: '',
-    icon:'playfill'
+    icon: 'playfill'
   },
   //获取事项详情
   getData() {
@@ -27,30 +28,34 @@ Page({
     util.pageJump('/pages/government/pages/guideCommint/guideCommint?applicationId=' + this.data.applicationId)
   },
 
-  change(e){
+  change(e) {
     console.log(e.currentTarget.dataset.id)
-    if(e.currentTarget.dataset.id==='playfill'){
+    if (e.currentTarget.dataset.id === 'playfill') {
       this.start()
       this.setData({
-        icon:'stop'
+        icon: 'stop'
       })
-    }else{
+    } else {
       this.setData({
-        icon:'playfill'
+        icon: 'playfill'
       })
       this.end()
-    }    
+    }
   },
 
   // 转语音  
   start: function (e) {
     var that = this;
-    // var content = this.data.project_name;
-    var content = '核发居民身份证，事项名称，核发居民身份证，基本编码，000709004000，实施编方式放试试 舒服是码，11152728011741808d4000709004000，实施主体，伊金霍洛旗公安局，实施主体编码，11152728011741808d，实施主体性质，法定机关，联办机构，无，事项类型，行政确认，办件类型，承诺件，服务对象，自然人，办理形式。窗口办理网上申报'
+    var content = this.data.project_instructions;
+    content = content.replace(/<[^>]*>|<\/[^>]*>/gm, '')
+    content = content.replace(/&nbsp;/ig, '')
+    content = content.replace(/( )/g, '')
+    console.log(this.data.project_instruction)
+    console.log(content)
     plugin.textToSpeech({
       lang: "zh_CN",
       tts: true,
-      content: content,
+      content: this.data.project_name,
       success: function (res) {
         console.log(res);
         console.log("音频地址", res.filename);
@@ -106,7 +111,7 @@ Page({
 
   /**
    * 生命周期函数--监听页面显示
-   */ 
+   */
   onShow: function () {
 
   },
@@ -117,7 +122,7 @@ Page({
   onHide: function () {
     this.end()
     this.setData({
-      icon:'playfill'
+      icon: 'playfill'
     })
   },
 
@@ -127,7 +132,7 @@ Page({
   onUnload: function () {
     this.end()
     this.setData({
-      icon:'playfill'
+      icon: 'playfill'
     })
   },
 
