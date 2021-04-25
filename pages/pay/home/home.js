@@ -74,12 +74,12 @@ Page({
   },
   //水费
   waterFee() {//高铁
-    wx.navigateToMiniProgram({
-      appId: 'wxf6076a6c59a2f14e',
-      path: 'pages/travel/large-screen/index.html?p=40&wx_city_id=150600',
-      success: function (res) { },
-      fail: function (res) { }
-    })
+    // wx.navigateToMiniProgram({
+    //   appId: 'wxf6076a6c59a2f14e',
+    //   path: 'pages/travel/large-screen/index.html?p=40&wx_city_id=150600',
+    //   success: function (res) { },
+    //   fail: function (res) { }
+    // })
   },
   /**
    * 生命周期函数--监听页面加载
