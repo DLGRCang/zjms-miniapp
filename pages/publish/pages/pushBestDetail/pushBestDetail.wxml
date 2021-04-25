@@ -8,7 +8,7 @@
 
   <view wx:if="{{tab==='最美家庭'}}">
     <view class="">
-      <image class="margin-bottom-sm" mode="aspectFill" src="{{baseImgUrl}}{{familyDetail.filePath}}"></image>
+      <image class="margin-bottom-sm" mode="widthFix" src="{{baseImgUrl}}{{familyDetail.filePath}}"></image>
       <view class="margin-bottom-sm flex">
         <view>
           户主姓名：
@@ -115,7 +115,7 @@
 
   <view wx:if="{{tab==='新时代好少年'}}">
     <view class="">
-      <image class="margin-bottom-sm" mode="aspectFill" src="{{baseImgUrl}}{{newDetail.studentsPhotos}}"></image>
+      <image class="margin-bottom-sm" mode="widthFix" src="{{baseImgUrl}}{{newDetail.studentsPhotos}}"></image>
       <view class="margin-bottom-sm flex">
         <view>
           学生姓名：
@@ -177,7 +177,7 @@
 
   <view wx:if="{{tab==='三八红旗手'}}">
     <view class="">
-      <image class="margin-bottom-sm" mode="scaleToFill" src="{{baseImgUrl}}{{sbDetail.applicantPhotoa}}"></image>
+      <image class="margin-bottom-sm" mode="widthFix" src="{{baseImgUrl}}{{sbDetail.applicantPhotoa}}"></image>
       <view class="margin-bottom-sm flex">
         <view>
           姓名：
