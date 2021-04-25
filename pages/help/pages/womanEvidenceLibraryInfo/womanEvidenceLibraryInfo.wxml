@@ -43,7 +43,7 @@
 		<view bindlongpress="startrecord" bindtouchend="endrecord" class="flex align-center" style="margin-left:auto ">
 		</view>
 	</view>
-	<view class="cu-form-group">
+	<view style="display:none" class="cu-form-group">
 		<view class="title" style="margin:0">本地上传：</view>
 		<input disabled="false"></input>
 
