@@ -5,7 +5,7 @@
 <image mode="widthFix" src="{{imgUrl}}/image/zhiyuanzhefuwu.png" style="width:100%"></image>
 <view class="padding">
 	<dot-title title="志愿者服务" color="title-color"></dot-title>
-	<view bindtap="goDetail" wx:for="{{dataList}}" wx:key class="flex padding" data-id="{{item.volunteersServiceId}}" bindtap="gotoDetail">
+	<view wx:for="{{dataList}}" wx:key class="flex padding" data-id="{{item.volunteersServiceId}}" bindtap="gotoDetail">
 		<image class="radius margin-right" src="{{baseImgUrl}}{{item.picture_url}}"
 			style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
 		<view class="flex flex-direction  " style="max-width:350rpx">
@@ -15,7 +15,7 @@
 			<text class="text-sm text-cut" style="margin-top:auto">报名人数：{{item.num}}</text>
 		</view>
 		<button style="background-color: #EE6967;align-self:center;margin-left:auto;"
-			class="cu-btn round {{shadow?'shadow':''}} text-white" bindtap="goApplication"
+			class="cu-btn round {{shadow?'shadow':''}} text-white" catchtap="goApplication"
 			data-id="{{item.volunteersServiceId}}">报名</button>
 	</view>
 	<dot-title title="报名历史" color="title-color"></dot-title>
