@@ -1,5 +1,4 @@
-<!--pages/userCenter/pages/apply/apply.wxml-->
-<cu-custom bgColor="White" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">我的申请</view>
 </cu-custom>
 <tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>

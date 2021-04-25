@@ -27,7 +27,10 @@ Page({
 		})
 	},
 	faceid() {
-		// this.goLogin()
+		// 测试登录
+		this.goLogin()
+
+
 		let that = this
 		if (this.data.name == '') {
 			util.showToast('姓名不能为空')

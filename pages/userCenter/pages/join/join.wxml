@@ -1,2 +1,3 @@
-<!--pages/userCenter/pages/join/join.wxml-->
-<text>pages/userCenter/pages/join/join.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">我的参与</view>
+</cu-custom>

@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isLogin: wx.getStorageSync("isLogin")
+    isLogin: wx.getStorageSync("isLogin"),
+    name:wx.getStorageSync("name"),
   },
   
   //微信登录

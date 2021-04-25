@@ -1,4 +1,4 @@
-<cu-custom bgColor="White" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">我的预约</view>
 </cu-custom>
 <tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
