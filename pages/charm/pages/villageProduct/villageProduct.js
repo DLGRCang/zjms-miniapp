@@ -49,6 +49,9 @@ Page({
 	},
 	//加载村有好货
 	getVillageGoods: function () {
+		this.setData({
+			villageGoods:[]
+		})
 		data.getArtelData(this.data.infotypeid2, this.data.page).then(dataList => {
 			this.setData({
 				villageGoods: this.data.villageGoods.concat(dataList)
@@ -58,6 +61,9 @@ Page({
 	},
 	//加载一村一品合作社列表
 	getDataList: function () {
+		this.setData({
+			artelList:[]
+		})
 		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
 			this.setData({
 				artelList: this.data.artelList.concat(dataList)

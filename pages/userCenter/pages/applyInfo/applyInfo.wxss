@@ -1,0 +1,4 @@
+/* pages/userCenter/pages/applyInfo/applyInfo.wxss */
+.color{
+  color: #054FAC;
+}

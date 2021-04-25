@@ -36,7 +36,8 @@
 				"pages/join/join",
 				"pages/tel/tel",
 				"pages/consultResult/consultResult",
-				"pages/opinion/opinion"
+				"pages/opinion/opinion",
+				"pages/applyInfo/applyInfo"
 			]
 		},
 		{

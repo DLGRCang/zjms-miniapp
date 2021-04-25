@@ -4,7 +4,7 @@
 </cu-custom>
 <tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
 <view class="margin-lg">
-  <view class="flex justify-between margin-lg" wx:for="{{dataList}}">
+  <view bindtap="goInfo" data-id="{{item.applyId}}" class="flex justify-between margin-lg" wx:for="{{dataList}}">
     <view class="flex">
       <view class="padding-xs">
         <view class="text-lg text-bold">
