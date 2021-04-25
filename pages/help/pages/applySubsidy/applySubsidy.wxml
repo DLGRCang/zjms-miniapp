@@ -30,7 +30,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">年龄：</view>
-		<input type="number" placeholder="请输入身份证号" bindinput="putData" data-key="age"></input>
+		<input type="number" placeholder="请输入年龄" bindinput="putData" data-key="age"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">联系电话：</view>

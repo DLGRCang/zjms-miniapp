@@ -60,11 +60,11 @@
 			<text class="text-xs margin-left-xs">按住\n录制</text>
 		</view>
 	</view>
-	<view class="cu-form-group">
+	<!-- <view class="cu-form-group">
 		<view class="title" style="margin:0">本地上传：</view>
 		<input placeholder="请选择上传音频" disabled="false"></input>
 		<view class="text-pink text-right">请选择</view>
-	</view>
+	</view> -->
 	<dot-title title="阐述" color="title-color"></dot-title>
 	<view class="cu-form-group">
 		<textarea placeholder="请输入您想记录的自我阐述"></textarea>
