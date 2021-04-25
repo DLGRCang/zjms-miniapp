@@ -19,7 +19,7 @@
         data-id="{{index}}" data-key="familyMemberIdCard"></input>
     </view>
     <view class="cu-form-group">
-      <view class="title">与本关系：</view>
+      <view class="title">与本人关系：</view>
       <input value="{{item.familyMemberRelation}}" placeholder="请输入关系" bindinput="putData" data-id="{{index}}"
         data-key="familyMemberRelation"></input>
     </view>
