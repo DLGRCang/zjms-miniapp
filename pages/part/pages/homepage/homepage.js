@@ -10,14 +10,16 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    userName: wx.getStorageSync('userName'),
+    users: {},
+    userInfo: wx.getStorageSync('userInfo'),
     bd: '报道',
-    baseUrl: 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/',
+    baseUrl: part.baseUrl,
     FMUrl: '',
     SQ: null,
     SH: null,
     ZC: null,
   },
+
   // 报道
   bdList(e) {
     if (this.data.bd === '已报到') {
@@ -33,11 +35,11 @@ Page({
       bd: '已报到'
     })
   },
- 
+
 
   // 社区活动
   getActiveList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1220';
+    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1220';
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -55,7 +57,7 @@ Page({
   },
   // 生活服务
   getSHList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1224';
+    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1224';
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         let SH = []
@@ -75,7 +77,7 @@ Page({
   },
   // 政策
   getZCList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1222';
+    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1222';
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -90,7 +92,25 @@ Page({
       }
     });
   },
-
+  // 获取个人信息
+  getUserInfo() {
+    let url = part.baseUrl + 'itemuser/getDepByID?USER_ID=' + this.data.userInfo.USER_ID
+    part.httpRequest(url, 'GET', {}).then(res => {
+      console.log(11111111111111)
+      console.log(res.data.data)
+      if (res.data.code == 200) {
+        this.setData({
+          users: res.data.data
+        })
+      } else {
+        let msg = res.data.msg
+        wx.showToast({
+          title: msg,
+          icon: 'none'
+        })
+      }
+    });
+  },
 
   // 个人中心
   goUserCenter() {
@@ -121,6 +141,7 @@ Page({
     this.getActiveList()
     this.getSHList()
     this.getZCList()
+    this.getUserInfo()
   },
 
   /**
@@ -165,9 +186,9 @@ Page({
 
   },
 
-    /**
-   * 用户点击右上角分享
-   */
+  /**
+ * 用户点击右上角分享
+ */
   onShareAppMessage: function () {
     return {
       path: '//pages/part/pages/homepage/homepage',

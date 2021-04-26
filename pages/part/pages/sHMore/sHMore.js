@@ -11,7 +11,7 @@ Page({
     tabList: ['文化艺术', '微心愿', '其他'],
     TabCur: 0,
     scrollLeft: 0,
-    baseUrl: 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/',
+    baseUrl: part.baseUrl,
     contentInfo: null
   },
   tabSelect(e) {
@@ -38,7 +38,7 @@ Page({
     }
   },
   whList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1224';
+    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1224';
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -54,7 +54,7 @@ Page({
     });
   },
   xyList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1286';
+    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1286';
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -70,7 +70,7 @@ Page({
     });
   },
   otherList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1287';
+    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1287';
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({

@@ -7,7 +7,7 @@
   <dot-title title="小吃一条街" color="red" isMore="true"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{xcFoodList}}" wx:key="item">
-      <image src="{{imgUrl}}/image/food.png"></image>
+      <image src="{{baseImgUrl}}{{item.storeImage}}"></image>
       <view class="margin-top-xs padding-left-sm textInfo">{{item.shopName}}</view>
       <view class="margin-top-xs padding-left-sm">
         <text class="text-sm text-grey">服务星级：</text>
@@ -34,4 +34,4 @@
     </view>
   </block>
 </view>
-<bottom style="margin-top:auto"></bottom>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

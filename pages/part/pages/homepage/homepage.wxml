@@ -8,9 +8,9 @@
       <image mode="aspectFit" class="images" src="{{imgUrl}}/image/touxiang.png" style="width: 92rpx;height: 92rpx;">
       </image>
       <view class="flex flex-direction margin-left-sm text-white">
-        <text class="margin-bottom-xs" style="font-size:38rpx;">{{userName}}</text>
-        <text class="margin-bottom-xs" style="font-size:22rpx;">所在支部：红十字党支部</text>
-        <text class="margin-bottom-xl" style="font-size:22rpx;">报道社区：红十字会社区</text>
+        <text class="margin-bottom-xs " style="font-size:38rpx;">{{userInfo.USER_NAME}}</text>
+        <text class="margin-bottom-xs" style="font-size:22rpx; display: inline-block; white-space: nowrap;width: 400rpx;overflow: hidden;text-overflow:ellipsis;">所在支部：{{users.HOME}}</text>
+        <text class="margin-bottom-xl" style="font-size:22rpx;display: inline-block; white-space: nowrap;width: 400rpx;overflow: hidden;text-overflow:ellipsis;">报道社区：{{users.ADDRESS}}</text>
       </view>
     </view>
     <view class="userCenter" bindtap="goUserCenter">个人中心</view>
@@ -22,7 +22,7 @@
     </view>
     <view class="text-bold {{bd=='已报到'?'text-grey':'color'}}" bindtap="bdList" data-target="Modal">{{bd}}</view>
   </view>
-  
+
   <view class="cu-modal {{modalName=='Modal'?'show':''}}">
     <view class="cu-dialog">
       <view class="">

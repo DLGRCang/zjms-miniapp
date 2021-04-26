@@ -36,7 +36,7 @@ Page({
   // 登录
   submit() {
     // +','+this.data.code;
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/login_login?KEYDATA=' + this.data.phone + ',' + this.data.password
+    let url = part.baseUrl + 'login_login?KEYDATA=' + this.data.phone + ',' + this.data.password
     let data = {
       // KEYDATA:this.data.phone+','+this.data.password+','+this.data.code,                                                                                            
       // tm:'1'

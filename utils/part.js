@@ -1,6 +1,7 @@
-// const app = getApp();
 
-let baseUrl = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司
+// url 地址
+// let baseUrl =  'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/' // 正式
+let baseUrl =  'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/' // 测试
 
 //网络请求
 const httpRequest = function (url, method, data = {}) {

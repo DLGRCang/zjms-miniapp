@@ -13,7 +13,7 @@ Page({
     tabList: ['矛盾化解', '环境整治', '困难帮扶'],
     TabCur: 0,
     scrollLeft: 0,
-    baseUrl:'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/',
+    baseUrl:part.baseUrl,
     contentInfo: null
   },
   tabSelect(e) {
@@ -42,7 +42,7 @@ Page({
   },
   // 矛盾
   mdList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1220';
+    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1220';
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.data.pdList[0].FENG_MIAN_TU.PATH)
       if (res.data.code == 200) {
@@ -60,7 +60,7 @@ Page({
   },
   // 环境
   hjList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1221';
+    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1221';
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.data.pdList)
       if (res.data.code == 200) {
@@ -78,7 +78,7 @@ Page({
   },
   // 困难
   knList() {
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1223';
+    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1223';
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.data.pdList)
       if (res.data.code == 200) {

@@ -14,7 +14,7 @@ Page({
   // 搜素
   getSearch(e) {
     let keywords = e.detail.value;
-    let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/department/publistJs?keywords=' + keywords;
+    let url = part.baseUrl + 'department/publistJs?keywords=' + keywords;
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
       this.setData({
@@ -23,9 +23,9 @@ Page({
     });
   },
   // 返回注册
-  goRegister(e){
+  goRegister(e) {
     wx.navigateTo({
-      url: '../register/register?key='+e.currentTarget.dataset.key+'&id='+e.currentTarget.dataset.id,
+      url: '../register/register?key=' + e.currentTarget.dataset.key + '&id=' + e.currentTarget.dataset.id,
     })
   },
   /**

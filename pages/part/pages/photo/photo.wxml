@@ -25,9 +25,9 @@
     <view class="text-center padding-left-xs text-lg">类型</view>
   </view>
   <view class="margin-top-lg">
-    <picker bindchange="getType" value="{{index}}" range="{{type}}">
+    <picker bindchange="getType" value="{{index}}" range="{{typeList}}">
       <view class="text-grey flex justify-between">
-        <view> {{index?type[index]:'请选择'}}</view>
+        <view> {{index?typeList[index]:'请选择'}}</view>
         <view><text class="cuIcon-right text-xxl"></text></view>
       </view>
     </picker>
@@ -53,7 +53,7 @@
     <view class="text-center padding-left-xs text-lg">位置</view>
   </view>
   <view class="margin-top-lg">
-    <input placeholder="请输入问题发生的位置" bindinput="getTitle"></input>
+    <input placeholder="请输入问题发生的位置" bindinput="getArea"></input>
   </view>
   <view class="line"></view>
 

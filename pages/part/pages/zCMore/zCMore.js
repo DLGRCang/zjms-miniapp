@@ -18,7 +18,7 @@ Page({
   },
     // 政策
     getZCList() {
-      let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/taskMeeting/actListJs?ACTID=1222';
+      let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1222';
       part.httpRequest(url, 'GET', {}).then(res => {
         if (res.data.code == 200) {
           this.setData({

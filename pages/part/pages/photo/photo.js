@@ -13,8 +13,10 @@ Page({
     nowDate: util.formatDate(new Date),
     title: '',
     content: '',
-    type: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
+    typeList: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
+    type:'',
     date: '请选择',
+    area:'',
     imgList: [],
   },
 
@@ -34,7 +36,8 @@ Page({
   // 获取类型
   getType(e) {
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      type:this.data.typeList[e.detail.value]
     })
   },
   // 获取时间
@@ -43,16 +46,25 @@ Page({
       date: e.detail.value
     })
   },
-
-
+  getArea(e){
+    this.setData({
+      area: e.detail.value
+    })
+  },
   // 数据提交
   submit() {
-
+      let data = {
+        title:this.data.title,
+        content:this.data.content,
+        type: this.data.type,
+        time:this.data.date,
+        area:this.data.area
+      }
   },
   // 选择图片
   ChooseImage() {
     wx.chooseImage({
-      count: 9, //默认9
+      count: 3, //默认9
       sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album'], //从相册选择
       success: (res) => {

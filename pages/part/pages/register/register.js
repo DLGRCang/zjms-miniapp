@@ -29,7 +29,7 @@ Page({
     area: '',
     COMMUNITY_TOGETHER: '',
     DEPT_ID: '',
-    id:'',
+    id: '',
     PASSWORD: '',
     PASSWORDS: '',
   },
@@ -60,15 +60,14 @@ Page({
         NAME: this.data.NAME,
         PHONE: this.data.PHONE,
         ID_CARD: this.data.ID_CARD,
-        ADDRESS: this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号',
+        ADDRESS: this.data.area + ',' + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号',
         IDENTITY: this.data.IDENTITY,
         COMMUNITY_TOGETHER: this.data.COMMUNITY_TOGETHER,
         DEPT_ID: this.data.id,
         PASSWORD: this.data.PASSWORD
       }
       console.log(data)
-      // let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/itemuser/pubSaveApplicantUser';
-      let url = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/itemuser/pubSaveApplicantUser?NAME='+this.data.NAME+'&PHONE='+this.data.PHONE+'&ID_CARD='+this.data.ID_CARD+'&ADDRESS='+this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号'+'&IDENTITY='+this.data.IDENTITY+'&COMMUNITY_TOGETHER='+this.data.COMMUNITY_TOGETHER+'&DEPT_ID='+this.data.id+'&PASSWORD='+this.data.PASSWORD+'&SEX=1';
+      let url = part.baseUrl + 'itemuser/pubSaveApplicantUser?NAME=' + this.data.NAME + '&PHONE=' + this.data.PHONE + '&ID_CARD=' + this.data.ID_CARD + '&ADDRESS=' + this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号' + '&IDENTITY=' + this.data.IDENTITY + '&COMMUNITY_TOGETHER=' + this.data.COMMUNITY_TOGETHER + '&DEPT_ID=' + this.data.id + '&PASSWORD=' + this.data.PASSWORD + '&SEX=1';
       part.httpRequest(url, 'POST', {}).then(res => {
         console.log(res.data)
         if (res.data.code == 200) {
@@ -80,7 +79,7 @@ Page({
             icon: 'none'
           })
         }
-      });   
+      });
     } else {
       wx.showToast({
         icon: 'none',
