@@ -1,0 +1,8 @@
+/* pages/government/pages/questionnaireInfo/questionnaireInfo.wxss */
+.bgColor {
+	background-color: #2162B5;
+	color: #ffffff;
+}
+.title-color{
+	color:#2162B5
+}

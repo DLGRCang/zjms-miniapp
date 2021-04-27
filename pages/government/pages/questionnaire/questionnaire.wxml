@@ -6,7 +6,7 @@
 <view class="padding-lr-xl">
 	
 <dot-title title="调查问卷" color="title-color"></dot-title>
-	<item-image-text wx:for="{{5}}" obj="{{item}}" isImg="{{false}}" itemTitle="调查问卷标题调查问卷标题调查问卷标题调查问卷标题调查问卷标题"
-		date="2020-02-03" isDate="true" isLine="true">
+	<item-image-text bindtap="goInfo" data-id="{{item.voteId}}" type="8" wx:for="{{dataList}}"  isImg="{{false}}" itemTitle="{{item.voteTtitle}}"
+		date="{{item.startData}}-{{item.endDate}}" isDate="true" isLine="true">
 	</item-image-text>
 </view>

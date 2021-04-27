@@ -182,7 +182,8 @@
 				"pages/guideCommint/guideCommint",
 				"pages/volunteerServiceDetail/volunteerServiceDetail",
 				"pages/cityActionDetail/cityActionDetail",
-				"pages/cityActionApply/cityActionApply"
+				"pages/cityActionApply/cityActionApply",
+				"pages/questionnaireInfo/questionnaireInfo"
 			]
 		},
 		{
