@@ -9,7 +9,7 @@
       </image>
       <view class=" margin-left-sm text-white">
         <view class="flex justify-between">
-          <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{userInfo.NAME}}</text></view>
+          <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{users.NAME}}</text></view>
         </view>
         <view class="margin-top-sm"><text style="font-size:22rpx;;">所在支部：{{users.HOME}}</text></view>
         <view class="margin-top-sm"

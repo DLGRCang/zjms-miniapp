@@ -26,10 +26,9 @@
     <view class="text-center padding-left-xs text-lg  text-bold">类型</view>
   </view>
   <view class="margin-top-lg">
-    <picker bindchange="getType" value="{{index}}" range="{{typeList}}" range-key="{{'name'}}"> 
+    <picker bindchange="getType" value="{{index}}" range="{{typeList}}" range-key="{{'name'}}">
       <view class="text-grey flex justify-between">
         <view> {{index?typeList[index].name:'请选择'}}</view>
-        <!-- <view>{{typeList[index].name}}</view> -->
         <view><text class="cuIcon-right text-xxl"></text></view>
       </view>
     </picker>
@@ -56,20 +55,34 @@
 
   <view class="flex justify-contents">
     <view class="list color"></view>
+    <view class="text-center padding-left-xs text-lg  text-bold">活动时间</view>
+  </view>
+  <view class="margin-top-lg">
+    <picker mode="date" value="{{date}}" start="{{hdDate}}" end="2100-09-01" bindchange="getDate">
+      <view class="text-grey flex justify-between">
+        <view> {{hdDate}}</view>
+        <view><text class="cuIcon-right text-xxl"></text></view>
+      </view>
+    </picker>
+  </view>
+  <view class="line"></view>
+
+  <view class="flex justify-contents">
+    <view class="list color"></view>
     <view class="text-center padding-left-xs text-lg  text-bold">现场照片</view>
   </view>
   <view class="cu-form-group margin-bottom-lg">
     <view class="grid col-4 grid-square flex-sub margin-top-sm">
       <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-        <image src='{{imgList[index]}}' mode='aspectFill'></image>
-        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-          <text class="cuIcon-close"></text>
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+          <text class="cuIcon-cameraadd"></text>
         </view>
       </view>
-      <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
-        <text class="cuIcon-cameraadd"></text>
-      </view>
-    </view>
   </view>
 
 

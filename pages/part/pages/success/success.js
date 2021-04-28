@@ -11,34 +11,34 @@ Page({
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
     users: {},
-    userInfo: wx.getStorageSync('userInfo'),
+    userInfo: "",
   },
-    // 获取个人信息
-    getUserInfo() {
-      let url = part.baseUrl + 'itemuser/getDepByID?USER_ID=' + this.data.userInfo.USER_ID
-      part.httpRequest(url, 'GET', {}).then(res => {
-        if (res.data.code == 200) {
-          this.setData({
-            users: res.data.data
-          })
-        } else {
-          let msg = res.data.msg
-          wx.showToast({
-            title: msg,
-            icon: 'none'
-          })
-        }
-      });
-    },
+  // 获取个人信息
+  getUserInfo() {
+    let url = part.baseUrl + 'itemuser/getDepByID?USER_ID=' + this.data.userInfo.USER_ID
+    part.httpRequest(url, 'GET', {}).then(res => {
+      if (res.data.code == 200) {
+        this.setData({
+          users: res.data.data
+        })
+      } else {
+        let msg = res.data.msg
+        wx.showToast({
+          title: msg,
+          icon: 'none'
+        })
+      }
+    });
+  },
 
   goSQUser(e) {
-    util.pageJumpTo('../sQUser/sQUser','tab',e.currentTarget.dataset.tab)
+    util.pageJumpTo('../sQUser/sQUser', 'tab', e.currentTarget.dataset.tab)
   },
   goSHUser(e) {
-    util.pageJumpTo('../sHUser/sHUser','tab',e.currentTarget.dataset.tab)
+    util.pageJumpTo('../sHUser/sHUser', 'tab', e.currentTarget.dataset.tab)
   },
   goZCUser(e) {
-    util.pageJumpTo('../zCUser/zCUser','tab',e.currentTarget.dataset.tab)
+    util.pageJumpTo('../zCUser/zCUser', 'tab', e.currentTarget.dataset.tab)
   },
   goUserFB(e) {
     util.pageJump('../userFb/userFb')
@@ -48,15 +48,22 @@ Page({
   },
   // 退出登录
   goExit() {
-    wx.clearStorageSync()
+    wx.setStorageSync('userInfo', '')
+    wx.setStorageSync("token-header", '');
+    wx.setStorageSync("userTocken", '');
+    wx.setStorageSync("userName", '');
+    wx.setStorageSync("userId", '');
     wx.switchTab({
-      url:'/pages/basics/home/home'
+      url: '/pages/basics/home/home'
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
     this.getUserInfo()
   },
 
@@ -64,14 +71,20 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
+    this.getUserInfo()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
+    this.getUserInfo()
   },
 
   /**

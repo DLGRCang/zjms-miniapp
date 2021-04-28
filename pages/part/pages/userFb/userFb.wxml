@@ -7,7 +7,7 @@
     <view style="position: relative;">
       <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 670rpx;height: 400rpx;border-radius: 10rpx;">
       </image>
-      <view class="sign">已结束</view>
+      <!-- <view class="sign">已结束</view> -->
     </view>
     <view class="text-bold margin-top-sm" style="font-size:36rpx;">
       {{item.TITLE}}

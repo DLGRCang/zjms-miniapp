@@ -9,7 +9,7 @@
       </image>
       <view class=" margin-left-sm text-white">
         <view class="flex justify-between">
-          <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{userInfo.NAME}}</text></view>
+          <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{users.NAME}}</text></view>
           <view class="userCenter" bindtap="goUserCenter">个人中心</view>
         </view>
         <view class="margin-top-sm"><text style="font-size:22rpx;;">所在支部：{{users.HOME}}</text></view>
@@ -61,8 +61,9 @@
   </view>
   <view class="margin-top-xl" bindtap="goDetail" data-id="{{SQ.ID}}">
     <view style="position: relative;">
-      <image mode="scaleToFill" src="{{baseUrl}}{{FMUrl}}" style="width: 670rpx;height: 400rpx;border-radius: 10rpx;"></image>
-      <view class="sign">已结束</view>
+      <image mode="scaleToFill" src="{{baseUrl}}{{FMUrl}}" style="width: 670rpx;height: 400rpx;border-radius: 10rpx;">
+      </image>
+      <!-- <view class="sign">已结束</view> -->
     </view>
     <view class="text-bold margin-top-sm" style="font-size:36rpx;">
       {{SQ.TITLE}}
@@ -92,7 +93,8 @@
     <view class="grid col-2 margin-bottom">
       <view class="flex" wx:for="{{SH}}" wx:key='item'>
         <view bindtap="goDetail" data-id="{{item.ID}}">
-          <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 330rpx;height: 330rpx;border-radius: 10rpx;">
+          <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}"
+            style="width: 330rpx;height: 330rpx;border-radius: 10rpx;">
           </image>
           <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
             {{item.TITLE}}

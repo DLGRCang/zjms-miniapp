@@ -17,8 +17,8 @@ Page({
     multiIndex: [0, 0],
     bsSQ: '',
     users: {},
-    userInfo: wx.getStorageSync('userInfo'),
-    bd: '报道',
+    userInfo: '',
+    bd: '报到',
     baseUrl: part.baseUrl,
     FMUrl: '',
     SQ: null,
@@ -26,7 +26,7 @@ Page({
     ZC: null,
   },
 
-  // 报道
+  // 报到
   bdList(e) {
     if (this.data.bd === '已报到') {
       return
@@ -88,7 +88,7 @@ Page({
           icon: 'none'
         })
       }
-      
+
     });
   },
   // 政策
@@ -114,7 +114,6 @@ Page({
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.data)
       console.log(res.data.data.ADDRESS)
-
       if (res.data.code == 200) {
         this.setData({
           users: res.data.data
@@ -135,7 +134,7 @@ Page({
   },
   // 党员随手拍
   goPhoto(e) {
-    util.pageJumpTo('../photo/photo','id', e.currentTarget.dataset.id)
+    util.pageJumpTo('../photo/photo', 'id', e.currentTarget.dataset.id)
   },
   // 详情
   goDetail(e) {
@@ -155,13 +154,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
+    this.getActiveList()
+    this.getSHList()
+    this.getZCList()
+    this.getUserInfo()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
     this.getActiveList()
     this.getSHList()
     this.getZCList()
@@ -172,7 +180,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo: wx.getStorageSync('userInfo')
+    })
+    this.getActiveList()
+    this.getSHList()
+    this.getZCList()
+    this.getUserInfo()
   },
 
   /**

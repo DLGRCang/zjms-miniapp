@@ -48,8 +48,9 @@ Page({
     type: '',
     area: '',
     pernum: '',
-    imgID:'',
+    imgID: '',
     imgList: [],
+    hdDate: util.formatDate(new Date()),
   },
 
   // 获取标题
@@ -82,10 +83,15 @@ Page({
       pernum: e.detail.value
     })
   },
+  getDate(e){
+    this.setData({
+      hdDate: e.detail.value
+    })
+  },
   // 数据提交
   submit() {
-    let url = 'taskMeeting/saveMeetPlan?TITLE=' + this.data.title + '&CONTENTDETAIL=' + this.data.content + '&DICT_ID=' + this.data.type + '&PLACE=' + this.data.area + '&INPUT_USER=' + this.data.userID + '&PERNUM=' + this.data.pernum + '&FENGMIAN='+this.data.imgID
-     part.httpRequest(part.baseUrl + url, 'POST', {}).then(res => {
+    let url = 'taskMeeting/saveMeetPlan?TITLE=' + this.data.title + '&CONTENTDETAIL=' + this.data.content + '&DICT_ID=' + this.data.type + '&PLACE=' + this.data.area + '&INPUT_USER=' + this.data.userID + '&PERNUM=' + this.data.pernum + '&FENGMIAN=' + this.data.imgID +'&PUBLISHDATE=' +this.data.hdDate
+    part.httpRequest(part.baseUrl + url, 'POST', {}).then(res => {
       console.log(res)
       part.returnCode(res.data.code, 200)
     });
@@ -106,7 +112,7 @@ Page({
           if (res.statusCode == 200) {
             let dataObj = JSON.parse(res.data)
             that.setData({
-              imgID : dataObj.data.ID
+              imgID: dataObj.data.ID
             })
             wx.showToast({
               title: '上传成功',

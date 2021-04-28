@@ -40,7 +40,6 @@ Page({
     part.httpRequest(url, 'POST', {}).then(res => {
       console.log(res.data.data)
       if (res.data.code == 200) {
-        wx.setStorageSync("isPartLogin", true);
         wx.setStorageSync('userInfo', res.data.data)
         wx.setStorageSync("token-header", res.data.data.token);
         wx.setStorageSync("userTocken", res.data.data.userToken);
