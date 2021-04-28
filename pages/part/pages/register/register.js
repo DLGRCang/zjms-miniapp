@@ -62,6 +62,55 @@ Page({
       })
       return
     }
+    if (this.data.PHONE == '' || this.data.PHONE == null) {
+      wx.showToast({
+        title: '电话号不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.area == '' || this.data.area == null) {
+      wx.showToast({
+        title: '请选择所在社区',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.IDENTITY == '' || this.data.IDENTITY == null) {
+      wx.showToast({
+        title: '请选择身份',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.D == '' || this.data.D == null) {
+      wx.showToast({
+        title: '请核对详细地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.DY == '' || this.data.DY == null) {
+      wx.showToast({
+        title: '请核对详细地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.H == '' || this.data.H == null) {
+      wx.showToast({
+        title: '请核对详细地址',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.COMMUNITY_TOGETHER == '' || this.data.COMMUNITY_TOGETHER == null) {
+      wx.showToast({
+        title: '单元共建社区不能为空',
+        icon: 'none'
+      })
+      return
+    }
     let data = {
       NAME: this.data.NAME,
       PHONE: this.data.PHONE,

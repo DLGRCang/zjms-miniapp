@@ -29,7 +29,7 @@ Page({
       console.log(res)
       if (res.data.code == 200) {
         this.setData({
-          ZC: res.data.data.pdList
+          ZC: res.data.data
         })
       } else {
         let msg = res.data.msg

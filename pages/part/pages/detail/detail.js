@@ -15,12 +15,10 @@ Page({
     id: '',
     SQ: '',
     rlName: '认领',
-    disabled: false,
-
   },
 
   // 获取个人信息
-  geInfo() {
+  getInfo() {
     let url = part.baseUrl + 'TaskTrends/totasktrendinfoJsAct?PLAN_ID=' + this.data.id;
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
@@ -29,25 +27,20 @@ Page({
         this.setData({
           SQ: res.data.data[0]
         })
-      } else {
-        let msg = res.data.msg
-        wx.showToast({
-          title: msg,
-          icon: 'none'
-        })
-      }
+      } 
     });
   },
+  // 认领
   submit() {
     part.httpRequest(part.baseUrl + 'TaskTrends/saveBaoming?id=' + this.data.id, 'GET', {}).then(res => {
       console.log(res)
       this.setData({
-        rlName: '已认领',
-        disabled: true
+        rlName: '已认领'
       })
       part.returnCode(res.data.code, 200)
     });
   },
+  // 反馈
   goFk() {
     this.setData({
       fkName: '已反馈'
@@ -64,7 +57,7 @@ Page({
       id: options.id,
       tab: options.tab
     })
-    this.geInfo()
+    this.getInfo()
   },
 
   /**

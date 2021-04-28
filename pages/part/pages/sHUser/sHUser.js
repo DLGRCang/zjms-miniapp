@@ -44,7 +44,7 @@ Page({
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
-          contentInfo: res.data.data.pdList
+          contentInfo: res.data.data
         })
       } else {
         let msg = res.data.msg
@@ -60,7 +60,7 @@ Page({
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
-          contentInfo: res.data.data.pdList
+          contentInfo: res.data.data
         })
       } else {
         let msg = res.data.msg
@@ -76,7 +76,7 @@ Page({
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
-          contentInfo: res.data.data.pdList
+          contentInfo: res.data.data
         })
       } else {
         let msg = res.data.msg

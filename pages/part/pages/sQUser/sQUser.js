@@ -50,7 +50,7 @@ Page({
       console.log(res)
       if (res.data.code == 200) {
         this.setData({
-          contentInfo: res.data.data.pdList
+          contentInfo: res.data.data
         })
       } else {
         let msg = res.data.msg
@@ -68,7 +68,7 @@ Page({
       console.log(res)
       if (res.data.code == 200) {
         this.setData({
-          contentInfo: res.data.data.pdList
+          contentInfo: res.data.data
         })
       } else {
         let msg = res.data.msg
@@ -86,7 +86,7 @@ Page({
       console.log(res)
       if (res.data.code == 200) {
         this.setData({
-          contentInfo: res.data.data.pdList
+          contentInfo: res.data.data
         })
       } else {
         let msg = res.data.msg
