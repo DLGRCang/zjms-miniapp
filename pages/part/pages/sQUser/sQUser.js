@@ -10,32 +10,32 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    userInfo :wx.getStorageInfoSync('userInfo'),
-    userId:'',
-    tab:'',
+    userInfo: wx.getStorageSync('userInfo'),
+    userId: '',
+    tab: '',
     tabList: ['矛盾化解', '环境整治', '困难帮扶'],
     TabCur: 0,
     scrollLeft: 0,
-    baseUrl:part.baseUrl,
+    baseUrl: part.baseUrl,
     contentInfo: null
   },
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id
     })
-    if(e.currentTarget.dataset.id===0){
+    if (e.currentTarget.dataset.id === 0) {
       this.setData({
         contentInfo: null
       })
       this.mdList()
     }
-    if(e.currentTarget.dataset.id===1){
+    if (e.currentTarget.dataset.id === 1) {
       this.setData({
         contentInfo: null
       })
       this.hjList()
     }
-    if(e.currentTarget.dataset.id===2){
+    if (e.currentTarget.dataset.id === 2) {
       this.setData({
         contentInfo: null
       })
@@ -44,7 +44,8 @@ Page({
   },
   // 矛盾
   mdList() {
-    let url = part.baseUrl+'TaskTrends/actFindByPsersonIdList?ACTID=1220&USER_ID='+this.data.userId;
+    console.log(this.data.userId)
+    let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1220&USER_ID=' + this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res)
       if (res.data.code == 200) {
@@ -62,7 +63,7 @@ Page({
   },
   // 环境
   hjList() {
-    let url = part.baseUrl+'TaskTrends/actFindByPsersonIdList?ACTID=1221&USER_ID='+this.data.userId;
+    let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1221&USER_ID=' + this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res)
       if (res.data.code == 200) {
@@ -80,7 +81,7 @@ Page({
   },
   // 困难
   knList() {
-    let url = part.baseUrl+'TaskTrends/actFindByPsersonIdList?ACTID=1223&USER_ID='+this.data.userId;
+    let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1223&USER_ID=' + this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res)
       if (res.data.code == 200) {
@@ -100,7 +101,7 @@ Page({
   // 详情
   goDetail(e) {
     wx.navigateTo({
-      url: '../detail/detail?id='+e.currentTarget.dataset.id+'&tab='+this.data.tab,
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id + '&tab=' + this.data.tab,
     })
   },
   /**
@@ -108,7 +109,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userId :this.data.userInfo.USER_ID
+      userId: this.data.userInfo.USER_ID
     })
     this.mdList()
   },
@@ -117,7 +118,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-   
+
   },
 
   /**

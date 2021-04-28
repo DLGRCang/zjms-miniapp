@@ -85,9 +85,10 @@ Page({
         let msg = res.data.msg
         wx.showToast({
           title: msg,
-          icon: 'nZList'
+          icon: 'none'
         })
       }
+      
     });
   },
   // 政策

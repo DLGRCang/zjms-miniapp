@@ -7,12 +7,11 @@
     {{item}}
   </view>
 </scroll-view>
-<view class="line"></view>
 <view class="padding-lg">
   <view class="grid col-2 margin-bottom">
     <view class="flex" wx:for="{{contentInfo}}" wx:key='item'>
       <view bindtap="goDetail" data-id="{{item.ID}}">
-        <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 330rpx;height: 330rpx;">
+        <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 330rpx;height: 330rpx;border-radius: 10rpx;">
         </image>
         <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
           {{item.TITLE}}

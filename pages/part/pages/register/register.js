@@ -55,7 +55,13 @@ Page({
   },
   // 提交
   submit() {
-
+    if (this.data.NAME == '' || this.data.NAME == null) {
+      wx.showToast({
+        title: '姓名不能为空',
+        icon: 'none'
+      })
+      return
+    }
     let data = {
       NAME: this.data.NAME,
       PHONE: this.data.PHONE,
@@ -71,13 +77,21 @@ Page({
     part.httpRequest(url, 'POST', {}).then(res => {
       console.log(res.data)
       if (res.data.code == 200) {
-        util.pageJump('../sign/sign')
+        setTimeout(() => {
+          wx.showToast({
+            title: '注册成功',
+            icon: 'none'
+          })
+          util.pageJump('../sign/sign')
+        }, 2000)
+
       } else {
-        let msg = res.data.msg
-        wx.showToast({
-          title: msg,
-          icon: 'none'
-        })
+        setTimeout(() => {
+          wx.showToast({
+            title: '注册失败',
+            icon: 'none'
+          })
+        }, 2000)
       }
     });
 

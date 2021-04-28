@@ -61,7 +61,7 @@
   </view>
   <view class="margin-top-xl" bindtap="goDetail" data-id="{{SQ.ID}}">
     <view style="position: relative;">
-      <image mode="scaleToFill" src="{{baseUrl}}{{FMUrl}}" style="width: 670rpx;height: 400rpx;"></image>
+      <image mode="scaleToFill" src="{{baseUrl}}{{FMUrl}}" style="width: 670rpx;height: 400rpx;border-radius: 10rpx;"></image>
       <view class="sign">已结束</view>
     </view>
     <view class="text-bold margin-top-sm" style="font-size:36rpx;">
@@ -92,7 +92,7 @@
     <view class="grid col-2 margin-bottom">
       <view class="flex" wx:for="{{SH}}" wx:key='item'>
         <view bindtap="goDetail" data-id="{{item.ID}}">
-          <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 330rpx;height: 330rpx;">
+          <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 330rpx;height: 330rpx;border-radius: 10rpx;">
           </image>
           <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
             {{item.TITLE}}

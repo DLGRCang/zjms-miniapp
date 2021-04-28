@@ -9,7 +9,7 @@ Page({
    */
   data: {
     tabList: ['文化艺术', '微心愿', '其他'],
-    userId:wx.getStorageInfoSync('userId'),
+    userId:wx.getStorageSync('userId'),
     tab:'',
     TabCur: 0,
     scrollLeft: 0,

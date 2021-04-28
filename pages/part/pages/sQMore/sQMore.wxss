@@ -30,34 +30,6 @@
 
 
 
-
-.images {
-  width: 100rpx;
-  height: 100rpx;
-  border: 6rpx solid #ffffff;
-  border-radius: 50%;
-}
-
-
-
-.title {
-  height: 76rpx;
-  border: 1rpx solid #ffffff;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 6rpx 0px rgba(0, 0, 0, 0.15);
-  border-radius: 4rpx;
-  margin-top: -70rpx;
-}
-
-.list {
-  width: 10rpx;
-  height: 32rpx;
-  line-height: 32rpx;
-  border-left: 10rpx solid;
-  border-radius: 8rpx 8rpx 8rpx 8rpx;
-  margin-top: 6rpx;
-}
-
 .line {
   border-bottom: 1rpx solid #F2F2F2;
   height: 2rpx;
@@ -69,7 +41,7 @@
   position: absolute;
   width: 120rpx;
   height: 64rpx;
-  border: 1rpx solid #ffffff;
+  border: 1rpx solid #B81C24;
   border-radius: 10rpx;
   background-color: #B81C24;
   color: #ffffff;

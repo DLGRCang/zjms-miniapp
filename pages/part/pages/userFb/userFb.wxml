@@ -5,7 +5,7 @@
 <view class="padding-lg" wx:for="{{contentInfo}}" wx:key='item'>
   <view class="margin-top-xl" bindtap="goDetail" data-id="{{item.ID}}" data-tab='2'>
     <view style="position: relative;">
-      <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 670rpx;height: 400rpx;">
+      <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 670rpx;height: 400rpx;border-radius: 10rpx;">
       </image>
       <view class="sign">已结束</view>
     </view>
