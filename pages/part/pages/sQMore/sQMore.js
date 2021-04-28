@@ -10,14 +10,15 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
+    userInfo :wx.getStorageInfoSync('userInfo'),
+    userId:'',
+    tab:'',
     tabList: ['矛盾化解', '环境整治', '困难帮扶'],
     TabCur: 0,
-    scrollLeft: 0,
     baseUrl:part.baseUrl,
     contentInfo: null
   },
   tabSelect(e) {
-    console.log(e.currentTarget.dataset.id)
     this.setData({
       TabCur: e.currentTarget.dataset.id
     })
@@ -42,9 +43,10 @@ Page({
   },
   // 矛盾
   mdList() {
-    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1220';
+    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1220&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data.data.pdList[0].FENG_MIAN_TU.PATH)
+      console.log('矛盾')
+      console.log(res)
       if (res.data.code == 200) {
         this.setData({
           contentInfo: res.data.data.pdList
@@ -60,9 +62,10 @@ Page({
   },
   // 环境
   hjList() {
-    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1221';
+    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1221&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data.data.pdList)
+      console.log('环境')
+      console.log(res)
       if (res.data.code == 200) {
         this.setData({
           contentInfo: res.data.data.pdList
@@ -78,9 +81,10 @@ Page({
   },
   // 困难
   knList() {
-    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1223';
+    let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1223&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data.data.pdList)
+      console.log('困难')
+      console.log(res)
       if (res.data.code == 200) {
         this.setData({
           contentInfo: res.data.data.pdList
@@ -97,12 +101,20 @@ Page({
 
   // 详情
   goDetail(e) {
-    util.pageJumpTo('../detail/detail', 'id', e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../detail/detail?id='+e.currentTarget.dataset.id+'&tab='+this.data.tab,
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    let that = this
+    this.setData({
+      userId :that.data.userInfo.USER_ID,
+      tab:options.tab
+    })
     this.mdList()
   },
 

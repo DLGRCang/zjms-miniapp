@@ -55,37 +55,32 @@ Page({
   },
   // 提交
   submit() {
-    if (this.data.PASSWORD === this.data.PASSWORD) {
-      let data = {
-        NAME: this.data.NAME,
-        PHONE: this.data.PHONE,
-        ID_CARD: this.data.ID_CARD,
-        ADDRESS: this.data.area + ',' + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号',
-        IDENTITY: this.data.IDENTITY,
-        COMMUNITY_TOGETHER: this.data.COMMUNITY_TOGETHER,
-        DEPT_ID: this.data.id,
-        PASSWORD: this.data.PASSWORD
-      }
-      console.log(data)
-      let url = part.baseUrl + 'itemuser/pubSaveApplicantUser?NAME=' + this.data.NAME + '&PHONE=' + this.data.PHONE + '&ID_CARD=' + this.data.ID_CARD + '&ADDRESS=' + this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号' + '&IDENTITY=' + this.data.IDENTITY + '&COMMUNITY_TOGETHER=' + this.data.COMMUNITY_TOGETHER + '&DEPT_ID=' + this.data.id + '&PASSWORD=' + this.data.PASSWORD + '&SEX=1';
-      part.httpRequest(url, 'POST', {}).then(res => {
-        console.log(res.data)
-        if (res.data.code == 200) {
-          util.pageJump('../sign/sign')
-        } else {
-          let msg = res.data.msg
-          wx.showToast({
-            title: msg,
-            icon: 'none'
-          })
-        }
-      });
-    } else {
-      wx.showToast({
-        icon: 'none',
-        title: '俩次输入的密码不一致',
-      })
+
+    let data = {
+      NAME: this.data.NAME,
+      PHONE: this.data.PHONE,
+      ID_CARD: this.data.ID_CARD,
+      ADDRESS: this.data.area + ',' + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号',
+      IDENTITY: this.data.IDENTITY,
+      COMMUNITY_TOGETHER: this.data.COMMUNITY_TOGETHER,
+      DEPT_ID: this.data.id,
+      PASSWORD: this.data.PASSWORD
     }
+    console.log(data)
+    let url = part.baseUrl + 'itemuser/pubSaveApplicantUser?NAME=' + this.data.NAME + '&PHONE=' + this.data.PHONE + '&ID_CARD=' + this.data.ID_CARD + '&ADDRESS=' + this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号' + '&IDENTITY=' + this.data.IDENTITY + '&COMMUNITY_TOGETHER=' + this.data.COMMUNITY_TOGETHER + '&DEPT_ID=' + this.data.id + '&SEX=1';
+    part.httpRequest(url, 'POST', {}).then(res => {
+      console.log(res.data)
+      if (res.data.code == 200) {
+        util.pageJump('../sign/sign')
+      } else {
+        let msg = res.data.msg
+        wx.showToast({
+          title: msg,
+          icon: 'none'
+        })
+      }
+    });
+
   },
 
   // 获取数据

@@ -10,6 +10,12 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
+    arrayList: [
+      ['阿勒腾席热镇'],
+      ['园林社区', '通格朗社区', '纳林高勒社区', '札萨克社区', '满达社区', '平安社区', '文明街社区', '恩可社区', '阿吉奈社区', '乌兰淖尔社区', '吉日嘎朗社区', '南苑社区', '新北社区', '王府路社区'],
+    ],
+    multiIndex: [0, 0],
+    bsSQ: '',
     users: {},
     userInfo: wx.getStorageSync('userInfo'),
     bd: '报道',
@@ -35,12 +41,21 @@ Page({
       bd: '已报到'
     })
   },
+  // 社区选择
+  sqChange: function (e) {
+    console.log(this.data.arrayList[0][e.detail.value[0]] + this.data.arrayList[1][e.detail.value[1]])
+    this.setData({
+      multiIndex: e.detail.value,
+      bsSQ: this.data.arrayList[0][e.detail.value[0]] + this.data.arrayList[1][e.detail.value[1]]
+    })
 
+  },
 
   // 社区活动
   getActiveList() {
     let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1220';
     part.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res.data.data.pdList[0])
       if (res.data.code == 200) {
         this.setData({
           SQ: res.data.data.pdList[0],
@@ -50,7 +65,7 @@ Page({
         let msg = res.data.msg
         wx.showToast({
           title: msg,
-          icon: 'none'
+          icon: 'nZList'
         })
       }
     });
@@ -70,7 +85,7 @@ Page({
         let msg = res.data.msg
         wx.showToast({
           title: msg,
-          icon: 'none'
+          icon: 'nZList'
         })
       }
     });
@@ -87,7 +102,7 @@ Page({
         let msg = res.data.msg
         wx.showToast({
           title: msg,
-          icon: 'none'
+          icon: 'nZList'
         })
       }
     });
@@ -96,8 +111,9 @@ Page({
   getUserInfo() {
     let url = part.baseUrl + 'itemuser/getDepByID?USER_ID=' + this.data.userInfo.USER_ID
     part.httpRequest(url, 'GET', {}).then(res => {
-      console.log(11111111111111)
       console.log(res.data.data)
+      console.log(res.data.data.ADDRESS)
+
       if (res.data.code == 200) {
         this.setData({
           users: res.data.data
@@ -106,7 +122,7 @@ Page({
         let msg = res.data.msg
         wx.showToast({
           title: msg,
-          icon: 'none'
+          icon: 'nZList'
         })
       }
     });
@@ -117,8 +133,8 @@ Page({
     util.pageJump('../success/success')
   },
   // 党员随手拍
-  goPhoto() {
-    util.pageJump('../photo/photo')
+  goPhoto(e) {
+    util.pageJumpTo('../photo/photo','id', e.currentTarget.dataset.id)
   },
   // 详情
   goDetail(e) {
@@ -138,17 +154,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getActiveList()
-    this.getSHList()
-    this.getZCList()
-    this.getUserInfo()
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getActiveList()
+    this.getSHList()
+    this.getZCList()
+    this.getUserInfo()
   },
 
   /**
@@ -187,8 +203,8 @@ Page({
   },
 
   /**
- * 用户点击右上角分享
- */
+  * 用户点击右上角分享
+  */
   onShareAppMessage: function () {
     return {
       path: '//pages/part/pages/homepage/homepage',

@@ -35,14 +35,9 @@ Page({
   },
   // 登录
   submit() {
-    // +','+this.data.code;
+    wx.clearStorageSync()
     let url = part.baseUrl + 'login_login?KEYDATA=' + this.data.phone + ',' + this.data.password
-    let data = {
-      // KEYDATA:this.data.phone+','+this.data.password+','+this.data.code,                                                                                            
-      // tm:'1'
-    }
-    console.log(data)
-    part.httpRequest(url, 'POST', data).then(res => {
+    part.httpRequest(url, 'POST', {}).then(res => {
       console.log(res.data.data)
       if (res.data.code == 200) {
         wx.setStorageSync("isPartLogin", true);
@@ -50,6 +45,7 @@ Page({
         wx.setStorageSync("token-header", res.data.data.token);
         wx.setStorageSync("userTocken", res.data.data.userToken);
         wx.setStorageSync("userName", res.data.data.USER_NAME);
+        wx.setStorageSync("userId", res.data.data.USER_ID);
         util.pageJump('../homepage/homepage')
       } else {
         let msg = res.data.msg
@@ -80,6 +76,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+   
     // this.getCodeImg()
 
   },

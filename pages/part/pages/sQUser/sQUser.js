@@ -1,4 +1,4 @@
-// pages/part/pages/sHMore/sHMore.js
+// pages/part/pages/sQMore/sQMore.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const part = require('../../../../utils/part.js')
@@ -8,41 +8,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabList: ['文化艺术', '微心愿', '其他'],
+    imgUrl: app.globalData.imgUrl,
+    baseImgUrl: app.globalData.baseImgUrl,
     userInfo :wx.getStorageInfoSync('userInfo'),
     userId:'',
     tab:'',
+    tabList: ['矛盾化解', '环境整治', '困难帮扶'],
     TabCur: 0,
     scrollLeft: 0,
-    baseUrl: part.baseUrl,
+    baseUrl:part.baseUrl,
     contentInfo: null
   },
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id
     })
-    if (e.currentTarget.dataset.id === 0) {
+    if(e.currentTarget.dataset.id===0){
       this.setData({
         contentInfo: null
       })
-      this.whList()
+      this.mdList()
     }
-    if (e.currentTarget.dataset.id === 1) {
+    if(e.currentTarget.dataset.id===1){
       this.setData({
         contentInfo: null
       })
-      this.xyList()
+      this.hjList()
     }
-    if (e.currentTarget.dataset.id === 2) {
+    if(e.currentTarget.dataset.id===2){
       this.setData({
         contentInfo: null
       })
-      this.otherList()
+      this.knList()
     }
   },
-  whList() {
-    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1224&USER_ID='+this.data.userId;
+  // 矛盾
+  mdList() {
+    let url = part.baseUrl+'TaskTrends/actFindByPsersonIdList?ACTID=1220&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res)
       if (res.data.code == 200) {
         this.setData({
           contentInfo: res.data.data.pdList
@@ -56,9 +60,11 @@ Page({
       }
     });
   },
-  xyList() {
-    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1286&USER_ID='+this.data.userId;
+  // 环境
+  hjList() {
+    let url = part.baseUrl+'TaskTrends/actFindByPsersonIdList?ACTID=1221&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res)
       if (res.data.code == 200) {
         this.setData({
           contentInfo: res.data.data.pdList
@@ -72,9 +78,11 @@ Page({
       }
     });
   },
-  otherList() {
-    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1287&USER_ID='+this.data.userId;
+  // 困难
+  knList() {
+    let url = part.baseUrl+'TaskTrends/actFindByPsersonIdList?ACTID=1223&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res)
       if (res.data.code == 200) {
         this.setData({
           contentInfo: res.data.data.pdList
@@ -88,6 +96,7 @@ Page({
       }
     });
   },
+
   // 详情
   goDetail(e) {
     wx.navigateTo({
@@ -98,18 +107,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
     this.setData({
-      userId :that.data.userInfo.USER_ID
+      userId :this.data.userInfo.USER_ID
     })
-    this.whList()
+    this.mdList()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**

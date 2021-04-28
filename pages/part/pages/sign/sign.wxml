@@ -21,12 +21,12 @@
 
     <view class="flex margin-top-lg" style="font-size:32rpx;">
       <view class="text-bold">党员电话</view>
-      <input class="text-grey margin-left-lg" type="number" placeholder="请输入注册党员电话" bindinput="getPhone"></input>
+      <input class="text-grey margin-left-lg" type="number" placeholder="请输入党员电话" bindinput="getPhone"></input>
     </view>
     <view class="line"></view>
     <view class="flex margin-top-lg" style="font-size:32rpx;">
       <view class="text-bold">登录密码</view>
-      <input class="text-grey margin-left-lg" password placeholder="请输入注册设置密码" bindinput="getPassword"></input>
+      <input class="text-grey margin-left-lg" password placeholder="请输入密码" bindinput="getPassword"></input>
     </view>
     <view class="line"></view>
     <!-- <view class="flex margin-top-lg" style="font-size:32rpx;">

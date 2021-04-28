@@ -1,10 +1,11 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content" class="text-white text-xl text-bold">上传</view>
+  <view slot="content" class="text-white text-xl text-bold">问题随手拍</view>
 </cu-custom>
 <view class="padding-lg">
+
   <view class="flex justify-contents">
     <view class="list color"></view>
-    <view class="text-center padding-left-xs text-lg">标题</view>
+    <view class="text-center padding-left-xs text-lg text-bold">标题</view>
   </view>
   <view class="margin-top-lg">
     <input placeholder="请输入需解决的事情标题" bindinput="getTitle"></input>
@@ -13,21 +14,22 @@
 
   <view class="flex justify-contents">
     <view class="list color"></view>
-    <view class="text-center padding-left-xs text-lg">内容</view>
+    <view class="text-center padding-left-xs text-lg  text-bold">内容</view>
   </view>
   <view class="margin-top-lg">
-    <textarea maxlength="5" disabled="{{modalName!=null}}" bindinput="getContent" placeholder="请简单描述完成情况"></textarea>
+    <textarea maxlength="500" disabled="{{modalName!=null}}" bindinput="getContent" placeholder="请简单描述内容"></textarea>
   </view>
   <view class="line"></view>
 
   <view class="flex justify-contents">
     <view class="list color"></view>
-    <view class="text-center padding-left-xs text-lg">类型</view>
+    <view class="text-center padding-left-xs text-lg  text-bold">类型</view>
   </view>
   <view class="margin-top-lg">
-    <picker bindchange="getType" value="{{index}}" range="{{typeList}}">
+    <picker bindchange="getType" value="{{index}}" range="{{typeList}}" range-key="{{'name'}}"> 
       <view class="text-grey flex justify-between">
-        <view> {{index?typeList[index]:'请选择'}}</view>
+        <view> {{index?typeList[index].name:'请选择'}}</view>
+        <!-- <view>{{typeList[index].name}}</view> -->
         <view><text class="cuIcon-right text-xxl"></text></view>
       </view>
     </picker>
@@ -36,21 +38,16 @@
 
   <view class="flex justify-contents">
     <view class="list color"></view>
-    <view class="text-center padding-left-xs text-lg">时间</view>
+    <view class="text-center padding-left-xs text-lg  text-bold">参加人数</view>
   </view>
   <view class="margin-top-lg">
-    <picker mode="date" value="{{date}}" start="{{nowDate}}" end="2100-01-01" bindchange="getDate">
-      <view class="text-grey flex justify-between">
-        <view>{{date}}</view>
-        <view><text class="cuIcon-right text-xxl"></text></view>
-      </view>
-    </picker>
+    <input placeholder="请输入参加人数" bindinput="getPernum"></input>
   </view>
   <view class="line"></view>
 
   <view class="flex justify-contents">
     <view class="list color"></view>
-    <view class="text-center padding-left-xs text-lg">位置</view>
+    <view class="text-center padding-left-xs text-lg  text-bold">位置</view>
   </view>
   <view class="margin-top-lg">
     <input placeholder="请输入问题发生的位置" bindinput="getArea"></input>
@@ -59,7 +56,7 @@
 
   <view class="flex justify-contents">
     <view class="list color"></view>
-    <view class="text-center padding-left-xs text-lg">现场照片 <text class="text-sm text-grey">(最多三张)</text></view>
+    <view class="text-center padding-left-xs text-lg  text-bold">现场照片</view>
   </view>
   <view class="cu-form-group margin-bottom-lg">
     <view class="grid col-4 grid-square flex-sub margin-top-sm">
@@ -69,7 +66,7 @@
           <text class="cuIcon-close"></text>
         </view>
       </view>
-      <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<10}}">
+      <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
         <text class="cuIcon-cameraadd"></text>
       </view>
     </view>

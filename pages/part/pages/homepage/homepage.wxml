@@ -5,20 +5,32 @@
 <view class="padding-lg">
   <view class="flex userInfo">
     <view class="flex">
-      <image mode="aspectFit" class="images" src="{{imgUrl}}/image/touxiang.png" style="width: 92rpx;height: 92rpx;">
+      <image mode="scaleToFill" class="images" src="{{imgUrl}}/image/touxiang.png" style="width: 92rpx;height: 92rpx;">
       </image>
-      <view class="flex flex-direction margin-left-sm text-white">
-        <text class="margin-bottom-xs " style="font-size:38rpx;">{{userInfo.USER_NAME}}</text>
-        <text class="margin-bottom-xs" style="font-size:22rpx; display: inline-block; white-space: nowrap;width: 400rpx;overflow: hidden;text-overflow:ellipsis;">所在支部：{{users.HOME}}</text>
-        <text class="margin-bottom-xl" style="font-size:22rpx;display: inline-block; white-space: nowrap;width: 400rpx;overflow: hidden;text-overflow:ellipsis;">报道社区：{{users.ADDRESS}}</text>
+      <view class=" margin-left-sm text-white">
+        <view class="flex justify-between">
+          <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{userInfo.NAME}}</text></view>
+          <view class="userCenter" bindtap="goUserCenter">个人中心</view>
+        </view>
+        <view class="margin-top-sm"><text style="font-size:22rpx;;">所在支部：{{users.HOME}}</text></view>
+        <view class="margin-top-sm"
+          style="overflow: hidden;text-overflow: ellipsis;display: inline-block;white-space: nowrap;"><text
+            style="font-size:22rpx;">详细住址：{{users.ADDRESS}}</text></view>
       </view>
     </view>
-    <view class="userCenter" bindtap="goUserCenter">个人中心</view>
   </view>
+
   <view class="flex justify-between padding-sm title">
     <view class="flex ">
       <view class="color text-bold">当前社区</view>
-      <view class="margin-left-sm">桃李不言办事处幸福社区</view>
+      <view class="margin-left-sm">
+        <picker mode="multiSelector" bindchange="sqChange" value="{{multiIndex}}" range="{{arrayList}}">
+          <view class="flex justify-between">
+            <view>{{arrayList[0][multiIndex[0]]}}{{arrayList[1][multiIndex[1]]}}</view>
+            <view class="cuIcon-right" style="margin-left:10rpx;padding-top:5rpx;"></view>
+          </view>
+        </picker>
+      </view>
     </view>
     <view class="text-bold {{bd=='已报到'?'text-grey':'color'}}" bindtap="bdList" data-target="Modal">{{bd}}</view>
   </view>
@@ -26,16 +38,16 @@
   <view class="cu-modal {{modalName=='Modal'?'show':''}}">
     <view class="cu-dialog">
       <view class="">
-        <image src="../../../../image/part-bd.png" mode="aspectFit" style="width: 520rpx;height: 600rpx;"></image>
+        <image src="../../../../image/part-bd.png" mode="scaleToFill" style="width: 520rpx;height: 600rpx;"></image>
       </view>
       <view class="bmInfo color text-center content ">
-        <view class="text-xxl">{{userName}}，恭喜您</view>
+        <view class="text-xxl">{{userInfo.NAME}}，恭喜您</view>
         <view class="text-sl text-bold">报到成功</view>
         <!-- <view class="share" bindtap="goShare">分享</view> -->
         <button class="share" open-type="share">分享</button>
       </view>
       <view style="margin-top:10rpx;" bindtap="closeBd">
-        <image src="../../../../image/close.png" mode="aspectFit" style="width: 80rpx;height: 80rpx;"></image>
+        <image src="../../../../image/close.png" mode="scaleToFill" style="width: 80rpx;height: 80rpx;"></image>
       </view>
     </view>
   </view>
@@ -49,7 +61,7 @@
   </view>
   <view class="margin-top-xl" bindtap="goDetail" data-id="{{SQ.ID}}">
     <view style="position: relative;">
-      <image mode="aspectFit" src="{{baseUrl}}{{FMUrl}}" style="width: 670rpx;height: 400rpx;"></image>
+      <image mode="scaleToFill" src="{{baseUrl}}{{FMUrl}}" style="width: 670rpx;height: 400rpx;"></image>
       <view class="sign">已结束</view>
     </view>
     <view class="text-bold margin-top-sm" style="font-size:36rpx;">
@@ -65,8 +77,8 @@
     </view>
   </view>
 
-  <view class="margin-top-lg" bindtap="goPhoto">
-    <image src="{{imgUrl}}/image/part-part.png" mode="aspectFit" style="height:100rpx;width:672rpx;"></image>
+  <view class="margin-top-lg" bindtap="goPhoto" data-id="{{userInfo.USER_ID}}">
+    <image src="{{imgUrl}}/image/part-part.png" mode="scaleToFill" style="height:100rpx;width:672rpx;"></image>
   </view>
 
   <view class="flex justify-between margin-top-lg">
@@ -80,7 +92,7 @@
     <view class="grid col-2 margin-bottom">
       <view class="flex" wx:for="{{SH}}" wx:key='item'>
         <view bindtap="goDetail" data-id="{{item.ID}}">
-          <image mode="aspectFit" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 330rpx;height: 330rpx;">
+          <image mode="scaleToFill" src="{{baseUrl}}{{item.FENG_MIAN_TU.PATH}}" style="width: 330rpx;height: 330rpx;">
           </image>
           <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
             {{item.TITLE}}
@@ -108,7 +120,7 @@
 
   <block wx:for="{{ZC}}" wx:key='item'>
     <view class="flex margin-top-xl" bindtap="goDetail" data-id="{{item.ID}}">
-      <image src="{{imgUrl}}/image/search.png" style="width:40rpx;height:40rpx;"></image>
+      <image src="{{imgUrl}}/image/search.png" mode="scaleToFill" style="width:40rpx;height:40rpx;"></image>
       <view class="margin-left-sm">
         <view class="text-bold" style="font-size:36rpx;">
           {{item.TITLE}}

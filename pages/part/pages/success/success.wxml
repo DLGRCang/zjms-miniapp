@@ -7,17 +7,20 @@
     <view class="flex">
       <image mode="aspectFit" class="images" src="{{imgUrl}}/image/touxiang.png" style="width: 92rpx;height: 92rpx;">
       </image>
-      <view class="flex flex-direction margin-left-sm text-white">
-        <text class="margin-bottom-xs" style="font-size:38rpx;">张宏昌</text>
-        <text class="margin-bottom-xs" style="font-size:22rpx;">所在支部：红十字党支部</text>
-        <text class="margin-bottom-xl" style="font-size:22rpx;">报道社区：红十字会社区/报道</text>
+      <view class=" margin-left-sm text-white">
+        <view class="flex justify-between">
+          <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{userInfo.NAME}}</text></view>
+        </view>
+        <view class="margin-top-sm"><text style="font-size:22rpx;;">所在支部：{{users.HOME}}</text></view>
+        <view class="margin-top-sm"
+          style="overflow: hidden;text-overflow: ellipsis;display: inline-block;white-space: nowrap;"><text
+            style="font-size:22rpx;">报道社区：{{users.ADDRESS}}</text></view>
       </view>
     </view>
-    <view class="userCenter" bindtap="goUserCenter">修改头像</view>
   </view>
   <view class="title">
 
-    <view class="flex justify-between  text-bold padding-sm margin-top-sm" bindtap="goSQMore">
+    <view class="flex justify-between  text-bold padding-sm margin-top-sm" bindtap="goSQUser" data-tab="1">
       <view class="flex">
         <image class="icons" src="{{imgUrl}}/image/part1.png"></image>
         <view class="iconsInfo">社区活动</view>
@@ -26,7 +29,7 @@
     </view>
     <view class="line"></view>
 
-    <view class="flex justify-between  text-bold padding-sm margin-top-sm" bindtap="goSHMore">
+    <view class="flex justify-between  text-bold padding-sm margin-top-sm" bindtap="goSHUser" data-tab="1">
       <view class="flex">
         <image class="icons" src="{{imgUrl}}/image/part2.png"></image>
         <view class="iconsInfo">生活服务</view>
@@ -35,7 +38,7 @@
     </view>
     <view class="line"></view>
 
-    <view class="flex justify-between text-bold padding-sm margin-top-sm" bindtap="goZCMore">
+    <view class="flex justify-between text-bold padding-sm margin-top-sm" bindtap="goZCUser" data-tab="1">
       <view class="flex">
         <image class="icons" src="{{imgUrl}}/image/part3.png"></image>
         <view class="iconsInfo">政策咨询</view>
@@ -44,7 +47,7 @@
     </view>
     <view class="line"></view>
 
-    <view class="flex justify-between text-bold padding-sm margin-tb-sm" bindtap="">
+    <view class="flex justify-between text-bold padding-sm margin-tb-sm" bindtap="goUserFB" data-tab="1">
       <view class="flex">
         <image class="icons" src="{{imgUrl}}/image/part4.png"></image>
         <view class="iconsInfo">我发布的</view>

@@ -1,4 +1,4 @@
-/* pages/part/pages/homepage/homepage.wxss */
+/* pages/part/pages/userFb/userFb.wxss */
 .bgColor {
   background-color: #B81C24;
   color: #ffffff;
@@ -6,59 +6,14 @@
 
 .color {
   color: #B81C24;
-}
-
-
-.head {
-  height: 280rpx;
-  background-color: #B81C24;
-  border-bottom-left-radius: 30rpx;
-  border-bottom-right-radius: 30rpx;
-  z-index: -1000;
-}
-
-.userInfo {
-  position: absolute;
-  top: 160rpx;
-}
-
-.cu-dialog {
-  width: 520rpx;
-  height: 700rpx;
-  background-color: rgba(0, 0, 0, -0.6);
-  position: relative;
-}
-
-.cu-dialog .bmInfo {
-  position: absolute;
-  left: 20%;
-  top: 300rpx;
-}
-.cu-dialog .share{
-  width: 252rpx;
-  height: 80rpx;
-  background-color: #B81C24;
-  border-radius: 50rpx;
-  color: #ffffff;
-  margin-top: 10px;
-}
-
-
-.images {
+}.images {
   width: 100rpx;
   height: 100rpx;
   border: 6rpx solid #ffffff;
   border-radius: 50%;
 }
 
-.userCenter {
-  color: #ffffff;
-  font-size: 26rpx;
-  padding: 10rpx;
-  border: 1rpx solid #ffffff;
-  border-radius: 10rpx;
-  margin-top: -20rpx;
-}
+
 
 .title {
   height: 76rpx;

@@ -9,8 +9,7 @@ Page({
    */
   data: {
     tabList: ['文化艺术', '微心愿', '其他'],
-    userInfo :wx.getStorageInfoSync('userInfo'),
-    userId:'',
+    userId:wx.getStorageInfoSync('userId'),
     tab:'',
     TabCur: 0,
     scrollLeft: 0,
@@ -41,7 +40,7 @@ Page({
     }
   },
   whList() {
-    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1224&USER_ID='+this.data.userId;
+    let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1224&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -57,7 +56,7 @@ Page({
     });
   },
   xyList() {
-    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1286&USER_ID='+this.data.userId;
+    let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1286&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -73,7 +72,7 @@ Page({
     });
   },
   otherList() {
-    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1287&USER_ID='+this.data.userId;
+    let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1287&USER_ID='+this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
       if (res.data.code == 200) {
         this.setData({
@@ -98,10 +97,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    this.setData({
-      userId :that.data.userInfo.USER_ID
-    })
     this.whList()
   },
 

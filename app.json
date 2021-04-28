@@ -253,6 +253,8 @@
 				"pages/sHMore/sHMore",
 				"pages/zCMore/zCMore",
 				"pages/myJF/myJF",
+				"pages/fkDetail/fkDetail",
+				"pages/userFb/userFb",
 				"pages/detail/detail"
 			]
 		}

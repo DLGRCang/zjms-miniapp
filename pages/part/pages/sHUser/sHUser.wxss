@@ -1,4 +1,4 @@
-/* pages/part/pages/homepage/homepage.wxss */
+/* pages/part/pages/sHMore/sHMore.wxss */
 .bgColor {
   background-color: #B81C24;
   color: #ffffff;
@@ -8,40 +8,34 @@
   color: #B81C24;
 }
 
-
-.head {
-  height: 280rpx;
-  background-color: #B81C24;
-  border-bottom-left-radius: 30rpx;
-  border-bottom-right-radius: 30rpx;
-  z-index: -1000;
+.nav .cu-item {
+	height: 68rpx;
+	display: inline-block;
+	line-height: 68rpx;
+	margin: 0 30rpx;
+	padding: 0 20rpx;
 }
 
-.userInfo {
-  position: absolute;
-  top: 160rpx;
+.cu-item {
+  width: 180rpx;
+  height: 64rpx;
 }
 
-.cu-dialog {
-  width: 520rpx;
-  height: 700rpx;
-  background-color: rgba(0, 0, 0, -0.6);
-  position: relative;
-}
-
-.cu-dialog .bmInfo {
-  position: absolute;
-  left: 20%;
-  top: 300rpx;
-}
-.cu-dialog .share{
-  width: 252rpx;
-  height: 80rpx;
-  background-color: #B81C24;
-  border-radius: 50rpx;
+.tab {
   color: #ffffff;
-  margin-top: 10px;
+  background-color: #B81C24;
+  border-radius: 15rpx;
 }
+
+.contInfo{
+  width: 10%;
+}
+
+
+
+
+
+
 
 
 .images {
@@ -52,12 +46,18 @@
 }
 
 .userCenter {
-  color: #ffffff;
-  font-size: 26rpx;
-  padding: 10rpx;
+  width: 140rpx;
+  height: 64rpx;
   border: 1rpx solid #ffffff;
   border-radius: 10rpx;
-  margin-top: -20rpx;
+  line-height: 64rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 26rpx;
+  margin-left: 120rpx;
+  margin-top: 30rpx;
 }
 
 .title {
@@ -68,24 +68,21 @@
   border-radius: 4rpx;
   margin-top: -70rpx;
 }
-
 .list {
   width: 10rpx;
   height: 32rpx;
   line-height: 32rpx;
-  border-left: 10rpx solid;
+  border-left: 10rpx solid ;
   border-radius: 8rpx 8rpx 8rpx 8rpx;
   margin-top: 6rpx;
 }
-
-.line {
+.line{
   border-bottom: 1rpx solid #F2F2F2;
-  height: 2rpx;
+	height: 2rpx;
   width: 100%;
-  margin: 30rpx auto;
+	margin: 30rpx auto;
 }
-
-.sign {
+.sign{
   position: absolute;
   width: 120rpx;
   height: 64rpx;
@@ -101,7 +98,6 @@
   right: 30rpx;
   bottom: 20rpx;
 }
-
 .textInfo {
   display: inline-block;
   white-space: nowrap;

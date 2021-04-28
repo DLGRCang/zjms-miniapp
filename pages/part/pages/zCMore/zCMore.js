@@ -10,34 +10,43 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    ZC:null,
+    userInfo :wx.getStorageInfoSync('userInfo'),
+    userId:'',
+    tab:'',
+    ZC: null,
   },
   // 详情
-  goDetail(e){
-    util.pageJumpTo('../detail/detail','id',e.currentTarget.dataset.id)
+  goDetail(e) {
+    wx.navigateTo({
+      url: '../detail/detail?id='+e.currentTarget.dataset.id+'&tab='+this.data.tab,
+    })
   },
-    // 政策
-    getZCList() {
-      let url = part.baseUrl+'taskMeeting/actListJs?ACTID=1222';
-      part.httpRequest(url, 'GET', {}).then(res => {
-        if (res.data.code == 200) {
-          this.setData({
-            ZC: res.data.data.pdList
-          })
-        } else {
-          let msg = res.data.msg
-          wx.showToast({
-            title: msg,
-            icon: 'none'
-          })
-        }
-      });
-    },
+  // 政策
+  getZCList() {
+    let url = part.baseUrl + 'taskMeeting/actListJs?ACTID=1222&USER_ID='+this.data.userId;
+    part.httpRequest(url, 'GET', {}).then(res => {
+      if (res.data.code == 200) {
+        this.setData({
+          ZC: res.data.data.pdList
+        })
+      } else {
+        let msg = res.data.msg
+        wx.showToast({
+          title: msg,
+          icon: 'none'
+        })
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-this.getZCList()
+    let that = this
+    this.setData({
+      userId: that.data.userInfo.USER_ID
+    })
+    this.getZCList()
   },
 
   /**

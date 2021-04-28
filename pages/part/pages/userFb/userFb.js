@@ -1,4 +1,4 @@
-// pages/part/pages/detail/detail.js
+// pages/part/pages/userFb/userFb.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const part = require('../../../../utils/part.js')
@@ -11,60 +11,35 @@ Page({
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
     baseUrl: part.baseUrl,
-    tab: '',
-    id: '',
-    SQ: '',
-    rlName: '认领',
-    disabled: false,
-
+    userInfo: wx.getStorageSync('userInfo'),
+    userId: '',
   },
 
-  // 获取个人信息
-  geInfo() {
-    let url = part.baseUrl + 'TaskTrends/totasktrendinfoJsAct?PLAN_ID=' + this.data.id;
+  // 获取信息
+  getList() {
+    let url = part.baseUrl + 'taskMeeting/actListJs?pid=' + this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data)
-      console.log(this.data.id)
-      if (res.data.code == 200) {
-        this.setData({
-          SQ: res.data.data[0]
-        })
-      } else {
-        let msg = res.data.msg
-        wx.showToast({
-          title: msg,
-          icon: 'none'
-        })
-      }
-    });
-  },
-  submit() {
-    part.httpRequest(part.baseUrl + 'TaskTrends/saveBaoming?id=' + this.data.id, 'GET', {}).then(res => {
-      console.log(res)
+      console.log(res.data.data.pdList)
       this.setData({
-        rlName: '已认领',
-        disabled: true
+        contentInfo: res.data.data.pdList
       })
-      part.returnCode(res.data.code, 200)
     });
   },
-  goFk() {
-    this.setData({
-      fkName: '已反馈'
-    })
+  // 详情
+  goDetail(e) {
     wx.navigateTo({
-      url: '../fkDetail/fkDetail?id=' + this.data.id
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id + '&tab=' + e.currentTarget.dataset.tab
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
     this.setData({
-      id: options.id,
-      tab: options.tab
+      userId: that.data.userInfo.USER_ID
     })
-    this.geInfo()
+    this.getList()
   },
 
   /**

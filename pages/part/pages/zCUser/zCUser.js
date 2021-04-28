@@ -1,4 +1,4 @@
-// pages/part/pages/detail/detail.js
+// pages/part/pages/zCMore/zCMore.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const part = require('../../../../utils/part.js')
@@ -10,24 +10,26 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    baseUrl: part.baseUrl,
+    userInfo: wx.getStorageSync('userInfo'),
+    userId: '',
     tab: '',
-    id: '',
-    SQ: '',
-    rlName: '认领',
-    disabled: false,
-
+    ZC: null,
   },
-
-  // 获取个人信息
-  geInfo() {
-    let url = part.baseUrl + 'TaskTrends/totasktrendinfoJsAct?PLAN_ID=' + this.data.id;
+  // 详情
+  goDetail(e) {
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id + '&tab=' + this.data.tab,
+    })
+  },
+  // 政策
+  getZCList() {
+  console.log( this.data.userId) 
+    let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1222&USER_ID=' + this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data)
-      console.log(this.data.id)
+      console.log(res)
       if (res.data.code == 200) {
         this.setData({
-          SQ: res.data.data[0]
+          ZC: res.data.data.pdList
         })
       } else {
         let msg = res.data.msg
@@ -38,40 +40,21 @@ Page({
       }
     });
   },
-  submit() {
-    part.httpRequest(part.baseUrl + 'TaskTrends/saveBaoming?id=' + this.data.id, 'GET', {}).then(res => {
-      console.log(res)
-      this.setData({
-        rlName: '已认领',
-        disabled: true
-      })
-      part.returnCode(res.data.code, 200)
-    });
-  },
-  goFk() {
-    this.setData({
-      fkName: '已反馈'
-    })
-    wx.navigateTo({
-      url: '../fkDetail/fkDetail?id=' + this.data.id
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      id: options.id,
-      tab: options.tab
+      userId :this.data.userInfo.USER_ID
     })
-    this.geInfo()
+    this.getZCList()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**

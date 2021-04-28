@@ -29,16 +29,12 @@
 }
 
 .userCenter {
-  width: 140rpx;
-  height: 64rpx;
-  line-height: 64rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #ffffff;
   font-size: 26rpx;
-  margin-left: 120rpx;
-  margin-top: 30rpx;
+  padding: 10rpx;
+  border: 1rpx solid #ffffff;
+  border-radius: 10rpx;
+  margin-top: -20rpx;
 }
 .title {
   border: 1rpx solid #ffffff;

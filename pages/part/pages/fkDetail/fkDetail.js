@@ -1,4 +1,4 @@
-// pages/part/pages/photo/photo.js
+// pages/part/pages/fkDetail/fkDetail.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const part = require('../../../../utils/part.js')
@@ -10,53 +10,10 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    userInfo: wx.getStorageInfoSync("userInfo"),
-    userID: '',
-    title: '',
-    content: '',
-    typeList: [
-      {
-        id: 1220,
-        name: '矛盾化解',
-      },
-      {
-        id: 1221,
-        name: '环境整治',
-      },
-      {
-        id: 1222,
-        name: '政策宣传',
-      },
-      {
-        id: 1223,
-        name: '困难帮助',
-      },
-      {
-        id: 1224,
-        name: '文化艺术',
-      },
-      {
-        id: 1286,
-        name: '微心愿',
-      },
-      {
-        id: 1287,
-        name: '其他',
-      }
-    ],
-    index: 0,
-    type: '',
-    area: '',
-    pernum: '',
+    baseUrl: part.baseUrl,
+    id: '',
     imgID:'',
     imgList: [],
-  },
-
-  // 获取标题
-  getTitle(e) {
-    this.setData({
-      title: e.detail.value
-    })
   },
   // 获取内容
   getContent(e) {
@@ -65,27 +22,10 @@ Page({
     })
   },
 
-  // 获取类型
-  getType(e) {
-    this.setData({
-      index: e.detail.value,
-      type: this.data.typeList[e.detail.value].id
-    })
-  },
-  getArea(e) {
-    this.setData({
-      area: e.detail.value
-    })
-  },
-  getPernum(e) {
-    this.setData({
-      pernum: e.detail.value
-    })
-  },
   // 数据提交
   submit() {
-    let url = 'taskMeeting/saveMeetPlan?TITLE=' + this.data.title + '&CONTENTDETAIL=' + this.data.content + '&DICT_ID=' + this.data.type + '&PLACE=' + this.data.area + '&INPUT_USER=' + this.data.userID + '&PERNUM=' + this.data.pernum + '&FENGMIAN='+this.data.imgID
-     part.httpRequest(part.baseUrl + url, 'POST', {}).then(res => {
+    let url = 'taskMeeting/MeetAttendance?PLAN_ID=' + this.data.id + '&TRENDS_CONTENT=' + this.data.content + '&TRENDS_FILE=' + this.data.imgID
+    part.httpRequest(part.baseUrl + url, 'POST', {}).then(res => {
       console.log(res)
       part.returnCode(res.data.code, 200)
     });
@@ -106,7 +46,7 @@ Page({
           if (res.statusCode == 200) {
             let dataObj = JSON.parse(res.data)
             that.setData({
-              imgID : dataObj.data.ID
+              imgID: dataObj.data.ID
             })
             wx.showToast({
               title: '上传成功',
@@ -149,9 +89,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userID: options.id
-    })
+    console.log(options)
   },
 
   /**
