@@ -241,7 +241,9 @@
 				"pages/financeLoans/financeLoans",
 				"pages/financeProducts/financeProducts",
 				"pages/financeProductsForm/financeProductsForm",
-				"pages/publicRentalHousing/publicRentalHousing"
+				"pages/publicRentalHousing/publicRentalHousing",
+				"pages/moveCarInfo/moveCarInfo",
+				"pages/moveCarAdd/moveCarAdd"
 			]
 		},
 		{

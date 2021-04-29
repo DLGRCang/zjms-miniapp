@@ -1,34 +1,37 @@
 // pages/life/pages/moveCar/moveCar.js
-const app=getApp()
+const app = getApp()
 const data = require('../../../../utils/data.js')
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl:app.globalData.imgUrl,
-    tabName:["快速"],
-    infotypeid: '23fc9463-05b5-49ab-be2e-2823573cf59f',
-    page:1,
-		dataList: [], //新闻列表
-  },
+    imgUrl: app.globalData.imgUrl,
+    moveList: []
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-				dataList: this.data.dataList.concat(dataList)
-			})
-			console.log(this.data.dataList);
-		})
-	},
-	onLoad: function (options) {
-		this.getDataList()
-	},
+  },
+  //挪车详情
+  goMoveInfo(e) {
+    util.pageJump('../moveCarInfo/moveCarInfo?id=' + e.currentTarget.dataset.id)
+  },
+  //挪车新增
+  addMove(e) {
+    util.pageJump('../moveCarAdd/moveCarAdd')
+  },
+  //挪车列表
+  getMoveList: function () {
+    util.requestApi('movecar/listpagemovecar', 'GET', {}).then(res => {
+      console.log(res)
+      this.setData({
+        moveList: res.data.rows
+      })
+    });
+  },
+  onLoad: function (options) {
+    this.getMoveList()
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
