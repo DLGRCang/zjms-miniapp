@@ -11,13 +11,13 @@ Page({
     key: '',
     menuList: [
       {
-        name: '听广播',
+        name: '伊旗之声',
         icon: app.globalData.imgUrl + '/image/1.png',
         url: '/pages/publish/pages/radio/radio',
         isShow: true
       },
       {
-        name: '看电视',
+        name: '伊旗之窗',
         icon: app.globalData.imgUrl + '/image/2.png',
         url: '/pages/publish/pages/tv/tv',
         isShow: true
@@ -403,12 +403,12 @@ Page({
       //   url: '/pages/pay/home/home',
       //   isShow: true
       // },
-      {
-        name: '金融',
-        icon: app.globalData.imgUrl + '/image/74.png',
-        url: '/pages/life/pages/finance/finance',
-        isShow: true
-      },
+      // {
+      //   name: '金融',
+      //   icon: app.globalData.imgUrl + '/image/74.png',
+      //   url: '/pages/life/pages/finance/finance',
+      //   isShow: true
+      // },
       {
         name: '电影剧院',
         icon: app.globalData.imgUrl + '/image/75.png',
