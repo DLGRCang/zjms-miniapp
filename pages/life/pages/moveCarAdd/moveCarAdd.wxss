@@ -1,0 +1,5 @@
+/* pages/life/pages/moveCarAdd/moveCarAdd.wxss */
+.bgColor {
+	background-color:#A6CF5F;
+	color: #ffffff;
+}

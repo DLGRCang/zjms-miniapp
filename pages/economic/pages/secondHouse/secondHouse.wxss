@@ -1,0 +1,8 @@
+/* pages/economic/pages/secondHouse/secondHouse.wxss */
+.bgColor {
+	background-color:#EE6967;
+	color: #ffffff;
+}
+radio {
+	transform:scale(0.7);
+}

@@ -1,0 +1,14 @@
+.bgColor {
+	background-color:#EE6967;
+	color: #ffffff;
+}
+.content{
+	font-size:30rpx;
+}
+.title{
+	font-size: 30rpx;
+	color: gray;
+	min-width: 150rpx;
+	text-align: center;
+margin-right: 10rpx;
+}

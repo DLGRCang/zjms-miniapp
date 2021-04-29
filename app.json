@@ -114,7 +114,11 @@
 				"pages/exhibitionInfo/exhibitionInfo",
 				"pages/protectRightConsumer/protectRightConsumer",
 				"pages/protectRightOperator/protectRightOperator",
-				"pages/protectRightDetail/protectRightDetail"
+				"pages/protectRightDetail/protectRightDetail",
+				"pages/SecondUsedCar/SecondUsedCar",
+				"pages/SecondUsedCarInfo/SecondUsedCarInfo",
+				"pages/secondHouse/secondHouse",
+				"pages/secondHouseInfo/secondHouseInfo"
 			]
 		},
 		{
@@ -237,7 +241,9 @@
 				"pages/financeLoans/financeLoans",
 				"pages/financeProducts/financeProducts",
 				"pages/financeProductsForm/financeProductsForm",
-				"pages/publicRentalHousing/publicRentalHousing"
+				"pages/publicRentalHousing/publicRentalHousing",
+				"pages/moveCarInfo/moveCarInfo",
+				"pages/moveCarAdd/moveCarAdd"
 			]
 		},
 		{

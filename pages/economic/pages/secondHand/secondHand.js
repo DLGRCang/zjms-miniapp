@@ -8,42 +8,56 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,
-		infotypeid: 'c84fffd5-dcc4-4d63-a770-0f5669a155a2',
-		infotypeid1: '7e517f20-9d2c-461c-8cc2-e0feeb5dd1f7',
-    page:1,
-		dataList: [], //二手车
-		dataList1: [], //二手房
-		
+		imgUrl: app.globalData.imgUrl,
+		page: 1,
+		useDcarList: [],//二手车列表
+		secondHouseList: [],//二手房列表
 
 	},
+	//发布二手房
+	secondHouse: function () {
+		util.pageJump('../secondHouse/secondHouse')
 
-	secondHandInfo: function () {
-		util.pageJump('../../../../pages/economic/pages/secondHandInfo/secondHandInfo')
+	},
+	//发布二手车
+	secondUsedCar: function () {
+		util.pageJump('../SecondUsedCar/SecondUsedCar')
+
+	},
+	//二手房详情
+	goHouseInfo(e) {
+		util.pageJump('../secondHouseInfo/secondHouseInfo?id=' + e.currentTarget.dataset.id)
+	},
+	//二手车详情
+	goInfo(e) {
+		util.pageJump('../SecondUsedCarInfo/SecondUsedCarInfo?id=' + e.currentTarget.dataset.id)
 	},
 
 
-
+	//二手车列表
+	getUsedCarList: function () {
+		util.requestApi('secondhandcar/listpagesecondhandcar', 'GET', {}).then(res => {
+			console.log(res)
+			this.setData({
+				useDcarList: res.data.rows
+			})
+		});
+	},
+	//二手房列表
+	getSecondHouseList: function () {
+		util.requestApi('secondhandhouse/listpagesecondhandhouse', 'GET', {}).then(res => {
+			console.log(res)
+			this.setData({
+				secondHouseList: res.data.rows
+			})
+		});
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-        dataList: this.data.dataList.concat(dataList),
-      })
-			console.log(this.data.dataList);
-		})
-		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
-			this.setData({
-        dataList1: this.data.dataList1.concat(dataList),
-      })
-			console.log(this.data.dataList1);
-		})
-	},
 	onLoad: function (options) {
-		this.getDataList()
+		this.getUsedCarList()
+		this.getSecondHouseList()
 	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
