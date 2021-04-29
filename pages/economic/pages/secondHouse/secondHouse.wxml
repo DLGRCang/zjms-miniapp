@@ -1,0 +1,95 @@
+<!--pages/economic/pages/secondHouse/secondHouse.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">发布二手房</view>
+</cu-custom>
+<view class="padding-sm">
+	<view class="cu-form-group">
+		<view class="title">建筑年代：</view>
+		<picker fields="year" mode="date" start="1900-01-01" end="date" bindchange="radioChange" data-key="buildingAge">
+			<view class="picker">
+				{{buildingAge?buildingAge:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">建筑结构：</view>
+		<input placeholder="请输入建筑结构" bindinput="putData" data-key="buildingStructure"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系人：</view>
+		<input type="number" placeholder="请输入人" bindinput="putData" data-key="linkman"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系方式：</view>
+		<input type="number" placeholder="请输入联系方式" bindinput="putData" data-key="contactInformation"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">建筑面积：</view>
+		<input type="digit" placeholder="请输入建筑面积" bindinput="putData" data-key="coveredArea"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">是否配备电梯：</view>
+		<radio-group bindchange="radioChange" data-key="elevator">
+			是<radio class="margin-lr-sm" value="是"></radio>
+			否<radio class="margin-left-sm" value="否"></radio>
+		</radio-group>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">期望售价：</view>
+		<input type="digit" placeholder="请输入期望售价" bindinput="putData" data-key="expectPrice"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">几室：</view>
+		<input type="number" placeholder="请输入" bindinput="putData" data-key="room"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">几厅：</view>
+		<input type="number" placeholder="请输入" bindinput="putData" data-key="hall"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">几卫：</view>
+		<input type="number" placeholder="请输入" bindinput="putData" data-key="toilet"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">门牌号：</view>
+		<input type="number" placeholder="请输入" bindinput="putData" data-key="houseNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">共几层：</view>
+		<input type="number" placeholder="请输入" bindinput="putData" data-key="level"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">第几层：</view>
+		<input type="number" placeholder="请输入" bindinput="putData" data-key="tier"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">供暖方式：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="heatingMethod"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">朝向：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="orientation"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">小区名称：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="villageName"></input>
+	</view>
+	<view class="cu-form-group padding-left align-start margin-top">
+		<view class="title" style="margin:0">户型图片：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{vehicleImages[index]}}">
+				<image src='{{vehicleImages[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{vehicleImages.length<3}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">确认提交</button>
+	</view>
+</view>

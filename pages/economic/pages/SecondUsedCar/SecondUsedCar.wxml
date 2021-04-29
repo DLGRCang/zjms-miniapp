@@ -1,0 +1,150 @@
+<!--pages/economic/pages/SecondUsedCar/SecondUsedCar.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">发布二手车</view>
+</cu-custom>
+<view class="padding-sm">
+	<view class="cu-form-group">
+		<view class="title">看车地址：</view>
+		<input placeholder="请输入看车地址" bindinput="putData" data-key="addressOfCar"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">品牌：</view>
+		<input placeholder="请输入品牌" bindinput="putData" data-key="brand"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">车辆加载装置：</view>
+		<input placeholder="请输入" bindinput="putData" data-key="carConfiguration"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">过户次数：</view>
+		<input placeholder="请输入过户次数" bindinput="putData" data-key="changeTheNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">交强险到期：</view>
+		<picker mode="date" start="2020-01-01" end="date" bindchange="radioChange" data-key="compulsoryInsuranceExpires">
+			<view class="picker">
+				{{compulsoryInsuranceExpires?compulsoryInsuranceExpires:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系人:</view>
+		<input type="" placeholder="请输入联系人" bindinput="putData" data-key="linkman"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话：</view>
+		<input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="contactNumber"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">车况描述：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="describeInPerfectCondition"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">商业险到期：</view>
+		<picker mode="date" start="2020-01-01" end="date" bindchange="radioChange" data-key="expiryOfCommercialInsurance">
+			<view class="picker">
+				{{expiryOfCommercialInsurance?expiryOfCommercialInsurance:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">历史用途：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="historicalPurposes"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">牌照所在地：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="locationLicence"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">发布者身份：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="publisherIdentity"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">发布城市：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="releaseCity"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">行驶里程：</view>
+		<input type="digit" placeholder="请输入" bindinput="putData" data-key="roadHaul"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">首次上牌时间：</view>
+		<picker mode="date" start="2000-01-01" end="date" bindchange="radioChange" data-key="timeOfFirstRegistration">
+			<view class="picker">
+				{{timeOfFirstRegistration?timeOfFirstRegistration:'请选择'}}
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">转让价格(元)：</view>
+		<input type="digit" placeholder="请输入" bindinput="putData" data-key="transferPrice"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">车辆颜色：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="vehicleColor"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">车辆配置亮点：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="vehicleConfigurationHighlights"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">车辆识别代号：</view>
+		<input type="" placeholder="请输入" bindinput="putData" data-key="vehicleIdentificationNumber"></input>
+	</view>
+	<view class="cu-form-group padding-left align-start margin-top">
+		<view class="title" style="margin:0">车辆图片：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{vehicleImages[index]}}">
+				<image src='{{vehicleImages[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{vehicleImages.length<3}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">车辆是否抵押：</view>
+		<radio-group bindchange="radioChange" data-key="vehicleSecured">
+			是<radio class="margin-lr-sm" value="是"></radio>
+			否<radio class="margin-left-sm" value="否"></radio>
+		</radio-group>
+	</view>
+	<view class="cu-form-group padding-left align-start margin-top">
+		<view class="title" style="margin:0">车辆视频：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{videoList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="video"
+				data-url="{{videoList[index]}}">
+				<video class="bg-img" src='{{videoList[index]}}' object-fit="fill"></video>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="video">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseVideo" wx:if="{{videoList.length<1}}">
+				<text class="cuIcon-video"></text>
+			</view>
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">是否包含过户费：</view>
+		<radio-group bindchange="radioChange" data-key="whetherTheTransferFeeIsIncluded">
+			是<radio class="margin-lr-sm" value="是"></radio>
+			否<radio class="margin-left-sm" value="否"></radio>
+		</radio-group>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">年检到期：</view>
+		<picker mode="date" start="2000-01-01" end="date" bindchange="radioChange" data-key="yearlyCheckDue">
+			<view class="picker">
+				{{yearlyCheckDue?yearlyCheckDue:'请选择'}}
+			</view>
+		</picker>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">确认提交</button>
+	</view>
+</view>

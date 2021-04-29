@@ -1,0 +1,64 @@
+<!--pages/economic/pages/secondHouseInfo/secondHouseInfo.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">详情</view>
+</cu-custom>
+<view class="padding">
+	<view wx:for="{{imageList}}" class="flex center direction margin-bottom">
+		<image mode="widthFix" style="'max-width:100%;display:block;margin: 0 auto;width:100%;"
+			src="{{baseImgUrl}}{{item}}">
+		</image>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">建筑年代：</view>
+		<view class="content">{{data.buildingAge}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">建筑结构：</view>
+		<view class="content">{{data.buildingStructure}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">联系人：</view>
+		<view class="content">{{data.linkman}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">联系方式：</view>
+		<view class="content">{{data.contactInformation}}</view>
+	</view>
+
+	<view class="flex margin-bottom">
+		<view class="title">建筑面积：</view>
+		<view class="content">{{data.coveredArea}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">是否配备电梯：</view>
+		<view class="content">{{data.elevator}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">期望售价：</view>
+		<view class="content">{{data.expectPrice}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">几室几厅卫：</view>
+		<view class="content">{{data.room}}-{{data.hall}}-{{data.toilet}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">供暖方式：</view>
+		<view class="content">{{data.heatingMethod}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">门牌号：</view>
+		<view class="content">{{data.houseNumber}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">所在楼层：</view>
+		<view class="content">{{data.tier}}/{{data.level}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">朝向：</view>
+		<view class="content">{{data.orientation}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">小区名称：</view>
+		<view class="content">{{data.villageName}}</view>
+	</view>
+</view>

@@ -1,0 +1,98 @@
+<!--pages/economic/pages/SecondUsedCarInfo/SecondUsedCarInfo.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">详情</view>
+</cu-custom>
+<view class="padding">
+	<view wx:for="{{imageList}}" class="flex center direction margin-bottom">
+		<image mode="widthFix" style="'max-width:100%;display:block;margin: 0 auto;width:100%;"
+			src="{{baseImgUrl}}{{item}}">
+		</image>
+	</view>
+	<view class="flex center direction margin-bottom">
+		<video src="{{baseImgUrl}}{{data.vehicleVideo}}"></video>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">看车地址：</view>
+		<view class="content">{{data.addressOfCar}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">车辆加装配置：</view>
+		<view class="content">{{data.carConfiguration}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">过户次数：</view>
+		<view class="content">{{data.changeTheNumber}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">强险到期：</view>
+		<view class="content">{{data.compulsoryInsuranceExpires}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">联系人：</view>
+		<view class="content">{{data.linkman}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">联系电话：</view>
+		<view class="content">{{data.contactNumber}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">发布者身份：</view>
+		<view class="content">{{data.publisherIdentity}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">转让价格：</view>
+		<view class="content">{{data.transferPrice}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">发布城市：</view>
+		<view class="content">{{data.releaseCity}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">行驶里程：</view>
+		<view class="content">{{data.roadHaul}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">车辆颜色：</view>
+		<view class="content">{{data.vehicleColor}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">车况描述：</view>
+		<view class="content">{{data.describeInPerfectCondition}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">首次上牌时间：</view>
+		<view class="content">{{data.timeOfFirstRegistration}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">商业险到期：</view>
+		<view class="content">{{data.expiryOfCommercialInsurance}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">牌照所在地：</view>
+		<view class="content">{{data.locationLicence}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">历史用途：</view>
+		<view class="content">{{data.historicalPurposes}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">年检到期：</view>
+		<view class="content">{{data.yearlyCheckDue}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">车辆配置亮点：</view>
+		<view class="content">{{data.vehicleConfigurationHighlights}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">车辆识别代号：</view>
+		<view class="content">{{data.vehicleIdentificationNumber}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">车辆是否抵押：</view>
+		<view class="content">{{data.vehicleSecured}}</view>
+	</view>
+	<view class="flex margin-bottom">
+		<view class="title">是否包含过户费用：</view>
+		<view class="content">{{data.whetherTheTransferFeeIsIncluded}}</view>
+	</view>
+</view>

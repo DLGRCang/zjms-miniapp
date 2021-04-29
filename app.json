@@ -114,7 +114,11 @@
 				"pages/exhibitionInfo/exhibitionInfo",
 				"pages/protectRightConsumer/protectRightConsumer",
 				"pages/protectRightOperator/protectRightOperator",
-				"pages/protectRightDetail/protectRightDetail"
+				"pages/protectRightDetail/protectRightDetail",
+				"pages/SecondUsedCar/SecondUsedCar",
+				"pages/SecondUsedCarInfo/SecondUsedCarInfo",
+				"pages/secondHouse/secondHouse",
+				"pages/secondHouseInfo/secondHouseInfo"
 			]
 		},
 		{
