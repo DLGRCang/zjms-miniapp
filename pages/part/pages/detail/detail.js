@@ -17,7 +17,7 @@ Page({
     rlName: '认领',
   },
 
-  // 获取个人信息
+  // 获取信息
   getInfo() {
     let url = part.baseUrl + 'TaskTrends/totasktrendinfoJsAct?PLAN_ID=' + this.data.id;
     part.httpRequest(url, 'GET', {}).then(res => {

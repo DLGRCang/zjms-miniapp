@@ -204,11 +204,11 @@ Page({
           pic: "/image/30.png",
           tab: 8
         }, 
-        {
-          tit: "金融服务",
-          pic: "/image/74.png",
-          tab: 9
-        },
+        // {
+        //   tit: "金融服务",
+        //   pic: "/image/74.png",
+        //   tab: 9
+        // },
       ],
     }, {
       id: 5,
