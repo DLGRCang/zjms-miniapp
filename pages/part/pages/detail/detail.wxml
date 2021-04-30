@@ -50,7 +50,7 @@
 
   <view class="padding-lg margin-top-xl flex flex-direction " >
     <button class="cu-btn lg" wx:if="{{tab==1}}" bindtap="goFk" style="background-color: #B81C24;color: #ffffff;">反馈</button>
-    <button class="cu-btn lg" wx:if="{{tab==2}}" bindtap="submit"  style="display:none;">{{rlName}}</button>
+    <!-- <button class="cu-btn lg" wx:if="{{tab==2}}" bindtap="submit"  style="display:none;">{{rlName}}</button> -->
     <button class="cu-btn lg" wx:else bindtap="submit"  style="background-color: #B81C24;color: #ffffff;">{{rlName}}</button>
   </view>
 </view>

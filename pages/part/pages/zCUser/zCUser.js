@@ -45,7 +45,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userId :this.data.userInfo.USER_ID
+      userId :this.data.userInfo.USER_ID,
+      tab: options.tab
     })
     this.getZCList()
   },

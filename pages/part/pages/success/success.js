@@ -32,7 +32,11 @@ Page({
   },
 
   goSQUser(e) {
-    util.pageJumpTo('../sQUser/sQUser', 'tab', e.currentTarget.dataset.tab)
+    console.log(e.currentTarget.dataset.tab)
+    // util.pageJumpTo('../sQUser/sQUser', 'tab', e.currentTarget.dataset.tab)
+    wx.navigateTo({
+      url: '../sQUser/sQUser?tab='+e.currentTarget.dataset.tab,
+    })
   },
   goSHUser(e) {
     util.pageJumpTo('../sHUser/sHUser', 'tab', e.currentTarget.dataset.tab)

@@ -47,7 +47,7 @@
 .images {
   width: 100rpx;
   height: 100rpx;
-  border: 6rpx solid #ffffff;
+  border: 4rpx solid #ffffff;
   border-radius: 50%;
 }
 

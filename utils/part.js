@@ -1,7 +1,7 @@
 
 // url 地址
-// let baseUrl =  'https://www.yjhlcity.com/dangjian/' // 正式
-let baseUrl = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/' // 测试
+let baseUrl =  'https://www.yjhlcity.com/dangjian/' // 正式
+// let baseUrl = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/' // 测试
 
 // 上传地址
 let uploadUrl = 'file/asyncUploadFile'
