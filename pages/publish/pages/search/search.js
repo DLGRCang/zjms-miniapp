@@ -10,18 +10,18 @@ Page({
     CustomBar: app.globalData.CustomBar,
     key: '',
     menuList: [
-      {
-        name: '伊旗之声',
-        icon: app.globalData.imgUrl + '/image/1.png',
-        url: '/pages/publish/pages/radio/radio',
-        isShow: true
-      },
-      {
-        name: '伊旗之窗',
-        icon: app.globalData.imgUrl + '/image/2.png',
-        url: '/pages/publish/pages/tv/tv',
-        isShow: true
-      },
+      // {
+      //   name: '伊旗之声',
+      //   icon: app.globalData.imgUrl + '/image/1.png',
+      //   url: '/pages/publish/pages/radio/radio',
+      //   isShow: true
+      // },
+      // {
+      //   name: '伊旗之窗',
+      //   icon: app.globalData.imgUrl + '/image/2.png',
+      //   url: '/pages/publish/pages/tv/tv',
+      //   isShow: true
+      // },
       {
         name: '推优榜',
         icon: app.globalData.imgUrl + '/image/3.png',
@@ -352,12 +352,14 @@ Page({
         icon: app.globalData.imgUrl + '/image/64.png',
         url: '/pages/life/pages/property/property',
         isShow: true
-      },{
-        name: '保修服务',
-        icon: app.globalData.imgUrl + '/image/65.png',
-        url: '/pages/life/pages/repair/repair',
-        isShow: true
-      },{
+      },
+      // {
+      //   name: '保修服务',
+      //   icon: app.globalData.imgUrl + '/image/65.png',
+      //   url: '/pages/life/pages/repair/repair',
+      //   isShow: true
+      // },
+      {
         name: '就业服务',
         icon: app.globalData.imgUrl + '/image/66.png',
         url: '/pages/life/pages/job/job',

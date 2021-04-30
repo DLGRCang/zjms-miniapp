@@ -10,5 +10,5 @@
 	font-size: 34rpx;
 }
 .title-color{
-	color:#EE6967
+	color:#EE6967;
 }

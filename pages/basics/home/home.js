@@ -421,11 +421,11 @@ Page({
           pic: "/image/64.png",
           tab: 1
         },
-        {
-          tit: "保修服务",
-          pic: "/image/65.png",
-          tab: 2
-        },
+        // {
+        //   tit: "保修服务",
+        //   pic: "/image/65.png",
+        //   tab: 2
+        // },
         {
           tit: "就业服务",
           pic: "/image/66.png",

@@ -38,7 +38,7 @@ Page({
   identityChoose(e) {
     this.setData({
       index: e.detail.value,
-      IDENTITY: parseInt(e.detail.value) + 1
+      IDENTITY: parseInt(e.detail.value) + 671
     })
   },
   //  获取数据
@@ -116,13 +116,13 @@ Page({
       PHONE: this.data.PHONE,
       ID_CARD: this.data.ID_CARD,
       ADDRESS: this.data.area + ',' + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号',
-      IDENTITY: this.data.IDENTITY,
+      USER_FLAG: this.data.IDENTITY,
       COMMUNITY_TOGETHER: this.data.COMMUNITY_TOGETHER,
       DEPT_ID: this.data.id,
       PASSWORD: this.data.PASSWORD
     }
     console.log(data)
-    let url = part.baseUrl + 'itemuser/pubSaveApplicantUser?NAME=' + this.data.NAME + '&PHONE=' + this.data.PHONE + '&ID_CARD=' + this.data.ID_CARD + '&ADDRESS=' + this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号' + '&IDENTITY=' + this.data.IDENTITY + '&COMMUNITY_TOGETHER=' + this.data.COMMUNITY_TOGETHER + '&DEPT_ID=' + this.data.id + '&SEX=1';
+    let url = part.baseUrl + 'itemuser/pubSaveApplicantUser?NAME=' + this.data.NAME + '&PHONE=' + this.data.PHONE + '&ID_CARD=' + this.data.ID_CARD + '&ADDRESS=' + this.data.area + this.data.D + '栋' + this.data.DY + '单元' + this.data.H + '号' + '&USER_FLAG=' + this.data.IDENTITY + '&COMMUNITY_TOGETHER=' + this.data.COMMUNITY_TOGETHER + '&DEPT_ID=' + this.data.id + '&SEX=1';
     part.httpRequest(url, 'POST', {}).then(res => {
       console.log(res.data)
       if (res.data.code == 200) {

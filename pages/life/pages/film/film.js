@@ -145,7 +145,7 @@ Page({
   },
   goTicket(){
     wx.navigateToMiniProgram({
-      appId: 'wx938b41d0d7e8def0',
+      appId: 'wxdbb4c5f1b8ee7da1',
       path: '',
       success: function (res) {
 

@@ -14,6 +14,7 @@ Page({
     let url = 'https://api-cms.yjhlnews.cn/v1/classify_content/13/?sorce_type=0&limit=50';
 
     util.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res)
       this.setData({
         newsInfo: res.data.data
       })

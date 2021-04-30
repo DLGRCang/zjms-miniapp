@@ -37,7 +37,7 @@ Page({
       this.setData({
         rlName: '已认领'
       })
-      part.returnCode(res.data.code, 200)
+      // part.returnCode(res.data.code, 200)
     });
   },
   // 反馈

@@ -16,8 +16,8 @@
 		<input type="" placeholder="请输入车牌号" bindinput="putData" data-key="license_plate_number"></input>
 	</view>
 
-  <view class="cu-form-group padding-left align-start margin-top">
-		<view class="title" style="margin:0">户型图片：</view>
+  <view class="cu-form-group padding-left align-start padding-top-lg">
+		<view class="title" style="margin:0">图片：</view>
 		<view class="grid col-3 grid-square flex-sub">
 			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
 				data-url="{{vehicleImages[index]}}">

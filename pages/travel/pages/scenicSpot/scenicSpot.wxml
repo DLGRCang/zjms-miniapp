@@ -17,7 +17,7 @@
       </view>
     </block>
   </scroll-view>
-  <dot-title title="景区直播" color="red" isMore="true"></dot-title>
+  <!-- <dot-title title="景区直播" color="red" isMore="true"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{6}}" wx:key="item">
       <view style="position: relative;">
@@ -26,8 +26,8 @@
       </view>
       <view class="margin-top-xs padding-left-sm">知名景点名称</view>
     </view>
-  </scroll-view>
-  <dot-title title="游客服务" color="red" isMore="true"></dot-title>
+  </scroll-view> -->
+  <!-- <dot-title title="游客服务" color="red" isMore="true"></dot-title>
 	<view class="flex" wx:for="{{4}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
 		<view class="flex flex-direction">
@@ -38,7 +38,7 @@
     <view style="margin-left:280rpx;">
       <text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="item"></text>
     </view>
-	</view>
+	</view> -->
 
 
 </view>
