@@ -64,22 +64,41 @@ Page({
 
 
   //用电缴费
+  // 1水费  2电费 3燃气 4宽带 5固话 6 油卡充值 7违章服务 8广播电视 9公交卡 10社保  11供暖
   electricFee() {
     wx.navigateToMiniProgram({
       appId: 'wxd2ade0f25a874ee2',
-      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150900&service_id=2&wx_agency_id=150000000201',
+      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150600&service_id=2&wx_agency_id=150000000201',
       success: function (res) { },
       fail: function (res) { }
     })
   },
   //水费
   waterFee() {//高铁
-    // wx.navigateToMiniProgram({
-    //   appId: 'wxf6076a6c59a2f14e',
-    //   path: 'pages/travel/large-screen/index.html?p=40&wx_city_id=150600',
-    //   success: function (res) { },
-    //   fail: function (res) { }
-    // })
+    wx.navigateToMiniProgram({
+      appId: 'wxd2ade0f25a874ee2',
+      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150600&service_id=1&wx_agency_id=150000000201',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
+  // 燃气
+  gasFee() {
+    wx.navigateToMiniProgram({
+      appId: 'wxd2ade0f25a874ee2',
+      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150600&service_id=3&wx_agency_id=150000000201',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
+  // 供暖
+  hotFee() {
+    wx.navigateToMiniProgram({
+      appId: 'wxd2ade0f25a874ee2',
+      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150600&service_id=3&wx_agency_id=150000000201',
+      success: function (res) { },
+      fail: function (res) { }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
