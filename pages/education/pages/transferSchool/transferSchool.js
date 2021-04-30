@@ -118,7 +118,7 @@ Page({
 		wx.chooseImage({
 			count: 1,
 			sizeType: ['original', 'compressed'],
-			sourceType: ['album'],
+			sourceType: ['album', 'camera'],
 			success(res) {
 				const tempFilePaths = res.tempFilePaths
 				util.uploadFile(tempFilePaths[0], 'image').then(res => {
@@ -145,7 +145,7 @@ Page({
 		wx.chooseImage({
 			count: 1,
 			sizeType: ['original', 'compressed'],
-			sourceType: ['album'],
+			sourceType: ['album', 'camera'],
 			success(res) {
 				const tempFilePaths = res.tempFilePaths
 				util.uploadFile(tempFilePaths[0], 'image').then(res => {

@@ -96,7 +96,7 @@ Page({
 		wx.chooseImage({
 			count: 1, //默认9
 			sizeType: ['original', 'compressed'],
-			sourceType: ['album'],
+			sourceType: ['album', 'camera'],
 			success: (res) => {
 				console.log(res.tempFilePaths[0]);
 				if (this.data.imgList.length != 0) {

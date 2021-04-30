@@ -120,7 +120,7 @@ Page({
 		wx.chooseImage({
 			count: 1, //默认9
 			sizeType: ['original', 'compressed'],
-			sourceType: ['album'],
+			sourceType: ['album', 'camera'],
 			success: (res) => {
 				let imgUrl = res.tempFilePaths[0]
 				util.uploadFile(imgUrl, 'image')

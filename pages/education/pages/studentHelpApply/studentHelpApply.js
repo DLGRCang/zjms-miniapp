@@ -131,7 +131,7 @@ Page({
 		wx.chooseImage({
 			count: 1, //默认9
 			sizeType: ['original', 'compressed'],
-			sourceType: ['album'],
+			sourceType: ['album', 'camera'],
 			success: (res) => {
 				this.setData({
 					imgUrl: res.tempFilePaths[0]
