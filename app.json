@@ -95,6 +95,8 @@
 				"pages/nationFood/nationFood",
 				"pages/cultureFood/cultureFood",
 				"pages/foodDetail/foodDetail",
+				"pages/cartDetail/cartDetail",
+				"pages/payList/payList",
 				"pages/animalFood/animalFood"
 			]
 		},

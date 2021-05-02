@@ -1,3 +1,38 @@
-<cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content">商品详情</view>
-</cu-custom> 
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">商品列表</view>
+</cu-custom>
+<view class="padding-lr-lg">
+
+  <scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'text-cyan cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect"
+        data-id="{{index}}">
+        Tab{{index}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 内容 -->
+  <view class="margin-top-sm">
+    <view class="grid col-2">
+      <view class="flex margin-bottom-lg" wx:for="{{5}}" wx:key='item'>
+        <view>
+          <image mode="scaleToFill" src="../../../../image/part-part.png"
+            style="width: 330rpx;height: 330rpx;border-radius: 10rpx;"  bindtap="goDetail" data-id="1">
+          </image>
+          <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
+            香蕉45/件
+          </view>
+          <view class="margin-top-sm text-red text-lg">￥45.0</view>
+          <view class="flex justify-between margin-top-sm">
+            <view class=" text-grey">销量：22</view>
+            <view class="cuIcon-cart text-bold margin-right-lg text-xsl" bindtap="setCart"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

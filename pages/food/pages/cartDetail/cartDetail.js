@@ -1,4 +1,4 @@
-// pages/food/pages/foodDetail/foodDetail.js
+// pages/food/pages/cartDetail/cartDetail.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
@@ -7,15 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    TabCur: 0,
-    id: '',
-    foodInfo: null,
-  },
-  // 选择
-  tabSelect(e) {
-    this.setData({
-      TabCur: e.currentTarget.dataset.id
-    })
+    id:'',
+    goodsInfo:null,
   },
   // 获取商品详情
   getInfo() {
@@ -24,7 +17,7 @@ Page({
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
       this.setData({
-        foodInfo: res.data
+        goodsInfo: res.data
       })
     });
   },
@@ -45,20 +38,15 @@ Page({
       }
     });
   },
-  // 商品详情
-  goDetail(e) {
+  goPayList(e){
     console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo('/pages/food/pages/cartDetail/cartDetail', 'id', e.currentTarget.dataset.id)
+    util.pageJumpTo('/pages/food/pages/payList/payList', 'id', e.currentTarget.dataset.id)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      id: options.id
-    })
-    this.getInfo()
+
   },
 
   /**

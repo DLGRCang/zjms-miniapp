@@ -1,0 +1,26 @@
+/* pages/food/pages/payList/payList.wxss */
+.bgColor {
+  background-color: #054FAC;
+  color: #ffffff;
+}
+.color{
+  color: #054FAC;
+  font-weight: bold;
+}
+.border{
+  border: 1rpx solid #F5F5F5;
+  border-radius: 8rpx;
+}
+.line {
+	border-bottom: 1rpx solid #F5F5F5;
+	height: 2rpx;
+	width: 100%;
+	margin: 20rpx auto;
+}
+
+.button{
+  background-color: #054FAC;
+  color: #ffffff;
+  height: 96rpx;
+  line-height: 96rpx;
+}

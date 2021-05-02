@@ -1,0 +1,25 @@
+/* pages/food/pages/cartDetail/cartDetail.wxss */
+.color{
+  color:#ed1c24;
+}
+.border{
+  border: 1rpx solid #F5F5F5;
+  padding: 15rpx;
+  border-radius: 8rpx;
+}
+.price{
+  background-color: #FF0103;
+  width: 60%;
+  color: #ffffff;
+  padding: 20rpx 0;
+  border-top-left-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+.title{
+  background-color: #FFF5E8;
+  width: 40%;
+  padding: 20rpx 30rpx;
+  border-top-right-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  
+}
