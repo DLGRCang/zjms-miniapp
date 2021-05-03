@@ -10,7 +10,7 @@ Page({
     baseImgUrl: "http://127.0.0.1:8005/cmmall/route/file/showfile/image/",
     baseUrl: 'http://172.16.20.156:8005/cmmall/',
     id: '',
-    pay: ['货到付款', '在线支付'],
+    pay: ['在线支付', '货到付款',],
     button: '立即下单',
     buyPersionId: wx.getStorageSync("userId"),
     user: '',
@@ -71,6 +71,27 @@ Page({
       // 调取微信支付
 
     } else {
+      if (this.data.user == null || this.data.user == '') {
+        wx.showToast({
+          title: "收货人不能为空",
+          icon: 'error',
+        })
+        return
+      }
+      if (this.data.area == null || this.data.area == '') {
+        wx.showToast({
+          title: "地址不能为空",
+          icon: 'error',
+        })
+        return
+      }
+      if (this.data.phone == null || this.data.phone == '') {
+        wx.showToast({
+          title: "联系方式有误",
+          icon: 'error',
+        })
+        return
+      }
       // 下单
       let url = this.data.baseUrl + 'app/order/saveorder'
       let data = {

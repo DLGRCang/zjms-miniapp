@@ -1,3 +1,6 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">我的参与</view>
 </cu-custom>
+<view>
+  暂无信息
+</view>

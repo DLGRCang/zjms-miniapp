@@ -1,2 +1,6 @@
-<!--pages/userCenter/pages/card/card.wxml-->
-<text>pages/userCenter/pages/card/card.wxml</text>
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">我的卡卷</view>
+</cu-custom>
+<view>
+  暂无信息
+</view>

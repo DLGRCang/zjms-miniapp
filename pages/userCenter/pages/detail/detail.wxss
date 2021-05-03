@@ -1,0 +1,5 @@
+/* pages/userCenter/pages/detail/detail.wxss */
+.button{
+  background-color: #054FAC;
+  color: #ffffff;
+}

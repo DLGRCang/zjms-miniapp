@@ -1,22 +1,36 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">我的订单</view>
 </cu-custom>
-<tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
-<view class="margin-lg">
-  <view class="flex justify-between margin-tb-lg" wx:for="{{3}}">
-    <view class="flex">
-      <image src="/image/zwt.png" style="width:100rpx;height:100rpx;"></image>
+<scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'text-cyan cur':''}}" wx:for="{{pageTabs}}" wx:key
+        bindtap="tabSelect" data-id="{{index}}">
+        {{pageTabs[index]}}
+      </view>
+    </view>
+  </scroll-view>
+<view class="padding-lr-lg">
+  <view class="flex justify-between margin-tb-lg" wx:for="{{listInfo}}" wx:key="item">
+    <view class="flex" bindtap="goDetail" data-oredrid="{{item.orderId}}" data-shooppingid="{{item.shooppingId}}"
+      data-storeid="{{item.storeId}}" data-address="{{item.address}}" data-receiptPeople="{{item.receiptPeople}}"
+      data-receiptphone="{{item.receiptPhone}}" data-orderformid="{{item.orderFormId}}" data-placetime="{{item.placeTime}}">
       <view class="padding-xs">
-        <view class="text-lg text-bold">
-          订单名称
+        <view class="text-df ">
+          <text>收货人：</text>
+          <text class="text-grey">{{item.receiptPeople}}</text>
         </view>
-        <view class="text-sm text-grey margin-top-sm">
-          下单时间：2020-06-09 09:00
+        <view class="text-df margin-tb-sm">
+          <text>下单时间：</text>
+          <text class="text-grey">{{item.placeTime}}</text>
+        </view>
+        <view class="text-df ">
+          <text>送货地址：</text>
+          <text class="text-grey">{{item.address}}</text>
         </view>
       </view>
     </view>
     <view style="padding-top:30rpx">
-      待使用
+      <text class="cuIcon-right"></text>
     </view>
   </view>
 </view>

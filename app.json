@@ -29,6 +29,7 @@
 				"pages/login/login",
 				"pages/userinfo/userinfo",
 				"pages/order/order",
+				"pages/detail/detail",
 				"pages/consult/consult",
 				"pages/appointment/appointment",
 				"pages/apply/apply",
