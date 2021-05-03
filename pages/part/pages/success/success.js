@@ -56,7 +56,7 @@ Page({
     wx.setStorageSync("token-header", '');
     wx.setStorageSync("userTocken", '');
     wx.setStorageSync("userName", '');
-    wx.setStorageSync("userId", '');
+    wx.setStorageSync("partUserId", "");
     wx.switchTab({
       url: '/pages/basics/home/home'
     })

@@ -8,14 +8,14 @@ Page({
    */
   data: {
     imgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
-    baseImgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
+    baseImgUrl: "http://127.0.0.1:8005/cmmall/route/file/showfile/image/",
     xcFoodList:null,
     specialFoodList: null,
   },
-
+// 小吃
   xcFoodList() {
-    let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '小吃快餐';
+    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let url =  baseUrl+'shoplist/listpageshoplist?type=' + '2ff71ae1-1d51-4caf-baa3-eeefbe8a40d4';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({
@@ -23,9 +23,10 @@ Page({
       })
     });
   },
+  // 特色菜
   specialFoodList() {
-    let baseUrl = 'https://yiqi.sucstep.com/'
-    let url =  baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '特色菜';
+    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let url =  baseUrl+'shoplist/listpageshoplist?type=' + 'eb4897f1-b288-4ae0-87a3-637db3ecdf42';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({

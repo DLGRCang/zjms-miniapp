@@ -4,7 +4,7 @@
 <image src="{{imgUrl}}/image/food.png" mode='widthFix' style="height：375px;width:100%;"></image>
 
 <view class="margin-lr-lg">
-  <dot-title title="小吃一条街" color="red" isMore="true"></dot-title>
+  <dot-title title="小吃一条街" color="red"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{xcFoodList}}" wx:key="item">
       <image src="{{baseImgUrl}}{{item.storeImage}}"></image>
@@ -21,14 +21,14 @@
     <dot-title title="伊旗绝味" color="red"></dot-title>
   </view>
   <block wx:for="{{specialFoodList}}" wx:key="item">
-    <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.shopManagementId}}">
+    <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.shopListId}}">
       <view>
-        <image class="radius margin-right" src="{{baseImgUrl}}{{item.storeImage}}"
+        <image class="radius margin-right" src="{{baseImgUrl}}{{item.photo}}"
           style="width:160rpx;height:160rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
       </view>
       <view class="">
         <view>{{item.shopName}}</view>
-        <view class="padding-tb-sm text-grey text-sm">{{item.shopAddress}}</view>
+        <view class="padding-tb-sm text-grey text-sm textInfo">{{item.message}}</view>
         <view><text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="index"></text></view>
       </view>
     </view>

@@ -13,12 +13,12 @@ Page({
     hotelList: null,
   },
   hotelList() {
-    let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = baseUrl + 'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '酒店';
+    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let url =  baseUrl+'shoplist/listpageshoplist?type=' + '14ba00bb-3918-40c9-902f-1b9cf9e46504';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({
-        hotelList: res.data.rows
+        foodList: res.data.rows
       })
     });
   },

@@ -20,7 +20,7 @@ Page({
   loginOut: function () {
     wx.setStorageSync("isLogin", false);
     wx.setStorageSync("token", "");
-    wx.setStorageSync("userId", "");
+    wx.setStorageSync("partUserId", "");
     this.setData({
       isLogin: wx.getStorageSync("isLogin")
     })

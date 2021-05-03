@@ -11,7 +11,7 @@
   background-color: #FF0103;
   width: 60%;
   color: #ffffff;
-  padding: 20rpx 0;
+  padding: 20rpx 10rpx;
   border-top-left-radius: 20rpx;
   border-bottom-left-radius: 20rpx;
 }

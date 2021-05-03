@@ -24,9 +24,10 @@ Page({
     })
   },
 
+  // 西餐
   foodList() {
-    let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = baseUrl + 'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '西餐';
+    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let url =  baseUrl+'shoplist/listpageshoplist?type=' + '29343b63-7299-4e8c-bcdc-0153543c84ab';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({

@@ -7,13 +7,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    baseImgUrl: "http://127.0.0.1:8005/cmmall/route/file/showfile/image/",
     id:'',
     goodsInfo:null,
   },
   // 获取商品详情
   getInfo() {
-    let baseUrl = 'https://yiqi.sucstep.com/'
-    let url = baseUrl + 'shop/app/release/api/commoditymanagement/listpagecommoditymanagement?storeId=' + this.data.id;
+    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let url = baseUrl + 'commoditydetails/getcommoditydetails/' + this.data.id;
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
       this.setData({
@@ -38,15 +39,19 @@ Page({
       }
     });
   },
-  goPayList(e){
-    console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo('/pages/food/pages/payList/payList', 'id', e.currentTarget.dataset.id)
+  goPayList(){
+    wx.navigateTo({
+      url: '/pages/food/pages/payList/payList?id='+this.data.id,
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id :options.id
+    })
+    this.getInfo()
   },
 
   /**

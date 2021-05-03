@@ -24,9 +24,10 @@ Page({
     })
   },
 
+  // 职工餐厅
   foodList() {
-    let baseUrl = 'https://yiqi.sucstep.com/'
-    let url =  baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '职工餐厅';
+    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let url =  baseUrl+'shoplist/listpageshoplist?type=' + 'e8fa996f-83c0-4635-aa85-f839c767ac89';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({

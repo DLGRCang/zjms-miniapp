@@ -12,12 +12,12 @@ Page({
     bookList:null,
   },
  bookList() {
-  let baseUrl = 'https://yiqi.sucstep.com/'
-  let url = baseUrl+'shop/app/release/api/shopmanagement/listpageshopmanagement?shopTypeSmall=' + '图书音响';
+  let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+  let url =  baseUrl+'shoplist/listpageshoplist?type=' + '59c3f659-53ee-46e8-9b90-13652a2e8514';
   util.httpRequest(url, 'GET', {}).then(res => {
     console.log(res.data.rows)
     this.setData({
-      bookList: res.data.rows
+      foodList: res.data.rows
     })
   });
 },

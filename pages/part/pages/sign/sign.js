@@ -44,7 +44,7 @@ Page({
         wx.setStorageSync("token-header", res.data.data.token);
         wx.setStorageSync("userTocken", res.data.data.userToken);
         wx.setStorageSync("userName", res.data.data.USER_NAME);
-        wx.setStorageSync("userId", res.data.data.USER_ID);
+        wx.setStorageSync("partUserId", res.data.data.USER_ID);
         util.pageJump('../homepage/homepage')
       } else {
         let msg = res.data.msg
