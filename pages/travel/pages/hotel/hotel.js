@@ -13,7 +13,7 @@ Page({
     hotelList: null,
   },
   hotelList() {
-    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let baseUrl = 'https://www.yjhlcity.com/cmmall/app/release/api/'
     let url =  baseUrl+'shoplist/listpageshoplist?type=' + '14ba00bb-3918-40c9-902f-1b9cf9e46504';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)

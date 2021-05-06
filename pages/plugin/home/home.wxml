@@ -1,7 +1,7 @@
 <cu-custom bgColor="bg-gradual-blue">
   <view slot="content">个人中心</view>
 </cu-custom>
-<view class="margin-lr-lg">
+<view class="margin-lr-lg" style="padding-bottom:150rpx;">
   <!-- 头像组 -->
   <view class="flex justify-between margin-tb-lg ">
     <view class="flex">
@@ -49,3 +49,4 @@
     </view>
   </view>
 </view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

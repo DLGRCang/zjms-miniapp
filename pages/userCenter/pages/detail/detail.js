@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseImgUrl: "http://127.0.0.1:8005/cmmall/route/file/showfile/image/",
-    baseUrl: 'http://172.16.20.156:8005/cmmall/',
+    baseImgUrl: "https://www.yjhlcity.com/cmmall/route/file/downloadfile/false/",
+    baseUrl: 'https://www.yjhlcity.com/cmmall/',
     userId: wx.getStorageSync('userId'),
     index:0,
     status:["未支付", "已支付", "已取消", "已收货", "已退货", "换货中","货到付款"],
