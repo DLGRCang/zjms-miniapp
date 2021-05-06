@@ -27,47 +27,44 @@ Page({
 		})
 	},
 	faceid() {
-		// 测试登录
 		this.goLogin()
+		// let that = this
+		// if (this.data.name == '') {
+		// 	util.showToast('姓名不能为空')
+		// 	return
+		// }
+		// if (this.data.idCard == '') {
+		// 	util.showToast('身份证号为空')
+		// 	return
+		// }
+		// if (!util.checkIdCard(this.data.idCard)) {
+		// 	util.showToast('身份证错误')
+		// 	return
+		// }
 
+		// wx.startFacialRecognitionVerify({
 
-		let that = this
-		if (this.data.name == '') {
-			util.showToast('姓名不能为空')
-			return
-		}
-		if (this.data.idCard == '') {
-			util.showToast('身份证号为空')
-			return
-		}
-		if (!util.checkIdCard(this.data.idCard)) {
-			util.showToast('身份证错误')
-			return
-		}
-
-		wx.startFacialRecognitionVerify({
-
-			name: this.data.name,
-			idCardNumber: this.data.idCard,
-			checkAliveType: this.data.type,
-			success(res) {
-				that.setData({
-					access_token: res.verifyResult
-				})
-				console.log(res)
-				console.log(res.verifyResult)
-				console.log('识别成功')
-				that.goLogin();
-			},
-			fail(res) {
-				util.showToast('登录失败，请重试')
-				console.log("res" + JSON.stringify(res))
-				console.log('识别失败' + res.verifyResult)
-			},
-			complete(com) {
-				console.log("com" + JSON.stringify(com))
-			}
-		})
+		// 	name: this.data.name,
+		// 	idCardNumber: this.data.idCard,
+		// 	checkAliveType: this.data.type,
+		// 	success(res) {
+		// 		that.setData({
+		// 			access_token: res.verifyResult
+		// 		})
+		// 		console.log(res)
+		// 		console.log(res.verifyResult)
+		// 		console.log('识别成功')
+		// 		that.goLogin();
+		// 	},
+		// 	fail(res) {
+		// 		util.showToast('登录失败，请重试')
+		// 		console.log("res" + JSON.stringify(res))
+		// 		console.log('识别失败' + res.verifyResult)
+		// 	},
+		// 	complete(com) {
+		// 		console.log("com" + JSON.stringify(com))
+		// 	}
+		// })
 	},
 	//微信登录
 	goLogin: function (e) {
@@ -105,7 +102,8 @@ Page({
 				wx.setStorageSync("isLogin", true);
 				wx.setStorageSync("token", res.data.result.data.token);
 				wx.setStorageSync("userId", res.data.result.data.userInfo.id);
-				wx.setStorageSync("isLogin", true);
+				var openId=res.data.result.data.userInfo.username.split('_')
+				wx.setStorageSync("openId",openId[openId.length-1]);
 				wx.setStorageSync("name", that.data.name); //姓名	
 				wx.setStorageSync("idCard", that.data.idCard); //身份证号
 				that.setData({
