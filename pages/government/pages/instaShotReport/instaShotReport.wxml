@@ -4,29 +4,31 @@
 </cu-custom>
 <view class="margin-xs">
 	<!-- 输入框 -->
-	<view class="cu-form-group" wx:for="{{3}}">
-		<view class="title">输入框</view>
-		<input placeholder="请输入内容" value="{{name}}" bindinput="title" data-id="{{index}}"></input>
-	</view>
-	<!-- 选择器 -->
 	<view class="cu-form-group">
-		<view class="title">普通选择</view>
-		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
-			<view class="picker">
-				{{index?picker[index]:'请选择'}}
-			</view>
-		</picker>
+		<view class="title">举报人：</view>
+		<input placeholder="请输入举报人" bindinput="putData" data-key="party"></input>
 	</view>
-	<!-- 日期 -->
 	<view class="cu-form-group">
-		<view class="title">日期选择</view>
-		<picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
-			<view class="picker">
-				{{date}}
-			</view>
-		</picker>
+		<view class="title">举报人电话：</view>
+		<input type="number" placeholder="请输入举报人电话" bindinput="putData" data-key="partyphone"></input>
 	</view>
-	
+	<view class="cu-form-group">
+		<view class="title">机构编码（登记人的机构编码）：</view>
+		<input placeholder="请输入" bindinput="putData" data-key="deptcode"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">大类编码：</view>
+		<input placeholder="请输入" bindinput="putData" data-key="classcode"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">地址描述：</view>
+		<input placeholder="请输入地址描述" value="{{address}}" bindinput="putData" data-key="eventaddress"></input>
+	</view>
+	<view class="cu-form-group align-start">
+		<view class="title">案件描述：</view>
+		<textarea maxlength="-1"  placeholder="请输入" bindinput="putData" data-key="intro"></textarea>
+	</view>
+
 	<!-- 图片上传 -->
 	<view class="cu-bar bg-white">
 		<view class="action">
@@ -49,15 +51,9 @@
 			</view>
 		</view>
 	</view>
-	<!-- 文本框 -->
-	<view class="cu-form-group align-start">
-		<view class="title">文本框</view>
-		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="多行文本输入框"></textarea>
-	</view>
 
 	<!-- 提交 -->
 	<view class="padding flex flex-direction">
-		<button class="cu-btn bg-blue margin-tb-sm lg">提交</button>
+		<button bindtap="commitData" class="cu-btn bg-blue margin-tb-sm lg">提交</button>
 	</view>
-	
 </view>

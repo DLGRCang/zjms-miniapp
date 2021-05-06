@@ -27,7 +27,6 @@ Page({
 		//获取当前位置
 		wx.getLocation({
 			type: 'wgs84',
-
 			success: function (res) {
 				var lat = res.latitude;
 				var lon = res.longitude;

@@ -14,13 +14,13 @@
 </wxs>
 <view class="padding">
 	<view class="text-lg" wx:for="{{data}}" wx:for-index="key" wx:for-item="value">
-		<view class="margin-xs" wx:if="{{function.isString(value)}}">
-			<text class="text-grey">{{key}}:</text><text>	{{value}}</text>
+		<view class="margin-sm" wx:if="{{function.isString(value)}}">
+			<text class="text-grey">{{key}}:</text><text> {{value}}</text>
 		</view>
 		<view wx:else class="margin-xs margin-top text-grey">{{key}}
 			<view wx:for="{{value}}">
 				<view class="margin-sm" wx:for="{{value[index]}}" wx:for-index="key1" wx:for-item="value1">
-					<text class="text-gray">{{key1}}:</text><text class="text-black">	{{value1}}</text>
+					<text class="text-gray">{{key1}}:</text><text class="text-black"> {{value1}}</text>
 				</view>
 			</view>
 		</view>

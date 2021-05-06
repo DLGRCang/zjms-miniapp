@@ -190,7 +190,8 @@
 				"pages/volunteerServiceDetail/volunteerServiceDetail",
 				"pages/cityActionDetail/cityActionDetail",
 				"pages/cityActionApply/cityActionApply",
-				"pages/questionnaireInfo/questionnaireInfo"
+				"pages/questionnaireInfo/questionnaireInfo",
+				"pages/instaShotInfo/instaShotInfo"
 			]
 		},
 		{
