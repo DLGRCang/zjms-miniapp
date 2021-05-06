@@ -64,7 +64,7 @@ const requestApi = function (url, method, data = {}) {
 
         reject(res)
       }
-    })
+    })  
   })
 }
 

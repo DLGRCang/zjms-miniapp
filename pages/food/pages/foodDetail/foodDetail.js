@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseImgUrl: "http://127.0.0.1:8005/cmmall/route/file/showfile/image/",
+    baseImgUrl: 'https://www.yjhlcity.com/cmmall/route/file/downloadfile/false/',
     TabCur: 0,
     id: '',
     foodInfo: null,
@@ -20,7 +20,7 @@ Page({
   },
   // 获取商品
   getInfo() {
-    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let baseUrl = 'https://www.yjhlcity.com/cmmall/app/release/api/'
     let url = baseUrl + 'commoditydetails/listpagecommoditydetails?shopListId=' + this.data.id;
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)

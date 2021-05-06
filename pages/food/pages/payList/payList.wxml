@@ -68,6 +68,6 @@
     </view>
   </view>
 
-  <button class="margin-tb-lg button" bindtap="goPay" data-id="{{button}}" data-storeid="{{goodsInfo.shopListId}}" data-price="{{goodsInfo.discountPrice}}">{{button}}</button>
+  <button class="margin-tb-lg button" bindtap="{{submit}}" data-id="{{button}}" data-storeid="{{goodsInfo.shopListId}}" data-price="{{goodsInfo.discountPrice}}">{{button}}</button>
   
 </view>

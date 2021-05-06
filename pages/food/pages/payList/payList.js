@@ -7,11 +7,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseImgUrl: "http://127.0.0.1:8005/cmmall/route/file/showfile/image/",
-    baseUrl: 'http://172.16.20.156:8005/cmmall/',
+    baseImgUrl: "https://www.yjhlcity.com/cmmall/route/file/downloadfile/false/",
+    baseUrl: 'https://www.yjhlcity.com/cmmall/',
     id: '',
     pay: ['在线支付', '货到付款',],
-    button: '立即下单',
+    button: '立即付款',
+    submit: 'goPay',
     buyPersionId: wx.getStorageSync("userId"),
     user: '',
     phone: '',
@@ -36,12 +37,14 @@ Page({
     if (e.detail.TabCur === 1) {
       this.setData({
         button: '立即下单',
-        orderState: 6
+        orderState: 6,
+        submit: 'goOrder'
       })
     } else {
       this.setData({
         button: '立即购买',
-        orderState: 0
+        orderState: 0,
+        submit: 'goPay'
       })
     }
   },
@@ -65,75 +68,115 @@ Page({
   },
 
   goPay(e) {
+    let that = this
     console.log(e.currentTarget.dataset)
-    if (e.currentTarget.dataset === '立即购买') {
-      // 购买
-      // 调取微信支付
-
-    } else {
-      if (this.data.user == null || this.data.user == '') {
-        wx.showToast({
-          title: "收货人不能为空",
-          icon: 'error',
-        })
-        return
-      }
-      if (this.data.area == null || this.data.area == '') {
-        wx.showToast({
-          title: "地址不能为空",
-          icon: 'error',
-        })
-        return
-      }
-      if (this.data.phone == null || this.data.phone == '') {
-        wx.showToast({
-          title: "联系方式有误",
-          icon: 'error',
-        })
-        return
-      }
-      // 下单
-      let url = this.data.baseUrl + 'app/order/saveorder'
-      let data = {
-        address: this.data.area,
-        couponId: '',
-        buyPeopId: this.data.buyPersionId,
-        orderFormId: this.data.orderFormId,
-        payMoney: e.currentTarget.dataset.price,
-        placeTime: this.data.placeTime,
-        receiptPhone: this.data.phone,
-        receiptPeople: this.data.user,
-        shooppingId: this.data.id,
-        storeId: e.currentTarget.dataset.storeid,
-        orderState: this.data.orderState,
-      }
-      console.log(data)
-      util.httpRequest(url, 'POST', data).then(res => {
-        console.log(res)
-        if (res.statusCode == 200) {
-          wx.showToast({
-            title: "提交成功",
-            icon: 'success',
-            mask: true,
-            success(res) {
-              setTimeout(() => {
-                wx.navigateBack({
-                  delta: 3
-                })
-              }, 2000)
-            }
-          });
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'error',
-          })
-        }
-
-      });
-
+    // 调取微信支付
+    let url = ''
+    let data = {
+      openId: openId
+      // amount: amount,
     }
+    util.httpRequest(url, 'POST', data).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        that.doWXPay(res.data)
 
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'error',
+        })
+      }
+    });
+
+  },
+  doWXPay() {
+    let param = {}
+    //小程序发起微信支付
+    wx.requestPayment({
+      timeStamp: param.data.timeStamp,//时间戳
+      nonceStr: param.data.nonceStr,//随机字符串
+      package: param.data.package,//统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=***
+      signType: 'MD5',//签名算法
+      paySign: param.data.paySign,//签名
+      success: function (event) {
+        console.log(event);
+        wx.showToast({
+          title: '支付成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (error) {
+        // fail
+        console.log("支付失败")
+        console.log(error)
+      },
+
+    });
+
+  },
+  goOrder(e) {
+
+    if (this.data.user == null || this.data.user == '') {
+      wx.showToast({
+        title: "收货人不能为空",
+        icon: 'error',
+      })
+      return
+    }
+    if (this.data.area == null || this.data.area == '') {
+      wx.showToast({
+        title: "地址不能为空",
+        icon: 'error',
+      })
+      return
+    }
+    if (this.data.phone == null || this.data.phone == '') {
+      wx.showToast({
+        title: "联系方式有误",
+        icon: 'error',
+      })
+      return
+    }
+    // 下单
+    let url = this.data.baseUrl + 'app/order/saveorder'
+    let data = {
+      address: this.data.area,
+      couponId: '',
+      buyPeopId: this.data.buyPersionId,
+      orderFormId: this.data.orderFormId,
+      payMoney: e.currentTarget.dataset.price,
+      placeTime: this.data.placeTime,
+      receiptPhone: this.data.phone,
+      receiptPeople: this.data.user,
+      shooppingId: this.data.id,
+      storeId: e.currentTarget.dataset.storeid,
+      orderState: this.data.orderState,
+    }
+    console.log(data)
+    util.httpRequest(url, 'POST', data).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        wx.showToast({
+          title: "提交成功",
+          icon: 'success',
+          mask: true,
+          success(res) {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 3
+              })
+            }, 2000)
+          }
+        });
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'error',
+        })
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面加载

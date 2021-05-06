@@ -7,13 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    baseImgUrl: "http://127.0.0.1:8005/cmmall/route/file/showfile/image/",
+    baseImgUrl: "https://www.yjhlcity.com/cmmall/route/file/downloadfile/false/",
     id:'',
     goodsInfo:null,
   },
   // 获取商品详情
   getInfo() {
-    let baseUrl = 'http://172.16.20.156:8005/cmmall/app/release/api/'
+    let baseUrl = 'https://www.yjhlcity.com/cmmall/app/release/api/'
     let url = baseUrl + 'commoditydetails/getcommoditydetails/' + this.data.id;
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
