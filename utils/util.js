@@ -19,15 +19,17 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-// let base = 'http://192.168.1.112:8004/InfoIssue/app/' //王益兴
-// let base = 'http://192.168.1.111:8004/InfoIssue/app/' //刘翔宇
+// let base = 'http://192.168.1.116:8004/InfoIssue/app/' //王益兴
+// let base = 'http://192.168.1.110:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.1.104:8004/InfoIssue/app/' //刘翔宇
 // let base = 'http://192.168.1.114:8004/InfoIssue/app/' //姜园 
 
-let base = 'https://www.yjhlcity.com/InfoIssue/app/' //公司
+let base = 'https://yiqi.sucstep.com/InfoIssue/app/' //公司测试
+// let base = 'https://www.yjhlcity.com/InfoIssue/app/' //公司正式
 let baseUrl = base + 'release/'
 let uploadFileUrl = base + 'file/uploadfile'//文件上传地址
 let uploadUrlImage = base + 'file/uploadimage' //图片上传地址
+let uploadUrlVideo = base + 'file/uploadvideo' //视频上传地址
 
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
@@ -137,6 +139,39 @@ const httpRequest = function (url, method, data = {}) {
     })
   })
 }
+//网络请求
+const httpRequestForm = function (url, method, data = {}) {
+  wx.showLoading({
+    title: '请稍等...'
+  });
+  let meth = method.toUpperCase()
+  if (meth != "GET" && meth != "DELETE" && meth != "POST" && meth != "PUT") {
+    meth = 'GET' //不传情况下默认'GET'
+  }
+  return new Promise(function (resolve, reject) {
+    wx.request({
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'token': wx.getStorageSync("token")
+      },
+      url: url,
+      data: data,
+      method: meth,
+      success: function (res) {
+        wx.hideLoading();
+        //返回信息统一处理操作
+
+        //resolve用于具体调用中
+        resolve(res)
+      },
+      fail: function (res) {
+        wx.hideLoading();
+        //错误信息统一处理操作
+        reject(res)
+      }
+    })
+  })
+}
 //文件上传接口
 const uploadFile1 = function (filePath, name) {
   wx.showLoading({
@@ -193,7 +228,34 @@ const uploadFile = function (filePath, name) {
     })
   });
 }
-
+//视频文件上传接口
+const uploadVideoFile = function (filePath) {
+  wx.showLoading({
+    title: '上传中...'
+  });
+  return new Promise((resolve, reject) => {
+    wx.uploadFile({
+      url: uploadUrlVideo,
+      filePath: filePath,
+      name: 'video',
+      formData: {},
+      timeout: 2 * 60 * 1000,
+      header: {
+        'token': wx.getStorageSync("token")
+      },
+      success: (res) => {
+        wx.hideLoading();
+        resolve(res)
+      },
+      fail: (res) => {
+        //错误信息统一处理操作
+        wx.hideLoading();
+        reject(res)
+        this.showToast('上传失败')
+      }
+    })
+  });
+}
 //身份证号校验
 const checkIdCard = function (data) {
   if (!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(data))) {
@@ -359,6 +421,7 @@ module.exports = {
   requestApi: requestApi,
   requestData: requestData,
   httpRequest: httpRequest,
+  httpRequestForm: httpRequestForm,
   uploadFile: uploadFile,
   uploadFile1: uploadFile1,
   base: base,
@@ -377,5 +440,6 @@ module.exports = {
   showToast: showToast,
   returnCode: returnCode,
   isNull: isNull,
-  routePlan: routePlan
+  routePlan: routePlan,
+  uploadVideoFile: uploadVideoFile
 }
