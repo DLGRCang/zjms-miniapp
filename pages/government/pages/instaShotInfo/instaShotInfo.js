@@ -1,43 +1,35 @@
-// pages/government/pages/instaShot/instaShot.js
-const app = getApp()
+// pages/government/pages/instaShotInfo/instaShotInfo.js
 const util = require('../../../../utils/util.js')
-const data = require('../../../../utils/data.js')
-
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl: app.globalData.imgUrl,
-		page: 1,
-		dataList: []
+		eventcode: '',
+		data:{}
 	},
-	//打开问题上报
-	instaShotReport() {
-		util.pageJump('/pages/government/pages/instaShotReport/instaShotReport')
-	},
-	//打开详情
-	shotReportInfo(e) {
-		util.pageJump('/pages/government/pages/instaShotInfo/instaShotInfo?eventcode=' + e.currentTarget.dataset.id)
-	},
-
-	getDataList: function () {
+	getData: function () {
 		let data = {
-			openid: wx.getStorageSync("openId"),
-			page: 1,
-			rows: 30
+			eventcode: this.data.eventcode,
 		}
-		util.httpRequestForm('https://www.yjhlcity.com/yjhl/eventListWeixin/WXviewListEvent.do', 'POST', data).then(res => {
-			console.log(res.data.rows)
+		util.httpRequestForm('https://www.yjhlcity.com/yjhl/eventListWeixin/WxeventDetail.do', 'POST', data).then(res => {
+			console.log(res)
 			this.setData({
-				dataList: res.data.rows
+				data: res.data.eventDto
 			})
 		});
 	},
+	/**
+	 * 生命周期函数--监听页面加载
+	 */
 	onLoad: function (options) {
-		this.getDataList()
+		this.setData({
+			eventcode: options.eventcode
+		})
+		this.getData()
 	},
+
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

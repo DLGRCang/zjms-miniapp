@@ -1,0 +1,17 @@
+<!--pages/government/pages/instaShotInfo/instaShotInfo.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">详情</view>
+</cu-custom>
+<view class="padding flex flex-direction	align-center">
+	<view class="margin-top-lg text-xl text-pink text-bold "> {{data.classcodename}}-{{data.subclasscodename}}</view>
+	<view class="text-gray margin">案件状态：{{data.statename}}</view>
+	<view style="width:100%" class="margin-top-lg text-lg"> {{data.intro}}</view>
+	<view style="width:100%" class="margin-top-xl">案件来源：{{data.sourcecodename}}</view>
+	<view style="width:100%" class="margin-top-xl">地址描述：{{data.eventaddress}}</view>
+	<view style="width:100%" class="margin-top-xl">是否自行处理：{{data.selfflagname}}</view>
+	<view style="width:100%" class="margin-top-xl">报案人：{{data.party}}</view>
+	<view style="width:100%" class="margin-tb-xl">监督员：{{data.monitorsname}}</view>
+	<view wx:for="data.listaffix">
+		<image src="https://www.yjhlcity.com/yjhl/{{data.affixurl}}"></image>
+	</view>
+</view>
