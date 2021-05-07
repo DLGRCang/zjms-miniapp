@@ -19,6 +19,8 @@ Page({
   },
   //机构申请
   apply(){
+      //判断是否登录
+      if (!login.isLogin()) return
     util.pageJump('../mbSchoolApply/mbSchoolApply')
   },
 

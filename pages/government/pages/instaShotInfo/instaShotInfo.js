@@ -13,10 +13,11 @@ Page({
 		let data = {
 			eventcode: this.data.eventcode,
 		}
+		console.log(data)
 		util.httpRequestForm('https://www.yjhlcity.com/yjhl/eventListWeixin/WxeventDetail.do', 'POST', data).then(res => {
 			console.log(res)
 			this.setData({
-				data: res.data.eventDto
+				data: res.data.obj.eventDto
 			})
 		});
 	},
@@ -24,6 +25,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		console.log(options.eventcode)
 		this.setData({
 			eventcode: options.eventcode
 		})

@@ -8,8 +8,8 @@
 	<view bindtap="goDetail" data-obj="{{item}}" class="flex" wx:for="{{datalist}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
 		<view class="flex flex-direction">
-			<!-- <text class="text-black text-df" style="margin-bottom: 4rpx;">张宏昌</text> -->
-			<text class="text-gray text-sm margin-bottom-xs">{{item.complaint_time}}</text>
+			<text class="text-black text-df" style="margin-bottom: 4rpx;">{{item.complainted}}</text>
+			<text class="text-gray text-sm margin-bottom-xs">{{item.safeguardDate}}</text>
 			<text class="text-black text-df margin-bottom-xl">{{item.title}}</text>
 		</view>
 	</view>
@@ -19,8 +19,8 @@
 	<view bindtap="goDetail" data-obj="{{item}}" class="flex" wx:for="{{datalist1}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
 		<view class="flex flex-direction">
-			<!-- <text class="text-black text-df" style="margin-bottom: 4rpx;">张宏昌</text> -->
-			<text class="text-gray text-sm margin-bottom-xs">{{item.complaint_time}}</text>
+			<text class="text-black text-df" style="margin-bottom: 4rpx;">{{item.complainted}}</text>
+			<text class="text-gray text-sm margin-bottom-xs">{{item.safeguardDate}}</text>
 			<text class="text-black text-df margin-bottom-xl">{{item.title}}</text>
 		</view>
 	</view>

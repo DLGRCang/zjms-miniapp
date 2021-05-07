@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 Page({
 
   /**
@@ -33,6 +34,8 @@ Page({
     console.log("点击取消")
   },
   goForm() {
+      //判断是否登录
+      if (!login.isLogin()) return
     this.setData({
       show:true
     })

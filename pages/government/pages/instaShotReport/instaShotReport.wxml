@@ -1,5 +1,5 @@
 <!--pages/government/pages/instaShotReport/instaShotReport.wxml-->
-<cu-custom bgColor="bg-blue" isBack="{{true}}">
+<cu-custom bgColor="bg-pink" isBack="{{true}}">
 	<view slot="content">问题上报</view>
 </cu-custom>
 <view class="margin-xs">
@@ -54,6 +54,6 @@
 
 	<!-- 提交 -->
 	<view class="padding flex flex-direction">
-		<button bindtap="commitData" class="cu-btn bg-blue margin-tb-sm lg">提交</button>
+		<button bindtap="commitData" class="cu-btn bg-pink margin-tb-sm lg">提交</button>
 	</view>
 </view>

@@ -1,6 +1,7 @@
 // pages/economic/pages/protectRight/protectRight.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 Page({
 
 	/**
@@ -18,27 +19,33 @@ Page({
 	},
 	getData() {
 		//消费者维权
-		util.requestApi('applicationFormTable/listApplicationFormTable/2b729e70-7c3f-4109-9416-944d5f0cb3af', 'GET', {}).then(res => {
+		util.requestApi('safeguardpotence/listsafeguardpotence?type=1', 'GET', {}).then(res => {
 			this.setData({
 				datalist:res.data
 			})
+			console.log("---------消费者")
 			console.log(res)
 		})
 		//经营者维权
-		util.requestApi('applicationFormTable/listApplicationFormTable/df05d2f6-ec02-47af-969d-fdec1dfb6a32', 'GET', {}).then(res => {
+		util.requestApi('safeguardpotence/listsafeguardpotence?type=2', 'GET', {}).then(res => {
 			this.setData({
 				datalist1:res.data
 			})
+			console.log("----------经营者")
 			console.log(res)
 		})
 	},
 	//消费者维权
 	protectRightConsumer() {
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer?id=2b729e70-7c3f-4109-9416-944d5f0cb3af')
+		  //判断是否登录
+			if (!login.isLogin()) return
+		util.pageJumpTo('../protectRightConsumer/protectRightConsumer?id=1')
 	},
 	//经营者维权
 	protectRightOperator() {
-		util.pageJumpTo('../protectRightConsumer/protectRightConsumer?id=df05d2f6-ec02-47af-969d-fdec1dfb6a32')
+		  //判断是否登录
+			if (!login.isLogin()) return
+		util.pageJumpTo('../protectRightConsumer/protectRightConsumer?id=2')
 	},
 
 	/**

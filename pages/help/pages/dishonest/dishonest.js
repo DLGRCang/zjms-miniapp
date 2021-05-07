@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 Page({
 
 	/**
@@ -38,6 +39,8 @@ Page({
     })
 	},
 	goSearch(){
+			  //判断是否登录
+				if (!login.isLogin()) return
 		util.pageJump("/pages/help/pages/dishonestSearch/dishonestSearch")
 	},
   onLoad: function (options) {

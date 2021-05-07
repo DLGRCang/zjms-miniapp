@@ -11,7 +11,7 @@
 	<view style="width:100%" class="margin-top-xl">是否自行处理：{{data.selfflagname}}</view>
 	<view style="width:100%" class="margin-top-xl">报案人：{{data.party}}</view>
 	<view style="width:100%" class="margin-tb-xl">监督员：{{data.monitorsname}}</view>
-	<view wx:for="data.listaffix">
-		<image src="https://www.yjhlcity.com/yjhl/{{data.affixurl}}"></image>
+	<view wx:for="{{data.listaffix}}">
+		<image src="https://www.yjhlcity.com/yjhl/{{data.listaffix[index].affixurl}}"></image>
 	</view>
 </view>

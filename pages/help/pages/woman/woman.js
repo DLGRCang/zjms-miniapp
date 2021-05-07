@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 Page({
 
 	/**
@@ -36,6 +37,8 @@ Page({
 	},
 	//证据库
 	evidence() {
+			  //判断是否登录
+				if (!login.isLogin()) return
 		util.pageJump('../womanEvidence/womanEvidence')
 	},
 	// 咨询求助

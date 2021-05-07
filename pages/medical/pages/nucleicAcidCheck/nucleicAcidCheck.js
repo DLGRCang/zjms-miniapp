@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 import QRCode from '../../../../utils/weapp-qrcode.js'
 Page({
 	/**
@@ -15,6 +16,8 @@ Page({
 	},
 	//核酸表单
 	nucleicForm() {
+		  //判断是否登录
+			if (!login.isLogin()) return
 		util.pageJump('/pages/appointment/pages/nucleicForm/nucleicForm')
 	},
 	//生成二维码

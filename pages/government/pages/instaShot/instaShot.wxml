@@ -5,6 +5,6 @@
 <image mode="widthFix" src="{{imgUrl}}/image/ruishoupai.png" style="width:100%"></image>
 <button bindtap="instaShotReport" class="button">问题上报</button>
 <view class="padding">
-	<dot-title title="上报历史" data-id="item.eventcode" color="title-color" isMore="true" sign="{{infotypeid}}" type="2"></dot-title>
-	<item-image-text bindtap="shotReportInfo" type="8" wx:for="{{dataList}}"  isImg="{{false}}"  itemTitle="{{item.eventtypename}}:{{item.intro}}"  isDate="true" date="{{item.eventaddress}}"></item-image-text>
+	<dot-title title="上报历史" data-id="item.eventcode" color="title-color" isMore="{{false}}" sign="{{infotypeid}}" type="2"></dot-title>
+	<item-image-text bindtap="shotReportInfo" data-id="{{item.eventcode}}" type="8" wx:for="{{dataList}}"  isImg="{{false}}"  itemTitle="{{item.eventtypename}}:{{item.intro}}"  isDate="true" date="{{item.eventaddress}}"></item-image-text>
 </view>

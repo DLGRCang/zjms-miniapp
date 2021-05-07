@@ -1,11 +1,11 @@
 <!--pages/economic/pages/protectRightConsumer/protectRightConsumer.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">消费者维权</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">维权</view>
 </cu-custom>
 <view class="padding">
 	<view class="cu-form-group">
 		<view class="title">投诉对象：</view>
-		<input placeholder="请输入投诉对象" bindinput="putData" data-key="beComplainted"></input>
+		<input placeholder="请输入投诉对象" bindinput="putData" data-key="complainted"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">投诉标题：</view>
@@ -28,12 +28,6 @@
 				<text class="cuIcon-cameraadd text-grey" style="font-size:100rpx;line-height:200rpx;"></text>
 			</view>
 		</view>
-
-	</view>
-
-	<view class="cu-form-group">
-		<view class="title">投诉时间：</view>
-		<input value="{{currentDate}}" bindinput="putData" data-key="complaintTime"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">投诉地点：</view>
