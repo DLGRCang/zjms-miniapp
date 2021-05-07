@@ -1,6 +1,7 @@
 // pages/government/pages/cityAction/cityAction.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 Page({
 
 	/**
@@ -28,8 +29,9 @@ Page({
 	},
 	//申请报名
 	goApplication(e) {
-		console.log()
-		util.pageJumpTo("/pages/government/pages/cityActionApply/cityActionApply","id",e.target.dataset.id)
+		//判断是否登录
+		if (!login.isLogin()) return
+		util.pageJumpTo("/pages/government/pages/cityActionApply/cityActionApply", "id", e.target.dataset.id)
 	},
 
 	onLoad: function (options) {

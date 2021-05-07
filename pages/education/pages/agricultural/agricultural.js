@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 Page({
 
   /**
@@ -16,6 +17,8 @@ Page({
   },
   //专家咨询
   agriculturaConsult() {
+      //判断是否登录
+      if (!login.isLogin()) return
     util.pageJump('/pages/education/pages/agriculturaConsult/agriculturaConsult')
   },
   /**

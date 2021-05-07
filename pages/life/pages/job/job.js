@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 Page({
 
 	/**
@@ -20,6 +21,8 @@ Page({
 		util.pageJump('/pages/life/pages/jobAppointment/jobAppointment')
   },
   toPersonInfo:function(){
+    	  //判断是否登录
+			if (!login.isLogin()) return
     util.pageJump('/pages/life/pages/jobPerson/jobPerson')
   },
   /**

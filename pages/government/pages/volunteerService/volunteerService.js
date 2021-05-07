@@ -1,5 +1,6 @@
 // pages/government/pages/volunteerService/volunteerService.js
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 const app = getApp()
 Page({
 
@@ -9,12 +10,12 @@ Page({
 	data: {
 		baseImgUrl: app.globalData.baseImgUrl,
 		imgUrl: app.globalData.imgUrl,
-		dataList: [], 
-		historydataList: [], 
+		dataList: [],
+		historydataList: [],
 	},
 	//志愿者服务详情
-	gotoDetail(e){
-		util.pageJump('/pages/government/pages/volunteerServiceDetail/volunteerServiceDetail?id='+e.currentTarget.dataset.id)
+	gotoDetail(e) {
+		util.pageJump('/pages/government/pages/volunteerServiceDetail/volunteerServiceDetail?id=' + e.currentTarget.dataset.id)
 	},
 	getDataList: function () {
 		let that = this;
@@ -27,7 +28,7 @@ Page({
 	//获取报名历史
 	getHistoryDataList: function () {
 		let that = this;
-		util.requestApi('volunteersservice/listvolunteers/'+wx.getStorageSync('userId'), 'GET', {}).then(res => {
+		util.requestApi('volunteersservice/listvolunteers/' + wx.getStorageSync('userId'), 'GET', {}).then(res => {
 			console.log(res.data)
 			that.setData({
 				historydataList: res.data
@@ -35,10 +36,12 @@ Page({
 		})
 	},
 	goApplication(e) {
+		//判断是否登录
+		if (!login.isLogin()) return
 		console.log()
-		util.pageJumpTo("/pages/government/pages/volunteApplication/volunteApplication","id",e.target.dataset.id)
+		util.pageJumpTo("/pages/government/pages/volunteApplication/volunteApplication", "id", e.target.dataset.id)
 	},
-		/**
+	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {

@@ -28,8 +28,9 @@ Page({
 			page: 1,
 			rows: 30
 		}
+		console.log(data)
 		util.httpRequestForm('https://www.yjhlcity.com/yjhl/eventListWeixin/WXviewListEvent.do', 'POST', data).then(res => {
-			console.log(res.data.rows)
+			console.log(res)
 			this.setData({
 				dataList: res.data.rows
 			})

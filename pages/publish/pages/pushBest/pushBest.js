@@ -1,6 +1,7 @@
 // pages/publish/pages/pushBest/pushBest.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 Page({
   /**
    * 页面的初始数据
@@ -18,6 +19,8 @@ Page({
    
   },
   apply(){
+      //判断是否登录
+      if (!login.isLogin()) return
     //申请最美家庭
     if(this.data.TabCur==0){
       util.pageJump('/pages/publish/pages/applyBestFamily/applyBestFamily')

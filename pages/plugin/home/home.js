@@ -1,21 +1,22 @@
 // pages/plugin/home/home.js
 const app = getApp()
 const util = require('../../../utils/util.js')
+const login = require('../../../utils/login.js')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     isLogin: wx.getStorageSync("isLogin"),
-    name:wx.getStorageSync("name"),
+    name: wx.getStorageSync("name"),
   },
-  
+
   //微信登录
   goLogin: function (e) {
     util.pageJump('../face/face')
   },
 
-  
+
   //退出登录
   loginOut: function () {
     wx.setStorageSync("isLogin", false);
@@ -25,7 +26,7 @@ Page({
       isLogin: wx.getStorageSync("isLogin")
     })
   },
-  onShow(){
+  onShow() {
     //更新登录按钮状态
     this.setData({
       isLogin: wx.getStorageSync("isLogin")
@@ -33,60 +34,74 @@ Page({
   },
   //个人信息
   userinfo() {
-    if(this.data.isLogin){
+    if (this.data.isLogin) {
       util.pageJump('/pages/userCenter/pages/userinfo/userinfo')
-    }else{
+    } else {
       wx.showToast({
         title: '请登录',
-        icon:'none'
+        icon: 'none'
       })
     }
-    
+
   },
   //我的订单
   myOrder() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/order/order')
   },
   //我的咨询
   myConsult() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/consult/consult')
   },
   //我的预约
   myAppointment() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/appointment/appointment')
   },
   //我的申请
   myApply() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/apply/apply')
   },
   //我的卡券
   myCard() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/card/card')
   },
   //我的参与
   myJoin() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/join/join')
   },
   //电话本
   myTel() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/tel/tel')
   },
   //意见反馈
   myOpinion() {
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/userCenter/pages/opinion/opinion')
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  },
+  onReady: function () {},
 
 
 

@@ -11,6 +11,8 @@ Page({
   },
   //申请转学
   applytransferSchool() {
+      //判断是否登录
+      if (!login.isLogin()) return
     util.pageJump('/pages/education/pages/transferSchool/transferSchool')
   },
   

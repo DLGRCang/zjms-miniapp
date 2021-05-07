@@ -1,5 +1,6 @@
 // pages/guideDetail/pages/guideInfo/guideInfo.js
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 const plugin = requirePlugin('WechatSI')
 Page({
 
@@ -25,6 +26,8 @@ Page({
     });
   },
   apply() {
+      //判断是否登录
+      if (!login.isLogin()) return
     util.pageJump('/pages/government/pages/guideCommint/guideCommint?applicationId=' + this.data.applicationId)
   },
 

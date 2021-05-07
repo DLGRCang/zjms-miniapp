@@ -2,6 +2,7 @@
 const app = getApp()
 const data = require('../../../../utils/data.js')
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 Page({
 
   /**
@@ -18,6 +19,8 @@ Page({
   },
   //挪车新增
   addMove(e) {
+    	  //判断是否登录
+			if (!login.isLogin()) return
     util.pageJump('../moveCarAdd/moveCarAdd')
   },
   //挪车列表

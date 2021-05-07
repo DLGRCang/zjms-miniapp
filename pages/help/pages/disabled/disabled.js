@@ -1,6 +1,7 @@
 // pages/help/pages/disabled/disabled.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 Page({
 
 	/**
@@ -12,14 +13,20 @@ Page({
   },
   //申请残疾证
   applyDisabilityCertificate(){
+    	  //判断是否登录
+			if (!login.isLogin()) return
     util.pageJump('/pages/help/pages/applyDisabilityCertificate/applyDisabilityCertificate')
   },
  //申请残疾补助
  applyDisabilitySubsidy(){
+   	  //判断是否登录
+       if (!login.isLogin()) return
   util.pageJump('/pages/help/pages/applyDisabilitySubsidy/applyDisabilitySubsidy')
 },
  //申请残疾补助
  applySisabledChildrenHelp(){
+   	  //判断是否登录
+       if (!login.isLogin()) return
   util.pageJump('/pages/help/pages/applySisabledChildrenHelp/applySisabledChildrenHelp')
 },
   /**

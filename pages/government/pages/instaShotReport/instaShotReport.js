@@ -35,10 +35,10 @@ Page({
 			geosupermap:'',
 			serverId_voice:'',
 			intro:this.data.intro,
-			imageArr:this.data.imageArr.toString().replace(/,/g, " "),
+			imageArr:this.data.imageArr.join(' ')
 			}
 		console.log(data)
-		util.httpRequestForm('https://www.yjhlcity.com/yjhl/addEvent/addEvent.do', 'POST', data).then(res => {
+		util.httpRequestForm('https://www.yjhlcity.com/yjhl/addEvent/addWxXcxEvent.do', 'POST', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 				wx.navigateBack({
@@ -73,15 +73,15 @@ Page({
 					filePath: res.tempFilePaths[0], //选择图片返回的相对路径
 					encoding: 'base64', //编码格式
 					success: res => { //成功的回调
-						if (this.data.imgList.length != 0) {
+						if (this.data.imageArr.length != 0) {
 							this.setData({
 								imgList: this.data.imgList.concat(filePath),
-								imageArr: this.data.imgList.concat(res.data),
+								imageArr: this.data.imageArr.concat('data:image/png;base64'+',' + res.data),
 							})
 						} else {
 							this.setData({
 								imgList: [filePath],
-								imageArr: [res.data],
+								imageArr: ['data:image/png;base64'+',' + res.data],
 							})
 						}
 

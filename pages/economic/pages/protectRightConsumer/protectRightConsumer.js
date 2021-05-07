@@ -11,15 +11,15 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		currentDate: util.formatDate(new Date), //当前日期
+		safeguardDate: util.formatDate(new Date), //当前日期
 		imgUrl: '', //附件地址
 		files: '',
 		userId: wx.getStorageSync("userId"),
-		beComplainted: '', //投诉对象
+		complainted: '', //投诉对象
 		title: '', //投诉标题
 		details: '', //投诉内容
 		address: '', //投诉地点
-		application_id: '', //
+		type: '', //
 
 	},
 	getAddress() {
@@ -55,32 +55,20 @@ Page({
 	commitData() {
 		let data = {}
 
-		if (this.data.application_id == "2b729e70-7c3f-4109-9416-944d5f0cb3af") {
 			 data = {
 				user_id: this.data.userId,
-				be_complainted: this.data.beComplainted,
+				complainted: this.data.complainted,
 				title: this.data.title,
 				details: this.data.details,
-				complaint_time: this.data.currentDate,
+				safeguardDate: this.data.safeguardDate,
 				address: this.data.address,
 				files: this.data.files,
-				application_id: this.data.application_id,
+				type: this.data.type,
 			}
-		} else {
-			 data = {
-				user_id: this.data.userId,
-				// be_complainted: this.data.beComplainted,
-				title: this.data.title,
-				// details: this.data.details,
-				complaint_time: this.data.currentDate,
-				address: this.data.address,
-				files: this.data.files,
-				application_id: this.data.application_id,
-			}
-		}
+		
 
 		console.log(data)
-		util.requestApi('applicationFormTable/saveApplicationFormTable', 'POST', data).then(res => {
+		util.requestApi('safeguardpotence/savesafeguardpotence', 'POST', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 				wx.navigateBack({
@@ -163,7 +151,7 @@ Page({
 	onLoad: function (options) {
 		this.getAddress()
 		this.setData({
-			application_id: options.id
+			type: options.id
 		})
 	},
 
