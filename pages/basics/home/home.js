@@ -6,7 +6,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-    imgList: [1, 2, 3],
+    imgList: [1, 2, 3, 4, 5],
     newsInfo: [],
     noticeInfo: [],
     StatusBar: app.globalData.StatusBar,
@@ -17,7 +17,7 @@ Page({
       name: '伊旗',
       nick: '发布',
       title: "伊金霍洛发布",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         // {
         //   tit: "听广播",
@@ -40,8 +40,13 @@ Page({
       name: '魅力',
       nick: '伊旗',
       title: "魅力伊旗",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
+        {
+          tit: "伊旗概况",
+          pic: "/image/24.png",
+          tab: 3
+        },
         {
           tit: "历史文化",
           pic: "/image/5.png",
@@ -52,7 +57,7 @@ Page({
           pic: "/image/4.png",
           tab: 0
         },
-       
+
         {
           tit: "投资兴业",
           pic: "/image/6.png",
@@ -65,7 +70,7 @@ Page({
       name: '旅游',
       nick: '出行',
       title: "旅游出行",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "知名景点",
@@ -119,7 +124,7 @@ Page({
       name: '食在',
       nick: '伊旗',
       title: "食在伊旗",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "特色美食",
@@ -147,7 +152,7 @@ Page({
           tab: 4
         },
         {
-          tit: "农产安全",
+          tit: "食品安全",
           pic: "/image/21.png",
           tab: 5
         },
@@ -158,7 +163,7 @@ Page({
       name: '经济',
       nick: '活动',
       title: "经济活动",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "商场超市",
@@ -170,11 +175,11 @@ Page({
           pic: "/image/23.png",
           tab: 1
         },
-        {
-          tit: "户外摊点",
-          pic: "/image/24.png",
-          tab: 2
-        },
+        // {
+        //   tit: "户外摊点",
+        //   pic: "/image/24.png",
+        //   tab: 2
+        // },
         {
           tit: "二手交易",
           pic: "/image/27.png",
@@ -204,7 +209,12 @@ Page({
           tit: "知识产权",
           pic: "/image/30.png",
           tab: 8
-        }, 
+        },
+        {
+          tit: "农业技术",
+          pic: "/image/39.png",
+          tab: 10
+        },
         // {
         //   tit: "金融服务",
         //   pic: "/image/74.png",
@@ -216,7 +226,7 @@ Page({
       name: '教育',
       nick: '文体',
       title: "教育文体",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "学前教育",
@@ -239,11 +249,6 @@ Page({
           tab: 3
         },
         {
-          tit: "图书馆",
-          pic: "/image/35.png",
-          tab: 4
-        },
-        {
           tit: "图书商店",
           pic: "/image/36.png",
           tab: 5
@@ -258,23 +263,28 @@ Page({
           pic: "/image/38.png",
           tab: 7
         },
-        {
-          tit: "农业技术",
-          pic: "/image/39.png",
-          tab: 8
-        },
+        // {
+        //   tit: "农业技术",
+        //   pic: "/image/39.png",
+        //   tab: 8
+        // },
         {
           tit: "文体健身",
           pic: "/image/40.png",
           tab: 9
-        }
+        },
+        {
+          tit: "图书馆",
+          pic: "/image/35.png",
+          tab: 4
+        },
       ],
     }, {
       id: 6,
       name: '医疗',
       nick: '康养',
       title: "医疗康养",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "医院药店",
@@ -318,7 +328,7 @@ Page({
       name: '政务',
       nick: '服务',
       title: "政务服务",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "办事指南",
@@ -372,7 +382,7 @@ Page({
       name: '维权',
       nick: '助困',
       title: "维权助困",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "残疾人",
@@ -410,7 +420,7 @@ Page({
       name: '生活',
       nick: '服务',
       title: "生活服务",
-      // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
+      introduce: "",
       list: [
         {
           tit: "家政服务",
@@ -582,6 +592,10 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/charm/pages/investment/investment')
             break;
+          case 3:
+            that.sum(tit)
+            util.pageJump('/pages/charm/pages/introduce/introduce')
+            break;
         }
         break;
       //旅游出行
@@ -707,6 +721,11 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/life/pages/finance/finance')
             break;
+            case 10:
+              console.log("农业技术");
+              that.sum(tit)
+              util.pageJump('/pages/education/pages/agricultural/agricultural')
+              break;
         }
         break;
       //教育文体
@@ -744,10 +763,10 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/education/pages/homeEducate/homeEducate')
             break;
-          case 8:
-            that.sum(tit)
-            util.pageJump('/pages/education/pages/agricultural/agricultural')
-            break;
+          // case 8:
+          //   that.sum(tit)
+          //   util.pageJump('/pages/education/pages/agricultural/agricultural')
+          //   break;
           case 9:
             that.sum(tit)
             util.pageJump('/pages/education/pages/fitness/fitness')
@@ -943,6 +962,9 @@ Page({
   goGoodList() {
     util.pageJump('/pages/publish/pages/pushBest/pushBest')
   },
+  goZZDY(){
+    util.pageJump('/pages/part/pages/sign/sign')
+  },
   //广播
   goRadio() {
     util.pageJump('/pages/publish/pages/radio/radio')
@@ -993,10 +1015,10 @@ Page({
 
   },
   // 统计数据
-  sum(tit){
-    let obj = {businesName:tit}
+  sum(tit) {
+    let obj = { businesName: tit }
     util.requestApi('businesstatistic/savebusinesstatistic', 'POST', obj).then(res => {
-     
+
     });
   },
 

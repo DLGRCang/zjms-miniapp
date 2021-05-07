@@ -21,6 +21,9 @@ Page({
 			})
 		});
 	},
+	callPhone(){
+		util.callPhone('8612345')
+	},
 	//获取留言列表
 	getMessageList() {
 		let that = this;

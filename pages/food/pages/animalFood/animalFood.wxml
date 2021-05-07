@@ -1,6 +1,6 @@
 <!--pages/food/pages/animalFood/animalFood.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">农畜产品安全</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">食品安全</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/nongxuchanpinanquan.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">

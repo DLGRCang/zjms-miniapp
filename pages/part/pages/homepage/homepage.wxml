@@ -38,7 +38,7 @@
   <view class="cu-modal {{modalName=='Modal'?'show':''}}">
     <view class="cu-dialog">
       <view class="">
-        <image src="../../../../image/part-bd.png" mode="scaleToFill" style="width: 520rpx;height: 600rpx;"></image>
+        <image src="{{imgUrl}}/image/part-bd.png" mode="scaleToFill" style="width: 520rpx;height: 600rpx;"></image>
       </view>
       <view class="bmInfo color text-center content ">
         <view class="text-xxl">{{userInfo.NAME}}，恭喜您</view>
@@ -47,7 +47,7 @@
         <button class="share" open-type="share">分享</button>
       </view>
       <view style="margin-top:10rpx;" bindtap="closeBd">
-        <image src="../../../../image/close.png" mode="scaleToFill" style="width: 80rpx;height: 80rpx;"></image>
+        <image src="{{imgUrl}}/image/close.png" mode="scaleToFill" style="width: 80rpx;height: 80rpx;"></image>
       </view>
     </view>
   </view>

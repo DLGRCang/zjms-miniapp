@@ -1,0 +1,4 @@
+/* pages/charm/pages/introduce/introduce.wxss */
+.color{
+  color: rgb(18, 140, 211);
+}

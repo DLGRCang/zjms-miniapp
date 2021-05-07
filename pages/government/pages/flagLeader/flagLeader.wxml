@@ -11,7 +11,7 @@
 	</view> -->
 	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon2">电话</text>
-		<text class="into">{{contactInfo.phone}}</text>
+		<text class="into" bindtap="callPhone">8612345</text>
 	</view>
 	<!-- <view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 70rpx 30rpx; ">
 		<text class="help-text help-icon3">邮箱</text>

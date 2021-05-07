@@ -36,12 +36,12 @@
 				</view>
 				<view class="margin-bottom-sm" style="text-indent:2em;"><text>{{item.introduce}}</text></view>
 			</view>
-			<!-- 首页伊旗发布 -->
+			<!-- 首页伊金霍洛发布 -->
 			<view class="" wx:if="{{item.id===0}}">
 				<!-- 新闻 -->
 				<view class="">
 					<view class="flex justify-between margin-bottom-sm">
-						<view class="text-lg">伊旗新闻</view>
+						<view class="text-lg">伊金霍洛新闻</view>
 						<view class="text-grey text-sm" bindtap="newsList">更多+</view>
 					</view>
 					<block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
@@ -64,15 +64,21 @@
 				</block>
 
 				<!-- 推优榜 -->
-				<view bindtap="goGoodList" class="margin-top-sm">
-					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx;"></image>
+		<view  class="margin-top-sm flex justify-between">
+			<view  bindtap="goZZDY">
+					<image src="{{imgUrl}}/image/zaizhidangyuan.png" style="height:120rpx;  width:260rpx;"></image>
 				</view>
+			<view bindtap="goGoodList">
+					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx; width:260rpx;"></image>
+				</view>
+		</view>
+
 				<!-- 电视 -->
-				<view class="text-lg margin-tb-sm">伊旗之窗</view>
+				<view class="text-lg margin-tb-sm">伊金霍洛之窗</view>
 				<video class="video" id='myvideo' controls
 					src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"></video>
 				<!-- 广播 -->
-				<view class="text-lg margin-tb-sm">伊旗之声</view>
+				<view class="text-lg margin-tb-sm">伊金霍洛之声</view>
 				<view class="radio flex">
 					<view>
 						<image src="{{imgUrl}}/image/fm.png" style="height:120rpx;width:120rpx;"></image>
