@@ -13,7 +13,7 @@
       </view>
     </view>
   </view>
-  <view class="box margin-tb-lg">
+  <!-- <view class="box margin-tb-lg">
     <view class="text-grey tit">历史服务</view>
     <view class="cu-list grid col-3 padding-tb-sm">
       <view class="cu-item iconBg" wx:for="{{historyApp}}" wx:key bindtap="goDetail" data-url="{{item.url}}">
@@ -23,8 +23,6 @@
         <text>{{item.name}}</text>
       </view>
     </view>
-
-
-  </view>
+  </view> -->
 
 </view>

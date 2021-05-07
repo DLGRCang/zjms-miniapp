@@ -73,17 +73,23 @@ Page({
     // 调取微信支付
     let url = ''
     let data = {
-      openId: openId
-      // amount: amount,
+      openId: wx.getStorageSync('openId'),
+      amount: e.currentTarget.dataset.price,
     }
     util.httpRequest(url, 'POST', data).then(res => {
       console.log(res)
       if (res.statusCode == 200) {
-        that.doWXPay(res.data)
+        let param = {
+          timeStamp: res.data.timeStamp,
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          paySign: res.data.paySign,
+        }
+        that.doWXPay(param)
 
       } else {
         wx.showToast({
-          title: res.data.msg,
+          title: "支付失败",
           icon: 'error',
         })
       }
@@ -94,11 +100,11 @@ Page({
     let param = {}
     //小程序发起微信支付
     wx.requestPayment({
-      timeStamp: param.data.timeStamp,//时间戳
-      nonceStr: param.data.nonceStr,//随机字符串
-      package: param.data.package,//统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=***
+      timeStamp: param.timeStamp,//时间戳
+      nonceStr: param.nonceStr,//随机字符串
+      package: param.package,//统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=***
       signType: 'MD5',//签名算法
-      paySign: param.data.paySign,//签名
+      paySign: param.paySign,//签名
       success: function (event) {
         console.log(event);
         wx.showToast({

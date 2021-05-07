@@ -29,7 +29,7 @@ Page({
         isShow: true
       },
       {
-        name: '一村一品',
+        name: '村情乡貌',
         icon: app.globalData.imgUrl + '/image/4.png',
         url: '/pages/charm/pages/villageProduct/villageProduct',
         isShow: true
@@ -382,7 +382,7 @@ Page({
         isShow: true
       },
       {
-        name: '生产转让',
+        name: '转让信息',
         icon: app.globalData.imgUrl + '/image/70.png',
         url: '/pages/life/pages/productionTransfer/productionTransfer',
         isShow: true

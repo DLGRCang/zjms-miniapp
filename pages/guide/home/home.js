@@ -62,28 +62,26 @@ Page({
         icon: app.globalData.imgUrl + '/image/4.png',
         url: '/pages/charm/pages/villageProduct/villageProduct',
       },
-      {
-        name: '历史文化',
-        icon: app.globalData.imgUrl + '/image/5.png',
-        url: '/pages/charm/pages/historyCulture/historyCulture',
-      },
+      // {
+      //   name: '历史文化',
+      //   icon: app.globalData.imgUrl + '/image/5.png',
+      //   url: '/pages/charm/pages/historyCulture/historyCulture',
+      // },
       {
         name: '投资兴业',
         icon: app.globalData.imgUrl + '/image/6.png',
         url: '/pages/charm/pages/investment/investment',
-      },
-		],
-		historyApp: [
+			},
 			{
         name: '知名景点',
         icon: app.globalData.imgUrl + '/image/7.png',
         url: '/pages/travel/pages/scenicSpot/scenicSpot',
       },
-      {
-        name: '伊旗天气',
-        icon: app.globalData.imgUrl + '/image/8.png',
-        url: '/pages/travel/pages/weather/weather',
-      },
+      // {
+      //   name: '伊旗天气',
+      //   icon: app.globalData.imgUrl + '/image/8.png',
+      //   url: '/pages/travel/pages/weather/weather',
+      // },
       {
         name: '飞机火车',
         icon: app.globalData.imgUrl + '/image/9.png',
@@ -94,16 +92,19 @@ Page({
         icon: app.globalData.imgUrl + '/image/10.png',
         url: '/pages/travel/pages/car/car',
       },
-      {
-        name: '公交出租',
-        icon: app.globalData.imgUrl + '/image/11.png',
-        url: '/pages/travel/pages/bus/bus',
-      },
+      // {
+      //   name: '公交出租',
+      //   icon: app.globalData.imgUrl + '/image/11.png',
+      //   url: '/pages/travel/pages/bus/bus',
+      // },
       {
         name: '酒店宾馆',
         icon: app.globalData.imgUrl + '/image/12.png',
         url: '/pages/travel/pages/hotel/hotel',
       },
+		],
+		historyApp: [
+			
 		],
 	},
   //跳转

@@ -43,15 +43,16 @@ Page({
       // introduce: "了解伊金霍洛旗最新动态，关注伊金霍洛旗发布，实时知晓您关心的事儿哦！",
       list: [
         {
-          tit: "一村一品",
-          pic: "/image/4.png",
-          tab: 0
-        },
-        {
           tit: "历史文化",
           pic: "/image/5.png",
           tab: 1
         },
+        {
+          tit: "村情乡貌",
+          pic: "/image/4.png",
+          tab: 0
+        },
+       
         {
           tit: "投资兴业",
           pic: "/image/6.png",
@@ -447,7 +448,7 @@ Page({
           tab: 6
         },
         {
-          tit: "生产转让",
+          tit: "转让信息",
           pic: "/image/70.png",
           tab: 7
         },

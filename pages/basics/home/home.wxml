@@ -32,7 +32,7 @@
 		<view class="padding-top padding-lr" wx:for="{{mainInfo}}" wx:key="item" id="main-{{index}}">
 			<view class="flex-sub text-start">
 				<view class="text-xl margin-bottom-sm">
-					<text class="text-blue text-bold">{{item.name}}{{item.nick}}</text>
+					<text class="text-blue text-bold">{{item.title}}</text>
 				</view>
 				<view class="margin-bottom-sm" style="text-indent:2em;"><text>{{item.introduce}}</text></view>
 			</view>
