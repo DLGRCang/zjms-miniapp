@@ -479,11 +479,11 @@ Page({
             pic: "/image/75.png",
             tab: 12
           },
-          {
-            tit: "在职党员",
-            pic: "/image/80.png",
-            tab: 13
-          },
+          // {
+          //   tit: "在职党员",
+          //   pic: "/image/80.png",
+          //   tab: 13
+          // },
           {
             tit: "公租房",
             pic: "/image/77.png",
