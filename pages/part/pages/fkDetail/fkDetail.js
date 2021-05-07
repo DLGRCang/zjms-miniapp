@@ -24,10 +24,29 @@ Page({
 
   // 数据提交
   submit() {
-    let url = 'taskMeeting/MeetAttendance?PLAN_ID=' + this.data.id + '&TRENDS_CONTENT=' + this.data.content + '&TRENDS_FILE=' + this.data.imgID
+    let url = 'taskMeeting/MeetAttendance?ACTIVITY_ID=' + this.data.id + '&TRENDS_CONTENT=' + this.data.content + '&TRENDS_FILE=' + this.data.imgID
+    console.log(url)
     part.httpRequest(part.baseUrl + url, 'POST', {}).then(res => {
       console.log(res)
-      part.returnCode(res.data.code, 200)
+      if (res.data.code == 200) {
+        wx.showToast({
+          title: "提交成功",
+          icon: 'success',
+          mask: true,
+          success(res) {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 4
+              })
+            }, 1000)
+          }
+        });
+      } else {
+        wx.showToast({
+          title: '请检查数据',
+          icon: 'error',
+        })
+      }
     });
   },
   // 选择图片
@@ -90,6 +109,9 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    this.setData({
+      id : options.id
+    })
   },
 
   /**

@@ -67,7 +67,7 @@
 		<view  class="margin-top-sm flex justify-between">
 			<view  bindtap="goZZDY">
 					<image src="{{imgUrl}}/image/zaizhidangyuan.png" style="height:120rpx;  width:260rpx;"></image>
-				</view>
+				</view> 
 			<view bindtap="goGoodList">
 					<image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx; width:260rpx;"></image>
 				</view>

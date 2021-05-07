@@ -5,7 +5,7 @@
 <view class="padding-lg">
   <view class="flex userInfo">
     <view class="flex">
-      <image mode="aspectFit" class="images" src="{{baseUrl}}{{users.tou_xiang}}" style="width: 92rpx;height: 92rpx;">
+      <image mode="scaleToFill" class="images" src="{{baseUrl}}{{users.tou_xiang}}" style="width: 92rpx;height: 92rpx;">
       </image>
       <view class=" margin-left-sm text-white">
         <view class="flex justify-between">

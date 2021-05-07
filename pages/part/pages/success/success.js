@@ -10,6 +10,7 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
+    baseUrl: part.baseUrl,
     users: {},
     userInfo: "",
   },
@@ -17,6 +18,7 @@ Page({
   getUserInfo() {
     let url = part.baseUrl + 'itemuser/getDepByID?USER_ID=' + this.data.userInfo.USER_ID
     part.httpRequest(url, 'GET', {}).then(res => {
+      console.log(res.data.data)
       if (res.data.code == 200) {
         this.setData({
           users: res.data.data

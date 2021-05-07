@@ -57,12 +57,17 @@ Page({
           pic: "/image/4.png",
           tab: 0
         },
-
+        {
+          tit: "土地认养",
+          pic: "/image/56.png",
+          tab: 4
+        },
         {
           tit: "投资兴业",
           pic: "/image/6.png",
           tab: 2
         },
+
       ]
     },
     {
@@ -249,9 +254,9 @@ Page({
           tab: 3
         },
         {
-          tit: "图书商店",
-          pic: "/image/36.png",
-          tab: 5
+          tit: "文体健身",
+          pic: "/image/40.png",
+          tab: 9
         },
         {
           tit: "校外培训机构",
@@ -269,9 +274,9 @@ Page({
         //   tab: 8
         // },
         {
-          tit: "文体健身",
-          pic: "/image/40.png",
-          tab: 9
+          tit: "图书商店",
+          pic: "/image/36.png",
+          tab: 5
         },
         {
           tit: "图书馆",
@@ -360,21 +365,21 @@ Page({
           pic: "/image/53.png",
           tab: 4
         },
-        {
-          tit: "志愿者",
-          pic: "/image/54.png",
-          tab: 5
-        },
+        // {
+        //   tit: "志愿者",
+        //   pic: "/image/54.png",
+        //   tab: 5
+        // },
         {
           tit: "创城行动",
           pic: "/image/55.png",
           tab: 6
         },
-        {
-          tit: "土地认养",
-          pic: "/image/56.png",
-          tab: 7
-        }
+        // {
+        //   tit: "土地认养",
+        //   pic: "/image/56.png",
+        //   tab: 7
+        // }
       ],
     },
     {
@@ -487,15 +492,20 @@ Page({
           pic: "/image/75.png",
           tab: 12
         },
-        {
-          tit: "在职党员",
-          pic: "/image/80.png",
-          tab: 13
-        },
+        // {
+        //   tit: "在职党员",
+        //   pic: "/image/80.png",
+        //   tab: 13
+        // },
         {
           tit: "公租房",
           pic: "/image/77.png",
           tab: 14
+        },
+        {
+          tit: "志愿者",
+          pic: "/image/54.png",
+          tab: 15
         },
       ],
     },
@@ -595,6 +605,10 @@ Page({
           case 3:
             that.sum(tit)
             util.pageJump('/pages/charm/pages/introduce/introduce')
+            break;
+          case 4:
+            that.sum(tit)
+            util.pageJump('/pages/government/pages/land/land')
             break;
         }
         break;
@@ -721,11 +735,11 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/life/pages/finance/finance')
             break;
-            case 10:
-              console.log("农业技术");
-              that.sum(tit)
-              util.pageJump('/pages/education/pages/agricultural/agricultural')
-              break;
+          case 10:
+            console.log("农业技术");
+            that.sum(tit)
+            util.pageJump('/pages/education/pages/agricultural/agricultural')
+            break;
         }
         break;
       //教育文体
@@ -841,10 +855,10 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/government/pages/instaShot/instaShot')
             break;
-          case 5:
-            that.sum(tit)
-            util.pageJump('/pages/government/pages/volunteerService/volunteerService')
-            break;
+          // case 5:
+          //   that.sum(tit)
+          //   util.pageJump('/pages/government/pages/volunteerService/volunteerService')
+          //   break;
           case 6:
             that.sum(tit)
             util.pageJump('/pages/government/pages/cityAction/cityAction')
@@ -941,14 +955,19 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/life/pages/film/film')
             break;
-          case 13:
-            that.sum(tit)
-            util.pageJump('/pages/part/pages/sign/sign')
-            break;
+          // case 13:
+          //   that.sum(tit)
+          //   util.pageJump('/pages/part/pages/sign/sign')
+          //   break;
           case 14:
             that.sum(tit)
             util.pageJump('/pages/life/pages/publicRentalHousing/publicRentalHousing')
             break;
+          case 15:
+            that.sum(tit)
+            util.pageJump('/pages/government/pages/volunteerService/volunteerService')
+            break;
+
         }
         break;
     }
@@ -956,13 +975,13 @@ Page({
   },
   // 投诉电话
   goTell() {
-    util.callPhone('12345')
+    util.callPhone('8612345')
   },
   //推优榜
   goGoodList() {
     util.pageJump('/pages/publish/pages/pushBest/pushBest')
   },
-  goZZDY(){
+  goZZDY() {
     util.pageJump('/pages/part/pages/sign/sign')
   },
   //广播
