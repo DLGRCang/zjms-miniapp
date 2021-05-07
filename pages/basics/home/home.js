@@ -57,12 +57,17 @@ Page({
             pic: "/image/4.png",
             tab: 0
           },
-
+          {
+            tit: "土地认养",
+            pic: "/image/56.png",
+            tab: 4
+          },
           {
             tit: "投资兴业",
             pic: "/image/6.png",
             tab: 2
           },
+     
         ]
       },
       {
@@ -354,21 +359,21 @@ Page({
             pic: "/image/53.png",
             tab: 4
           },
-          {
-            tit: "志愿者",
-            pic: "/image/54.png",
-            tab: 5
-          },
+          // {
+          //   tit: "志愿者",
+          //   pic: "/image/54.png",
+          //   tab: 5
+          // },
           {
             tit: "创城行动",
             pic: "/image/55.png",
             tab: 6
           },
-          {
-            tit: "土地认养",
-            pic: "/image/56.png",
-            tab: 7
-          }
+          // {
+          //   tit: "土地认养",
+          //   pic: "/image/56.png",
+          //   tab: 7
+          // }
         ],
       },
       {
@@ -488,6 +493,11 @@ Page({
             tit: "公租房",
             pic: "/image/77.png",
             tab: 14
+          },
+          {
+            tit: "志愿者",
+            pic: "/image/54.png",
+            tab: 15
           },
         ],
       },
