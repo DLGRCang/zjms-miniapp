@@ -18,7 +18,7 @@ Page({
 	//留言详情
 	messageInfo(e){
 		console.log(e)
-		util.pageJump('../flagLeaderMessageInfo/flagLeaderMessageInfo?obj='+e.currentTarget.dataset.obj)
+		util.pageJump('../flagLeaderMessageInfo/flagLeaderMessageInfo?obj='+JSON.stringify(e.currentTarget.dataset.obj))
 	},
 	//获取联系方式
 	// getContactInfo() {

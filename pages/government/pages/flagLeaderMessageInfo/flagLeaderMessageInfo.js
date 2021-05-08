@@ -13,8 +13,10 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.setData({
-			data:options.obj
+			data:JSON.parse(options.obj)
 		})
+		console.log("---------------")
+		console.log(this.data.data)
 	},
 
 	/**
