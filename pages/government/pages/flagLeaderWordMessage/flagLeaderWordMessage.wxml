@@ -1,0 +1,17 @@
+<!--pages/government/pages/flagLeaderWordMessage/flagLeaderWordMessage.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">留言</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">标题：</view>
+		<input placeholder="请输入标题" bindinput="putData" data-key="titleName"></input>
+	</view>
+	<view class="padding text-lg">
+		<view class="title margin-bottom-sm">内容：</view>
+		<textarea placeholder="请输入内容" bindinput="putData" data-key="content"></textarea>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="button-btn" bindtap="commitData">提交</button>
+	</view>
+</view>

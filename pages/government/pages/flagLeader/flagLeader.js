@@ -11,31 +11,42 @@ Page({
 		contactInfo:null,
 		messageList:[],
 	},
-	//获取联系方式
-	getContactInfo() {
-		let that = this;
-		return util.requestApi('app/release/hotline/listpagehotline', 'GET', {}).then(res => {
-			// console.log(res.data.rows[0])
-			that.setData({
-				contactInfo:res.data.rows[0]
-			})
-		});
+	//写留言
+	wordMessage(){
+		util.pageJump('../flagLeaderWordMessage/flagLeaderWordMessage')
 	},
+	//留言详情
+	messageInfo(e){
+		console.log(e)
+		util.pageJump('../flagLeaderMessageInfo/flagLeaderMessageInfo?obj='+e.currentTarget.dataset.obj)
+	},
+	//获取联系方式
+	// getContactInfo() {
+	// 	let that = this;
+	// 	return util.requestApi('app/release/hotline/listpagehotline', 'GET', {}).then(res => {
+	// 		// console.log(res.data.rows[0])
+	// 		that.setData({
+	// 			contactInfo:res.data.rows[0]
+	// 		})
+	// 	});
+	// },
 	callPhone(){
 		util.callPhone('8612345')
 	},
 	//获取留言列表
 	getMessageList() {
-		let that = this;
-		return util.requestApi('api/onlinemessage/listpageonlinemessage', 'GET', {}).then(res => {
-			console.log(res)
+		return util.requestApi('commentsonthemanagement/listcommentsonthemanagement?typeId=b5c4e599-400d-4db9-9e11-e72eb9931822', 'GET', {}).then(res => {
+			console.log(res.data)
+			this.setData({
+				messageList:res.data
+			})
 		});
 	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.getContactInfo();
+		// this.getContactInfo();
 		this.getMessageList();
 	},
 

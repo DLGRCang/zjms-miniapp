@@ -1,0 +1,13 @@
+/* pages/government/pages/flagLeaderWordMessage/flagLeaderWordMessage.wxss */
+.bgColor {
+	background-color:#2B83F4;
+	color: #ffffff;
+}
+
+.button-btn {
+	background-color:
+	#2B83F4;
+	color: #ffffff;
+	margin: 0 30rpx 50rpx 30rpx;
+	font-size: 34rpx;
+}
