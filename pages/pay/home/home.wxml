@@ -6,8 +6,8 @@
   <view class="cu-item"  bindtap="{{item.goDetail}}">
     <view class="cu-avatar lg" style="background-image:url({{item.url}});"></view>
     <view class="content flex-sub">
-      <view>{{item.title}}</view>
-      <view class="text-gray text-sm flex justify-between">
+      <view class="text-xl text-bold">{{item.title}}</view>
+      <view class="text-gray text-sm flex justify-between margin-top-sm">
         在线缴费
       </view>
     </view>

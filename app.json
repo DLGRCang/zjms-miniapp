@@ -83,6 +83,7 @@
 				"pages/train/train",
 				"pages/car/car",
 				"pages/bus/bus",
+				"pages/evaluate/evaluate",
 				"pages/taxiInfo/taxiInfo",
 				"pages/ruralTourism/ruralTourism"
 			]

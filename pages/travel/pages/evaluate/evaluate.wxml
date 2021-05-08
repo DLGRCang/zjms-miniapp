@@ -1,0 +1,193 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">服务评价</view>
+</cu-custom>
+<view class="padding-lg">
+  <view class="text-xxl text- text-center margin-bottom-sm">乘客满意度调差问卷</view>
+  <text space="emsp">
+    乘客朋友您好，为给您提供更好的公交交通出行服务，我们开展了此次问卷调查。此次调查致力于改进鄂尔多斯市中心城区公交服务质量，您所填写的信息我们将仅用于分享和改进，绝不外泄，请您放心填写。谢谢进的参与！
+  </text>
+  <view class="line"></view>
+
+  <view class="text-bold text-xl margin-tb-sm">1.您对本车驾驶员服务满意度评价：</view>
+  <view class="flex justify-around type">
+    <view>很满意</view>
+    <view>满意</view>
+    <view>一般</view>
+    <view>不满意</view>
+    <view>很不满意</view>
+  </view>
+  <view class="block">
+    <view class="margin-tb-sm">
+      驾驶员的服务行象
+    </view>
+    <view class="flex justify-around">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      驾驶员的服务态度
+    </view>
+    <view class="flex justify-around">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      驾驶员的驾驶平稳度
+    </view>
+    <view class="flex justify-around">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      公交车容卫生
+    </view>
+    <view class="flex justify-around margin-bottom-sm">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="text-bold text-xl margin-tb-sm">2.您对公交运营服务满意度评价：</view>
+  <view class="flex justify-around type">
+    <view>很满意</view>
+    <view>满意</view>
+    <view>一般</view>
+    <view>不满意</view>
+    <view>很不满意</view>
+  </view>
+  <view class="block" style=" border-bottom-left-radius: 0rpx;border-bottom-right-radius: 0rpx;">
+    <view class="margin-tb-sm">
+      公交候车环境
+    </view>
+    <view class="flex justify-around">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      公交候车时间
+    </view>
+    <view class="flex justify-around">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      公交运行速度
+    </view>
+    <view class="flex justify-around">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      公交车换乘便捷度
+    </view>
+    <view class="flex justify-around margin-bottom-sm">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+  </view>
+  <view class="flex justify-around type" style="border-top-left-radius: 0rpx;border-top-right-radius: 0rpx;">
+    <view>很满意</view>
+    <view>满意</view>
+    <view>一般</view>
+    <view>不满意</view>
+    <view>很不满意</view>
+  </view>
+  <view class="block">
+    <view class="margin-tb-sm">
+      公交准点率
+    </view>
+    <view class="flex justify-around margin-bottom-sm">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      公交支付方式
+    </view>
+    <view class="flex justify-around margin-bottom-sm">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      公交票价设置
+    </view>
+    <view class="flex justify-around margin-bottom-sm">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+    <view class="margin-tb-sm">
+      线路查询系统便捷度
+    </view>
+    <view class="flex justify-around margin-bottom-sm">
+      <radio-group bindchange="radioChange">
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+        <radio class=" margin-lr-lg"></radio>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="text-bold text-xl margin-tb-sm">3.您对公交线路、运营服务的意见及建议：</view>
+  <view class="margin-tb-sm suggest">
+    <textarea maxlength="300"  bindinput="getContent" ></textarea>
+  </view>
+
+  <button class="button" bindtap="submit">提交</button>
+</view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
