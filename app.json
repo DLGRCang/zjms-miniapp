@@ -192,7 +192,9 @@
 				"pages/cityActionDetail/cityActionDetail",
 				"pages/cityActionApply/cityActionApply",
 				"pages/questionnaireInfo/questionnaireInfo",
-				"pages/instaShotInfo/instaShotInfo"
+				"pages/instaShotInfo/instaShotInfo",
+				"pages/flagLeaderWordMessage/flagLeaderWordMessage",
+				"pages/flagLeaderMessageInfo/flagLeaderMessageInfo"
 			]
 		},
 		{

@@ -19,15 +19,15 @@
 	</view> -->
 	
 	<dot-title title="在线留言" color="title-color" ></dot-title>
-	<view class="flex" wx:for="{{2}}">
+	<view bindtap="messageInfo" data-obj="{{item}}" class="flex" wx:for="{{messageList}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm" style="width: 80rpx;height: 80rpx;"></image>
 		<view class="flex flex-direction">
-			<text class="text-black text-df" style="margin-bottom: 4rpx;">张宏昌</text>
-			<text class="text-gray text-sm margin-bottom-xs">2019-02-03</text>
-			<text class="text-black text-df margin-bottom-xl">这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做</text>
+			<text class="text-black text-df" style="margin-bottom: 4rpx;">{{item.userName}}</text>
+			<text class="text-gray text-sm margin-bottom-xs">{{item.gmtCreate}}</text>
+			<text class="text-black text-df margin-bottom-xl">{{item.titleName}}</text>
 		</view>
 	</view>
-	<button class="button-btn">留 言</button>
+	<button bindtap="wordMessage" class="button-btn">留 言</button>
 
 </view>
 
