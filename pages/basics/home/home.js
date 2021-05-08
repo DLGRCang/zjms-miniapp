@@ -387,11 +387,11 @@ Page({
             pic: "/image/57.png",
             tab: 0
           },
-          {
-            tit: "低保户",
-            pic: "/image/58.png",
-            tab: 1
-          },
+          // {
+          //   tit: "低保户",
+          //   pic: "/image/58.png",
+          //   tab: 1
+          // },
           {
             tit: "红十字补贴",
             pic: "/image/59.png",

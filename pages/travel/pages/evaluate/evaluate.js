@@ -1,36 +1,40 @@
-// pages/travel/pages/bus/bus.js
+// pages/travel/pages/evaluate/evaluate.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
-	data: {
-		imgUrl:app.globalData.imgUrl,
-
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    content:'',
   },
-  goBus() {
-    wx.navigateToMiniProgram({
-      appId: 'wx71d589ea01ce3321',
-      path: '',
-      success: function (res) { },
-      fail: function (res) { }
+  getContent(e){
+    console.log(e)
+    this.setData({
+      content:e.detail.value
     })
   },
-  goTaxiInfo(){
-    util.pageJump('/pages/travel/pages/taxiInfo/taxiInfo')
-  },
-  appCar() {
-    wx.navigateToMiniProgram({
-      appId: 'wxaf35009675aa0b2a',
-      path: '',
-      success: function (res) { },
-      fail: function (res) { }
-    })
-  },
-  goEvaluate(){
-    util.pageJump('/pages/travel/pages/evaluate/evaluate')
+  submit(){
+    if(this.data.content==""||this.data.content==null){
+      wx.showToast({
+        title: "请填写意见及建议",
+      icon: 'none',
+      })
+    }else{
+      wx.showToast({
+        title: "提交成功",
+        icon: 'success',
+        mask: true,
+        success(res) {
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 2
+            })
+          }, 1500)
+        }
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -38,7 +42,7 @@ Page({
   onLoad: function (options) {
 
   },
- 
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

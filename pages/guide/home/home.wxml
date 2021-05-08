@@ -2,6 +2,17 @@
   <view slot="content">常用服务</view>
 </cu-custom>
 <view class="margin-lg">
+  <view class="box margin-tb-lg">
+    <view class="text-grey tit">热门服务</view>
+    <view class="cu-list grid col-3 padding-tb-sm">
+      <view class="cu-item iconBg" wx:for="{{historyApp}}" wx:key="item" bindtap="goMiNiApp" data-appid="{{item.appid}}">
+        <view class="flex justify-center align-center">
+          <image src="{{item.icon}}" style='width:100rpx;height:100rpx;'></image>
+        </view>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
   <view class="box">
     <view class="text-grey tit">常用服务</view>
     <view class="cu-list grid col-3 padding-tb-sm">
@@ -13,16 +24,6 @@
       </view>
     </view>
   </view>
-  <!-- <view class="box margin-tb-lg">
-    <view class="text-grey tit">历史服务</view>
-    <view class="cu-list grid col-3 padding-tb-sm">
-      <view class="cu-item iconBg" wx:for="{{historyApp}}" wx:key bindtap="goDetail" data-url="{{item.url}}">
-        <view class="flex justify-center align-center">
-          <image src="{{item.icon}}" style='width:100rpx;height:100rpx;'></image>
-        </view>
-        <text>{{item.name}}</text>
-      </view>
-    </view>
-  </view> -->
+
 
 </view>

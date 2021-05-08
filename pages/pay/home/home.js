@@ -17,7 +17,12 @@ Page({
         url: app.globalData.imgUrl + '/image/yidong.png',
         title: '移动网上营业厅',
         goDetail: 'liantong'
-      }, {
+      }, 
+      {
+        url: app.globalData.imgUrl + '/image/dianxin.png',
+        title: '电信网上营业厅',
+        goDetail: 'dianxin'
+      },{
         url: app.globalData.imgUrl + '/image/shuifei.png',
         title: '伊金霍洛旗水费',
         goDetail: 'waterFee'
@@ -34,11 +39,11 @@ Page({
         title: '伊金霍洛旗供暖费',
         goDetail: 'hotFee'
       },
-      // {
-      //   url: app.globalData.imgUrl + '/image/wuyefei.png',
-      //   title: '伊金霍洛旗物业费',
-      //   goDetail: 'wuyeFee'
-      // },
+      {
+        url: app.globalData.imgUrl + '/image/guangdian.png',
+        title: '伊金霍洛旗广电费',
+        goDetail: 'guangdian'
+      },
     ],
   },
   //联通缴费
@@ -61,7 +66,15 @@ Page({
       fail: function (res) { }
     })
   },
-
+ // 电信
+ dianxin(){
+  wx.navigateToMiniProgram({
+    appId: 'wxf1804469c930c1b6',
+    path: '',
+    success: function (res) { },
+    fail: function (res) { }
+  })
+},
 
   //用电缴费
   // 1水费  2电费 3燃气 4宽带 5固话 6 油卡充值 7违章服务 8广播电视 9公交卡 10社保  11供暖 
@@ -95,7 +108,16 @@ Page({
   hotFee() {
     wx.navigateToMiniProgram({
       appId: 'wxd2ade0f25a874ee2',
-      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150600&service_id=3&wx_agency_id=150000000201',
+      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150600&service_id=11&wx_agency_id=150000000201',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
+  // 广电
+  guangdian(){
+    wx.navigateToMiniProgram({
+      appId: 'wxd2ade0f25a874ee2',
+      path: 'main/pages/nativeindex/nativeindex?from=3rd_gdneimeng&page=charge-guide&city_id=150600&service_id=8&wx_agency_id=150000000201',
       success: function (res) { },
       fail: function (res) { }
     })

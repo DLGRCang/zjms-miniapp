@@ -7,5 +7,9 @@
 .cu-avatar{
   background-color: #FFFFFF;
 }
-
+.cu-avatar.lg {
+	width: 80rpx;
+	height: 80rpx;
+	font-size: 2em;
+}
 

@@ -82,36 +82,54 @@ Page({
       //   icon: app.globalData.imgUrl + '/image/8.png',
       //   url: '/pages/travel/pages/weather/weather',
       // },
-      {
-        name: '飞机火车',
-        icon: app.globalData.imgUrl + '/image/9.png',
-        url: '/pages/travel/pages/train/train',
-      },
-      {
-        name: '长途汽车',
-        icon: app.globalData.imgUrl + '/image/10.png',
-        url: '/pages/travel/pages/car/car',
-      },
+      // {
+      //   name: '飞机火车',
+      //   icon: app.globalData.imgUrl + '/image/9.png',
+      //   url: '/pages/travel/pages/train/train',
+      // },
+      // {
+      //   name: '长途汽车',
+      //   icon: app.globalData.imgUrl + '/image/10.png',
+      //   url: '/pages/travel/pages/car/car',
+      // },
       // {
       //   name: '公交出租',
       //   icon: app.globalData.imgUrl + '/image/11.png',
       //   url: '/pages/travel/pages/bus/bus',
       // },
-      {
-        name: '酒店宾馆',
-        icon: app.globalData.imgUrl + '/image/12.png',
-        url: '/pages/travel/pages/hotel/hotel',
-      },
+      // {
+      //   name: '酒店宾馆',
+      //   icon: app.globalData.imgUrl + '/image/12.png',
+      //   url: '/pages/travel/pages/hotel/hotel',
+      // },
 		],
 		historyApp: [
-			
+			{
+        name: '行程卡',
+        icon: app.globalData.imgUrl + '/image/9.png',
+				appid:'wx8f446acf8c4a85f5'
+			},
+			{
+        name: '乘车码',
+        icon: app.globalData.imgUrl + '/image/10.png',
+				appid:'wxbb58374cdce267a6'
+      },
 		],
 	},
-  //跳转
+  //常用服务跳转
   goDetail(e) {
     util.pageJump(e.currentTarget.dataset.url)
-  },
-
+	},
+	// 热门服务跳转
+	goMiNiApp(e){
+		console.log(e.currentTarget.dataset.appid)
+		wx.navigateToMiniProgram({
+      appId: e.currentTarget.dataset.appid,
+      path: '',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+	},
 
 	/**
 	* 生命周期函数--监听页面加载

@@ -12,7 +12,7 @@
       </view>
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
-    
+
     <view class="line"></view>
     <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="appCar">
       <view class="flex">
@@ -23,7 +23,7 @@
     </view>
     <view class="line"></view>
 
-    <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="">
+    <!-- <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="">
       <view class="flex">
         <view class="cuIcon-goods text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
         <view class="padding-left-sm">失物招领</view>
@@ -31,15 +31,25 @@
       <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
     </view>
     <view class="margin-top-xs"></view>
-  </view>
-  
-  <dot-title title="公交讯息" color="color"></dot-title>
-  <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="goBus">
-    <view class="flex">
-      <view class="cuIcon-order text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
-      <view class="padding-left-sm">公交路线</view>
+  </view> -->
+
+    <dot-title title="公交讯息" color="color"></dot-title>
+    <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="goBus">
+      <view class="flex">
+        <view class="cuIcon-order text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
+        <view class="padding-left-sm">公交路线</view>
+      </view>
+      <view class="cuIcon-right text-grey text-bold" style="padding-top: 14rpx;"></view>
     </view>
-    <view class="cuIcon-right text-grey text-bold" style="padding-top: 14rpx;"></view>
   </view>
+  <view class="flex justify-between text-xl padding-sm margin-top-sm" bindtap="goEvaluate">
+    <view class="flex">
+      <view class="cuIcon-edit text-bold" style="padding-top: 5rpx;color:#EE954A;"></view>
+      <view class="padding-left-sm">服务评价</view>
+    </view>
+    <view class="cuIcon-right text-grey" style="padding-top: 14rpx;"></view>
+  </view>
+  <view class="margin-top-xs"></view>
 </view>
+
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
