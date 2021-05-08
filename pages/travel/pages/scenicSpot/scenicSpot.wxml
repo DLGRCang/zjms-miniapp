@@ -1,8 +1,9 @@
-<cu-custom bgColor="bgColor" isBack="{{true}}">
+<web-view src="http://360.at720.com/160618/?from=groupmessage&isappinstalled=0"></web-view>
+<!-- <cu-custom bgColor="bgColor" isBack="{{true}}">
   <view slot="content">知名景点</view>
 </cu-custom>
-<image src="{{imgUrl}}/image/zhimingjingdian.png" mode='widthFix' style="height：375px;width:100%;"></image>
-<view class="margin-lr-lg">
+<image src="{{imgUrl}}/image/zhimingjingdian.png" mode='widthFix' style="height：375px;width:100%;"></image> -->
+<!-- <view class="margin-lr-lg">
   <dot-title title="景区风采" color="red"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <block wx:for="{{infoList}}" wx:key="item">
@@ -10,13 +11,13 @@
         <image src="{{baseImgUrl}}{{item.files}}"></image>
         <view class="margin-top-xs padding-left-sm">{{item.name}}</view>
         <view class="margin-top-xs padding-left-sm">
-          <!-- <text class="text-sm text-grey">服务星级：</text>
-          <text class="cuIcon-favorfill lg text-yellow" wx:for="{{4}}" wx:key="item"></text> -->
+          <text class="text-sm text-grey">服务星级：</text>
+          <text class="cuIcon-favorfill lg text-yellow" wx:for="{{4}}" wx:key="item"></text>
           <text class="text-sm text-grey textInfo">{{item.address}}</text>
         </view>
       </view>
     </block>
-  </scroll-view>
+  </scroll-view> -->
   <!-- <dot-title title="景区直播" color="red" isMore="true"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{6}}" wx:key="item">
@@ -38,7 +39,7 @@
     <view style="margin-left:280rpx;">
       <text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="item"></text>
     </view>
-	</view> -->
+	</view> 
 
 
-</view>
+</view>-->
