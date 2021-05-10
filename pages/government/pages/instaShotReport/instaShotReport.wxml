@@ -22,7 +22,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">地址描述：</view>
-		<input placeholder="请输入地址描述" value="{{address}}" bindinput="putData" data-key="eventaddress"></input>
+		<input placeholder="请输入地址描述" value="{{address}}" bindinput="putData" data-key="address"></input>
 	</view>
 	<view class="cu-form-group align-start">
 		<view class="title">案件描述：</view>

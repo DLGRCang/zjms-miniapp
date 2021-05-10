@@ -7,18 +7,20 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,
-		contactInfo:null,
-		messageList:[],
+		imgUrl: app.globalData.imgUrl,
+		contactInfo: null,
+		messageList: [],
 	},
 	//写留言
-	wordMessage(){
+	wordMessage() {
+		//判断是否登录
+		if (!login.isLogin()) return
 		util.pageJump('../flagLeaderWordMessage/flagLeaderWordMessage')
 	},
 	//留言详情
-	messageInfo(e){
+	messageInfo(e) {
 		console.log(e)
-		util.pageJump('../flagLeaderMessageInfo/flagLeaderMessageInfo?obj='+JSON.stringify(e.currentTarget.dataset.obj))
+		util.pageJump('../flagLeaderMessageInfo/flagLeaderMessageInfo?obj=' + JSON.stringify(e.currentTarget.dataset.obj))
 	},
 	//获取联系方式
 	// getContactInfo() {
@@ -30,7 +32,7 @@ Page({
 	// 		})
 	// 	});
 	// },
-	callPhone(){
+	callPhone() {
 		util.callPhone('8612345')
 	},
 	//获取留言列表
@@ -38,7 +40,7 @@ Page({
 		return util.requestApi('commentsonthemanagement/listcommentsonthemanagement?typeId=b5c4e599-400d-4db9-9e11-e72eb9931822', 'GET', {}).then(res => {
 			console.log(res.data)
 			this.setData({
-				messageList:res.data
+				messageList: res.data
 			})
 		});
 	},
