@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dtype:0,
+    dtype: 0,
     dataList: [],
     //  新闻类型
     //  1.两行标题，日期
@@ -17,19 +17,32 @@ Page({
     //  4.1行标题、1行内容、日期
     type: 1
   },
-
+  //通知公告列表
+  getNoticeList() {
+    util.requestApi('infocontent/getListTypeInfoContent', 'GET', {}).then(res => {
+      this.setData({
+        dataList: res.data.rows
+      })
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //单独适配获取通知公告
+    if (options.type == 9) {
+      this.getNoticeList()
+      return
+    }
+
     var id = options.id;
     console.log("新闻列表id:")
     console.log(options.id)
     console.log("新闻列表type:")
     console.log(options.type)
     this.setData({
-      dtype:options.dtype,
-      type:options.type
+      dtype: options.dtype,
+      type: options.type
     })
     //加载新闻列表
     data.getArtelData(id).then(dataList => {
