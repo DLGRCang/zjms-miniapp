@@ -10,9 +10,9 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     tabId: 0,
-    tabName: ["维权活动", "政治权利", "儿童保护", "婚姻家庭"],
+    tabName: ["人身权利", "人生感悟", "心灵感悟", "哲理故事","幸福家庭","婚姻家庭","最美家庭","品味女人"],
     num: 9,
-    infotypeid: '1edc4504-a6ff-4b52-9f7b-fc424efd8891',
+    infotypeid: '509666ee-b033-4ad0-b0db-36aa0c526a34',
     page: 1,
     dataList: [], //新闻列表
 
@@ -27,22 +27,42 @@ Page({
     switch (this.data.tabId) {
       case 0:
         this.setData({
-          infotypeid: '1edc4504-a6ff-4b52-9f7b-fc424efd8891'
+          infotypeid: '509666ee-b033-4ad0-b0db-36aa0c526a34'
         })
         break;
       case 1:
         this.setData({
-          infotypeid: 'a8337d0e-ade6-48dd-b51e-74309ee83a3b'
+          infotypeid: '0939fe5a-e540-4ed1-b7ac-9d637fc68101'
         })
         break;
       case 2:
         this.setData({
-          infotypeid: 'eaeee084-fe3b-4e2d-9a05-0a40a88362a7'
+          infotypeid: '49ca5509-127f-46d1-a768-62e4b9258577'
         })
         break;
       case 3:
         this.setData({
-          infotypeid: '729fdccd-dad4-4f39-802e-e77328a87f28'
+          infotypeid: '013c7a06-1ba7-4cfd-9a4c-5f7c795aaf1f'
+        })
+        break;
+        case 4:
+        this.setData({
+          infotypeid: 'a29b7d2f-e5c1-4ab7-aa0f-a0e78fdd13f2'
+        })
+        break;
+        case 5:
+        this.setData({
+          infotypeid: '695b8234-235b-466e-93fa-b68a92226f27'
+        })
+        break;
+        case 6:
+        this.setData({
+          infotypeid: 'f41a1ea3-1c19-4d83-afb5-e3163938d201'
+        })
+        break;
+        case 7:
+        this.setData({
+          infotypeid: '2ca7a42c-8884-45cf-92c9-5cd09bfcba04'
         })
         break;
     }
