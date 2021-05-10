@@ -1,0 +1,5 @@
+/* pages/education/pages/wulanmuqi/wulanmuqi.wxss */
+.bgColor {
+	background-color:#EE6967;
+	color: #ffffff;
+}

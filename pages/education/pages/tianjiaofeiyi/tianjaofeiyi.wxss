@@ -1,0 +1,5 @@
+/* pages/education/pages/tianjiaofeiyi/tianjaofeiyi.wxss */
+.bgColor {
+	background-color:#EE954A;
+	color: #ffffff;
+}

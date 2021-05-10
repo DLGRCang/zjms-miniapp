@@ -683,10 +683,11 @@ Page({
             break
           case 11:
             // 天骄
-            console.log("天骄")
+            util.pageJump('/pages/education/pages/tianjiaofeiyi/tianjaofeiyi')
             break
           case 12:
             // 牧骑
+            util.pageJump('/pages/education/pages/wulanmuqi/wulanmuqi')
             console.log("牧骑")
             break
         }
