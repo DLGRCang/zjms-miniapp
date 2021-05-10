@@ -12,7 +12,7 @@ Page({
 		imgUrl:app.globalData.imgUrl,
     tabName: ['政策宣传', '托养中心'],
     tabId: 0,
-    infotypeid:'b1a960b4-82b5-4084-847b-7d748548e975',
+    infotypeid:'3b80532b-80fa-4d3f-909d-895b16dc70fc',
     page: 1,
     dataList: [], //
   },
@@ -23,11 +23,11 @@ Page({
     })
     if (this.data.tabId == 0) {
       this.setData({
-        infotypeid: 'b1a960b4-82b5-4084-847b-7d748548e975',
+        infotypeid: '3b80532b-80fa-4d3f-909d-895b16dc70fc',
       })
     } else if (this.data.tabId == 1) {
       this.setData({
-        infotypeid: '91fcf0e3-3909-4658-b3b8-bfdddb18a333',
+        infotypeid: '33d552ca-7838-4f1f-a97f-ab7fc519f0a4',
       })
     }
     this.getDataList()
