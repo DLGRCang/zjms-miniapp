@@ -10,7 +10,7 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-		infotypeid: '	ca111fd5-e9ee-4b13-98c9-fc00d3ce67a2',
+		infotypeid: 'ca111fd5-e9ee-4b13-98c9-fc00d3ce67a2',
     page:1,
 		dataList: [], //新闻列表
 	},

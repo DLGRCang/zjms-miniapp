@@ -419,7 +419,7 @@ Page({
       //   tab: 1
       // },
       {
-        tit: "红十字补贴",
+        tit: "红十字救助",
         pic: "/image/59.png",
         tab: 2
       },

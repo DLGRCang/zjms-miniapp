@@ -1,6 +1,7 @@
 // pages/education/pages/transfer/transfer.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const login = require('../../../../utils/login.js')
 Page({
   /**
    * 页面的初始数据

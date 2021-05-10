@@ -10,9 +10,9 @@
   <view>
     <template is="wxParse" data="{{wxParseData:dataHtml.nodes}}" />
   </view>
-  <view class="margin-top-lg" wx:if="{{info_videos==='' || info_videos===null || info_videos === undefined}}">
+  <view class="margin-top-lg" wx:if="{{info_videos==='' || info_videos===null || info_videos === undefined || info_videos === 'undefined'}}">
   </view>
-  <view class="margin-top-lg" wx:else>
+  <view  class="margin-top-lg" wx:else>
     <video src="{{baseImgUrl}}{{info_videos}}" autoplay="true" style="width: 100vw;"></video>
   </view>
 </view>

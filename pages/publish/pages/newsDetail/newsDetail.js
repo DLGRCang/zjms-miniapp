@@ -31,9 +31,6 @@ Page({
     var info_detail = decodeURIComponent(options.info_detail);
     var publishdate = options.publishdate;
     var info_videos = options.info_videos;
-    console.log(33333333333)
-    console.log(options.info_videos)
-    console.log(444444444444)
     this.setData({
       id: id,
       info_content: info_content,
@@ -42,6 +39,7 @@ Page({
       publishdate: publishdate,
       info_videos:info_videos
     })
+    console.log(this.data.publishdate)
     //**
     // * WxParse.wxParse(bindName , type, data, target,imagePadding)
     // * 1.bindName绑定的数据名(必填)

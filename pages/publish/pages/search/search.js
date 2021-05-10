@@ -282,7 +282,7 @@ Page({
         url: '/pages/help/pages/insured/insured',
         isShow: true
       },{
-        name: '红十字补贴',
+        name: '红十字救助',
         icon: app.globalData.imgUrl + '/image/59.png',
         url: '/pages/help/pages/redcross/redcross',
         isShow: true

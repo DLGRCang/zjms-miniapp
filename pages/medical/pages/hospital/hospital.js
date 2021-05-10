@@ -38,10 +38,16 @@ Page({
 
     });
   },
+  goInfo(e) {
+    wx.navigateTo({
+      url: "/pages/publish/pages/newsDetail/newsDetail?info_content=" + e.currentTarget.dataset.obj.medicalName + "&info_source=" + e.currentTarget.dataset.obj.address + "&publishdate=" + e.currentTarget.dataset.obj.businessHours + "&info_videos=" + encodeURIComponent(e.currentTarget.dataset.obj.accessory_videos) + "&info_detail=" + encodeURIComponent(e.currentTarget.dataset.obj.particulars),
+    })
+  },
+
   goDetail() {
     let dataList = this.data.dataList;
     for (let i = 0; i < dataList.length; i++) {
-      util.routePlan(dataList[i].introduction,dataList[i].latitude,dataList[i].longitude)    
+      util.routePlan(dataList[i].introduction, dataList[i].latitude, dataList[i].longitude)
     }
   },
   /**
