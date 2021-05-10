@@ -153,7 +153,9 @@
 				"pages/mbSchoolApplyPersonal/mbSchoolApplyPersonal",
 				"pages/mbSchoolApplyOrg/mbSchoolApplyOrg",
 				"pages/mbSchoolApplyTeacher/mbSchoolApplyTeacher",
-				"pages/mbSchoolApplyFacility/mbSchoolApplyFacility"
+				"pages/mbSchoolApplyFacility/mbSchoolApplyFacility",
+				"pages/tianjiaofeiyi/tianjaofeiyi",
+				"pages/wulanmuqi/wulanmuqi"
 			]
 		},
 		{
