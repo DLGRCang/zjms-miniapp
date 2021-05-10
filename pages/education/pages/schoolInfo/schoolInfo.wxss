@@ -1,4 +1,5 @@
 /* pages/education/pages/schoolInfo/schoolInfo.wxss */
+@import "../../../../wxParse/wxParse.wxss";
 .bgColor {
 	background-color: #ffffff;
 	color: #000000;

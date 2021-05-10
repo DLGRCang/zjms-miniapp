@@ -11,7 +11,7 @@ Page({
   },
   // 获取大厅排队信息
   getInfo() {
-    let url = 'https://yiqi.sucstep.com/InfoIssue/app/release/queue/getStatus';
+    let url = 'https://www.yjhlcity.com/InfoIssue/app/release/queue/getStatus';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
       if (res.data.is_mock === 1) {

@@ -1,5 +1,6 @@
 // pages/education/pages/schoolInfo/schoolInfo.js
 const util = require('../../../../utils/util.js')
+var WxParse = require('../../../../wxParse/wxParse.js');
 const app=getApp()
 Page({
 
@@ -9,10 +10,14 @@ Page({
 	data: {
 		baseImgUrl:app.globalData.baseImgUrl,
 		data: null,
+		particulars:'',
 	},
 	getDataList: function (schoolInformationId) {
+		let that = this;
 		//加载数据列表
 		util.requestApi('schoolinformation/getschoollist/' + schoolInformationId, 'GET', {}).then(res => {
+			console.log(res.data)
+			WxParse.wxParse('dataHtml', 'html', res.data.particulars, that, 5)
 			this.setData({
 				data: res.data
 				
@@ -25,7 +30,6 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-	
 		this.getDataList(options.schoolInformationId);
 	},
 

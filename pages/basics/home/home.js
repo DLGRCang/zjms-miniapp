@@ -138,7 +138,7 @@ Page({
           tab: 11
         },
         {
-          tit: "乌兰穆奇",
+          tit: "乌兰牧骑",
           pic: "/image/84.png",
           tab: 12
         },
@@ -338,7 +338,7 @@ Page({
       //   tab: 5
       // },
       {
-        tit: "福利院",
+        tit: "养老院",
         pic: "/image/48.png",
         tab: 6
       }
@@ -408,11 +408,11 @@ Page({
         pic: "/image/57.png",
         tab: 0
       },
-      {
-        tit: "高龄补助",
-        pic: "/image/47.png",
-        tab: 6
-      },
+      // {
+      //   tit: "高龄补助",
+      //   pic: "/image/47.png",
+      //   tab: 6
+      // },
       // {
       //   tit: "低保户",
       //   pic: "/image/58.png",
@@ -750,7 +750,13 @@ Page({
           case 8:
             console.log("知识产权");
             that.sum(tit)
-            util.pageJump('/pages/economic/pages/intellectualProperty/intellectualProperty')
+            // util.pageJump('/pages/economic/pages/intellectualProperty/intellectualProperty')
+            wx.navigateToMiniProgram({
+              appId: 'wx6bbf6fb40f3c4bfc',
+              path: '',
+              success: function (res) { },
+              fail: function (res) { }
+            })
             break;
           case 9:
             console.log("金融服务");
@@ -789,7 +795,13 @@ Page({
             break;
           case 5:
             that.sum(tit)
-            util.pageJump('/pages/education/pages/bookShop/bookShop')
+            // util.pageJump('/pages/education/pages/bookShop/bookShop')
+            wx.navigateToMiniProgram({
+              appId: 'wxd22d0af6881402ea',
+              path: '',
+              success: function (res) { },
+              fail: function (res) { }
+            })
             break;
           case 6:
             that.sum(tit)
@@ -849,7 +861,7 @@ Page({
             util.pageJump('/pages/medical/pages/oldAge/oldAge')
             break;
           case 6:
-            //福利院
+            //养老院
             that.sum(tit)
             util.pageJump('/pages/medical/pages/welfareHouse/welfareHouse')
             break;

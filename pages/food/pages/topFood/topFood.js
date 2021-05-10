@@ -2,8 +2,8 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
   data: {
-    imgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
-    baseImgUrl: "https://yiqi.sucstep.com/shop/route/file/downloadfile/false/",
+    imgUrl: "https://www.yjhlcity.com/shop/route/file/downloadfile/false/",
+    baseImgUrl: "https://www.yjhlcity.com/shop/route/file/downloadfile/false/",
     foodList: null,
     searchType: [{
       title: '全部美食',

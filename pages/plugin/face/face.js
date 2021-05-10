@@ -93,7 +93,7 @@ Page({
 			encryptedData: encryptedData,
 			type: '1',
 		}
-		util.httpRequest('https://yiqi.sucstep.com/app/sign/checkCoderelease', 'post', data).then(res => {
+		util.httpRequest('https://www.yjhlcity.com/app/sign/checkCoderelease', 'post', data).then(res => {
 			console.log(res)
 
 
