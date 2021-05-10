@@ -673,6 +673,22 @@ Page({
             that.sum(tit)
             util.pageJump('/pages/education/pages/library/library')
             break;
+          case 10:
+            wx.navigateToMiniProgram({
+              appId: 'wxd22d0af6881402ea',
+              path: '',
+              success: function (res) { },
+              fail: function (res) { }
+            })
+            break
+          case 11:
+            // 天骄
+            console.log("天骄")
+            break
+          case 12:
+            // 牧骑
+            console.log("牧骑")
+            break
         }
         break;
       //食在伊旗
@@ -795,13 +811,7 @@ Page({
             break;
           case 5:
             that.sum(tit)
-            // util.pageJump('/pages/education/pages/bookShop/bookShop')
-            wx.navigateToMiniProgram({
-              appId: 'wxd22d0af6881402ea',
-              path: '',
-              success: function (res) { },
-              fail: function (res) { }
-            })
+            util.pageJump('/pages/education/pages/bookShop/bookShop')
             break;
           case 6:
             that.sum(tit)
