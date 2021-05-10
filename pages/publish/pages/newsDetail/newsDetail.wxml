@@ -4,7 +4,8 @@
 </cu-custom>
 <view class="padding-lr-lg">
   <view class="main margin-top-lg padding-tb-xs text-xxl">{{info_content}}</view>
-  <view class="main text-grey">时间：{{publishdate}}  来源：{{info_source}}</view>
+  <view class="main text-grey">时间：{{publishdate}}</view>
+  <view class="main text-grey margin-bottom">{{info_source}}</view>
   <!-- <rich-text nodes="{{info_detail}}" class="main margin-lg"></rich-text> -->
   <!-- <parser class="main margin-lg" html="{{info_detail}}" /> -->
   <view>

@@ -404,7 +404,7 @@ Page({
       title: "维权助困",
       introduce: "",
       list: [{
-        tit: "残疾人",
+        tit: "助残服务",
         pic: "/image/57.png",
         tab: 0
       },

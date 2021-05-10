@@ -11,7 +11,7 @@ Page({
     imgUrl: app.globalData.imgUrl,
     tabId: 0,
     tabName: ['美发', '洗浴'],
-    infotypeid: 'b1a960b4-82b5-4084-847b-7d748548e975',
+    infotypeid:'b1a960b4-82b5-4084-847b-7d748548e975',
     page: 1,
     dataList: [], //
 

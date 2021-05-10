@@ -272,7 +272,7 @@ Page({
         isShow: true
       },
       {
-        name: '残疾人',
+        name: '助残服务',
         icon: app.globalData.imgUrl + '/image/57.png',
         url: '/pages/help/pages/disabled/disabled',
         isShow: true

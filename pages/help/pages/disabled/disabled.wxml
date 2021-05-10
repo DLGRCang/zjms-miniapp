@@ -1,10 +1,24 @@
 <!--pages/help/pages/disabled/disabled.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">残疾人</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">助残服务</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/canjiren.png" style="width:100%"></image>
-<view class="padding">
-	<dot-title title="申请类型" color="title-color"></dot-title>
+<tab bindmyevent="selectTab" tvColor="color" tabName="{{tabName}}"></tab>
+<view class="margin-lr-lg padding-tb-lg">
+	<view wx:if="{{tabId==0}}">
+		<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
+			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
+			itemTabs="{{item.infoTypeLabel}}" isLine="true">
+		</item-image-text>
+	</view>
+	<view wx:if="{{tabId==1}}">
+		<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
+			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
+			itemTabs="{{item.infoTypeLabel}}" isLine="true">
+		</item-image-text>
+	</view>
+	<!-- <view class="padding"> -->
+	<!-- <dot-title title="申请类型" color="title-color"></dot-title>
 	<view bindtap="applyDisabilityCertificate" class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon1">申请残疾证</text>
 		<text class="into"></text>
@@ -16,7 +30,5 @@
 	<view bindtap="applySisabledChildrenHelp" class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; ">
 		<text class="help-text help-icon3">申请贫困残疾人(子女)高校生救助</text>
 		<text class="into"></text>
+	</view> -->
 	</view>
-</view>
-
-

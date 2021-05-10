@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const login = require('../../../../utils/login.js')
+const data = require('../../../../utils/data.js')
 Page({
 
 	/**
@@ -9,6 +10,36 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
+    tabName: ['政策宣传', '托养中心'],
+    tabId: 0,
+    infotypeid:'b1a960b4-82b5-4084-847b-7d748548e975',
+    page: 1,
+    dataList: [], //
+  },
+  selectTab: function (e) {
+    this.setData({
+      dataList: [],
+      tabId: e.detail.TabCur
+    })
+    if (this.data.tabId == 0) {
+      this.setData({
+        infotypeid: 'b1a960b4-82b5-4084-847b-7d748548e975',
+      })
+    } else if (this.data.tabId == 1) {
+      this.setData({
+        infotypeid: '91fcf0e3-3909-4658-b3b8-bfdddb18a333',
+      })
+    }
+    this.getDataList()
+  },
+  getDataList: function () {
+    //加载数据列表
+    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+      this.setData({
+        dataList: this.data.dataList.concat(dataList),
+      })
+      console.log(this.data.dataList);
+    })
 
   },
   //申请残疾证
@@ -33,7 +64,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getDataList()
   },
 
   /**
