@@ -7,14 +7,14 @@
 <view class="margin-lr-lg padding-tb-lg">
 	<view wx:if="{{tabId==0}}">
 		<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
-			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
-			itemTabs="{{item.infoTypeLabel}}" isLine="true">
+			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isDate="{{true}}"
+			date="{{item.publishdate}}" isLine="true">
 		</item-image-text>
 	</view>
 	<view wx:if="{{tabId==1}}">
 		<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
-			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
-			itemTabs="{{item.infoTypeLabel}}" isLine="true">
+			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isDate="{{true}}"
+			date="{{item.publishdate}}" isLine="true">
 		</item-image-text>
 	</view>
 	<!-- <view class="padding"> -->

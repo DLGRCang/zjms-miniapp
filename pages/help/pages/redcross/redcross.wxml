@@ -5,6 +5,6 @@
 <button bindtap="applySubsidy" class="button">申请补贴</button>
 <view class="flex flex-direction padding-tb-xl padding-sm">
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-	itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
+	itemInfo="{{item.info_summary}}" isImg="true" isDate="{{true}}" date="{{item.publishdate}}" isLine="true">
 </item-image-text>
 </view>
