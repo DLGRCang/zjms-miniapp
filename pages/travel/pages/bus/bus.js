@@ -12,7 +12,7 @@ Page({
   },
   goBus() {
     wx.navigateToMiniProgram({
-      appId: 'wx71d589ea01ce3321',
+      appId: 'wxb9e506ed4f66afc4',
       path: '',
       success: function (res) { },
       fail: function (res) { }
