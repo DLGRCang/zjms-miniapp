@@ -8,7 +8,6 @@ Page({
 	 */
 	data: {
 		evidenceList: ['医疗票据', '伤残鉴定', '病例诊断'], //类型列表
-		type: '',
 		evidenceName: '', //类型
 		videoList: [], //视频url
 		videoListid: [], //视频id
@@ -23,13 +22,13 @@ Page({
 	//提交数据
 	commitData() {
 		let data = {
-			userId: wx.getStorageSync("userId"),
+			userID: wx.getStorageSync("userId"),
 			userName: wx.getStorageSync("name"),
 			expoundFile:this.data.expoundFile,
 			pictureFile:this.data.files.toString(),
 			soundRecording:this.data.soundRecording,
 			videoFile:this.data.videoListid.toString(),
-			type:this.data.type,
+			evidenceType:this.data.evidenceName,
 	
 		}
 		console.log(data)
@@ -45,6 +44,13 @@ Page({
 				util.showToast("提交失败")
 			}
 		});
+	},
+	putData(e) {
+		let key = e.currentTarget.dataset.key
+		console.log(key)
+		this.setData({
+			[key]: e.detail.value
+		})
 	},
 	//证据库
 	evidenceLibrary() {
