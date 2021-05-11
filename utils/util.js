@@ -481,13 +481,5 @@ module.exports = {
   routePlan: routePlan,
   isEmpty:isEmpty,
   uploadVideoFile: uploadVideoFile,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  uploadVideoFile: uploadVideoFile,
->>>>>>> dev
-=======
-  uploadVideoFile: uploadVideoFile,
->>>>>>> dev
   uploadAudioFile: uploadAudioFile
 }
