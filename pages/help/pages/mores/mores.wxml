@@ -1,8 +1,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content" class="text-white text-xl">维权法规</view>
+  <view slot="content" class="text-white text-xl">心灵港湾</view>
 </cu-custom>
-<view class="padding-lr-lg">
-  <scroll-view scroll-x class="bg-white nav margin-bottom-lg">
+<scroll-view scroll-x class="bg-white nav margin-bottom-lg">
     <view class="flex text-center">
       <view class="cu-item {{index==tabId?'color cur':''}}" wx:for="{{tabName}}" wx:key bindtap="selectTab"
         data-id="{{index}}">
@@ -10,6 +9,7 @@
       </view>
     </view>
   </scroll-view>
+<view class="padding-lr-lg">
 
   <item-image-text wx:for="{{dataList}}" obj="{{item}}" itemTitle="{{item.info_content}}"
     itemInfo="{{item.info_summary}}" isTab="true" itemTabs="{{item.infoTypeLabel}}" imgUrl="{{item.info_photos}}"

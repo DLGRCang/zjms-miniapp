@@ -58,9 +58,14 @@ Page({
 	applySafe() {
 		util.pageJump('../applySafe/applySafe')
 	},
-	goMore(e){
+	goMore(){
 		wx.navigateTo({
-			url: '../more/more?sign='+e.currentTarget.dataset.sign,
+			url: '../more/more',
+		})
+	},
+	goMores(){
+		wx.navigateTo({
+			url: '../mores/mores',
 		})
 	},
 

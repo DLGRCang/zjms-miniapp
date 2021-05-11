@@ -419,7 +419,7 @@ Page({
       //   tab: 1
       // },
       {
-        tit: "红十字救助",
+        tit: "红十字会",
         pic: "/image/59.png",
         tab: 2
       },
@@ -842,10 +842,16 @@ Page({
             break;
           case 1:
             //判断是否登录
-            if (!login.isLogin()) return
+            // if (!login.isLogin()) return
             //健康证
             that.sum(tit)
-            util.pageJump('/pages/appointment/pages/healthy/healthy?type=1&title=健康证申请')
+            wx.navigateToMiniProgram({
+              appId: 'wx7c812e7ef680c8d7',
+              path: '',
+              success: function (res) { },
+              fail: function (res) { }
+            })
+            // util.pageJump('/pages/appointment/pages/healthy/healthy?type=1&title=健康证申请')
             // util.pageJump('/pages/medical/pages/healthCard/healthCard')
             break;
           case 2:
