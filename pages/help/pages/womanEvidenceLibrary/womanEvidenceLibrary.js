@@ -10,7 +10,7 @@ Page({
 		isEdit:false
 	},
 	getData() {
-		util.requestApi('preserveevidence/listpagepreserveevidence', 'GET', {}).then(res => {
+		util.requestApi('preserveevidence/listpagepreserveevidence?userId='+wx.getStorageSync("userId"), 'GET', {}).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
 				this.setData({
@@ -22,8 +22,8 @@ Page({
 		});
 	},
 	//证据库详情
-	evidenceLibraryInfo() {
-		util.pageJump('../womanEvidenceLibraryInfo/womanEvidenceLibraryInfo')
+	evidenceLibraryInfo(e) {
+		util.pageJump('../womanEvidenceLibraryInfo/womanEvidenceLibraryInfo?id='+e.currentTarget.dataset.id)
 	},
 	//编辑
 	edit(){
@@ -33,8 +33,19 @@ Page({
 	},
 	//删除
 	delete(e) {
-		var ids=e.currentTarget.dataset.ids
-		console.log('删除'+ids)
+		var ids=e.currentTarget.dataset.id
+		var index=e.currentTarget.dataset.index
+		console.log(index+'删除'+ids)
+		util.requestApi('preserveevidence/removepreserveevidence/'+ids, 'DELETE', {}).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+				this.setData({
+					dataList:this.data.dataList.splice(index, 1),
+				})
+			}else{
+				util.showToast('删除失败')
+			}
+		});
 	},
 	/**
 	 * 生命周期函数--监听页面加载

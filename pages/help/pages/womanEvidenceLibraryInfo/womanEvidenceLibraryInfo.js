@@ -1,10 +1,13 @@
 // pages/help/pages/womanEvidenceLibraryInfo/womanEvidenceLibraryInfo.js
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		preserveEvidenceId:'',
+		data:{},
 		voiceStatus: ' 点击播放',
 		imgList: [],
 		videoList: [],
@@ -34,11 +37,26 @@ Page({
 			}],
 		});
 	},
+	getData() {
+		util.requestApi('preserveevidence/getpreserveevidence/' + this.data.preserveEvidenceId, 'GET', {}).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+				this.setData({
+					data:res.data
+				})
+			} else {
+				util.showToast('加载失败')
+			}
+		});
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.setData({
+			preserveEvidenceId:options.id
+		})
+		this.getData()
 	},
 
 	/**

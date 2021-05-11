@@ -9,7 +9,7 @@
 	<!-- 选择器 -->
 	<view class="cu-form-group padding-left-sm">
 		<view class="title">证据类型：</view>
-		<view class="text-right">医疗证明	</view>
+		<view class="text-right">{{data.evidenceType}}</view>
 	</view>
 	<view></view>
 	<view class="cu-form-group padding-left-sm align-start margin-top">
@@ -50,9 +50,9 @@
 	</view>
 	<dot-title title="阐述" color="title-color"></dot-title>
 	<view class="cu-form-group">
-		<textarea disabled="false"></textarea>
+		<textarea disabled="false" value="{{data.expoundFile}}"></textarea>
 	</view>
-	<view class="padding flex flex-direction">
+	<!-- <view class="padding flex flex-direction">
 		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="deleteData">删除本条记录</button>
-	</view>
+	</view> -->
 </view>
