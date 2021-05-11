@@ -481,5 +481,7 @@ module.exports = {
   isNull: isNull,
   routePlan: routePlan,
   isEmpty:isEmpty,
-  uploadVideoFile: uploadVideoFile
+  uploadVideoFile: uploadVideoFile,
+  uploadVideoFile: uploadVideoFile,
+  uploadAudioFile: uploadAudioFile
 }
