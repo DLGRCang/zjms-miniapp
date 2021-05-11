@@ -1,5 +1,5 @@
 // pages/medical/pages/vaccine/vaccine.js
-const app=getApp()
+const app = getApp()
 const data = require('../../../../utils/data.js')
 Page({
 
@@ -7,12 +7,19 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,
+		imgUrl: app.globalData.imgUrl,
 		infotypeid: 'c299e400-95f5-4d18-a639-149160e06d3c',
-    page:1,
+		page: 1,
 		dataList: [], //新闻列表
 	},
-
+	nucleicForm() {
+		wx.navigateToMiniProgram({
+			appId: 'wx5212f4fe9555a3c0',
+			path: '',
+			success: function (res) {},
+			fail: function (res) {}
+		})
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

@@ -20,14 +20,14 @@
 	<view class="cu-form-group padding-left-sm align-start margin-top">
 		<view class="title" style="margin:0">图片：</view>
 		<view class="grid col-3 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
-				data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{vehicleImages[index]}}">
+				<image src='{{vehicleImages[index]}}' mode='aspectFill'></image>
 				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
 					<text class="cuIcon-close"></text>
 				</view>
 			</view>
-			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<3}}">
+			<view class="solids" bindtap="ChooseImage" wx:if="{{vehicleImages.length<3}}">
 				<text class="cuIcon-cameraadd"></text>
 			</view>
 		</view>
@@ -46,7 +46,7 @@
 					<text class="cuIcon-close"></text>
 				</view>
 			</view>
-			<view class="solids" bindtap="ChooseVideo" wx:if="{{videoList.length<3}}">
+			<view class="solids" bindtap="ChooseVideo" wx:if="{{videoList.length<1}}">
 				<text class="cuIcon-video"></text>
 			</view>
 		</view>
@@ -67,7 +67,7 @@
 	</view> -->
 	<dot-title title="阐述" color="title-color"></dot-title>
 	<view class="cu-form-group">
-		<textarea placeholder="请输入您想记录的自我阐述"></textarea>
+		<textarea placeholder="请输入您想记录的自我阐述" bindinput="putData" data-key="expoundFile"></textarea>
 	</view>
 	<view class="padding flex flex-direction">
 		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="commitData">确认提交</button>

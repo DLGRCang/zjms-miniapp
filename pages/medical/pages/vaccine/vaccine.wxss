@@ -6,3 +6,9 @@
 .title-color{
 	color:#6670E1
 }
+.button{
+	background-color: #6670E1;
+	color: #ffffff;
+	margin: -120rpx 70rpx 0 70rpx;
+	font-size: 34rpx;
+}

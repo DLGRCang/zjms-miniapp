@@ -7,13 +7,44 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		evidenceList: ['医疗证明', '残疾证明', '贫困证明'],
-		evidenceName: '',
-		imgList: [],
-		videoList: [],
+		evidenceList: ['医疗票据', '伤残鉴定', '病例诊断'], //类型列表
+		type: '',
+		evidenceName: '', //类型
+		videoList: [], //视频url
+		videoListid: [], //视频id
 		voiceLong: '',
 		voiceSrc: '',
 		voiceStatus: '',
+		vehicleImages: [], //图片url
+		files: [], //图片id
+		soundRecording: '', //录音
+		expoundFile: '', //阐述
+	},
+	//提交数据
+	commitData() {
+		let data = {
+			userId: wx.getStorageSync("userId"),
+			userName: wx.getStorageSync("name"),
+			expoundFile:this.data.expoundFile,
+			pictureFile:this.data.files.toString(),
+			soundRecording:this.data.soundRecording,
+			videoFile:this.data.videoListid.toString(),
+			type:this.data.type,
+	
+		}
+		console.log(data)
+		util.requestApi('preserveevidence/savepreserveevidence', 'POST', data).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+				wx.navigateBack({
+					delta: 1
+				})
+				util.showToast("提交成功")
+
+			} else {
+				util.showToast("提交失败")
+			}
+		});
 	},
 	//证据库
 	evidenceLibrary() {
@@ -37,14 +68,24 @@ Page({
 		recordManager.stop()
 		wx.hideLoading()
 		//停止录音回调
-		recordManager.onStop(function (res) {
-			var path = res.tempFilePath
-			that.setData({
-				voiceLong:" "+Math.ceil((res.duration) / 1000)+" ″ ",
-				voiceStatus:"点击播放",
-				voiceSrc: path,
-			})
+		recordManager.onStop(function (ress) {
+			var path = ress.tempFilePath
+			util.uploadAudioFile(path)
+				.then(res => {
+					console.log(res)
+					if (res.statusCode == 200) {
+						let obj = JSON.parse(res.data)
+						that.setData({
+							voiceLong: " " + Math.ceil((ress.duration) / 1000) + " ″ ",
+							voiceStatus: "点击播放",
+							voiceSrc: path,
 
+							soundRecording: obj.data
+						})
+					} else {
+						util.showToast('录音上传失败')
+					}
+				});
 		})
 	},
 	//播放录音
@@ -73,21 +114,23 @@ Page({
 	ChooseVideo() {
 		wx.chooseVideo({
 			success: (res) => {
-				this.setData({
-					src: res.tempFilePath
-				})
-				console.log(res.tempFilePath)
-				if (this.data.videoList.length != 0) {
-					let paths = this.data.videoList;
-					paths.push(res.tempFilePath)
-					this.setData({
-						videoList: paths
-					})
-				} else {
-					this.setData({
-						videoList: [res.tempFilePath]
-					})
-				}
+				let videoUrl = res.tempFilePath
+				util.uploadVideoFile(videoUrl)
+					.then(res => {
+						if (res.statusCode == 200) {
+							let obj = JSON.parse(res.data)
+							let videoListid = this.data.videoListid;
+							let videoList = this.data.videoList;
+							videoListid.push(obj.data)
+							videoList.push(videoUrl)
+							this.setData({
+								videoListid: videoListid,
+								videoList: videoList
+							})
+						} else {
+							util.showToast('视频上传失败')
+						}
+					});
 			}
 		});
 	},
@@ -98,16 +141,23 @@ Page({
 			sizeType: ['original', 'compressed'],
 			sourceType: ['album', 'camera'],
 			success: (res) => {
-				console.log(res.tempFilePaths[0]);
-				if (this.data.imgList.length != 0) {
-					this.setData({
-						imgList: this.data.imgList.concat(res.tempFilePaths)
-					})
-				} else {
-					this.setData({
-						imgList: res.tempFilePaths
-					})
-				}
+				let imgUrl = res.tempFilePaths[0]
+				util.uploadFile(imgUrl, 'image')
+					.then(res => {
+						if (res.statusCode == 200) {
+							let obj = JSON.parse(res.data)
+							let files = this.data.files;
+							let vehicleImages = this.data.vehicleImages;
+							files.push(obj.data)
+							vehicleImages.push(imgUrl)
+							this.setData({
+								files: files,
+								vehicleImages: vehicleImages
+							})
+						} else {
+							util.showToast('图片上传失败')
+						}
+					});
 			}
 		});
 	},
@@ -134,9 +184,11 @@ Page({
 							videoList: this.data.videoList
 						})
 					} else {
-						this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+						this.data.files.splice(e.currentTarget.dataset.index, 1);
+						this.data.vehicleImages.splice(e.currentTarget.dataset.index, 1);
 						this.setData({
-							imgList: this.data.imgList
+							files: this.data.files,
+							vehicleImages: this.data.vehicleImages
 						})
 					}
 
