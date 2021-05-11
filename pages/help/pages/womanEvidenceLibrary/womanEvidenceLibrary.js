@@ -73,6 +73,12 @@ Page({
 			isEdit:!this.data.isEdit
 		})
 	},
+	//编辑
+	edit(){
+		this.setData({
+			isEdit:!this.data.isEdit
+		})
+	},
 	//删除
 	delete(e) {
 		var ids=e.currentTarget.dataset.ids
