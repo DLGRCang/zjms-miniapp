@@ -31,58 +31,21 @@ Page({
 			isEdit:!this.data.isEdit
 		})
 	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
-	//编辑
-	edit(){
-		this.setData({
-			isEdit:!this.data.isEdit
-		})
-	},
 	//删除
 	delete(e) {
-		var ids=e.currentTarget.dataset.ids
-		console.log('删除'+ids)
+		var ids=e.currentTarget.dataset.id
+		var index=e.currentTarget.dataset.index
+		console.log(index+'删除'+ids)
+		util.requestApi('preserveevidence/removepreserveevidence/'+ids, 'DELETE', {}).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+				this.setData({
+					dataList:this.data.dataList.splice(index, 1),
+				})
+			}else{
+				util.showToast('删除失败')
+			}
+		});
 	},
 	/**
 	 * 生命周期函数--监听页面加载
