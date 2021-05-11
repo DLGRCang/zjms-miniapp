@@ -6,20 +6,35 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		dataList:[],
+		isEdit:false
 	},
 	getData() {
 		util.requestApi('preserveevidence/listpagepreserveevidence', 'GET', {}).then(res => {
 			console.log(res)
+			if (res.statusCode == 200) {
+				this.setData({
+					dataList:res.data.rows,
+				})
+			}else{
+				util.showToast('数据加载失败')
+			}
 		});
 	},
 	//证据库详情
 	evidenceLibraryInfo() {
 		util.pageJump('../womanEvidenceLibraryInfo/womanEvidenceLibraryInfo')
 	},
+	//编辑
+	edit(){
+		this.setData({
+			isEdit:!this.data.isEdit
+		})
+	},
 	//删除
-	delete() {
-		console.log('删除')
+	delete(e) {
+		var ids=e.currentTarget.dataset.ids
+		console.log('删除'+ids)
 	},
 	/**
 	 * 生命周期函数--监听页面加载
