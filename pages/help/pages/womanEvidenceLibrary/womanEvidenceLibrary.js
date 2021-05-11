@@ -39,9 +39,12 @@ Page({
 		util.requestApi('preserveevidence/removepreserveevidence/'+ids, 'DELETE', {}).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
+				let arr=this.data.dataList
+				arr.splice(index, 1)
 				this.setData({
-					dataList:this.data.dataList.splice(index, 1),
+					dataList:arr
 				})
+				console.log(this.data.dataList)
 			}else{
 				util.showToast('删除失败')
 			}
