@@ -396,6 +396,16 @@ const isNull = function (str) {
     return false;
 };
 
+const isEmpty = function (key,title) {
+  if (key == "" || key == null || key == undefined) {
+    wx.showToast({
+      title: title,
+      icon: 'none', 
+      duration: 2000
+    })
+    return
+  }
+}
 
 /*
   腾讯地图路线规划
@@ -441,5 +451,6 @@ module.exports = {
   returnCode: returnCode,
   isNull: isNull,
   routePlan: routePlan,
+  isEmpty:isEmpty,
   uploadVideoFile: uploadVideoFile
 }

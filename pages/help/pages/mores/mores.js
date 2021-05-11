@@ -10,7 +10,8 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     tabId: 0,
-    tabName: ["人身权利", "人生感悟", "心灵感悟", "哲理故事","幸福家庭","婚姻家庭","最美家庭","品味女人"],
+    // tabName: ["人身权利", "人生感悟", "心灵感悟", "哲理故事","幸福家庭","婚姻家庭","最美家庭","品味女人"],
+    tabName: ["人身权利", "人生感悟", "心灵感悟", "哲理故事","幸福家庭","婚姻家庭","品味女人"],
     num: 9,
     infotypeid: '509666ee-b033-4ad0-b0db-36aa0c526a34',
     page: 1,
@@ -55,12 +56,12 @@ Page({
           infotypeid: '695b8234-235b-466e-93fa-b68a92226f27'
         })
         break;
+        // case 6:
+        // this.setData({
+        //   infotypeid: 'f41a1ea3-1c19-4d83-afb5-e3163938d201'
+        // })
+        // break;
         case 6:
-        this.setData({
-          infotypeid: 'f41a1ea3-1c19-4d83-afb5-e3163938d201'
-        })
-        break;
-        case 7:
         this.setData({
           infotypeid: '2ca7a42c-8884-45cf-92c9-5cd09bfcba04'
         })

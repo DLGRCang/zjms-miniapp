@@ -1,0 +1,14 @@
+/* pages/government/pages/volunteerService/volunteerService.wxss */
+.bgColor {
+	background-color: #A6CF5F;
+	color: #ffffff;
+}
+.title-color{
+	color:#A6CF5F
+}
+.button{
+	background-color: #A6CF5F;
+	color: #ffffff;
+	margin: -120rpx 70rpx 0 70rpx;
+	font-size: 34rpx;
+}
