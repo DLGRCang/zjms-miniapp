@@ -482,6 +482,10 @@ module.exports = {
   isEmpty:isEmpty,
   uploadVideoFile: uploadVideoFile,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  uploadVideoFile: uploadVideoFile,
+>>>>>>> dev
 =======
   uploadVideoFile: uploadVideoFile,
 >>>>>>> dev
