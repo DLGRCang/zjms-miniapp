@@ -525,6 +525,11 @@ Page({
         pic: "/image/54.png",
         tab: 15
       },
+      {
+        tit: "微心愿",
+        pic: "/image/85.png",
+        tab: 16
+      },
       ],
     },
     ],
@@ -812,7 +817,13 @@ Page({
             break;
           case 5:
             that.sum(tit)
-            util.pageJump('/pages/education/pages/bookShop/bookShop')
+            wx.navigateToMiniProgram({
+              appId: 'wx7bb81a7623f3c865',
+              path: 'pages/index/index?fid=17244&fidEnc=13b2b44410255bec',
+              success: function (res) { },
+              fail: function (res) { }
+            })
+            // util.pageJump('/pages/education/pages/bookShop/bookShop')
             break;
           case 6:
             that.sum(tit)
@@ -1027,6 +1038,10 @@ Page({
           case 15:
             that.sum(tit)
             util.pageJump('/pages/government/pages/volunteerService/volunteerService')
+            break;
+          case 16:
+            that.sum(tit)
+            util.pageJump('/pages/government/pages/wxyService/wxyService')
             break;
 
         }

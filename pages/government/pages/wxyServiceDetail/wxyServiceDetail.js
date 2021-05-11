@@ -1,37 +1,49 @@
-// pages/charm/pages/introduce/introduce.js
-const app = getApp()
+// pages/government/pages/wxyServiceDetail/wxyServiceDetail.js
 const util = require('../../../../utils/util.js')
-const data = require('../../../../utils/data.js')
-var WxParse = require('../../../../wxParse/wxParse.js');
+const app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    imgUrl: app.globalData.imgUrl,
-    dataList: null, //新闻列表
-    infotypeid: 'c1188922-031c-4100-9156-125d0b9e6f20',
-    page: 1,
+	/**
+	 * 页面的初始数据
+	 */
+	data: {
+		baseImgUrl: app.globalData.baseImgUrl,
+		id:'',
+		title:'',//标题
+		content:'',//内容	
+		num:'',//报名人数
+		picture_url:'',//图片
+		time:'',//时间
+	},
+	getDataList: function () {
+		let that = this;
+		util.requestApi('weixinyuanservice/getvolunteersservice/'+this.data.id, 'GET', {}).then(res => {
+			that.setData({
+				title: res.data.title,
+				content: res.data.content,
+				picture_url: res.data.picture_url,
+				time: res.data.time,
+			})
+			console.log(res)
+		})
+	},
+	/**
+	 * 生命周期函数--监听页面加载
+	 */
+	onLoad: function (options) {
+		this.setData({
+			id:options.id
+		})
+		this.getDataList()
+		
 
-  },
+	},
 
-  getDataList: function () {
-    let that= this
-    //加载数据列表
-    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-      console.log(dataList[0])
-      WxParse.wxParse('dataHtml', 'html', dataList[0].info_detail, that, 5)
-      this.setData({
-        dataList: dataList[0],
-      })
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getDataList()
+
   },
 
   /**

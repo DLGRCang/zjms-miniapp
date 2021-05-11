@@ -1,6 +1,6 @@
 
 // url 地址
-let baseUrl =  'https://www.yjhlcity.com/dangjian/' // 正式
+let baseUrl = 'https://www.yjhlcity.com/dangjian/' // 正式
 // let baseUrl = 'http://172.16.20.57:8080/sucstep_dj_dj_develop_dituyuan_war_exploded/' // 测试
 
 // 上传地址
@@ -109,12 +109,23 @@ const returnCode = function (code, num) {
   }
 }
 
+const isEmpty = function (key,title) {
+  if (key == "" || key == null || key == undefined) {
+    wx.showToast({
+      title: title,
+      icon: 'none', 
+      duration: 2000
+    })
+    return
+  }
+}
 
 module.exports = {
   baseUrl: baseUrl,
   httpRequest: httpRequest,
-  uploadFile:uploadFile,
+  uploadFile: uploadFile,
   showToast: showToast,
-  returnCode: returnCode
+  returnCode: returnCode,
+  isEmpty:isEmpty
 
 }

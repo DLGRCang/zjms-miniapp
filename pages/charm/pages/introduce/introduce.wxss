@@ -1,4 +1,5 @@
 /* pages/charm/pages/introduce/introduce.wxss */
+@import "../../../../wxParse/wxParse.wxss";
 .color{
   color: rgb(18, 140, 211);
 }

@@ -192,6 +192,8 @@
 				"pages/instaShotReport/instaShotReport",
 				"pages/guideCommint/guideCommint",
 				"pages/volunteerServiceDetail/volunteerServiceDetail",
+				"pages/wxyService/wxyService",
+				"pages/wxyServiceDetail/wxyServiceDetail",
 				"pages/cityActionDetail/cityActionDetail",
 				"pages/cityActionApply/cityActionApply",
 				"pages/questionnaireInfo/questionnaireInfo",

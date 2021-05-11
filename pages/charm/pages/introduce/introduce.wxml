@@ -1,7 +1,14 @@
+<import src="../../../../wxParse/wxParse.wxml" />
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">伊旗概况</view>
 </cu-custom>
-<view class="padding-lg">
+
+<view class="padding-lr-lg">
+  <template is="wxParse" data="{{wxParseData:dataHtml.nodes}}" />
+</view>
+
+
+<!-- <view class="padding-lg">
   <view class="text-xxl text-bold ">伊金霍洛旗</view>
   <view style='white-space:pre-wrap;margin-bottom:-15rpx;'>
     伊金霍洛旗，是内蒙古自治区鄂尔多斯市下辖旗，地处鄂尔多斯高原东南部、毛乌素沙地东北边缘，北靠东胜区、与康巴什区隔乌兰木伦河相望，东与准格尔旗相邻，西与杭锦旗接壤，南临乌审旗、隔长城与陕西省交界。总面积5600平方公里，辖7个镇138个行政村。
@@ -173,5 +180,5 @@
     2021年1月18日，被国家卫生健康委命名为“2018-2020年全国计划生育优质服务先进单位”。
     2021年1月28日，入选“2021—2023年创建周期全国文明城市提名城市”名单。
   </view>
-</view>
+</view> -->
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
