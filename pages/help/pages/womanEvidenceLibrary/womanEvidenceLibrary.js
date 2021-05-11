@@ -51,8 +51,6 @@ Page({
 	},
 	//删除
 	delete(e) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 		var ids=e.currentTarget.dataset.id
 		var index=e.currentTarget.dataset.index
 		console.log(index+'删除'+ids)
@@ -66,14 +64,6 @@ Page({
 				util.showToast('删除失败')
 			}
 		});
-=======
-		var ids=e.currentTarget.dataset.ids
-		console.log('删除'+ids)
->>>>>>> dev
-=======
-		var ids=e.currentTarget.dataset.ids
-		console.log('删除'+ids)
->>>>>>> dev
 	},
 	/**
 	 * 生命周期函数--监听页面加载
