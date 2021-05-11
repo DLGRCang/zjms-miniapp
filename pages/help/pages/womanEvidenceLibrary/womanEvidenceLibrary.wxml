@@ -9,9 +9,9 @@
 	</view>
 	<image wx:if="{{dataList.length==0}}" src="../../../../image/none.png" style="width: 252rpx;height: 252rpx;margin:auto"></image>
 
-	<view bindtap="evidenceLibraryInfo" data-id="{{item.preserveEvidenceId}}" wx:for="{{dataList}}" class="flex align-center padding-lg" >
+	<view bindtap="evidenceLibraryInfo" wx:for="{{dataList}}" class="flex align-center padding-lg" >
 		<image src="../../../../image/rectangle_icon.png" style="width: 12rpx;height: 12rpx;"></image>
 		<text class="text-df margin-left-sm">{{item.gmtModified}}</text>
-		<text wx:if="{{isEdit}}" data-id="{{item.preserveEvidenceId}}" data-index="{{index}}" catchtap="delete" class="text-red " style="margin-left: auto;">删除</text>
+		<text wx:if="{{isEdit}}" data-id="{{item.ids}}" catchtap="delete" class="text-red padding" style="margin-left: auto;">删除</text>
 	</view>
 </view>
