@@ -5,26 +5,28 @@
 <image mode="widthFix" src="{{imgUrl}}/image/shixinrenyuan.png" style="width:100%"></image>
 <button class="button" bindtap="goSearch">人员查询</button>
 <view class="padding">
-	<dot-title title="限制措施" color="title-color"></dot-title>
+	<dot-title title="限制措施" color="title-color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
 
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}"
 		isDate="true" date="{{item.publishdate}}"></item-image-text>
+	<dot-title title="小伊说法" color="title-color" isMore="true" sign="{{infotypeid1}}" type="1"></dot-title>
 
+	<item-image-text wx:for="{{dataList1}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}"
+		isDate="true" date="{{item.publishdate}}"></item-image-text>
 	<dot-title title="人员公示" color="title-color"></dot-title>
 	<view class="flex padding-lr margin-bottom-lg">
 		<view class="text-grey">姓名/名称</view>
-		<view class="text-grey"  style="margin-left:auto;padding-right:166rpx">证件号码</view>
+		<view class="text-grey" style="margin-left:auto;padding-right:166rpx">证件号码</view>
 	</view>
-	<swiper class="padding-lr"  vertical="true" autoplay="true" circular="true"
-		interval="2000" display-multiple-items='4'>
-			<block wx:for='{{dishonestList}}'>
-				<swiper-item >
-					<view  class="flex">
-						<text >{{item.dishonestName}}</text>
-						<text  style="margin-left:auto">{{item.idCardNumber}}</text>
-					</view>
-				</swiper-item>
-			</block>
+	<swiper class="padding-lr" vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='4'>
+		<block wx:for='{{dishonestList}}'>
+			<swiper-item>
+				<view class="flex">
+					<text>{{item.dishonestName}}</text>
+					<text style="margin-left:auto">{{item.idCardNumber}}</text>
+				</view>
+			</swiper-item>
+		</block>
 
 	</swiper>
 </view>

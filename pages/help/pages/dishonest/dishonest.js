@@ -11,8 +11,11 @@ Page({
 	data: {
 		imgUrl:app.globalData.imgUrl,
 		infotypeid: '80bcd380-3aa9-4a35-bc38-4e242193ab81',
+		infotypeid1: '5c1f3a14-3902-4858-a3b0-591970bd557e',//小伊说法
+
     page: 1,
     dataList: [],
+    dataList1: [],
     dishonestList:null,
 		 
 	},
@@ -22,11 +25,18 @@ Page({
 	 */
 	getDataList: function () {
     //加载新闻列表
-    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+    data.getArtelData(this.data.infotypeid, this.data.page,3).then(dataList => {
       this.setData({
         dataList: this.data.dataList.concat(dataList)
       })
       console.log(this.data.dataList);
+    })
+    //小伊说法
+    data.getArtelData(this.data.infotypeid1, this.data.page,3).then(dataList => {
+      this.setData({
+        dataList1: this.data.dataList1.concat(dataList)
+      })
+      console.log(this.data.dataList1);
     })
 	},
 	getInfo() {

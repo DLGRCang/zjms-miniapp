@@ -30,6 +30,7 @@ let baseUrl = base + 'release/'
 let uploadFileUrl = base + 'file/uploadfile'//文件上传地址
 let uploadUrlImage = base + 'file/uploadimage' //图片上传地址
 let uploadUrlVideo = base + 'file/uploadvideo' //视频上传地址
+let uploadUrlAudio = base + 'file/uploadaudio' //音频上传地址
 
 //内部请求方法
 const requestApi = function (url, method, data = {}) {
@@ -238,6 +239,34 @@ const uploadVideoFile = function (filePath) {
       url: uploadUrlVideo,
       filePath: filePath,
       name: 'video',
+      formData: {},
+      timeout: 2 * 60 * 1000,
+      header: {
+        'token': wx.getStorageSync("token")
+      },
+      success: (res) => {
+        wx.hideLoading();
+        resolve(res)
+      },
+      fail: (res) => {
+        //错误信息统一处理操作
+        wx.hideLoading();
+        reject(res)
+        this.showToast('上传失败')
+      }
+    })
+  });
+}
+//音频文件上传接口
+const uploadAudioFile = function (filePath) {
+  wx.showLoading({
+    title: '上传中...'
+  });
+  return new Promise((resolve, reject) => {
+    wx.uploadFile({
+      url: uploadUrlAudio,
+      filePath: filePath,
+      name: 'audio',
       formData: {},
       timeout: 2 * 60 * 1000,
       header: {
