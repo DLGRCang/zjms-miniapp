@@ -11,16 +11,16 @@
 			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
 			itemTabs="{{item.infoTypeLabel}}" isLine="true">
 		</item-image-text>
-		<view class="text-center text-grey text-xl margin-top-lg" bindtap="goMore">查看更多</view>
+		<view class="text-center text-grey text-df" bindtap="goMore">查看更多</view>
 	</view>
 
 	<dot-title title="心灵港湾" color="title-color"></dot-title>
 	<view class="box">
-		<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
+		<item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}"
 			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isTab="true"
 			itemTabs="{{item.infoTypeLabel}}" isLine="true">
 		</item-image-text>
-		<view class="text-center text-grey text-xl margin-top-lg" bindtap="goMores">查看更多</view>
+		<view  class="text-center text-grey text-df" bindtap="goMores">查看更多</view>
 	</view>
 
 	<dot-title title="咨询求助" color="title-color"></dot-title>

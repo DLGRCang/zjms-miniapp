@@ -10,8 +10,8 @@ Page({
 	 */
 	data: {
 		imgUrl: app.globalData.imgUrl,
-		infotypeid: '6d20ba42-25ee-4fab-9135-591929484c89',//维权法规
-		infotypeid1: '1ad27ea9-6ec9-4cbd-89d8-e2d5f8034a20',//心灵港湾
+		infotypeid: '6d20ba42-25ee-4fab-9135-591929484c89', //维权法规
+		infotypeid1: '1ad27ea9-6ec9-4cbd-89d8-e2d5f8034a20', //心灵港湾
 		page: 1,
 		dataList: [], //维权法规
 		dataList1: [], //心灵港湾
@@ -30,15 +30,15 @@ Page({
 		//加载心灵港湾列表
 		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
 			this.setData({
-				dataList1: this.data.dataList1.concat(dataList1),
+				dataList1: this.data.dataList1.concat(dataList),
 			})
 			console.log(this.data.dataList1);
 		})
 	},
 	//证据库
 	evidence() {
-			  //判断是否登录
-				if (!login.isLogin()) return
+		//判断是否登录
+		if (!login.isLogin()) return
 		util.pageJump('../womanEvidence/womanEvidence')
 	},
 	// 咨询求助
@@ -47,7 +47,7 @@ Page({
 	},
 	goConsult(e) {
 		console.log(e.currentTarget.dataset.type)
-		util.pageJumpTo('../lawConsult/lawConsult','type',e.currentTarget.dataset.type)
+		util.pageJumpTo('../lawConsult/lawConsult', 'type', e.currentTarget.dataset.type)
 	},
 	onlineHelp() {
 		util.pageJump('../onlineHelp/onlineHelp')
@@ -58,12 +58,12 @@ Page({
 	applySafe() {
 		util.pageJump('../applySafe/applySafe')
 	},
-	goMore(){
+	goMore() {
 		wx.navigateTo({
 			url: '../more/more',
 		})
 	},
-	goMores(){
+	goMores() {
 		wx.navigateTo({
 			url: '../mores/mores',
 		})
