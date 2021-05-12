@@ -1,21 +1,26 @@
 // pages/help/pages/womanEvidenceLibraryInfo/womanEvidenceLibraryInfo.js
 const util = require('../../../../utils/util.js')
+const app = getApp()
+const recordManager = wx.getRecorderManager()
+const innerAudioContext = wx.createInnerAudioContext();
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		baseImgUrl: app.globalData.baseImgUrl,
 		preserveEvidenceId:'',
 		data:{},
 		voiceStatus: ' 点击播放',
 		imgList: [],
 		videoList: [],
+		soundRecording: '',
 	},
 	//播放录音
 	showVoice() {
 		let that = this
-		innerAudioContext.src = this.data.voiceSrc;
+		innerAudioContext.src = this.data.baseImgUrl+this.data.soundRecording;
 		innerAudioContext.play();
 		innerAudioContext.onPlay(function () {
 			that.setData({
@@ -42,7 +47,10 @@ Page({
 			console.log(res)
 			if (res.statusCode == 200) {
 				this.setData({
-					data:res.data
+					data:res.data,
+					imgList:res.data.pictureFile.split(','),
+					videoList:res.data.videoFile.split(','),
+					soundRecording:res.data.soundRecording,
 				})
 			} else {
 				util.showToast('加载失败')

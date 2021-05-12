@@ -80,15 +80,14 @@ Page({
     util.requestData('nucleicddetection/savenucleicddetection', 'POST', data).then(res => {
       console.log(res)
       if (res.statusCode == 200) {
-        if (res.data.resultStatus == 1) {
+        // if (res.data.resultStatus == 1) {
           wx.navigateBack({
             delta: 1
           })
           util.showToast("提交成功")
-        } else {
-          util.showToast(res.data.resultDesc)
-        }
-
+        // } else {
+        //   util.showToast(res.data.resultDesc)
+        // }
       } else {
         util.showToast(res.data.msg)
       }

@@ -15,9 +15,9 @@
 	<view class="cu-form-group padding-left-sm align-start margin-top">
 		<view class="title" style="margin:0">图片：</view>
 		<view class="grid col-3 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{3}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
-				data-url="{{imgList[index]}}">
-				<image src='../../../../image/basics.png' mode='aspectFill'></image>
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{baseImgUrl}}{{imgList[index]}}">
+				<image src='{{baseImgUrl}}{{imgList[index]}}' mode='aspectFill'></image>
 			</view>
 		</view>
 
@@ -29,8 +29,8 @@
 		<view class="title" style="margin:0">视频：</view>
 		<view class="grid col-3 grid-square flex-sub">
 			<view class="bg-img" wx:for="{{videoList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="video"
-				data-url="{{videoList[index]}}">
-				<video class="bg-img" src='' object-fit="fill"></video>
+				data-url="{{baseImgUrl}}{{videoList[index]}}">
+				<video class="bg-img" src='{{baseImgUrl}}{{videoList[index]}}' object-fit="fill"></video>
 			</view>
 		
 		</view>
@@ -50,7 +50,7 @@
 	</view>
 	<dot-title title="阐述" color="title-color"></dot-title>
 	<view class="cu-form-group">
-		<textarea disabled="false" value="{{data.expoundFile}}"></textarea>
+		<text disabled="false" >{{data.expoundFile}}</text>
 	</view>
 	<!-- <view class="padding flex flex-direction">
 		<button class="cu-btn bg-pink margin-tb-sm lg" bindtap="deleteData">删除本条记录</button>
