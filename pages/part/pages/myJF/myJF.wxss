@@ -23,15 +23,21 @@
   border-radius: 8rpx 8rpx 8rpx 8rpx;
   margin-top: 6rpx;
 }
-
+.star{
+  position: absolute;
+  top: -230rpx;
+  color: #ffffff;
+  font-size: 40rpx;
+  margin-bottom: 25rpx;
+}
 .userInfo {
-  margin-top: -200rpx;
+  margin-top: -190rpx;
   font-size: 40rpx;
   color: #ffffff;
 }
 .mainInfo{
   margin-top: 50rpx;
-  padding: 0 15rpx;
+  padding: 10rpx 20rpx;
   background-color: #ffffff;
   border: 1rpx solid #ffffff;
   background: #FFFFFF;

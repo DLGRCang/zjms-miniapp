@@ -57,7 +57,9 @@
   padding: 10rpx;
   border: 1rpx solid #ffffff;
   border-radius: 10rpx;
-  margin-top: -20rpx;
+  position: absolute;
+  right: 30rpx;
+  top: -16rpx;
 }
 
 .title {

@@ -33,6 +33,7 @@
   </view>
   <view class="margin-top-sm text-df text-grey">{{SQ.CONTENTDETAIL}}</view>
 
+
   <!-- <view class="text-lg text-bold margin-top-lg">
     当前认领
   </view>
@@ -48,10 +49,41 @@
     </view>
   </view> -->
 
-  <view class="padding-lg margin-top-xl flex flex-direction " >
-    <button class="cu-btn lg" wx:if="{{tab==1}}" bindtap="goFk" style="background-color: #B81C24;color: #ffffff;">反馈</button>
-    <!-- <button class="cu-btn lg" wx:if="{{tab==2}}" bindtap="submit"  style="display:none;">{{rlName}}</button> -->
-    <button class="cu-btn lg" wx:else bindtap="submit"  style="background-color: #B81C24;color: #ffffff;">{{rlName}}</button>
+  <view wx:if="{{SQ.TRENDS_CONTENT==''|| SQ.TRENDS_CONTENT==null}}">
+
+  </view>
+  <view class="margin-top-lg" wx:else>
+    <view class="flex justify-contents margin-top-xs">
+      <view class="list color"></view>
+      <view class="text-center padding-left-xs text-lg text-bold">反馈信息</view>
+    </view>
+    <view class="text-lg text-bold margin-top-lg">
+      反馈内容
+    </view>
+    <view class="flex justify-between margin-top-sm">
+      <view class="text-df text-grey">{{SQ.TRENDS_CONTENT}}</view>
+    </view>
+    <view class="text-lg text-bold margin-top-lg">
+      反馈时间
+    </view>
+    <view class="flex justify-between margin-top-sm">
+      <view class="text-df text-grey">{{SQ.TRENDS_TIME}}</view>
+    </view>
+    <view class="text-lg text-bold margin-top-lg">
+      现场图片
+    </view>
+    <view class="flex justify-between margin-top-sm">
+      <image src="{{baseUrl}}{{SQ.TRENDS_FILE[0]}}" mode="scaleToFill" style="height:448rpx;width:100%;"></image>
+    </view>
+  </view>
+
+
+  <view class="padding-lg margin-top-xl flex flex-direction" wx:if="{{SQ.TRENDS_CONTENT==''|| SQ.TRENDS_CONTENT==null}}">
+    <button class="cu-btn lg" wx:if="{{tab==1}}" bindtap="goFk"  style="background-color: #B81C24;color: #ffffff;">反馈</button>
+    <button class="cu-btn lg" wx:else bindtap="submit" disabled="{{disabled}}" style="background-color: #B81C24;color: #ffffff;">{{rlName}}</button>
+  </view>
+  <view class="padding-lg margin-top-xl flex flex-direction" wx:else>
+
   </view>
 </view>
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

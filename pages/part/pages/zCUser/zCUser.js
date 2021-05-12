@@ -10,8 +10,7 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    userInfo: wx.getStorageSync('userInfo'),
-    userId: '',
+    userId: wx.getStorageSync('partUserId'),
     tab: '',
     ZC: null,
   },
@@ -23,7 +22,6 @@ Page({
   },
   // 政策
   getZCList() {
-  console.log( this.data.userId) 
     let url = part.baseUrl + 'TaskTrends/actFindByPsersonIdList?ACTID=1222&USER_ID=' + this.data.userId;
     part.httpRequest(url, 'GET', {}).then(res => {
       console.log(res)
@@ -45,7 +43,6 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userId :this.data.userInfo.USER_ID,
       tab: options.tab
     })
     this.getZCList()

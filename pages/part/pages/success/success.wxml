@@ -3,18 +3,17 @@
 </cu-custom>
 <view class="head"></view>
 <view class="padding-lg">
-  <view class="flex userInfo">
+  <view class="userInfo">
     <view class="flex">
-      <image mode="scaleToFill" class="images" src="{{baseUrl}}{{users.tou_xiang}}" style="width: 92rpx;height: 92rpx;">
-      </image>
-      <view class=" margin-left-sm text-white">
-        <view class="flex justify-between">
-          <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{users.NAME}}</text></view>
-        </view>
-        <view class="margin-top-sm"><text style="font-size:22rpx;;">所在支部：{{users.HOME}}</text></view>
-        <view class="margin-top-sm"
-          style="overflow: hidden;text-overflow: ellipsis;display: inline-block;white-space: nowrap;"><text
-            style="font-size:22rpx;">报道社区：{{users.ADDRESS}}</text></view>
+      <view style="width:20%">
+        <image mode="scaleToFill" class="images" src="{{baseUrl}}{{users.tou_xiang}}"
+          style="width: 92rpx;height: 92rpx;">
+        </image>
+      </view>
+      <view class=" margin-left-sm text-white" style="width:100%">
+        <view><text class="margin-bottom-xs " style="font-size:38rpx;">{{users.NAME}}</text></view>
+        <view class="margin-top-sm "><text style="font-size:22rpx;;">所属支部：{{users.HOME}}</text></view>
+        <view class="margin-top-sm "><text style="font-size:22rpx;">所属社区：{{users.ADDRESS}}</text></view>
       </view>
     </view>
   </view>

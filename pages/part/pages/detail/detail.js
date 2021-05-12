@@ -8,43 +8,66 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl: app.globalData.imgUrl,
-    baseImgUrl: app.globalData.baseImgUrl,
     baseUrl: part.baseUrl,
     tab: '',
     id: '',
     SQ: '',
     rlName: '认领',
+    disabled: false,
   },
 
   // 获取信息
   getInfo() {
-    let url = part.baseUrl + 'TaskTrends/totasktrendinfoJsAct?PLAN_ID=' + this.data.id;
-    part.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data)
-      console.log(this.data.id)
-      if (res.data.code == 200) {
-        this.setData({
-          SQ: res.data.data[0]
-        })
-      } 
-    });
+    if (this.data.tab == 1) {
+      var url = part.baseUrl + 'taskMeeting/findPersonsFankui?PLAN_ID=' + this.data.id + '&USER_ID=' + wx.getStorageSync('partUserId')
+      console.log(url)
+      part.httpRequest(url, 'GET', {}).then(res => {
+        console.log(res.data)
+        
+        if (res.data.code == 200) {
+          this.setData({
+            SQ: res.data.data
+          })
+        }
+      });
+    } else {
+      var url = part.baseUrl + 'TaskTrends/totasktrendinfoJsAct?PLAN_ID=' + this.data.id
+      part.httpRequest(url, 'GET', {}).then(res => {
+        console.log(res.data)
+        console.log(res.data.data[0].renling)
+        if (res.data.code == 200) {
+          this.setData({
+            SQ: res.data.data[0]
+          })
+          if(res.data.data[0].renling===1){
+            this.setData({
+              rlName: '已认领',
+              disabled: true,
+            })
+          }
+        }
+      });
+    }
   },
   // 认领
   submit() {
     part.httpRequest(part.baseUrl + 'TaskTrends/saveBaoming?id=' + this.data.id, 'GET', {}).then(res => {
       console.log(res)
-      this.setData({
-        rlName: '已认领'
-      })
-      // part.returnCode(res.data.code, 200)
+      if (res.data.code == 203) {
+        this.setData({
+          disabled: true,
+          rlName: '已认领'
+        })
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
+      }
     });
   },
   // 反馈
   goFk() {
-    this.setData({
-      fkName: '已反馈'
-    })
     wx.navigateTo({
       url: '../fkDetail/fkDetail?id=' + this.data.id
     })
@@ -53,7 +76,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     this.setData({
       id: options.id,
       tab: options.tab

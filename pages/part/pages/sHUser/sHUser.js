@@ -9,7 +9,7 @@ Page({
    */
   data: {
     tabList: ['文化艺术', '微心愿', '其他'],
-    userId:wx.getStorageSync('userId'),
+    userId:wx.getStorageSync('partUserId'),
     tab:'',
     TabCur: 0,
     scrollLeft: 0,
@@ -97,6 +97,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(wx.getStorageSync('partUserId'))
     this.setData({
       tab: options.tab
     })

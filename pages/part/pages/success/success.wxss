@@ -18,7 +18,7 @@
 
 .userInfo {
   position: absolute;
-  top: 140rpx;
+  top: 120rpx;
 }
 
 .images {
@@ -26,6 +26,7 @@
   height: 100rpx;
   border: 6rpx solid #ffffff;
   border-radius: 50%;
+  margin-top: 20rpx;
 }
 
 .userCenter {
@@ -36,6 +37,7 @@
   border-radius: 10rpx;
   margin-top: -20rpx;
 }
+
 .title {
   border: 1rpx solid #ffffff;
   background: #FFFFFF;
@@ -44,19 +46,22 @@
   margin-top: -70rpx;
   margin-bottom: 150rpx;
 }
+
 .list {
   width: 10rpx;
   line-height: 32rpx;
-  border-left: 10rpx solid ;
+  border-left: 10rpx solid;
   border-radius: 8rpx 8rpx 8rpx 8rpx;
   margin-top: 6rpx;
 }
-.line{
+
+.line {
   border-bottom: 1rpx solid #F2F2F2;
-	height: 2rpx;
+  height: 2rpx;
   width: 90%;
-	margin: 10rpx auto;
+  margin: 10rpx auto;
 }
+
 .box {
   border: 1rpx solid #F5F5F5;
 }
@@ -69,4 +74,11 @@
 .iconsInfo {
   padding-left: 20rpx;
   font-size: 38rpx;
+}
+
+.textInfo {
+  white-space: nowrap;
+  width: 540rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
