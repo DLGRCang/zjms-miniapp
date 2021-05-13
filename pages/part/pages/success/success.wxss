@@ -9,7 +9,7 @@
 }
 
 .head {
-  height: 240rpx;
+  height: 260rpx;
   background-color: #B81C24;
   border-bottom-left-radius: 30rpx;
   border-bottom-right-radius: 30rpx;
@@ -18,13 +18,13 @@
 
 .userInfo {
   position: absolute;
-  top: 120rpx;
+  top: 130rpx;
 }
 
 .images {
   width: 100rpx;
   height: 100rpx;
-  border: 6rpx solid #ffffff;
+  border: 4rpx solid #ffffff;
   border-radius: 50%;
   margin-top: 20rpx;
 }

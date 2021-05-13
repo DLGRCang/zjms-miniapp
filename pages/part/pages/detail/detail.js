@@ -23,7 +23,7 @@ Page({
       console.log(url)
       part.httpRequest(url, 'GET', {}).then(res => {
         console.log(res.data)
-        
+
         if (res.data.code == 200) {
           this.setData({
             SQ: res.data.data
@@ -39,7 +39,7 @@ Page({
           this.setData({
             SQ: res.data.data[0]
           })
-          if(res.data.data[0].renling===1){
+          if (res.data.data[0].renling === 1) {
             this.setData({
               rlName: '已认领',
               disabled: true,
@@ -53,7 +53,19 @@ Page({
   submit() {
     part.httpRequest(part.baseUrl + 'TaskTrends/saveBaoming?id=' + this.data.id, 'GET', {}).then(res => {
       console.log(res)
-      if (res.data.code == 203) {
+      if (res.data.msg == 'error:已满!') {
+        wx.showToast({
+          title: '人数已满',
+          icon: 'none',
+          success(res) {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 2000)
+          }
+        })
+      } else {
         this.setData({
           disabled: true,
           rlName: '已认领'

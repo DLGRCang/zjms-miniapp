@@ -11,8 +11,7 @@ Page({
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
     baseUrl: part.baseUrl,
-    userInfo: wx.getStorageSync('userInfo'),
-    userId: '',
+    userId: wx.getStorageSync('partUserId'),
   },
 
   // 获取信息
@@ -35,10 +34,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    this.setData({
-      userId: that.data.userInfo.USER_ID
-    })
     this.getList()
   },
 
