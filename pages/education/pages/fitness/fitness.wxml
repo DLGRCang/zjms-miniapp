@@ -5,11 +5,11 @@
 <view class="margin-lr-lg padding-tb-lg">
   <dot-title title="体育场馆" color="color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
   <item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
+    itemInfo="{{item.info_summary}}" isImg="true" isDate="true" date="{{item.publishdate}}" isLine="true">
   </item-image-text>
   <dot-title title="赛事" color="color" isMore="true" sign="{{infotypeid1}}" type="3"></dot-title>
   <item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
+    itemInfo="{{item.info_summary}}" isImg="true" isDate="true" date="{{item.publishdate}}" isLine="true">
   </item-image-text>
   <!-- <view class="flex justify-between">
     <view wx:for="{{datalist1}}" wx:key="item">
@@ -22,7 +22,7 @@
   </view> -->
   <dot-title title="演出"  color="color" isMore="true" sign="{{infotypeid2}}" type="3"></dot-title>
   <item-image-text wx:for="{{dataList2}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
+    itemInfo="{{item.info_summary}}" isImg="true" isDate="true" date="{{item.publishdate}}" isLine="true">
   </item-image-text>
   <!-- <view class="flex justify-between">
     <view wx:for="{{datalist2}}" wx:key="item">
