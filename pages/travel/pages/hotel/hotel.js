@@ -9,7 +9,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-    baseImgUrl: "https://www.yjhlcity.com/shop/route/file/downloadfile/false/",
+    baseImgUrl: "https://www.yjhlcity.com/cmmall/route/file/downloadfile/false/",
     hotelList: null,
   },
   hotelList() {
@@ -18,7 +18,7 @@ Page({
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data.rows)
       this.setData({
-        foodList: res.data.rows
+        hotelList: res.data.rows
       })
     });
   },
