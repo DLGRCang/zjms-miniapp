@@ -8,12 +8,12 @@
     <view class="margin-left-sm text-white text-xl">一键拨打</view>
   </view>
   <view class="flex justify-between margin-top-sm">
-    <view class="flex text-white tel" bindtap="goTel" data-tel="110">
-      <view class=" text-xl">警务求助110</view>
+    <view class="flex text-white tel margin-right" bindtap="goTel" data-tel="110">
+      <view class=" text-lg">警务求助110</view>
       <view class="text-xxl  margin-left-lg"><text class="cuIcon-phone"></text></view>
     </view>
     <view class="flex text-white tel" bindtap="goTel" data-tel="0477 8821148">
-      <view class="text-xl">红庆河司法所</view>
+      <view class="text-lg">红庆河司法所</view>
       <view class="text-xxl margin-left-lg"><text class="cuIcon-phone"></text></view>
     </view>
   </view>
@@ -26,17 +26,17 @@
   </view>
 </scroll-view>
 
-  <block wx:for="{{5}}">
+  <block wx:for="{{dataList}}">
     <view class="box flex justify-between">
       <view>
-        <view class="text-xl">伊金霍洛旗妇女联合会</view>
-        <view class="text-grey margin-top-sm">0477-8969304</view>
+        <view class="text-xl">{{item.companyName}}</view>
+        <view class="text-grey margin-top-sm">{{item.contactNumber}}</view>
       </view>
       <view class="margin-top-sm flex">
-        <view bindtap="goTel" data-tel="1" class="margin-left-sm">
+        <view bindtap="goTel" data-tel="{{item.contactNumber}}" class="margin-left-sm">
           <image class="icon" src="{{imgUrl}}/image/icon-3.png"></image>
         </view>
-        <view bindtap="goArea" data-id="1" class="margin-lr-sm">
+        <view bindtap="goArea" data-name="{{item.companyName}}" data-lng="{{item.longitude}}"  data-lat="{{item.dimensionality}}" class="margin-lr-sm">
           <image class="icon" src="{{imgUrl}}/image/icon-4.png"></image>
         </view>
       </view>

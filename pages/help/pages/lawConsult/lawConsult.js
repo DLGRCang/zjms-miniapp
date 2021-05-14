@@ -9,24 +9,44 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     type: '',
+    dataList:[]
   },
-  getKey(e) {
-    console.log(e.detail.value)
-    this.setData({
-      key: e.detail.value
-    })
-  },
-  goSearch() {
-
-  },
+ //获取数据列表
+ getData() {
+  util.requestApi('consultingforhelp/listpageconsultingforhelp?consultingType=' + this.data.type+'&keywords=' + this.data.key, 'GET', {}).then(res => {
+    console.log(res)
+    if (res.statusCode == 200) {
+      this.setData({
+        dataList: res.data.rows,
+      })
+    } else {
+      util.showToast('数据加载失败')
+    }
+  });
+},
+getKey(e) {
+  console.log(e.detail.value)
+  this.setData({
+    key: e.detail.value
+  })
+  if(this.data.key==''){
+    this.getData()
+  }
+},
+goSearch() {
+  this.getData()
+},
 
   goConsult(e) {
     wx.navigateTo({
       url: '../consult/consult?id='+ e.currentTarget.dataset.id+'&type='+this.data.type
     })
   },
-  goArea() {
-
+  goArea(e){
+    let name=e.currentTarget.dataset.tel
+    let lng=e.currentTarget.dataset.lng
+    let lat=e.currentTarget.dataset.lat
+    util.routePlan(name,lat,lng)
   },
 
   /**
@@ -36,6 +56,7 @@ Page({
     this.setData({
       type: options.type
     })
+    this.getData()
   },
 
   /**

@@ -9,16 +9,16 @@
       <view class="cuIcon-search padding-right-sm" bindtap="goSearch"></view>
     </view>
   </view>
-  <block wx:for="{{5}}">
+  <block wx:for="{{dataList}}">
     <view class="item">
       <view class="box flex justify-between">
         <view>
-          <view class="text-xl">伊金霍洛旗婚姻家庭矛盾纠纷调解室</view>
-          <view class="text-grey margin-top-sm">伊金霍洛旗辰元大厦A座10楼…</view>
+          <view class="text-xl">{{item.organizationNames}}</view>
+          <view class="text-grey margin-top-sm">{{item.address}}</view>
         </view>
         <view class="margin-top-xl flex" >
-         <view bindtap="goConsult" data-id="1" class="margin-left-sm"><image class="icon" src="{{imgUrl}}/image/icon-2.png"></image></view>
-          <view bindtap="goArea" data-id="1" class="margin-lr-sm"><image class="icon" src="{{imgUrl}}/image/icon-4.png"></image></view>
+         <view bindtap="goConsult" data-id="{{item.consultingForHelpId}}" class="margin-left-sm"><image class="icon" src="{{imgUrl}}/image/icon-2.png"></image></view>
+          <view bindtap="goArea" data-name="{{item.organizationNames}}" data-lng="{{item.longitude}}"  data-lat="{{item.dimensionality}}" class="margin-lr-sm"><image class="icon" src="{{imgUrl}}/image/icon-4.png"></image></view>
         </view>
       </view>
     </view>

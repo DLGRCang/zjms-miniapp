@@ -1,6 +1,7 @@
 // pages/help/pages/goNotice/goNotice.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+var WxParse = require('../../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -8,16 +9,19 @@ Page({
    */
   data: {
     type:'',
+    adjustTheGuidelines:'',//申请须知
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.type)
+    let adjustTheGuidelines=decodeURIComponent(options.adjustTheGuidelines)
     this.setData({
-      type:options.type
+      type:options.type,
+      adjustTheGuidelines:adjustTheGuidelines,
     })
+    WxParse.wxParse('dataHtml', 'html', adjustTheGuidelines, this, 5)
   },
 
   /**

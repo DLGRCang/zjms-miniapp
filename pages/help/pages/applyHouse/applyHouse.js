@@ -8,24 +8,43 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
+    dataList: [],
+    typeName: '庇护所',
+    key: ''
+  },
+  //获取数据列表
+  getData() {
+    util.requestApi('fasthelp/listpagefasthelp?typeName=' + this.data.typeName + '&keywords=' + this.data.key, 'GET', {}).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        this.setData({
+          dataList: res.data.rows,
+        })
+      } else {
+        util.showToast('数据加载失败')
+      }
+    });
   },
   getKey(e) {
     console.log(e.detail.value)
     this.setData({
       key: e.detail.value
     })
+    if(this.data.key==''){
+      this.getData()
+    }
   },
   goSearch() {
-
+    this.getData()
   },
-  goApply(e){
-    util.pageJumpTo('../goApply/goApply','id',e.currentTarget.dataset.id)
+  goApply(e) {
+    util.pageJumpTo('../goApply/goApply', 'id', e.currentTarget.dataset.id)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData()
   },
 
   /**

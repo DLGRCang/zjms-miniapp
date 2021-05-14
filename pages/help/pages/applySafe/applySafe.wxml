@@ -10,17 +10,26 @@
       <view class="cuIcon-search padding-right-sm" bindtap="goSearch"></view>
     </view>
   </view>
-  <block wx:for="{{5}}">
+  <block wx:for="{{dataList}}">
     <view class="item">
       <view class="box flex justify-between">
         <view>
-          <view class="text-xl">伊金霍洛旗婚姻家庭矛盾纠纷调解室</view>
-          <view class="text-grey margin-top-sm">伊金霍洛旗辰元大厦A座10楼…</view>
+          <view class="text-xl">{{item.companyName}}</view>
+          <view class="text-grey margin-top-sm">{{item.address}}</view>
         </view>
-        <view class="margin-top-sm flex" >
-          <view bindtap="goTel" data-id="tel"><image class="icon" src="{{imgUrl}}image/icon-3.png"></image></view>
-         <view class=" margin-lr-sm" bindtap="goNotice" ><image class="icon" src="{{imgUrl}}/image/icon-2.png"></image></view>
-          <view bindtap="goArea" data-id="1"><image class="icon" src="{{imgUrl}}/image/icon-4.png"></image></view>
+        <view class="margin-top-sm flex">
+          <view bindtap="goTel" data-tel="{{item.contactNumber}}" >
+            <image class="icon" src="{{imgUrl}}/image/icon-3.png"></image>
+          </view>
+      
+          <view class=" margin-lr-sm" data-obj="{{item}}" bindtap="goNotice">
+            <image class="icon" src="{{imgUrl}}/image/icon-2.png"></image>
+          </view>
+          
+          <view bindtap="goArea" data-name="{{item.companyName}}" data-lng="{{item.longitude}}"
+            data-lat="{{item.dimensionality}}">
+            <image class="icon" src="{{imgUrl}}/image/icon-4.png"></image>
+          </view>
         </view>
       </view>
     </view>

@@ -5,9 +5,9 @@
 <view class="padding-lg">
   <view class="theme">
     <view class="box flex justify-between">
-      <view>
-        <image src="" style="width:184rpx;height:184rpx"></image>
-      </view>
+      <!-- <view>
+        <image src="{{baseImgUrl}}" style="width:184rpx;height:184rpx"></image>
+      </view> -->
       <view class="padding-left-sm">
         <view class="text-xl">伊金霍洛旗婚姻家庭矛盾纠纷调解室</view>
         <view class="margin-tb-sm text-sm">

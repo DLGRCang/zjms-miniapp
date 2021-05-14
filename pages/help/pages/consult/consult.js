@@ -7,10 +7,27 @@ Page({
    * 页面的初始数据
    */
   data: {
+    baseImgUrl: app.globalData.baseImgUrl,
     id: '',
     type:'',
+    dataList:[],
   },
-
+  //获取数据列表
+  getData() {
+    util.requestApi('expertinformation/listpageexpertinformation?companyId=' + this.data.id, 'GET', {}).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        this.setData({
+          dataList: res.data.rows,
+        })
+      } else {
+        util.showToast('数据加载失败')
+      }
+    });
+  },
+goTel(e) {
+  util.callPhone(e.currentTarget.dataset.tel)
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,7 +36,7 @@ Page({
       id: options.id,
       type:options.type
     })
-    
+    this.getData()
   },
 
   /**
