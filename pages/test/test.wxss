@@ -10,7 +10,7 @@ page {
 
 .top {
   position: absolute;
-  top: -370rpx;
+  top: -380rpx;
 }
 
 .cu-bar {
