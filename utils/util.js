@@ -12,7 +12,39 @@ const formatDate = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
-  return [year, month, day].map(formatNumber).join('-')
+  return [year, month, day].map(formatNumber).join('/')
+}
+const getWeekByDate = dates => {
+  let show_day = new Array('7', '1', '2', '3', '4', '5', '6');
+  let date = new Date(dates);
+  date.setDate(date.getDate());
+  let day = date.getDay();
+  let week = ''
+  switch (show_day[day]) {
+    case "1":
+      week = '星期一'
+      break;
+    case "2":
+      week = '星期二'
+      break;
+    case "3":
+      week = '星期三'
+      break;
+    case "4":
+      week = '星期四'
+      break;
+    case "5":
+      week = '星期五'
+      break;
+    case "6":
+      week = '星期六'
+      break;
+    case "7":
+      week = '星期日'
+      break;
+  }
+
+  return week;
 }
 
 const formatNumber = n => {
@@ -456,6 +488,7 @@ const routePlan = function (name, lat, lng) {
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
+  getWeekByDate: getWeekByDate,
   requestApi: requestApi,
   requestData: requestData,
   httpRequest: httpRequest,

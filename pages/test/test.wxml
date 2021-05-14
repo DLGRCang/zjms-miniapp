@@ -1,13 +1,142 @@
-<!--pages/test/test.wxml-->
-<view class="flex-direction">
-	<item-image-text imgUrl="" itemTitle="标题" itemInfo="内容" itemTabs="{{tabs}}" isImg="true" isDate="true" date="2019-02-03">
-	</item-image-text>
-	<!-- Tab组件 -->
-	<tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="aa"></tab>
-	<text>11111111111111111111111111111111111111111111111111111111111111111</text>
+<cu-custom bgColor="bg" isBack="{{false}}">
+  <view slot="content">伊金霍洛旗</view>
+</cu-custom>
+<!-- 头部 -->
+<image src="../../image/top.png" mode="aspectFit" style="width:100%;height:352rpx"></image>
+<view class="padding-lr-lg" style="position: relative;">
+  <view class="top flex">
+    <view class="cu-bar">
+      {{currentTime}}
+    </view>
+    <view class="cu-bar search">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder-class="inputColor" placeholder="搜索服务" bindinput="searchIcon"></input>
+      </view>
+    </view>
+  </view>
+  <!-- 个人登录 -->
+  <view class="flex justify-between user">
+    <view class="flex">
+      <view class="userIcon">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view style="margin-top:18rpx;margin-left:15rpx;">请登录</view>
+    </view>
+    <view class="cuIcon-right" style="margin-top:25rpx;">
+    </view>
+  </view>
+</view>
+<!-- 轮播 -->
+<view class="padding-lg margin-bottom-sm">
+  <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="2000"
+    duration="1000">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+      <image src="{{item}}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 热点新闻 -->
+<view class="padding-lg margin-tb-sm flex borders common">
+  <view class="newsTit">{{news.tit}}</view>
+  <view class="text-sm newsInfo">
+    中各个属性含义,具体可看参考文档swiper 组件
+    <!-- <swiper vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='1'>
+      <block wx:for='{{news.newsInfo}}' wx:key="item">
+        <swiper-item> {{item.tit}}</swiper-item>
+      </block>
+    </swiper> -->
+  </view>
+</view>
+<!-- 推荐 -->
+<view class="margin-tb-lg "></view>
+<view class="borders common">
+  <view class="text-xl text-bold margin-bottom-sm">
+    {{recommend.tit}}
+  </view>
+  <view class="">
+    <view class="grid col-{{recommend.num}}  text-center">
+      <view class="" wx:for="{{recommend.lists}}" wx:key="item">
+        <image src="{{item.img}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="margin-bottom-sm"></view>
+<!-- 电视 -->
+<view style="margin: 0 auto;width: 670rpx;padding: 20rpx 0rpx;">
+  <view class="text-xl text-bold margin-bottom-lg">{{tv.tit}}</view>
+  <video class="video" id='myvideo' controls src="{{tv.url}}"></video>
+</view>
+<!-- 广播-->
+<view style="margin: 0 auto;width: 670rpx;padding: 20rpx 0rpx;">
+  <view class="text-xl text-bold margin-bottom-lg">{{radio.tit}}</view>
+  <image src="{{radio.img}}" style="width:680rpx;height:160rpx"></image>
+</view>
+<view class="margin-bottom-sm"></view>
+<!-- 智慧城市 -->
+<view class="borders common  margin-bottom-sm">
+  <view class="text-xl text-bold margin-bottom-sm">
+    {{citys.tit}}
+  </view>
+  <view class="grid col-{{citys.num}}  text-center">
+    <view class="padding-tb-sm" wx:for="{{citys.lists}}" wx:key="item">
+      <image src="{{item.img}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+</view>
+<!-- 服务 -->
+<view class="common">
 
-	<dot-title id="goMore" title="投资" color="red" isMore="true"></dot-title>
-
-	<type-picker pickType="{{searchType}}" bind:pickChange="onpickChange"></type-picker>
 </view>
 
+
+<view class="margin-tb-lg"></view>
+<!-- 委办局 -->
+<view class="borders common">
+  <view class="flex justify-between">
+    <view class="text-xl text-bold margin-bottom-sm">
+      {{depts.tit}}
+    </view>
+    <view>
+      {{depts.more}}
+      <text class="cuIcon-right"></text>
+    </view>
+  </view>
+  <view class="grid col-{{depts.num}}  text-center">
+    <view class="padding-tb-sm" wx:for="{{depts.lists}}" wx:key="item">
+      <image src="{{item.img}}" mode="aspectFit" style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+      <view>{{item.name}}</view>
+    </view>
+  </view>
+</view>
+<view class="margin-tb-lg"></view>
+<!-- 预约缴费 -->
+<view class="borders common  margin-bottom-sm">
+  <view class="text-xl text-bold margin-bottom-sm">
+    {{fee.title}}
+  </view>
+  <view class="flex justify-between fee">
+    <block wx:for="{{fee.list}}" wx:key="item">
+      <view class="flex justify-between feeItem">
+        <view>
+          <view class="text-df">{{item.tit}}</view>
+          <view class="text-sm text-grey" style="margin-top:10rpx;">{{item.cont}}</view>
+        </view>
+        <view>
+          <image src="{{item.img}}" mode="aspectFit" style="width:72rpx;height:72rpx;border-radius:100%;margin-left:20rpx;"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="margin-tb-lg"></view>
+<view style="position: relative;">
+  <view class="flex flex-direction bottom-bg align-center">
+    <view style="text-align:center;color:#BEBEBE;font-size:24rpx">{{organizer}}</view>
+    <view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">{{constructionUnit}}</view>
+  </view>
+  <image src="../../image/bottom.png" mode="aspectFit" style="width:100%;height:422rpx"></image>
+</view>
