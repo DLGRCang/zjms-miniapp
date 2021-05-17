@@ -37,7 +37,7 @@
       <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="2000"
         duration="1000">
         <swiper-item wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-          <image src="{{items.href}}" mode="aspectFill"></image>
+          <image src="{{items.icon}}" mode="aspectFill"></image>
         </swiper-item>
       </swiper>
     </view>
@@ -355,12 +355,12 @@
               <view class="text-xl margin-bottom-sm">
                 <text class="text-blue text-bold">{{items.name}}</text>
               </view>
-              <!-- <view class="margin-bottom-sm" style="text-indent:2em;"><text>{{items.introduce}}</text></view> -->
             </view>
+            
             <view class="icon-wrap">
               <!-- 图文 -->
               <block wx:for="{{items.content}}" wx:for-item="itemss" wx:key="index">
-                <view class="icon-item" bindtap="goDetail" data-tit="{{itemss.tit}}" data-type="{{itemss.openType}}"
+                <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}" data-type="{{itemss.openType}}"
                   data-url="{{itemss.url}}">
                   <view class="item-img">
                     <image src="{{itemss.icon}}" style='width:100rpx;height:100rpx;border-radius:100%;'>

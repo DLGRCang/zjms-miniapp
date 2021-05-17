@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    iconBaseUrl:'https://www.yjhlcity.com/InfoIssue/miniapp',
     CustomBar: app.globalData.CustomBar,
     // 服务初始值
     TabCur: 0,
@@ -35,8 +36,8 @@ Page({
         list: [{
           name: "",
           summary: "",
-          icon: "",
-          href: "https://www.yjhlcity.com/InfoIssue/miniapp/image/44.png",
+          icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/44.png",
+          href: "",
           openType: "",
           enable: 1,
           content: [
@@ -51,8 +52,8 @@ Page({
         {
           name: "",
           summary: "",
-          icon: "",
-          href: "https://www.yjhlcity.com/InfoIssue/miniapp/image/66.png",
+          icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/66.png",
+          href: "",
           openType: "",
           enable: 1,
           content: [
@@ -67,8 +68,8 @@ Page({
         {
           name: "",
           summary: "",
-          icon: "",
-          href: "https://www.yjhlcity.com/InfoIssue/miniapp/image/77.png",
+          icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/77.png",
+          href: "",
           openType: "",
           enable: 1,
           content: [
@@ -390,7 +391,7 @@ Page({
               tit: '知名景点',
               icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
               url: '',
-              openType: ''
+              openType: 2
             }, {
               tit: '知名景点',
               icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
@@ -898,14 +899,24 @@ Page({
   },
 
   // 服务详情页
-  goDetail(e){
+  goServiceDetail(e){
     console.log(e.currentTarget.dataset)
     if(e.currentTarget.dataset.type===0){
-      // 小程序页面跳转
+      // 页面跳转
+      util.pageJumpTo(e.currentTarget.dataset.url,'tit',e.currentTarget.dataset.tit)
     }else if(e.currentTarget.dataset.type===1){
       // 小程序跳转 url=appid
+      wx.navigateToMiniProgram({
+        appId: e.currentTarget.dataset.url,
+        path: '',
+        success: function (res) { },
+        fail: function (res) { }
+      })
     }else if(e.currentTarget.dataset.type===2){
       // webView 跳转
+      wx.navigateTo({
+        url: '../../pages/appointment/pages/webView/webView?url='+e.currentTarget.dataset.url+"&tit="+e.currentTarget.dataset.tit,
+      })
     }
   },
 
@@ -915,7 +926,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   console.log(app.globalData.imgUrl)
   },
 
   /**
