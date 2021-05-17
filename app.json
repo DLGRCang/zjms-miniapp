@@ -5,8 +5,6 @@
 		"pages/guide/home/home",
 		"pages/pay/home/home",
 		"pages/plugin/home/home",
-		"pages/componentPage/pages/carInfo/carInfo",
-		"pages/componentPage/pages/oldHome/oldHome",
 		"pages/plugin/face/face"
 	],
 	"subpackages": [
@@ -14,6 +12,8 @@
 			"root": "pages/appointment",
 			"name": "预约",
 			"pages": [
+				"pages/carInfo/carInfo",
+				"pages/oldHome/oldHome",
 				"pages/webView/webView",
 				"pages/hospital/hospital",
 				"pages/healthy/healthy",

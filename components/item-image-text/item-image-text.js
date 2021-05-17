@@ -93,7 +93,7 @@ Component({
 				})
 			}else if (this.properties.type==2) {
 				wx.navigateTo({
-					url: "/pages/componentPage/pages/carInfo/carInfo?infoContentId="+this.properties.obj.infoContentId,
+					url: "/pages/appointment/pages/carInfo/carInfo?infoContentId="+this.properties.obj.infoContentId,
 				})
 			}else if (this.properties.type==3) {
 				wx.navigateTo({
@@ -101,7 +101,7 @@ Component({
 				})
 			}else if (this.properties.type==4) {
 				wx.navigateTo({
-					url: "/pages/componentPage/pages/oldHome/oldHome?infoContentId="+this.properties.obj.infoContentId,
+					url: "/pages/appointment/pages/oldHome/oldHome?infoContentId="+this.properties.obj.infoContentId,
 				})
 			}
 		}
