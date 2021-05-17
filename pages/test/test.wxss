@@ -10,7 +10,7 @@ page {
 
 .top {
   position: absolute;
-  top: -380rpx;
+  top: -370rpx;
 }
 
 .cu-bar {
@@ -110,4 +110,73 @@ page {
 	background-color:#ffffff;
 	width: 100%;
 	justify-items: center;
-	}
+  }
+  
+  /* 服务样式 */
+  .service{
+    margin: 0 auto;
+    width: 670rpx;
+    border: 1rpx solid #EBEBEB;
+    border-radius: 8rpx;
+  }
+  .nav {
+    width: 25%;
+    /* white-space: initial; */
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .nav .nav-item {
+    width: 100%;
+    background-color: #F7F8F9;
+    font-size: 30rpx;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav .nav-item.cur {
+    background-color: #FFFFFF;
+  }
+  
+  
+  .VerticalMain {
+    width: 75%;
+    background-color: #FFFFFF;
+  }
+  
+  .active {
+    background-color: #FFFFFF;
+    color: #1BA862;
+    font-weight: 700;
+  }
+  
+  .text-blue {
+    color: #1BA862;
+  }
+  
+  .icon-wrap {
+    width: 100%;
+    margin: 40rpx 0 10rpx;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .icon-wrap .icon-item {
+    width: 33.3333%;
+    flex-shrink: 1;
+    padding-bottom: 30rpx;
+  }
+  
+  .icon-wrap .icon-item .item-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8rpx;
+  }
+  
+  .icon-wrap .icon-item .item-text {
+    text-align: center;
+  }
+  
