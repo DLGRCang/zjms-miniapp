@@ -83,7 +83,7 @@
       <view class="">
         <view class="grid col-{{item.num}}  text-center">
           <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx;"></image>
             <view>{{items.name}}</view>
           </view>
         </view>

@@ -523,42 +523,6 @@ Page({
           ]
         },
         {
-          name: "经济活动",
-          summary: "",
-          icon: "",
-          href: "",
-          openType: "",
-          enable: 1,
-          content: [
-            {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            },
-          ]
-        },
-        {
           name: "教育文体",
           summary: "",
           icon: "",
