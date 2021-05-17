@@ -13,7 +13,7 @@ Page({
 
   //微信登录
   goLogin: function (e) {
-    util.pageJump('../face/face')
+    util.pageJump("../../../pages/userCenter/pages/face/face")
   },
 
 

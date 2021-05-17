@@ -1,48 +1,525 @@
-<basics wx:if="{{PageCur=='basics'}}"></basics>
-<about wx:if="{{PageCur=='about'}}"></about>
-<guide wx:if="{{PageCur=='guide'}}"></guide>
-<pay wx:if="{{PageCur=='pay'}}"></pay>
-<plugin wx:if="{{PageCur=='plugin'}}"></plugin>
+<cu-custom bgColor="bg" isBack="{{false}}">
+  <view slot="content">伊金霍洛旗</view>
+</cu-custom>
 
-<view class="cu-bar tabbar bg-white shadow foot">
 
-	<view class="action" bindtap="NavChange" data-cur="basics">
-		<view class='cuIcon-cu-image'>
-			<!-- <image src="/images/tabbar/basics{{PageCur=='basics'?'_cur':''}}.png"></image> -->
-			<text class="cuIcon-home {{PageCur=='basics'?'text-active':'text-gray'}}"></text>
-		</view>
-		<view class="{{PageCur=='basics'?'text-active':'text-gray'}}">首页</view>
-	</view>
+<!-- 头部 -->
+<image src="../../image/top.png" mode="aspectFit" style="width:100%;height:352rpx"></image>
+<view class="padding-lr-lg" style="position: relative;">
+  <view class="top flex">
+    <view class="cu-bar">
+      {{currentTime}}
+    </view>
+    <view class="cu-bar search">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder-class="inputColor" placeholder="搜索服务" bindinput="searchIcon"></input>
+      </view>
+    </view>
+  </view>
+  <!-- 个人登录 -->
+  <view class="flex justify-between user">
+    <view class="flex">
+      <view class="userIcon">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view style="margin-top:18rpx;margin-left:15rpx;">请登录</view>
+    </view>
+    <view class="cuIcon-right" style="margin-top:25rpx;">
+    </view>
+  </view>
+</view>
 
-	<view class="action" bindtap="NavChange" data-cur="about">
-		<view class='cuIcon-cu-image'>
-			<!-- <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image> -->
-			<text class="cuIcon-time {{PageCur=='about'?'text-active':'text-gray'}}"></text>
-		</view>
-		<view class="{{PageCur=='about'?'text-active':'text-gray'}}">预约</view>
-	</view>
+<block wx:for="{{modules}}" wx:key="item">
+  <!-- 轮播 -->
+  <block wx:if="{{item.type === 'banner' && item.enable=== 1 }}">
+    <view class="padding-lg margin-bottom-sm">
+      <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="2000"
+        duration="1000">
+        <swiper-item wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+          <image src="{{items.icon}}" mode="aspectFill"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+  </block>
+  <!-- 新闻 -->
+  <block wx:if="{{item.type === 'news' && item.enable=== 1}}">
+    <view class="padding-lg margin-tb-sm flex borders common">
+      <view class="newsTit">{{item.title}}</view>
+      <view class="text-sm newsInfo">
+        <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+          {{items.name}}
+        </block>
+        <!-- <swiper vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='1'>
+      <block wx:for='{{news.newsInfo}}' wx:key="item">
+        <swiper-item> {{item.tit}}</swiper-item>
+      </block>
+    </swiper> -->
+      </view>
+    </view>
+  </block>
 
-	<view class="action" bindtap="NavChange" data-cur="guide">
-		<view class='cuIcon-cu-image'>
-			<!-- <image src="/images/tabbar/guide{{PageCur=='guide'?'_cur':''}}.png"></image> -->
-			<text class="cuIcon-favor {{PageCur=='guide'?'text-active':'text-gray'}}"></text>
-		</view>
-		<view class="{{PageCur=='guide'?'text-active':'text-gray'}}">办事指南</view>
-	</view>
+  <!-- 特别推荐 -->
+  <!-- 一行5个 -->
+  <block wx:if="{{item.type === 'recommend' && item.num===5 && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx;"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="margin-bottom-sm"></view>
+  </block>
 
-	<view class="action" bindtap="NavChange" data-cur="pay">
-		<view class='cuIcon-cu-image'>
-			<!-- <image src="/images/tabbar/pay{{PageCur=='pay'?'_cur':''}}.png"></image> -->
-			<text class="cuIcon-pay {{PageCur=='pay'?'text-active':'text-gray'}}"></text>
-		</view>
-		<view class="{{PageCur=='pay'?'text-active':'text-gray'}}">缴费</view>
-	</view>
+  <!-- 一行4个 -->
+  <block wx:if="{{item.type === 'recommend' && item.num===4  && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="margin-bottom-sm"></view>
+  </block>
 
-	<view class="action" bindtap="NavChange" data-cur="plugin">
-		<view class='cuIcon-cu-image'>
-			<!-- <image src="/images/tabbar/plugin{{PageCur=='plugin'?'_cur':''}}.png"></image> -->
-			<text class="cuIcon-peoplelist {{PageCur=='plugin'?'text-active':'text-gray'}}"></text>
-		</view>
-		<view class="{{PageCur=='plugin'?'text-active':'text-gray'}}">我的</view>
-	</view>
+  <!-- 一行3个 -->
+  <block wx:if="{{item.type === 'recommend' && item.num===3 && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="margin-bottom-sm"></view>
+  </block>
+
+  <!-- 一行2个 -->
+  <block wx:if="{{item.type === 'recommend' && item.num===2 && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="margin-bottom-sm"></view>
+  </block>
+
+  <!-- 电视 -->
+  <block wx:if="{{item.type === 'tv' && item.enable=== 1}}">
+    <view style="margin: 0 auto;width: 670rpx;padding: 20rpx 0rpx;">
+      <view class="text-xl text-bold margin-bottom-lg">{{item.title}}</view>
+      <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+        <video class="video" id='myvideo' controls src="{{items.href}}"></video>
+      </block>
+    </view>
+  </block>
+
+  <!-- 广播-->
+  <block wx:if="{{item.type === 'radio' && item.enable=== 1}}">
+    <view style="margin: 0 auto;width: 670rpx;padding: 20rpx 0rpx;">
+      <view class="text-xl text-bold margin-bottom-lg">{{item.title}}</view>
+      <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+        <image src="{{items.icon}}" style="width:680rpx;height:160rpx"></image>
+      </block>
+    </view>
+    <view class="margin-bottom-sm"></view>
+  </block>
+
+  <!-- 智慧城市 -->
+  <!-- 一行5个 -->
+  <block wx:if="{{item.type === 'city' && item.num === 5 && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 一行4个 -->
+  <block wx:if="{{item.type === 'city' && item.num===4 && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 一行3个 -->
+  <block wx:if="{{item.type === 'city' && item.num===3 && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 一行2个 -->
+  <block wx:if="{{item.type === 'city' && item.num===2 && item.enable=== 1}}">
+    <view class="margin-tb-lg "></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="">
+        <view class="grid col-{{item.num}}  text-center">
+          <view class="" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+            <view>{{items.name}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 服务 -->
+  <block wx:if="{{item.type === 'service' && item.enable=== 1}}">
+    <view class="text-xl text-bold margin-tb-lg common">{{item.title}}</view>
+    <view class="service">
+      <view class="flex">
+        <!-- 左边栏 -->
+        <view class="nav">
+          <view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{item.list}}" wx:key='index'
+            wx:for-item="items" bindtap='tabSelect' data-id="{{index}}">
+            <text>{{items.name}}</text>
+          </view>
+        </view>
+        <!-- 右边 background-color: #F8F8F8; -->
+        <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 400rpx);"
+          scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+          <view class="padding-top padding-lr" wx:for="{{item.list}}" wx:key='index' wx:for-item="items"
+            id="main-{{index}}">
+            <view class="flex-sub text-start">
+              <view class="text-xl margin-bottom-sm">
+                <text class="text-blue text-bold">{{items.name}}</text>
+              </view>
+            </view>
+            
+            <view class="icon-wrap">
+              <!-- 图文 -->
+              <block wx:for="{{items.content}}" wx:for-item="itemss" wx:key="index">
+                <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}" data-type="{{itemss.openType}}"
+                  data-url="{{itemss.url}}">
+                  <view class="item-img">
+                    <image src="{{itemss.icon}}" style='width:100rpx;height:100rpx;border-radius:100%;'>
+                    </image>
+                  </view>
+                  <view class="item-text"><text class="text-black">{{itemss.tit}}</text></view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 委办局 -->
+  <!-- 一行5个 -->
+  <block wx:if="{{item.type === 'dept' && item.num===5 && item.enable=== 1}}">
+    <view class="margin-tb-lg"></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="grid col-{{item.num}}  text-center">
+        <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+          <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+          <view>{{items.name}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 一行4个 -->
+  <block wx:if="{{item.type === 'dept' && item.num===4 && item.enable=== 1}}">
+    <view class="margin-tb-lg"></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <view class="grid col-{{item.num}}  text-center">
+        <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+          <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+          <view>{{items.name}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 一行3个 -->
+  <block wx:if="{{item.type === 'dept' && item.num===3 && item.enable=== 1}}">
+    <view class="margin-tb-lg"></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="grid col-{{item.num}}  text-center">
+        <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+          <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+          <view>{{items.name}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 一行2个 -->
+  <block wx:if="{{item.type === 'dept' && item.num===2 && item.enable=== 1}}">
+    <view class="margin-tb-lg"></view>
+    <view class="borders common">
+      <block wx:if="{{item.more.enable === 1}}">
+        <view class="flex justify-between">
+          <view class="text-xl text-bold margin-bottom-sm">
+            {{item.title}}
+          </view>
+          <view>
+            更多
+            <text class="cuIcon-right"></text>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="text-xl text-bold margin-bottom-sm">
+          {{item.title}}
+        </view>
+      </block>
+      <view class="grid col-{{item.num}}  text-center">
+        <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+          <image src="{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+          <view>{{items.name}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+
+  <!-- 预约缴费 -->
+  <block wx:if="{{item.type === 'fee' && item.enable=== 1}}">
+    <view class="margin-tb-lg"></view>
+    <view class="borders common  margin-bottom-sm">
+      <view class="text-xl text-bold margin-bottom-sm">
+        {{item.title}}
+      </view>
+      <view class="flex justify-between fee">
+        <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+          <view class="flex justify-between feeItem">
+            <view>
+              <view class="text-df">{{items.name}}</view>
+              <view class="text-sm text-grey" style="margin-top:10rpx;">{{items.summary}}</view>
+            </view>
+            <view>
+              <image src="{{items.icon}}" mode="aspectFit"
+                style="width:72rpx;height:72rpx;border-radius:100%;margin-left:20rpx;"></image>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</block>
+
+<!-- 底部 -->
+<view class="margin-tb-lg"></view>
+<view style="position: relative;">
+  <view class="flex flex-direction bottom-bg align-center">
+    <view style="text-align:center;color:#BEBEBE;font-size:24rpx">{{organizer}}</view>
+    <view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">{{constructionUnit}}</view>
+  </view>
+  <image src="../../image/bottom.png" mode="aspectFit" style="width:100%;height:422rpx"></image>
 </view>

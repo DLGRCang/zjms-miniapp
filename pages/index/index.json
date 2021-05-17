@@ -1,9 +1,4 @@
 {
   "usingComponents": {
-    "basics": "/pages/basics/home/home",
-    "about": "/pages/about/home/home",
-    "guide": "/pages/guide/home/home",
-    "pay": "/pages/pay/home/home",
-    "plugin": "/pages/plugin/home/home"
   }
 }
