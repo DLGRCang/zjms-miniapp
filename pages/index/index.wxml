@@ -13,7 +13,7 @@
     <view class="cu-bar search">
       <view class="search-form round">
         <text class="cuIcon-search"></text>
-        <input type="text" placeholder-class="inputColor" placeholder="搜索服务" bindinput="searchIcon"></input>
+        <input type="text" placeholder-class="inputColor" placeholder="搜索服务" bindtap="searchApp"></input>
       </view>
     </view>
   </view>
@@ -221,7 +221,7 @@
       <view class="text-xl text-bold margin-bottom-lg">{{item.title}}</view>
       <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
         <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}">
+          data-tit="{{items.name}}">
           <image src="{{iconImgUrl}}{{items.icon}}" style="width:680rpx;height:160rpx"></image>
         </view>
       </block>
@@ -564,7 +564,10 @@
 
 <!-- 底部 -->
 <view class="margin-tb-lg"></view>
-<view style="position: relative;">
-  <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
-  <image src="{{bottomImg}}" mode="aspectFit" style="width:100%;height:422rpx"></image>
+<view style="position: relative;width:100%;height:420rpx">
+  <view class="flex flex-direction bottom-bg align-center">
+    <view style="text-align:center;color:#BEBEBE;font-size:24rpx">主管单位：伊金霍洛旗大数据发展局</view>
+    <view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">建设单位：内蒙古大云智通科技有限公司</view>
+  </view>
+  <image src="{{bottomImg}}" mode="aspectFit" style="width:100%;height:420rpx"></image>
 </view>
