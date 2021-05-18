@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">预约</view>
 </cu-custom>
 <view class="margin-lg">
@@ -42,7 +42,7 @@
     </view>
     <view class="line"></view>
 
-    <view class="flex justify-between text-xl text-bold padding-sm margin-bottom-sm" bindtap="goAppointment">
+    <view class="flex justify-between text-xl text-bold padding-sm" bindtap="goAppointment">
       <view class="flex">
        <image class="icons" src="{{imgUrl}}/image/yy5.png"></image>
        <view class="iconsInfo">办事预约</view>
@@ -53,3 +53,4 @@
   </view>
 
 </view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

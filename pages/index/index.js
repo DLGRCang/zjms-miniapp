@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    iconBaseUrl:'https://www.yjhlcity.com/InfoIssue/miniapp',
+    isLogin: wx.getStorageSync("isLogin"),
+    name: wx.getStorageSync("name"),
+    iconBaseUrl: app.globalData.imgUrl,
     CustomBar: app.globalData.CustomBar,
     // 服务初始值
     TabCur: 0,
@@ -818,7 +820,7 @@ Page({
           name: "预约",
           summary: "在线预约服务",
           icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png",
-          href: "",
+          href: "../../pages/about/home/home",
           openType: "",
           enable: 1,
           content: [
@@ -834,7 +836,7 @@ Page({
           name: "缴费",
           summary: "在线缴费服务",
           icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/4.png",
-          href: "",
+          href: "../../pages/pay/home/home",
           openType: "",
           enable: 1,
           content: [
@@ -896,14 +898,21 @@ Page({
       }
     }
   },
-
+  // 个人中心
+  goUserCenter() {
+    util.pageJump("../../pages/plugin/home/home")
+  },
+  // 预约缴费详情
+  goFeeDetail(e){
+    util.pageJump(e.currentTarget.dataset.href)
+  },
   // 服务详情页
-  goServiceDetail(e){
+  goServiceDetail(e) {
     console.log(e.currentTarget.dataset)
-    if(e.currentTarget.dataset.type===0){
+    if (e.currentTarget.dataset.type === 0) {
       // 页面跳转
-      util.pageJumpTo(e.currentTarget.dataset.url,'tit',e.currentTarget.dataset.tit)
-    }else if(e.currentTarget.dataset.type===1){
+      util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
+    } else if (e.currentTarget.dataset.type === 1) {
       // 小程序跳转 url=appid
       wx.navigateToMiniProgram({
         appId: e.currentTarget.dataset.url,
@@ -911,10 +920,10 @@ Page({
         success: function (res) { },
         fail: function (res) { }
       })
-    }else if(e.currentTarget.dataset.type===2){
+    } else if (e.currentTarget.dataset.type === 2) {
       // webView 跳转
       wx.navigateTo({
-        url: '../../pages/appointment/pages/webView/webView?url='+e.currentTarget.dataset.url+"&tit="+e.currentTarget.dataset.tit,
+        url: '../../pages/appointment/pages/webView/webView?url=' + e.currentTarget.dataset.url + "&tit=" + e.currentTarget.dataset.tit,
       })
     }
   },
@@ -925,7 +934,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   console.log(app.globalData.imgUrl)
+    console.log(app.globalData.imgUrl)
+    console.log(wx.getStorageSync("isLogin"))
   },
 
   /**

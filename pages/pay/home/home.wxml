@@ -1,19 +1,20 @@
-<cu-custom bgColor="bg-gradual-blue">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view class="text-bold" slot="content">缴费</view>
 </cu-custom>
 <view class="padding-tb-lg">
   <view class="cu-list menu-avatar margin-lr-lg cont" wx:for="{{info}}" wx:key="item">
-  <view class="cu-item"  bindtap="{{item.goDetail}}">
-    <view class="cu-avatar lg" style="background-image:url({{item.url}});"></view>
-    <view class="content flex-sub">
-      <view class="text-xl text-bold">{{item.title}}</view>
-      <view class="text-gray text-sm flex justify-between margin-top-sm">
-        在线缴费
+    <view class="cu-item" bindtap="{{item.goDetail}}">
+      <view class="cu-avatar lg" style="background-image:url({{item.url}});"></view>
+      <view class="content flex-sub">
+        <view class="text-xl text-bold">{{item.title}}</view>
+        <view class="text-gray text-sm flex justify-between margin-top-sm">
+          在线缴费
+        </view>
       </view>
-    </view>
-    <view class="action">
-      <view class="cuIcon-right text-gray"></view>
+      <view class="action">
+        <view class="cuIcon-right text-gray"></view>
+      </view>
     </view>
   </view>
 </view>
-</view>
+<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

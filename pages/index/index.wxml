@@ -18,12 +18,17 @@
     </view>
   </view>
   <!-- 个人登录 -->
-  <view class="flex justify-between user">
+  <view class="flex justify-between user" bindtap="goUserCenter">
     <view class="flex">
       <view class="userIcon">
         <open-data type="userAvatarUrl"></open-data>
       </view>
-      <view style="margin-top:18rpx;margin-left:15rpx;">请登录</view>
+      <block wx:if="{{isLogin==null || isLogin==''}}">
+        <view style="margin-top:18rpx;margin-left:15rpx;">请登录</view>
+      </block>
+      <block wx:else>
+        <view style="margin-top:18rpx;margin-left:15rpx;">{{name}}</view>
+      </block>
     </view>
     <view class="cuIcon-right" style="margin-top:25rpx;">
     </view>
@@ -498,7 +503,7 @@
       </view>
       <view class="flex justify-between fee">
         <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-          <view class="flex justify-between feeItem">
+          <view class="flex justify-between feeItem" bindtap="goFeeDetail" data-href="{{items.href}}">
             <view>
               <view class="text-df">{{items.name}}</view>
               <view class="text-sm text-grey" style="margin-top:10rpx;">{{items.summary}}</view>
