@@ -1,6 +1,6 @@
 <!--pages/government/pages/flagLeader/flagLeader.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">旗长热线</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/qizhangrexian.png" style="width:100%"></image>
 <view class="padding">

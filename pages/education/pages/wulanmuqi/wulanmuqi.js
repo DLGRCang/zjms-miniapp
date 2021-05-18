@@ -12,6 +12,7 @@ Page({
     infotypeid: 'f45eb830-b5c1-4ebd-bc97-56606bd2d225',
     page:1,
 		dataList: [], //新闻列表
+		tit:''
 	},
   getDataList: function () {
 		//加载数据列表
@@ -26,6 +27,9 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

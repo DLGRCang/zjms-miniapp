@@ -1,4 +1,4 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content">伊旗天气</view>
+  <view slot="content">{{tit}}</view>
 </cu-custom>
 <weather size="lg" theme="light" bgcolor="#0081ff"/>

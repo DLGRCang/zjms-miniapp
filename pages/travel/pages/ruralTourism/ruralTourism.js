@@ -11,6 +11,7 @@ Page({
 		infotypeid: '93f04e98-3616-476b-a877-a4abe5aa4cc5',
     page:1,
 		dataList: [], //
+		tit:''
 	},
 	getDataList: function () {
 		//加载数据列表
@@ -22,6 +23,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

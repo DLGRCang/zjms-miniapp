@@ -12,6 +12,7 @@ Page({
 		page: 1,
 		useDcarList: [],//二手车列表
 		secondHouseList: [],//二手房列表
+		tit:''
 
 	},
 	//发布二手房
@@ -58,6 +59,9 @@ Page({
 	onLoad: function (options) {
 		this.getUsedCarList()
 		this.getSecondHouseList()
+		this.setData({
+			tit:options.tit
+		})
 	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成

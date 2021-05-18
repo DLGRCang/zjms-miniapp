@@ -10,7 +10,8 @@ Page({
 		imgUrl:app.globalData.imgUrl,
     infotypeid: 'd0e21714-7349-4f1c-938b-52bff108c516',
     page:1,
-		dataList: [], //新闻列表
+    dataList: [], //新闻列表
+    tit:''
   },
 
   /**
@@ -31,6 +32,9 @@ Page({
     util.pageJump('../primarySchoolList/primarySchoolList')
   },
 	onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

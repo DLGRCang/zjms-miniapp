@@ -11,7 +11,7 @@ Page({
     imgUrl: app.globalData.imgUrl,
     tabName: ["招商宣传", "优惠政策", "优质项目"],
     tabBar: 0,
-
+    tit:'',
     infotypeid: '30547316-78f2-4411-8d56-9c88ccd280f2',
     page: 1,
     artelList: [], //数据列表
@@ -60,6 +60,9 @@ Page({
   onLoad: function (options) {
     // this.getDataTest();
     this.getDataList();
+    this.setData({
+      tit:options.tit
+    })
   },
 
   /**

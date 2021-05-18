@@ -1,6 +1,6 @@
 <!--pages/medical/pages/welfareHouse/welfareHouse.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">养老院</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tits}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/fuliyuan.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">

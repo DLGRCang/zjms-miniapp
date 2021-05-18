@@ -12,7 +12,8 @@ Page({
     leaveAreaList: ['阿镇'],
     arriveAreaList: null,
     arrArea: '北京',
-    carInfo: null
+    carInfo: null,
+    tit: ''
   },
   //出发时间
   DateChange(e) {
@@ -56,6 +57,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      tit: options.tit
+    })
     this.getArriveAreaList();
   },
 

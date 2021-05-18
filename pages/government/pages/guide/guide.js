@@ -10,6 +10,7 @@ Page({
 		tabName: ["1楼", "2楼", "3楼", "4楼"],
 		index:1,
 		 CustomBar: app.globalData.CustomBar,
+		 tit:''
 	},
 	selectTab: function(e) {
 		this.setData({
@@ -27,7 +28,9 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function(options) {
-
+		this.setData({
+			tit:options.tit
+		})
 	},
 
 	/**

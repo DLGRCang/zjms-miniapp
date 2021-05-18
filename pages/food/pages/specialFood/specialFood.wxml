@@ -1,5 +1,5 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content">特色美食</view>
+  <view slot="content">{{tit}}</view>
 </cu-custom>
 <image src="{{imgUrl}}/image/food.png" mode='widthFix' style="height：375px;width:100%;"></image>
 

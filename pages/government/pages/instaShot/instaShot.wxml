@@ -1,6 +1,6 @@
 <!--pages/government/pages/instaShot/instaShot.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">随手拍</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/ruishoupai.png" style="width:100%"></image>
 <button bindtap="instaShotReport" class="button">问题上报</button>

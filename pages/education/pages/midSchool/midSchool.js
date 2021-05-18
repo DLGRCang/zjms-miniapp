@@ -9,7 +9,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-
+    tit: '',
     dataList: [], //小学学校
     dataList1: [], //中学学校
   },
@@ -34,6 +34,9 @@ Page({
     });
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getDataList()
   },
 

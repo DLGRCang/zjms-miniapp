@@ -1,5 +1,5 @@
 <cu-custom bgColor="red" isBack="{{true}}">
-  <view slot="content">历史文化</view>
+  <view slot="content">{{tit}}</view>
 </cu-custom>
 <image src="{{imgUrl}}/image/history.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lr-lg">

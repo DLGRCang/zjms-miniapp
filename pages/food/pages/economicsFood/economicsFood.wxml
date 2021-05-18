@@ -1,5 +1,5 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content">经济快餐</view>
+  <view slot="content">{{tit}}</view>
 </cu-custom>
 <!-- <view class="flex padding-top padding-bottom" style="border-bottom: 2rpx solid #f5f5f5">
   <type-picker style="width:100%;" pickType="{{searchType}}" bind:pickChange="onpickChange"></type-picker>

@@ -11,6 +11,7 @@ Page({
     baseImgUrl: "https://www.yjhlcity.com/cmmall/route/file/downloadfile/false/",
     xcFoodList:null,
     specialFoodList: null,
+    tit:''
   },
 // 小吃
   xcFoodList() {
@@ -45,6 +46,9 @@ Page({
   onLoad: function (options) {
     this.specialFoodList()
     this.xcFoodList()
+    this.setData({
+      tit:options.tit
+    })
   },
 
   /**

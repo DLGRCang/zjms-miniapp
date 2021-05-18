@@ -9,10 +9,10 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		tit:'',
 		imgUrl:app.globalData.imgUrl,
 		infotypeid: '80bcd380-3aa9-4a35-bc38-4e242193ab81',
 		infotypeid1: '5c1f3a14-3902-4858-a3b0-591970bd557e',//小伊说法
-
     page: 1,
     dataList: [],
     dataList1: [],
@@ -56,6 +56,9 @@ Page({
   onLoad: function (options) {
 		this.getDataList();
 		this.getInfo();
+		this.setData({
+      tit:options.tit
+    })
   },
 
 	/**

@@ -15,7 +15,8 @@ Page({
     imgUrl: app.globalData.imgUrl,
     name:'',
     show:false,
-    item:['幼儿小学','初高中','大学']
+    item:['幼儿小学','初高中','大学'],
+    tit:''
 
   },
   confirm(e){
@@ -55,6 +56,9 @@ Page({
   },
   onLoad: function (options) {
     this.getDataList();
+    this.setData({
+			tit:options.tit
+		})
   },
 
   /**

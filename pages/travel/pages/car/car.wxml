@@ -1,5 +1,5 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content">长途汽车</view>
+  <view slot="content">{{tit}}</view>
 </cu-custom>
 <image src="{{imgUrl}}/image/changtuqiche.png" mode='widthFix' style="height：375px;width:100%;"></image>
 <view class="margin-lg">

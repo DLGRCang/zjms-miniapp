@@ -13,6 +13,7 @@ Page({
 		infotypeid: '9f3779e2-2263-4900-b4cb-dc0b8539d7ed',
 		page: 1,
 		dataList: [], //新闻列表
+		tit:''
 	},
 	//核酸表单
 	nucleicForm() {
@@ -49,6 +50,9 @@ Page({
 	onLoad: function (options) {
 		this.getDataList()
 		this.erCode()
+		this.setData({
+			tit:options.tit
+		})
 	},
 
 	/**

@@ -10,6 +10,7 @@ Page({
 		imgUrl: app.globalData.imgUrl,
 		contactInfo: null,
 		messageList: [],
+		tit:''
 	},
 	//写留言
 	wordMessage() {
@@ -50,6 +51,9 @@ Page({
 	onLoad: function (options) {
 		// this.getContactInfo();
 		this.getMessageList();
+		this.setData({
+			tit:options.tit
+		})
 	},
 
 	/**

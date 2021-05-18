@@ -15,6 +15,7 @@ Page({
 		page: 1,
 		dataList: [], //维权法规
 		dataList1: [], //心灵港湾
+		tit:''
 
 	},
 
@@ -74,6 +75,9 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

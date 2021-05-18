@@ -17,6 +17,7 @@ Page({
 		dataList1: null, //养老院列表
 		infotypeid2: 'de8f6d41-3e0c-4b18-a7ea-e14207022c97',
 		dataList2: [], //敬老院列表
+		tit:''
 	},
 	goInfo:function(e){
 		wx.navigateTo({
@@ -49,6 +50,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

@@ -1,6 +1,6 @@
 <!--pages/help/pages/law/law.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">女性关护</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/nvxingguanhu.png" style="width:100%"></image>
 <button bindtap="evidence" class="button">证据留存</button>

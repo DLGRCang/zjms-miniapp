@@ -1,6 +1,6 @@
 <import src="../../../../wxParse/wxParse.wxml" />
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">伊旗概况</view>
+  <view slot="content">{{tit}}</view>
 </cu-custom>
 
 <view class="padding-lr-lg">

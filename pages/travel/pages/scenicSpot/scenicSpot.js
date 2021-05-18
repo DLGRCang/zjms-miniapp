@@ -9,7 +9,8 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
-    infoList: null
+    infoList: null,
+    tit:''
   },
   getInfo() {
     let that = this;
@@ -29,6 +30,9 @@ Page({
    */
   onLoad: function (options) {
     this.getInfo();
+    this.setData({
+      tit:options.tit
+    })
   },
 
   /**

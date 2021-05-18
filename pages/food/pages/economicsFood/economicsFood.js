@@ -2,6 +2,7 @@ const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
   data: {
+    tit:'',
     imgUrl: "https://www.yjhlcity.com/shop/route/file/downloadfile/false/",
     baseImgUrl: "https://www.yjhlcity.com/shop/route/file/downloadfile/false/",
     foodList: null,
@@ -40,6 +41,9 @@ Page({
     util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.foodList()
   },
   onReady: function () {

@@ -8,20 +8,22 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-
+    tit: ''
   },
   //申请转学
   applytransferSchool() {
-      //判断是否登录
-      if (!login.isLogin()) return
+    //判断是否登录
+    if (!login.isLogin()) return
     util.pageJump('/pages/education/pages/transferSchool/transferSchool')
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      tit: options.tit
+    })
   },
 
   /**

@@ -1,6 +1,6 @@
 <!--pages/medical/pages/vaccine/vaccine.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">疫苗接种</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/yimiaojiezhong.png" style="width:100%"></image>
 <button bindtap="nucleicForm" class="button">新冠疫苗接种</button>

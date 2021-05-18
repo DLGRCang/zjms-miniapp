@@ -9,6 +9,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		tit:'',
 		imgUrl:app.globalData.imgUrl,
 		infotypeid: 'ca111fd5-e9ee-4b13-98c9-fc00d3ce67a2',
     page:1,
@@ -28,6 +29,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 	//申请补贴

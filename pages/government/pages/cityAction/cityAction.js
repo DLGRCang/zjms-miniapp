@@ -10,6 +10,7 @@ Page({
 	data: {
 		imgUrl: app.globalData.imgUrl,
 		dataList: [], //数据列表
+		tit:''
 	},
 
 	/**
@@ -35,6 +36,9 @@ Page({
 	},
 
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

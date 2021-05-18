@@ -11,7 +11,8 @@ Page({
 		imgUrl:app.globalData.imgUrl,
     infotypeid: 'b2b141bf-4092-4e22-a3ce-7472f2699e7d',
     page:1,
-		dataList: [], //新闻列表
+    dataList: [], //新闻列表
+    tit:''
   },
 
   /**
@@ -27,6 +28,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

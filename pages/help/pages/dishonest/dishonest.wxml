@@ -1,6 +1,6 @@
 <!--pages/help/pages/dishonest/dishonest.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">失信人员</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/shixinrenyuan.png" style="width:100%"></image>
 <button class="button" bindtap="goSearch">人员查询</button>

@@ -11,6 +11,7 @@ Page({
 		infotypeid: '659c74c4-e7f5-42fe-a8e2-2486352e2f70',
 		page: 1,
 		dataList: [], //新闻列表
+		tit:''
 	},
 	nucleicForm() {
 		wx.navigateToMiniProgram({
@@ -34,6 +35,9 @@ Page({
 	},
 	onLoad: function (options) {
 		this.getDataList()
+		this.setData({
+			tit:options.tit
+		})
 	},
 
 	/**

@@ -1,5 +1,5 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-	<view slot="content">身边公厕</view>
+	<view slot="content">{{tit}}</view>
 </cu-custom>
 <tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
 <view wx:if="{{index===0}}">

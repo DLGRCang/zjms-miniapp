@@ -14,6 +14,7 @@ Page({
     arriveAreaList: null,
     airInfo: null,
     arrArea: '北京',
+    tit:''
   },
   // 切换
   choose(e) {
@@ -73,6 +74,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getArriveAreaList()
   },
 

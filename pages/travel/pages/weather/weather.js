@@ -9,6 +9,7 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     baseImgUrl:app.globalData.baseImgUrl,
+    tit:''
 
   },
   getInfo() {
@@ -27,6 +28,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getInfo() 
   },
 

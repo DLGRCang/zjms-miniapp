@@ -1,6 +1,6 @@
 <!--pages/help/pages/law/law.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">法律服务</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/falvfuwu.png" style="width:100%"></image>
 <view class="padding">

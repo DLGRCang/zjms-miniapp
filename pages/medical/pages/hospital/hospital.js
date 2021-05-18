@@ -11,6 +11,7 @@ Page({
     tabName: ['医院', '药店'],
     tabId: 0,
     dataList: [],
+    tit:''
   },
   selectTab: function (e) {
     this.setData({
@@ -54,6 +55,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getData()
   },
 

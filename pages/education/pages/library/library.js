@@ -13,7 +13,8 @@ Page({
     page:1,
 		dataList: [], //新闻列表
     key:'',
-    bookList:null
+    bookList:null,
+    tit:''
   },
 
 
@@ -48,6 +49,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
 	onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

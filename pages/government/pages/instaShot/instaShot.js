@@ -11,7 +11,8 @@ Page({
 	data: {
 		imgUrl: app.globalData.imgUrl,
 		page: 1,
-		dataList: []
+		dataList: [],
+		tit:''
 	},
 	//打开问题上报
 	instaShotReport() {
@@ -37,7 +38,11 @@ Page({
 		});
 	},
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
+		
 	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成

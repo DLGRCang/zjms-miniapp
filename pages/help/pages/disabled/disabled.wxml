@@ -1,6 +1,6 @@
 <!--pages/help/pages/disabled/disabled.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">助残服务</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/canjiren.png" style="width:100%"></image>
 <tab bindmyevent="selectTab" tvColor="color" tabName="{{tabName}}"></tab>

@@ -1,6 +1,6 @@
 <!--pages/economic/pages/secondHand/secondHand.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">二手交易</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 
 <wxs module="function">
