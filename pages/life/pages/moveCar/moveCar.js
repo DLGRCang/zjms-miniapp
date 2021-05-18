@@ -10,7 +10,8 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
-    moveList: []
+    moveList: [],
+    tit:''
 
   },
   //挪车详情
@@ -33,6 +34,9 @@ Page({
     });
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getMoveList()
   },
 

@@ -8,6 +8,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		tit:'',
 		imgUrl:app.globalData.imgUrl,
 		tabId: 0,
 		tabName: ['大型', '百货'],
@@ -33,6 +34,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

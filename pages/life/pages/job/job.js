@@ -10,7 +10,7 @@ Page({
 	 */
 	data: {
 		imgUrl:app.globalData.imgUrl,
-   
+   tit:'',
     infotypeid: 'd01b2805-c983-49d3-a57d-d51be819c631',
     infotypeid1: '68077b19-aefe-4471-a2b6-88931342b993',
     page:1,
@@ -44,6 +44,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

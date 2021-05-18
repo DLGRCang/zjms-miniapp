@@ -1,6 +1,6 @@
 <!--pages/life/pages/productionTransfer/productionTransfer.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">生产转让</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/shengchanzhuanrang.png" style="width:100%"></image>
 <button class="button">发布转让信息</button>

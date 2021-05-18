@@ -12,6 +12,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tit:'',
     pageTabs: ["列表", "地图"],
     index: 0,
     longitude: '',
@@ -28,6 +29,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     wx.getSetting({
       success: (res) => {
         // res.authSetting['scope.userLocation'] == undefined    表示 初始化进入该页面

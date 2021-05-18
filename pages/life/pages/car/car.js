@@ -8,6 +8,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+    tit:'',
 		imgUrl:app.globalData.imgUrl,
     tabId:0,
 		tabName:['人找车','车找人','货找车','车找货'],
@@ -54,6 +55,9 @@ Page({
     })
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getDataList();
   },
   /**

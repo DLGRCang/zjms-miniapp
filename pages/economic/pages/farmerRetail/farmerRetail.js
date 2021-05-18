@@ -6,6 +6,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		tit:'',
 		infotypeid: '66957eec-9d77-4ecf-a4f0-916dd0f27cf4',
     page:1,
 		dataList: [], //新闻列表
@@ -39,6 +40,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 	/**

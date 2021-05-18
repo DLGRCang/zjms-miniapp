@@ -12,6 +12,7 @@ Page({
 		infotypeid: 'b76966f4-ecef-45bb-8e64-621a7ea6ef59',
     page:1,
 		dataList: [], //新闻列表
+		tit:''
 	},
 
 	getDataList: function () {
@@ -24,6 +25,9 @@ Page({
 		})
 	},
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getDataList()
 	},
 

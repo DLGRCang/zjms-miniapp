@@ -1,6 +1,6 @@
 <!--pages/economic/pages/exhibition/exhibition.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">会展活动</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/huizhanhuodong.png" style="width:100%"></image>
 <button class="button">会展备案</button>
