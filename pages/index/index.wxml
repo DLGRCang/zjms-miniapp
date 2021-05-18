@@ -49,18 +49,18 @@
   </block>
   <!-- 新闻 -->
   <block wx:if="{{item.type === 'news' && item.enable=== 1}}">
-    <view class="padding-lg margin-tb-sm flex borders common">
-      <view class="newsTit">{{item.title}}</view>
-      <view class="text-sm newsInfo">
-        <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-          {{items.name}}
-        </block>
-        <!-- <swiper vertical="true" autoplay="true" circular="true" interval="2000" display-multiple-items='1'>
-      <block wx:for='{{news.newsInfo}}' wx:key="item">
-        <swiper-item> {{item.tit}}</swiper-item>
-      </block>
-    </swiper> -->
-      </view>
+    <view class="padding-lg margin-tb-sm  borders common flex">
+      <text class="newsTit">{{item.title}}</text>
+        <swiper  style="width:100%;height:60rpx" class="padding-lr" vertical="true" autoplay="true" circular="true" interval="2000"
+          display-multiple-items='1'>
+          <block  wx:for='{{item.list}}'>
+            <swiper-item class="flex align-center">
+              <view class="flex text-cut ">
+                <text>{{item.name}}</text>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
     </view>
   </block>
 
@@ -361,12 +361,12 @@
                 <text class="text-blue text-bold">{{items.name}}</text>
               </view>
             </view>
-            
+
             <view class="icon-wrap">
               <!-- 图文 -->
               <block wx:for="{{items.content}}" wx:for-item="itemss" wx:key="index">
-                <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}" data-type="{{itemss.openType}}"
-                  data-url="{{itemss.url}}">
+                <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}"
+                  data-type="{{itemss.openType}}" data-url="{{itemss.url}}">
                   <view class="item-img">
                     <image src="{{itemss.icon}}" style='width:100rpx;height:100rpx;border-radius:100%;'>
                     </image>

@@ -72,6 +72,7 @@ page {
   background-color: #f3d3da;
   padding: 10rpx 15rpx;
   border-radius: 8rpx;
+  min-width: 115rpx;
 }
 
 .newsInfo {
