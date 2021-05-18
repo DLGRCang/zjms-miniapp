@@ -8,18 +8,18 @@ Page({
   data: {
     isLogin: wx.getStorageSync("isLogin"),
     name: wx.getStorageSync("name"),
-    iconBaseUrl: app.globalData.imgUrl,
     CustomBar: app.globalData.CustomBar,
     // 服务初始值
     TabCur: 0,
     MainCur: 0,
     VerticalNavTop: 0,
-    topImg: '', //顶部图片地址
-    bottomImg: '', //底部图片
+    topImg: app.globalData.imgUrl + '/zjms/top.png', //顶部图片地址
+    bottomImg: app.globalData.imgUrl + '/zjms/bottom.png', //底部图片
     // 底部标签值
     organizer: "主管单位：伊金霍洛旗大数据发展局",
     constructionUnit: "建设单位：内蒙古大云智通科技有限公司",
     currentTime: util.formatDate(new Date) + ' ' + util.getWeekByDate(new Date()), //当前时间
+
     modules: [
       // 轮播
       {
@@ -35,49 +35,50 @@ Page({
         },
         apiUrl: "url",
         list: [{
-            name: "",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/44.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/66.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/77.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
+          name: "",
+          summary: "",
+          icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/44.png",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "",
+          summary: "",
+          icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/66.png",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "",
+          summary: "",
+          icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/77.png",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
         ]
       },
+
       // 新闻
       {
         id: "",
@@ -92,47 +93,47 @@ Page({
         },
         apiUrl: "url",
         list: [{
-            name: "新闻基金的方式那就看上电脑方尽可能三加咖啡",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "2新闻基金的方式那就看上电脑方尽可能三加咖啡",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "3新闻基金的方式那就看上电脑方尽可能三加咖啡",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          }
+          name: "新闻基金的方式那就看上电脑方尽可能三加咖啡",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "2新闻基金的方式那就看上电脑方尽可能三加咖啡",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "3新闻基金的方式那就看上电脑方尽可能三加咖啡",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }
         ]
       },
 
@@ -150,75 +151,222 @@ Page({
         },
         apiUrl: "url",
         list: [{
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/4.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/5.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/6.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/1.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
+          name: "核酸检测",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/1.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "疫苗接种",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/2.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "业务预审",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/3.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "转学办理",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/4.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "大厅指引",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/5.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "学生资助",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/6.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "旗长热线",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/7.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "律师公证",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/8.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "二手交易",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/9.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "特色美食",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/10.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "知名景点",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/11.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "数字文化",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/12.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "周边公厕",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/13.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "找充电桩",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/14.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "失信人员",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/15.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "随手拍",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/16.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
         ]
       },
       // 电视
@@ -265,7 +413,7 @@ Page({
         list: [{
           name: "",
           summary: "",
-          icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/44.png",
+          icon: app.globalData.imgUrl + '/zjms/fm.png',
           href: "",
           openType: "",
           enable: 1,
@@ -277,6 +425,7 @@ Page({
           }]
         }]
       },
+
       // 智慧城市
       {
         id: "",
@@ -291,75 +440,88 @@ Page({
         },
         apiUrl: "url",
         list: [{
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/4.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/5.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/6.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/1.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
+          name: "智慧城管",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/city1.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "智慧管网",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/city2.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "智慧园林",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/city3.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "智慧社区",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/city4.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "智慧应急",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/city5.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }, {
+          name: "在职党员",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/city6.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
         ]
       },
       // 服务
@@ -376,331 +538,330 @@ Page({
         },
         apiUrl: "url",
         list: [{
-            name: "魅力伊旗",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: 2
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, ]
-          },
-          {
-            name: "伊旗发布",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, ]
-          },
-          {
-            name: "文化旅游",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, ]
-          },
-          {
-            name: "食在伊旗",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, ]
-          },
-          {
-            name: "教育文体",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, ]
-          },
-          {
-            name: "医疗康养",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, ]
+          name: "魅力伊旗",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: 2
           }, {
-            name: "政务服务",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, ]
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          },]
+        },
+        {
+          name: "伊旗发布",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          },]
+        },
+        {
+          name: "文化旅游",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          },]
+        },
+        {
+          name: "食在伊旗",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          },]
+        },
+        {
+          name: "教育文体",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          },]
+        },
+        {
+          name: "医疗康养",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          },]
+        }, {
+          name: "政务服务",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          },]
+        },
+        {
+          name: "维权助困",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
           },
           {
-            name: "维权助困",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-                tit: '知名景点',
-                icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-                url: '',
-                openType: ''
-              },
-              {
-                tit: '知名景点',
-                icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-                url: '',
-                openType: ''
-              }, {
-                tit: '知名景点',
-                icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-                url: '',
-                openType: ''
-              }, {
-                tit: '知名景点',
-                icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-                url: '',
-                openType: ''
-              }, {
-                tit: '知名景点',
-                icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-                url: '',
-                openType: ''
-              },
-            ]
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
           },
-          {
-            name: "生活服务",
-            summary: "",
-            icon: "",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '知名景点',
-              icon: 'https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png',
-              url: '',
-              openType: ''
-            }, {
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }, {
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }, {
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }, {
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }, {
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }, {
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }, ]
-          },
+          ]
+        },
+        {
+          name: "生活服务",
+          summary: "",
+          icon: "",
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '知名景点',
+            icon: app.globalData.imgUrl + '/image/3.png',
+            url: '',
+            openType: ''
+          }, {
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }, {
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }, {
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }, {
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }, {
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }, {
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          },]
+        },
 
         ]
       },
-
 
       // 委办局
       {
@@ -716,63 +877,64 @@ Page({
         },
         apiUrl: "url",
         list: [{
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/4.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/5.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "核酸检测",
-            summary: "",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/6.png",
-            href: "",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
+          name: "司法局",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/dept1.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "税务局",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/dept2.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "工商局",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/dept3.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "安监局",
+          summary: "",
+          icon: app.globalData.imgUrl + '/zjms/dept4.png',
+          href: "",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
         ]
       },
+
       // 预约缴费
       {
         id: "",
@@ -787,33 +949,33 @@ Page({
         },
         apiUrl: "url",
         list: [{
-            name: "预约",
-            summary: "在线预约服务",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/3.png",
-            href: "../../pages/about/home/home",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          },
-          {
-            name: "缴费",
-            summary: "在线缴费服务",
-            icon: "https://www.yjhlcity.com/InfoIssue/miniapp/image/4.png",
-            href: "../../pages/pay/home/home",
-            openType: "",
-            enable: 1,
-            content: [{
-              tit: '',
-              icon: '',
-              url: '',
-              openType: ''
-            }]
-          }
+          name: "预约",
+          summary: "在线预约服务",
+          icon: app.globalData.imgUrl + '/zjms/fee1.png',
+          href: "../../pages/about/home/home",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        },
+        {
+          name: "缴费",
+          summary: "在线缴费服务",
+          icon: app.globalData.imgUrl + '/zjms/fee2.png',
+          href: "../../pages/pay/home/home",
+          openType: "",
+          enable: 1,
+          content: [{
+            tit: '',
+            icon: '',
+            url: '',
+            openType: ''
+          }]
+        }
         ]
       },
 
@@ -883,8 +1045,8 @@ Page({
       wx.navigateToMiniProgram({
         appId: e.currentTarget.dataset.url,
         path: '',
-        success: function (res) {},
-        fail: function (res) {}
+        success: function (res) { },
+        fail: function (res) { }
       })
     } else if (e.currentTarget.dataset.type === 2) {
       // webView 跳转
