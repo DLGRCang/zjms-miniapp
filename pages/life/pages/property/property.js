@@ -9,6 +9,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+    tit:'',
 		imgUrl:app.globalData.imgUrl,
     itemTabs:['食宿','双语'],
     infotypeid: '694cb290-d474-464b-9ca2-18fe9826d1a8',
@@ -44,6 +45,9 @@ Page({
     util.pageJump('../problem/problem')
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getDataList();
   },
 

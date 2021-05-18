@@ -1,6 +1,6 @@
 <!--pages/economic/pages/market/market.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">商场超市</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/shangchangchaoshi.png" style="width:100%"></image>
 <tab bindmyevent="selectTab" tvColor="text-green" tabName="{{tabName}}"></tab>

@@ -8,6 +8,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		tit:'',
 		imgUrl: app.globalData.imgUrl,
 		datalist:[],//消费者维权
 		datalist1:[],//经营者维权
@@ -52,6 +53,9 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		this.setData({
+      tit:options.tit
+    })
 		this.getData()
 	},
 

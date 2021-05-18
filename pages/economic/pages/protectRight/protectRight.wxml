@@ -1,6 +1,6 @@
 <!--pages/economic/pages/protectRight/protectRight.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">消费维权</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/xiaofeiweiquan.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lr-lg">

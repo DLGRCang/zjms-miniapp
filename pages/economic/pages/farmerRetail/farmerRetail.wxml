@@ -1,6 +1,6 @@
 <!--pages/economic/pages/farmerRetail/farmerRetail.wxml-->
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-	<view slot="content" class="text-white text-xl text-black text-bold">农资门市部</view>
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <!-- <view class="flex padding-top padding-bottom" style="border-bottom: 2rpx solid #f5f5f5">
 	<type-picker style="width:100%;" pickType="{{searchType}}" bind:pickChange="onpickChange"></type-picker>

@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tit:'',
     imgUrl: app.globalData.imgUrl,
     baseImgUrl: app.globalData.baseImgUrl,
     infotypeid: '7d89ee07-a15a-4bf3-9b16-01ecd9365d9f', //政策通知
@@ -43,6 +44,9 @@ Page({
     })
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getDataList();
   },
 

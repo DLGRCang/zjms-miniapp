@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tit:'',
     imgUrl: app.globalData.imgUrl,
     itemTabs: ['机械', '电子'],
     infotypeid: '7452a716-b25f-42c3-a3c9-6d54b04450f5',
@@ -34,6 +35,9 @@ Page({
     })
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getDataList()
   },
 

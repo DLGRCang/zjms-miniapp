@@ -8,6 +8,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+    tit:'',
 		imgUrl:app.globalData.imgUrl,
     infotypeid: 'd7b8259d-c340-47f6-884d-64fc587ad936',
     page: 1,
@@ -36,6 +37,9 @@ getDataList: function () {
     })
   },
   onLoad: function (options) {
+    this.setData({
+      tit:options.tit
+    })
     this.getDataList();
   },
 
