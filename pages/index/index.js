@@ -9,13 +9,13 @@ Page({
     isLogin: wx.getStorageSync("isLogin"),
     name: wx.getStorageSync("name"),
     CustomBar: app.globalData.CustomBar,
-    iconImgUrl: app.globalData.imgUrl,
     // 服务初始值
     TabCur: 0,
     MainCur: 0,
     VerticalNavTop: 0,
-    topImg: app.globalData.imgUrl + '/zjms/top.png', //顶部图片地址
-    bottomImg: app.globalData.imgUrl + '/zjms/bottom.png', //底部图片
+    iconImgUrl: "",
+    topImg:  "", 
+    bottomImg: "", 
     currentTime: util.formatDate(new Date) + ' ' + util.getWeekByDate(new Date()), //当前时间
     modules: null,
 
@@ -103,9 +103,12 @@ Page({
   getData() {
     let url = 'https://www.yjhlcity.com/modules.json';
     util.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data.modules)
+      console.log(res.data)
       this.setData({
-        modules: res.data.modules
+        modules: res.data.modules,
+        iconImgUrl:res.data.iconImgUrl,
+        topImg:res.data.topImg,
+        bottomImg:res.data.bottomImg
       })
     });
   },
