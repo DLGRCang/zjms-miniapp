@@ -388,6 +388,44 @@
                 <text class="text-blue text-bold">{{items.name}}</text>
               </view>
             </view>
+            <!-- 首页伊金霍洛发布 -->
+            <!-- <view class="" wx:if="{{items.name==='伊旗发布'}}">
+
+              <view class="">
+                <view class="flex justify-between margin-bottom-sm">
+                  <view class="text-lg">伊金霍洛新闻</view>
+                  <view class="text-grey text-sm" bindtap="newsList">更多+</view>
+                </view>
+                <block wx:for="{{newsInfo}}" wx:key="index" wx:for-item="item">
+                  <view class="padding-bottom-sm textInfo" bindtap="newsDetail" data-id="{{item.id}}">
+                    <text class="cuIcon-hotfill text-red"></text> {{item.title}}
+                  </view>
+                </block>
+              </view>
+             
+              <view class="margin-tb-lg">
+                <view class="flex justify-between margin-bottom-sm">
+                  <view>通知公告</view>
+                  <view class="text-grey text-sm" bindtap="noticeList">更多+</view>
+                </view>
+              </view>
+              <block wx:for="{{noticeInfo}}" wx:key="index" wx:for-item="item">
+                <view class="padding-bottom-sm textInfo" bindtap="noticeDetail" data-id="{{item.infoContentId}}"
+                  data-obj="{{item}}">
+                  <text class="cuIcon-hotfill text-red"></text> {{item.info_content}}
+                </view>
+              </block>
+
+              <view class="margin-top-sm flex justify-between">
+                <view bindtap="goZZDY">
+                  <image src="{{imgUrl}}/image/zaizhidangyuan.png" style="height:120rpx;  width:260rpx;"></image>
+                </view>
+                <view bindtap="goGoodList">
+                  <image src="{{imgUrl}}/image/tuiyoubang.png" style="height:120rpx; width:260rpx;"></image>
+                </view>
+              </view>
+            </view> -->
+
 
             <view class="icon-wrap">
               <!-- 图文 -->

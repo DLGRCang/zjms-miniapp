@@ -12,13 +12,14 @@ Page({
     // 服务初始值
     TabCur: 0,
     MainCur: 0,
+    load: true,
     VerticalNavTop: 0,
     iconImgUrl: "",
     topImg:  "", 
     bottomImg: "", 
     currentTime: util.formatDate(new Date) + ' ' + util.getWeekByDate(new Date()), //当前时间
     modules: null,
-
+    service:null,
   },
 
   // 切换左边菜单并联动右边
@@ -34,14 +35,16 @@ Page({
    */
   VerticalMain(e) {
     let that = this;
-    let service = that.data.modules[6];
+    let service = this.data.service;
     let tabHeight = 0;
     if (that.data.load) {
       for (let i = 0; i < service.length; i++) {
-        let view = wx.createSelectorQuery().in(this).select("#main-" + service[i].id);
+        let view = wx.createSelectorQuery().in(this).select("#main-" + service[i]);
+        console.log(view.fields())
         view.fields({
           size: true
         }, data => {
+          console.log(data)
           service[i].top = tabHeight;
           tabHeight = tabHeight + data.height;
           service[i].bottom = tabHeight;
@@ -104,11 +107,13 @@ Page({
     let url = 'https://www.yjhlcity.com/modules.json';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
+      console.log(res.data.modules[6].list)
       this.setData({
         modules: res.data.modules,
         iconImgUrl:res.data.iconImgUrl,
         topImg:res.data.topImg,
-        bottomImg:res.data.bottomImg
+        bottomImg:res.data.bottomImg,
+        service:res.data.modules[6].list
       })
     });
   },
