@@ -85,7 +85,12 @@ Page({
     console.log(e.currentTarget.dataset)
     if (e.currentTarget.dataset.type === 0) {
       // 页面跳转
-      util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
+      if(e.currentTarget.dataset.login){
+        util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
+      }else{
+
+      }
+      
     } else if (e.currentTarget.dataset.type === 1) {
       // 小程序跳转 url=appid
       wx.navigateToMiniProgram({
@@ -512,7 +517,7 @@ Page({
               "href": "../government/pages/instaShot/instaShot",
               "openType": 0,
               "enable": 1,
-              "islogin":true,
+              "islogin":false,
               "content": [{
                 "islogin":true,
                 "id": 0,
@@ -1161,7 +1166,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "islogin":true,
+                  "islogin":false,
                   "id": 5,
                   "tit": "随手拍",
                   "icon": "/image/53.png",
@@ -1383,7 +1388,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "islogin":true,
+                  "islogin":false,
                   "id": 18,
                   "tit": "公租房",
                   "icon": "/image/77.png",
@@ -1548,6 +1553,7 @@ Page({
         }
       ]
     }
+    console.log(data)
     this.setData({
       modules: data.modules,
       iconImgUrl:data.iconImgUrl,
