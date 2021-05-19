@@ -128,7 +128,7 @@
         <view class="grid col-{{item.num}}  text-center">
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}"> 
+              data-tit="{{items.name}}" data-login="{{items.islogin}}">
               <block wx:if="{{items.enable === 1}}">
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -448,14 +448,16 @@
             <view class="icon-wrap">
               <!-- 图文 -->
               <block wx:for="{{items.content}}" wx:for-item="itemss" wx:key="index">
-                <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}"
-                  data-type="{{itemss.openType}}" data-url="{{itemss.url}}" data-login="{{itemss.islogin}}">
-                  <view class="item-img">
-                    <image src="{{iconImgUrl}}{{itemss.icon}}" style='width:100rpx;height:100rpx;border-radius:100%;'>
-                    </image>
+                <block wx:if="{{itemss.enable === 1}}">
+                  <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}"
+                    data-type="{{itemss.openType}}" data-url="{{itemss.url}}" data-login="{{itemss.islogin}}">
+                    <view class="item-img">
+                      <image src="{{iconImgUrl}}{{itemss.icon}}" style='width:100rpx;height:100rpx;border-radius:100%;'>
+                      </image>
+                    </view>
+                    <view class="item-text"><text class="text-black">{{itemss.tit}}</text></view>
                   </view>
-                  <view class="item-text"><text class="text-black">{{itemss.tit}}</text></view>
-                </view>
+                </block>
               </block>
             </view>
           </view>
@@ -610,16 +612,18 @@
       </view>
       <view class="flex justify-between fee">
         <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-          <view class="flex justify-between feeItem" bindtap="goFeeDetail" data-href="{{items.href}}">
-            <view>
-              <view class="text-df">{{items.name}}</view>
-              <view class="text-sm text-grey" style="margin-top:10rpx;">{{items.summary}}</view>
+          <block wx:if="{{items.enable=== 1}}">
+            <view class="flex justify-between feeItem" bindtap="goFeeDetail" data-href="{{items.href}}">
+              <view>
+                <view class="text-df">{{items.name}}</view>
+                <view class="text-sm text-grey" style="margin-top:10rpx;">{{items.summary}}</view>
+              </view>
+              <view>
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
+                  style="width:72rpx;height:72rpx;border-radius:100%;margin-left:20rpx;"></image>
+              </view>
             </view>
-            <view>
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
-                style="width:72rpx;height:72rpx;border-radius:100%;margin-left:20rpx;"></image>
-            </view>
-          </view>
+          </block>
         </block>
       </view>
     </view>

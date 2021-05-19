@@ -40,7 +40,7 @@ Page({
     let tabHeight = 0;
     if (that.data.load) {
       for (let i = 0; i < service.length; i++) {
-        let view = wx.createSelectorQuery().in(this).select("#main-" + service[i]);
+        let view = wx.createSelectorQuery().in(this).select("#main-" + service[i].id);
         console.log(view.fields())
         view.fields({
           size: true
@@ -152,6 +152,7 @@ Page({
             "islogin":true,
             "content": [{
               "islogin":true,
+              "enable": 1,
               "id": 0,
               "tit": "",
               "icon": "",
@@ -174,7 +175,7 @@ Page({
           "apiUrl": "url",
           "list": [{
               "id": 0,
-              "name": "新闻基金的方式那就看上电脑方尽可能三加咖啡",
+              "name": "自治区民政厅厅长姜宏赴伊金霍洛旗调研指导工作",
               "summary": "",
               "icon": "",
               "href": "",
@@ -182,6 +183,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -192,7 +194,7 @@ Page({
             },
             {
               "id": 1,
-              "name": "2新闻基金的方式那就看上电脑方尽可能三加咖啡",
+              "name": "伊金霍洛旗政府投资项目代建中心成立",
               "summary": "",
               "icon": "",
               "href": "",
@@ -200,6 +202,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -210,7 +213,7 @@ Page({
             },
             {
               "id": 2,
-              "name": "3新闻基金的方式那就看上电脑方尽可能三加咖啡",
+              "name": "我旗开展“5·18国际博物馆日”主题宣传活动",
               "summary": "",
               "icon": "",
               "href": "",
@@ -218,6 +221,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -247,9 +251,10 @@ Page({
               "icon": "/zjms/1.png",
               "href": "../medical/pages/nucleicAcidCheck/nucleicAcidCheck",
               "openType": 0,
-              "enable": 1,
+              "enable": 2,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -265,9 +270,10 @@ Page({
               "icon": "/zjms/2.png",
               "href": "../medical/pages/vaccine/vaccine",
               "openType": 0,
-              "enable": 1,
+              "enable": 2,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -283,9 +289,10 @@ Page({
               "icon": "/zjms/3.png",
               "href": "",
               "openType": "",
-              "enable": 1,
+              "enable": 2,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -304,6 +311,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -322,6 +330,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -340,6 +349,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -358,6 +368,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -376,6 +387,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -394,6 +406,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -412,6 +425,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -430,6 +444,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -448,6 +463,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -466,6 +482,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -484,6 +501,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -499,9 +517,10 @@ Page({
               "icon": "/zjms/15.png",
               "href": "../help/pages/dishonest/dishonest",
               "openType": 0,
-              "enable": 1,
+              "enable": 2,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -520,6 +539,7 @@ Page({
               "enable": 1,
               "islogin":false,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -535,7 +555,7 @@ Page({
           "type": "tv",
           "num": 0,
           "title": "伊金霍洛之窗",
-          "enable": 1,
+          "enable": 2,
           "more": {
             "enable": 0,
             "href": "",
@@ -552,6 +572,7 @@ Page({
             "enable": 1,
             "islogin":true,
             "content": [{
+              "enable": 1,
               "islogin":true,
               "id": 0,
               "tit": "",
@@ -566,7 +587,7 @@ Page({
           "type": "radio",
           "num": 0,
           "title": "伊金霍洛之声",
-          "enable": 1,
+          "enable": 2,
           "more": {
             "enable": 0,
             "href": "",
@@ -583,6 +604,7 @@ Page({
             "enable": 1,
             "islogin":true,
             "content": [{
+              "enable": 1,
               "islogin":true,
               "id": 0,
               "tit": "",
@@ -597,7 +619,7 @@ Page({
           "type": "city",
           "num": 3,
           "title": "智慧城市",
-          "enable": 1,
+          "enable": 2,
           "more": {
             "enable": 0,
             "href": "",
@@ -614,6 +636,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -632,6 +655,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -650,6 +674,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -668,6 +693,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -686,6 +712,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -704,6 +731,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -736,6 +764,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 2,
                   "islogin":true,
                   "id": 0,
                   "tit": "听广播",
@@ -745,6 +774,7 @@ Page({
                 },
     
                 {
+                  "enable": 2,
                   "islogin":true,
                   "id": 1,
                   "tit": "看电视",
@@ -753,6 +783,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "推优榜",
@@ -773,6 +804,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "伊旗概况",
@@ -781,6 +813,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "历史文化",
@@ -789,6 +822,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "村情乡貌",
@@ -797,6 +831,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 3,
                   "tit": "土地认养",
@@ -805,6 +840,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "投资兴业",
@@ -824,6 +860,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "知名景点",
@@ -832,6 +869,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "伊旗天气",
@@ -840,6 +878,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "飞机火车",
@@ -848,6 +887,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 3,
                   "tit": "长途汽车",
@@ -856,6 +896,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "公交出租",
@@ -864,6 +905,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 5,
                   "tit": "酒店宾馆",
@@ -873,6 +915,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 6,
                   "tit": "身边公厕",
@@ -882,6 +925,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 7,
                   "tit": "找充电桩",
@@ -891,15 +935,16 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 8,
                   "tit": "乡村旅游",
                   "icon": "/image/15.png",
                   "url": "../travel/pages/ruralTourism/ruralTourism",
-    
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 9,
                   "tit": "图书资源",
@@ -908,6 +953,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 10,
                   "tit": "数字文化",
@@ -916,6 +962,7 @@ Page({
                   "openType": 1
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 11,
                   "tit": "天骄非遗",
@@ -924,6 +971,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 12,
                   "tit": "乌兰牧骑",
@@ -943,6 +991,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "特色美食",
@@ -951,6 +1000,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "经济快餐",
@@ -959,6 +1009,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "高档餐饮",
@@ -974,6 +1025,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "饮食文化",
@@ -982,6 +1034,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 5,
                   "tit": "食品安全",
@@ -1001,6 +1054,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "学前教育",
@@ -1009,6 +1063,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "中小学",
@@ -1017,6 +1072,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "学生资助",
@@ -1025,6 +1081,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 3,
                   "tit": "转学办理",
@@ -1033,6 +1090,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "图书商店",
@@ -1041,6 +1099,7 @@ Page({
                   "openType": 1
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 5,
                   "tit": "校外培训机构",
@@ -1049,6 +1108,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 6,
                   "tit": "家庭教育",
@@ -1057,6 +1117,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 7,
                   "tit": "文体健身",
@@ -1076,6 +1137,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "医院药店",
@@ -1084,6 +1146,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 2,
                   "islogin":true,
                   "id": 1,
                   "tit": "健康证",
@@ -1092,6 +1155,7 @@ Page({
                   "openType": 1
                 },
                 {
+                  "enable": 2,
                   "islogin":true,
                   "id": 2,
                   "tit": "疫苗接种",
@@ -1100,6 +1164,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 2,
                   "islogin":true,
                   "id": 3,
                   "tit": "核酸检测",
@@ -1108,6 +1173,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 2,
                   "islogin":true,
                   "id": 4,
                   "tit": "养老院",
@@ -1127,6 +1193,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "办事指南",
@@ -1135,6 +1202,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "大厅指引",
@@ -1143,6 +1211,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "旗长热线",
@@ -1151,6 +1220,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 3,
                   "tit": "旗镇互通",
@@ -1159,6 +1229,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "问卷调查",
@@ -1167,6 +1238,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":false,
                   "id": 5,
                   "tit": "随手拍",
@@ -1194,6 +1266,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "助残服务",
@@ -1202,6 +1275,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "红十字救助",
@@ -1210,6 +1284,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 2,
                   "islogin":true,
                   "id": 2,
                   "tit": "失信人员",
@@ -1218,6 +1293,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 3,
                   "tit": "法律服务",
@@ -1226,6 +1302,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "女性关护",
@@ -1245,6 +1322,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "商场超市",
@@ -1253,6 +1331,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "农贸市场",
@@ -1261,6 +1340,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "二手交易",
@@ -1269,6 +1349,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 3,
                   "tit": "农资门市",
@@ -1277,6 +1358,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "会展活动",
@@ -1285,6 +1367,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 5,
                   "tit": "消费维权",
@@ -1293,6 +1376,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 6,
                   "tit": "商业活动",
@@ -1301,6 +1385,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 7,
                   "tit": "知识产权",
@@ -1309,6 +1394,7 @@ Page({
                   "openType": 1
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 8,
                   "tit": "农业技术",
@@ -1317,6 +1403,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 9,
                   "tit": "家政服务",
@@ -1325,6 +1412,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 10,
                   "tit": "物业服务",
@@ -1333,6 +1421,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 11,
                   "tit": "就业服务",
@@ -1341,6 +1430,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 12,
                   "tit": "美发洗浴",
@@ -1349,6 +1439,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 13,
                   "tit": "代驾挪车",
@@ -1357,6 +1448,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 14,
                   "tit": "顺风车",
@@ -1365,6 +1457,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 15,
                   "tit": "转让信息",
@@ -1373,6 +1466,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 16,
                   "tit": "生鲜配送",
@@ -1381,6 +1475,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 17,
                   "tit": "电影剧院",
@@ -1389,6 +1484,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":false,
                   "id": 18,
                   "tit": "公租房",
@@ -1397,6 +1493,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 19,
                   "tit": "志愿者",
@@ -1405,6 +1502,7 @@ Page({
                   "openType": 0
                 },
                 {
+                  "enable": 1,
                   "islogin":true,
                   "id": 20,
                   "tit": "微心愿",
@@ -1421,7 +1519,7 @@ Page({
           "type": "dept",
           "num": 4,
           "title": "各委办局",
-          "enable": 1,
+          "enable": 2,
           "more": {
             "enable": 1,
             "href": "",
@@ -1438,6 +1536,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -1456,6 +1555,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -1474,6 +1574,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -1492,6 +1593,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -1521,9 +1623,10 @@ Page({
               "icon": "/zjms/fee1.png",
               "href": "../../pages/about/home/home",
               "openType": 0,
-              "enable": 1,
+              "enable": 2,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -1542,6 +1645,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
+                "enable": 1,
                 "islogin":true,
                 "id": 0,
                 "tit": "",
@@ -1567,9 +1671,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.getData()
+    this.getData()
     // 测试
-    this.getDataSource()
+    // this.getDataSource()
   },
 
   /**
