@@ -1,4 +1,5 @@
 const util = require('../../utils/util')
+const login = require('../../utils/login')
 const app = getApp();
 Page({
 
@@ -88,7 +89,7 @@ Page({
       if(e.currentTarget.dataset.login){
         util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
       }else{
-
+         if (!login.isLogin()) return
       }
       
     } else if (e.currentTarget.dataset.type === 1) {
