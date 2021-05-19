@@ -47,61 +47,125 @@ Page({
   //我的订单
   myOrder() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/order/order')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/order/order')
+    }
   },
   //我的咨询
   myConsult() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/consult/consult')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/consult/consult')
+    }
   },
   //我的预约
   myAppointment() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/appointment/appointment')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/appointment/appointment')
+    }
   },
   //我的申请
   myApply() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/apply/apply')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/apply/apply')
+    }
   },
   //我的卡券
   myCard() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/card/card')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/card/card')
+    }
   },
   //我的参与
   myJoin() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/join/join')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/join/join')
+    }
   },
   //电话本
   myTel() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/tel/tel')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/tel/tel')
+    }
   },
   //意见反馈
   myOpinion() {
     //判断是否登录
-    if (!login.isLogin()) return
-    util.pageJump('/pages/userCenter/pages/opinion/opinion')
+    if (!wx.getStorageSync("isLogin")) {
+      wx.showToast({
+        title: "请先登录",
+        icon: 'none',
+        mask: true,
+      });
+      return
+    } else {
+      util.pageJump('/pages/userCenter/pages/opinion/opinion')
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) { },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () { },
 
 
 
