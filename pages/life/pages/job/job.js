@@ -13,9 +13,11 @@ Page({
    tit:'',
     infotypeid: 'd01b2805-c983-49d3-a57d-d51be819c631',
     infotypeid1: '68077b19-aefe-4471-a2b6-88931342b993',
+    infotypeid2: '5d7f34a5-2148-45b2-9c09-22c38b0f99fb',
     page:1,
     dataList: [], //全职招聘
     dataList1: [], //兼职招聘
+    dataList2: [], //兼职招聘
   },
 	jobAppointment() {
 		util.pageJump('/pages/life/pages/jobAppointment/jobAppointment')
@@ -41,6 +43,12 @@ Page({
         dataList1: this.data.dataList1.concat(dataList),
       })
 			console.log(this.data.dataList1);
+    })
+    data.getArtelData(this.data.infotypeid2, this.data.page).then(dataList => {
+			this.setData({
+        dataList2: this.data.dataList2.concat(dataList),
+      })
+			console.log(this.data.dataList2);
 		})
 	},
 	onLoad: function (options) {
