@@ -42,7 +42,9 @@
       <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="2000"
         duration="1000">
         <swiper-item wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-          <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFill"></image>
+          <block wx:if="{{items.enable === 1}}">
+            <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFill"></image>
+          </block>
         </swiper-item>
       </swiper>
     </view>
@@ -90,8 +92,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.type}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx;"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -125,8 +129,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -160,8 +166,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -195,8 +203,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -255,8 +265,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -289,8 +301,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -323,8 +337,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -357,8 +373,10 @@
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
               data-tit="{{items.name}}">
-              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
-              <view>{{items.name}}</view>
+              <block wx:if="{{items.enable === 1}}">
+                <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
+                <view>{{items.name}}</view>
+              </block>
             </view>
           </view>
         </view>
@@ -471,9 +489,11 @@
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
             data-tit="{{items.name}}">
-            <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
-              style="width:90rpx;height:90rpx;border-radius:100%;"></image>
-            <view>{{items.name}}</view>
+            <block wx:if="{{items.enable === 1}}">
+              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
+                style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+              <view>{{items.name}}</view>
+            </block>
           </view>
         </view>
       </view>
@@ -499,9 +519,11 @@
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
             data-tit="{{items.name}}">
-            <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
-              style="width:90rpx;height:90rpx;border-radius:100%;"></image>
-            <view>{{items.name}}</view>
+            <block wx:if="{{items.enable === 1}}">
+              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
+                style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+              <view>{{items.name}}</view>
+            </block>
           </view>
         </view>
       </view>
@@ -532,9 +554,11 @@
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
             data-tit="{{items.name}}">
-            <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
-              style="width:90rpx;height:90rpx;border-radius:100%;"></image>
-            <view>{{items.name}}</view>
+            <block wx:if="{{items.enable === 1}}">
+              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
+                style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+              <view>{{items.name}}</view>
+            </block>
           </view>
         </view>
       </view>
@@ -565,9 +589,11 @@
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
             data-tit="{{items.name}}">
-            <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
-              style="width:90rpx;height:90rpx;border-radius:100%;"></image>
-            <view>{{items.name}}</view>
+            <block wx:if="{{items.enable === 1}}">
+              <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
+                style="width:90rpx;height:90rpx;border-radius:100%;"></image>
+              <view>{{items.name}}</view>
+            </block>
           </view>
         </view>
       </view>
