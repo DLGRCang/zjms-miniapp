@@ -89,15 +89,17 @@
       </block>
       <view class="">
         <view class="grid col-{{item.num}}  text-center">
-          <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-            <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.type}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
-              <block wx:if="{{items.enable === 1}}">
+          <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <block wx:if="{{items.enable === 1}}">
+              <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.type}}"
+                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
-              </block>
-            </view>
-          </view>
+
+              </view>
+            </block>
+          </block>
         </view>
       </view>
     </view>
@@ -126,15 +128,18 @@
       </block>
       <view class="">
         <view class="grid col-{{item.num}}  text-center">
-          <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-            <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
-              <block wx:if="{{items.enable === 1}}">
+          <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <block wx:if="{{items.enable === 1}}">
+              <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
+                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
-              </block>
-            </view>
-          </view>
+
+              </view>
+            </block>
+          </block>
+
         </view>
       </view>
     </view>
@@ -163,15 +168,17 @@
       </block>
       <view class="">
         <view class="grid col-{{item.num}}  text-center">
-          <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-            <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
-              <block wx:if="{{items.enable === 1}}">
+          <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <block wx:if="{{items.enable === 1}}">
+              <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
+                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
-              </block>
-            </view>
-          </view>
+
+              </view>
+            </block>
+          </block>
         </view>
       </view>
     </view>
@@ -200,15 +207,17 @@
       </block>
       <view class="">
         <view class="grid col-{{item.num}}  text-center">
-          <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
-            <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
-              <block wx:if="{{items.enable === 1}}">
+          <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+            <block wx:if="{{items.enable === 1}}">
+              <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
+                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
-              </block>
-            </view>
-          </view>
+
+              </view>
+            </block>
+          </block>
         </view>
       </view>
     </view>
