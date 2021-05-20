@@ -12,14 +12,14 @@
 		<view class="title">举报人电话：</view>
 		<input type="number" placeholder="请输入举报人电话" bindinput="putData" data-key="partyphone"></input>
 	</view>
-	<view class="cu-form-group">
+	<!-- <view class="cu-form-group">
 		<view class="title">机构编码（登记人的机构编码）：</view>
 		<input placeholder="请输入" bindinput="putData" data-key="deptcode"></input>
-	</view>
-	<view class="cu-form-group">
+	</view> -->
+	<!-- <view class="cu-form-group">
 		<view class="title">大类编码：</view>
 		<input placeholder="请输入" bindinput="putData" data-key="classcode"></input>
-	</view>
+	</view> -->
 	<view class="cu-form-group">
 		<view class="title">地址描述：</view>
 		<input placeholder="请输入地址描述" value="{{address}}" bindinput="putData" data-key="address"></input>

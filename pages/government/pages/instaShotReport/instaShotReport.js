@@ -12,8 +12,8 @@ Page({
 	data: {
 		party: '',
 		partyphone: '',
-		deptcode: '',
-		classcode: '',
+		// deptcode: '',
+		// classcode: '',
 		imageArr: [],
 		imgList: [],
 		intro: '',
@@ -26,8 +26,8 @@ Page({
 		let 	data = {
 			party:this.data.party,
 			partyphone:this.data.partyphone,
-			deptcode:this.data.deptcode,
-			classcode:this.data.classcode,
+			// deptcode:this.data.deptcode,
+			// classcode:this.data.classcode,
 			eventaddress:this.data.address,
 			latitude:this.data.latitude,
 			longitude:this.data.longitude,
