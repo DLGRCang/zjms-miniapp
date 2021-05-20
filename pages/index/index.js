@@ -41,11 +41,10 @@ Page({
     if (that.data.load) {
       for (let i = 0; i < service.length; i++) {
         let view = wx.createSelectorQuery().in(this).select("#main-" + service[i].id);
-        console.log(view.fields())
+        //console.log(view)
         view.fields({
           size: true
         }, data => {
-          console.log(data)
           service[i].top = tabHeight;
           tabHeight = tabHeight + data.height;
           service[i].bottom = tabHeight;
@@ -56,7 +55,7 @@ Page({
         service: service
       })
     }
-    let scrollTop = e.detail.scrollTop + 20;
+    let scrollTop = e.detail.scrollTop + 50;
     for (let i = 0; i < service.length; i++) {
       if (scrollTop > service[i].top && scrollTop < service[i].bottom) {
         that.setData({
