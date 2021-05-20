@@ -3,7 +3,16 @@
 	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/qizhenhutong.png" style="width:100%"></image>
-<view class="padding-lr-sm padding-tb">
-	<item-image-text bindtap="openXyLink" wx:for="{{artelList1}}" isImg="{{true}}" imgUrl="{{item.info_photos}}" obj="{{item}}"
-		itemTitle="{{item.info_content}}" isDate="true" date="672958"></item-image-text>
+<view class="padding-lr-lg padding-tb">
+	<block wx:for="{{artelList1}}" wx:key="item">
+		<view class="flex ">
+			<view>
+				<image src="{{baseImgUrl}}{{item.info_photos}}" mode="aspectFit" style="width:160rpx;height:180rpx"></image>
+			</view>
+			<view class="padding-lr-lg margin-top-lg" bindtap="openXyLink" data-tab="{{item.info_content}}">
+				<view>{{item.info_content}}</view>
+				<view class="margin-top-sm text-grey text-sm">672958</view>
+			</view>
+		</view>
+	</block>
 </view>

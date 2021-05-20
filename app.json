@@ -183,6 +183,7 @@
 				"pages/instaShot/instaShot",
 				"pages/cityAction/cityAction",
 				"pages/eachFlagTown/eachFlagTown",
+				"pages/eachFlagTownXY/eachFlagTownXY",
 				"pages/volunteerService/volunteerService",
 				"pages/volunteApplication/volunteApplication",
 				"pages/questionnaire/questionnaire",

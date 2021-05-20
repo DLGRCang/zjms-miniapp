@@ -8,51 +8,56 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		tit:'',
+		tit: '',
 		baseImgUrl: app.globalData.baseImgUrl,
 		imgUrl: app.globalData.imgUrl,
 		infotypeid: 'adc3128a-3ce0-4c37-9d29-d7b41eaa02a3',
 		page: 1,
 		dataList: [], //新闻列表
 		infotypeid1: 'c020b82c-4488-481f-a10a-58747c3e8fc7', //村情乡貌
-		artelList1:[],
+		artelList1: [],
 	},
 	//加载村情乡貌社列表
 	getVillageDataList: function () {
 		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+			console.log(dataList)
 			this.setData({
 				artelList1: this.data.artelList1.concat(dataList)
 			})
-			console.log(this.data.artelList1);
 		})
 	},
+	// goXyLink(e){
+	// 	wx.navigateTo({
+	// 		url: '../eachFlagTownXY/eachFlagTownXY?code=672958&tab='+e.currentTarget.dataset.tab,
+	// 	})
+	// },
 	openXyLink: function () {
 		wx.navigateToMiniProgram({
 			appId: 'wx5a161b9b42305c0a',
 			path: 'pages/index/main?number=672958',
-			success: function (res) {},
-			fail: function (res) {}
+			success: function (res) { },
+			fail: function (res) { }
 		})
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	getDataList: function () {
-		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-			this.setData({
-				dataList: this.data.dataList.concat(dataList)
-			})
-			console.log(this.data.dataList);
-		})
-	},
+	// getDataList: function () {
+	// 	//加载数据列表
+	// 	data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+	// 		this.setData({
+	// 			dataList: this.data.dataList.concat(dataList)
+	// 		})
+	// 		console.log(this.data.dataList);
+	// 	})
+	// },
 	onLoad: function (options) {
 		this.setData({
-      tit:options.tit
-    })
+			tit: options.tit
+		})
 		this.getVillageDataList()
-		this.getDataList()
+		// this.getDataList()
 	},
 
 	/**
