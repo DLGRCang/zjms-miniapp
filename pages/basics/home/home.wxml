@@ -1,12 +1,14 @@
-<view class="head">
-	<!-- 顶部图片 -->
+<!-- <view class="head">
+
+
 	<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true"
 		autoplay="true" interval="5000" duration="500">
 		<swiper-item wx:for="{{imgList}}" wx:key>
 			<image src="{{imgUrl}}/image/index{{item}}.png" mode="widthFix" style='width:100%;height:470rpx'></image>
 		</swiper-item>
 	</swiper>
-	<!--搜索  -->
+
+
 	<view class="serarch" bindtap="searchApp">
 		<text class="cuIcon-search text-bold"></text>
 	</view>
@@ -15,9 +17,9 @@
 	</view>
 </view>
 
-<!-- 实现左右联动效果 -->
+
 <view class="flex">
-	<!-- 左边栏 -->
+
 	<view class="nav">
 		<view class="nav-item {{index==TabCur?'active cur':''}} text-bold" wx:for="{{mainInfo}}" wx:key="index"
 			bindtap='tabSelect' data-id="{{index}}">
@@ -26,7 +28,7 @@
 		</view>
 	</view>
 
-	<!-- 右边 background-color: #F8F8F8; -->
+
 	<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 350rpx);"
 		scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
 		<view class="padding-top padding-lr" wx:for="{{mainInfo}}" wx:key="item" id="main-{{index}}">
@@ -36,9 +38,11 @@
 				</view>
 				<view class="margin-bottom-sm" style="text-indent:2em;"><text>{{item.introduce}}</text></view>
 			</view>
-			<!-- 首页伊金霍洛发布 -->
+
+
 			<view class="" wx:if="{{item.id===0}}">
-				<!-- 新闻 -->
+
+
 				<view class="">
 					<view class="flex justify-between margin-bottom-sm">
 						<view class="text-lg">伊金霍洛新闻</view>
@@ -50,7 +54,8 @@
 						</view>
 					</block>
 				</view>
-				<!-- 公告 -->
+
+
 				<view class="margin-tb-lg">
 					<view class="flex justify-between margin-bottom-sm">
 						<view>通知公告</view>
@@ -64,7 +69,7 @@
 					</view>
 				</block>
 
-				<!-- 推优榜 -->
+
 				<view class="margin-top-sm flex justify-between">
 					<view bindtap="goZZDY">
 						<image src="{{imgUrl}}/image/zaizhidangyuan.png" style="height:120rpx;  width:260rpx;"></image>
@@ -74,11 +79,12 @@
 					</view>
 				</view>
 
-				<!-- 电视 -->
+
 				<view class="text-lg margin-tb-sm">伊金霍洛之窗</view>
 				<video class="video" id='myvideo' controls
 					src="https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9"></video>
-				<!-- 广播 -->
+
+
 				<view class="text-lg margin-tb-sm">伊金霍洛之声</view>
 				<view class="radio flex">
 					<view>
@@ -92,9 +98,7 @@
 				</view>
 
 			</view>
-			<!-- 宫格 cu-list grid col-3 no-border  margin-bottom-xl padding-bottom-xl -->
 			<view class="icon-wrap">
-				<!-- 图文 -->
 				<block wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
 					<view class="icon-item" bindtap="goDetail" data-id="{{item.id}}" data-tab="{{items.tab}}"
 						data-tit="{{items.tit}}">
@@ -108,4 +112,4 @@
 			</view>
 		</view>
 	</scroll-view>
-</view>
+</view> -->

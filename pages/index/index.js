@@ -69,7 +69,7 @@ Page({
 
   //搜索
   searchApp() {
-    util.pageJump('/pages/publish/pages/search/search')
+    // util.pageJump('/pages/publish/pages/search/search')
   },
 
   // 个人中心
@@ -250,7 +250,7 @@ Page({
               "icon": "/zjms/1.png",
               "href": "../medical/pages/nucleicAcidCheck/nucleicAcidCheck",
               "openType": 0,
-              "enable": 2,
+              "enable": 1,
               "islogin":true,
               "content": [{
                 "enable": 1,
@@ -269,7 +269,7 @@ Page({
               "icon": "/zjms/2.png",
               "href": "../medical/pages/vaccine/vaccine",
               "openType": 0,
-              "enable": 2,
+              "enable": 1,
               "islogin":true,
               "content": [{
                 "enable": 1,
@@ -288,7 +288,7 @@ Page({
               "icon": "/zjms/3.png",
               "href": "",
               "openType": "",
-              "enable": 2,
+              "enable": 1,
               "islogin":true,
               "content": [{
                 "enable": 1,
@@ -516,7 +516,7 @@ Page({
               "icon": "/zjms/15.png",
               "href": "../help/pages/dishonest/dishonest",
               "openType": 0,
-              "enable": 2,
+              "enable": 1,
               "islogin":true,
               "content": [{
                 "enable": 1,
@@ -554,7 +554,7 @@ Page({
           "type": "tv",
           "num": 0,
           "title": "伊金霍洛之窗",
-          "enable": 2,
+          "enable": 1,
           "more": {
             "enable": 0,
             "href": "",
@@ -586,7 +586,7 @@ Page({
           "type": "radio",
           "num": 0,
           "title": "伊金霍洛之声",
-          "enable": 2,
+          "enable": 1,
           "more": {
             "enable": 0,
             "href": "",
@@ -618,7 +618,7 @@ Page({
           "type": "city",
           "num": 3,
           "title": "智慧城市",
-          "enable": 2,
+          "enable": 1,
           "more": {
             "enable": 0,
             "href": "",
@@ -755,7 +755,7 @@ Page({
           "apiUrl": "url",
           "list": [{
               "id": 0,
-              "name": "伊旗发布",
+              "name": "今日伊旗",
               "summary": "",
               "icon": "",
               "href": "",
@@ -763,7 +763,7 @@ Page({
               "enable": 1,
               "islogin":true,
               "content": [{
-                  "enable": 2,
+                  "enable": 1,
                   "islogin":true,
                   "id": 0,
                   "tit": "听广播",
@@ -773,7 +773,7 @@ Page({
                 },
     
                 {
-                  "enable": 2,
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "看电视",
@@ -795,7 +795,7 @@ Page({
     
             {
               "id": 1,
-              "name": "魅力伊旗",
+              "name": "大美伊旗",
               "summary": "",
               "icon": "",
               "href": "",
@@ -851,7 +851,7 @@ Page({
             },
             {
               "id": 2,
-              "name": "文化旅游",
+              "name": "游在伊旗",
               "summary": "",
               "icon": "",
               "href": "",
@@ -871,7 +871,7 @@ Page({
                   "enable": 1,
                   "islogin":true,
                   "id": 1,
-                  "tit": "伊旗天气",
+                  "tit": "天气预报",
                   "icon": "/image/8.png",
                   "url": "../travel/pages/weather/weather",
                   "openType": 0
@@ -917,7 +917,7 @@ Page({
                   "enable": 1,
                   "islogin":true,
                   "id": 6,
-                  "tit": "身边公厕",
+                  "tit": "周边公厕",
                   "icon": "/image/13.png",
                   "url": "../travel/pages/toilet/toilet",
     
@@ -1011,7 +1011,7 @@ Page({
                   "enable": 1,
                   "islogin":true,
                   "id": 2,
-                  "tit": "高档餐饮",
+                  "tit": "酒店餐饮",
                   "icon": "/image/18.png",
                   "url": "../food/pages/topFood/topFood",
                   "openType": 0
@@ -1033,7 +1033,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 1,
+                  "enable": 2,
                   "islogin":true,
                   "id": 5,
                   "tit": "食品安全",
@@ -1145,7 +1145,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 2,
+                  "enable": 1,
                   "islogin":true,
                   "id": 1,
                   "tit": "健康证",
@@ -1154,7 +1154,7 @@ Page({
                   "openType": 1
                 },
                 {
-                  "enable": 2,
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "疫苗接种",
@@ -1163,7 +1163,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 2,
+                  "enable": 1,
                   "islogin":true,
                   "id": 3,
                   "tit": "核酸检测",
@@ -1172,7 +1172,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 2,
+                  "enable": 1,
                   "islogin":true,
                   "id": 4,
                   "tit": "养老院",
@@ -1283,7 +1283,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 2,
+                  "enable": 1,
                   "islogin":true,
                   "id": 2,
                   "tit": "失信人员",
@@ -1411,7 +1411,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 1,
+                  "enable": 2,
                   "islogin":true,
                   "id": 10,
                   "tit": "物业服务",
@@ -1483,7 +1483,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 1,
+                  "enable": 2,
                   "islogin":false,
                   "id": 18,
                   "tit": "公租房",
@@ -1518,7 +1518,7 @@ Page({
           "type": "dept",
           "num": 4,
           "title": "各委办局",
-          "enable": 2,
+          "enable": 1,
           "more": {
             "enable": 1,
             "href": "",
@@ -1622,7 +1622,7 @@ Page({
               "icon": "/zjms/fee1.png",
               "href": "../../pages/about/home/home",
               "openType": 0,
-              "enable": 2,
+              "enable": 1,
               "islogin":true,
               "content": [{
                 "enable": 1,
