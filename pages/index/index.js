@@ -1,5 +1,5 @@
 const util = require('../../utils/util')
-const login = require('../../utils/login')
+const login = require('../../utils/login')
 const app = getApp();
 Page({
 
@@ -16,11 +16,11 @@ Page({
     load: true,
     VerticalNavTop: 0,
     iconImgUrl: "",
-    topImg:  "", 
-    bottomImg: "", 
+    topImg: "",
+    bottomImg: "",
     currentTime: util.formatDate(new Date) + ' ' + util.getWeekByDate(new Date()), //当前时间
     modules: null,
-    service:null,
+    service: null,
   },
 
   // 切换左边菜单并联动右边
@@ -69,7 +69,7 @@ Page({
 
   //搜索
   searchApp() {
-    // util.pageJump('/pages/publish/pages/search/search')
+    util.pageJump('/pages/publish/pages/search/search')
   },
 
   // 个人中心
@@ -83,28 +83,36 @@ Page({
   // 业务详情页
   goServiceDetail(e) {
     console.log(e.currentTarget.dataset)
-    if (e.currentTarget.dataset.type === 0) {
-      // 页面跳转
-      if(e.currentTarget.dataset.login){
-        util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
-      }else{
-         if (!login.isLogin()) return
+    if (e.currentTarget.dataset.url == "") {
+      wx.showToast({
+        title: '功能正在完善中',
+        icon: 'none'
+      })
+    } else {
+      if (e.currentTarget.dataset.type === 0) {
+        // 页面跳转
+        if (e.currentTarget.dataset.login) {
+          util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
+        } else {
+          if (!login.isLogin()) return
+        }
+
+      } else if (e.currentTarget.dataset.type === 1) {
+        // 小程序跳转 url=appid
+        wx.navigateToMiniProgram({
+          appId: e.currentTarget.dataset.url,
+          path: '',
+          success: function (res) { },
+          fail: function (res) { }
+        })
+      } else if (e.currentTarget.dataset.type === 2) {
+        // webView 跳转
+        wx.navigateTo({
+          url: '../../pages/appointment/pages/webView/webView?url=' + e.currentTarget.dataset.url + "&tit=" + e.currentTarget.dataset.tit,
+        })
       }
-      
-    } else if (e.currentTarget.dataset.type === 1) {
-      // 小程序跳转 url=appid
-      wx.navigateToMiniProgram({
-        appId: e.currentTarget.dataset.url,
-        path: '',
-        success: function (res) { },
-        fail: function (res) { }
-      })
-    } else if (e.currentTarget.dataset.type === 2) {
-      // webView 跳转
-      wx.navigateTo({
-        url: '../../pages/appointment/pages/webView/webView?url=' + e.currentTarget.dataset.url + "&tit=" + e.currentTarget.dataset.tit,
-      })
     }
+
   },
 
   // 数据请求
@@ -115,16 +123,16 @@ Page({
       console.log(res.data.modules[6].list)
       this.setData({
         modules: res.data.modules,
-        iconImgUrl:res.data.iconImgUrl,
-        topImg:res.data.topImg,
-        bottomImg:res.data.bottomImg,
-        service:res.data.modules[6].list
+        iconImgUrl: res.data.iconImgUrl,
+        topImg: res.data.topImg,
+        bottomImg: res.data.bottomImg,
+        service: res.data.modules[6].list
       })
     });
   },
   // 测试
-  getDataSource(){
-    let data ={
+  getDataSource() {
+    let data = {
       "iconImgUrl": "https://www.yjhlcity.com/InfoIssue/miniapp",
       "topImg": "https://www.yjhlcity.com/InfoIssue/miniapp/zjms/top.png",
       "bottomImg": "https://www.yjhlcity.com/InfoIssue/miniapp/zjms/bottom.png",
@@ -1033,7 +1041,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 2,
+                  "enable": 3,
                   "islogin":true,
                   "id": 5,
                   "tit": "食品安全",
@@ -1411,7 +1419,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 2,
+                  "enable": 3,
                   "islogin":true,
                   "id": 10,
                   "tit": "物业服务",
@@ -1483,7 +1491,7 @@ Page({
                   "openType": 0
                 },
                 {
-                  "enable": 2,
+                  "enable": 3,
                   "islogin":false,
                   "id": 18,
                   "tit": "公租房",
@@ -1660,10 +1668,10 @@ Page({
     console.log(data)
     this.setData({
       modules: data.modules,
-      iconImgUrl:data.iconImgUrl,
-      topImg:data.topImg,
-      bottomImg:data.bottomImg,
-      service:data.modules[6].list
+      iconImgUrl: data.iconImgUrl,
+      topImg: data.topImg,
+      bottomImg: data.bottomImg,
+      service: data.modules[6].list
     })
   },
   /**
