@@ -14,9 +14,24 @@ Page({
 	},
 	//写留言
 	wordMessage() {
+
 		//判断是否登录
-		if (!login.isLogin()) return
-		util.pageJump('../flagLeaderWordMessage/flagLeaderWordMessage')
+		if(wx.getStorageSync('isLogin')){
+			util.pageJump('../flagLeaderWordMessage/flagLeaderWordMessage')
+		}else{
+			wx.showToast({
+				title: "请先登录",
+				icon: 'none',
+				mask: true,
+				success(res) {
+					setTimeout(() => {
+						wx.navigateTo({
+							url: '../../../plugin/home/home',
+						})
+					}, 1000)
+				}
+			});
+		}
 	},
 	//留言详情
 	messageInfo(e) {

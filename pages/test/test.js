@@ -854,6 +854,11 @@ Page({
     ],
   },
 
+  test(){
+wx.navigateTo({
+  url: '../government/pages/instaShot/instaShot',
+})
+  },
 
   // 切换左边菜单并联动右边
   tabSelect(e) {
