@@ -1,5 +1,4 @@
 {
   "usingComponents": {
-    "weather": "plugin://weather/weather"
   }
 }
