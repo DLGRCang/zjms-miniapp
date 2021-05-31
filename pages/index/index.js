@@ -134,7 +134,7 @@ Page({
     });
   },
   // 测试
-  getDataSource() {
+  getDataTest() {
     let data = {
       "iconImgUrl": "https://www.yjhlcity.com/InfoIssue/miniapp",
       "topImg": "https://www.yjhlcity.com/InfoIssue/miniapp/zjms/top.png",
@@ -1690,9 +1690,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.getData()
+    this.getData()
     // 测试
-    this.getDataSource()
+    // this.getDataTest()
   },
 
   /**
