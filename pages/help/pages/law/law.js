@@ -10,8 +10,10 @@ Page({
 	data: {
 		imgUrl:app.globalData.imgUrl,
 		infotypeid: 'e0fbe4d8-727c-41db-9edc-fd3f2625bc9a',
+		infotypeid1: '3909c4c7-0d2e-4148-9562-a1c204ca8e58',
     page:1,
 		dataList: [], //新闻列表
+		dataList1: [], //新闻列表
 		tit:''
 	},
 
@@ -25,6 +27,14 @@ Page({
         dataList: this.data.dataList.concat(dataList),
       })
 			console.log(this.data.dataList);
+		})
+
+		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+			console.log(dataList)
+			this.setData({
+        dataList1: this.data.dataList.concat(dataList),
+			})
+			console.log(this.data.dataList1);
 		})
 	},
 	onLoad: function (options) {

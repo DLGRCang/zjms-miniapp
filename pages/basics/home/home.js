@@ -332,11 +332,11 @@ Page({
         pic: "/image/45.png",
         tab: 4
       },
-      // {
-      //   tit: "高龄补助",
-      //   pic: "/image/47.png",
-      //   tab: 5
-      // },
+      {
+        tit: "高龄补助",
+        pic: "/image/47.png",
+        tab: 5
+      },
       {
         tit: "养老院",
         pic: "/image/48.png",

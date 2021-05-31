@@ -106,6 +106,9 @@ Page({
           fail: function (res) { }
         })
       } else if (e.currentTarget.dataset.type === 2) {
+        console.log(e.currentTarget.dataset.url)
+        console.log(e.currentTarget.dataset.url)
+        console.log(e.currentTarget.dataset.url)
         // webView 跳转
         wx.navigateTo({
           url: '../../pages/appointment/pages/webView/webView?url=' + e.currentTarget.dataset.url + "&tit=" + e.currentTarget.dataset.tit,
@@ -294,8 +297,8 @@ Page({
               "name": "业务预审",
               "summary": "",
               "icon": "/zjms/3.png",
-              "href": "",
-              "openType": "",
+              "href": "../government/pages/thingsGuide/thingsGuide",
+              "openType": 0,
               "enable": 1,
               "islogin":true,
               "content": [{
@@ -389,8 +392,8 @@ Page({
               "name": "律师公证",
               "summary": "",
               "icon": "/zjms/8.png",
-              "href": "",
-              "openType": "",
+              "href": "../help/pages/law/law",
+              "openType": 0,
               "enable": 1,
               "islogin":true,
               "content": [{
@@ -544,7 +547,7 @@ Page({
               "href": "../government/pages/instaShot/instaShot",
               "openType": 0,
               "enable": 1,
-              "islogin":false,
+              "islogin":true,
               "content": [{
                 "enable": 1,
                 "islogin":true,
@@ -733,8 +736,8 @@ Page({
               "name": "在职党员",
               "summary": "",
               "icon": "/zjms/city6.png",
-              "href": "../part/pages/sign/sign",
-              "openType": 0,
+              "href": "在职党员",
+              "openType": 2,
               "enable": 1,
               "islogin":true,
               "content": [{
@@ -965,7 +968,7 @@ Page({
                   "id": 10,
                   "tit": "数字文化",
                   "icon": "/image/83.png",
-                  "url": "wxd22d0af6881402ea",
+                  "url": "wx7bb81a7623f3c865",
                   "openType": 1
                 },
                 {
@@ -1102,7 +1105,7 @@ Page({
                   "id": 4,
                   "tit": "图书商店",
                   "icon": "/image/36.png",
-                  "url": "wx7bb81a7623f3c865",
+                  "url": "wxd22d0af6881402ea",
                   "openType": 1
                 },
                 {
@@ -1246,7 +1249,7 @@ Page({
                 },
                 {
                   "enable": 1,
-                  "islogin":false,
+                  "islogin":true,
                   "id": 5,
                   "tit": "随手拍",
                   "icon": "/image/53.png",
@@ -1312,6 +1315,15 @@ Page({
                   "enable": 1,
                   "islogin":true,
                   "id": 4,
+                  "tit": "老人关互",
+                  "icon": "/image/47.png",
+                  "url": "wx81bd4b25fc86cfa1",
+                  "openType": 1
+                },
+                {
+                  "enable": 1,
+                  "islogin":true,
+                  "id": 5,
                   "tit": "女性关护",
                   "icon": "/image/62.png",
                   "url": "../help/pages/woman/woman",
@@ -1492,7 +1504,7 @@ Page({
                 },
                 {
                   "enable": 3,
-                  "islogin":false,
+                  "islogin":true,
                   "id": 18,
                   "tit": "公租房",
                   "icon": "/image/77.png",
@@ -1678,9 +1690,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData()
+    // this.getData()
     // 测试
-    // this.getDataSource()
+    this.getDataSource()
   },
 
   /**

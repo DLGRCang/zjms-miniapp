@@ -14,10 +14,18 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    this.setData({
-      url:options.url,
-      tit:options.tit
-    })
+    if(options.tit=='在职党员'){
+      this.setData({
+        url:'https://www.yjhlcity.com/sqdj/?network=miniapp'
+      })
+      
+    }else{
+      this.setData({
+        url:options.url,
+        tit:options.tit
+      })
+    }
+    
   },
 
   /**

@@ -1,3 +1,4 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">测试</view>
 </cu-custom>
+<web-view src="https://www.yjhlcity.com/sqdj/?network=miniapp"></web-view>
