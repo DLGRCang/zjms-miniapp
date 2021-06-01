@@ -19,7 +19,7 @@ Page({
 		infotypeid1: 'c020b82c-4488-481f-a10a-58747c3e8fc7', //村情乡貌
 		infotypeid2: '0d12fb62-f311-43a5-a9a0-11c17fc353d8', //村有好货
 		page: 1,
-		rows: 100,
+		rows: 10,
 		artelList: [], //合作社列表
 		artelList1: [], //村情乡貌列表
 		villageGoods: [],//村有好货
@@ -118,20 +118,31 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-		// this.setData({
-		// 	page: 1
-		// })
-		// this.getDataList();
+    let page = this.data.page
+    page = 1
+    this.setData({
+      page: page,
+      dataList: []
+    })
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    })
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
-		// this.setData({
-		// 	page: this.data.page++
-		// })
-		// this.getDataList();
+		this.setData({
+			page: this.data.page+1,
+			artelList:[]
+		})
+		wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    })
+		this.getDataList();
 	},
 
 	/**

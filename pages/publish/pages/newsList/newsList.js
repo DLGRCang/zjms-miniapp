@@ -10,6 +10,9 @@ Page({
   data: {
     dtype: 0,
     dataList: [],
+    id: '',
+    page: 1,
+    rows: 10,
     //  新闻类型
     //  1.两行标题，日期
     //  2.图片，两行标题，日期
@@ -34,27 +37,23 @@ Page({
       this.getNoticeList()
       return
     }
-
-    var id = options.id;
-    let page = 1
-    let rows = 100
-    // console.log("新闻列表id:")
-    // console.log(options.id)
-    // console.log("新闻列表type:")
-    // console.log(options.type)
     this.setData({
+      id: options.id,
       dtype: options.dtype,
       type: options.type
     })
+    this.getDataList()
+  },
+
+  getDataList() {
     //加载新闻列表
-    data.getArtelData(id,page,rows).then(dataList => {
+    data.getArtelData(this.data.id, this.data.page, this.data.rows).then(dataList => {
       this.setData({
         dataList: dataList
       })
       console.log(this.data.dataList)
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -87,14 +86,32 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    let page = this.data.page
+    page = 1
+    this.setData({
+      page: page,
+      dataList: []
+    })
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    })
+    this.getDataList();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      page: this.data.page + 1,
+      dataList: []
+    })
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    })
+    this.getDataList();
   },
 
   /**

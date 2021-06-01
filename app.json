@@ -317,5 +317,6 @@
 		"type-picker-thing": "/components/type-picker-thing/type-picker-thing",
 		"bottom": "/components/bottom/bottom"
 	},
-	"sitemapLocation": "sitemap.json"
+	"sitemapLocation": "sitemap.json",
+	"enablePullDownRefresh": true
 }
