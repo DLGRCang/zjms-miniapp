@@ -25,12 +25,21 @@ Page({
 		villageGoods: [],//村有好货
 	},
 	selectTab: function (e) {
+		let page = this.data.page
 		this.setData({
 			tabId: e.detail.TabCur
 		})
 		if (this.data.tabId == 0) {
+			page = 1
+			this.setData({
+				page: page
+			})
 			this.getVillageGoods();
 		} else if (this.data.tabId == 1) {
+			page = 1
+			this.setData({
+				page: page
+			})
 			this.getDataList();
 		}
 		console.log("点击了第几个Tab:" + e.detail.TabCur)
@@ -49,15 +58,16 @@ Page({
 		this.setData({
 			tit: options.tit
 		})
-		this.getVillageGoods();
-		this.getVillageDataList();
+		this.getVillageGoods();//村有好货
+		this.getVillageDataList();//一村一品
+		this.getDataList()//合作社
 	},
 	//加载村有好货
 	getVillageGoods: function () {
 		this.setData({
 			villageGoods: []
 		})
-		data.getArtelData(this.data.infotypeid2, this.data.page, this.data.rows).then(dataList => {
+		data.getArtelData(this.data.infotypeid2, this.data.page, 50).then(dataList => {
 			this.setData({
 				villageGoods: this.data.villageGoods.concat(dataList)
 			})
@@ -77,14 +87,7 @@ Page({
 			if (dataList.length == 0) {
 				wx.showToast({
 					title: '数据到头了',
-					icon: 'none',
-					success() {
-						setTimeout(() => {
-							wx.navigateBack({
-								delta: 1
-							})
-						}, 1000)
-					}
+					icon: 'none'
 				})
 			}
 
@@ -132,16 +135,16 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-    let page = this.data.page
-    page = 1
-    this.setData({
-      page: page,
-      artelList: []
-    })
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    })
+		let page = this.data.page
+		page = 1
+		this.setData({
+			page: page,
+			artelList: []
+		})
+		wx.showToast({
+			title: '加载中',
+			icon: 'loading'
+		})
 	},
 
 	/**
@@ -149,13 +152,13 @@ Page({
 	 */
 	onReachBottom: function () {
 		this.setData({
-			page: this.data.page+1,
-			artelList:[]
+			page: this.data.page + 1,
+			artelList: []
 		})
 		wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    })
+			title: '加载中',
+			icon: 'loading'
+		})
 		this.getDataList();
 	},
 
