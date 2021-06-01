@@ -36,20 +36,21 @@ Page({
     }
 
     var id = options.id;
-    console.log("新闻列表id:")
-    console.log(options.id)
-    console.log("新闻列表type:")
-    console.log(options.type)
+    let page = 1
+    let rows = 100
+    // console.log("新闻列表id:")
+    // console.log(options.id)
+    // console.log("新闻列表type:")
+    // console.log(options.type)
     this.setData({
       dtype: options.dtype,
       type: options.type
     })
     //加载新闻列表
-    data.getArtelData(id).then(dataList => {
+    data.getArtelData(id,page,rows).then(dataList => {
       this.setData({
         dataList: dataList
       })
-      console.log("加载新闻列表")
       console.log(this.data.dataList)
     })
   },

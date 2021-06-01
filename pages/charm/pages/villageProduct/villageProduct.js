@@ -9,7 +9,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		tit:'',
+		tit: '',
 		imgUrl: app.globalData.imgUrl,
 		baseImgUrl: app.globalData.baseImgUrl,
 		tabId: 0,
@@ -19,6 +19,7 @@ Page({
 		infotypeid1: 'c020b82c-4488-481f-a10a-58747c3e8fc7', //村情乡貌
 		infotypeid2: '0d12fb62-f311-43a5-a9a0-11c17fc353d8', //村有好货
 		page: 1,
+		rows: 100,
 		artelList: [], //合作社列表
 		artelList1: [], //村情乡貌列表
 		villageGoods: [],//村有好货
@@ -35,9 +36,9 @@ Page({
 		console.log("点击了第几个Tab:" + e.detail.TabCur)
 	},
 	//村情乡貌详情
-	goDetail(e){
+	goDetail(e) {
 		wx.navigateTo({
-			url: "/pages/publish/pages/newsDetail/newsDetail?info_content="+e.currentTarget.dataset.obj.info_content+"&info_source="+e.currentTarget.dataset.obj.info_source+"&publishdate="+e.currentTarget.dataset.obj.publishdate+"&info_videos="+encodeURIComponent(e.currentTarget.dataset.obj.info_videos)+"&info_detail="+encodeURIComponent(e.currentTarget.dataset.obj.info_detail),
+			url: "/pages/publish/pages/newsDetail/newsDetail?info_content=" + e.currentTarget.dataset.obj.info_content + "&info_source=" + e.currentTarget.dataset.obj.info_source + "&publishdate=" + e.currentTarget.dataset.obj.publishdate + "&info_videos=" + encodeURIComponent(e.currentTarget.dataset.obj.info_videos) + "&info_detail=" + encodeURIComponent(e.currentTarget.dataset.obj.info_detail),
 		})
 	},
 
@@ -46,17 +47,17 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.setData({
-      tit:options.tit
-    })
+			tit: options.tit
+		})
 		this.getVillageGoods();
 		this.getVillageDataList();
 	},
 	//加载村有好货
 	getVillageGoods: function () {
 		this.setData({
-			villageGoods:[]
+			villageGoods: []
 		})
-		data.getArtelData(this.data.infotypeid2, this.data.page).then(dataList => {
+		data.getArtelData(this.data.infotypeid2, this.data.page, this.data.rows).then(dataList => {
 			this.setData({
 				villageGoods: this.data.villageGoods.concat(dataList)
 			})
@@ -66,9 +67,9 @@ Page({
 	//加载一村一品合作社列表
 	getDataList: function () {
 		this.setData({
-			artelList:[]
+			artelList: []
 		})
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
 			this.setData({
 				artelList: this.data.artelList.concat(dataList)
 			})
@@ -77,7 +78,7 @@ Page({
 	},
 	//加载村情乡貌社列表
 	getVillageDataList: function () {
-		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
+		data.getArtelData(this.data.infotypeid1, this.data.page, this.data.rows).then(dataList => {
 			this.setData({
 				artelList1: this.data.artelList1.concat(dataList)
 			})
