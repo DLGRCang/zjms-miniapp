@@ -85,7 +85,7 @@ Page({
     console.log(e.currentTarget.dataset)
     if (e.currentTarget.dataset.url == "") {
       wx.showToast({
-        title: '功能正在完善中',
+        title: '您不是'+e.currentTarget.dataset.tit+'系统人员，无权访问',
         icon: 'none'
       })
     } else {
