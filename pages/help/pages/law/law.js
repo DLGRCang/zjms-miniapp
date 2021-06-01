@@ -32,7 +32,7 @@ Page({
 		data.getArtelData(this.data.infotypeid1, this.data.page).then(dataList => {
 			console.log(dataList)
 			this.setData({
-        dataList1: this.data.dataList.concat(dataList),
+        dataList1: this.data.dataList1.concat(dataList),
 			})
 			console.log(this.data.dataList1);
 		})
