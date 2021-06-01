@@ -7,25 +7,38 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		imgUrl:app.globalData.imgUrl,  
+		imgUrl: app.globalData.imgUrl,
 		infotypeid: '93f04e98-3616-476b-a877-a4abe5aa4cc5',
-    page:1,
+		page: 1,
+		rows: 10,
 		dataList: [], //
-		tit:''
+		tit: ''
 	},
 	getDataList: function () {
 		//加载数据列表
-		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
 			this.setData({
 				dataList: this.data.dataList.concat(dataList)
 			})
-			console.log(this.data.dataList);
+			if (dataList.length == 0) {
+				wx.showToast({
+					title: '数据到头了',
+					icon: 'none',
+					success() {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 2000)
+					}
+				})
+			}
 		})
 	},
 	onLoad: function (options) {
 		this.setData({
-      tit:options.tit
-    })
+			tit: options.tit
+		})
 		this.getDataList()
 	},
 
@@ -61,14 +74,32 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-
+		let page = this.data.page
+		page = 1
+		this.setData({
+			page: page,
+			dataList: []
+		})
+		wx.showToast({
+			title: '加载中',
+			icon: 'loading'
+		})
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
-
+		this.setData({
+			page: this.data.page + 1,
+			dataList: []
+		})
+		wx.showToast({
+			title: '加载中',
+			icon: 'loading'
+		})
+		console.log(this.data.dataList)
+		this.getDataList();
 	},
 
 	/**

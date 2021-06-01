@@ -74,6 +74,20 @@ Page({
 				artelList: this.data.artelList.concat(dataList)
 			})
 			console.log(this.data.artelList);
+			if (dataList.length == 0) {
+				wx.showToast({
+					title: '数据到头了',
+					icon: 'none',
+					success() {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 1000)
+					}
+				})
+			}
+
 		})
 	},
 	//加载村情乡貌社列表
@@ -122,7 +136,7 @@ Page({
     page = 1
     this.setData({
       page: page,
-      dataList: []
+      artelList: []
     })
     wx.showToast({
       title: '加载中',
