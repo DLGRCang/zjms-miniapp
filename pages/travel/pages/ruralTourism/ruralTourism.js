@@ -74,32 +74,36 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-		let page = this.data.page
-		page = 1
-		this.setData({
-			page: page,
-			dataList: []
-		})
-		wx.showToast({
-			title: '加载中',
-			icon: 'loading'
-		})
+		// let page = this.data.page
+		// page = 1
+		// this.setData({
+		// 	page: page,
+		// 	dataList: []
+		// })
+		// wx.showToast({
+		// 	title: '加载中',
+		// 	icon: 'loading'
+		// })
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
+		let that = this
 		this.setData({
 			page: this.data.page + 1,
 			dataList: []
 		})
 		wx.showToast({
 			title: '加载中',
-			icon: 'loading'
+			icon: 'loading',
+			success(res) {
+				setTimeout(() => {
+					that.getDataList();
+				}, 1000)
+			}
 		})
-		console.log(this.data.dataList)
-		this.getDataList();
 	},
 
 	/**

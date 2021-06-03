@@ -55,10 +55,10 @@
       <text class="newsTit">{{item.title}}</text>
       <swiper style="width:100%;height:60rpx" class="padding-lr" vertical="true" autoplay="true" circular="true"
         interval="2000" display-multiple-items='1'>
-        <block wx:for='{{item.list}}'>
+        <block wx:for='{{newsInfo}}'>
           <swiper-item class="flex align-center">
-            <view class="flex text-cut ">
-              <text>{{item.name}}</text>
+            <view class="flex text-cut " bindtap="goNewsDetail" data-id="{{item.id}}">
+              <text>{{item.title}}</text>
             </view>
           </swiper-item>
         </block>

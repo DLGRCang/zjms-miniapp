@@ -135,31 +135,37 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-		let page = this.data.page
-		page = 1
-		this.setData({
-			page: page,
-			artelList: []
-		})
-		wx.showToast({
-			title: '加载中',
-			icon: 'loading'
-		})
+		// let page = this.data.page
+		// page = 1
+		// this.setData({
+		// 	page: page,
+		// 	artelList: []
+		// })
+		// wx.showToast({
+		// 	title: '加载中',
+		// 	icon: 'loading'
+		// })
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
+		var that = this
 		this.setData({
 			page: this.data.page + 1,
 			artelList: []
 		})
 		wx.showToast({
 			title: '加载中',
-			icon: 'loading'
+			icon: 'loading',
+			success(res) {
+				setTimeout(() => {
+					that.getDataList();
+				}, 1000)
+			}
 		})
-		this.getDataList();
+		
 	},
 
 	/**
