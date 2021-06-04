@@ -6,7 +6,7 @@
 <button bindtap="nucleicForm" class="button">新冠疫苗接种</button>
 <view class="flex flex-direction padding-lg">
 
-	<dot-title title="预防接种"  color="title-color"></dot-title>
+	<dot-title title="接种常识"  color="title-color"></dot-title>
 	<view class="padding-lr-sm padding-tb">
 		<item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}"
 			itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>

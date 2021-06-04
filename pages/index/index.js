@@ -128,6 +128,9 @@ Page({
       })
     });
   },
+  goOfficeNews(){
+    util.pageJump("../publish/pages/officialNewsList/officialNewsList")
+  },
   // 新闻详情
   goNewsDetail(e){
     util.pageJumpTo('../publish/pages/officialNewsDetail/officialNewsDetail', 'id', e.currentTarget.dataset.id)

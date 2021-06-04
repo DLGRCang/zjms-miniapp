@@ -7,7 +7,7 @@
   <dot-title title="小吃一条街" color="red"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{xcFoodList}}" wx:key="item">
-      <image src="{{baseImgUrl}}{{item.photo}}"></image>
+      <image src="{{baseImgUrl}}{{item.photo}}" bindtap="goDetail" data-id="{{item.shopListId}}"></image>
       <view class="margin-top-xs padding-left-sm textInfo">{{item.shopName}}</view>
       <view class="margin-top-xs padding-left-sm">
         <text class="text-sm text-grey">服务星级：</text>

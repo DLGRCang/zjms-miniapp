@@ -52,7 +52,7 @@
   <!-- 新闻 -->
   <block wx:if="{{item.type === 'news' && item.enable=== 1}}">
     <view class="padding-lg margin-tb-sm  borders common flex">
-      <text class="newsTit">{{item.title}}</text>
+      <text class="newsTit" bindtap="goOfficeNews">{{item.title}}</text>
       <swiper style="width:100%;height:60rpx" class="padding-lr" vertical="true" autoplay="true" circular="true"
         interval="2000" display-multiple-items='1'>
         <block wx:for='{{newsInfo}}'>

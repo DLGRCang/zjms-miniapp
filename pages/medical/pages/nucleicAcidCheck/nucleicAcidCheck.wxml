@@ -6,7 +6,7 @@
 <button bindtap="nucleicForm" class="button">核酸申请表</button>
 
 <view class="flex flex-direction padding-lg">
-	<dot-title title="检测机构" color="title-color"></dot-title>
+	<dot-title title="防控知识" color="title-color"></dot-title>
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isDate="true" date="{{item.publishdate}}" isLine="true">
 	</item-image-text>
