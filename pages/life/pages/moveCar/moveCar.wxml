@@ -11,8 +11,8 @@
 	}
 </wxs>
 <view class="padding-lr">
-  <dot-title title="代驾" color="title-color" isMore="{{false}}" sign="{{infotypeid}}" type="3" dtype="2"></dot-title>
-  <button bindtap="secondUsedCar" class="button-btn">我要发布</button>
+  <!-- <dot-title title="代驾" color="title-color" isMore="{{false}}" sign="{{infotypeid}}" type="3" dtype="2"></dot-title>
+  <button bindtap="secondUsedCar" class="button-btn">我要发布</button> -->
 
 
 

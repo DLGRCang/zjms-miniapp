@@ -15,7 +15,7 @@
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
 	</item-image-text>
 
-	<dot-title title="法律咨询" color="title-color" isMore="true"></dot-title>
+	<!-- <dot-title title="法律咨询" color="title-color" isMore="true"></dot-title>
 	<view class="flex" wx:for="{{2}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm"
 			style="width: 80rpx;height: 80rpx;"></image>
@@ -24,5 +24,5 @@
 			<text class="text-gray text-sm margin-bottom-xs">2019-02-03</text>
 			<text class="text-black text-df margin-bottom-xl">这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做</text>
 		</view>
-	</view>
+	</view> -->
 </view>
