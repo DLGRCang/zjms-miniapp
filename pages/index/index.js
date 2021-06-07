@@ -102,7 +102,7 @@ Page({
         // 小程序跳转 url=appid
         wx.navigateToMiniProgram({
           appId: e.currentTarget.dataset.url,
-          path: '',
+          path: e.currentTarget.dataset.color,
           success: function (res) { },
           fail: function (res) { }
         })
