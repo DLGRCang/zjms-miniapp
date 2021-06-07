@@ -17,7 +17,7 @@ Page({
 	getDataList: function () {
 		//加载数据列表
 		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
-			this.setData({
+			this.setData({    
 				dataList: this.data.dataList.concat(dataList)
 			})
 			if (dataList.length == 0) {

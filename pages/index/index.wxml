@@ -91,8 +91,8 @@
         <view class="grid col-{{item.num}}  text-center">
           <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <block wx:if="{{items.enable === 1}}">
-              <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.type}}"
-                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+              <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
+                data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
 
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -131,7 +131,7 @@
           <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <block wx:if="{{items.enable === 1}}">
               <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+                data-tit="{{items.name}}" data-login="{{items.islogin}}"  data-color="{{items.color}}">
 
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -171,7 +171,7 @@
           <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <block wx:if="{{items.enable === 1}}">
               <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+                data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
 
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -210,7 +210,7 @@
           <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <block wx:if="{{items.enable === 1}}">
               <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-                data-tit="{{items.name}}" data-login="{{items.islogin}}">
+                data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
 
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -240,7 +240,7 @@
       <view class="text-xl text-bold margin-bottom-lg">{{item.title}}</view>
       <block wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
         <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-          data-tit="{{items.name}}" data-login="{{items.islogin}}">
+          data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
           <image src="{{iconImgUrl}}{{items.icon}}" style="width:680rpx;height:160rpx"></image>
         </view>
       </block>
@@ -273,7 +273,7 @@
         <view class="grid col-{{item.num}}  text-center">
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
+              data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
               <block wx:if="{{items.enable === 1}}">
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -309,7 +309,7 @@
         <view class="grid col-{{item.num}}  text-center">
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
+              data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
               <block wx:if="{{items.enable === 1}}">
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -345,7 +345,7 @@
         <view class="grid col-{{item.num}}  text-center">
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
+              data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
               <block wx:if="{{items.enable === 1}}">
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -381,7 +381,7 @@
         <view class="grid col-{{item.num}}  text-center">
           <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-              data-tit="{{items.name}}" data-login="{{items.islogin}}">
+              data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
               <block wx:if="{{items.enable === 1}}">
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -459,7 +459,7 @@
               <block wx:for="{{items.content}}" wx:for-item="itemss" wx:key="index">
                 <block wx:if="{{itemss.enable === 1}}">
                   <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}"
-                    data-type="{{itemss.openType}}" data-url="{{itemss.url}}" data-login="{{itemss.islogin}}">
+                    data-type="{{itemss.openType}}" data-url="{{itemss.url}}" data-login="{{itemss.islogin}}" data-color="{{itemss.color}}">
                     <view class="item-img">
                       <image src="{{iconImgUrl}}{{itemss.icon}}" style='width:100rpx;height:100rpx;border-radius:100%;'>
                       </image>
@@ -499,7 +499,7 @@
       <view class="grid col-{{item.num}}  text-center">
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-            data-tit="{{items.name}}" data-login="{{items.islogin}}">
+            data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
             <block wx:if="{{items.enable === 1}}">
               <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
                 style="width:90rpx;height:90rpx;border-radius:100%;"></image>
@@ -529,7 +529,7 @@
       <view class="grid col-{{item.num}}  text-center">
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-            data-tit="{{items.name}}" data-login="{{items.islogin}}">
+            data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
             <block wx:if="{{items.enable === 1}}">
               <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
                 style="width:90rpx;height:90rpx;border-radius:100%;"></image>
@@ -564,7 +564,7 @@
       <view class="grid col-{{item.num}}  text-center">
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-            data-tit="{{items.name}}" data-login="{{items.islogin}}">
+            data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
             <block wx:if="{{items.enable === 1}}">
               <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
                 style="width:90rpx;height:90rpx;border-radius:100%;"></image>
@@ -599,7 +599,7 @@
       <view class="grid col-{{item.num}}  text-center">
         <view class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
           <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-            data-tit="{{items.name}}" data-login="{{items.islogin}}">
+            data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
             <block wx:if="{{items.enable === 1}}">
               <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit"
                 style="width:90rpx;height:90rpx;border-radius:100%;"></image>

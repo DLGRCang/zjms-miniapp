@@ -5,8 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url:'',
-    tit:'',
+    url: '',
+    tit: '',
   },
 
   /**
@@ -14,18 +14,23 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    if(options.tit=='在职党员'){
+    let color = options.color
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: color,
+    })
+    if (options.tit == '在职党员') {
       this.setData({
-        url:'https://www.yjhlcity.com/sqdj/?network=miniapp'
+        url: 'https://www.yjhlcity.com/sqdj/?network=miniapp'
       })
-      
-    }else{
+
+    } else {
       this.setData({
-        url:options.url,
-        tit:options.tit
+        url: options.url,
+        tit: options.tit
       })
     }
-    
+
   },
 
   /**

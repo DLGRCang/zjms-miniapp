@@ -107,12 +107,9 @@ Page({
           fail: function (res) { }
         })
       } else if (e.currentTarget.dataset.type === 2) {
-        console.log(e.currentTarget.dataset.url)
-        console.log(e.currentTarget.dataset.url)
-        console.log(e.currentTarget.dataset.url)
         // webView 跳转
         wx.navigateTo({
-          url: '../../pages/appointment/pages/webView/webView?url=' + e.currentTarget.dataset.url + "&tit=" + e.currentTarget.dataset.tit,
+          url: '../../pages/appointment/pages/webView/webView?url=' + e.currentTarget.dataset.url + "&tit=" + e.currentTarget.dataset.tit + "&color=" + e.currentTarget.dataset.color,
         })
       }
     }
@@ -128,11 +125,11 @@ Page({
       })
     });
   },
-  goOfficeNews(){
+  goOfficeNews() {
     util.pageJump("../publish/pages/officialNewsList/officialNewsList")
   },
   // 新闻详情
-  goNewsDetail(e){
+  goNewsDetail(e) {
     util.pageJumpTo('../publish/pages/officialNewsDetail/officialNewsDetail', 'id', e.currentTarget.dataset.id)
   },
 
@@ -166,6 +163,7 @@ Page({
         "more": {
           "enable": 1,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -175,6 +173,7 @@ Page({
           "summary": "",
           "icon": "/zjms/swiper1.png",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -185,6 +184,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         }]
@@ -198,10 +198,32 @@ Page({
         "more": {
           "enable": 0,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
         "list": [
+          {
+            "id": 0,
+            "name": "",
+            "summary": "",
+            "icon": "",
+            "href": "",
+            "color": "",
+            "openType": 0,
+            "enable": 1,
+            "islogin": true,
+            "content": [{
+              "enable": 1,
+              "islogin": true,
+              "id": 0,
+              "tit": "",
+              "icon": "",
+              "url": "",
+              "color": "",
+              "openType": ""
+            }]
+          }
         ]
       },
       {
@@ -213,6 +235,7 @@ Page({
         "more": {
           "enable": 0,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -222,6 +245,7 @@ Page({
           "summary": "",
           "icon": "/zjms/1.png",
           "href": "../medical/pages/nucleicAcidCheck/nucleicAcidCheck",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -232,6 +256,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -241,6 +266,7 @@ Page({
           "summary": "",
           "icon": "/zjms/2.png",
           "href": "../medical/pages/vaccine/vaccine",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -251,6 +277,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -260,6 +287,7 @@ Page({
           "summary": "",
           "icon": "/zjms/3.png",
           "href": "../government/pages/thingsGuide/thingsGuide",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -270,6 +298,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -279,6 +308,7 @@ Page({
           "summary": "",
           "icon": "/zjms/4.png",
           "href": "../education/pages/transfer/transfer",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -289,6 +319,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -298,6 +329,7 @@ Page({
           "summary": "",
           "icon": "/zjms/5.png",
           "href": "../government/pages/guide/guide",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -308,6 +340,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -317,6 +350,7 @@ Page({
           "summary": "",
           "icon": "/zjms/6.png",
           "href": "../education/pages/studentHelp/studentHelp",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -327,6 +361,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -336,6 +371,7 @@ Page({
           "summary": "",
           "icon": "/zjms/7.png",
           "href": "../government/pages/flagLeader/flagLeader",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -346,6 +382,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -354,8 +391,9 @@ Page({
           "name": "律师公证",
           "summary": "",
           "icon": "/zjms/8.png",
-          "href": "../help/pages/law/law",
-          "openType": 0,
+          "href": "https://www.yjhlcity.com/ysb/law.html",
+          "color": "#FFBE1A",
+          "openType": 2,
           "enable": 1,
           "islogin": true,
           "content": [{
@@ -365,6 +403,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -374,6 +413,7 @@ Page({
           "summary": "",
           "icon": "/zjms/9.png",
           "href": "../economic/pages/secondHand/secondHand",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -384,6 +424,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -393,6 +434,7 @@ Page({
           "summary": "",
           "icon": "/zjms/10.png",
           "href": "../food/pages/specialFood/specialFood",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -403,6 +445,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -412,6 +455,7 @@ Page({
           "summary": "",
           "icon": "/zjms/11.png",
           "href": "../travel/pages/scenicSpot/scenicSpot",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -422,6 +466,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -431,6 +476,7 @@ Page({
           "summary": "",
           "icon": "/zjms/12.png",
           "href": "wxd22d0af6881402ea",
+          "color": "",
           "openType": 1,
           "enable": 1,
           "islogin": true,
@@ -441,6 +487,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -450,6 +497,7 @@ Page({
           "summary": "",
           "icon": "/zjms/13.png",
           "href": "../travel/pages/toilet/toilet",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -460,6 +508,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -469,6 +518,7 @@ Page({
           "summary": "",
           "icon": "/zjms/14.png",
           "href": "../travel/pages/electric/electric",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -479,6 +529,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -488,6 +539,7 @@ Page({
           "summary": "",
           "icon": "/zjms/15.png",
           "href": "../help/pages/dishonest/dishonest",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -498,6 +550,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -507,6 +560,7 @@ Page({
           "summary": "",
           "icon": "/zjms/16.png",
           "href": "../government/pages/instaShot/instaShot",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -517,6 +571,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         }
@@ -531,6 +586,7 @@ Page({
         "more": {
           "enable": 0,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -540,6 +596,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "https://cms-play.yjhlnews.cn/live/vedio.m3u8?auth_key=1631242686-0-0-4856241673b394d2762481a643d942f9",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -550,6 +607,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         }]
@@ -563,6 +621,7 @@ Page({
         "more": {
           "enable": 0,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -572,6 +631,7 @@ Page({
           "summary": "",
           "icon": "/zjms/fm.png",
           "href": "../../pages/publish/pages/radio/radio",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -582,6 +642,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         }]
@@ -595,6 +656,7 @@ Page({
         "more": {
           "enable": 0,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -604,6 +666,7 @@ Page({
           "summary": "",
           "icon": "/zjms/city1.png",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -614,6 +677,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -622,83 +686,8 @@ Page({
           "name": "智慧管网",
           "summary": "",
           "icon": "/zjms/city2.png",
-          "href": "",
-          "openType": "",
-          "enable": 1,
-          "islogin": true,
-          "content": [{
-            "enable": 1,
-            "islogin": true,
-            "id": 0,
-            "tit": "",
-            "icon": "",
-            "url": "",
-            "openType": ""
-          }]
-        },
-        {
-          "id": 2,
-          "name": "智慧园林",
-          "summary": "",
-          "icon": "/zjms/city3.png",
-          "href": "",
-          "openType": "",
-          "enable": 1,
-          "islogin": true,
-          "content": [{
-            "enable": 1,
-            "islogin": true,
-            "id": 0,
-            "tit": "",
-            "icon": "",
-            "url": "",
-            "openType": ""
-          }]
-        },
-        {
-          "id": 3,
-          "name": "智慧社区",
-          "summary": "",
-          "icon": "/zjms/city4.png",
-          "href": "",
-          "openType": "",
-          "enable": 1,
-          "islogin": true,
-          "content": [{
-            "enable": 1,
-            "islogin": true,
-            "id": 0,
-            "tit": "",
-            "icon": "",
-            "url": "",
-            "openType": ""
-          }]
-        },
-        {
-          "id": 4,
-          "name": "智慧应急",
-          "summary": "",
-          "icon": "/zjms/city5.png",
-          "href": "",
-          "openType": "",
-          "enable": 1,
-          "islogin": true,
-          "content": [{
-            "enable": 1,
-            "islogin": true,
-            "id": 0,
-            "tit": "",
-            "icon": "",
-            "url": "",
-            "openType": ""
-          }]
-        },
-        {
-          "id": 5,
-          "name": "在职党员",
-          "summary": "",
-          "icon": "/zjms/city6.png",
-          "href": "在职党员",
+          "href": "https://www.yjhlcity.com/mphone-web/",
+          "color": "",
           "openType": 2,
           "enable": 1,
           "islogin": true,
@@ -709,6 +698,91 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
+            "openType": ""
+          }]
+        },
+        {
+          "id": 2,
+          "name": "智慧园林",
+          "summary": "",
+          "icon": "/zjms/city3.png",
+          "href": "",
+          "color": "",
+          "openType": "",
+          "enable": 1,
+          "islogin": true,
+          "content": [{
+            "enable": 1,
+            "islogin": true,
+            "id": 0,
+            "tit": "",
+            "icon": "",
+            "url": "",
+            "color": "",
+            "openType": ""
+          }]
+        },
+        {
+          "id": 3,
+          "name": "智慧社区",
+          "summary": "",
+          "icon": "/zjms/city4.png",
+          "href": "",
+          "color": "",
+          "openType": "",
+          "enable": 1,
+          "islogin": true,
+          "content": [{
+            "enable": 1,
+            "islogin": true,
+            "id": 0,
+            "tit": "",
+            "icon": "",
+            "url": "",
+            "color": "",
+            "openType": ""
+          }]
+        },
+        {
+          "id": 4,
+          "name": "智慧应急",
+          "summary": "",
+          "icon": "/zjms/city5.png",
+          "href": "",
+          "color": "",
+          "openType": "",
+          "enable": 1,
+          "islogin": true,
+          "content": [{
+            "enable": 1,
+            "islogin": true,
+            "id": 0,
+            "tit": "",
+            "icon": "",
+            "url": "",
+            "color": "",
+            "openType": ""
+          }]
+        },
+        {
+          "id": 5,
+          "name": "在职党员",
+          "summary": "",
+          "icon": "/zjms/city6.png",
+          "href": "在职党员",
+          "color": "#b81c24",
+          "openType": 2,
+          "enable": 1,
+          "islogin": true,
+          "content": [{
+            "enable": 1,
+            "islogin": true,
+            "id": 0,
+            "tit": "",
+            "icon": "",
+            "url": "",
+            "color": "",
             "openType": ""
           }]
         }
@@ -723,6 +797,7 @@ Page({
         "more": {
           "enable": 0,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -732,16 +807,18 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
           "content": [{
-            "enable": 1,
+            "enable": 0,
             "islogin": true,
-            "id": 0,
+            "id": 1,
             "tit": "听广播",
             "icon": "/image/1.png",
             "url": "../publish/pages/radio/radio",
+            "color": "",
             "openType": 0
           },
 
@@ -752,6 +829,7 @@ Page({
             "tit": "看电视",
             "icon": "/image/2.png",
             "url": "../publish/pages/tv/tv",
+            "color": "",
             "openType": 0
           },
           {
@@ -761,6 +839,7 @@ Page({
             "tit": "推优榜",
             "icon": "/image/3.png",
             "url": "../publish/pages/pushBest/pushBest",
+            "color": "",
             "openType": 0
           }
           ]
@@ -772,6 +851,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -782,6 +862,7 @@ Page({
             "tit": "伊旗概况",
             "icon": "/image/24.png",
             "url": "../charm/pages/introduce/introduce",
+            "color": "",
             "openType": 0
           },
           {
@@ -791,6 +872,7 @@ Page({
             "tit": "历史文化",
             "icon": "/image/5.png",
             "url": "../charm/pages/historyCulture/historyCulture",
+            "color": "",
             "openType": 0
           },
           {
@@ -800,6 +882,7 @@ Page({
             "tit": "村情乡貌",
             "icon": "/image/4.png",
             "url": "../charm/pages/villageProduct/villageProduct",
+            "color": "",
             "openType": 0
           },
           {
@@ -809,6 +892,7 @@ Page({
             "tit": "土地认养",
             "icon": "/image/56.png",
             "url": "../government/pages/land/land",
+            "color": "",
             "openType": 0
           },
           {
@@ -818,6 +902,7 @@ Page({
             "tit": "投资兴业",
             "icon": "/image/6.png",
             "url": "../charm/pages/investment/investment",
+            "color": "",
             "openType": 0
           }
           ]
@@ -828,6 +913,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -838,6 +924,7 @@ Page({
             "tit": "知名景点",
             "icon": "/image/7.png",
             "url": "../travel/pages/scenicSpot/scenicSpot",
+            "color": "",
             "openType": 0
           },
           {
@@ -847,6 +934,7 @@ Page({
             "tit": "天气预报",
             "icon": "/image/8.png",
             "url": "../travel/pages/weather/weather",
+            "color": "",
             "openType": 0
           },
           {
@@ -856,6 +944,7 @@ Page({
             "tit": "飞机火车",
             "icon": "/image/9.png",
             "url": "../travel/pages/train/train",
+            "color": "",
             "openType": 0
           },
           {
@@ -865,6 +954,7 @@ Page({
             "tit": "长途汽车",
             "icon": "/image/10.png",
             "url": "../travel/pages/car/car",
+            "color": "",
             "openType": 0
           },
           {
@@ -874,6 +964,7 @@ Page({
             "tit": "公交出租",
             "icon": "/image/11.png",
             "url": "../travel/pages/bus/bus",
+            "color": "",
             "openType": 0
           },
           {
@@ -883,7 +974,7 @@ Page({
             "tit": "酒店宾馆",
             "icon": "/image/12.png",
             "url": "../travel/pages/hotel/hotel",
-
+            "color": "",
             "openType": 0
           },
           {
@@ -893,7 +984,7 @@ Page({
             "tit": "周边公厕",
             "icon": "/image/13.png",
             "url": "../travel/pages/toilet/toilet",
-
+            "color": "",
             "openType": 0
           },
           {
@@ -903,7 +994,7 @@ Page({
             "tit": "找充电桩",
             "icon": "/image/14.png",
             "url": "../travel/pages/electric/electric",
-
+            "color": "",
             "openType": 0
           },
           {
@@ -913,6 +1004,7 @@ Page({
             "tit": "乡村旅游",
             "icon": "/image/15.png",
             "url": "../travel/pages/ruralTourism/ruralTourism",
+            "color": "",
             "openType": 0
           },
           {
@@ -921,6 +1013,7 @@ Page({
             "id": 9,
             "tit": "图书资源",
             "icon": "/image/82.png",
+            "color": "",
             "url": "../education/pages/library/library",
             "openType": 0
           },
@@ -931,6 +1024,7 @@ Page({
             "tit": "数字文化",
             "icon": "/image/83.png",
             "url": "wx7bb81a7623f3c865",
+            "color": "",
             "openType": 1
           },
           {
@@ -940,6 +1034,7 @@ Page({
             "tit": "天骄非遗",
             "icon": "/image/81.png",
             "url": "../education/pages/tianjiaofeiyi/tianjaofeiyi",
+            "color": "",
             "openType": 0
           },
           {
@@ -949,6 +1044,7 @@ Page({
             "tit": "乌兰牧骑",
             "icon": "/image/84.png",
             "url": "../education/pages/wulanmuqi/wulanmuqi",
+            "color": "",
             "openType": 0
           }
           ]
@@ -959,6 +1055,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -969,6 +1066,7 @@ Page({
             "tit": "特色美食",
             "icon": "/image/16.png",
             "url": "../food/pages/specialFood/specialFood",
+            "color": "",
             "openType": 0
           },
           {
@@ -978,6 +1076,7 @@ Page({
             "tit": "经济快餐",
             "icon": "/image/17.png",
             "url": "../food/pages/economicsFood/economicsFood",
+            "color": "",
             "openType": 0
           },
           {
@@ -987,6 +1086,7 @@ Page({
             "tit": "酒店餐饮",
             "icon": "/image/18.png",
             "url": "../food/pages/topFood/topFood",
+            "color": "",
             "openType": 0
           },
           {
@@ -994,6 +1094,7 @@ Page({
             "tit": "民族食品",
             "icon": "/image/19.png",
             "url": "../food/pages/nationFood/nationFood",
+            "color": "",
             "openType": 0
           },
           {
@@ -1003,6 +1104,7 @@ Page({
             "tit": "饮食文化",
             "icon": "/image/20.png",
             "url": "../food/pages/cultureFood/cultureFood",
+            "color": "",
             "openType": 0
           },
           {
@@ -1012,6 +1114,7 @@ Page({
             "tit": "食品安全",
             "icon": "/image/21.png",
             "url": "../food/pages/animalFood/animalFood",
+            "color": "",
             "openType": 0
           }
           ]
@@ -1022,6 +1125,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1032,6 +1136,7 @@ Page({
             "tit": "学前教育",
             "icon": "/image/31.png",
             "url": "../education/pages/primarySchool/primarySchool",
+            "color": "",
             "openType": 0
           },
           {
@@ -1041,6 +1146,7 @@ Page({
             "tit": "中小学",
             "icon": "/image/32.png",
             "url": "../education/pages/midSchool/midSchool",
+            "color": "",
             "openType": 0
           },
           {
@@ -1050,6 +1156,7 @@ Page({
             "tit": "学生资助",
             "icon": "/image/33.png",
             "url": "../education/pages/studentHelp/studentHelp",
+            "color": "",
             "openType": 0
           },
           {
@@ -1059,6 +1166,7 @@ Page({
             "tit": "转学办理",
             "icon": "/image/34.png",
             "url": "../education/pages/transfer/transfer",
+            "color": "",
             "openType": 0
           },
           {
@@ -1068,6 +1176,7 @@ Page({
             "tit": "图书商店",
             "icon": "/image/36.png",
             "url": "wxd22d0af6881402ea",
+            "color": "",
             "openType": 1
           },
           {
@@ -1077,6 +1186,7 @@ Page({
             "tit": "校外培训机构",
             "icon": "/image/37.png",
             "url": "../education/pages/mbSchool/mbSchool",
+            "color": "",
             "openType": 0
           },
           {
@@ -1086,6 +1196,7 @@ Page({
             "tit": "家庭教育",
             "icon": "/image/38.png",
             "url": "../education/pages/homeEducate/homeEducate",
+            "color": "",
             "openType": 0
           },
           {
@@ -1095,6 +1206,7 @@ Page({
             "tit": "文体健身",
             "icon": "/image/40.png",
             "url": "../education/pages/fitness/fitness",
+            "color": "",
             "openType": 0
           }
           ]
@@ -1105,6 +1217,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1115,6 +1228,7 @@ Page({
             "tit": "医院药店",
             "icon": "/image/41.png",
             "url": "../medical/pages/hospital/hospital",
+            "color": "",
             "openType": 0
           },
           {
@@ -1124,6 +1238,7 @@ Page({
             "tit": "健康证",
             "icon": "/image/42.png",
             "url": "wx7c812e7ef680c8d7",
+            "color": "",
             "openType": 1
           },
           {
@@ -1133,6 +1248,7 @@ Page({
             "tit": "疫苗接种",
             "icon": "/image/43.png",
             "url": "../medical/pages/vaccine/vaccine",
+            "color": "",
             "openType": 0
           },
           {
@@ -1142,6 +1258,7 @@ Page({
             "tit": "核酸检测",
             "icon": "/image/45.png",
             "url": "../medical/pages/nucleicAcidCheck/nucleicAcidCheck",
+            "color": "",
             "openType": 0
           },
           {
@@ -1151,6 +1268,7 @@ Page({
             "tit": "养老院",
             "icon": "/image/48.png",
             "url": "../medical/pages/welfareHouse/welfareHouse",
+            "color": "",
             "openType": 0
           }
           ]
@@ -1161,6 +1279,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1171,6 +1290,7 @@ Page({
             "tit": "办事指南",
             "icon": "/image/78.png",
             "url": "../government/pages/thingsGuide/thingsGuide",
+            "color": "",
             "openType": 0
           },
           {
@@ -1180,6 +1300,7 @@ Page({
             "tit": "大厅指引",
             "icon": "/image/49.png",
             "url": "../government/pages/guide/guide",
+            "color": "",
             "openType": 0
           },
           {
@@ -1189,6 +1310,7 @@ Page({
             "tit": "旗长热线",
             "icon": "/image/50.png",
             "url": "../government/pages/flagLeader/flagLeader",
+            "color": "",
             "openType": 0
           },
           {
@@ -1198,6 +1320,7 @@ Page({
             "tit": "旗镇互通",
             "icon": "/image/51.png",
             "url": "../government/pages/eachFlagTown/eachFlagTown",
+            "color": "",
             "openType": 0
           },
           {
@@ -1207,6 +1330,7 @@ Page({
             "tit": "问卷调查",
             "icon": "/image/52.png",
             "url": "../government/pages/questionnaire/questionnaire",
+            "color": "",
             "openType": 0
           },
           {
@@ -1216,6 +1340,7 @@ Page({
             "tit": "随手拍",
             "icon": "/image/53.png",
             "url": "../government/pages/instaShot/instaShot",
+            "color": "",
             "openType": 0
           },
           {
@@ -1224,6 +1349,7 @@ Page({
             "tit": "创城行动",
             "icon": "/image/55.png",
             "url": "../government/pages/cityAction/cityAction",
+            "color": "",
             "openType": 0
           }
           ]
@@ -1234,6 +1360,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1244,6 +1371,7 @@ Page({
             "tit": "助残服务",
             "icon": "/image/57.png",
             "url": "../help/pages/disabled/disabled",
+            "color": "",
             "openType": 0
           },
           {
@@ -1253,6 +1381,7 @@ Page({
             "tit": "红十字救助",
             "icon": "/image/59.png",
             "url": "../help/pages/redcross/redcross",
+            "color": "",
             "openType": 0
           },
           {
@@ -1262,6 +1391,7 @@ Page({
             "tit": "失信人员",
             "icon": "/image/60.png",
             "url": "../help/pages/dishonest/dishonest",
+            "color": "",
             "openType": 0
           },
           {
@@ -1270,8 +1400,9 @@ Page({
             "id": 3,
             "tit": "法律服务",
             "icon": "/image/61.png",
-            "url": "../help/pages/law/law",
-            "openType": 0
+            "url": "https://www.yjhlcity.com/ysb/law.html",
+            "color": "#FFBE1A",
+            "openType": 2
           },
           {
             "enable": 1,
@@ -1280,6 +1411,7 @@ Page({
             "tit": "老人关互",
             "icon": "/image/47.png",
             "url": "wx81bd4b25fc86cfa1",
+            "color": "",
             "openType": 1
           },
           {
@@ -1289,6 +1421,7 @@ Page({
             "tit": "女性关护",
             "icon": "/image/62.png",
             "url": "../help/pages/woman/woman",
+            "color": "",
             "openType": 0
           }
           ]
@@ -1299,6 +1432,7 @@ Page({
           "summary": "",
           "icon": "",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1309,6 +1443,7 @@ Page({
             "tit": "商场超市",
             "icon": "/image/22.png",
             "url": "../economic/pages/market/market",
+            "color": "",
             "openType": 0
           },
           {
@@ -1318,6 +1453,7 @@ Page({
             "tit": "农贸市场",
             "icon": "/image/23.png",
             "url": "../economic/pages/farmerMarket/farmerMarket",
+            "color": "",
             "openType": 0
           },
           {
@@ -1327,6 +1463,7 @@ Page({
             "tit": "二手交易",
             "icon": "/image/25.png",
             "url": "../economic/pages/secondHand/secondHand",
+            "color": "",
             "openType": 0
           },
           {
@@ -1336,6 +1473,7 @@ Page({
             "tit": "农资门市",
             "icon": "/image/26.png",
             "url": "../economic/pages/farmerRetail/farmerRetail",
+            "color": "",
             "openType": 0
           },
           {
@@ -1345,6 +1483,7 @@ Page({
             "tit": "会展活动",
             "icon": "/image/27.png",
             "url": "../economic/pages/exhibition/exhibition",
+            "color": "",
             "openType": 0
           },
           {
@@ -1354,6 +1493,7 @@ Page({
             "tit": "消费维权",
             "icon": "/image/28.png",
             "url": "../economic/pages/protectRight/protectRight",
+            "color": "",
             "openType": 0
           },
           {
@@ -1363,6 +1503,7 @@ Page({
             "tit": "商业活动",
             "icon": "/image/29.png",
             "url": "../economic/pages/promotion/promotion",
+            "color": "",
             "openType": 0
           },
           {
@@ -1372,6 +1513,7 @@ Page({
             "tit": "知识产权",
             "icon": "/image/30.png",
             "url": "wx6bbf6fb40f3c4bfc",
+            "color": "",
             "openType": 1
           },
           {
@@ -1381,6 +1523,7 @@ Page({
             "tit": "农业技术",
             "icon": "/image/39.png",
             "url": "../education/pages/agricultural/agricultural",
+            "color": "",
             "openType": 0
           },
           {
@@ -1390,6 +1533,7 @@ Page({
             "tit": "家政服务",
             "icon": "/image/63.png",
             "url": "../life/pages/housekeeping/housekeeping",
+            "color": "",
             "openType": 0
           },
           {
@@ -1399,6 +1543,7 @@ Page({
             "tit": "物业服务",
             "icon": "/image/64.png",
             "url": "../life/pages/property/property",
+            "color": "",
             "openType": 0
           },
           {
@@ -1408,6 +1553,7 @@ Page({
             "tit": "就业服务",
             "icon": "/image/66.png",
             "url": "../life/pages/job/job",
+            "color": "",
             "openType": 0
           },
           {
@@ -1417,6 +1563,7 @@ Page({
             "tit": "美发洗浴",
             "icon": "/image/67.png",
             "url": "../life/pages/hairdressing/hairdressing",
+            "color": "",
             "openType": 0
           },
           {
@@ -1426,6 +1573,7 @@ Page({
             "tit": "代驾挪车",
             "icon": "/image/68.png",
             "url": "../life/pages/moveCar/moveCar",
+            "color": "",
             "openType": 0
           },
           {
@@ -1435,6 +1583,7 @@ Page({
             "tit": "顺风车",
             "icon": "/image/69.png",
             "url": "../life/pages/car/car",
+            "color": "",
             "openType": 0
           },
           {
@@ -1444,6 +1593,7 @@ Page({
             "tit": "转让信息",
             "icon": "/image/70.png",
             "url": "../life/pages/productionTransfer/productionTransfer",
+            "color": "",
             "openType": 0
           },
           {
@@ -1453,6 +1603,7 @@ Page({
             "tit": "生鲜配送",
             "icon": "/image/71.png",
             "url": "../life/pages/seafood/seafood",
+            "color": "",
             "openType": 0
           },
           {
@@ -1462,6 +1613,7 @@ Page({
             "tit": "电影剧院",
             "icon": "/image/75.png",
             "url": "../life/pages/film/film",
+            "color": "",
             "openType": 0
           },
           {
@@ -1471,6 +1623,7 @@ Page({
             "tit": "公租房",
             "icon": "/image/77.png",
             "url": "../life/pages/publicRentalHousing/publicRentalHousing",
+            "color": "",
             "openType": 0
           },
           {
@@ -1480,6 +1633,7 @@ Page({
             "tit": "志愿者",
             "icon": "/image/54.png",
             "url": "../government/pages/volunteerService/volunteerService",
+            "color": "",
             "openType": 0
           },
           {
@@ -1489,6 +1643,7 @@ Page({
             "tit": "微心愿",
             "icon": "/image/85.png",
             "url": "../government/pages/wxyService/wxyService",
+            "color": "",
             "openType": 0
           }
           ]
@@ -1504,6 +1659,7 @@ Page({
         "more": {
           "enable": 1,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -1513,6 +1669,7 @@ Page({
           "summary": "",
           "icon": "/zjms/dept1.png",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1523,6 +1680,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -1532,6 +1690,7 @@ Page({
           "summary": "",
           "icon": "/zjms/dept2.png",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1542,6 +1701,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -1551,6 +1711,7 @@ Page({
           "summary": "",
           "icon": "/zjms/dept3.png",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1561,6 +1722,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -1570,6 +1732,7 @@ Page({
           "summary": "",
           "icon": "/zjms/dept4.png",
           "href": "",
+          "color": "",
           "openType": "",
           "enable": 1,
           "islogin": true,
@@ -1580,6 +1743,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         }
@@ -1594,6 +1758,7 @@ Page({
         "more": {
           "enable": 0,
           "href": "",
+          "color": "",
           "openType": ""
         },
         "apiUrl": "url",
@@ -1603,6 +1768,7 @@ Page({
           "summary": "在线预约服务",
           "icon": "/zjms/fee1.png",
           "href": "../../pages/about/home/home",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -1613,6 +1779,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         },
@@ -1622,6 +1789,7 @@ Page({
           "summary": "在线缴费服务",
           "icon": "/zjms/fee2.png",
           "href": "../../pages/pay/home/home",
+          "color": "",
           "openType": 0,
           "enable": 1,
           "islogin": true,
@@ -1632,6 +1800,7 @@ Page({
             "tit": "",
             "icon": "",
             "url": "",
+            "color": "",
             "openType": ""
           }]
         }
@@ -1639,7 +1808,6 @@ Page({
       }
       ]
     }
-    console.log(data)
     this.setData({
       modules: data.modules,
       iconImgUrl: data.iconImgUrl,
@@ -1652,7 +1820,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.data.news)
     this.getNewsList()
     this.getData()
     // 测试
