@@ -25,7 +25,9 @@ Page({
   },
   goDetail(e) {
     console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '/pages/food/pages/foodDetail/foodDetail?id='+e.currentTarget.dataset.id+'&lat='+e.currentTarget.dataset.lat+'&lng='+e.currentTarget.dataset.lng+'&name='+e.currentTarget.dataset.name+'&location='+e.currentTarget.dataset.location,
+    })
   },
   /**
    * 生命周期函数--监听页面加载

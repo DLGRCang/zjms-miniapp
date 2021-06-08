@@ -12,7 +12,7 @@
 </view> -->
 <view class="margin-lr-lg">
   <block wx:for="{{foodList}}" wx:key="item">
-    <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.shopManagementId}}">
+    <view class="flex margin-tb-sm"  bindtap="goDetail" data-id="{{item.shopListId}}" data-name="{{item.shopName}}" data-lat="{{item.eastLongitude}}"  data-lng="{{item.northLatitude}}" data-location="{{item.localtion}}">
       <view>
         <image class="radius margin-right" src="{{baseImgUrl}}{{item.photo}}"
           style="width:160rpx;height:160rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
