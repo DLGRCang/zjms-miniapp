@@ -11,6 +11,10 @@ Page({
     TabCur: 0,
     id: '',
     foodInfo: null,
+    name: '',
+    lat: '',
+    lng: '',
+    location: '',
   },
   // 选择
   tabSelect(e) {
@@ -51,13 +55,20 @@ Page({
     console.log(e.currentTarget.dataset.id)
     util.pageJumpTo('/pages/food/pages/cartDetail/cartDetail', 'id', e.currentTarget.dataset.id)
   },
+  goLocation(){
+    util.routePlan(this.data.name,this.data.lng,this.data.lat)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log(options)
     this.setData({
-      id: options.id
+      id: options.id,
+      name: options.name,
+      lat: options.lat,
+      lng: options.lng,
+      location: options.location
     })
     this.getInfo()
   },

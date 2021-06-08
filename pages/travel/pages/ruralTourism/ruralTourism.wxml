@@ -4,6 +4,8 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/xiangcunlvyou.png" style="width:100%"></image>
 <view class="padding-lr-sm padding-tb">
-<item-image-text wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" obj="{{item}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
+<item-image-text type='2' wx:for="{{dataList}}" imgUrl="{{item.info_photos}}" obj="{{item}}"  itemTitle="{{item.info_content}}"  isDate="true" date="{{item.publishdate}}"></item-image-text>
+<div class="paddingh-xl flex align-center justify-center" bindtap="getHZSMore">{{more}}</div>
+
 </view>
 

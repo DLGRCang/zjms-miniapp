@@ -1,7 +1,7 @@
 // pages/charm/pages/villageProduct/villageProduct.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
-const data = require('../../../../utils/data.js')
+const dataUtil = require('../../../../utils/data.js')
 
 Page({
 
@@ -23,6 +23,7 @@ Page({
 		artelList: [], //合作社列表
 		artelList1: [], //村情乡貌列表
 		villageGoods: [],//村有好货
+		more: '加载更多'
 	},
 	selectTab: function (e) {
 		let page = this.data.page
@@ -42,12 +43,12 @@ Page({
 			})
 			this.getDataList();
 		}
-		console.log("点击了第几个Tab:" + e.detail.TabCur)
 	},
 	//村情乡貌详情
 	goDetail(e) {
+		console.log(e.currentTarget.dataset.id)
 		wx.navigateTo({
-			url: "/pages/publish/pages/newsDetail/newsDetail?info_content=" + e.currentTarget.dataset.obj.info_content + "&info_source=" + e.currentTarget.dataset.obj.info_source + "&publishdate=" + e.currentTarget.dataset.obj.publishdate + "&info_videos=" + encodeURIComponent(e.currentTarget.dataset.obj.info_videos) + "&info_detail=" + encodeURIComponent(e.currentTarget.dataset.obj.info_detail),
+			url: "/pages/appointment/pages/carInfo/carInfo?infoContentId=" + e.currentTarget.dataset.id,
 		})
 	},
 
@@ -67,7 +68,7 @@ Page({
 		this.setData({
 			villageGoods: []
 		})
-		data.getArtelData(this.data.infotypeid2, this.data.page, 50).then(dataList => {
+		dataUtil.getArtelData(this.data.infotypeid2, this.data.page, 50).then(dataList => {
 			this.setData({
 				villageGoods: this.data.villageGoods.concat(dataList)
 			})
@@ -79,28 +80,47 @@ Page({
 		this.setData({
 			artelList: []
 		})
-		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
+		dataUtil.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
+			console.log(11111111111111)
+			console.log(dataList)
+			console.log(11111111111111)
 			this.setData({
-				artelList: this.data.artelList.concat(dataList)
+				artelList: dataList
 			})
 			console.log(this.data.artelList);
-			if (dataList.length == 0) {
-				wx.showToast({
-					title: '数据到头了',
-					icon: 'none'
-				})
-			}
 
 		})
 	},
 	//加载村情乡貌社列表
 	getVillageDataList: function () {
-		data.getArtelData(this.data.infotypeid1, this.data.page, this.data.rows).then(dataList => {
+		dataUtil.getArtelData(this.data.infotypeid1, this.data.page, this.data.rows).then(dataList => {
 			this.setData({
 				artelList1: this.data.artelList1.concat(dataList)
 			})
 			console.log(this.data.artelList1);
 		})
+	},
+
+	// 合作社更多
+	getHZSMore() {
+		let that = this
+		this.data.page++
+		let data = {
+			infotypeid: 'bb4d4622-8a26-4c48-a50d-7f1c9743813c',
+			page: this.data.page,
+			rows: this.data.rows,
+		}
+		util.requestApi('infocontent/listUserpageinfocontent', 'GET', data).then(res => {
+			console.log(res.data.rows.length)
+			that.setData({
+				artelList: that.data.artelList.concat(res.data.rows)
+			})
+			if (res.data.rows.length < 10) {
+				that.setData({
+					more:'数据到头了'
+				})
+			}
+		});
 	},
 
 	/**
@@ -135,37 +155,14 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-		// let page = this.data.page
-		// page = 1
-		// this.setData({
-		// 	page: page,
-		// 	artelList: []
-		// })
-		// wx.showToast({
-		// 	title: '加载中',
-		// 	icon: 'loading'
-		// })
+
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
-		var that = this
-		this.setData({
-			page: this.data.page + 1,
-			artelList: []
-		})
-		wx.showToast({
-			title: '加载中',
-			icon: 'loading',
-			success(res) {
-				setTimeout(() => {
-					that.getDataList();
-				}, 1000)
-			}
-		})
-		
+
 	},
 
 	/**

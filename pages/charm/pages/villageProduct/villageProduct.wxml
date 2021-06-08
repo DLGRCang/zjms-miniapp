@@ -21,7 +21,7 @@
 
 	<text class="flex village-icon margin-top">村有好货</text>
 	<view  class="padding  {{villageGoods.length%4==2?'grid':'grid1'}} ">
-		<view  bindtap="goDetail" data-obj="{{item}}" class="flex flex-direction text-center grid-item margin-bottom" wx:for="{{villageGoods}}" wx:key>
+		<view  bindtap="goDetail" data-id="{{item.infoContentId}}" class="flex flex-direction text-center grid-item margin-bottom" wx:for="{{villageGoods}}" wx:key>
 			<image src="{{baseImgUrl}}{{item.info_photos}}" style="width: 150rpx;height: 110rpx;"></image>
 			<text class="align-center text-sm margin-top-xs">{{item.info_content}}</text>
 		</view>
@@ -34,5 +34,7 @@
 	<item-image-text wx:for="{{artelList}}" obj="{{item}}" itemTitle="{{item.info_content}}" isImg="{{false}}"
 		isDate="true" date="{{item.publishdate}}">
 	</item-image-text>
+
+	<div class="paddingh-xl flex align-center justify-center" bindtap="getHZSMore">{{more}}</div>
 
 </view>

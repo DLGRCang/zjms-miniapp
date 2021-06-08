@@ -3,11 +3,21 @@
   <view slot="content">详情</view>
 </cu-custom>
 <view class="padding-lr-lg">
-  <view class="main margin-top-lg padding-tb-xs text-xxl">{{info.info_content}}</view>
-  <view class="main text-grey">时间：{{info.publishdate}}</view>
+  <view class="main margin-top-lg padding-tb-xs text-xxl flex align-center justify-center">{{info.info_content}}</view>
+  <view class="main text-grey flex align-center justify-center">时间：{{info.publishdate}}</view>
+  <view wx:if="{{info.mapPoint==null || info.mapPoint==''}}"></view>
+  <view class="margin-top-lg" wx:else>
+    <view class="flex " bindtap="goLocation">
+      <view class="text-xxl">
+        <text class="cuIcon-locationfill" style="color:green;"> </text>
+      </view>
+      <view>{{area}}</view>
+    </view>
+  </view>
   <view class="main text-grey margin-bottom">{{info.info_source}}</view>
   <view>
     <template is="wxParse" data="{{wxParseData:dataHtml.nodes}}" />
   </view>
+
 </view>
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

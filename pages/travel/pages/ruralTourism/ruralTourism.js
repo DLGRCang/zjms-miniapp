@@ -1,6 +1,7 @@
 // pages/travel/pages/ruralTourism/ruralTourism.js
 const app = getApp()
 const data = require('../../../../utils/data.js')
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
@@ -12,29 +13,39 @@ Page({
 		page: 1,
 		rows: 10,
 		dataList: [], //
-		tit: ''
+		tit: '',
+		more: '加载更多',
 	},
 	getDataList: function () {
 		//加载数据列表
 		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
-			this.setData({    
+			this.setData({
 				dataList: this.data.dataList.concat(dataList)
 			})
-			if (dataList.length == 0) {
-				wx.showToast({
-					title: '数据到头了',
-					icon: 'none',
-					success() {
-						setTimeout(() => {
-							wx.navigateBack({
-								delta: 1
-							})
-						}, 2000)
-					}
-				})
-			}
 		})
 	},
+	// 更多
+	getHZSMore() {
+		let that = this
+		this.data.page++
+		let data = {
+			infotypeid: '93f04e98-3616-476b-a877-a4abe5aa4cc5',
+			page: this.data.page,
+			rows: this.data.rows,
+		}
+		util.requestApi('infocontent/listUserpageinfocontent', 'GET', data).then(res => {
+			console.log(res.data.rows.length)
+			that.setData({
+				dataList: that.data.dataList.concat(res.data.rows)
+			})
+			if (res.data.rows.length < 10) {
+				that.setData({
+					more: '数据到头了'
+				})
+			}
+		});
+	},
+
 	onLoad: function (options) {
 		this.setData({
 			tit: options.tit
@@ -74,36 +85,14 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-		// let page = this.data.page
-		// page = 1
-		// this.setData({
-		// 	page: page,
-		// 	dataList: []
-		// })
-		// wx.showToast({
-		// 	title: '加载中',
-		// 	icon: 'loading'
-		// })
+
 	},
 
 	/**
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
-		let that = this
-		this.setData({
-			page: this.data.page + 1,
-			dataList: []
-		})
-		wx.showToast({
-			title: '加载中',
-			icon: 'loading',
-			success(res) {
-				setTimeout(() => {
-					that.getDataList();
-				}, 1000)
-			}
-		})
+
 	},
 
 	/**

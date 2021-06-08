@@ -7,7 +7,7 @@
 
 <view class="flex flex-direction padding-lg">
 	<dot-title title="防控知识" color="title-color"></dot-title>
-	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+	<item-image-text wx:for="{{dataList}}"  type="2"  obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isDate="true" date="{{item.publishdate}}" isLine="true">
 	</item-image-text>
 		<canvas canvas-id="myQrcode" style="width: 200px;height: 200px; margin: auto;display:none" ></canvas>

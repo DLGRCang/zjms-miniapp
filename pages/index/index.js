@@ -391,9 +391,9 @@ Page({
           "name": "律师公证",
           "summary": "",
           "icon": "/zjms/8.png",
-          "href": "https://www.yjhlcity.com/ysb/law.html",
+          "href": "../pages/help/pages/law/law",
           "color": "#FFBE1A",
-          "openType": 2,
+          "openType": 0,
           "enable": 1,
           "islogin": true,
           "content": [{

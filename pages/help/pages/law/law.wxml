@@ -4,18 +4,22 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/falvfuwu.png" style="width:100%"></image>
 <view class="padding">
-	
+
 	<dot-title title="律师事务所" color="title-color" isMore="true" sign="{{infotypeid1}}" type="3"></dot-title>
 	<item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
 	</item-image-text>
+	<div class="paddingh-xl flex align-center justify-center" bindtap="getSWSMore">{{more}}</div>
 
 	<dot-title title="律师" color="title-color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
 	<item-image-text wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
 	</item-image-text>
+	<div class="paddingh-xl flex align-center justify-center" bindtap="getLSMore">{{mores}}</div>
 
-	<!-- <dot-title title="法律咨询" color="title-color" isMore="true"></dot-title>
+
+
+	<dot-title title="法律咨询" color="title-color" isMore="true"></dot-title>
 	<view class="flex" wx:for="{{2}}">
 		<image mode="aspectFit" src="{{imgUrl}}/image/touxiang.png" class="round margin-lr-sm"
 			style="width: 80rpx;height: 80rpx;"></image>
@@ -24,5 +28,5 @@
 			<text class="text-gray text-sm margin-bottom-xs">2019-02-03</text>
 			<text class="text-black text-df margin-bottom-xl">这一篇一定要转发给爸妈！家里的老人遇到这些事情，可以这样做</text>
 		</view>
-	</view> -->
+	</view>
 </view>

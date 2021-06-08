@@ -11,7 +11,10 @@ Page({
     baseImgUrl: "https://www.yjhlcity.com/cmmall/route/file/downloadfile/false/",
     xcFoodList:null,
     specialFoodList: null,
-    tit:''
+    tit:'',
+    page: 1,
+    rows: 10,
+    more: '加载更多',
   },
 // 小吃
   xcFoodList() {
@@ -37,8 +40,32 @@ Page({
   },
   goDetail(e){
     console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo('/pages/food/pages/foodDetail/foodDetail', 'id', e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '/pages/food/pages/foodDetail/foodDetail?id='+e.currentTarget.dataset.id+'&lat='+e.currentTarget.dataset.lat+'&lng='+e.currentTarget.dataset.lng+'&name='+e.currentTarget.dataset.name+'&location='+e.currentTarget.dataset.location,
+    })
   },
+
+  	// 更多
+	getMore() {
+		// let that = this
+		// this.data.page++
+		// let data = {
+		// 	infotypeid: '3909c4c7-0d2e-4148-9562-a1c204ca8e58',
+		// 	page: this.data.page,
+		// 	rows: this.data.rows,
+		// }
+		// util.requestApi('infocontent/listUserpageinfocontent', 'GET', data).then(res => {
+		// 	console.log(res.data.rows.length)
+		// 	that.setData({
+		// 		dataList1: that.data.dataList1.concat(res.data.rows)
+		// 	})
+		// 	if (res.data.rows.length < 10) {
+		// 		that.setData({
+		// 			more: '数据到头了'
+		// 		})
+		// 	}
+		// });
+	},
 
   /**
    * 生命周期函数--监听页面加载

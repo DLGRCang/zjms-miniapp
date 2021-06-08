@@ -7,7 +7,7 @@
   <dot-title title="小吃一条街" color="red"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{xcFoodList}}" wx:key="item">
-      <image src="{{baseImgUrl}}{{item.photo}}" bindtap="goDetail" data-id="{{item.shopListId}}"></image>
+      <image src="{{baseImgUrl}}{{item.photo}}" bindtap="goDetail" data-id="{{item.shopListId}}" data-name="{{item.shopName}}" data-lat="{{item.eastLongitude}}"  data-lng="{{item.northLatitude}}" data-location="{{item.localtion}}"></image>
       <view class="margin-top-xs padding-left-sm textInfo">{{item.shopName}}</view>
       <view class="margin-top-xs padding-left-sm">
         <text class="text-sm text-grey">服务星级：</text>
@@ -16,13 +16,12 @@
     </view>
   </scroll-view>
 
-
   <view class="tit">
     <dot-title title="伊旗绝味" color="red"></dot-title>
   </view>
   <block wx:for="{{specialFoodList}}" wx:key="item">
-    <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.shopListId}}">
-      <view>
+    <view class="flex margin-tb-sm">
+      <view  bindtap="goDetail" data-id="{{item.shopListId}}" data-name="{{item.shopName}}" data-lat="{{item.eastLongitude}}"  data-lng="{{item.northLatitude}}" data-location="{{item.localtion}}">
         <image class="radius margin-right" src="{{baseImgUrl}}{{item.photo}}"
           style="width:160rpx;height:160rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
       </view>

@@ -2,7 +2,6 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 var WxParse = require('../../../../wxParse/wxParse.js');
-var WxParse = require('../../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -11,18 +10,31 @@ Page({
   data: {
     id: '',
     info: null,
+    area: '',
+    lat: '',
+    lng: '',
   },
   getInfo() {
-
     let url = 'https://www.yjhlcity.com/InfoIssue/app/release/infocontent/getinfocontent/' + this.data.id
     console.log(url)
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
-      WxParse.wxParse('dataHtml', 'html', res.data.info_detail, this, 5)
       this.setData({
-        info:res.data,
+        info: res.data
       })
+      WxParse.wxParse('dataHtml', 'html', res.data.info_detail, this, 5)
+      if (res.data.mapPoint != null || res.data.mapPoint != '') {
+        let location =  res.data.mapPoint.split(',')
+        this.setData({
+          area: location[0],
+          lat: location[2],
+          lng: location[1]
+        })
+      }
     })
+  },
+  goLocation() {
+    util.routePlan(this.data.area, this.data.lat, this.data.lng)
   },
 
   /**

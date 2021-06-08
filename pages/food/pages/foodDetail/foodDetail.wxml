@@ -3,14 +3,12 @@
 </cu-custom>
 <view class="padding-lr-lg">
 
-  <!-- <scroll-view scroll-x class="bg-white nav">
-    <view class="flex text-center">
-      <view class="cu-item flex-sub {{index==TabCur?'text-cyan cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect"
-        data-id="{{index}}">
-        Tab{{index}}
-      </view>
-    </view>
-  </scroll-view> -->
+  <view class="text-xxl margin-top-sm">
+    {{name}}
+  </view>
+  <view class="margin-tb-sm" bindtap="goLocation">
+    <text class="cuIcon-locationfill text-xl text-green"></text><text class="text-grey">{{location}}</text>
+  </view>
 
   <!-- 内容 -->
   <view class="margin-top-sm">
@@ -18,10 +16,11 @@
       <view class="flex margin-bottom-lg" wx:for="{{foodList}}" wx:key='item'>
         <view>
           <image mode="scaleToFill" src="{{baseImgUrl}}{{item.photo}}"
-            style="width: 330rpx;height: 330rpx;border-radius: 10rpx;"  bindtap="goDetail" data-id="{{item.commodityDetailsId}}">
+            style="width: 330rpx;height: 330rpx;border-radius: 10rpx;" bindtap="goDetail"
+            data-id="{{item.commodityDetailsId}}">
           </image>
           <view class="text-bold margin-top-sm textInfo" style="font-size:36rpx;">
-            {{item.shopListName}}{{item.price}}
+            {{item.shoppingName}}
           </view>
           <view class="margin-top-sm text-red text-lg">￥{{item.price}}</view>
           <view class="flex justify-between margin-top-sm">
