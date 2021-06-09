@@ -31,12 +31,23 @@ Page({
 		util.requestApi('commentsonthemanagement/savecommentsonthemanagement', 'POST',data).then(res => {
 			console.log(res)
 			if(res.statusCode==200){
-				wx.navigateBack({
-					delta: 1
+				wx.showToast({
+					title: "提交成功",
+					icon: 'success',
+					mask: true,
+					success(res) {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 1000)
+					}
 				})
-				util.showToast("提交成功")
 			}else{
-				util.showToast("提交失败")
+				wx.showToast({
+					title: "提交失败",
+					icon: 'none',
+				})
 			}
 		});
 	},
