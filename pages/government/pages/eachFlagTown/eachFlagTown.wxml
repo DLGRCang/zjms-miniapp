@@ -4,7 +4,7 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/qizhenhutong.png" style="width:100%"></image>
 <view class="padding-lr-lg padding-tb">
-	<block wx:for="{{artelList1}}" wx:key="item">
+	<block wx:for="{{artelList}}" wx:key="item">
 		<view class="flex ">
 			<view>
 				<image src="{{baseImgUrl}}{{item.info_photos}}" mode="aspectFit" style="width:160rpx;height:180rpx"></image>
