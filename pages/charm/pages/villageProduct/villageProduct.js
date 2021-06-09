@@ -72,7 +72,6 @@ Page({
 			this.setData({
 				villageGoods: this.data.villageGoods.concat(dataList)
 			})
-			console.log(this.data.villageGoods);
 		})
 	},
 	//加载一村一品合作社列表
@@ -81,23 +80,18 @@ Page({
 			artelList: []
 		})
 		dataUtil.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
-			console.log(11111111111111)
-			console.log(dataList)
-			console.log(11111111111111)
 			this.setData({
 				artelList: dataList
 			})
-			console.log(this.data.artelList);
-
 		})
 	},
 	//加载村情乡貌社列表
 	getVillageDataList: function () {
 		dataUtil.getArtelData(this.data.infotypeid1, this.data.page, this.data.rows).then(dataList => {
+			console.log(dataList)
 			this.setData({
 				artelList1: this.data.artelList1.concat(dataList)
 			})
-			console.log(this.data.artelList1);
 		})
 	},
 
@@ -111,7 +105,6 @@ Page({
 			rows: this.data.rows,
 		}
 		util.requestApi('infocontent/listUserpageinfocontent', 'GET', data).then(res => {
-			console.log(res.data.rows.length)
 			that.setData({
 				artelList: that.data.artelList.concat(res.data.rows)
 			})
