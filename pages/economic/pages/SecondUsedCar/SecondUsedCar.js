@@ -35,17 +35,41 @@ Page({
 	},
 	//提交数据
 	commitData() {
-		// util.isEmpty(this.data.addressOfCar,'看车地址不能为空')
-		// // util.isEmpty(this.data.addressOfCarbrand,'品牌不能为空')
-		// // util.isEmpty(this.data.addressOfCarchangeTheNumber,'过户次数不能为空')
-		// // util.isEmpty(this.data.addressOfCarlinkman,'联系人不能为空')
-		// // util.isEmpty(this.data.addressOfCarcontactNumber,'联系电话不能为空')
-		// // util.isEmpty(this.data.addressOfCardescribeInPerfectCondition,'车况描述不能为空')
-		// // util.isEmpty(this.data.addressOfCarhistoricalPurposes,'历史用途不能为空')
-		// // util.isEmpty(this.data.addressOfCarlocationLicence,'牌照所在地不能为空')
-		// // util.isEmpty(this.data.addressOfCarpublisherIdentity,'发布者身份不能为空')
-		// // util.isEmpty(this.data.addressOfCardescribeInPerfectCondition,'车况描述不能为空')
-		// // util.isEmpty(this.data.addressOfCarvehicleSecured,'车辆是否抵押不能为空')
+		if (this.data.addressOfCarchangeTheNumber == '' || this.data.addressOfCarchangeTheNumber == null) {
+			wx.showToast({
+				title: '过户次数不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.addressOfCarlinkman == '' || this.data.addressOfCarlinkman == null) {
+			wx.showToast({
+				title: '联系人不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.addressOfCarcontactNumber == '' || this.data.addressOfCarcontactNumber == null) {
+			wx.showToast({
+				title: '联系电话不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.addressOfCarlocationLicence == '' || this.data.addressOfCarlocationLicence == null) {
+			wx.showToast({
+				title: '牌照所在地不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.timeOfFirstRegistration == '' || this.data.timeOfFirstRegistration == null) {
+			wx.showToast({
+				title: '首次上牌时间',
+				icon: 'none',
+			})
+			return
+		}
 		let data = {
 			userId: wx.getStorageSync("userId"),
 			auditStatus: 0,
@@ -78,13 +102,23 @@ Page({
 		util.requestApi('secondhandcar/savesecondhandcar ', 'POST', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
-				wx.navigateBack({
-					delta: 1
-				})
-				util.showToast("提交成功")
-
+				wx.showToast({
+					title: "提交成功",
+					icon: 'success',
+					mask: true,
+					success(res) {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 1000)
+					}
+				});
 			} else {
-				util.showToast(res.data.msg)
+				wx.showToast({
+					title: res.data.msg,
+					icon: 'error',
+				})
 			}
 		});
 	},
@@ -117,7 +151,7 @@ Page({
 							videoList.push(videoUrl)
 							this.setData({
 								videoListid: videoListid,
-								videoList:videoList
+								videoList: videoList
 							})
 						} else {
 							util.showToast('视频上传失败')
@@ -144,7 +178,7 @@ Page({
 							vehicleImages.push(imgUrl)
 							this.setData({
 								vehicleImagesId: vehicleImagesId,
-								vehicleImages:vehicleImages
+								vehicleImages: vehicleImages
 							})
 						} else {
 							util.showToast('图片上传失败')

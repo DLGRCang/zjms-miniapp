@@ -27,6 +27,48 @@ Page({
 	},
 	//提交数据
 	commitData() {
+		if (this.data.coveredArea == '' || this.data.coveredArea == null) {
+			wx.showToast({
+				title: '建筑面积不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.contactInformation == '' || this.data.contactInformation == null) {
+			wx.showToast({
+				title: '联系方式不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.contactInformation == '' || this.data.contactInformation == null) {
+			wx.showToast({
+				title: '联系方式不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.linkman == '' || this.data.linkman == null) {
+			wx.showToast({
+				title: '联系人不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.villageName == '' || this.data.villageName == null) {
+			wx.showToast({
+				title: '小区名称不能为空',
+				icon: 'none',
+			})
+			return
+		}
+		if (this.data.expectPrice == '' || this.data.expectPrice == null) {
+			wx.showToast({
+				title: '期望售价不能为空',
+				icon: 'none',
+			})
+			return
+		}
 		let data = {
 			userId: wx.getStorageSync("userId"),
 			auditStatus: 0,
