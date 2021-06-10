@@ -35,6 +35,17 @@ Page({
 	},
 	//提交数据
 	commitData() {
+		// util.isEmpty(this.data.addressOfCar,'看车地址不能为空')
+		// // util.isEmpty(this.data.addressOfCarbrand,'品牌不能为空')
+		// // util.isEmpty(this.data.addressOfCarchangeTheNumber,'过户次数不能为空')
+		// // util.isEmpty(this.data.addressOfCarlinkman,'联系人不能为空')
+		// // util.isEmpty(this.data.addressOfCarcontactNumber,'联系电话不能为空')
+		// // util.isEmpty(this.data.addressOfCardescribeInPerfectCondition,'车况描述不能为空')
+		// // util.isEmpty(this.data.addressOfCarhistoricalPurposes,'历史用途不能为空')
+		// // util.isEmpty(this.data.addressOfCarlocationLicence,'牌照所在地不能为空')
+		// // util.isEmpty(this.data.addressOfCarpublisherIdentity,'发布者身份不能为空')
+		// // util.isEmpty(this.data.addressOfCardescribeInPerfectCondition,'车况描述不能为空')
+		// // util.isEmpty(this.data.addressOfCarvehicleSecured,'车辆是否抵押不能为空')
 		let data = {
 			userId: wx.getStorageSync("userId"),
 			auditStatus: 0,

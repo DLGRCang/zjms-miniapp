@@ -9,10 +9,9 @@ Page({
 	 */
 	data: {
 		imgUrl: app.globalData.imgUrl,
-		page: 1,
 		useDcarList: [],//二手车列表
 		secondHouseList: [],//二手房列表
-		tit:''
+		tit: ''
 
 	},
 	//发布二手房
@@ -37,7 +36,7 @@ Page({
 
 	//二手车列表
 	getUsedCarList: function () {
-		util.requestApi('secondhandcar/listpagesecondhandcar', 'GET', {}).then(res => {
+		util.requestApi('secondhandcar/listpagesecondhandcar?page=1&rows=3', 'GET', {}).then(res => {
 			console.log(res)
 			this.setData({
 				useDcarList: res.data.rows
@@ -46,13 +45,19 @@ Page({
 	},
 	//二手房列表
 	getSecondHouseList: function () {
-		util.requestApi('secondhandhouse/listpagesecondhandhouse', 'GET', {}).then(res => {
-			console.log(res)
+		util.requestApi('secondhandhouse/listpagesecondhandhouse?page=1&rows=3', 'GET', {}).then(res => {
+			console.log(res.data.rows)
 			this.setData({
 				secondHouseList: res.data.rows
 			})
 		});
 	},
+	goMoreList(e) {
+		wx.navigateTo({
+			url: '../secondList/secondList?id=' + e.currentTarget.dataset.id
+		})
+	},
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
@@ -60,7 +65,7 @@ Page({
 		this.getUsedCarList()
 		this.getSecondHouseList()
 		this.setData({
-			tit:options.tit
+			tit: options.tit
 		})
 	},
 	/**

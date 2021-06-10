@@ -1,0 +1,17 @@
+/* pages/economic/pages/secondList/secondList.wxss */
+page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.praise {
+  color: red;
+}
+.bgColor {
+	background-color:#EE6967;
+	color: #ffffff;
+}
+.title-color{
+	color:#EE6967
+}
