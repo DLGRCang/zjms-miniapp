@@ -1,7 +1,7 @@
 // pages/government/pages/eachFlagTown/eachFlagTown.js
 const app = getApp()
 const data = require('../../../../utils/data.js')
-
+const util = require('../../../../utils/util.js')
 Page({
 
 	/**
@@ -12,16 +12,28 @@ Page({
 		baseImgUrl: app.globalData.baseImgUrl,
 		imgUrl: app.globalData.imgUrl,
 		page: 1,
-		rows:10,
+		rows: 10,
 		infotypeid: 'c020b82c-4488-481f-a10a-58747c3e8fc7', //村情乡貌
-		artelList: [],
+		infoData: null,
 	},
 	//加载村情乡貌社列表
 	getVillageDataList: function () {
-		data.getArtelData(this.data.infotypeid, this.data.page,this.data.rows).then(dataList => {
-			console.log(dataList)
+		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
+			let num = ['904161', '', '385861', '124374', '239502', '284953', '125797']
+			let areas = []
+			let obj = {}
+			for (let i = 0; i < dataList.length; i++) {
+				obj = {
+					id: i,
+					area: dataList[i].info_content,
+					img: dataList[i].info_photos,
+					number: num[i]
+				}
+				areas.push(obj)
+			}
+			console.log(areas)
 			this.setData({
-				artelList: this.data.artelList.concat(dataList)
+				infoData: areas
 			})
 		})
 	},
@@ -34,7 +46,7 @@ Page({
 		// 	fail: function (res) { }
 		// })
 		wx.navigateTo({
-			url: '../eachFlagTownXY/eachFlagTownXY?tab='+e.currentTarget.dataset.tab,
+			url: '../eachFlagTownXY/eachFlagTownXY?tab=' + e.currentTarget.dataset.tab+'&num='+ e.currentTarget.dataset.num,
 		})
 	},
 

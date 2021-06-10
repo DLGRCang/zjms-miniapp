@@ -4,14 +4,14 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/qizhenhutong.png" style="width:100%"></image>
 <view class="padding-lr-lg padding-tb">
-	<block wx:for="{{artelList}}" wx:key="item">
+	<block wx:for="{{infoData}}" wx:key="item">
 		<view class="flex ">
-			<view>
-				<image src="{{baseImgUrl}}{{item.info_photos}}" mode="aspectFit" style="width:160rpx;height:180rpx"></image>
+			<view bindtap="openXyLink" data-num="{{item.number}}" data-tab="{{item.area}}">
+				<image src="{{baseImgUrl}}{{item.img}}" mode="aspectFit" style="width:160rpx;height:180rpx"></image>
 			</view>
-			<view class="padding-lr-lg margin-top-lg" bindtap="openXyLink" data-tab="{{item.info_content}}">
-				<view>{{item.info_content}}</view>
-				<view class="margin-top-sm text-grey text-sm">672958</view>
+			<view class="padding-lr-lg margin-top-lg" >
+				<view>{{item.area}}</view>
+				<view class="margin-top-sm text-grey text-sm">{{item.number}}</view>
 			</view>
 		</view>
 	</block>
