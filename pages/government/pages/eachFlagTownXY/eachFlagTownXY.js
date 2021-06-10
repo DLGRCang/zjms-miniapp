@@ -21,36 +21,28 @@ Page({
     },
     userName: '',
     tab: '',
-    num: ''
+    num: '',
+    linkData: null,
   },
-  videocommunicationApi() {
+
+  xyToken() {
     let url = 'https://www.yjhlcity.com/zhsq/app/release/api/videocommunication/getToken'
     util.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data)
-      this.setData({
-        linkData: res.data
-      })
-    })
-
-  },
-  xyToken() {
-    this.videocommunicationApi({
-      success: res => {
-        var resa = this.data.linkData
-        xylink.login(resa.token, (response) => {
-          if (response.code === 200) {
-            const cn = response.data.callNumber;
-            this.callNumber = cn;
-            wx.showToast({
-              title: "初始化登录成功",
-              icon: "success",
-              duration: 2000,
-              mask: true,
-            });
-            xylink.makeCall(this.data.num, '', wx.getStorageSync('wxUser').name, this.onGetCallStatus);
-          }
-        });
-      }
+      let resa = JSON.parse(res.data.data)
+      console.log(resa)
+      xylink.login(resa.token, (response) => {
+        if (response.code === 200) {
+          const cn = response.data.callNumber;
+          this.callNumber = cn;
+          wx.showToast({
+            title: "初始化登录成功",
+            icon: "success",
+            duration: 2000,
+            mask: true,
+          });
+          xylink.makeCall(this.data.num, '', wx.getStorageSync('wxUser').name, this.onGetCallStatus);
+        }
+      });
     })
   },
 
@@ -108,7 +100,6 @@ Page({
       tab: options.tab,
       num: options.num
     })
-    this.videocommunicationApi()
     // 缓存sdk <xylink-sdk/>组件节点context，为后续调用组件内部方法用
     this.xylinkRoom = this.selectComponent('#xylink');
     // 可选执行，设置是否进行内部事件的console和写入logger文件中，用于分析问题使用
