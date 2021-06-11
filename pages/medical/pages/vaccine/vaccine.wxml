@@ -8,7 +8,7 @@
 
 	<dot-title title="接种常识"  color="title-color"></dot-title>
 	<view class="padding-lr-sm padding-tb">
-		<item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{false}}"
+		<item-image-text wx:for="{{dataList}}" wx:key="item" obj="{{item}}" isImg="{{true}}" imgUrl="{{item.info_photos}}"
 			itemTitle="{{item.info_content}}" isDate="true" date="{{item.publishdate}}"></item-image-text>
 	</view>
 </view>

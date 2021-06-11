@@ -1,6 +1,7 @@
 // pages/food/pages/foodDetail/foodDetail.js
 const app = getApp()
 const util = require('../../../../utils/util.js')
+const mall = require('../../../../utils/mall.js')
 Page({
 
   /**
@@ -12,52 +13,32 @@ Page({
     id: '',
     foodInfo: null,
     name: '',
-    lat: '',
-    lng: '',
-    location: '',
+    // lat: '',
+    // lng: '',
+    // location: '',
+    imgList:null
   },
-  // 选择
-  tabSelect(e) {
-    this.setData({
-      TabCur: e.currentTarget.dataset.id
+  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //
+  // // 获取商品
+  getInfo() {
+    mall.login('appStoreController/getStoreDetails/'+this.data.id,{}).then(res => {
+      console.log(res.data)
+      
+      let imgList = res.data.dianneihuanjin.split(',')
+      console.log(imgList)
+      this.setData({
+        imgList:imgList,
+        foodInfo:res.data
+      })
     })
   },
-  // 获取商品
-  getInfo() {
-    let baseUrl = 'https://www.yjhlcity.com/cmmall/app/release/api/'
-    let url = baseUrl + 'commoditydetails/listpagecommoditydetails?shopListId=' + this.data.id;
-    util.httpRequest(url, 'GET', {}).then(res => {
-      console.log(res.data.rows)
-      this.setData({
-        foodList: res.data.rows
-      })
-    });
+  goLocation(e){
+    console.log(e.currentTarget.dataset)
+    util.routePlan(this.data.name,e.currentTarget.dataset.lng,e.currentTarget.dataset.lat)
   },
-  // 加入购物车
-  setCart(e) {
-    wx.showToast({
-      title: "加载中",
-      icon: 'loading',
-      mask: true,
-      success(res) {
-        setTimeout(() => {
-          wx.showToast({
-            title: '已加入购物车',
-            icon: "none"
-          })
+  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // //  // 
 
-        }, 1000)
-      }
-    });
-  },
-  // 商品详情
-  goDetail(e) {
-    console.log(e.currentTarget.dataset.id)
-    util.pageJumpTo('/pages/food/pages/cartDetail/cartDetail', 'id', e.currentTarget.dataset.id)
-  },
-  goLocation(){
-    util.routePlan(this.data.name,this.data.lng,this.data.lat)
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -72,6 +53,49 @@ Page({
     })
     this.getInfo()
   },
+  // // 选择
+  // tabSelect(e) {
+  //   this.setData({
+  //     TabCur: e.currentTarget.dataset.id
+  //   })
+  // },
+  // // 获取商品
+  // getInfo() {
+  //   let baseUrl = 'https://www.yjhlcity.com/cmmall/app/release/api/'
+  //   let url = baseUrl + 'commoditydetails/listpagecommoditydetails?shopListId=' + this.data.id;
+  //   util.httpRequest(url, 'GET', {}).then(res => {
+  //     console.log(res.data.rows)
+  //     this.setData({
+  //       foodList: res.data.rows
+  //     })
+  //   });
+  // },
+  // // 加入购物车
+  // setCart(e) {
+  //   wx.showToast({
+  //     title: "加载中",
+  //     icon: 'loading',
+  //     mask: true,
+  //     success(res) {
+  //       setTimeout(() => {
+  //         wx.showToast({
+  //           title: '已加入购物车',
+  //           icon: "none"
+  //         })
+
+  //       }, 1000)
+  //     }
+  //   });
+  // },
+  // // 商品详情
+  // goDetail(e) {
+  //   console.log(e.currentTarget.dataset.id)
+  //   util.pageJumpTo('/pages/food/pages/cartDetail/cartDetail', 'id', e.currentTarget.dataset.id)
+  // },
+  // goLocation(){
+  //   util.routePlan(this.data.name,this.data.lng,this.data.lat)
+  // },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

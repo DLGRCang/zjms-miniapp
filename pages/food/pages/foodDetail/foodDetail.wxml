@@ -3,15 +3,87 @@
 </cu-custom>
 <view class="padding-lr-lg">
 
-  <view class="text-xxl margin-top-sm">
+  <view class="text-xxl text-bold margin-top-sm">
     {{name}}
   </view>
-  <view class="margin-tb-sm" bindtap="goLocation">
-    <text class="cuIcon-locationfill text-xl text-green"></text><text class="text-grey">{{location}}</text>
+
+  <view class="margin-tb-sm" bindtap="goLocation" data-lat="{{foodInfo.jingdu}}" data-lng="{{foodInfo.weidu}}">
+    <text class="cuIcon-locationfill text-xl text-green"></text><text
+      class="text-grey">鄂尔多斯市{{foodInfo.storeaddress}}</text>
   </view>
 
-  <!-- 内容 -->
+  <view class="flex justify-between margin-top-sm ">
+    <view class="">
+      联系电话
+    </view>
+    <view class="text-grey">
+      {{foodInfo.phone}}
+    </view>
+  </view>
+
+  <view class="flex justify-between margin-top-sm ">
+    <view>
+      营业时间
+    </view>
+    <view class="text-grey">
+      {{foodInfo.priceMin2}}到{{foodInfo.priceMax2}}
+    </view>
+
+  </view>
+
+  <block wx:if="{{foodInfo.miaoshudianpu === null || foodInfo.miaoshudianpu === ''}}"></block>
+  <block wx:else>
   <view class="margin-top-sm">
+    {{foodInfo.miaoshudianpu}}
+  </view>
+</block>
+
+
+  <block wx:if="{{foodInfo.storemainmap === null || foodInfo.storemainmap === ''}}"></block>
+  <block wx:else>
+  <view class="margin-top-sm">
+    <image src="{{foodInfo.storemainmap}}" style="width:100%;height:800rpx;">
+    </image>
+  </view>
+</block>
+
+
+  <block wx:if="{{imgList === null || imgList === ''}}"></block>
+  <block wx:else>
+    <view class="margin-top-sm">
+      <view class="margin-tb-lg text-xl text-bold"> 店内环境</view>
+      <block wx:for="{{imgList}}">
+        <image src="{{item}}" style="width:100%;height:800rpx;"></image>
+      </block>
+    </view>
+  </block>
+
+  <block wx:if="{{foodInfo.xukezheng != null || foodInfo.xukezheng != ''}}"></block>
+  <block wx:else>
+    <view class=" margin-tb-lg">
+      <view class="margin-tb-sm text-xl text-bold">
+        许可证
+      </view>
+      <image src="{{foodInfo.xukezheng}}" mode="aspectFit" style="width:100%;height:600rpx;"></image>
+    </view>
+  </block>
+
+  <block wx:if="{{foodInfo.yingyezhizhao === null || foodInfo.yingyezhizhao === ''}}"></block>
+  <block wx:else>
+    <view class=" margin-tb-sm">
+      <view class="margin-tb-sm text-xl text-bold">
+        营业执照
+      </view>
+      <image src="{{foodInfo.yingyezhizhao}}" mode="aspectFit" style="width:800%;height:600rpx;"></image>
+    </view>
+  </block>
+
+
+
+
+
+  <!-- 内容 -->
+  <!-- <view class="margin-top-sm">
     <view class="grid col-2">
       <view class="flex margin-bottom-lg" wx:for="{{foodList}}" wx:key='item'>
         <view>
@@ -31,7 +103,7 @@
       </view>
     </view>
 
-  </view>
+  </view> -->
 
 </view>
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

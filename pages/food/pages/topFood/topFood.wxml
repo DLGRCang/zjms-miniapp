@@ -10,7 +10,7 @@
     <text style="font-weight: 800;color: orange">商家入驻</text>
   </view>
 </view> -->
-<view class="margin-lr-lg">
+<!-- <view class="margin-lr-lg">
   <block wx:for="{{foodList}}" wx:key="item">
     <view class="flex margin-tb-sm"  bindtap="goDetail" data-id="{{item.shopListId}}" data-name="{{item.shopName}}" data-lat="{{item.eastLongitude}}"  data-lng="{{item.northLatitude}}" data-location="{{item.localtion}}">
       <view>
@@ -24,5 +24,30 @@
       </view>
     </view>
   </block>
+</view> -->
+
+<view class="margin-lr-lg" style="border-bottom: 2rpx solid #f5f5f5">
+  <block wx:for="{{specialFoodList}}" wx:key="item">
+    <block wx:if="{{item.storemainmap =='' || item.storemainmap==null}}"></block>
+    <block wx:else>
+      <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.storeinformationesId}}"
+        data-name="{{item.storename}}">
+        <view>
+          <image class="radius margin-right" src="{{item.storemainmap}}"
+            style="width:160rpx;height:160rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+        </view>
+        <view class="">
+          <view>{{item.storename}}</view>
+          <view class="padding-tb-sm text-grey text-sm textInfo">{{item.message}}</view>
+          <view><text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="index"></text></view>
+        </view>
+      </view>
+    </block>
+  </block>
 </view>
+
+
+
+
+
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

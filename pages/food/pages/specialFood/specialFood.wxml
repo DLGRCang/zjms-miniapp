@@ -3,7 +3,7 @@
 </cu-custom>
 <image src="{{imgUrl}}/image/food.png" mode='widthFix' style="height：375px;width:100%;"></image>
 
-<view class="margin-lr-lg">
+<!-- <view class="margin-lr-lg">
   <dot-title title="小吃一条街" color="red"></dot-title>
   <scroll-view scroll-x scroll-with-animation style="width: 100%; white-space: nowrap;">
     <view class="info" wx:for="{{xcFoodList}}" wx:key="item">
@@ -32,5 +32,55 @@
       </view>
     </view>
   </block>
+</view> -->
+
+<!-- -------------------------------------------------------------------------------------------- -->
+
+<view class="margin-lr-lg">
+  <dot-title title="小吃一条街" color="red"></dot-title>
+  <scroll-view scroll-x scroll-with-animation bindscrolltolower='goMore' style="width: 100%; white-space: nowrap;">
+    <view class="info" wx:for="{{xcFoodList}}" wx:key="item">
+      <block wx:if="{{item.storemainmap =='' || item.storemainmap==null}}">
+
+      </block>
+      <block wx:else>
+        <image src="{{item.storemainmap}}" bindtap="goDetail" data-id="{{item.storeinformationesId}}"
+          data-name="{{item.storename}}"></image>
+        <view class="margin-top-xs padding-left-sm textInfo">{{item.storename}}</view>
+        <view class="margin-top-xs padding-left-sm">
+          <text class="text-sm text-grey">服务星级：</text>
+          <text class="cuIcon-favorfill lg text-yellow" wx:for="{{4}}" wx:key="item"></text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class="tit">
+    <dot-title title="伊旗绝味" color="red"></dot-title>
+  </view>
+  <block wx:for="{{specialFoodList}}" wx:key="item">
+    <block wx:if="{{item.storemainmap =='' || item.storemainmap==null}}"></block>
+    <block wx:else>
+      <view class="flex margin-tb-sm" bindtap="goDetail" data-id="{{item.storeinformationesId}}"
+        data-name="{{item.storename}}">
+        <view>
+          <image class="radius margin-right" src="{{item.storemainmap}}"
+            style="width:160rpx;height:160rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+        </view>
+        <view class="">
+          <view>{{item.storename}}</view>
+          <view class="padding-tb-sm text-grey text-sm textInfo">{{item.message}}</view>
+          <view><text class="cuIcon-favorfill lg text-yellow" wx:for="{{5}}" wx:key="index"></text></view>
+        </view>
+      </view>
+    </block>
+  </block>
 </view>
+
+
+
+
+
+
+
 <bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
