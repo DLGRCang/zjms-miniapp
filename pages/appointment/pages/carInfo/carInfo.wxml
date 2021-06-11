@@ -3,8 +3,11 @@
   <view slot="content">详情</view>
 </cu-custom>
 <view class="padding-lr-lg">
-  <view class="main margin-top-lg padding-tb-xs text-xxl flex align-center justify-center">{{info.info_content}}</view>
+  <view class="main margin-top-lg padding-tb-xs text-bold text-xxl flex align-center justify-center">{{info.info_content}}</view>
   <view class="main text-grey flex align-center justify-center">时间：{{info.publishdate}}</view>
+  <block wx:if="{{info.info_content=='红庆河镇'}}">
+    <view class="main flex align-center justify-center margin-top-sm text-red  text-bold" bindtap="goMiniApp">红庆河味道</view>
+  </block>
   <view wx:if="{{info.mapPoint==null || info.mapPoint==''}}"></view>
   <view class="margin-top-lg" wx:else>
     <view class="flex " bindtap="goLocation">

@@ -37,6 +37,14 @@ Page({
     util.routePlan(this.data.area, this.data.lat, this.data.lng)
   },
 
+  goMiniApp(){
+    wx.navigateToMiniProgram({
+      appId: 'wx5e2980442bd3f2a7',
+      path: '',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
