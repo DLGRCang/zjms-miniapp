@@ -6,10 +6,13 @@
 
 <view class="margin-lr-lg">
   <dot-title title="相关政策" color="color"></dot-title>
-  <block wx:for="{{listInfo}}" wx:key>
+  <!-- <block wx:for="{{listInfo}}" wx:key>
     <view class="box" bindtap="getDetail" data-id="{{item.landAdoptionId}}">
       <view>{{item.title}}</view>
       <view class="text-grey margin-top-sm">{{item.release_date}}</view>
     </view>
-  </block>
+  </block> -->
+  <item-image-text wx:for="{{listInfo}}"  type="2"  obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+		itemInfo="{{item.info_summary}}" isImg="true" isDate="true" date="{{item.publishdate}}" isLine="true">
+	</item-image-text>
 </view>

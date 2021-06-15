@@ -643,7 +643,7 @@
 <view class="margin-tb-lg"></view>
 <view style="position: relative;width:100%;height:420rpx">
   <view class="flex flex-direction bottom-bg align-center">
-    <view style="text-align:center;color:#BEBEBE;font-size:24rpx">主管单位：伊金霍洛旗大数据发展局</view>
+    <view style="text-align:center;color:#BEBEBE;font-size:24rpx"></view>
     <view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">建设单位：内蒙古大云智通科技有限公司</view>
   </view>
   <image src="{{bottomImg}}" mode="aspectFit" style="width:100%;height:420rpx"></image>

@@ -68,4 +68,4 @@
     <button class="cu-btn lg" bindtap="goExit" style="background-color: #B81C24;color: #ffffff;">退出登录</button>
   </view>
 </view>
-<bottom style="margin-top:auto" deptStr1="主管单位：伊金霍洛旗大数据发展局" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
+<bottom style="margin-top:auto" deptStr1="" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>
