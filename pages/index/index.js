@@ -91,6 +91,9 @@ Page({
       })
     } else {
       if (e.currentTarget.dataset.type === 0) {
+        // 统计
+        util.requestApi('businesstatistic/savebusinesstatistic', 'POST', { businesName: e.currentTarget.dataset.tit }).then(res => {
+        });
         // 页面跳转
         if (e.currentTarget.dataset.login) {
           util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
@@ -99,6 +102,9 @@ Page({
         }
 
       } else if (e.currentTarget.dataset.type === 1) {
+        // 统计
+        util.requestApi('businesstatistic/savebusinesstatistic', 'POST', { businesName: e.currentTarget.dataset.tit }).then(res => {
+        });
         // 小程序跳转 url=appid
         wx.navigateToMiniProgram({
           appId: e.currentTarget.dataset.url,
@@ -107,6 +113,9 @@ Page({
           fail: function (res) { }
         })
       } else if (e.currentTarget.dataset.type === 2) {
+        // 统计
+        util.requestApi('businesstatistic/savebusinesstatistic', 'POST', { businesName: e.currentTarget.dataset.tit }).then(res => {
+        });
         // webView 跳转
         wx.navigateTo({
           url: '../../pages/appointment/pages/webView/webView?url=' + e.currentTarget.dataset.url + "&tit=" + e.currentTarget.dataset.tit + "&color=" + e.currentTarget.dataset.color,
@@ -391,7 +400,7 @@ Page({
           "name": "律师公证",
           "summary": "",
           "icon": "/zjms/8.png",
-          "href": "../pages/help/pages/law/law",
+          "href": "../help/pages/law/law",
           "color": "#FFBE1A",
           "openType": 0,
           "enable": 1,
@@ -472,11 +481,11 @@ Page({
         },
         {
           "id": 11,
-          "name": "数字文化",
+          "name": "金融服务",
           "summary": "",
           "icon": "/zjms/12.png",
-          "href": "wxd22d0af6881402ea",
-          "color": "",
+          "href": "wxd19423e90ba635e8",
+          "color": "pages/home/homeTwo/homeTwo",
           "openType": 1,
           "enable": 1,
           "islogin": true,
@@ -665,9 +674,9 @@ Page({
           "name": "智慧城管",
           "summary": "",
           "icon": "/zjms/city1.png",
-          "href": "",
+          "href": "https://www.yjhlcity.com/yjhl_HTML/",
           "color": "",
-          "openType": "",
+          "openType": 2,
           "enable": 1,
           "islogin": true,
           "content": [{
@@ -812,7 +821,7 @@ Page({
           "enable": 1,
           "islogin": true,
           "content": [{
-            "enable": 0,
+            "enable": 1,
             "islogin": true,
             "id": 1,
             "tit": "听广播",
@@ -1046,7 +1055,38 @@ Page({
             "url": "../education/pages/wulanmuqi/wulanmuqi",
             "color": "",
             "openType": 0
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 13,
+            "tit": "通行码",
+            "icon": "/image/002.png",
+            "url": "wx8f446acf8c4a85f5",
+            "color": "",
+            "openType": 1
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 14,
+            "tit": "乘车码",
+            "icon": "/image/001.png",
+            "url": "wxbb58374cdce267a6",
+            "color": "",
+            "openType": 1
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 15,
+            "tit": "健康码",
+            "icon": "/image/003.png",
+            "url": "wx2eec5fb00157a603",
+            "color": "",
+            "openType": 1
           }
+
           ]
         },
         {
@@ -1400,9 +1440,9 @@ Page({
             "id": 3,
             "tit": "法律服务",
             "icon": "/image/61.png",
-            "url": "https://www.yjhlcity.com/ysb/law.html",
+            "url": "../help/pages/law/law",
             "color": "#FFBE1A",
-            "openType": 2
+            "openType": 0
           },
           {
             "enable": 1,
