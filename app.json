@@ -106,7 +106,7 @@
 			]
 		},
 		{
-			"root": "pages/economic",
+			"root": "pages/economic", 
 			"name": "经济活动",
 			"pages": [
 				"pages/market/market",
@@ -251,6 +251,7 @@
 				"pages/finance/finance",
 				"pages/seafood/seafood",
 				"pages/productionTransfer/productionTransfer",
+				"pages/prodSubmit/prodSubmit",
 				"pages/jobPerson/jobPerson",
 				"pages/film/film",
 				"pages/jobEmployment/jobEmployment",

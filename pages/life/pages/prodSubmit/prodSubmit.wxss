@@ -1,0 +1,11 @@
+/* pages/life/pages/prodSubmit/prodSubmit.wxss */
+.bgColor {
+	background-color: #FFBE1A;
+	color: #ffffff;
+}
+
+.button{
+	background-color: #FFBE1A;
+	color: #ffffff;
+	width: 80%;
+}

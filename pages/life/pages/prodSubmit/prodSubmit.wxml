@@ -1,0 +1,50 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">发布信息</view>
+</cu-custom>
+<view class="padding-sm">
+  <view class="cu-form-group">
+    <view class="title">转让标题：</view>
+    <input type="number" placeholder="请输入标题" bindinput="putData" data-key="info_content"></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">联系电话：</view>
+    <input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="infoContactNumber"></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">转让内容：</view>
+    <input type="number" placeholder="请输入转让内容：" bindinput="putData" data-key="info_detail"></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">描述：</view>
+    <input type="number" placeholder="请输入描述" bindinput="putData" data-key="contenttxt"></input>
+  </view>
+
+  <!-- <view class="cu-form-group padding-left align-start margin-top">
+		<view class="title" style="margin:0">图片：</view>
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{vehicleImages[index]}}">
+				<image src='{{vehicleImages[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{vehicleImages.length<3}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view> -->
+
+  <view class="cu-form-group">
+    <view class="title">提交时间：</view>
+    <input type="number"  bindinput="putData" value="{{publishdate}}" data-key="publishdate" disabled></input>
+  </view>
+
+	<view class="margin-top-lg flex flex-direction">
+		<button class="button" bindtap="commitData">确认提交</button>
+	</view>
+
+</view>

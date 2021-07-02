@@ -7,31 +7,37 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		tit:'',
-		imgUrl:app.globalData.imgUrl,
+		tit: '',
+		imgUrl: app.globalData.imgUrl,
 		infotypeid: 'cceff34a-be4e-4d3f-9fa7-db635773f303',
-    page: 1,
-    dataList: [],
+		page: 1,
+		dataList: [],
+	},
+	submit() {
+		wx.navigateTo({
+			url: '../prodSubmit/prodSubmit',
+		})
+	},
+
+	getDataList: function () {
+		//加载新闻列表
+		data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
+			this.setData({
+				dataList: this.data.dataList.concat(dataList)
+			})
+			console.log(this.data.dataList);
+		})
 	},
 
 	/**
-	 * 生命周期函数--监听页面加载
-	 */
-	getDataList: function () {
-    //加载新闻列表
-    data.getArtelData(this.data.infotypeid, this.data.page).then(dataList => {
-      this.setData({
-        dataList: this.data.dataList.concat(dataList)
-      })
-      console.log(this.data.dataList);
-    })
-  },
-  onLoad: function (options) {
+ * 生命周期函数--监听页面加载
+ */
+	onLoad: function (options) {
 		this.setData({
-      tit:options.tit
-    })
-    this.getDataList();
-  },
+			tit: options.tit
+		})
+		this.getDataList();
+	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
