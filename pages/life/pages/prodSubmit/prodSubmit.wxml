@@ -4,22 +4,22 @@
 <view class="padding-sm">
   <view class="cu-form-group">
     <view class="title">转让标题：</view>
-    <input type="number" placeholder="请输入标题" bindinput="putData" data-key="info_content"></input>
+    <input  placeholder="请输入标题" bindinput="putData" data-key="info_content"></input>
   </view>
 
   <view class="cu-form-group">
     <view class="title">联系电话：</view>
-    <input type="number" placeholder="请输入联系电话" bindinput="putData" data-key="infoContactNumber"></input>
+    <input  placeholder="请输入联系电话" bindinput="putData" data-key="infoContactNumber"></input>
   </view>
 
   <view class="cu-form-group">
     <view class="title">转让内容：</view>
-    <input type="number" placeholder="请输入转让内容：" bindinput="putData" data-key="info_detail"></input>
+    <input  placeholder="请输入转让内容：" bindinput="putData" data-key="info_detail"></input>
   </view>
 
   <view class="cu-form-group">
     <view class="title">描述：</view>
-    <input type="number" placeholder="请输入描述" bindinput="putData" data-key="contenttxt"></input>
+    <input  placeholder="请输入描述" bindinput="putData" data-key="contenttxt"></input>
   </view>
 
   <!-- <view class="cu-form-group padding-left align-start margin-top">
@@ -40,7 +40,7 @@
 
   <view class="cu-form-group">
     <view class="title">提交时间：</view>
-    <input type="number"  bindinput="putData" value="{{publishdate}}" data-key="publishdate" disabled></input>
+    <input   bindinput="putData" value="{{publishdate}}" data-key="publishdate" disabled></input>
   </view>
 
 	<view class="margin-top-lg flex flex-direction">
