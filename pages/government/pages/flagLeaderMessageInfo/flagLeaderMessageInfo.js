@@ -1,11 +1,13 @@
 // pages/government/pages/flagLeaderMessageInfo/flagLeaderMessageInfo.js
+var WxParse = require('../../../../wxParse/wxParse.js');
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		data:{}
+		data:{},
+
 	},
 
 	/**
@@ -15,8 +17,8 @@ Page({
 		this.setData({
 			data:JSON.parse(options.obj)
 		})
-		console.log("---------------")
-		console.log(this.data.data)
+		let content = JSON.parse(options.obj).content
+		WxParse.wxParse('dataHtml', 'html', content, this, 5)
 	},
 
 	/**

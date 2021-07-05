@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+		vehicleImages:[],//图片url
+		files:[],//图片id
     info_content: '',
     infoContactNumber: '',
     info_detail: '',
@@ -27,6 +29,7 @@ Page({
   },
   commitData() {
     let data = {
+			info_files:this.data.files.toString(),
       info_content:this.data.info_content,
       infoContactNumber:this.data.infoContactNumber,
       info_detail:this.data.info_detail,
@@ -67,8 +70,7 @@ Page({
   },
 
 
-
-  	//选择图片
+	//选择图片
 	ChooseImage() {
 		wx.chooseImage({
 			count: 1, //默认9
@@ -80,12 +82,12 @@ Page({
 					.then(res => {
 						if (res.statusCode == 200) {
 							let obj = JSON.parse(res.data)
-							let vehicleImagesId = this.data.vehicleImagesId;
+							let files = this.data.files;
 							let vehicleImages = this.data.vehicleImages;
-							vehicleImagesId.push(obj.data)
+							files.push(obj.data)
 							vehicleImages.push(imgUrl)
 							this.setData({
-								vehicleImagesId: vehicleImagesId,
+								files: files,
 								vehicleImages: vehicleImages
 							})
 						} else {
@@ -118,10 +120,10 @@ Page({
 							videoList: this.data.videoList
 						})
 					} else {
-						this.data.vehicleImagesId.splice(e.currentTarget.dataset.index, 1);
+						this.data.files.splice(e.currentTarget.dataset.index, 1);
 						this.data.vehicleImages.splice(e.currentTarget.dataset.index, 1);
 						this.setData({
-							vehicleImagesId: this.data.vehicleImagesId,
+							files: this.data.files,
 							vehicleImages: this.data.vehicleImages
 						})
 					}

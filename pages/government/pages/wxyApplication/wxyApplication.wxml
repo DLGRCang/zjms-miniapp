@@ -21,7 +21,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">手机号：</view>
-		<input placeholder="请输入年龄" bindinput="putData" data-key="phone"></input>
+		<input placeholder="请输入手机号" bindinput="putData" data-key="phone"></input>
   </view>
   <view class="cu-form-group">
 		<view class="title">家庭住址：</view>

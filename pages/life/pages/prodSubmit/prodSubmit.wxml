@@ -22,7 +22,7 @@
     <input  placeholder="请输入描述" bindinput="putData" data-key="contenttxt"></input>
   </view>
 
-  <!-- <view class="cu-form-group padding-left align-start margin-top">
+  <view class="cu-form-group padding-left align-start padding-top-lg">
 		<view class="title" style="margin:0">图片：</view>
 		<view class="grid col-3 grid-square flex-sub">
 			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
@@ -36,7 +36,7 @@
 				<text class="cuIcon-cameraadd"></text>
 			</view>
 		</view>
-	</view> -->
+  </view>
 
   <view class="cu-form-group">
     <view class="title">提交时间：</view>
