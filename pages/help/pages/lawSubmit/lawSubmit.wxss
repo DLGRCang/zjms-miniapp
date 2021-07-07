@@ -1,0 +1,15 @@
+/* pages/help/pages/lawSubmit/lawSubmit.wxss */
+.bgColor {
+	background-color: #FFBE1A;
+	color: #ffffff;
+}
+
+.button-btn {
+	background-color: #FFBE1A;
+	color: #ffffff;
+	margin: 0 30rpx 50rpx 30rpx;
+	font-size: 34rpx;
+}
+.title-color{
+	color:#FFBE1A
+}

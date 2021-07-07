@@ -1,0 +1,22 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">在线咨询</view>
+</cu-custom>
+<view class="padding-sm">
+  <view class="cu-form-group">
+    <view class="title">标题：</view>
+    <input  placeholder="请输入标题" bindinput="putData" data-key="titleName"></input>
+  </view>
+
+
+  <view class="cu-form-group">
+    <view class="title">咨询内容：</view>
+    <input  placeholder="请输入转让内容：" bindinput="putData" data-key="content"></input>
+  </view>
+
+
+
+	<view class="margin-top-lg flex flex-direction">
+		<button class="button-btn" bindtap="commitData">确认提交</button>
+	</view>
+
+</view>

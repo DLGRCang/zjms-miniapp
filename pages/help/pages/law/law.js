@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 Page({
 
 	/**
@@ -13,16 +14,33 @@ Page({
 		infotypeid1: '3909c4c7-0d2e-4148-9562-a1c204ca8e58',
 		page: 1,
 		pages: 1,
-		rows: 10,
+		rows: 5,
 		dataList: [], //新闻列表
 		dataList1: [], //新闻列表
+		commentList:[],
 		tit: '',
 		more: '加载更多',
 		mores: '加载更多',
 	},
 
+	// 加载评论
+	getinfo(){
+		let url = 'commentsonthemanagement/listcommentsonthemanagement?typeId=67b36a83-c7d0-4d89-a671-74863991de78'
+		util.requestApi(url,'GET', {}).then(res => {
+			console.log(res.data)
+			this.setData({
+				commentList:res.data
+			})
+		})
+	},
+	submit() {
+		if (!login.isLogin()) return
+		wx.navigateTo({
+			url: '../lawSubmit/lawSubmit',
+		})
+	},
+	//加载数据列表
 	getDataList: function () {
-		//加载数据列表
 		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
 			this.setData({
 				dataList: this.data.dataList.concat(dataList),
@@ -31,11 +49,9 @@ Page({
 		})
 
 		data.getArtelData(this.data.infotypeid1, this.data.page, this.data.rows).then(dataList => {
-			console.log(dataList)
 			this.setData({
 				dataList1: this.data.dataList1.concat(dataList),
 			})
-			console.log(this.data.dataList1);
 		})
 	},
 	// 更多事务所
@@ -48,7 +64,6 @@ Page({
 			rows: this.data.rows,
 		}
 		util.requestApi('infocontent/listUserpageinfocontent', 'GET', data).then(res => {
-			console.log(res.data.rows.length)
 			that.setData({
 				dataList1: that.data.dataList1.concat(res.data.rows)
 			})
@@ -69,7 +84,6 @@ Page({
 			rows: this.data.rows,
 		}
 		util.requestApi('infocontent/listUserpageinfocontent', 'GET', data).then(res => {
-			console.log(res.data.rows.length)
 			that.setData({
 				dataList: that.data.dataList.concat(res.data.rows)
 			})
@@ -92,6 +106,7 @@ Page({
 			tit: options.tit
 		})
 		this.getDataList()
+		this.getinfo()
 	},
 
 	/**

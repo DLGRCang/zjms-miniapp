@@ -103,15 +103,15 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.setData({
-      page: this.data.page + 1,
-      dataList: []
+    let page = 1
+    page++
+    data.getArtelData(this.data.id, page, this.data.rows).then(dataList => {
+      this.setData({
+        dataList: this.data.dataList.concat(dataList)
+      })
+      console.log(this.data.dataList)
     })
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    })
-    this.getDataList();
+
   },
 
   /**
