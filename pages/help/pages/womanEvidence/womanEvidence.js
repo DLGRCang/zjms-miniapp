@@ -21,6 +21,13 @@ Page({
 	},
 	//提交数据
 	commitData() {
+		if(this.data.evidenceName==''||this.data.evidenceName==null){
+			wx.showToast({
+				title: '请选择证据类型',
+				icon:'none'
+			})
+			return
+		}
 		let data = {
 			userID: wx.getStorageSync("userId"),
 			userName: wx.getStorageSync("name"),

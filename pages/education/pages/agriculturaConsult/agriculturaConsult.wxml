@@ -11,7 +11,7 @@
 					style="width: 100rpx;height:130rpx;min-width: 100rpx;" ></image>
 				<view class="flex flex-direction">
 					<text class="text-black text-df" style="margin-bottom: 4rpx;">{{item.specialistName}}</text>
-					<text class="text-gray text-sm" style="margin-top:auto">{{item.specialistIntroduction}}3</text>
+					<text class="text-gray text-sm" style="margin-top:auto">{{item.specialistIntroduction}}</text>
 				</view>
 			</view>
 			<view style="margin-left:auto;">

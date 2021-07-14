@@ -45,6 +45,14 @@ Page({
       }
     })
   },
+  getInfos(){
+    wx.navigateToMiniProgram({
+      appId: 'wx0e6ed4f51db9d078',
+      path: '',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
   getArriveAreaList() {
     let that = this;
     util.requestApi('longbus/listterminal', 'GET', {}).then(res => {

@@ -70,6 +70,14 @@ Page({
       })
     })
   },
+  getInfos(){
+    wx.navigateToMiniProgram({
+      appId: 'wx336dcaf6a1ecf632',
+      path: '',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

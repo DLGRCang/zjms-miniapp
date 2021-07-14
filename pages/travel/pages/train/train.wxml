@@ -43,6 +43,9 @@
       <button bindtap="getInfo">查询</button>
     </view>
   </view>
+  <view class="padding-sm margin-top-xs">
+      <button  bindtap="getInfos">订票</button>
+    </view>
   <dot-title title="查询结果" color="color"></dot-title>
   <view class="box" wx:if="{{airInfo===null || airInfo===''}}">
     <view>暂无查询信息</view>

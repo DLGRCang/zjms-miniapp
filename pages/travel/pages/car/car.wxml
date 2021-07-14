@@ -44,6 +44,9 @@
       <view class="padding-tb-sm">阿镇——新街 每30分钟发一班 票价：12元</view>
       <view>阿镇——上湾 每30分钟发一班 票价：15元</view>
     </view>
+    <view class="padding-sm margin-top-xs">
+      <button  bindtap="getInfos">订票</button>
+    </view>
   </view>
   <dot-title title="查询结果" color="color"></dot-title>
   <view class="box" wx:if="{{carInfo===null || carInfo===''}}">
