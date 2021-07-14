@@ -2,3 +2,9 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">问卷详情</view>
 </cu-custom>
+<view class="padding-lg">
+	<block wx:for="{{questions}}" wx:key="item">
+		<view>{{item.questionContent}}</view>
+
+	</block>
+</view>

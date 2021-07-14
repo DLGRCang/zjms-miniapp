@@ -7,21 +7,56 @@ Page({
 	 */
 	data: {
 		voteId: '',
-		data:{}
+		data: {},
+		questions: null,
+
 	},
 	getDataInfo() {
-		util.requestApi('question/getvote/'+this.data.voteId, 'GET', {}).then(res => {
-			console.log(res)
+		util.requestApi('question/getvote/' + this.data.voteId, 'GET', {}).then(res => {
 			this.setData({
 				data: res.data
 			})
 		});
 	},
 	getQuestion() {
-		util.requestApi('question/listpagequestion?voteId='+this.data.voteId, 'GET', {}).then(res => {
-			console.log(res)
-			this.setData({
+		let that = this
+		let result = []
+		let answer = {}
+		util.requestApi('question/listpagequestion?voteId=' + this.data.voteId, 'GET', {}).then(res => {
+			for (let i = 0; i < res.data.rows.length; i++) {	
+				let request = {"question":res.data.rows[i].questionContent}
+				util.requestApi('options/listpageoptions?questionId=' + res.data.rows[i].questionId, 'GET', {}).then(r => {
+				
+					for (let j = 0; j < r.data.rows.length; j++) {
+						console.log(r.data.rows[j].optionsName)
+			
+					}
 
+					let answer = {'answer':r.data.rows.optionsName}
+
+					let obj = {
+						'answer':r.data.rows.optionsName,
+						"question":request
+					}
+					result.push(obj)
+				});
+			
+				console.log(11111111111)
+				console.log(result)
+				console.log(11111111111)
+
+			}
+
+			console.log(res.data.rows)
+			this.setData({
+				questions: res.data.rows
+			})
+		});
+	},
+	getQuestionList(questionId) {
+		util.requestApi('options/listpageoptions?questionId=' + questionId, 'GET', {}).then(res => {
+			console.log(res.data)
+			this.setData({
 			})
 		});
 	},
