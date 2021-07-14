@@ -16,7 +16,7 @@ Page({
 	},
 	//跳转至详情页
 	exhibitionInfo: function () {
-		util.pageJump('../../../../pages/economic/pages/exhibitionInfo/exhibitionInfo')
+		// util.pageJump('../../../../pages/economic/pages/exhibitionInfo/exhibitionInfo')
 	},
 	/**
 	 * 生命周期函数--监听页面加载
