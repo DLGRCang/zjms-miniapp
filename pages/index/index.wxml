@@ -131,7 +131,7 @@
           <block class="padding-tb-sm" wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
             <block wx:if="{{items.enable === 1}}">
               <view bindtap="goServiceDetail" data-url="{{items.href}}" data-type="{{items.openType}}"
-                data-tit="{{items.name}}" data-login="{{items.islogin}}"  data-color="{{items.color}}">
+                data-tit="{{items.name}}" data-login="{{items.islogin}}" data-color="{{items.color}}">
 
                 <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFit" style="width:90rpx;height:90rpx"></image>
                 <view>{{items.name}}</view>
@@ -459,7 +459,8 @@
               <block wx:for="{{items.content}}" wx:for-item="itemss" wx:key="index">
                 <block wx:if="{{itemss.enable === 1}}">
                   <view class="icon-item" bindtap="goServiceDetail" data-tit="{{itemss.tit}}"
-                    data-type="{{itemss.openType}}" data-url="{{itemss.url}}" data-login="{{itemss.islogin}}" data-color="{{itemss.color}}">
+                    data-type="{{itemss.openType}}" data-url="{{itemss.url}}" data-login="{{itemss.islogin}}"
+                    data-color="{{itemss.color}}">
                     <view class="item-img">
                       <image src="{{iconImgUrl}}{{itemss.icon}}" style='width:100rpx;height:100rpx;border-radius:100%;'>
                       </image>
@@ -642,9 +643,16 @@
 <!-- 底部 -->
 <view class="margin-tb-lg"></view>
 <view style="position: relative;width:100%;height:420rpx">
-  <view class="flex flex-direction bottom-bg align-center">
-    <view style="text-align:center;color:#BEBEBE;font-size:24rpx"></view>
-    <view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">建设单位：内蒙古大云智通科技有限公司</view>
+  <!-- <view class="flex flex-direction bottom-bg align-center">
+    <view style="text-align:center;color:#BEBEBE;font-size:24rpx; margin-top:10rpx;">建设单位：伊金霍洛旗大数据中心</view>
+    <view style="text-align:center;color:#BEBEBE;font-size:24rpx; margin-top:10rpx;">内蒙古大云智通科技有限公司</view>
+  </view> -->
+  <view class="flex justify-direction" style="margin-left:140rpx;">
+    <view style="color:#BEBEBE;font-size:24rpx; margin-top:30rpx;">建设单位：</view>
+    <view>
+      <view style="color:#BEBEBE;font-size:24rpx; margin-top:10rpx;letter-spacing:9rpx">伊金霍洛旗大数据中心</view>
+      <view style="color:#BEBEBE;font-size:24rpx; margin-top:10rpx;">内蒙古大云智通科技有限公司</view>
+    </view>
   </view>
   <image src="{{bottomImg}}" mode="aspectFit" style="width:100%;height:420rpx"></image>
 </view>

@@ -1,6 +1,15 @@
-<view>
+<!-- <view>
 	<view class="flex flex-direction padding bottom-bg align-center">
 		<view style="text-align:center;color:#BEBEBE;font-size:24rpx">{{deptStr1}}</view>
 		<view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">{{deptStr2}}</view>
 	</view>
+</view> -->
+<view class="margin-bottom-lg">
+	<view class="flex justify-direction" style="margin-left:140rpx;">
+    <view style="color:#BEBEBE;font-size:24rpx; margin-top:30rpx;">建设单位：</view>
+    <view>
+      <view style="color:#BEBEBE;font-size:24rpx; margin-top:10rpx;letter-spacing:9rpx">伊金霍洛旗大数据中心</view>
+      <view style="color:#BEBEBE;font-size:24rpx; margin-top:10rpx;">内蒙古大云智通科技有限公司</view>
+    </view>
+  </view>
 </view>
