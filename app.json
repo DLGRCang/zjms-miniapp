@@ -173,7 +173,11 @@
 				"pages/vaccine/vaccine",
 				"pages/oldAge/oldAge",
 				"pages/agednessCar/agednessCar",
-				"pages/oldAgeSubsidy/oldAgeSubsidy"
+				"pages/oldAgeSubsidy/oldAgeSubsidy",
+				"pages/meeting/meeting",
+				"pages/meetingDetail/meetingDetail",
+				"pages/meetingSign/meetingSign",
+				"pages/material/material"
 			]
 		},
 		{

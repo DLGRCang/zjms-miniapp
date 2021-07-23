@@ -1,0 +1,47 @@
+/* pages/medical/pages/meetingSign/meetingSign.wxss */
+page {
+  height: 100%;
+}
+
+.bgColor {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.title-color {
+  color: #1BA862;
+}
+
+.tit {
+  height: 100rpx;
+  color: rgb(212, 23, 23);
+  background: rgb(253, 240, 239);
+  padding: 0 40rpx 0 40rpx;
+  line-height: 100rpx;
+}
+
+.tit .cont {
+  color: #EE6967;
+}
+
+.list {
+  width: 10rpx;
+  height: 36rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}
+
+.box {
+  border: 1rpx solid #F5F5F5;
+  padding: 10rpx;
+}
+
+.button {
+  width: 305px;
+  height: 48px;
+  line-height: 48px;
+  background: #1BA862;
+  color: #fff;
+}

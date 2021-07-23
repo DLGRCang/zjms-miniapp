@@ -1,0 +1,49 @@
+/* pages/medical/pages/meetingDetail/meetingDetail.wxss */
+page {
+  height: 100%;
+}
+
+.bgColor {
+  background-color: #32B072;
+  color: #ffffff;
+}
+.title-color {
+  color: #1BA862;
+}
+
+.list {
+  width: 10rpx;
+  height: 36rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}
+
+.box {
+  border: 1rpx solid #F5F5F5;
+  padding:30rpx;
+}
+
+.click {
+  width: 122rpx;
+  height: 54rpx;
+  background: #1BA862;
+  color: #ffffff;
+  border-radius: 26rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.01);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clicks{
+  width: 122rpx;
+  height: 54rpx;
+  background: #A7A7A7;
+  color: #ffffff;
+  border-radius: 26rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.01);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

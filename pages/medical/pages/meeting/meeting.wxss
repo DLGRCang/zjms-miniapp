@@ -1,0 +1,22 @@
+/* pages/medical/pages/meeting/meeting.wxss */
+page {
+  height: 100%;
+}
+
+.bgColor {
+  background-color: #32B072;
+  color: #ffffff;
+}
+
+.title-color {
+  color: #32B072
+}
+.box{
+  border: 1rpx solid #F5F5F5;
+}
+.button {
+  background-color: #32B072;
+  color: #ffffff;
+  margin: -120rpx 70rpx 0 70rpx;
+  font-size: 34rpx;
+}

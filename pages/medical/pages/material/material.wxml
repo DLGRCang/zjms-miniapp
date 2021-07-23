@@ -1,0 +1,18 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
+</cu-custom>
+<image mode="widthFix" src="{{imgUrl}}/image/ziliaoxiazai.png" style="width:100%"></image>
+<view class="padding-lr-lg">
+  <dot-title title="资料下载" color="title-color"></dot-title>
+
+  <view class="box margin-bottom-sm" wx:for="{{3}}">
+    <view class="flex justify-between">
+      <view>
+        <view class="margin-bottom-sm text-xl">资料名称</view>
+        <view class="text-sm text-grey">下载次数：10次</view>
+      </view>
+      <view class="click">下载</view>
+    </view>
+  </view>
+
+</view>

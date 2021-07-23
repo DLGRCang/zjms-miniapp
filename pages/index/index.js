@@ -780,7 +780,7 @@ Page({
           "summary": "",
           "icon": "/zjms/city6.png",
           "href": "在职党员",
-          "color": "#b81c24",
+          "color": "#E60012",
           "openType": 2,
           "enable": 1,
           "islogin": true,
@@ -1384,11 +1384,32 @@ Page({
             "openType": 0
           },
           {
+            "enable": 2,
             "islogin": true,
             "id": 6,
             "tit": "创城行动",
             "icon": "/image/55.png",
             "url": "../government/pages/cityAction/cityAction",
+            "color": "",
+            "openType": 0
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 7,
+            "tit": "会议管理",
+            "icon": "/image/86.png",
+            "url": "../medical/pages/meeting/meeting",
+            "color": "",
+            "openType": 0
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 8,
+            "tit": "资料下载",
+            "icon": "/image/87.png",
+            "url": "../medical/pages/material/material",
             "color": "",
             "openType": 0
           }
@@ -1501,7 +1522,7 @@ Page({
             "islogin": true,
             "id": 2,
             "tit": "二手交易",
-            "icon": "/image/25.png",
+            "icon": "/image/27.png",
             "url": "../economic/pages/secondHand/secondHand",
             "color": "",
             "openType": 0
@@ -1521,7 +1542,7 @@ Page({
             "islogin": true,
             "id": 4,
             "tit": "会展活动",
-            "icon": "/image/27.png",
+            "icon": "/image/25.png",
             "url": "../economic/pages/exhibition/exhibition",
             "color": "",
             "openType": 0
@@ -1861,9 +1882,9 @@ Page({
    */
   onLoad: function (options) {
     this.getNewsList()
-    this.getData()
+    // this.getData()
     // 测试
-    // this.getDataTest()
+    this.getDataTest()
   },
 
   /**

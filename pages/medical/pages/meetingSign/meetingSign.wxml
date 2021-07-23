@@ -1,0 +1,57 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class=" text-xl text-black text-bold">签到</view>
+</cu-custom>
+<view class="tit">
+  <view class="flex justify-between cont">
+    <view>温馨提示：请确保您填写的信息真实有效！</view>
+    <view>X</view>
+  </view>
+</view>
+
+<view class="padding-lr-lg">
+  <view class="flex justify-contents margin-tb-lg">
+    <view class="list title-color"></view>
+    <view class="text-center padding-left-xs text-lg ">参会人员信息</view>
+  </view>
+
+  <view class="box">
+    <view class="cu-form-group">
+      <view class="title">姓名：</view>
+      <input placeholder="请输入参会人员姓名" bindinput="putData" data-key="party"></input>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">手机号：</view>
+      <input placeholder="请输入参会人员手机号" bindinput="putData" data-key="party"></input>
+    </view>
+
+    <view class="cu-bar bg-white" style="border-top: 1rpx solid #eee;">
+      <view class="action">
+        现场照片：
+      </view>
+      <!-- <view class="action">
+			{{imgList.length}}/9
+		</view> -->
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-3 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+<view class="margin-tb-lg">
+  <button class="button" bindtap="commitData" style="">确认参会</button>
+</view>
+<view style="margin-bottom:200rpx;"></view>
+<bottom></bottom>

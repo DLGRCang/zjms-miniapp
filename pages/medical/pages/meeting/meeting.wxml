@@ -1,0 +1,43 @@
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
+</cu-custom>
+<image mode="widthFix" src="{{imgUrl}}/image/huiyiguanli.png" style="width:100%"></image>
+<view class="padding-lr-lg">
+	<dot-title title="防控知识" color="title-color"></dot-title>
+
+	<view class="box">
+		<view class="flex padding" bindtap="goDetail" data-id="1">
+			<image class="radius margin-right" src="{{imgUrl}}/image/huiyiguanli.png"
+				style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+			<view class="flex flex-direction  ">
+				<text class="text-black text-df">会议名称</text>
+				<text class="text-df text-cut" style="padding-top:8rpx;padding-bottom:8rpx;">会议副名称</text>
+				<view class="text-grey text-sm">会议名称</view>
+			</view>
+		</view>
+
+		<view class="flex padding" bindtap="gotoDetail">
+			<image class="radius margin-right" src="{{imgUrl}}/image/huiyiguanli.png"
+				style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+			<view class="flex flex-direction  ">
+				<text class="text-black text-df">会议名称</text>
+				<text class="text-df text-cut" style="padding-top:8rpx;padding-bottom:8rpx;">会议副名称</text>
+				<view class="text-grey text-sm">会议名称</view>
+			</view>
+		</view>
+		<view class="flex padding" bindtap="gotoDetail">
+			<image class="radius margin-right" src="{{imgUrl}}/image/huiyiguanli.png"
+				style="width:132rpx;height:132rpx;background-color:#D8D8D8;min-height: 132rpx;min-width:132rpx;"></image>
+			<view class="flex flex-direction  ">
+				<text class="text-black text-df">会议名称</text>
+				<text class="text-df text-cut" style="padding-top:8rpx;padding-bottom:8rpx;">会议副名称</text>
+				<view class="text-grey text-sm">会议名称</view>
+			</view>
+		</view>
+		
+
+	</view>
+
+</view>
+
+<bottom></bottom>
