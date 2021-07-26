@@ -1888,9 +1888,9 @@ Page({
    */
   onLoad: function (options) {
     this.getNewsList()
-    // this.getData()
+    this.getData()
     // 测试
-    this.getDataTest()
+    // this.getDataTest()
   },
 
   /**
