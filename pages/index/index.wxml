@@ -41,9 +41,14 @@
     <view class="padding-lg margin-bottom-sm">
       <swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="2000"
         duration="1000">
-        <swiper-item wx:for="{{item.list}}" wx:key='items' wx:for-item="items">
+        <swiper-item wx:for="{{item.list}}" wx:key='items' wx:for-item="items" bindtap="goServiceDetail"
+          data-url="{{items.href}}" data-type="{{items.openType}}" data-tit="{{items.name}}"
+          data-login="{{items.islogin}}" data-color="{{items.color}}">
           <block wx:if="{{items.enable === 1}}">
+
             <image src="{{iconImgUrl}}{{items.icon}}" mode="aspectFill"></image>
+
+
           </block>
         </swiper-item>
       </swiper>

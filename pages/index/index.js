@@ -77,10 +77,12 @@ Page({
   goUserCenter() {
     util.pageJump("../../pages/plugin/home/home")
   },
+
   // 预约缴费详情
   goFeeDetail(e) {
     util.pageJump(e.currentTarget.dataset.href)
   },
+
   // 业务详情页
   goServiceDetail(e) {
     console.log(e.currentTarget.dataset)
@@ -130,6 +132,7 @@ Page({
     }
 
   },
+
   //新闻列表
   getNewsList() {
     let url = 'https://api-cms.yjhlnews.cn/v1/classify_content/13/?sorce_type=0&limit=10';
@@ -140,9 +143,11 @@ Page({
       })
     });
   },
+
   goOfficeNews() {
     util.pageJump("../publish/pages/officialNewsList/officialNewsList")
   },
+
   // 新闻详情
   goNewsDetail(e) {
     util.pageJumpTo('../publish/pages/officialNewsDetail/officialNewsDetail', 'id', e.currentTarget.dataset.id)
@@ -163,6 +168,7 @@ Page({
       })
     });
   },
+
   // 测试
   getDataTest() {
     let data = {
@@ -184,12 +190,32 @@ Page({
         "apiUrl": "url",
         "list": [{
           "id": 0,
+          "name": "会议管理",
+          "summary": "",
+          "icon": "/zjms/swiper2.png",
+          "href": "../medical/pages/meeting/meeting",
+          "color": "",
+          "openType": 0,
+          "enable": 1,
+          "islogin": true,
+          "content": [{
+            "islogin": true,
+            "enable": 1,
+            "id": 0,
+            "tit": "",
+            "icon": "",
+            "url": "",
+            "color": "",
+            "openType": ""
+          }]
+        },{
+          "id": 0,
           "name": "",
           "summary": "",
           "icon": "/zjms/swiper1.png",
           "href": "",
           "color": "",
-          "openType": "",
+          "openType": 0,
           "enable": 1,
           "islogin": true,
           "content": [{
@@ -1889,6 +1915,7 @@ Page({
   onLoad: function (options) {
     this.getNewsList()
     this.getData()
+
     // 测试
     // this.getDataTest()
   },
