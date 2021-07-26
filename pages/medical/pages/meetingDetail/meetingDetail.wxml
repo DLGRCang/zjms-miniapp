@@ -2,12 +2,24 @@
   <view slot="content" class="text-white text-xl text-black text-bold">会议详情</view>
 </cu-custom>
 <image style="width: 100%; height: 380rpx;background-color: #dedede;" mode="scaleToFill"
-  src="{{imgUrl}}/image/huiyiguanli.png"></image>
+  src="{{imgUrl}}{{infoList.meetphoto}}"></image>
 <view class="padding-lg">
-  <view class="margin-tb-sm text-xl text-bold">会议标题</view>
+  <view class="margin-tb-sm text-xl text-bold">{{infoList.meetname}}</view>
   <view class="flex justify-between text-sm">
-    <view>会议副标题</view>
-    <view class="text-bold title-color">签到二维码</view>
+    <view>{{infoList.meetsecname}}</view>
+    <view class="text-bold title-color" bindtap="getCode" data-target="Modal">会议二维码</view>
+  </view>
+
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}" bindtap="closeCode">
+    <view class="cu-dialog">
+      <image src="https://www.yjhlcity.com/InfoIssue/app/meet/getqrcoderelease/{{infoList.meet_id}}" mode="aspectFit"
+        style="width: 600rpx;height: 600rpx;">
+      </image>
+    </view>
+    <view style="margin-top:10rpx;" bindtap="closeBd">
+      <image src="https://www.yjhlcity.com/InfoIssue/miniapp/image/close.png" mode="scaleToFill"
+        style="width: 80rpx;height: 80rpx;"></image>
+    </view>
   </view>
 
   <view class="flex justify-contents margin-tb-lg">
@@ -15,7 +27,7 @@
     <view class="text-center padding-left-xs text-lg text-bold">概述</view>
   </view>
   <view class="box">
-    头器色度次族斯江里而志我从列想容新千色二阶却制道般革电几根面好影数团感业为决重各干去于。一前题清例在线线海信改细日除家为路其生图方八受同很线万常了对内方么般他心毛化山然
+    {{infoList.meetsummary}}
   </view>
 
   <view class="flex justify-contents margin-tb-lg">
@@ -23,8 +35,9 @@
     <view class="text-center padding-left-xs text-lg text-bold">开始时间</view>
   </view>
   <view class="flex justify-between box">
-    <view style="padding-top:15rpx;">2021-07-09 13:30</view>
-    <view wx:if="{{signStatus === 0}}" class="click" bindtap="goSign" data-status="1">签到</view>
+    <view style="padding-top:15rpx;">{{infoList.meetstarttime}}</view>
+    <view wx:if="{{infoList.signintime == ''|| infoList.signintime == null}}" class="click" bindtap="goSign"
+      data-id="{{infoList.meet_id}}">签到</view>
     <view wx:else class="clicks">已签</view>
   </view>
 
@@ -33,8 +46,10 @@
     <view class="text-center padding-left-xs text-lg text-bold">结束时间</view>
   </view>
   <view class="flex justify-between box">
-    <view style="padding-top:15rpx;">2021-07-09 13:30</view>
-    <view wx:if="{{signStatus === 0}}" class="click" bindtap="goSign" data-status="1">签到</view>
+    <view style="padding-top:15rpx;">{{infoList.meetendtime}}</view>
+    <view
+      wx:if="{{infoList.singouttime == ''|| infoList.singouttime == null || infoList.signintime == ''|| infoList.signintime == null}}"
+      class="click" bindtap="goSignout" data-id="{{infoList.meet_id}}">签退</view>
     <view wx:else class="clicks">已签</view>
   </view>
 
@@ -43,7 +58,7 @@
     <view class="text-center padding-left-xs text-lg text-bold">会议地点</view>
   </view>
   <view class="box">
-    北京
+    {{infoList.meetlocal}}
   </view>
 
   <view class="flex justify-contents margin-tb-lg">
@@ -51,7 +66,7 @@
     <view class="text-center padding-left-xs text-lg text-bold">主持人</view>
   </view>
   <view class="box">
-    支持人姓名
+    {{infoList.meetman}}
   </view>
 
   <view class="flex justify-contents margin-tb-lg">
@@ -59,7 +74,7 @@
     <view class="text-center padding-left-xs text-lg text-bold">参会人员</view>
   </view>
   <view class="box">
-    张三、李四、王五
+    {{infoList.meetusernum}}
   </view>
 
 </view>

@@ -1,7 +1,7 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
   <view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
-<image mode="widthFix" src="{{imgUrl}}/image/ziliaoxiazai.png" style="width:100%"></image>
+<image mode="widthFix" src="{{baseImg}}/image/ziliaoxiazai.png" style="width:100%"></image>
 <view class="padding-lr-lg">
   <dot-title title="资料下载" color="title-color"></dot-title>
 

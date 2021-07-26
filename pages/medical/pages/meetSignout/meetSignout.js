@@ -11,25 +11,22 @@ Page({
 		files: '',
 		username: '',
 		userphone: '',
-		latitude: '',
-		longitude: ''
+		latitude:'',
+		longitude:''
 	},
 	// 获取经纬度
-	getLocations() {
+	getLocation(){
 		let that = this
 		wx.getLocation({
 			type: 'wgs84',
-			success(res) {
+			success (res) {
 				console.log(res)
 				that.setData({
-					latitude: res.latitude,
-					longitude: res.longitude
+					latitude:res.latitude,
+					longitude:res.longitude
 				})
-			},
-			fail(res){
-				console.log(res)
 			}
-		})
+		 })
 	},
 	putData(e) {
 		let key = e.currentTarget.dataset.key
@@ -38,31 +35,14 @@ Page({
 		})
 	},
 	commitData() {
-		if(this.data.username=='' || this.data.username== null){
-			wx.showToast({
-				title: '姓名不能为空',
-				icon: 'none',
-			})
-			return
-		}
-		if(this.data.userphone=='' || this.data.userphone== null){
-			wx.showToast({
-				title: '手机号不能为空',
-				icon: 'none',
-			})
-			return
-		}
-		this.getLocations()
 		let data = {
 			meetid: this.data.id,
-			username: this.data.username,
-			userphone: this.data.userphone,
-			signinlong: this.data.longitude,
-			signinlati: this.data.latitude,
-			signinphoto: this.data.files,
+			signoutlong: this.data.longitude,
+			signoutlati: this.data.latitude,
+			signoutphoto: this.data.files,
 		}
 		console.log(data)
-		util.requestData('meet/signin', 'POST', data).then(res => {
+		util.requestData('meet/signout', 'POST', data).then(res => {
 			console.log(res.data)
 			if (res.data.code == 200) {
 				wx.showToast({
@@ -153,8 +133,8 @@ Page({
 		this.setData({
 			id: options.id
 		})
-
 		console.log(options)
+		this.getLocation()
 	},
 
 	/**

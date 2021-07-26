@@ -1,9 +1,10 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
-  <view slot="content" class=" text-xl text-black text-bold">签到</view>
+  <view slot="content" class=" text-xl text-black text-bold">签退</view>
 </cu-custom>
 <view class="tit">
   <view class="flex justify-between cont">
     <view>温馨提示：请确保您填写的信息真实有效！</view>
+    <view>X</view>
   </view>
 </view>
 
@@ -14,15 +15,15 @@
   </view>
 
   <view class="box">
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">姓名：</view>
       <input placeholder="请输入参会人员姓名" bindinput="putData" data-key="username"></input>
-    </view>
+    </view> -->
 
-    <view class="cu-form-group">
+    <!-- <view class="cu-form-group">
       <view class="title">手机号：</view>
       <input placeholder="请输入参会人员手机号" bindinput="putData" data-key="userphone"></input>
-    </view>
+    </view> -->
 
     <view class="cu-bar bg-white" style="border-top: 1rpx solid #eee;">
       <view class="action">现场照片：</view>
@@ -45,7 +46,7 @@
 
 </view>
 <view class="margin-tb-lg">
-  <button class="button" bindtap="commitData" style="">确认参会</button>
+  <button class="button" bindtap="commitData" style="">确认签退</button>
 </view>
 <view style="margin-bottom:200rpx;"></view>
 <bottom></bottom>
