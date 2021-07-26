@@ -35,6 +35,12 @@
   </view>
 </view>
 
+
+<view class="margin-lr-lg margin-top-lg text-red">
+  *本程序正在测试运行阶段，欢迎大家到个人中心“意见反馈”中提出宝贵意见！
+</view>
+
+
 <block wx:for="{{modules}}" wx:key="item">
   <!-- 轮播 -->
   <block wx:if="{{item.type === 'banner' && item.enable=== 1 }}">
@@ -54,6 +60,8 @@
       </swiper>
     </view>
   </block>
+
+
   <!-- 新闻 -->
   <block wx:if="{{item.type === 'news' && item.enable=== 1}}">
     <view class="padding-lg margin-tb-sm  borders common flex">

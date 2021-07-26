@@ -4,19 +4,46 @@ page {
 }
 
 .bgColor {
-  background-color: #32B072;
+  background-color: rgb(192, 2, 0);
   color: #ffffff;
 }
 
 .title-color {
-  color: #32B072
+  color: rgb(192, 2, 0)
 }
 .box{
   border: 1rpx solid #F5F5F5;
 }
 .button {
-  background-color: #32B072;
+  background-color: rgb(192, 2, 0);
   color: #ffffff;
   margin: -120rpx 70rpx 0 70rpx;
   font-size: 34rpx;
+}
+
+.list {
+  width: 10rpx;
+  height: 36rpx;
+  line-height: 32rpx;
+  border-left: 10rpx solid;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  margin-top: 6rpx;
+}
+
+.boxs {
+  border: 1rpx solid #F5F5F5;
+  padding:30rpx;
+}
+
+.click {
+  margin-top: 25rpx;
+  width: 122rpx;
+  height: 54rpx;
+  background: #1BA862;
+  color: #ffffff;
+  border-radius: 26rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.01);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

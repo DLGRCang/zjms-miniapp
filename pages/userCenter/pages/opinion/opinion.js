@@ -18,20 +18,38 @@ Page({
 			util.showToast('内容不能为空')
 			return
 		}
-		wx.showToast({
-			title: '提交成功',
-			icon: 'success',
-			duration: 500,
-			mask: true,
-			success: function() {
-				setTimeout(function() {
-					//要延时执行的代码
-					wx.navigateBack({
-						delta: 1
-					})
-				}, 500) //延迟时间
-			},
-		});
+    let data = {
+      titleName: 'null',
+      content: this.data.content,
+      typeId: 'cbfe5ae8-9db2-49f8-9d34-863b262985d6',
+      status:'未审核',
+      gmtCreate:util.formatDate(new Date),
+      userId: wx.getStorageSync('userId'),
+      userName: wx.getStorageSync('name')
+    }
+    console.log(data)
+    util.requestApi('commentsonthemanagement/savecommentsonthemanagement', 'POST', data).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        wx.showToast({
+          title: "提交成功",
+          icon: 'success',
+          mask: true,
+          success(res) {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 1000)
+          }
+        });
+      } else {
+        wx.showToast({
+          title: '提交失败请检查数据',
+          icon: 'error',
+        })
+      }
+    });
   },
 	/**
 	 * 生命周期函数--监听页面加载

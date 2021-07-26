@@ -61,6 +61,24 @@ Page({
     }
     util.pageJumpTo('../meetSignout/meetSignout', 'id', e.currentTarget.dataset.id)
   },
+  checkFile(e){
+    wx.downloadFile({
+      url: 'https://www.yjhlcity.com/InfoIssue/route/file/downloadfile/false/'+e.currentTarget.dataset.file,
+      success: function(res) {
+        console.log(res)
+        var Path = res.tempFilePath;
+        wx.openDocument({
+          filePath: Path,
+          success: function(res) {
+            console.log('打开文档成功')
+          }
+        })
+      },
+      fail: function(res) {
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

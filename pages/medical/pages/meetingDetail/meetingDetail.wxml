@@ -5,10 +5,10 @@
   src="{{imgUrl}}{{infoList.meetphoto}}"></image>
 <view class="padding-lg">
   <view class="margin-tb-sm text-xl text-bold">{{infoList.meetname}}</view>
-  <view class="flex justify-between text-sm">
+  <!-- <view class="flex justify-between text-sm">
     <view>{{infoList.meetsecname}}</view>
     <view class="text-bold title-color" bindtap="getCode" data-target="Modal">会议二维码</view>
-  </view>
+  </view> -->
 
   <view class="cu-modal {{modalName=='Modal'?'show':''}}" bindtap="closeCode">
     <view class="cu-dialog">
@@ -61,12 +61,45 @@
     {{infoList.meetlocal}}
   </view>
 
+  <block wx:if="{{infoList.stayplace === '' || infoList.stayplace === null || infoList.stayplace === undefined}}">
+  </block>
+  <block wx:else>
+    <view class="flex justify-contents margin-tb-lg">
+      <view class="list title-color"></view>
+      <view class="text-center padding-left-xs text-lg text-bold">座位号</view>
+    </view>
+    <view class="box">
+      {{infoList.seatnum}}
+    </view>
+  </block>
+
+  <block wx:if="{{infoList.stayplace === '' || infoList.stayplace === null || infoList.stayplace === undefined}}">
+  </block>
+  <block wx:else>
+    <view class="flex justify-contents margin-tb-lg">
+      <view class="list title-color"></view>
+      <view class="text-center padding-left-xs text-lg text-bold">住宿位置</view>
+    </view>
+    <view class="box">
+      {{infoList.stayplace}}
+    </view>
+  </block>
+
   <view class="flex justify-contents margin-tb-lg">
     <view class="list title-color"></view>
     <view class="text-center padding-left-xs text-lg text-bold">主持人</view>
   </view>
   <view class="box">
     {{infoList.meetman}}
+  </view>
+
+  <view class="flex justify-contents margin-tb-lg">
+    <view class="list title-color"></view>
+    <view class="text-center padding-left-xs text-lg text-bold">会议日程</view>
+  </view>
+  <view class="flex justify-between box">
+    <view style="padding-top:15rpx;">下载会议日程</view>
+    <view class="click" bindtap="checkFile" data-file="{{infoList.meetfile}}">下载</view>
   </view>
 
   <view class="flex justify-contents margin-tb-lg">
