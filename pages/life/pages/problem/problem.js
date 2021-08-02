@@ -99,7 +99,7 @@ Page({
 		console.log(data)
 		util.requestData('problemreport/saveproblemreport', 'POST', data).then(res => {
       console.log(res)
-      util.returnCode(res.statusCode,200)
+      util.returnCode(res.statusCode,200,2)
 		});
 	},
   /**

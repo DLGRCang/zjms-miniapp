@@ -45,6 +45,19 @@ Page({
       })
     })
   },
+  goHotSearch(e){
+    let that = this;
+    let data= {
+      q:e.currentTarget.dataset.id
+    };
+    util.requestApi('library/searchLibrary', 'GET', data).then(res => {
+      console.log(res.data.bookList)
+      that.setData({
+        bookList: res.data.bookList
+      })
+    })
+  },
+
     /**
    * 生命周期函数--监听页面加载
    */

@@ -322,7 +322,8 @@
 		"dot-title": "/components/dot-title/dot-title",
 		"type-picker": "/components/type-picker/type-picker",
 		"type-picker-thing": "/components/type-picker-thing/type-picker-thing",
-		"bottom": "/components/bottom/bottom"
+		"bottom": "/components/bottom/bottom",
+		"bottoms": "/components/bottoms/bottoms"
 	},
 	"sitemapLocation": "sitemap.json",
 	"enablePullDownRefresh": true

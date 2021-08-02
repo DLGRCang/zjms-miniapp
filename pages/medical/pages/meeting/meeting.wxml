@@ -27,6 +27,7 @@
 			</view>
 		</block>
 
+		<dot-title title="会议动态" color="text-green"></dot-title>
 		<item-image-text wx:for="{{dataList}}" type="2" obj="{{item}}" imgUrl="{{item.info_photos}}"
 			itemTitle="{{item.info_content}}" itemInfo="{{item.info_summary}}" isImg="true" isDate="true"
 			date="{{item.publishdate}}" isLine="true">
@@ -53,5 +54,5 @@
 	</view> -->
 
 </view>
-
-<!-- <bottom></bottom> -->
+<!-- <bottoms deptStr1='建设单位：伊金霍洛旗大数据中心'></bottoms> -->
+<bottom></bottom>

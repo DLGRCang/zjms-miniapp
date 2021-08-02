@@ -1,0 +1,9 @@
+/* components/botton/botton.wxss */
+.bottom-bg {
+	background-color:#ffffff;
+	width: 100%;
+	margin-top:auto;
+	align-self: bottom;
+	justify-items: center;
+	padding:30rpx
+	}

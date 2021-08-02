@@ -102,6 +102,14 @@ Page({
           if (e.currentTarget.dataset.tit == '会议管理') {
             //判断是否登录
             if (!login.isLogin()) return
+
+
+
+
+
+
+
+            
           }
           util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
 

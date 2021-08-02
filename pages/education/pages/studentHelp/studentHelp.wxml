@@ -10,5 +10,5 @@
   <item-image-text wx:for="{{dataList}}" isImg="{{false}}" obj="{{item}}" itemTitle="{{item.info_content}}"
     isDate="true" date="{{item.publishdate}}"></item-image-text>
 
-
 </view>
+<bottom></bottom> 

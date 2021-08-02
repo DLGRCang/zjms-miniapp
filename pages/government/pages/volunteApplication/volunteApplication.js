@@ -42,7 +42,7 @@ Page({
     };
     console.log(data)
     util.requestData('volunteerapplication/savevolunteerapplication/'+this.data.id, 'POST', data).then(res => {
-      util.returnCode(res.statusCode,200)
+      util.returnCode(res.statusCode,200,2)
     })
   },
   /**

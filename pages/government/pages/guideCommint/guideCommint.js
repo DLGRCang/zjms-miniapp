@@ -58,16 +58,7 @@ Page({
 		console.log(data)
 		util.requestApi('applicationprequalified/saveapplicationprequalified', 'POST', data).then(res => {
 			console.log(res)
-			util.returnCode(res.statusCode,200)
-			// if (res.statusCode == 200) {
-			// 	wx.navigateBack({
-			// 		delta: 1
-			// 	})
-			// 	util.showToast("提交成功")
-
-			// } else {
-			// 	util.showToast(res.data.msg)
-			// }
+			util.returnCode(res.statusCode,200,2)
 		});
 	},
 	/**

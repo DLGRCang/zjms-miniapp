@@ -1,0 +1,6 @@
+<view>
+	<view class="flex flex-direction padding bottom-bg align-center">
+		<view style="text-align:center;color:#BEBEBE;font-size:24rpx">{{deptStr1}}</view>
+		<view style="text-align:center;margin-top:10rpx;color:#BEBEBE;font-size:24rpx">{{deptStr2}}</view>
+	</view>
+</view>

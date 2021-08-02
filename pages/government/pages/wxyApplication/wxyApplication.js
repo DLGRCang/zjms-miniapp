@@ -44,7 +44,8 @@ Page({
     };
     console.log(data)
     util.requestData('weixinyuanservice/savevolunteerapplication/'+this.data.id, 'POST', data).then(res => {
-      util.returnCode(res.statusCode,200)
+      console.log(res)
+      util.returnCode(res.statusCode,200,2)
     })
   },
   /**

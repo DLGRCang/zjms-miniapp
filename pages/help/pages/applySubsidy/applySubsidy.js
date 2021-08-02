@@ -50,15 +50,7 @@ Page({
 		console.log(data)
 		util.requestApi('redcross/saveredcross', 'POST', data).then(res => {
 			console.log(res)
-			if (res.statusCode == 200) {
-				wx.navigateBack({
-					delta: 1
-				})
-				util.showToast("提交成功")
-
-			} else {
-				util.showToast("提交失败")
-			}
+			util.returnCode(res.statusCode,200,2)
 		});
 	},
 	putData(e) {

@@ -15,10 +15,10 @@
 <view class="margin-lr-lg ">
   <dot-title title="热门搜索" color="color"></dot-title>
   <view class="flex text-grey">
-    <view>红楼梦</view>
-    <view class="margin-left-xl">十万个为什么</view>
-    <view class="margin-left-xl">黑客时代</view>
-    <view class="margin-left-xl">黄帝内经</view>
+    <view bindtap="goHotSearch" data-id="红楼梦">红楼梦</view>
+    <view class="margin-left-xl" bindtap="goHotSearch" data-id="十万个为什么">十万个为什么</view>
+    <view class="margin-left-xl" bindtap="goHotSearch" data-id="黑客时代">黑客时代</view>
+    <view class="margin-left-xl" bindtap="goHotSearch" data-id="黄帝内经">黄帝内经</view>
   </view>
 </view>
 <view class="margin-lr-lg ">
@@ -50,7 +50,6 @@
           <view class="text-grey">{{item.subject}}</view>
         </view>
       </view>
-      。
     </block>
   </view>
   <!-- <dot-title title="通知公告" color="color"></dot-title>

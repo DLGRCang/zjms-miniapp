@@ -99,7 +99,7 @@ const requestApi = function (url, method, data = {}) {
 
         reject(res)
       }
-    })  
+    })
   })
 }
 
@@ -429,7 +429,7 @@ const getParams = function getUrlkey(url) {
 }
 
 //请求返回提示
-const returnCode = function (code, num) {
+const returnCode = function (code, num, afterNum) {
   if (code == num) {
     wx.showToast({
       title: "提交成功",
@@ -438,9 +438,9 @@ const returnCode = function (code, num) {
       success(res) {
         setTimeout(() => {
           wx.navigateBack({
-            delta: 2
+            delta: afterNum
           })
-        }, 1000)
+        }, 2000)
       }
     });
   } else {
@@ -457,11 +457,11 @@ const isNull = function (str) {
     return false;
 };
 
-const isEmpty = function (key,title) {
+const isEmpty = function (key, title) {
   if (key == "" || key == null || key == undefined) {
     wx.showToast({
       title: title,
-      icon: 'none', 
+      icon: 'none',
       duration: 2000
     })
     return
@@ -512,7 +512,7 @@ module.exports = {
   returnCode: returnCode,
   isNull: isNull,
   routePlan: routePlan,
-  isEmpty:isEmpty,
+  isEmpty: isEmpty,
   uploadVideoFile: uploadVideoFile,
   uploadVideoFile: uploadVideoFile,
   uploadAudioFile: uploadAudioFile

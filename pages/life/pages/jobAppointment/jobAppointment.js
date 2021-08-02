@@ -124,7 +124,7 @@ Page({
 		};
 		console.log(formData)
 		util.requestApi('applicationFormTable/saveApplicationFormTable', 'POST', formData).then(res => {
-			util.returnCode(res.statusCode,200)
+			util.returnCode(res.statusCode,200,2)
 		}) 
 	},
 	/**

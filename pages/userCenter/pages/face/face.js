@@ -27,7 +27,7 @@ Page({
 		})
 	},
 	faceid() {
-		// this.goLogin()
+
 		let that = this
 		if (this.data.name == '') {
 			util.showToast('姓名不能为空')
@@ -41,7 +41,10 @@ Page({
 			util.showToast('身份证错误')
 			return
 		}
-
+		//////////////////////////////
+		// 测试
+		this.goLogin()
+		//////////////////////////////
 		wx.startFacialRecognitionVerify({
 
 			name: this.data.name,
@@ -56,11 +59,11 @@ Page({
 				console.log('识别成功')
 				that.goLogin();
 			},
-			fail(res) {
-				util.showToast('登录失败，请重试')
-				console.log("res" + JSON.stringify(res))
-				console.log('识别失败' + res.verifyResult)
-			},
+			// fail(res) {
+			// 	util.showToast('登录失败，请重试')
+			// 	console.log("res" + JSON.stringify(res))
+			// 	console.log('识别失败' + res.verifyResult)
+			// },
 			complete(com) {
 				console.log("com" + JSON.stringify(com))
 			}
@@ -94,7 +97,7 @@ Page({
 			type: '1',
 		}
 		// util.httpRequest('https://www.yjhlcity.com/app/sign/checkCoderelease', 'post', data).then(res => {
-			util.httpRequest('https://www.yjhlcity.com/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
+		util.httpRequest('https://www.yjhlcity.com/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
 			console.log(res)
 
 
@@ -103,8 +106,8 @@ Page({
 				wx.setStorageSync("isLogin", true);
 				wx.setStorageSync("token", res.data.result.data.token);
 				wx.setStorageSync("userId", res.data.result.data.userInfo.id);
-				var openId=res.data.result.data.userInfo.username.split('_')
-				wx.setStorageSync("openId",openId[openId.length-1]);
+				var openId = res.data.result.data.userInfo.username.split('_')
+				wx.setStorageSync("openId", openId[openId.length - 1]);
 				wx.setStorageSync("name", that.data.name); //姓名	
 				wx.setStorageSync("idCard", that.data.idCard); //身份证号
 				that.setData({
