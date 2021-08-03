@@ -34,19 +34,23 @@
       <view bindtap="myAppointment" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-countdown"></text> 我的预约</view>
       <view bindtap="myConsult" class="items"><text class="cuIcon-profile"></text> 我的咨询</view>
     </view>
-    <view class="grid col-2 margin-tb text-center">
-      <!-- <view bindtap="myAppointment" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-countdown"></text> 我的预约</view> -->
+    <!-- <view class="grid col-2 margin-tb text-center">
       <view bindtap="myJoin" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-comment"></text> 我的参与</view>
       <view bindtap="myApply" class="items"><text class="cuIcon-read"></text> 我的申请</view>
-    </view>
+    </view> -->
     <view class="grid col-2 margin-tb text-center">
-      <view bindtap="myCard" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-vipcard"></text> 我的卡券</view>
+      <view bindtap="myApply" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-read"></text> 我的申请</view>
       <view bindtap="myOrder" class="items"><text class="cuIcon-comment"></text> 我的订单</view>
     </view>
+    <!-- <view class="grid col-2 margin-tb text-center">
+      <view bindtap="myCard" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-vipcard"></text> 我的卡券</view>
+      <view bindtap="myOrder" class="items"><text class="cuIcon-comment"></text> 我的订单</view>
+    </view> -->
     <view class="grid col-2 margin-tb text-center">
       <view bindtap="myTel" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-addressbook"></text> 电话本　</view>
       <view bindtap="myOpinion" class="items"><text class="cuIcon-ticket"></text> 意见反馈</view>
     </view>
   </view>
 </view>
+<view style="margin-bottom:250rpx;"></view>
 <bottom style="margin-top:auto" deptStr1="建设单位：伊金霍洛旗大数据中心" deptStr2="建设单位：内蒙古大云智通科技有限公司"></bottom>

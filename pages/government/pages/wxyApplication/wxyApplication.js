@@ -43,7 +43,7 @@ Page({
       specialty: this.data.specialty//特长
     };
     console.log(data)
-    util.requestData('weixinyuanservice/savevolunteerapplication/'+this.data.id, 'POST', data).then(res => {
+    util.requestData('weixinyuanapplication/savevolunteerapplication/'+this.data.id, 'POST', data).then(res => {
       console.log(res)
       util.returnCode(res.statusCode,200,2)
     })

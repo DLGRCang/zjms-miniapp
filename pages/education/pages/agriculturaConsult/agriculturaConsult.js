@@ -46,13 +46,24 @@ Page({
 		console.log(data)
 		util.requestData('consult/saveconsult', 'POST',data).then(res => {
 			console.log(res)
-			if(res.statusCode==200){
-				wx.navigateBack({
-					delta: 1
+			if (res.statusCode==200) {
+				wx.showToast({
+					title: "您的咨询已提交",
+					icon: 'success',
+					mask: true,
+					success(res) {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 2000)
+					}
+				});
+			} else {
+				wx.showToast({
+					title: '请检查数据',
+					icon: 'error',
 				})
-				util.showToast("提交成功")
-			}else{
-				util.showToast("提交失败")
 			}
 		});
 	},
