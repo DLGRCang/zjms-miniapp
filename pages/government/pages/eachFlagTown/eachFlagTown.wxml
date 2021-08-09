@@ -5,8 +5,8 @@
 <image mode="widthFix" src="{{imgUrl}}/image/qizhenhutong.png" style="width:100%"></image>
 <view class="padding-lr-lg padding-tb">
 	<block wx:for="{{infoData}}" wx:key="item">
-		<view class="flex ">
-			<view bindtap="openXyLink" data-num="{{item.number}}" data-tab="{{item.area}}">
+		<view class="flex " bindtap="openXyLink" data-num="{{item.number}}" data-tab="{{item.area}}">
+			<view >
 				<image src="{{baseImgUrl}}{{item.img}}" mode="aspectFit" style="width:160rpx;height:180rpx"></image>
 			</view>
 			<view class="padding-lr-lg margin-top-lg" >

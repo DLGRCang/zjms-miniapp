@@ -14,11 +14,11 @@
 
 .bg {
 	background-color: #fff;
-	width: 70%;
+	width: 80%;
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 }
 
 .title {
@@ -26,16 +26,20 @@
 	background-color: #e0d6d6;
 	width: 100%;
 	text-align: center;
-	margin-bottom: 25rpx
+	margin-bottom: 25rpx;
+	font-size: 45rpx;
 }
 
 .radio {
 	transform: scale(0.7);
+
 }
 
 .item {
 	padding: 15rpx;
+
 }
+
 
 .modal-btn-wrapper {
 	display: flex;
