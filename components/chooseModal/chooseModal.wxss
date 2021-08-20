@@ -30,10 +30,7 @@
 	font-size: 45rpx;
 }
 
-.radio {
-	transform: scale(0.7);
 
-}
 
 .item {
 	padding: 15rpx;

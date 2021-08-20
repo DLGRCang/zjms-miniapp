@@ -2,21 +2,15 @@
 <view class="mask" wx:if='{{show}}'>
 	<view class="bg">
 		<view class="title">{{title}}</view>
-		<!-- <radio-group bindchange="chooseItem">
-			<view class="item" wx:for="{{choose}}">
-				<radio  value="{{index}}" class="radio"></radio> {{item}}
-			</view>
-		</radio-group> -->
 
 		<view style="font-size: 38rpx; margin-left:150rpx;">
+
 			<radio-group bindchange="chooseItem">
 				<view wx:for="{{choose}}">
-					<radio value="{{index}}" style="margin-top:25rpx;margin-bottom:25rpx;"></radio>  {{item}}
+					<radio value="{{index}}" style="margin-top:25rpx;margin-bottom:25rpx;padding-right:50rpx;">  {{item}}</radio>  
 				</view>
 			</radio-group>
 		</view>
-
-
 
 
 
