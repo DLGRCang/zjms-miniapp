@@ -5,9 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabName: ["关联证卡","添加证卡"],
+    TabCur: 0, 
   },
-
+  selectTab: function (e) {
+    this.setData({
+      TabCur: e.detail.TabCur
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

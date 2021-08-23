@@ -9,3 +9,6 @@
 	margin: -120rpx 70rpx 0 70rpx;
 	font-size: 34rpx;
 }
+.title-color{
+	color: #EE6967;
+}

@@ -1,6 +1,9 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">我的卡卷</view>
 </cu-custom>
-<view>
-  暂无信息
+<view class="padding-lg">
+  <tab bindmyevent="selectTab" tabName="{{tabName}}"></tab>
+  <view class="margin-tb-sm">
+    暂无关联
+  </view>
 </view>

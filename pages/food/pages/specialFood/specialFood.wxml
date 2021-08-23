@@ -75,6 +75,15 @@
       </view>
     </block>
   </block>
+<!-- 补 无功能 -->
+  <view class="tit">
+    <dot-title title="民族食品" color="red"></dot-title>
+  </view>
+
+  <view class="tit">
+    <dot-title title="户外摊点" color="red"></dot-title>
+  </view>
+
 </view>
 
 

@@ -10,18 +10,18 @@ Page({
     CustomBar: app.globalData.CustomBar,
     key: '',
     menuList: [
-      // {
-      //   name: '伊旗之声',
-      //   icon: app.globalData.imgUrl + '/image/1.png',
-      //   url: '/pages/publish/pages/radio/radio',
-      //   isShow: true
-      // },
-      // {
-      //   name: '伊旗之窗',
-      //   icon: app.globalData.imgUrl + '/image/2.png',
-      //   url: '/pages/publish/pages/tv/tv',
-      //   isShow: true
-      // },
+      {
+        name: '伊旗之声',
+        icon: app.globalData.imgUrl + '/image/1.png',
+        url: '/pages/publish/pages/radio/radio',
+        isShow: true
+      },
+      {
+        name: '伊旗之窗',
+        icon: app.globalData.imgUrl + '/image/2.png',
+        url: '/pages/publish/pages/tv/tv',
+        isShow: true
+      },
       {
         name: '推优榜',
         icon: app.globalData.imgUrl + '/image/3.png',
@@ -254,12 +254,12 @@ Page({
         url: '/pages/medical/pages/nucleicAcidCheck/nucleicAcidCheck',
         isShow: true
       },
-      // {
-      //   name: '老年证',
-      //   icon: app.globalData.imgUrl + '/image/46.png',
-      //   url: '/pages/medical/pages/agednessCar/agednessCar',
-      //   isShow: true
-      // },
+      {
+        name: '老年证',
+        icon: app.globalData.imgUrl + '/image/46.png',
+        url: '/pages/medical/pages/agednessCar/agednessCar',
+        isShow: true
+      },
       {
         name: '高龄补助',
         icon: app.globalData.imgUrl + '/image/47.png',
@@ -353,12 +353,12 @@ Page({
         url: '/pages/life/pages/property/property',
         isShow: true
       },
-      // {
-      //   name: '保修服务',
-      //   icon: app.globalData.imgUrl + '/image/65.png',
-      //   url: '/pages/life/pages/repair/repair',
-      //   isShow: true
-      // },
+      {
+        name: '保修服务',
+        icon: app.globalData.imgUrl + '/image/65.png',
+        url: '/pages/life/pages/repair/repair',
+        isShow: true
+      },
       {
         name: '就业服务',
         icon: app.globalData.imgUrl + '/image/66.png',
@@ -393,24 +393,24 @@ Page({
         url: '/pages/life/pages/seafood/seafood',
         isShow: true
       },
-      //  {
-      //   name: '生活缴费',
-      //   icon: app.globalData.imgUrl + '/image/72.png',
-      //   url: '/pages/pay/home/home',
-      //   isShow: true
-      // },
-      // {
-      //   name: '通信服务',
-      //   icon: app.globalData.imgUrl + '/image/73.png',
-      //   url: '/pages/pay/home/home',
-      //   isShow: true
-      // },
-      // {
-      //   name: '金融',
-      //   icon: app.globalData.imgUrl + '/image/74.png',
-      //   url: '/pages/life/pages/finance/finance',
-      //   isShow: true
-      // },
+       {
+        name: '生活缴费',
+        icon: app.globalData.imgUrl + '/image/72.png',
+        url: '/pages/pay/home/home',
+        isShow: true
+      },
+      {
+        name: '通信服务',
+        icon: app.globalData.imgUrl + '/image/73.png',
+        url: '/pages/pay/home/home',
+        isShow: true
+      },
+      {
+        name: '金融',
+        icon: app.globalData.imgUrl + '/image/74.png',
+        url: '/pages/life/pages/finance/finance',
+        isShow: true
+      },
       {
         name: '电影剧院',
         icon: app.globalData.imgUrl + '/image/75.png',
@@ -436,6 +436,44 @@ Page({
         isShow: true
       },
     ],
+    cylist:[
+      {
+        name: '通信服务',
+        icon: app.globalData.imgUrl + '/image/73.png',
+        url: '/pages/pay/home/home',
+        isShow: true
+      },
+      {
+        name: '伊旗之窗',
+        icon: app.globalData.imgUrl + '/image/2.png',
+        url: '/pages/publish/pages/tv/tv',
+        isShow: true
+      },
+      {
+        name: '历史文化',
+        icon: app.globalData.imgUrl + '/image/5.png',
+        url: '/pages/charm/pages/historyCulture/historyCulture',
+        isShow: true
+      },
+      {
+        name: '身边公厕',
+        icon: app.globalData.imgUrl + '/image/13.png',
+        url: '/pages/travel/pages/toilet/toilet',
+        isShow: true
+      },
+      {
+        name: '医院药店',
+        icon: app.globalData.imgUrl + '/image/41.png',
+        url: '/pages/medical/pages/hospital/hospital',
+        isShow: true
+      },
+      {
+        name: '金融',
+        icon: app.globalData.imgUrl + '/image/74.png',
+        url: '/pages/life/pages/finance/finance',
+        isShow: true
+      },
+    ]
   },
   //查询
   searchMenu(e) {

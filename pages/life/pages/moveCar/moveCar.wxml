@@ -25,4 +25,6 @@
   <item-image-text bindtap="goMoveInfo" data-id="{{item.moveCarId}}" type="8" wx:for="{{moveList}}"  imgUrl="{{function.split(item.files)}}" itemTitle="{{item.details}}"
 		itemInfo="{{item.address}}" isImg="true" isTab="false"  date="{{item.license_plate_number}}" isDate="{{true}}"></item-image-text>
   <button bindtap="addMove" class="button-btn">一键挪车</button>
+
+  <dot-title title="爱车养护" color="title-color" isMore="{{false}}" sign="{{infotypeid1}}" type="3" dtype="2"></dot-title>
 </view>
