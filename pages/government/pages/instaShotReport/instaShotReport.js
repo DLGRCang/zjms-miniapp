@@ -42,7 +42,7 @@ Page({
 			console.log(res)
 			if (res.statusCode == 200) {
 				wx.navigateBack({
-					delta: 1
+					delta: 2
 				})
 				util.showToast("提交成功")
 

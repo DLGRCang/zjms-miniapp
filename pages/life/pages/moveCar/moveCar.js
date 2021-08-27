@@ -33,6 +33,14 @@ Page({
       })
     });
   },
+  secondUsedCar(){
+    wx.navigateToMiniProgram({
+      appId: 'wxc591d03d429cf06e',
+      path: '',
+      success: function (res) { },
+      fail: function (res) { }
+    })
+  },
   onLoad: function (options) {
     this.setData({
       tit:options.tit

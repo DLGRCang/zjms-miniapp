@@ -266,7 +266,7 @@ Page({
         url: '/pages/medical/pages/oldAge/oldAge',
         isShow: true
       },{
-        name: '福利院',
+        name: '养老院',
         icon: app.globalData.imgUrl + '/image/48.png',
         url: '/pages/medical/pages/welfareHouse/welfareHouse',
         isShow: true

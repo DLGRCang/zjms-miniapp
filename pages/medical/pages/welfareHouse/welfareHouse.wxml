@@ -4,7 +4,7 @@
 </cu-custom>
 <image mode="widthFix" src="{{imgUrl}}/image/fuliyuan.png" style="width:100%"></image>
 <view class="flex flex-direction padding-lg">
-	<!-- <dot-title title="福利院" color="title-color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
+	<!-- <dot-title title="养老院" color="title-color" isMore="true" sign="{{infotypeid}}" type="3"></dot-title>
 	<item-image-text type="4" wx:for="{{dataList}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
 		itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}">
 	</item-image-text> -->

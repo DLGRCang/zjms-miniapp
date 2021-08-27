@@ -9,6 +9,6 @@
 	itemInfo="{{item.info_summary}}" isImg="true" isDate="{{true}}" date="{{item.publishdate}}" isLine="true">
 </item-image-text>
 <dot-title title="老年证" color="title-color" ></dot-title>
-<dot-title title="高龄补贴" color="title-color" ></dot-title>
+<dot-title title="老人关注" color="title-color" ></dot-title>
 <dot-title title="低保户" color="title-color" ></dot-title>
 </view>

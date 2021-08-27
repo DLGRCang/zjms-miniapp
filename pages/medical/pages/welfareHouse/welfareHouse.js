@@ -12,7 +12,7 @@ Page({
 		imgUrl:app.globalData.imgUrl,
 		page:1,
 		infotypeid: '3b4f1a0a-99a1-4f46-bba9-6a7343dcba2a',
-		dataList: [], //福利院列表
+		dataList: [], //养老院列表
 		infotypeid1: '815d2353-bb1a-4b1e-bf3e-0dccc13d1641',
 		dataList1: null, //养老院列表
 		infotypeid2: 'de8f6d41-3e0c-4b18-a7ea-e14207022c97',
