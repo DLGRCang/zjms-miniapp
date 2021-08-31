@@ -208,26 +208,6 @@ Page({
             "color": "",
             "openType": ""
           }]
-        },{
-          "id": 0,
-          "name": "",
-          "summary": "",
-          "icon": "/zjms/swiper1.png",
-          "href": "",
-          "color": "",
-          "openType": 0,
-          "enable": 1,
-          "islogin": true,
-          "content": [{
-            "islogin": true,
-            "enable": 1,
-            "id": 0,
-            "tit": "",
-            "icon": "",
-            "url": "",
-            "color": "",
-            "openType": ""
-          }]
         }]
       },
       {
@@ -474,9 +454,9 @@ Page({
           "name": "特色美食",
           "summary": "",
           "icon": "/zjms/10.png",
-          "href": "../food/pages/specialFood/specialFood",
-          "color": "",
-          "openType": 0,
+          "href": "wx2612dde8b5df3d03",
+          "color": "pages/meishijiudian/index?id=f785f6829d6e4a998b796e26ea2e50ce&tit=特色菜",
+          "openType": 1,
           "enable": 1,
           "islogin": true,
           "content": [{
@@ -1014,9 +994,9 @@ Page({
             "id": 5,
             "tit": "酒店宾馆",
             "icon": "/image/12.png",
-            "url": "../travel/pages/hotel/hotel",
-            "color": "",
-            "openType": 0
+            "url": "wx2612dde8b5df3d03",
+            "color": "pages/meishijiudian/index?id=aad6c1b16cee4dc1849e1003ca14c128&tit=酒店",
+            "openType": 1
           },
           {
             "enable": 1,
@@ -1137,9 +1117,9 @@ Page({
             "id": 0,
             "tit": "特色美食",
             "icon": "/image/16.png",
-            "url": "../food/pages/specialFood/specialFood",
-            "color": "",
-            "openType": 0
+            "url": "wx2612dde8b5df3d03",
+            "color": "pages/meishijiudian/index?id=f785f6829d6e4a998b796e26ea2e50ce&tit=特色菜",
+            "openType": 1
           },
           {
             "enable": 1,
@@ -1147,19 +1127,19 @@ Page({
             "id": 1,
             "tit": "经济快餐",
             "icon": "/image/17.png",
-            "url": "../food/pages/economicsFood/economicsFood",
-            "color": "",
-            "openType": 0
+            "url": "wx2612dde8b5df3d03",
+            "color": "pages/xiaoyuancanting/index",
+            "openType": 1
           },
           {
             "enable": 1,
             "islogin": true,
             "id": 2,
-            "tit": "酒店餐饮",
+            "tit": "高档餐饮",
             "icon": "/image/18.png",
-            "url": "../food/pages/topFood/topFood",
-            "color": "",
-            "openType": 0
+            "url": "wx2612dde8b5df3d03",
+            "color": "pages/meishijiudian/index?id=8d1a63627dfb4bb2b932c76a3749ed8f&tit=西餐",
+            "openType": 1
           },
           {
             "id": 3,
@@ -1179,11 +1159,21 @@ Page({
             "color": "",
             "openType": 0
           },
-          {
-            "enable": 3,
+		  {
+            "enable": 1,
             "islogin": true,
             "id": 5,
-            "tit": "食品安全",
+            "tit": "户外摊点",
+            "icon": "/image/24.png",
+            "url": "../economic/pages/outdoorStalls/outdoorStalls",
+            "color": "",
+            "openType": 0
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 6,
+            "tit": "农畜食品安全",
             "icon": "/image/21.png",
             "url": "../food/pages/animalFood/animalFood",
             "color": "",
@@ -1338,8 +1328,18 @@ Page({
             "islogin": true,
             "id": 4,
             "tit": "养老院",
-            "icon": "/image/48.png",
+            "icon": "/image/58.png",
             "url": "../medical/pages/welfareHouse/welfareHouse",
+            "color": "",
+            "openType": 0
+          },
+		  {
+            "enable": 1,
+            "islogin": true,
+            "id": 5,
+            "tit": "低保户",
+            "icon": "/image/48.png",
+            "url": "../help/pages/insured/insured",
             "color": "",
             "openType": 0
           }
@@ -1416,7 +1416,7 @@ Page({
             "openType": 0
           },
           {
-            "enable": 2,
+            "enable": 1,
             "islogin": true,
             "id": 6,
             "tit": "创城行动",
@@ -1630,7 +1630,7 @@ Page({
             "openType": 0
           },
           {
-            "enable": 3,
+            "enable": 1,
             "islogin": true,
             "id": 10,
             "tit": "物业服务",
@@ -1710,10 +1710,10 @@ Page({
             "openType": 0
           },
           {
-            "enable": 3,
+            "enable": 1,
             "islogin": true,
             "id": 18,
-            "tit": "公租房",
+            "tit": "爱车养护",
             "icon": "/image/77.png",
             "url": "../life/pages/publicRentalHousing/publicRentalHousing",
             "color": "",

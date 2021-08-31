@@ -20,5 +20,4 @@
   <dot-title title="代驾" color="title-color" isMore="{{false}}" ></dot-title>
   <button bindtap="secondUsedCar" class="button-btn">寻找代驾</button>
 
-  <dot-title title="爱车养护" color="title-color" isMore="{{false}}" sign="{{infotypeid1}}" type="3" dtype="2"></dot-title>
 </view>

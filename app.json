@@ -216,6 +216,7 @@
 			"pages": [
 				"pages/disabled/disabled",
 				"pages/insured/insured",
+				"pages/insuredForm/insuredForm",
 				"pages/redcross/redcross",
 				"pages/dishonest/dishonest",
 				"pages/dishonestSearch/dishonestSearch",

@@ -25,7 +25,10 @@ Page({
       })
       console.log(this.data.dataList);
     })
-  },
+	},
+	goForm(){
+		util.pageJump('../insuredForm/insuredForm')
+	},
   onLoad: function (options) {
     this.getDataList();
   },

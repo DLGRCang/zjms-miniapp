@@ -38,8 +38,9 @@ Page({
     let data= {
       q:this.data.key
     };
+    console.log(data)
     util.requestApi('library/searchLibrary', 'GET', data).then(res => {
-      console.log(res.data.bookList)
+      console.log(res)
       that.setData({
         bookList: res.data.bookList
       })

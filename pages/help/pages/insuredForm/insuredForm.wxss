@@ -1,0 +1,20 @@
+/* pages/help/pages/insuredForm/insuredForm.wxss */
+.bgColor {
+	background-color: #A6CF5F;
+	color: #ffffff;
+}
+.button{
+	background-color:#A6CF5F;
+	color: #ffffff;
+	margin: -120rpx 70rpx 0 70rpx;
+	font-size: 34rpx;
+}
+.title-color{
+	color:#A6CF5F
+}
+.button-btn {
+	background-color: #A6CF5F;
+	color: #ffffff;
+	margin: 0 30rpx 50rpx 30rpx;
+	font-size: 34rpx;
+}
