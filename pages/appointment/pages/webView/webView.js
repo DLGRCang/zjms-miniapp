@@ -19,7 +19,7 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: color,
     })
-    if (options.tit == '在职党员') {
+    if (options.tit == '先锋云超市') {
       this.setData({
         url: 'https://www.yjhlcity.com/sqdj/?network=miniapp'
       })
