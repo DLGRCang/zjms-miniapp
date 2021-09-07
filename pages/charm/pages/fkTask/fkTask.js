@@ -1,4 +1,6 @@
 // pages/charm/pages/fkTask/fkTask.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
@@ -7,7 +9,9 @@ Page({
   data: {
 
   },
-
+  goFk() {
+    util.pageJump("../fkTask/fkTask")
+  },
   /**
    * 生命周期函数--监听页面加载
    */
