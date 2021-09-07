@@ -7,7 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    TabCur: 0,
+    scrollLeft:0,
+    status:['已发布','待反馈','已反馈','已超时']
+  },
+  tabSelect(e) {
+    this.setData({
+      TabCur: e.currentTarget.dataset.id,
+      scrollLeft: (e.currentTarget.dataset.id-1)*60
+    })
   },
   taskInfo(){
     util.pageJump("../taskInfo/taskInfo")
