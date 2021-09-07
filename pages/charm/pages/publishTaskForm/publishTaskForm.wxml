@@ -1,0 +1,6 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">任务发布</view>
+</cu-custom>
+<view class="padding-lg">
+
+</view>

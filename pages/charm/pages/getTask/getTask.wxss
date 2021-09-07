@@ -1,0 +1,10 @@
+/* pages/charm/pages/getTask/getTask.wxss */
+.color {
+  color: rgb(18, 140, 211);
+}
+
+.cu-btn {
+  margin: 40rpx 0 0 20rpx;
+  width: 120rpx;
+
+}

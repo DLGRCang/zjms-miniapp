@@ -1,0 +1,9 @@
+/* pages/charm/pages/publishTask/publishTask.wxss */
+.color {
+  color: rgb(18, 140, 211);
+}
+
+.cu-btn {
+  margin: 40rpx 0 0 20rpx;
+  width: 180rpx;
+}

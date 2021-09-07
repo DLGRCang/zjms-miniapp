@@ -862,6 +862,16 @@ Page({
             "url": "../publish/pages/pushBest/pushBest",
             "color": "",
             "openType": 0
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 3,
+            "tit": "任务集",
+            "icon": "/image/82.png",
+            "url": "../charm/pages/task/task",
+            "color": "",
+            "openType": 0
           }
           ]
         },
@@ -1914,10 +1924,10 @@ Page({
    */
   onLoad: function (options) {
     this.getNewsList()
-    this.getData()
+    // this.getData()
 
     // 测试
-    // this.getDataTest()
+    this.getDataTest()
   },
 
   /**

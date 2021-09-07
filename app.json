@@ -69,7 +69,13 @@
 				"pages/historyCulture/historyCulture",
 				"pages/investment/investment",
 				"pages/villageProduct/villageProduct",
-				"pages/introduce/introduce"
+				"pages/introduce/introduce",
+				"pages/task/task",
+				"pages/publishTask/publishTask",
+				"pages/publishTaskForm/publishTaskForm",
+				"pages/taskInfo/taskInfo",
+				"pages/getTask/getTask",
+				"pages/fkTask/fkTask"
 			]
 		},
 		{
