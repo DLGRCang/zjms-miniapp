@@ -14,7 +14,7 @@
   </view>
 
   <view>
-    <button class="publishTask">发布任务</button>
+    <button class="publishTask" bindtap="publishTaskForm">发布任务</button>
   </view>
 
 </view>

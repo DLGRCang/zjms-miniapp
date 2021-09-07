@@ -13,7 +13,7 @@ Page({
     util.pageJump("../taskInfo/taskInfo")
   },
 
-  publishTask(){
+  publishTaskForm(){
     util.pageJump("../publishTaskForm/publishTaskForm")
   },
   /**
