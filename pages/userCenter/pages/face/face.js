@@ -27,7 +27,10 @@ Page({
 		})
 	},
 	faceid() {
-
+		//////////////////////////////
+		// 测试
+		// this.goLogin()
+		//////////////////////////////
 		let that = this
 		if (this.data.name == '') {
 			util.showToast('姓名不能为空')
@@ -41,10 +44,7 @@ Page({
 			util.showToast('身份证错误')
 			return
 		}
-		//////////////////////////////
-		// 测试
-		this.goLogin()
-		//////////////////////////////
+
 		wx.startFacialRecognitionVerify({
 
 			name: this.data.name,
