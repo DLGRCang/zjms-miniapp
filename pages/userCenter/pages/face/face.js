@@ -29,7 +29,11 @@ Page({
 	faceid() {
 		//////////////////////////////
 		// 测试
+<<<<<<< Updated upstream
 		// this.goLogin()
+=======
+		//this.goLogin()
+>>>>>>> Stashed changes
 		//////////////////////////////
 		let that = this
 		if (this.data.name == '') {

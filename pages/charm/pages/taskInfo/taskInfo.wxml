@@ -2,5 +2,40 @@
   <view slot="content">任务详情</view>
 </cu-custom>
 <view class="padding-lg">
-
+  <dot-title title="任务标题"  color="title-color"></dot-title>
+  <view class="viewtext">标题</view>
+  <dot-title title="任务派发时间"  color="title-color"></dot-title>
+  <view class="viewtext">2021/9/7</view>
+  <dot-title title="任务派发时限"  color="title-color"></dot-title>
+  <view class="viewtext">2021/9/7</view>
+  <dot-title title="派发人"  color="title-color"></dot-title>
+  <view class="viewtext">某某某</view>
+  <dot-title title="派发部门"  color="title-color"></dot-title>
+  <view class="viewtext">部门</view>
+  <dot-title title="任务图片"  color="title-color"></dot-title>
+  <view class="viewimg">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"></image>
+   
+      </view>
+  <dot-title title="反馈内容"  color="title-color"></dot-title>
+  <view class="viewdiv">
+    <view class="user">
+      <view class="usertitle">执行人</view>
+      <view class="viewtext">某某某</view>
+    </view>
+    <view class="user">
+      <view class="usertitle">任务完成时间</view>
+      <view class="viewtext">2021/9/7</view>
+    </view>
+    <view class="user">
+      <view class="usertitle">任务完成率</view>
+      <view class="viewtext">100%</view>
+    </view>
+    <view class="user">
+      <view class="usertitle">反馈图片</view>
+      <view class="viewimg">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"></image>
+      </view>
+    </view>
+  </view>
 </view>

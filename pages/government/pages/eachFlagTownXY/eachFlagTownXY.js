@@ -21,7 +21,7 @@ Page({
     },
     userName: '',
     tab: '',
-    num: '',
+    num: '9083648674',
     linkData: null,
   },
 
@@ -30,6 +30,9 @@ Page({
     util.httpRequest(url, 'GET', {}).then(res => {
       let resa = JSON.parse(res.data.data)
       console.log(resa)
+      this.setData({
+        userName:resa.userName
+      })
       xylink.login(resa.token, (response) => {
         if (response.code === 200) {
           const cn = response.data.callNumber;
@@ -77,17 +80,13 @@ Page({
   },
 
   onStopMeeting() {
-    http.loginOutApi({
-      data: {
-        userName: this.data.userName
-      },
-      success: res => {
-        //console.log(res)
-        wx.navigateBack({
-          delta: 1
-        });
-      }
+    let url = 'https://www.yjhlcity.com/zhsq/app/release/api/videocommunication/loginOut/'+this.data.userName
+    util.httpRequest(url, 'GET', {}).then(res => {
+      wx.navigateBack({
+        delta: 1
+      });
     })
+   
 
   },
 
@@ -98,7 +97,7 @@ Page({
     console.log(options)
     this.setData({
       tab: options.tab,
-      num: options.num
+      //num: options.num
     })
     // 缓存sdk <xylink-sdk/>组件节点context，为后续调用组件内部方法用
     this.xylinkRoom = this.selectComponent('#xylink');
