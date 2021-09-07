@@ -12,7 +12,7 @@
     </view>
   </scroll-view>
 
-  <view class="flex justify-between margin-tb-lg" wx:for="{{5}}">
+  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==0}}" wx:for="{{5}}">
     <view class="">
       <view class="text-xl text-bold">准备发布会</view>
       <view class="margin-tb-xs text-grey">布置会场，布置会场布置会场布置会场布置会场布置会场布置会场</view>
@@ -21,13 +21,42 @@
       <button class="cu-btn round bg-green shadow" bindtap="taskInfo">任务进度</button>
     </view>
   </view>
+  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==1}}" wx:for="{{5}}">
+    <view class="">
+      <view class="text-xl text-bold text-blue">准备发布会</view>
+      <view class="margin-tb-xs text-grey">布置会场，布置会场布置会场布置会场布置会场布置会场布置会场</view>
+    </view>
+    <view class="fkbutton">
+      <button class="cu-btn round bg-green shadow" bindtap="taskInfo">任务进度</button>
+    </view>
+  </view>
+  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==2}}" wx:for="{{5}}">
+    <view class="">
+      <view class="text-xl text-bold text-red">准备发布会</view>
+      <view class="margin-tb-xs text-grey">布置会场，布置会场布置会场布置会场布置会场布置会场布置会场</view>
+    </view>
+    <view class="fkbutton">
+      <button class="cu-btn round bg-green shadow" bindtap="taskInfo">任务进度</button>
+    </view>
+  </view>
+  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==3}}" wx:for="{{5}}">
+    <view class="">
+      <view class="text-xl text-bold text-yellow">准备发布会</view>
+      <view class="margin-tb-xs text-grey">布置会场，布置会场布置会场布置会场布置会场布置会场布置会场</view>
+    </view>
+    <view class="fkbutton">
+      <button class="cu-btn round bg-green shadow" bindtap="taskInfo">任务进度</button>
+    </view>
+  </view>
+
+
 
   <view>
-    <button class="publishTask" bindtap="publishTaskForm">发布任务</button>
+    <button class="bg-green lg" bindtap="publishTaskForm">发布任务</button>
   </view>
 
   <view class="margin-top-lg">
-    <button class="publishTask" bindtap="goVideo">视频会议</button>
+    <button class="bg-green lg" bindtap="goVideo">视频会议</button>
   </view>
 
 </view>

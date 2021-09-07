@@ -867,7 +867,7 @@ Page({
             "enable": 1,
             "islogin": true,
             "id": 3,
-            "tit": "任务集",
+            "tit": "云上办",
             "icon": "/image/82.png",
             "url": "../charm/pages/task/task",
             "color": "",
