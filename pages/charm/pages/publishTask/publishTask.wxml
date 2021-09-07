@@ -17,4 +17,8 @@
     <button class="publishTask" bindtap="publishTaskForm">发布任务</button>
   </view>
 
+  <view class="margin-top-lg">
+    <button class="publishTask" bindtap="goVideo">视频会议</button>
+  </view>
+
 </view>

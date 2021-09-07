@@ -4,7 +4,7 @@
 <view class="padding-lr-lg">
   <dot-title title="任务列表" color="color"></dot-title>
   <view class="margin-bottom-lg" wx:for="{{5}}" bindtap="goInfo" data-id="1">
-    <view class="text-xl text-bold">准备发布会</view>
+    <view class="text-xl text-bold">新品发布会</view>
     <view class="margin-tb-xs text-grey">布置会场，布置会场布置会场布置会场布置会场布置会场布置会场</view>
     <view class="text-grey">时间</view>
   </view>

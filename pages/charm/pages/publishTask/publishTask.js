@@ -16,6 +16,11 @@ Page({
   publishTaskForm(){
     util.pageJump("../publishTaskForm/publishTaskForm")
   },
+  goVideo(e){
+		wx.navigateTo({
+			url: '/pages/government/pages/eachFlagTownXY/eachFlagTownXY?num='+9083648674,
+		})
+  },
   /**
    * 生命周期函数--监听页面加载
    */

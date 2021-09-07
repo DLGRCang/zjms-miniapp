@@ -8,8 +8,14 @@
 		<input placeholder="请输入任务名称" bindinput="putData" data-key="taskName" disabled></input>
 	</view>
 
+	
+  <view class="cu-form-group">
+		<view class="title">任务完成率：</view>
+		<input type="number" placeholder="请输入任务完成率" bindinput="putData" data-key="taskName"></input>%
+	</view>
+
 	<view class="cu-form-group">
-		<view class="title">任务完成时间</view>
+		<view class="title">任务反馈时间</view>
 		<picker mode="date" value="{{date}}" start="{{endDate}}" end="2220-01-01" bindchange="dateChange">
 			<view class="picker">
 				{{endDate}}
@@ -18,7 +24,7 @@
   </view>
 
 	<view class="cu-form-group align-start">
-		<view class="title">反馈内容：</view>
+		<view class="title">任务完成情况：</view>
 		<textarea maxlength="-1"  placeholder="请输入任务内容" bindinput="putData" data-key="taskInfo"></textarea>
 	</view>
 

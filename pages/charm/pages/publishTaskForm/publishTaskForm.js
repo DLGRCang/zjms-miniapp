@@ -7,15 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
+    dept: ['环卫局', '大数据发展中心', '卫健委'],
+    index: 0,
     taskName: '',
     partyphone: '',
     taskInfo: '',
     phone: '',
     startDate: util.formatDate(new Date()),
-    endDate:'2020-09-25',
+    endDate: util.formatDate(new Date()),
     imageArr: [],
     imgList: [],
 
+  },
+  PickerChange(e) {
+    console.log(e);
+    this.setData({
+      index: e.detail.value
+    })
   },
   startDateChange(e) {
     this.setData({

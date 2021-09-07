@@ -32,7 +32,7 @@ Page({
     //   util.showToast('身份证错误')
     //   return
     // }
-    if(1>2){
+    if(1){
       util.pageJumpTo('../publishTask/publishTask','obj','1')
     }else{
       util.pageJumpTo('../getTask/getTask','obj','1')
