@@ -33,10 +33,10 @@
 		</picker>
 	</view>
 
-	<view class="cu-form-group">
+	<!-- <view class="cu-form-group">
 		<view class="title"><text class="text-red">* </text>反馈频率：</view>
 		<input type="number" placeholder="请输入反馈频率" bindinput="putData" data-key="taskName"></input>天
-	</view>
+	</view> -->
 
 	<view class="cu-form-group align-start">
 		<view class="title"><text class="text-red">* </text>任务内容：</view>

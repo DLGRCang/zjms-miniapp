@@ -30,13 +30,13 @@
       <button class="cu-btn round bg-green shadow" bindtap="taskInfo" data-item="{{item}}">任务进度</button>
     </view>
   </view>
-  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==2}}" wx:for="{{tabState2}}">
+  <view class="flex justify-between margin-tb-lg"  bindtap="taskInfo" data-item="{{item}}" wx:if="{{TabCur==2}}"  wx:for="{{tabState2}}">
     <view class="">
       <view class="text-xl text-bold">{{item.title}}</view>
       <view class="margin-tb-xs text-grey">{{item.cont}}</view>
     </view>
     <view class="fkbutton">
-      <button class="cu-btn round bg-green shadow" bindtap="taskInfo" data-item="{{item}}">任务进度</button>
+      <button class="cu-btn round bg-green shadow" catchtap="cbButton">催办</button>
     </view>
   </view>
 </view>

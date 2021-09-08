@@ -72,6 +72,12 @@ Page({
       },
     ]
   },
+  cbButton(){
+    wx.showToast({
+      title: '催办成功',
+      icon:'none'
+    })
+  },
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id,
@@ -79,7 +85,6 @@ Page({
     })
   },
   taskInfo(e){
-
     wx.navigateTo({
 			url: '../taskInfo/taskInfo?item='+JSON.stringify(e.currentTarget.dataset.item)
 		})
