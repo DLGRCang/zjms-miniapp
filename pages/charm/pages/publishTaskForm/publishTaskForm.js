@@ -1,6 +1,7 @@
-const util = require("../../../../utils/util")
-
 // pages/charm/pages/publishTaskForm/publishTaskForm.js
+const recordManager = wx.getRecorderManager()
+const innerAudioContext = wx.createInnerAudioContext();
+const util = require("../../../../utils/util")
 Page({
 
   /**
@@ -17,7 +18,9 @@ Page({
     endDate: util.formatDate(new Date()),
     imageArr: [],
     imgList: [],
-
+    soundRecording: '', //录音
+    voiceLong: '',
+    voiceStatus: '',
   },
   PickerChange(e) {
     console.log(e);
@@ -118,6 +121,60 @@ Page({
       }
     })
   },
+  //开始录音
+	startrecord() {
+		console.log("开始录音" + new Date())
+		this.centerTime = new Date();
+		recordManager.start({
+			duration: 600000,
+			format: 'mp3'
+		})
+		wx.showLoading({
+			title: '录音中...',
+		})
+	},
+	//结束录音
+	endrecord() {
+		let that = this
+		recordManager.stop()
+		wx.hideLoading()
+		//停止录音回调
+		recordManager.onStop(function (ress) {
+			var path = ress.tempFilePath
+			util.uploadAudioFile(path)
+				.then(res => {
+					console.log(res)
+					if (res.statusCode == 200) {
+						let obj = JSON.parse(res.data)
+						that.setData({
+							voiceLong: " " + Math.ceil((ress.duration) / 1000) + " ″ ",
+							voiceStatus: "点击播放",
+							voiceSrc: path,
+
+							soundRecording: obj.data
+						})
+					} else {
+						util.showToast('录音上传失败')
+					}
+				});
+		})
+	},
+	//播放录音
+	showVoice() {
+		let that = this
+		innerAudioContext.src = this.data.voiceSrc;
+		innerAudioContext.play();
+		innerAudioContext.onPlay(function () {
+			that.setData({
+				voiceStatus: "  播放中..."
+			})
+		})
+		innerAudioContext.onEnded(function () {
+			that.setData({
+				voiceStatus: "  点击播放"
+			})
+		})
+	},
   /**
    * 生命周期函数--监听页面加载
    */
