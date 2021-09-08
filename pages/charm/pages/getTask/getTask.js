@@ -12,8 +12,38 @@ Page({
     status:['待反馈','已反馈'],
     tabState0:[
       {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"智慧城市一手办发布会",
+        cont:"布置主会场，相关人员到场。",
+        mainstate:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:1,
+        data:"2021/9/8"
+      },
+      {
+        title:"社会治安问题",
+        cont:"社会治安是指社会在一定的法律、法规及制度的约束下而呈现的一种安定、有秩序的状态或状况。社会治安问题是指影响社会安定的各种矛盾、因素。",
+        mainstate:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:1,
+        data:"2021/9/8"
+      },
+      {
+        title:"环保问题",
+        cont:"第二轮第四批中央生态环保督察正在进行，并于9月6日集中公开通报7个典型案例。",
+        mainstate:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:1,
+        data:"2021/9/8"
+      },
+      {
+        title:"应急问题",
+        cont:"森林防火人人有责",
         mainstate:0,
         people:"张三",
         department:"环卫局",
@@ -32,8 +62,8 @@ Page({
         data:"2021/9/8"
       },
       {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"环保问题",
+        cont:"第二轮第四批中央生态环保督察正在进行，并于9月6日集中公开通报7个典型案例。",
         mainstate:0,
         people:"张三",
         department:"环卫局",
@@ -41,81 +71,12 @@ Page({
         main:1,
         data:"2021/9/8"
       },
-      {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        mainstate:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:1,
-        data:"2021/9/8"
-      },
-      {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        mainstate:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:1,
-        data:"2021/9/8"
-      },
-      {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        mainstate:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:1,
-        data:"2021/9/8"
-      },
-      {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        mainstate:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:1,
-        data:"2021/9/8"
-      },
-      {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        mainstate:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:1,
-        data:"2021/9/8"
-      },
-      {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        mainstate:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:1,
-        data:"2021/9/8"
-      },
-      {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        mainstate:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:1,
-        data:"2021/9/8"
-      },
+   
     ],
     tabState1:[
       {
-        title:"新品发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"应急问题",
+        cont:"森林防火人人有责",
         mainstate:1,
         people:"张三",
         department:"环卫局",

@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '',
-    idCard: '',
+    name: wx.getStorageSync("name"),
+    idCard: wx.getStorageSync("idCard"),
     phone: ''
   },
   putData(e) {

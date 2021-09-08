@@ -12,8 +12,8 @@ Page({
     status:['已发布','已反馈','已超时'],
     tabState0:[
       {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"应急问题",
+        cont:"森林防火人人有责",
         state:0,
         people:"张三",
         department:"环卫局",
@@ -21,8 +21,8 @@ Page({
         main:0
       },
       {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"环保问题",
+        cont:"第二轮第四批中央生态环保督察正在进行，并于9月6日集中公开通报7个典型案例。",
         state:0,
         people:"张三",
         department:"环卫局",
@@ -30,8 +30,8 @@ Page({
         main:0
       },
       {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"社会治安问题",
+        cont:"社会治安是指社会在一定的法律、法规及制度的约束下而呈现的一种安定、有秩序的状态或状况。社会治安问题是指影响社会安定的各种矛盾、因素。",
         state:0,
         people:"张三",
         department:"环卫局",
@@ -39,66 +39,31 @@ Page({
         main:0
       },
       {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"智慧城市一手办发布会",
+        cont:"布置主会场，相关人员到场。",
         state:0,
         people:"张三",
         department:"环卫局",
         image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
         main:0
       },
-      {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        state:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:0
-      },
-      {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        state:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:0
-      },
-      {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        state:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:0
-      },
-      {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
-        state:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:0
-      },
+      
     ],
     tabState1:[
       {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"社会治安综合治理",
+        cont:"解决社会治安问题，实现从根本上预防和打击违法犯罪，维护治安秩序，保障社会稳定的社会系统工程",
         state:1,
         people:"张三",
-        department:"环卫局",
+        department:"公安局",
         image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
         main:0
       },
     ],
     tabState2:[
       {
-        title:"准备发布会",
-        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        title:"服务城市",
+        cont:"城市日益表现为经济功能的专注性、城市规划的功利性以及文化形态的单一性。那么，城市是否真的是先进、文明的，显然又是聚讼纷纭的。",
         state:2,
         people:"张三",
         department:"环卫局",

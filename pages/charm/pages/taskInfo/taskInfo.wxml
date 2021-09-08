@@ -52,7 +52,7 @@
   
  
   <view wx:if="{{list.main == 1}}" style="margin-top: 20rpx;">
-    <button bindtap="goFk"  wx:if="{{list.mainstate == 0}}">反馈</button>
+    <button class=" bg-green margin-tb-sm lg" bindtap="goFk"  wx:if="{{list.mainstate == 0}}">反馈</button>
   </view>
 </view>
 

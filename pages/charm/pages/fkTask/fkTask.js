@@ -10,9 +10,15 @@ Page({
     imageArr: [],
     imgList: [],
     endDate: util.formatDate(new Date()),
+    picker: ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%'],
+    index:0,
 
-
-
+  },
+  PickerChange(e) {
+    console.log(e);
+    this.setData({
+      index: e.detail.value
+    })
   },
   dateChange(e) {
     this.setData({

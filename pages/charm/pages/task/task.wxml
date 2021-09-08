@@ -7,14 +7,14 @@
 
     <view class="flex flex-direction margin-top margin-bottom-xl" style="width:100%">
       <text class="text-xl text-bold">姓名：</text>
-      <input bindinput="putData" class="margin-top text-xl " placeholder="请输入真实姓名" data-key="name" value="" />
-   
+      <input bindinput="putData" class="margin-top text-xl "  data-key="name" value="{{name}}" disabled/>
+  
+      <text class="text-xl margin-top-xl text-bold">身份证号：</text>
+      <input bindinput="putData" class="margin-top text-xl "  data-key="idCard" value="{{idCard}}" disabled/>
+ 
       <text class="text-xl text-bold margin-top-xl">手机号：</text>
       <input bindinput="putData" class="margin-top text-xl " placeholder="请输入手机号" data-key="phone" value="" />
 
-      <text class="text-xl margin-top-xl text-bold">身份证号：</text>
-      <input bindinput="putData" class="margin-top text-xl " placeholder="请输入身份证号" data-key="idCard" value="" />
- 
     </view>
 
     <button bindtap="goLogin" class="bg-green text-lg" style="margin-top:100rpx;width:100%">进入任务</button>
