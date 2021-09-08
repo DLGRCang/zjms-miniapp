@@ -9,7 +9,7 @@ Page({
   data: {
     TabCur: 0,
     scrollLeft:0,
-    status:['待反馈','已反馈'],
+    status:['待反馈','已反馈','已完成'],
     tabState0:[
       {
         title:"智慧城市一手办发布会",

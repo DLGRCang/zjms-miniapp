@@ -48,6 +48,8 @@
       </view>
       <button bindtap="evaluate"  data-target="DialogModal1" class="bg-green" wx:if="{{evaluateTrue && list.main == 0 }}">评价</button>
     </view>
+    <button bindtap="jixufankui"  data-target="DialogModal1" class="bg-green" wx:if="{{evaluateTrue && list.main == 0 }}">继续反馈</button>
+    <button bindtap="evaluate"  data-target="DialogModal1" class="bg-green" wx:if="{{evaluateTrue && list.main == 0 }}">任务完成</button>
   </view>
   
  

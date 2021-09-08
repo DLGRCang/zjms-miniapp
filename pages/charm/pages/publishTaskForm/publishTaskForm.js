@@ -47,11 +47,22 @@ Page({
   },
   //提交数据
   commitData() {
-    let data = {
-      taskName: this.data.taskName,
-      taskInfo: this.data.taskInfo
-    }
-    console.log(data)
+    
+    // console.log(this.data.taskName)
+    // console.log(this.data.dept[this.data.index])
+    // console.log(this.data.startDate)
+    // console.log(this.data.endDate)
+    // console.log(this.data.taskInfo)
+    // var data = {
+    //   title:this.data.taskName,
+    //   department:this.data.dept[this.data.index],
+    //   startDate:this.data.startDate,
+    //   endDate:this.data.endDate,
+    //   cont:this.data.taskInfo,
+    //   image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"
+    // }
+
+    // wx.setStorageSync('tabState0', data)
     // util.httpRequestForm('https://www.yjhlcity.com/yjhl/addEvent/addWxXcxEvent.do', 'POST', data).then(res => {
     // 	console.log(res)
     // 	if (res.statusCode == 200) {
