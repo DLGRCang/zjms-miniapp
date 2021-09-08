@@ -12,7 +12,7 @@
       </view>
     </view>
   </scroll-view>
-
+<view class="box">
   <view class="margin-tb-lg"  wx:if="{{TabCur==0}}" wx:for="{{tabState0}}" bindtap="goInfo" data-item="{{item}}">
     <view class="text-xl text-bold">{{item.title}}</view>
     <view class="margin-tb-xs text-grey">{{item.cont}}</view>
@@ -23,6 +23,8 @@
     <view class="margin-tb-xs text-grey">{{item.cont}}</view>
     <view class="text-grey">{{item.data}}</view>
   </view>
+</view>
+  
 
   
 

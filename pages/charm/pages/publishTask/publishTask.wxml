@@ -11,7 +11,7 @@
       </view>
     </view>
   </scroll-view>
-
+<view class="box">
   <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==0}}" wx:for="{{tabState0}}">
     <view class="">
       <view class="text-xl text-bold">{{item.title}}</view>
@@ -39,6 +39,8 @@
       <button class="cu-btn round bg-green shadow" bindtap="taskInfo" data-item="{{item}}">任务进度</button>
     </view>
   </view>
+</view>
+  
 
   <view class="flexButton bg-gray">
     <button class="bg-green lg" bindtap="publishTaskForm">发布任务</button>

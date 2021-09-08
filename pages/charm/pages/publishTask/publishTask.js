@@ -20,6 +20,69 @@ Page({
         image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
         main:0
       },
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
     ],
     tabState1:[
       {

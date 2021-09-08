@@ -8,3 +8,13 @@
   width: 120rpx;
 
 }
+.bg-white{
+  position: fixed;
+  left: 0;
+  top: 110rpx;
+  z-index: 999;
+}
+.box{
+  width: 100%;
+  padding: 60rpx 0 0;
+}

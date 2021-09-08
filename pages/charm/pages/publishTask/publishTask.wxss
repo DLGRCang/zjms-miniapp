@@ -16,3 +16,13 @@
   align-items: center;
   padding: 20rpx 0;
 }
+
+.bg-white{
+  position: fixed;
+  left: 0;
+  top: 110rpx;
+  z-index: 999;
+}
+.box{
+  padding: 60rpx 0 120rpx;
+}
