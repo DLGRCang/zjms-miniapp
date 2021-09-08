@@ -5,18 +5,60 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:{},
+    radio:"0",
+    textareaAValue:"",
+    evaluateTrue:true
   },
   goFk(){
     wx.navigateTo({
       url: '../fkTask/fkTask',
     })
   },
+  evaluate(e){
+    this.setData({
+      modalName: e.currentTarget.dataset.target
+    })
+  },
+  evaluateClick(){
+    this.setData({
+
+      modalName: null,
+      evaluateTrue:false
+    })
+  },
+  hideModal(e) {
+    this.setData({
+      radio:"0",
+      textareaAValue:"",
+      modalName: null
+    })
+  },
+  radio(e){
+    //console.log(e)
+    this.setData({
+      radio:e.currentTarget.dataset.radio
+    })
+  },  
+  textareaAInput(e) {
+    this.setData({
+      textareaAValue: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    setTimeout(function() {
+      that.setData({
+        loading: true
+      })
+    }, 500)
+    console.log(JSON.parse(options.item))
+    this.setData({
+      list:JSON.parse(options.item)
+    })
   },
 
   /**

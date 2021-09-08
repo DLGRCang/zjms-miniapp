@@ -7,3 +7,12 @@
   margin: 40rpx 0 0 20rpx;
   width: 180rpx;
 }
+.flexButton{
+  position: fixed;
+  left: 0;
+  bottom: 0;  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}

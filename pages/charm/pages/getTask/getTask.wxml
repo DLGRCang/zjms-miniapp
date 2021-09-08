@@ -13,10 +13,15 @@
     </view>
   </scroll-view>
 
-  <view class="margin-tb-lg" wx:for="{{5}}" bindtap="goInfo" data-id="1">
-    <view class="text-xl text-bold">新品发布会</view>
-    <view class="margin-tb-xs text-grey">布置会场，布置会场布置会场布置会场布置会场布置会场布置会场</view>
-    <view class="text-grey">时间</view>
+  <view class="margin-tb-lg"  wx:if="{{TabCur==0}}" wx:for="{{tabState0}}" bindtap="goInfo" data-item="{{item}}">
+    <view class="text-xl text-bold">{{item.title}}</view>
+    <view class="margin-tb-xs text-grey">{{item.cont}}</view>
+    <view class="text-grey">{{item.data}}</view>
+  </view>
+  <view class="margin-tb-lg"  wx:if="{{TabCur==1}}" wx:for="{{tabState1}}" bindtap="goInfo" data-item="{{item}}">
+    <view class="text-xl text-bold">{{item.title}}</view>
+    <view class="margin-tb-xs text-grey">{{item.cont}}</view>
+    <view class="text-grey">{{item.data}}</view>
   </view>
 
   

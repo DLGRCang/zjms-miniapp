@@ -2,43 +2,90 @@
   <view slot="content">任务详情</view>
 </cu-custom>
 <view class="padding-lg">
+  <view class="text-red text-bold" style="font-size: 36rpx;" wx:if="{{list.state == 2}}">超时未反馈</view>
   <dot-title title="任务标题" color="title-color"></dot-title>
-  <view class="viewtext">2021创城行动</view>
+  <view class="viewtext">{{list.title}}</view>
   <dot-title title="任务派发时间" color="title-color"></dot-title>
   <view class="viewtext">2021/9/7</view>
   <dot-title title="任务派发时限" color="title-color"></dot-title>
   <view class="viewtext">2021/9/7</view>
   <dot-title title="派发人" color="title-color"></dot-title>
-  <view class="viewtext">张飞</view>
+  <view class="viewtext">{{list.people}}</view>
   <dot-title title="受理部门" color="title-color"></dot-title>
-  <view class="viewtext">环卫局</view>
+  <view class="viewtext">{{list.department}}</view>
+  <dot-title title="任务内容" color="title-color"></dot-title>
+  <view class="viewtext">{{list.cont}}</view>
   <dot-title title="任务图片" color="title-color"></dot-title>
   <view class="viewimg">
-    <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"></image>
+    <image src="{{list.image}}"></image>
   </view>
-  <!-- <dot-title title="反馈内容" color="title-color"></dot-title>
-  <view class="viewdiv">
-    <view class="user">
-      <view class="usertitle">执行人</view>
-      <view class="viewtext">某某某</view>
+  <view wx:if="{{list.state == 1||list.mainstate == 1}}">
+    <dot-title title="反馈内容" color="title-color"></dot-title>
+    <view class="viewdiv">
+      <view class="user">
+        <view class="usertitle">执行人</view>
+        <view class="viewtext">某某某</view>
+      </view>
+      <view class="user">
+        <view class="usertitle">任务完成时间</view>
+        <view class="viewtext">2021/9/7</view>
+      </view>
+      <view class="user">
+        <view class="usertitle">任务完成率</view>
+        <view class="cu-progress">
+        <view class="bg-green" style="width:{{loading?'100%':''}};">100%</view>
+      </view>
+      </view>
+      <view class="user" style="border-bottom: none;">
+        <view class="usertitle">反馈图片</view>
+        <view class="viewimg">
+          <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"></image>
+        </view>
+      </view>
+      <view class="evaluate"  wx:if="{{!evaluateTrue}}">
+        <view>评价人：{{list.people}} <view class="cu-tag bg-green" style="margin-left: 30rpx;">{{radio == "0" ? "满意":"不满意"}}</view></view>
+        <view>评价内容：{{textareaAValue}}</view>
+      </view>
+      <button bindtap="evaluate"  data-target="DialogModal1" class="bg-green" wx:if="{{evaluateTrue && list.main == 0 }}">评价</button>
     </view>
-    <view class="user">
-      <view class="usertitle">任务完成时间</view>
-      <view class="viewtext">2021/9/7</view>
-    </view>
-    <view class="user">
-      <view class="usertitle">任务完成率</view>
-      <view class="viewtext">100%</view>
-    </view>
-    <view class="user">
-      <view class="usertitle">反馈图片</view>
-      <view class="viewimg">
-        <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"></image>
+  </view>
+  
+ 
+  <view wx:if="{{list.main == 1}}" style="margin-top: 20rpx;">
+    <button bindtap="goFk"  wx:if="{{list.mainstate == 0}}">反馈</button>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">评价</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
       </view>
     </view>
-  </view>
-  -->
-  <view>
-    <button bindtap="goFk">反馈</button>
+    <view class="padding-xl">
+      <radio-group class="block">
+        <view class="cu-form-group" bindtap="radio" data-radio="0">
+          <view class="title">满意</view>
+          <radio checked></radio>
+        </view>
+        <view class="cu-form-group margin-top" bindtap="radio" data-radio="1">
+          <view class="title">不满意</view>
+          <radio></radio>
+        </view>
+
+	    </radio-group>
+      <view class="cu-form-group margin-top">
+      <textarea style="width: 100%;text-align: left;background: #fff;" maxlength="50" bindinput="textareaAInput" placeholder="请输入评价内容"></textarea>
+    </view>
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left" bindtap="evaluateClick">评价</button>
+
+      </view>
+    </view>
   </view>
 </view>

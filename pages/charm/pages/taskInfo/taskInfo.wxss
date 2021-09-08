@@ -26,3 +26,8 @@
 .viewimg image{
   width: 100%;
 }
+.evaluate{
+  padding: 20rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}

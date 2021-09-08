@@ -9,7 +9,40 @@ Page({
   data: {
     TabCur: 0,
     scrollLeft:0,
-    status:['已发布','待反馈','已反馈','已超时']
+    status:['已发布','已反馈','已超时'],
+    tabState0:[
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+    ],
+    tabState1:[
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:1,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+    ],
+    tabState2:[
+      {
+        title:"准备发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        state:2,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:0
+      },
+    ]
   },
   tabSelect(e) {
     this.setData({
@@ -17,8 +50,12 @@ Page({
       scrollLeft: (e.currentTarget.dataset.id-1)*60
     })
   },
-  taskInfo(){
-    util.pageJump("../taskInfo/taskInfo")
+  taskInfo(e){
+
+    wx.navigateTo({
+			url: '../taskInfo/taskInfo?item='+JSON.stringify(e.currentTarget.dataset.item)
+		})
+    //util.pageJump("../taskInfo/taskInfo")
   },
 
   publishTaskForm(){

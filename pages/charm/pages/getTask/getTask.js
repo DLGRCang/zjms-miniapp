@@ -9,7 +9,31 @@ Page({
   data: {
     TabCur: 0,
     scrollLeft:0,
-    status:['待反馈','已反馈']
+    status:['待反馈','已反馈'],
+    tabState0:[
+      {
+        title:"新品发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        mainstate:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:1,
+        data:"2021/9/8"
+      },
+    ],
+    tabState1:[
+      {
+        title:"新品发布会",
+        cont:"布置会场，布置会场布置会场布置会场布置会场布置会场布置会场",
+        mainstate:1,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:1,
+        data:"2021/9/8"
+      },
+    ],
   },
   tabSelect(e) {
     this.setData({
@@ -18,7 +42,9 @@ Page({
     })
   },
   goInfo(e){
-    util.pageJumpTo("../taskInfo/taskInfo", 'id', e.currentTarget.dataset.id)
+    wx.navigateTo({
+			url: '../taskInfo/taskInfo?item='+JSON.stringify(e.currentTarget.dataset.item)
+		})
   },
 
   /**
