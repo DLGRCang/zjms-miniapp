@@ -25,7 +25,9 @@
   </view>
 </view>
   
-
+<view class="flexButton bg-gray">
+    <button class="bg-green" style="width:400rpx;" bindtap="goVideo">视频会议</button>
+  </view>
   
 
 </view>

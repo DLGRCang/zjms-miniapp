@@ -18,3 +18,13 @@
   width: 100%;
   padding: 90rpx 0 0;
 }
+
+.flexButton{
+  position: fixed;
+  left: 0;
+  bottom: 0;  
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
