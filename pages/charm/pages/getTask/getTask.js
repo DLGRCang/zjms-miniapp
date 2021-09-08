@@ -31,7 +31,7 @@ Page({
         people:"张三",
         department:"环卫局",
         image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
-        main:0,
+        main:1,
         startData:"2021/9/6",
         endData:"2021/9/9",
         data:1,

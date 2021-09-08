@@ -72,7 +72,7 @@
   <button bindtap="cbButton" class="bg-red margin-top-lg"
       wx:if="{{list.state == 2 && list.main == 0 }}">催办</button>
 
-  <view wx:if="{{list.main == 1}}" style="margin-top: 20rpx;">
+      <view wx:if="{{list.main == 1}}" style="margin-top: 20rpx;">
     <button class=" bg-green margin-tb-sm lg" bindtap="goFk" wx:if="{{list.mainstate == 0}}">反馈</button>
   </view>
 </view>
