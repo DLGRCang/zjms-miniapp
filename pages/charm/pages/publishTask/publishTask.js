@@ -20,33 +20,7 @@ Page({
         image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
         main:0
       },
-      {
-        title:"环保问题",
-        cont:"第二轮第四批中央生态环保督察正在进行，并于9月6日集中公开通报7个典型案例。",
-        state:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:0
-      },
-      {
-        title:"社会治安问题",
-        cont:"社会治安是指社会在一定的法律、法规及制度的约束下而呈现的一种安定、有秩序的状态或状况。社会治安问题是指影响社会安定的各种矛盾、因素。",
-        state:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:0
-      },
-      {
-        title:"智慧城市一手办发布会",
-        cont:"布置主会场，相关人员到场。",
-        state:0,
-        people:"张三",
-        department:"环卫局",
-        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
-        main:0
-      },
+   
       
     ],
     tabState1:[
