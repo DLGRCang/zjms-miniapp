@@ -59,7 +59,7 @@ Page({
     //   startDate:this.data.startDate,
     //   endDate:this.data.endDate,
     //   cont:this.data.taskInfo,
-    //   image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"
+    //   image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png"
     // }
 
     // wx.setStorageSync('tabState0', data)

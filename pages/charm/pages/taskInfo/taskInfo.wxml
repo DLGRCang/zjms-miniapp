@@ -67,7 +67,7 @@
 
       
   </view>
-  <button bindtap="evaluate" class="bg-green margin-top-lg"
+  <button bindtap="evaluate" class="bg-green margin-top-lg" bindtap="wcButton"
       wx:if="{{list.state == 1 && list.main == 0 }}">任务完成</button>
   <button bindtap="cbButton" class="bg-red margin-top-lg"
       wx:if="{{list.state == 2 && list.main == 0 }}">催办</button>

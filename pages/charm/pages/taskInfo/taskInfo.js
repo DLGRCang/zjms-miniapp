@@ -33,6 +33,12 @@ Page({
       icon:'none'
     })
   },
+  wcButton(){
+    wx.showToast({
+      title: '任务已完成',
+      icon:'none'
+    })
+  },
   hideModal(e) {
     this.setData({
       radio:"0",
