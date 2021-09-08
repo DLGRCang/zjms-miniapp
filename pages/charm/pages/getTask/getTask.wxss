@@ -16,5 +16,5 @@
 }
 .box{
   width: 100%;
-  padding: 60rpx 0 0;
+  padding: 90rpx 0 0;
 }

@@ -9,7 +9,7 @@ Page({
   data: {
     TabCur: 0,
     scrollLeft:0,
-    status:['待反馈','已反馈','已完成'],
+    status:['进行中','已完成'],
     tabState0:[,
       {
         title:"应急问题",
@@ -19,10 +19,33 @@ Page({
         department:"环卫局",
         image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
         main:1,
-        data:"2021/9/8"
+        startData:"2021/9/6",
+        endData:"2021/9/8",
+        data:"2021/9/8",
+        fknum:[
+          {
+            fkdept:"环卫局",
+            zxNmae:"李四",
+            teskEnd:"2021/9/9",
+            teskPersent:100,
+            img:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"
+          }
+        ]
       },
-
-   
+      {
+        title:"应急问题",
+        cont:"森林防火人人有责",
+        mainstate:0,
+        people:"张三",
+        department:"环卫局",
+        image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
+        main:1,
+        startData:"2021/9/6",
+        endData:"2021/9/8",
+        data:"2021/9/8",
+        fknum:[
+        ]
+      }
     ],
     tabState1:[
       {
@@ -33,8 +56,19 @@ Page({
         department:"环卫局",
         image:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg",
         main:1,
-        data:"2021/9/8"
-      },
+        startData:"2021/9/6",
+        endData:"2021/9/8",
+        data:"2021/9/8",
+        fknum:[
+          {
+            fkdept:"环卫局",
+            zxNmae:"李四",
+            teskEnd:"2021/9/9",
+            teskPersent:100,
+            img:"https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"
+          }
+        ]
+      }
     ],
   },
   tabSelect(e) {

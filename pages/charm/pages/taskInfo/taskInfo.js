@@ -27,6 +27,12 @@ Page({
       evaluateTrue:false
     })
   },
+  cbButton(){
+    wx.showToast({
+      title: '催办成功',
+      icon:'none'
+    })
+  },
   hideModal(e) {
     this.setData({
       radio:"0",

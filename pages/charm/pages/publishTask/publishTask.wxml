@@ -12,32 +12,32 @@
     </view>
   </scroll-view>
 <view class="box">
-  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==0}}" wx:for="{{tabState0}}">
+  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==0}}" wx:for="{{tabState0}}" bindtap="taskInfo" data-item="{{item}}">
     <view class="">
-      <view class="text-xl text-bold">{{item.title}}</view>
+      <view class="text-xl text-bold title">{{item.title}}</view>
       <view class="margin-tb-xs text-grey">{{item.cont}}</view>
-    </view>
-    <view class="fkbutton">
-      <button class="cu-btn round bg-green shadow" bindtap="taskInfo" data-item="{{item}}">任务进度</button>
+      <view class="margin-tb-xs text-grey">截止日期：
+        <text class="{{item.data > 3 ? 'text-green':item.data == 3 ? 'text-yellow':'text-red'}} text-bold">{{item.endData}}</text>
+      </view>
     </view>
   </view>
-  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==1}}" wx:for="{{tabState1}}">
+  <view class="flex justify-between margin-tb-lg" wx:if="{{TabCur==1}}" wx:for="{{tabState1}}" bindtap="taskInfo" data-item="{{item}}">
     <view class="">
       <view class="text-xl text-bold">{{item.title}}</view>
       <view class="margin-tb-xs text-grey">{{item.cont}}</view>
+      <view class="margin-tb-xs text-red">任务已超时{{item.data}}天</view>
     </view>
     <view class="fkbutton">
-      <button class="cu-btn round bg-green shadow" bindtap="taskInfo" data-item="{{item}}">任务进度</button>
+      <button class="cu-btn round bg-red shadow" catchtap="cbButton">催办</button>
     </view>
   </view>
   <view class="flex justify-between margin-tb-lg"  bindtap="taskInfo" data-item="{{item}}" wx:if="{{TabCur==2}}"  wx:for="{{tabState2}}">
     <view class="">
       <view class="text-xl text-bold">{{item.title}}</view>
       <view class="margin-tb-xs text-grey">{{item.cont}}</view>
+      <view class="margin-tb-xs text-grey">与{{item.data}}天完成任务</view>
     </view>
-    <view class="fkbutton">
-      <button class="cu-btn round bg-green shadow" catchtap="cbButton">催办</button>
-    </view>
+    
   </view>
 </view>
   

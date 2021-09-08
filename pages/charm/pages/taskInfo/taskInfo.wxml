@@ -6,9 +6,9 @@
   <dot-title title="任务标题" color="title-color"></dot-title>
   <view class="viewtext">{{list.title}}</view>
   <dot-title title="任务派发时间" color="title-color"></dot-title>
-  <view class="viewtext">2021/9/7</view>
+  <view class="viewtext">{{list.startData}}</view>
   <dot-title title="任务派发时限" color="title-color"></dot-title>
-  <view class="viewtext">2021/9/7</view>
+  <view class="viewtext">{{list.endData}}</view>
   <dot-title title="派发人" color="title-color"></dot-title>
   <view class="viewtext">{{list.people}}</view>
   <dot-title title="受理部门" color="title-color"></dot-title>
@@ -19,50 +19,58 @@
   <view class="viewimg">
     <image src="{{list.image}}"></image>
   </view>
-  <view wx:if="{{list.state == 1||list.mainstate == 1}}">
+  <view wx:if="{{list.state == 1||list.state == 3||list.main == 1 && list.fknum.length != 0}}">
     <dot-title title="反馈内容" color="title-color"></dot-title>
+    <block wx:for="{{list.fknum}}">
+    
     <view class="viewdiv">
       <view class="user">
-        <view class="usertitle">执行人</view>
-        <view class="viewtext">某某某</view>
+        <view class="usertitle">执行部门</view>
+        <view class="viewtext">{{item.fkdept}}</view>
       </view>
       <view class="user">
-        <view class="usertitle">任务完成时间</view>
-        <view class="viewtext">2021/9/7</view>
+        <view class="usertitle">执行人</view>
+        <view class="viewtext">{{item.zxNmae}}</view>
+      </view>
+      <view class="user">
+        <view class="usertitle">任务反馈时间</view>
+        <view class="viewtext">{{item.teskEnd}}</view>
       </view>
       <view class="user">
         <view class="usertitle">任务完成率</view>
         <view class="cu-progress">
-          <view class="bg-green" style="width:{{loading?'100%':''}};">100%</view>
+          <view class="bg-green" style="width:{{loading? item.teskPersent+'%':''}};">{{item.teskPersent}}%</view>
         </view>
       </view>
       <view class="user" style="border-bottom: none;">
         <view class="usertitle">反馈图片</view>
         <view class="viewimg">
-          <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"></image>
+          <image src="{{item.img}}"></image>
         </view>
       </view>
 
       <dot-title title="回复内容" color="title-color"></dot-title>
-      <view class="margin-tb-lg">
-        问题处理不及时
-      </view>
-
+      <view wx:if="{{evaluateTrue}}" class="margin-tb-lg">暂无回复内容</view>
       <view class="evaluate" wx:if="{{!evaluateTrue}}">
         <view>评价人：{{list.people}} <view class="cu-tag bg-green" style="margin-left: 30rpx;">
             {{radio == "0" ? "满意":"不满意"}}</view>
         </view>
         <view>评价内容：{{textareaAValue}}</view>
       </view>
-      <button bindtap="evaluate" data-target="DialogModal1" class="bg-green"
-        wx:if="{{evaluateTrue && list.main == 0 }}">评价</button>
+      <button bindtap="evaluate" data-target="DialogModal1" class="bg-green margin-bottom-lg"
+        wx:if="{{evaluateTrue && list.state == 1 && list.main == 0 }}">评价</button>
     </view>
-    <button bindtap="jixufankui" data-target="DialogModal1" class="bg-green"
-      wx:if="{{evaluateTrue && list.main == 0 }}">继续反馈</button>
-    <button bindtap="evaluate" data-target="DialogModal1" class="bg-green"
-      wx:if="{{evaluateTrue && list.main == 0 }}">任务完成</button>
-  </view>
+  </block>
+    <!-- <button bindtap="jixufankui" data-target="DialogModal1" class="bg-green"
+      wx:if="{{evaluateTrue && list.main == 0 }}">继续反馈</button> -->
+    
 
+      
+  </view>
+  <button bindtap="evaluate" class="bg-green margin-top-lg"
+      wx:if="{{list.state == 1 && list.main == 0 }}">任务完成</button>
+  <button bindtap="cbButton" class="bg-red margin-top-lg"
+      wx:if="{{list.state == 2 && list.main == 0 }}">催办</button>
 
   <view wx:if="{{list.main == 1}}" style="margin-top: 20rpx;">
     <button class=" bg-green margin-tb-sm lg" bindtap="goFk" wx:if="{{list.mainstate == 0}}">反馈</button>
