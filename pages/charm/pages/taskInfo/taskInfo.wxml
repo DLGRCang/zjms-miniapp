@@ -33,8 +33,8 @@
       <view class="user">
         <view class="usertitle">任务完成率</view>
         <view class="cu-progress">
-        <view class="bg-green" style="width:{{loading?'100%':''}};">100%</view>
-      </view>
+          <view class="bg-green" style="width:{{loading?'100%':''}};">100%</view>
+        </view>
       </view>
       <view class="user" style="border-bottom: none;">
         <view class="usertitle">反馈图片</view>
@@ -42,19 +42,30 @@
           <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg"></image>
         </view>
       </view>
-      <view class="evaluate"  wx:if="{{!evaluateTrue}}">
-        <view>评价人：{{list.people}} <view class="cu-tag bg-green" style="margin-left: 30rpx;">{{radio == "0" ? "满意":"不满意"}}</view></view>
+
+      <dot-title title="回复内容" color="title-color"></dot-title>
+      <view class="margin-tb-lg">
+        问题处理不及时
+      </view>
+
+      <view class="evaluate" wx:if="{{!evaluateTrue}}">
+        <view>评价人：{{list.people}} <view class="cu-tag bg-green" style="margin-left: 30rpx;">
+            {{radio == "0" ? "满意":"不满意"}}</view>
+        </view>
         <view>评价内容：{{textareaAValue}}</view>
       </view>
-      <button bindtap="evaluate"  data-target="DialogModal1" class="bg-green" wx:if="{{evaluateTrue && list.main == 0 }}">评价</button>
+      <button bindtap="evaluate" data-target="DialogModal1" class="bg-green"
+        wx:if="{{evaluateTrue && list.main == 0 }}">评价</button>
     </view>
-    <button bindtap="jixufankui"  data-target="DialogModal1" class="bg-green" wx:if="{{evaluateTrue && list.main == 0 }}">继续反馈</button>
-    <button bindtap="evaluate"  data-target="DialogModal1" class="bg-green" wx:if="{{evaluateTrue && list.main == 0 }}">任务完成</button>
+    <button bindtap="jixufankui" data-target="DialogModal1" class="bg-green"
+      wx:if="{{evaluateTrue && list.main == 0 }}">继续反馈</button>
+    <button bindtap="evaluate" data-target="DialogModal1" class="bg-green"
+      wx:if="{{evaluateTrue && list.main == 0 }}">任务完成</button>
   </view>
-  
- 
+
+
   <view wx:if="{{list.main == 1}}" style="margin-top: 20rpx;">
-    <button class=" bg-green margin-tb-sm lg" bindtap="goFk"  wx:if="{{list.mainstate == 0}}">反馈</button>
+    <button class=" bg-green margin-tb-sm lg" bindtap="goFk" wx:if="{{list.mainstate == 0}}">反馈</button>
   </view>
 </view>
 
@@ -77,10 +88,11 @@
           <radio></radio>
         </view>
 
-	    </radio-group>
+      </radio-group>
       <view class="cu-form-group margin-top">
-      <textarea style="width: 100%;text-align: left;background: #fff;" maxlength="50" bindinput="textareaAInput" placeholder="请输入评价内容"></textarea>
-    </view>
+        <textarea style="width: 100%;text-align: left;background: #fff;" maxlength="50" bindinput="textareaAInput"
+          placeholder="请输入评价内容"></textarea>
+      </view>
     </view>
     <view class="cu-bar bg-white justify-end">
       <view class="action">
