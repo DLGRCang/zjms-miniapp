@@ -17,7 +17,7 @@ Page({
         state:1,
         people:"张三",
         department:"环卫局",
-        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
+        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png",
         main:0,
         startData:"2021/9/7",
         endData:"2021/9/16",
@@ -30,7 +30,7 @@ Page({
         state:1,
         people:"张三",
         department:"公安局",
-        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
+        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png",
         main:0,
         startData:"2021/9/7",
         endData:"2021/9/11",
@@ -41,7 +41,7 @@ Page({
             zxNmae:"李四",
             teskEnd:"2021/9/9",
             teskPersent:90,
-            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png"
+            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png"
           }
         ]
       },
@@ -51,7 +51,7 @@ Page({
         state:1,
         people:"张三",
         department:"环卫局",
-        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
+        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png",
         main:0,
         startData:"2021/9/6",
         endData:"2021/9/9",
@@ -62,14 +62,14 @@ Page({
             zxNmae:"王五",
             teskEnd:"2021/9/7",
             teskPersent:30,
-            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png"
+            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png"
           },
           {
             fkdept:"环卫局",
             zxNmae:"王五",
             teskEnd:"2021/9/8",
             teskPersent:50,
-            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png"
+            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png"
           }
         ]
       },
@@ -81,7 +81,7 @@ Page({
         state:2,
         people:"张三",
         department:"公安局",
-        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
+        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png",
         main:0,
         startData:"2021/9/6",
         endData:"2021/9/7",
@@ -95,7 +95,7 @@ Page({
         state:3,
         people:"张三",
         department:"环卫局",
-        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
+        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png",
         main:0,
         startData:"2021/9/6",
         endData:"2021/9/8",
@@ -106,7 +106,7 @@ Page({
             zxNmae:"李四",
             teskEnd:"2021/9/9",
             teskPersent:100,
-            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png"
+            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/00000.png"
           }
         ]
       },
