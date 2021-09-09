@@ -45,7 +45,7 @@
       <view class="user" style="border-bottom: none;">
         <view class="usertitle">反馈图片</view>
         <view class="viewimg">
-          <image src="{{item.img}}"></image>
+          <!-- <image src="{{item.img}}"></image> -->
         </view>
       </view>
 
