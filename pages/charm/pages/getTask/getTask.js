@@ -9,7 +9,7 @@ Page({
   data: {
     TabCur: 0,
     scrollLeft:0,
-    status:['进行中','已完成'],
+    status:['进行中','已完成'], 
     tabState0:[,
       {
         title:"应急问题",
@@ -17,8 +17,8 @@ Page({
         mainstate:0,
         people:"张三",
         department:"环卫局",
-        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
-        main:0,
+        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/fm.png",
+        main:1,
         startData:"2021/9/7",
         endData:"2021/9/16",
         data:5,
@@ -30,7 +30,7 @@ Page({
         mainstate:0,
         people:"张三",
         department:"环卫局",
-        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
+        image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/fm.png",
         main:1,
         startData:"2021/9/6",
         endData:"2021/9/9",
@@ -41,14 +41,14 @@ Page({
             zxNmae:"王五",
             teskEnd:"2021/9/7",
             teskPersent:30,
-            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png"
+            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/fm.png"
           },
           {
             fkdept:"环卫局",
             zxNmae:"王五",
             teskEnd:"2021/9/8",
             teskPersent:50,
-            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png"
+            img:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/fm.png"
           }
         ]
       },
@@ -61,7 +61,7 @@ Page({
         people:"张三",
         department:"环卫局",
         image:"https://www.yjhlcity.com/InfoIssue/miniapp/zjms/swiper2.png",
-        main:0,
+        main:1,
         startData:"2021/9/6",
         endData:"2021/9/8",
         data:"2021/9/7",

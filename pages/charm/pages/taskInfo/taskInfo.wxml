@@ -22,6 +22,7 @@
   </view>
   <view wx:if="{{list.state == 1||list.state == 3||list.main == 1 && list.fknum.length != 0}}">
     <dot-title title="反馈内容" color="title-color"></dot-title>
+    <view wx:if="{{list.fknum.length == 0}}">暂无反馈内容</view>
     <block wx:for="{{list.fknum}}">
     
     <view class="viewdiv">
