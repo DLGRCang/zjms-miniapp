@@ -17,7 +17,7 @@
   <view class="viewtext">{{list.cont}}</view>
   <dot-title title="任务图片" color="title-color"></dot-title>
   <view class="viewimg">
-    <image src="{{list.image}}"></image>
+    <image src="{{list.image}}" style="height:300rpx;"></image>
     
   </view>
   <view wx:if="{{list.state == 1||list.state == 3||list.main == 1 && list.fknum.length != 0}}">
