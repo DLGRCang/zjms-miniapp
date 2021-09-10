@@ -1,43 +1,13 @@
 // pages/charm/pages/task/task.js
-const app = getApp()
-const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name: wx.getStorageSync("name"),
-    idCard: wx.getStorageSync("idCard"),
-    phone: ''
-  },
-  putData(e) {
-    let key = e.currentTarget.dataset.key
-    console.log(key)
-    this.setData({
-      [key]: e.detail.value
-    })
+
   },
 
-  goLogin() {
-    // if (this.data.name == '') {
-    //   util.showToast('姓名不能为空')
-    //   return
-    // }
-    // if (this.data.idCard == '') {
-    //   util.showToast('身份证号为空')
-    //   return
-    // }
-    // if (!util.checkIdCard(this.data.idCard)) {
-    //   util.showToast('身份证错误')
-    //   return
-    // }
-    if(this.data.phone==1||this.data.phone==2||this.data.phone==3){
-      util.pageJumpTo('../publishTask/publishTask','obj','1')
-    }else{
-      util.pageJumpTo('../getTask/getTask','obj','1')
-    }
-  },
   /**
    * 生命周期函数--监听页面加载
    */
