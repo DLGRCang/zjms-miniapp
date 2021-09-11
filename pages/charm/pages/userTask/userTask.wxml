@@ -1,0 +1,59 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">任务列表</view>
+</cu-custom>
+<view class="padding-lr-lg">
+  <scroll-view scroll-x class="nav margin-bottom-lg">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{index==TabCur?'color cur':''}}" wx:for="{{status}}" wx:key bindtap="tabSelect"
+        data-id="{{index}}">
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <block wx:for="{{taskList}}" wx:key="item" wx:if="{{TabCur === 0}}">
+    <view class="margin-tb-sm box flex justify-between">
+      <view bindtap="goTaskInfo" data-id="{{item.id}}">
+        <view class="text-bold text-xl">
+          {{item.taskname}}
+        </view>
+        <view class="margin-tb-sm">
+          {{item.taskpersonname}}
+        </view>
+        <view class="text-grey text-sm">
+          {{item.tasktime}}
+        </view>
+      </view>
+      <view bindtap="goTaskFk" data-id="{{item.id}}">
+         <button class="cu-btn round bg-green shadow margin-top-lg">反馈</button>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{TabCur === 1}}">
+    <view class="margin-tb-sm box" wx:for="{{taskFkList}}" wx:key="item">
+      <view class="text-bold text-xl">
+        {{item.taskname}}
+      </view>
+      <view class="margin-tb-sm">
+        {{item.taskperson}}
+      </view>
+      <view class="margin-tb-sm">
+        {{item.taskpersonname}}
+      </view>
+      <view class="text-grey text-sm">
+        {{item.gmt_create}}
+      </view>
+      <view class="margin-tb-sm">
+        {{item.taskcontent}}
+      </view>
+      <view class="margin-tb-sm">
+        {{item.taskjd}}
+      </view>
+    </view>
+  </block>
+
+
+  <view class="flexButton bg-gray">
+    <button class="bg-green " bindtap="goVideo">视频会议</button>
+  </view>
+</view>

@@ -1,18 +1,68 @@
 // pages/charm/pages/task/task.js
+const app = getApp()
+const util = require('../../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    tit: '',
+    name: wx.getStorageSync("name"),
+    idCard: wx.getStorageSync("idCard"),
+    phone: ''
+  },
+  putData(e) {
+    let key = e.currentTarget.dataset.key
+    console.log(key)
+    this.setData({
+      [key]: e.detail.value
+    })
+  },
 
+  goLogin() {
+    // if (this.data.phone == '') { 
+    //   util.showToast('请填写手机号') 
+    //   return 
+    // } 
+
+    let data = {
+      "tname": this.data.name,
+      "phone": this.data.phone,
+      "idcard": this.data.idCard
+    }
+    // 登录
+    util.requestData('taskperson/gettaskpersonInforelease', 'GET', data).then(res => {
+      console.log(res)
+
+      if (res.statusCode == 200) {
+        if (res.data.istask == 1) {
+          wx.navigateTo({
+            url: '../adminTask/adminTask?id=' + res.data.taskPersonId,
+          })
+        } 
+        if (res.data.istask == 0) {
+          wx.navigateTo({
+            url: '../userTask/userTask?id=' + res.data.taskPersonId,
+          })
+        }
+      } else {
+        // 登录失败
+        wx.showToast({
+          title: '服务器异常，请稍后再试',
+          icon: 'none'
+        })
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      tit: options.tit
+    })
   },
 
   /**

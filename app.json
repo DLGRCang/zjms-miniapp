@@ -70,7 +70,12 @@
 				"pages/investment/investment",
 				"pages/villageProduct/villageProduct",
 				"pages/introduce/introduce",
-				"pages/task/task"
+				"pages/task/task",
+				"pages/adminTask/adminTask",
+				"pages/userTask/userTask",
+				"pages/publishTaskForm/publishTaskForm",
+				"pages/taskInfo/taskInfo",
+				"pages/taskFk/taskFk"
 			]
 		},
 		{
@@ -107,7 +112,7 @@
 			]
 		},
 		{
-			"root": "pages/economic", 
+			"root": "pages/economic",
 			"name": "经济活动",
 			"pages": [
 				"pages/market/market",
@@ -290,7 +295,6 @@
 			]
 		}
 	],
-	
 	"plugins": {
 		"routePlan": {
 			"version": "1.0.11",

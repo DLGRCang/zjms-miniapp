@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="content">任务详情</view>
+</cu-custom>
+<view class="padding-lg">
+
+  <view class="text-xl text-bold ">
+    任务标题
+  </view>
+
+  <view class="margin-top-sm box">
+    {{task.taskname}}
+  </view>
+
+  <view class="margin-top-sm text-xl text-bold">
+    部门
+  </view>
+
+  <view class="margin-top-sm box">
+    {{task.taskpersonname}}
+  </view>
+
+  <view class="margin-top-sm text-xl text-bold">
+    任务时间
+  </view>
+
+  <view class="margin-top-sm box">
+    {{task.tasktime}}
+  </view>
+
+
+  <view class="margin-top-sm text-xl text-bold">
+    内容
+  </view>
+
+  <view class="margin-top-sm box">
+    {{task.tasksummary}}
+  </view>
+
+</view>

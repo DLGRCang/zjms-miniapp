@@ -1,0 +1,28 @@
+/* pages/charm/pages/adminTask/adminTask.wxss */
+.color { 
+  color: rgb(18, 140, 211); 
+} 
+ 
+
+.flexButton{ 
+  position: fixed; 
+  left: 0; 
+  bottom: 0;   
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  padding: 20rpx 0; 
+} 
+ 
+
+.box{ 
+ border: 1rpx solid #F5F5F5;
+ padding: 20rpx;
+ border-radius: 15rpx;
+} 
+.title{ 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}

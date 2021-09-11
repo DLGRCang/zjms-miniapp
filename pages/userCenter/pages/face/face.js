@@ -29,7 +29,7 @@ Page({
 	faceid() {
 		//////////////////////////////
 		// 测试
-		// this.goLogin()
+		this.goLogin()
 		//////////////////////////////
 		let that = this
 		if (this.data.name == '') {
