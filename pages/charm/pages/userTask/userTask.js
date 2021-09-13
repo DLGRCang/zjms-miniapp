@@ -7,24 +7,31 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id: wx.getStorageSync('taskUserInfo').taskPersonId,
     TabCur: 0,
     scrollLeft: 0,
     status: ['我的任务', '我的反馈'],
-    taskList:[],
-    taskFkList:[]
+    taskList: [],
+    taskFkList: []
   },
   tabSelect(e) {
     this.setData({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
     })
+    if(e.currentTarget.dataset.id == 0){
+      this.getTaskList()
+    }
+    if(e.currentTarget.dataset.id == 1){
+      this.getFkList()
+    }
   },
   // 获取任务列表
   getTaskList() {
     let data = {
-      "creator": this.data.id
+      "taskperson": this.data.id
     }
-    util.requestData('taskinfo/taskinfolistrelease', 'GET', data).then(res => {
+    util.requestData('taskinfo/taskinfolqlistrelease', 'GET', data).then(res => {
       console.log(res.data.rows)
       this.setData({
         taskList: res.data.rows
@@ -35,31 +42,29 @@ Page({
     let data = {
       "creator": this.data.id
     }
-    util.requestData('taskinfo/taskfkinfolistrelease', 'GET', data).then(res => {
+    util.requestData('taskinfo/tasklqfkinfolistrelease', 'GET', data).then(res => {
       console.log(res.data.rows)
       this.setData({
-        taskFkList : res.data.rows 
+        taskFkList: res.data.rows
       })
     })
   },
   goTaskInfo(e) {
+    console.log(e)
     wx.navigateTo({
-      url: '../taskInfo/taskInfo?id=' + e.currentTarget.dataset.id
+      url: '../taskInfo/taskInfo?id=' +JSON.stringify(e.currentTarget.dataset.id) 
     })
   },
   goTaskFk(e) {
     wx.navigateTo({
-      url: '../taskFk/taskFk?id=' + e.currentTarget.dataset.id
+      url: '../taskFk/taskFk?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
-    this.setData({
-      id: options.id
-    })
+   console.log(this.data.id)
     this.getTaskList()
     this.getFkList()
   },

@@ -5,7 +5,7 @@
  
   <view class="cu-form-group"> 
         <view class="title"><text class="text-red">*</text>任务名称：</view> 
-        <input bindinput="putData" data-key="taskName" disabled value="应急防火"></input> 
+        <input bindinput="putData" data-key="taskName" disabled value="{{taskName}}"></input> 
     </view> 
  
      

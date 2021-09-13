@@ -13,19 +13,25 @@
 
   <block wx:for="{{taskList}}" wx:key="item" wx:if="{{TabCur === 0}}">
     <view class="margin-tb-sm box flex justify-between">
-      <view bindtap="goTaskInfo" data-id="{{item.id}}">
+      <view bindtap="goTaskInfo" data-id="{{item}}">
         <view class="text-bold text-xl">
           {{item.taskname}}
         </view>
         <view class="margin-tb-sm">
+          <text class="cuIcon-title text-blue"></text>执行部门/执行人
+        </view>
+        <view class="margin-tb-sm text-grey">
           {{item.taskpersonname}}
+        </view>
+        <view class="margin-tb-sm">
+          <text class="cuIcon-title text-blue"></text>任务时间
         </view>
         <view class="text-grey text-sm">
           {{item.tasktime}}
         </view>
       </view>
-      <view bindtap="goTaskFk" data-id="{{item.id}}">
-         <button class="cu-btn round bg-green shadow margin-top-lg">反馈</button>
+      <view bindtap="goTaskFk" data-id="{{item.taskInfoId}}" data-name="{{item.taskname}}">
+        <button class="cu-btn round bg-green shadow margin-top-lg">反馈</button>
       </view>
     </view>
   </block>
@@ -35,20 +41,37 @@
         {{item.taskname}}
       </view>
       <view class="margin-tb-sm">
+        <text class="cuIcon-title text-blue"></text>执行部门/执行人
+      </view>
+      <view class="margin-tb-sm text-grey">
         {{item.taskperson}}
       </view>
       <view class="margin-tb-sm">
-        {{item.taskpersonname}}
+        <text class="cuIcon-title text-blue"></text>反馈时间
       </view>
       <view class="text-grey text-sm">
         {{item.gmt_create}}
       </view>
+
       <view class="margin-tb-sm">
+        <text class="cuIcon-title text-blue"></text>反馈内容
+      </view>
+      <view class="margin-tb-sm text-grey">
         {{item.taskcontent}}
       </view>
+
       <view class="margin-tb-sm">
-        {{item.taskjd}}
+        <text class="cuIcon-title text-blue"></text>完成进度
       </view>
+      <view class="flex margin-top">
+        <view class="cu-progress round">
+          <view class="bg-green" style="width:{{item.taskjd}};"></view>
+        </view>
+        <text class="margin-left">{{item.taskjd}}</text>
+      </view>
+
+
+
     </view>
   </block>
 

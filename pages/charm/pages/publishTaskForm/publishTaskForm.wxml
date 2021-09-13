@@ -16,12 +16,12 @@
 
   <view class="cu-modal {{modalName=='RadioModal'?'show':''}}">
     <view class="cu-dialog" catchtap>
-      <checkbox-group class="block" bindchange="deptSelect">
+      <checkbox-group class="block" bindchange="deptSelect" >
         <view class="cu-list menu text-left">
-          <view class="cu-item" wx:for="{{deptList}}" wx:key="item">
+          <view class="cu-item" wx:for="{{deptList}}" wx:key="item" catchtap="deptNameSelect" data-id="{{item.taskPersonId}}">
             <label class="flex justify-between align-center flex-sub">
               <view class="flex-sub">{{item.tname}}</view>
-              <checkbox class="round" value="{{item.tname}}"></checkbox>
+              <checkbox class="round" value="{{item.tname}}" ></checkbox>
             </label>
           </view>
         </view>

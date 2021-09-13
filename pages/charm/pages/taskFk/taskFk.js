@@ -11,7 +11,9 @@ Page({
     imgList: [],
     endDate: util.formatDate(new Date()),
     persent: ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%'],
-    taskjd: "",
+    taskName:'',
+    taskID:'',
+    taskjd: "100%",
     taskInfo:'',
     index: 0,
 
@@ -39,18 +41,23 @@ Page({
   commitData() {
     let data =
     {
-      "taskinfoid": this.data.id,//（任务id）
+      "taskinfoid": this.data.taskID,//（任务id）
       "taskjd": this.data.taskjd,
       "taskcontent":this.data.taskInfo,
       "taskfile":"",
-      "taskpersonid":"ff2cf93a-7d5b-468a-af4d-4c307305e9cb"//（反馈人id）
+      "taskpersonid":wx.getStorageSync('taskUserInfo').taskPersonId,
+      "taskname":this.data.taskName
     }
+    console.log(data)
     util.requestData('taskinfo/fankuirelease', 'POST', data).then(res => {
       console.log(res)
-      wx.showToast({
-        title: '反馈成功',
-        icon:'none'
-      })
+      if(res.data=={}){
+        wx.showToast({
+          title: '反馈成功',
+          icon:'none'
+        })
+      }
+     
     })
   },
 
@@ -81,9 +88,6 @@ Page({
 
           }
         })
-
-
-
       }
     });
   },
@@ -115,7 +119,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      taskID:options.id,
+      taskName:options.name
+    })
   },
 
   /**

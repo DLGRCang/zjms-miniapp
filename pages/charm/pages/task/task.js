@@ -33,17 +33,17 @@ Page({
     }
     // 登录
     util.requestData('taskperson/gettaskpersonInforelease', 'GET', data).then(res => {
-      console.log(res)
-
+      console.log(res.data)
+      wx.setStorageSync('taskUserInfo', res.data)
       if (res.statusCode == 200) {
         if (res.data.istask == 1) {
           wx.navigateTo({
-            url: '../adminTask/adminTask?id=' + res.data.taskPersonId,
+            url: '../adminTask/adminTask',
           })
         } 
         if (res.data.istask == 0) {
           wx.navigateTo({
-            url: '../userTask/userTask?id=' + res.data.taskPersonId,
+            url: '../userTask/userTask',
           })
         }
       } else {
@@ -60,6 +60,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.setStorageSync('taskUserInfo', '')
     this.setData({
       tit: options.tit
     })

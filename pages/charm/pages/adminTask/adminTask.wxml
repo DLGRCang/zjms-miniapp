@@ -1,7 +1,7 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">任务列表</view>
 </cu-custom>
-<view class="padding-lr-lg">
+<view class="padding-lr-lg margin-bottom-lg">
   <scroll-view scroll-x class="nav margin-bottom-lg">
     <view class="flex text-center">
       <view class="cu-item flex-sub {{index==TabCur?'color cur':''}}" wx:for="{{status}}" wx:key bindtap="tabSelect"
@@ -11,17 +11,23 @@
     </view>
   </scroll-view>
 
-  
-  <block  wx:if="{{TabCur === 0}}">
+
+  <block wx:if="{{TabCur === 0}}">
     <view class="margin-tb-sm box" wx:for="{{taskList}}" wx:key="item" bindtap="goTaskInfo" data-id="{{item}}">
       <view class="text-bold text-xl">
         {{item.taskname}}
       </view>
       <view class="margin-tb-sm">
+        <text class="cuIcon-title text-blue"></text>执行部门/执行人
+      </view>
+      <view class="margin-tb-sm text-grey">
         {{item.taskpersonname}}
       </view>
+      <view class="margin-tb-sm">
+        <text class="cuIcon-title text-blue"></text>任务时间
+      </view>
       <view class="text-grey text-sm">
-       {{item.tasktime}}
+        {{item.tasktime}}
       </view>
     </view>
   </block>
@@ -31,30 +37,41 @@
         {{item.taskname}}
       </view>
       <view class="margin-tb-sm">
+        <text class="cuIcon-title text-blue"></text>执行部门/执行人
+      </view>
+      <view class="margin-tb-sm text-grey">
         {{item.taskperson}}
       </view>
       <view class="margin-tb-sm">
-        {{item.taskpersonname}}
+        <text class="cuIcon-title text-blue"></text>反馈时间
       </view>
       <view class="text-grey text-sm">
         {{item.gmt_create}}
       </view>
       <view class="margin-tb-sm">
+        <text class="cuIcon-title text-blue"></text>反馈内容
+      </view>
+      <view class="margin-tb-sm">
         {{item.taskcontent}}
       </view>
       <view class="margin-tb-sm">
-        {{item.taskjd}}
+        <text class="cuIcon-title text-blue"></text>完成进度
+      </view>
+      <view class="flex margin-top">
+        <view class="cu-progress round">
+          <view class="bg-green" style="width:{{item.taskjd}};"></view>
+        </view>
+        <text class="margin-left">{{item.taskjd}}</text>
       </view>
     </view>
   </block>
 
 
+<view style="height:150rpx;"></view>
 
 
-
-  <view class="flexButton bg-gray">
-    <button class="bg-green " bindtap="publishTaskForm" data-id="{{id}}">发布任务</button>
-    <button class="bg-green " bindtap="goVideo">视频会议</button>
-  </view>
-
+</view>
+<view class="flexButton bg-gray">
+  <button class="bg-green " bindtap="publishTaskForm" data-id="{{id}}">发布任务</button>
+  <button class="bg-green " bindtap="goVideo">视频会议</button>
 </view>

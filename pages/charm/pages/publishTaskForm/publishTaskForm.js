@@ -9,6 +9,7 @@ Page({
   data: {
     deptList: [],//部门
     selectDepts: [],//选中的部门
+    taskpersonIds: [],
     index: 0,
     taskName: '',
     taskInfo: '',
@@ -41,6 +42,13 @@ Page({
       selectDepts: e.detail.value
     })
   },
+  deptNameSelect(e) {
+
+    this.data.taskpersonIds.push(e.currentTarget.dataset.id)
+    this.data.taskpersonIds.concat(this.data.taskpersonIds)
+
+    console.log(this.data.taskpersonIds)
+  },
   // 确定
   determine() {
     let l = this.data.selectDepts.length
@@ -50,9 +58,7 @@ Page({
         icon: 'none'
       })
     } else {
-      console.log(this.data.selectDepts)
       this.hideModal()
-
     }
   },
   PickerChange(e) {
@@ -81,19 +87,24 @@ Page({
   //提交数据 
   commitData() {
     let data = {
-      "creator": this.data.id,
+      "creator": wx.getStorageSync('taskUserInfo').taskPersonId,
       "taskname": this.data.taskName,
       "tasksummary": this.data.taskInfo,
       "tasktime": this.data.endDate,
       "taskpersonname": this.data.selectDepts.join(","),
-      "taskperson": "",
+      "taskperson": this.data.taskpersonIds.join(","),
     }
+    console.log(data)
     util.requestData('taskinfo/savetaskinforelease', 'POST', data).then(res => {
       console.log(res)
-      wx.showToast({
-        title: '发布成功',
-        icon:'none'
-      })
+      console.log(res.data == {})
+      if (res.data == {}) {
+        wx.showToast({
+          title: '发布成功',
+          icon: 'none'
+        })
+      }
+
     })
 
   },
@@ -101,7 +112,7 @@ Page({
   // 获取任务列表
   getDeptsList() {
     let data = {
-      "istask":"0"
+      "istask": "0"
     }
     util.requestData('taskperson/applistTaskPersonrelease', 'GET', data).then(res => {
       console.log(res.data)
@@ -225,9 +236,9 @@ Page({
  * 生命周期函数--监听页面加载
  */
   onLoad: function (options) {
-    console.log(options.id)
     this.setData({
-      id: options.id
+      taskpersonIds: [],
+      selectDepts: []
     })
     this.getDeptsList()
   },
