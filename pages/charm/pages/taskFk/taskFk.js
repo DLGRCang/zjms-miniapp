@@ -51,13 +51,33 @@ Page({
     console.log(data)
     util.requestData('taskinfo/fankuirelease', 'POST', data).then(res => {
       console.log(res)
-      if(res.data=={}){
+      if (res.data == {}) {
         wx.showToast({
-          title: '反馈成功',
-          icon:'none'
-        })
+          title: "发布成功",
+          icon: 'success',
+          mask: true,
+          success(res) {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 2000)
+          }
+        });
+      }else{
+        wx.showToast({
+          title: "服务器异常，请稍后再试",
+          icon: 'none',
+          mask: true,
+          success(res) {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 2000)
+          }
+        });
       }
-     
     })
   },
 

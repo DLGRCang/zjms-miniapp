@@ -19,6 +19,12 @@ Page({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
     })
+    if(this.data.TabCur == 0){
+      this.getTaskList() 
+    }
+    if(this.data.TabCur == 1){
+      this.getFkList() 
+    }
   },
   goTaskInfo(e) {
     wx.navigateTo({
@@ -78,7 +84,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getTaskList()
+    this.getFkList()
   },
 
   /**
