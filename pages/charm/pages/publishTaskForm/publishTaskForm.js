@@ -96,7 +96,7 @@ Page({
     }
     console.log(data)
     util.requestData('taskinfo/savetaskinforelease', 'POST', data).then(res => {
-      console.log(res)
+      console.log(res.data)
       console.log(res.data == {})
       if (res.data == {}) {
         wx.showToast({
@@ -113,7 +113,7 @@ Page({
         });
       }else{
         wx.showToast({
-          title: "服务器异常，请稍后再试",
+          title: "发布成功!",
           icon: 'none',
           mask: true,
           success(res) {
