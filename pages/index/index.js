@@ -98,9 +98,10 @@ Page({
         });
         // 页面跳转
         if (e.currentTarget.dataset.login) {
-
           if (e.currentTarget.dataset.tit == '会议管理') {
-            //判断是否登录
+            if (!login.isLogin()) return
+          }
+          if (e.currentTarget.dataset.tit == '云上办') {
             if (!login.isLogin()) return
           }
           util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
@@ -1924,10 +1925,10 @@ Page({
    */
   onLoad: function (options) {
     this.getNewsList()
-    // this.getData()
+    this.getData()
 
     // 测试
-    this.getDataTest()
+    // this.getDataTest()
   },
 
   /**

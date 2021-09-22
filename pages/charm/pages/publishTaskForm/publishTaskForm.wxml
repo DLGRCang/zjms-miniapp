@@ -14,14 +14,19 @@
     <button class="cu-btn bg-green shadow round" bindtap="showModal" data-target="RadioModal">请选择</button>
   </view>
 
+  <view class="cu-form-group" wx:if="{{selectDepts.length>0}}">
+   <view class="text-grey"> {{selectDepts}}</view>
+  </view>
+
   <view class="cu-modal {{modalName=='RadioModal'?'show':''}}">
     <view class="cu-dialog" catchtap>
-      <checkbox-group class="block" bindchange="deptSelect" >
+      <checkbox-group class="block" bindchange="deptSelect">
         <view class="cu-list menu text-left">
-          <view class="cu-item" wx:for="{{deptList}}" wx:key="item" catchtap="deptNameSelect" data-id="{{item.taskPersonId}}">
+          <view class="cu-item" wx:for="{{deptList}}" wx:key="item" catchtap="deptNameSelect"
+            data-id="{{item.taskPersonId}}">
             <label class="flex justify-between align-center flex-sub">
-              <view class="flex-sub">{{item.tname}}</view>
-              <checkbox class="round" value="{{item.tname}}" ></checkbox>
+              <view class="flex-sub">{{item.orgjob}}——{{item.tname}}</view>
+              <checkbox class="round" value="{{item.tname}}"></checkbox>
             </label>
           </view>
         </view>
@@ -56,7 +61,7 @@
     <view class="title"><text class="text-red">* </text>任务内容：</view>
     <textarea maxlength="-1" placeholder="请输入任务内容" bindinput="putData" data-key="taskInfo"></textarea>
   </view>
-
+<!-- 
   <view class="cu-form-group padding-left-sm align-start" style="padding:30rpx 0 30rpx 30rpx;">
     <view class="title" style="margin:20rpx 0 0 0">任务内容录音：</view>
     <view bindtap="showVoice" class="cuIcon-rankfill bg-green radius margin-right padding-left"
@@ -65,11 +70,11 @@
       <text class="cuIcon-voice round bg-green text-center" style="width:60rpx;height:60rpx;line-height:60rpx"></text>
       <text class="text-xs margin-left-xs">按住\n录制</text>
     </view>
-  </view>
+  </view> -->
 
 
   <!-- 图片上传 -->
-  <view class="cu-bar bg-white" style="border-top: 1rpx solid #eee;">
+  <!-- <view class="cu-bar bg-white" style="border-top: 1rpx solid #eee;">
     <view class="action">
       图片上传
     </view>
@@ -89,11 +94,11 @@
         <text class="cuIcon-cameraadd"></text>
       </view>
     </view>
-  </view>
+  </view> -->
 
   <!-- 提交 -->
   <view class="padding flex flex-direction">
-    <button bindtap="commitData" class="cu-btn bg-green margin-tb-sm lg">发布任务</button>
+    <button bindtap="commitData" class="cu-btn bg-green margin-tb-sm lg">发布任务</button>  
   </view>
 
 

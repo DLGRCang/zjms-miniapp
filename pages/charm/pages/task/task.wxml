@@ -1,23 +1,26 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">{{tit}}</view>
 </cu-custom>
-<view class="padding-lg"> 
- 
- <view class="flex flex-direction align-center"> 
+<view class="padding-lg">
 
-   <view class="flex flex-direction margin-top margin-bottom-xl" style="width:100%"> 
-     <text class="text-xl text-bold">姓名：</text> 
-     <input bindinput="putData" class="margin-top text-xl "  data-key="name" value="{{name}}" disabled/> 
-  
-     <text class="text-xl margin-top-xl text-bold">身份证号：</text> 
-     <input bindinput="putData" class="margin-top text-xl "  data-key="idCard" value="{{idCard}}" disabled/> 
- 
-     <text class="text-xl text-bold margin-top-xl">手机号：</text> 
-     <input bindinput="putData" class="margin-top text-xl " placeholder="请输入手机号" data-key="phone" value="" /> 
+  <view class="flex flex-direction align-center">
+    <!-- <view class="text-xxl text-blue text-bold margin-tb-lg">
+      欢迎进入云上办
+    </view> -->
 
-   </view> 
+    <view class="flex flex-direction margin-top margin-bottom-xl" style="width:100%">
+      <text class="text-xl text-bold">姓名：</text>
+      <input bindinput="putData" class="margin-top text-xl " data-key="name" value="{{name}}" disabled />
 
-   <button bindtap="goLogin" class="bg-green text-lg" style="margin-top:100rpx;width:100%">进入任务</button> 
- </view> 
+      <text class="text-xl margin-top-xl text-bold">身份证号：</text>
+      <input bindinput="putData" class="margin-top text-xl " data-key="idCard" value="{{idCard}}" disabled />
+
+      <text class="text-xl text-bold margin-top-xl">手机号：</text>
+      <input bindinput="putData" class="margin-top text-xl " placeholder="请输入手机号" data-key="phone" value="" />
+
+    </view>
+
+    <button bindtap="goLogin" class="bg-green text-lg" style="margin-top:100rpx;width:100%">进入任务</button>
+  </view>
 
 </view>

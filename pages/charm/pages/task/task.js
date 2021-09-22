@@ -30,12 +30,12 @@ Page({
       "tname": this.data.name,
       "phone": this.data.phone,
       "idcard": this.data.idCard
-    }
+    } 
     // 登录
     util.requestData('taskperson/gettaskpersonInforelease', 'GET', data).then(res => {
       console.log(res.data)
       wx.setStorageSync('taskUserInfo', res.data)
-      if (res.statusCode == 200) {
+      if (res.statusCode == 200) { 
         if (res.data.istask == 1) {
           wx.navigateTo({
             url: '../adminTask/adminTask',
