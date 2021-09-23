@@ -36,4 +36,31 @@
     {{task.tasksummary}}
   </view>
 
+  <block wx:if="{{task.taskaudio == '' || task.taskaudio==null}}"></block>
+  <block wx:else>
+    <view class="margin-top-sm text-xl text-bold">
+      任务语音
+    </view>
+
+    <!-- <view class="margin-top-sm box" bindtap="showVoice">
+      {{task.taskaudio}}
+    </view> -->
+    <view bindtap="showVoice" class="cuIcon-rankfill bg-green radius margin-right padding-left margin-top-sm"
+      style="height:60rpx;flex:1;line-height:60rpx">{{voiceStatus}}</view>
+
+  </block>
+
+
+  <block wx:if="{{task.taskfile == '' || task.taskfile==null}}"></block>
+
+  <block wx:else>
+    <view class="margin-top-sm text-xl text-bold">
+      任务图片：
+    </view>
+
+    <view class="margin-top-sm box" wx:for="{{taskImg}}" wx:key="item">
+      <image src="{{imgUrl}}{{item}}" mode="aspectFill"></image>
+    </view>
+  </block>
+
 </view>

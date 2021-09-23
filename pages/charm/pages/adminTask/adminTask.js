@@ -61,7 +61,7 @@ Page({
   },
   goVideo(e) {
     wx.navigateTo({
-      url: '/pages/government/pages/eachFlagTownXY/eachFlagTownXY?num=' + 9083648674,
+      url: '/pages/government/pages/eachFlagTownXY/eachFlagTownXY?num=' + 9083648674,                                                     
     })
   },
 

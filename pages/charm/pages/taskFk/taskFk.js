@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据 
    */
   data: {
-    imageArr: [],
-    imgList: [],
+    vehicleImages: [], //图片url
+    vehicleImagesId: [], //图片
     endDate: util.formatDate(new Date()),
     persent: ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%'],
     taskName:'',
@@ -44,7 +44,7 @@ Page({
       "taskinfoid": this.data.taskID,//（任务id）
       "taskjd": this.data.taskjd,
       "taskcontent":this.data.taskInfo,
-      "taskfile":"",
+      "taskfile":this.data.vehicleImagesId.join(","),
       "taskpersonid":wx.getStorageSync('taskUserInfo').taskPersonId,
       "taskname":this.data.taskName
     }
@@ -81,58 +81,61 @@ Page({
     })
   },
 
-  //图片上传 
-  ChooseImage() {
-
-    wx.chooseImage({
-      count: 4, //默认9 
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success: (res) => {
-        let filePath = res.tempFilePaths[0]
-        wx.getFileSystemManager().readFile({
-          filePath: res.tempFilePaths[0], //选择图片返回的相对路径 
-          encoding: 'base64', //编码格式 
-          success: res => { //成功的回调 
-            if (this.data.imageArr.length != 0) {
-              this.setData({
-                imgList: this.data.imgList.concat(filePath),
-                imageArr: this.data.imageArr.concat('data:image/png;base64' + ',' + res.data),
-              })
-            } else {
-              this.setData({
-                imgList: [filePath],
-                imageArr: ['data:image/png;base64' + ',' + res.data],
-              })
-            }
-
+ //图片上传 
+ ChooseImage() {
+  wx.chooseImage({
+    count: 1, //默认9
+    sizeType: ['original', 'compressed'],
+    sourceType: ['album', 'camera'],
+    success: (res) => {
+      let imgUrl = res.tempFilePaths[0]
+      util.uploadFile(imgUrl, 'image')
+        .then(res => {
+          if (res.statusCode == 200) {
+            let obj = JSON.parse(res.data)
+            console.log(obj)
+            let vehicleImagesId = this.data.vehicleImagesId;
+            let vehicleImages = this.data.vehicleImages;
+            vehicleImagesId.push(obj.data)
+            vehicleImages.push(imgUrl)
+            console.log(vehicleImagesId)
+            console.log(vehicleImages)
+            this.setData({
+              vehicleImagesId: vehicleImagesId,
+              vehicleImages: vehicleImages
+            })
+          } else {
+            util.showToast('图片上传失败')
           }
+        });
+    }
+  });
+},
+ViewImage(e) {
+  wx.previewMedia({
+    sources: [{
+      url: e.currentTarget.dataset.url,
+      type: e.currentTarget.dataset.type
+    }],
+  });
+},
+DelImg(e) {
+  wx.showModal({
+    content: '确定要删除吗？',
+    cancelText: '再想想',
+    confirmText: '确定',
+    success: res => {
+      if (res.confirm) {
+        this.data.vehicleImagesId.splice(e.currentTarget.dataset.index, 1);
+        this.data.vehicleImages.splice(e.currentTarget.dataset.index, 1);
+        this.setData({
+          vehicleImagesId: this.data.vehicleImagesId,
+          vehicleImages: this.data.vehicleImages
         })
       }
-    });
-  },
-  ViewImage(e) {
-    wx.previewImage({
-      urls: this.data.imgList,
-      current: e.currentTarget.dataset.url
-    });
-  },
-  DelImg(e) {
-    wx.showModal({
-      // title: '召唤师', 
-      content: '确定要删除吗？',
-      cancelText: '再想想',
-      confirmText: '确定',
-      success: res => {
-        if (res.confirm) {
-          this.data.imgList.splice(e.currentTarget.dataset.index, 1);
-          this.setData({
-            imgList: this.data.imgList
-          })
-        }
-      }
-    })
-  },
+    }
+  })
+},
 
 
   /**

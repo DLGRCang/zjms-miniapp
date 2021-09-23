@@ -19,10 +19,10 @@ Page({
       TabCur: e.currentTarget.dataset.id,
       scrollLeft: (e.currentTarget.dataset.id - 1) * 60
     })
-    if(e.currentTarget.dataset.id == 0){
+    if (e.currentTarget.dataset.id == 0) {
       this.getTaskList()
     }
-    if(e.currentTarget.dataset.id == 1){
+    if (e.currentTarget.dataset.id == 1) {
       this.getFkList()
     }
   },
@@ -52,7 +52,7 @@ Page({
   goTaskInfo(e) {
     console.log(e)
     wx.navigateTo({
-      url: '../taskInfo/taskInfo?id=' +JSON.stringify(e.currentTarget.dataset.id) 
+      url: '../taskInfo/taskInfo?id=' + JSON.stringify(e.currentTarget.dataset.id)
     })
   },
   goTaskFk(e) {
@@ -60,11 +60,16 @@ Page({
       url: '../taskFk/taskFk?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name
     })
   },
+  goVideo(e) {
+    wx.navigateTo({
+      url: '/pages/government/pages/eachFlagTownXY/eachFlagTownXY?num=' + 9083648674,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   console.log(this.data.id)
+    console.log(this.data.id)
     this.getTaskList()
     this.getFkList()
   },

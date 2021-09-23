@@ -1,5 +1,6 @@
 const recordManager = wx.getRecorderManager()
 const innerAudioContext = wx.createInnerAudioContext();
+const app = getApp()
 const util = require("../../../../utils/util")
 Page({
 
@@ -13,13 +14,14 @@ Page({
     index: 0,
     taskName: '',
     taskInfo: '',
-
-    startDate: util.formatDate(new Date()),
+    startDate: util.formatTime(new Date()),
     endDate: util.formatDate(new Date()),
 
-    imageArr: [],
-    imgList: [],
-    soundRecording: '', //录音 
+    vehicleImages: [], //图片url
+    vehicleImagesId: [], //图片
+
+    voiceSrc: '',
+    soundRecording: '', //录音文件 
     voiceLong: '',
     voiceStatus: '',
   },
@@ -86,6 +88,27 @@ Page({
   },
   //提交数据 
   commitData() {
+    if (this.data.taskName == "") {
+      wx.showToast({
+        title: '任务名称不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.taskInfo == "") {
+      wx.showToast({
+        title: '任务内容不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    if (this.data.selectDepts.length === 0) {
+      wx.showToast({
+        title: '请选择部门',
+        icon: 'none'
+      })
+      return
+    }
     let data = {
       "creator": wx.getStorageSync('taskUserInfo').taskPersonId,
       "taskname": this.data.taskName,
@@ -93,6 +116,8 @@ Page({
       "tasktime": this.data.endDate,
       "taskpersonname": this.data.selectDepts.join(","),
       "taskperson": this.data.taskpersonIds.join(","),
+      "taskfile": this.data.vehicleImagesId.join(","),
+      "taskaudio": this.data.soundRecording
     }
     console.log(data)
     util.requestData('taskinfo/savetaskinforelease', 'POST', data).then(res => {
@@ -111,7 +136,7 @@ Page({
             }, 2000)
           }
         });
-      }else{
+      } else {
         wx.showToast({
           title: "发布成功!",
           icon: 'none',
@@ -144,55 +169,54 @@ Page({
 
   //图片上传 
   ChooseImage() {
-
     wx.chooseImage({
-      count: 4, //默认9 
+      count: 1, //默认9
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: (res) => {
-        
-        let filePath = res.tempFilePaths[0]
-        wx.getFileSystemManager().readFile({
-          filePath: res.tempFilePaths[0], //选择图片返回的相对路径 
-          encoding: 'base64', //编码格式 
-          success: res => { //成功的回调 
-            if (this.data.imageArr.length != 0) {
+        let imgUrl = res.tempFilePaths[0]
+        util.uploadFile(imgUrl, 'image')
+          .then(res => {
+            if (res.statusCode == 200) {
+              let obj = JSON.parse(res.data)
+              console.log(obj)
+              let vehicleImagesId = this.data.vehicleImagesId;
+              let vehicleImages = this.data.vehicleImages;
+              vehicleImagesId.push(obj.data)
+              vehicleImages.push(imgUrl)
+              console.log(vehicleImagesId)
+              console.log(vehicleImages)
               this.setData({
-                imgList: this.data.imgList.concat(filePath),
-                imageArr: this.data.imageArr.concat('data:image/png;base64' + ',' + res.data),
+                vehicleImagesId: vehicleImagesId,
+                vehicleImages: vehicleImages
               })
             } else {
-              this.setData({
-                imgList: [filePath],
-                imageArr: ['data:image/png;base64' + ',' + res.data],
-              })
+              util.showToast('图片上传失败')
             }
-
-          }
-        })
-
-
-
+          });
       }
     });
   },
   ViewImage(e) {
-    wx.previewImage({
-      urls: this.data.imgList,
-      current: e.currentTarget.dataset.url
+    wx.previewMedia({
+      sources: [{
+        url: e.currentTarget.dataset.url,
+        type: e.currentTarget.dataset.type
+      }],
     });
   },
   DelImg(e) {
     wx.showModal({
-      // title: '召唤师', 
       content: '确定要删除吗？',
       cancelText: '再想想',
       confirmText: '确定',
       success: res => {
         if (res.confirm) {
-          this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+          this.data.vehicleImagesId.splice(e.currentTarget.dataset.index, 1);
+          this.data.vehicleImages.splice(e.currentTarget.dataset.index, 1);
           this.setData({
-            imgList: this.data.imgList
+            vehicleImagesId: this.data.vehicleImagesId,
+            vehicleImages: this.data.vehicleImages
           })
         }
       }
@@ -218,22 +242,20 @@ Page({
     //停止录音回调 
     recordManager.onStop(function (ress) {
       var path = ress.tempFilePath
-      util.uploadAudioFile(path)
-        .then(res => {
-          console.log(res)
-          if (res.statusCode == 200) {
-            let obj = JSON.parse(res.data)
-            that.setData({
-              voiceLong: " " + Math.ceil((ress.duration) / 1000) + " ″ ",
-              voiceStatus: "点击播放",
-              voiceSrc: path,
-
-              soundRecording: obj.data
-            })
-          } else {
-            util.showToast('录音上传失败')
-          }
-        });
+      util.uploadAudioFile(path).then(res => {
+        if (res.statusCode == 200) {
+          let obj = JSON.parse(res.data)
+          console.log(obj)
+          that.setData({
+            voiceLong: " " + Math.ceil((ress.duration) / 1000) + " ″ ",
+            voiceStatus: "点击播放",
+            voiceSrc: path,
+            soundRecording: obj.data
+          })
+        } else {
+          util.showToast('录音上传失败')
+        }
+      });
     })
   },
   //播放录音 
@@ -252,7 +274,6 @@ Page({
       })
     })
   },
-
   /**
  * 生命周期函数--监听页面加载
  */

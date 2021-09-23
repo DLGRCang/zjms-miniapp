@@ -1,4 +1,6 @@
 // pages/charm/pages/taskInfo/taskInfo.js
+const recordManager = wx.getRecorderManager()
+const innerAudioContext = wx.createInnerAudioContext();
 const app = getApp()
 const util = require('../../../../utils/util.js')
 Page({
@@ -7,7 +9,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrl:'https://www.yjhlcity.com/InfoIssue/route/file/downloadfile/false/',
+    taskImg:[],
+    taskaudio:'',
+    voiceStatus:'点击播放'
+  },
+  showVoice() {
+    let that = this
+    innerAudioContext.src = 'https://www.yjhlcity.com/InfoIssue/route/file/downloadfile/false/'+ this.data.taskaudio;
+    innerAudioContext.play();
+    innerAudioContext.onPlay(function () {
+      that.setData({
+        voiceStatus: "  播放中..."
+      })
+    })
+    innerAudioContext.onEnded(function () {
+      that.setData({
+        voiceStatus: "  点击播放"
+      })
+    })
   },
 
   /**
@@ -16,9 +36,19 @@ Page({
   onLoad: function (options) {
     console.log(options.id)
     console.log(JSON.parse(options.id))
-    this.setData({
-      task:JSON.parse(options.id)
-    })
+    if(JSON.parse(options.id).taskfile == ""|| JSON.parse(options.id).taskfile == null){
+      this.setData({
+        task:JSON.parse(options.id),
+        taskaudio:JSON.parse(options.id).taskaudio
+      })
+    }else{
+      this.setData({
+        task:JSON.parse(options.id),
+        taskImg:JSON.parse(options.id).taskfile.split(","),
+        taskaudio:JSON.parse(options.id).taskaudio
+      })
+    }
+    
   },
 
   /**
