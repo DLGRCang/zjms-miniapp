@@ -113,7 +113,7 @@ Page({
       "creator": wx.getStorageSync('taskUserInfo').taskPersonId,
       "taskname": this.data.taskName,
       "tasksummary": this.data.taskInfo,
-      "tasktime": this.data.endDate,
+      "tasktime": this.data.startDate,
       "taskpersonname": this.data.selectDepts.join(","),
       "taskperson": this.data.taskpersonIds.join(","),
       "taskfile": this.data.vehicleImagesId.join(","),

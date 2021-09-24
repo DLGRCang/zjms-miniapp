@@ -84,6 +84,7 @@ Page({
   },
 
   // 业务详情页
+  // 0普通小程序页面跳转，1小程序之间跳转 2.webview跳转
   goServiceDetail(e) {
     console.log(e.currentTarget.dataset)
     if (e.currentTarget.dataset.url == "") {
