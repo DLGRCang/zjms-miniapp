@@ -29,12 +29,12 @@
  
     <view class="cu-form-group align-start"> 
         <view class="title"><text class="text-red">*</text>任务完成情况：</view> 
-        <textarea maxlength="-1"  placeholder="请输入任务内容" bindinput="putData" data-key="taskInfo"></textarea> 
+        <textarea maxlength="140"  placeholder="请输入任务内容" bindinput="putData" data-key="taskInfo"></textarea> 
     </view> 
  
     <!-- 图片上传 --> 
     <view class="cu-form-group padding-left align-start ">
-		<view class="title padding-top-lg" >f反馈图片：</view>
+		<view class="title padding-top-lg" >反馈图片：</view>
 		<view class="grid col-3 grid-square flex-sub padding-top-sm">
 			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
 				data-url="{{vehicleImages[index]}}">
