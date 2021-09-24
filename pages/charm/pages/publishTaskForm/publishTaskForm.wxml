@@ -32,7 +32,7 @@
           </view>
         </view>
       </checkbox-group>
-      <view class="selectBtn" style="">
+      <view class="selectBtn">
         <button class="cu-btn bg-green lg" bindtap="hideModal">取消</button>
         <button class="cu-btn bg-green margin-left-lg lg" bindtap="determine">确定</button>
       </view>
