@@ -1,13 +1,23 @@
 /* pages/charm/pages/publishTaskForm/publishTaskForm.wxss */
 .cu-form-group .title {
-  min-width: calc(4em + 30rpx);
+	min-width: calc(4em + 30rpx);
 }
-.check{
-	color:#EE6967;
-	margin-left:auto
+
+.check {
+	color: #EE6967;
+	margin-left: auto
 }
-.check::after{
+
+.check::after {
 	content: '';
 	font-family: cuIcon;
 	content: "\e6a3";
+}
+
+.selectBtn {
+	position: fixed;
+	top: 83%;
+	background-color: rgba(167, 163, 163, 1);
+	padding: 20rpx;
+	width: 91%;
 }

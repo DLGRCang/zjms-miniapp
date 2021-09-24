@@ -10,37 +10,38 @@ Page({
     tit: '',
     name: wx.getStorageSync("name"),
     idCard: wx.getStorageSync("idCard"),
-    phone: ''
+    phone: wx.getStorageSync('taskUserPhone')
   },
   putData(e) {
     let key = e.currentTarget.dataset.key
-    console.log(key)
     this.setData({
       [key]: e.detail.value
     })
+
   },
 
   goLogin() {
-    // if (this.data.phone == '') { 
-    //   util.showToast('请填写手机号') 
-    //   return 
-    // } 
+    if (this.data.phone == '') {
+      util.showToast('请填写手机号')
+      return
+    }
 
     let data = {
       "tname": this.data.name,
       "phone": this.data.phone,
       "idcard": this.data.idCard
-    } 
+    }
     // 登录
     util.requestData('taskperson/gettaskpersonInforelease', 'GET', data).then(res => {
       console.log(res.data)
       wx.setStorageSync('taskUserInfo', res.data)
-      if (res.statusCode == 200) { 
+      wx.setStorageSync('taskUserPhone', this.data.phone)
+      if (res.statusCode == 200) {
         if (res.data.istask == 1) {
           wx.navigateTo({
             url: '../adminTask/adminTask',
           })
-        } 
+        }
         if (res.data.istask == 0) {
           wx.navigateTo({
             url: '../userTask/userTask',
@@ -62,7 +63,8 @@ Page({
   onLoad: function (options) {
     wx.setStorageSync('taskUserInfo', '')
     this.setData({
-      tit: options.tit
+      tit: options.tit,
+      phone: wx.getStorageSync('taskUserPhone')
     })
   },
 

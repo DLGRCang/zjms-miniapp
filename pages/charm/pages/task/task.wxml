@@ -16,7 +16,7 @@
       <input bindinput="putData" class="margin-top text-xl " data-key="idCard" value="{{idCard}}" disabled />
 
       <text class="text-xl text-bold margin-top-xl">手机号：</text>
-      <input bindinput="putData" class="margin-top text-xl " placeholder="请输入手机号" data-key="phone" value="" />
+      <input bindinput="putData" class="margin-top text-xl " placeholder="请输入手机号" data-key="phone" value="{{phone}}" />
 
     </view>
 

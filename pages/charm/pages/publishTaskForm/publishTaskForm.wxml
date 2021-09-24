@@ -18,8 +18,9 @@
    <view class="text-grey"> {{selectDepts}}</view>
   </view>
 
-  <view class="cu-modal {{modalName=='RadioModal'?'show':''}}">
-    <view class="cu-dialog" catchtap>
+  <view class="cu-modal  margin-top-lg {{modalName=='RadioModal'?'show':''}}">
+  
+    <scroll-view scroll-y='true' class="cu-dialog" catchtap style=" height: 80%;">
       <checkbox-group class="block" bindchange="deptSelect">
         <view class="cu-list menu text-left">
           <view class="cu-item" wx:for="{{deptList}}" wx:key="item" catchtap="deptNameSelect"
@@ -31,11 +32,11 @@
           </view>
         </view>
       </checkbox-group>
-      <view class="action flex justify-around margin-tb-sm">
-        <button class="cu-btn line-green text-green" bindtap="hideModal">取消</button>
-        <button class="cu-btn bg-green margin-left" bindtap="determine">确定</button>
+      <view class="selectBtn" style="">
+        <button class="cu-btn bg-green lg" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left-lg lg" bindtap="determine">确定</button>
       </view>
-    </view>
+    </scroll-view>
 
   </view>
 
