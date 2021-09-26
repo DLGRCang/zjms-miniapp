@@ -153,6 +153,21 @@ Page({
     })
 
   },
+  // 搜索部门人员
+  searchDeptUser(e){
+    console.log(e.detail.value)
+    let data = {
+      "istask": "0",
+      "keywords":e.detail.value
+    }
+    util.requestData('taskperson/applistTaskPersonrelease', 'GET', data).then(res => {
+      console.log(res.data)
+      this.setData({
+        deptList: res.data
+      })
+    })
+
+  },
 
   // 获取任务列表
   getDeptsList() {

@@ -15,12 +15,19 @@
   </view>
 
   <view class="cu-form-group" wx:if="{{selectDepts.length>0}}">
-   <view class="text-grey"> {{selectDepts}}</view>
+    <view class="text-grey"> {{selectDepts}}</view>
   </view>
 
-  <view class="cu-modal  margin-top-lg {{modalName=='RadioModal'?'show':''}}">
-  
-    <scroll-view scroll-y='true' class="cu-dialog" catchtap style=" height: 80%;">
+  <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" style="margin-top: 110rpx;">
+    <scroll-view scroll-y='true' class="cu-dialog" catchtap style=" height: 80%;margin-bottom: 170rpx;">
+
+      <view class="cu-bar bg-white search">
+        <view class="search-form round">
+          <input type="text" placeholder="部门人员搜索" confirm-type="search" bindinput="searchDeptUser"></input>
+          <text class="cuIcon-search"></text>
+        </view>
+      </view>
+
       <checkbox-group class="block" bindchange="deptSelect">
         <view class="cu-list menu text-left">
           <view class="cu-item" wx:for="{{deptList}}" wx:key="item" catchtap="deptNameSelect"
@@ -63,36 +70,37 @@
     <textarea maxlength="-1" placeholder="请输入任务内容" bindinput="putData" data-key="taskInfo"></textarea>
   </view>
 
-	<view class="cu-form-group padding-left-sm align-start padding-top-sm">
-		<view class="title padding-top-sm" style="margin:0">录音：</view>
-		<view bindtap="showVoice"  class="cuIcon-rankfill bg-green radius margin-right padding-left" style="height:60rpx;flex:1;line-height:60rpx">  {{voiceLong}}{{voiceStatus}}</view>
-		<view bindlongpress="startrecord" bindtouchend="endrecord" class="flex align-center" style="margin-left:auto " >
-			<text class="cuIcon-voice round bg-green text-center" style="width:60rpx;height:60rpx;line-height:60rpx"></text>
-			<text class="text-xs margin-left-xs">按住\n录制</text>
-		</view>
-	</view>
+  <view class="cu-form-group padding-left-sm align-start padding-top-sm">
+    <view class="title padding-top-sm" style="margin:0">录音：</view>
+    <view bindtap="showVoice" class="cuIcon-rankfill bg-green radius margin-right padding-left"
+      style="height:60rpx;flex:1;line-height:60rpx"> {{voiceLong}}{{voiceStatus}}</view>
+    <view bindlongpress="startrecord" bindtouchend="endrecord" class="flex align-center" style="margin-left:auto ">
+      <text class="cuIcon-voice round bg-green text-center" style="width:60rpx;height:60rpx;line-height:60rpx"></text>
+      <text class="text-xs margin-left-xs">按住\n录制</text>
+    </view>
+  </view>
 
 
   <!-- 图片上传 -->
   <view class="cu-form-group padding-left align-start ">
-		<view class="title padding-top-lg" >任务图片：</view>
-		<view class="grid col-3 grid-square flex-sub padding-top-sm">
-			<view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
-				data-url="{{vehicleImages[index]}}">
-				<image src='{{vehicleImages[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
-					<text class="cuIcon-close"></text>
-				</view>
-			</view>
-			<view class="solids" bindtap="ChooseImage" wx:if="{{vehicleImages.length<3}}">
-				<text class="cuIcon-cameraadd"></text>
-			</view>
-		</view>
-	</view>
+    <view class="title padding-top-lg">任务图片：</view>
+    <view class="grid col-3 grid-square flex-sub padding-top-sm">
+      <view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+        data-url="{{vehicleImages[index]}}">
+        <image src='{{vehicleImages[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view class="solids" bindtap="ChooseImage" wx:if="{{vehicleImages.length<3}}">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
+  </view>
 
   <!-- 提交 -->
   <view class="padding flex flex-direction">
-    <button bindtap="commitData" class="cu-btn bg-green margin-tb-sm lg">发布任务</button>  
+    <button bindtap="commitData" class="cu-btn bg-green margin-tb-sm lg">发布任务</button>
   </view>
 
 
