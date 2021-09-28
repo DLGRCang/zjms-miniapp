@@ -31,14 +31,19 @@ Page({
       url: '../taskInfo/taskInfo?id=' + JSON.stringify(e.currentTarget.dataset.id)
     })
   },
+  goTaskFkInfo(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '../taskFkInfo/taskFkInfo?id=' + JSON.stringify(e.currentTarget.dataset.id)
+    })
+  },
   // 获取任务列表
   getTaskList() {
-    let id = wx.getStorageSync('taskUserInfo').taskPersonId
-    console.log(id)
     let data = {
-      "creator": this.data.id
+      "creator":  wx.getStorageSync('taskUserInfo').taskPersonId
     }
     util.requestData('taskinfo/taskinfolistrelease', 'GET', data).then(res => {
+      console.log(res)
       this.setData({
         taskList : res.data.rows 
       })
@@ -46,10 +51,9 @@ Page({
   },
   getFkList() {
     let data = {
-      "creator": this.data.id
+      "creator": wx.getStorageSync('taskUserInfo').taskPersonId
     }
     util.requestData('taskinfo/taskfkinfolistrelease', 'GET', data).then(res => {
-      console.log(res.data.rows)
       this.setData({
         taskFkList : res.data.rows 
       })

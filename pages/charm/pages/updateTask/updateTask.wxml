@@ -1,13 +1,13 @@
-<!--pages/charm/pages/publishTaskForm/publishTaskForm.wxml-->
+<!--pages/charm/pages/updateTask.wxml-->
 <text>pages/charm/pages/publishTaskForm/publishTaskForm.wxml</text>
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-  <view slot="content">任务发布</view>
+  <view slot="content">任务修改</view>
 </cu-custom>
 <view class="padding-lr-lg">
 
   <view class="cu-form-group">
     <view class="title"><text class="text-red">* </text>任务名称：</view>
-    <input placeholder="请输入任务名称" bindinput="putData" data-key="taskName"></input>
+    <input placeholder="请输入任务名称" bindinput="putData" data-key="taskName" value="{{taskName}}"></input>
   </view>
   <view class="cu-form-group">
     <view class="title">部门选择</view>
@@ -69,7 +69,7 @@
 
   <view class="cu-form-group align-start">
     <view class="title"><text class="text-red">* </text>任务内容：</view>
-    <textarea maxlength="-1" placeholder="请输入任务内容" bindinput="putData" data-key="taskInfo"></textarea>
+    <textarea maxlength="-1" placeholder="请输入任务内容" bindinput="putData" data-key="taskInfo" value="{{taskInfo}}"></textarea>
   </view>
 
   <view class="cu-form-group padding-left-sm align-start padding-top-sm">
@@ -87,9 +87,9 @@
   <view class="cu-form-group padding-left align-start ">
     <view class="title padding-top-lg">任务图片：</view>
     <view class="grid col-3 grid-square flex-sub padding-top-sm">
-      <view class="bg-img" wx:for="{{vehicleImages}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
-        data-url="{{vehicleImages[index]}}">
-        <image src='{{vehicleImages[index]}}' mode='aspectFill'></image>
+      <view class="bg-img" wx:for="{{vehicleImagesId}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+        data-url="{{imgUrl}}{{vehicleImagesId[index]}}">
+        <image src='{{imgUrl}}{{vehicleImagesId[index]}}' mode='aspectFill'></image>
         <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
           <text class="cuIcon-close"></text>
         </view>
@@ -102,7 +102,7 @@
 
   <!-- 提交 -->
   <view class="padding flex flex-direction">
-    <button bindtap="commitData" class="cu-btn bg-green margin-tb-sm lg">发布任务</button>
+    <button bindtap="commitData" class="cu-btn bg-green margin-tb-sm lg">修改任务</button>
   </view>
 
 

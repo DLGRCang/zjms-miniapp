@@ -75,7 +75,9 @@
 				"pages/userTask/userTask",
 				"pages/publishTaskForm/publishTaskForm",
 				"pages/taskInfo/taskInfo",
-				"pages/taskFk/taskFk"
+				"pages/taskFkInfo/taskFkInfo",
+				"pages/taskFk/taskFk",
+				"pages/updateTask/updateTask"
 			]
 		},
 		{
@@ -329,7 +331,8 @@
 		"type-picker": "/components/type-picker/type-picker",
 		"type-picker-thing": "/components/type-picker-thing/type-picker-thing",
 		"bottom": "/components/bottom/bottom",
-		"bottoms": "/components/bottoms/bottoms"
+		"bottoms": "/components/bottoms/bottoms",
+		"date-time-picker": "/components/date-time-picker/date-time-picker"
 	},
 	"sitemapLocation": "sitemap.json",
 	"enablePullDownRefresh": true

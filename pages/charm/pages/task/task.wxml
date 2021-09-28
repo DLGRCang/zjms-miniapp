@@ -11,7 +11,7 @@
     <view class="flex flex-direction margin-top margin-bottom-xl" style="width:100%">
       <text class="text-xl text-bold">姓名：</text>
       <input bindinput="putData" class="margin-top text-xl " data-key="name" value="{{name}}" disabled />
-
+<!-- disabled -->
       <text class="text-xl margin-top-xl text-bold">身份证号：</text>
       <input bindinput="putData" class="margin-top text-xl " data-key="idCard" value="{{idCard}}" disabled />
 

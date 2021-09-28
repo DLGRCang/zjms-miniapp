@@ -62,5 +62,11 @@
       <image src="{{imgUrl}}{{item}}" mode="aspectFill"></image>
     </view>
   </block>
-
+  <view wx:if="{{isAdmin}}" bindtap="goTaskFk" data-id="{{task.taskInfoId}}" data-name="{{task.taskname}}">
+    <button class="bg-green margin-tb-sm margin-top-xl">反馈</button>
+  </view>
+  <view style="display:flex" class="margin-top-lg"  wx:else>
+    <button bindtap="deleteTask" class="bg-red margin-tb-sm margin-top-xl padding-lr-xl">删除</button>
+    <button bindtap="updateTask" class="bg-green margin-tb-sm margin-top-xl padding-lr-xl">修改</button>
+  </view>
 </view>

@@ -33,6 +33,7 @@ Page({
     }
     // 登录
     util.requestData('taskperson/gettaskpersonInforelease', 'GET', data).then(res => {
+      console.log("*******登录********")
       console.log(res.data)
       wx.setStorageSync('taskUserInfo', res.data)
       wx.setStorageSync('taskUserPhone', this.data.phone)

@@ -1,0 +1,7 @@
+/* pages/charm/pages/taskInfo/taskInfo.wxss */
+.box{ 
+  background-color: rgb(235, 232, 229);
+  border: 1rpx solid #F5F5F5;
+  padding: 20rpx;
+  border-radius: 8rpx;
+ } 

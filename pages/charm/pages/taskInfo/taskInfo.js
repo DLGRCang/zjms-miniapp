@@ -9,33 +9,89 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrl:'https://www.yjhlcity.com/InfoIssue/route/file/downloadfile/false/',
+    imgUrl:app.globalData.baseImgUrl,
     taskImg:[],
     taskaudio:'',
-    voiceStatus:'点击播放'
+    voiceStatus:'点击播放',
+    task:{},
+    isAdmin:false,
   },
   showVoice() {
+    console.log("*****播放语音***********"+ this.data.imgUrl+ this.data.taskaudio)
     let that = this
-    innerAudioContext.src = 'https://www.yjhlcity.com/InfoIssue/route/file/downloadfile/false/'+ this.data.taskaudio;
+    innerAudioContext.src = this.data.imgUrl+ this.data.taskaudio;
     innerAudioContext.play();
     innerAudioContext.onPlay(function () {
+      console.log("*****开始播放********")
       that.setData({
         voiceStatus: "  播放中..."
       })
     })
     innerAudioContext.onEnded(function () {
+      console.log("*****结束播放********")
       that.setData({
         voiceStatus: "  点击播放"
       })
     })
   },
 
+  //任务反馈
+  goTaskFk(e) {
+    wx.navigateTo({
+      url: '../taskFk/taskFk?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name
+    })
+  },
+  //任务修改
+  updateTask(e) {
+    wx.redirectTo({
+      url: '../updateTask/updateTask?obj=' + JSON.stringify(this.data.task)
+    })
+    // wx.navigateTo({
+    //   url: '../updateTask/updateTask?obj=' + JSON.stringify(this.data.task)
+    // })
+  
+  },
+   //任务删除
+  deleteTask(e) {
+    util.requestData('taskinfo/removetaskinforelease/'+this.data.task.taskInfoId, 'DELETE', {}).then(res => {
+      console.log("***********删除*********")
+      console.log(res)
+			if (res.statusCode == 200) {
+				wx.showToast({
+					title: "删除成功",
+					icon: 'success',
+					mask: true,
+					success(res) {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 2000)
+					}
+				});
+			} else {
+				wx.showToast({
+					title: "删除失败!",
+					icon: 'none',
+					mask: true,
+					success(res) {
+						setTimeout(() => {
+							wx.navigateBack({
+								delta: 1
+							})
+						}, 2000)
+					}
+				});
+			}
+		})
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
-    console.log(JSON.parse(options.id))
+    this.setData({
+      isAdmin:options.isAdmin
+    })
     if(JSON.parse(options.id).taskfile == ""|| JSON.parse(options.id).taskfile == null){
       this.setData({
         task:JSON.parse(options.id),

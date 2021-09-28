@@ -14,6 +14,12 @@ const formatDate = date => {
   const day = date.getDate()
   return [year, month, day].map(formatNumber).join('/')
 }
+const formatDate1 = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  return [year, month, day].map(formatNumber).join('-')
+}
 const getWeekByDate = dates => {
   let show_day = new Array('7', '1', '2', '3', '4', '5', '6');
   let date = new Date(dates);
@@ -51,12 +57,7 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-// let base = 'http://192.168.1.116:8004/InfoIssue/app/' //王益兴
-// let base = 'http://192.168.1.110:8004/InfoIssue/app/' //刘翔宇
-// let base = 'http://192.168.1.114:8004/InfoIssue/app/' //刘翔宇
-// let base = 'http://192.168.1.116:8004/InfoIssue/app/' //姜园 
-
-// let base = 'https://www.yjhlcity.com/InfoIssue/app/' //公司测试
+// let base = 'http://172.16.20.68:8004/InfoIssue/app/' //孟磊
 let base = 'https://www.yjhlcity.com/InfoIssue/app/' //公司正式
 let baseUrl = base + 'release/'
 let uploadFileUrl = base + 'file/uploadfile'//文件上传地址
@@ -488,6 +489,7 @@ const routePlan = function (name, lat, lng) {
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
+  formatDate1: formatDate1,
   getWeekByDate: getWeekByDate,
   requestApi: requestApi,
   requestData: requestData,

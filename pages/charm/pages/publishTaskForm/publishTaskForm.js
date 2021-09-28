@@ -15,7 +15,7 @@ Page({
     taskName: '',
     taskInfo: '',
     startDate: util.formatTime(new Date()),
-    endDate: util.formatDate(new Date()),
+    endDate: util.formatTime(new Date()),
 
     vehicleImages: [], //图片url
     vehicleImagesId: [], //图片
@@ -24,6 +24,13 @@ Page({
     soundRecording: '', //录音文件 
     voiceLong: '',
     voiceStatus: '',
+
+  },
+  handleChange(e) {
+    console.log(e)
+    this.setData({
+      value: e.detail.dateString
+    })
   },
   // 打开窗口
   showModal(e) {
@@ -38,19 +45,35 @@ Page({
     })
   },
   // 选择部门
-  deptSelect(e) {
-    console.log(e)
-    this.setData({
-      selectDepts: e.detail.value
-    })
-  },
-  deptNameSelect(e) {
+  // 选择部门
+	deptSelect(e) {
+		let ids = []
+		let names = []
+		for (let i = 0; i < e.detail.value.length; i++) {
+			ids.push(this.data.deptList[e.detail.value[i]].taskPersonId)
+			names.push(this.data.deptList[e.detail.value[i]].tname)
 
-    this.data.taskpersonIds.push(e.currentTarget.dataset.id)
-    this.data.taskpersonIds.concat(this.data.taskpersonIds)
+		}
+		this.setData({
+			selectDepts:names,
+			taskpersonIds:ids
+		})
+		console.log(this.data.selectDepts)
+		console.log(this.data.taskpersonIds)
+	},
+  // deptSelect(e) {
+  //   console.log(e)
+  //   this.setData({
+  //     selectDepts: e.detail.value
+  //   })
+  // },
+  // deptNameSelect(e) {
 
-    console.log(this.data.taskpersonIds)
-  },
+  //   this.data.taskpersonIds.push(e.currentTarget.dataset.id)
+  //   this.data.taskpersonIds.concat(this.data.taskpersonIds)
+
+  //   console.log(this.data.taskpersonIds)
+  // },
   // 确定
   determine() {
     let l = this.data.selectDepts.length
@@ -64,19 +87,18 @@ Page({
     }
   },
   PickerChange(e) {
-    console.log(e);
     this.setData({
       index: e.detail.value
     })
   },
   startDateChange(e) {
     this.setData({
-      startDate: e.detail.value
+      startDate: e.detail.dateString
     })
   },
   endDateChange(e) {
     this.setData({
-      endDate: e.detail.value
+      endDate: e.detail.dateString
     })
   },
   putData(e) {
@@ -113,7 +135,8 @@ Page({
       "creator": wx.getStorageSync('taskUserInfo').taskPersonId,
       "taskname": this.data.taskName,
       "tasksummary": this.data.taskInfo,
-      "tasktime": this.data.startDate,
+      "tasktime": this.data.endDate+"",
+      "gmt_create": this.data.startDate,
       "taskpersonname": this.data.selectDepts.join(","),
       "taskperson": this.data.taskpersonIds.join(","),
       "taskfile": this.data.vehicleImagesId.join(","),
@@ -121,9 +144,7 @@ Page({
     }
     console.log(data)
     util.requestData('taskinfo/savetaskinforelease', 'POST', data).then(res => {
-      console.log(res.data)
-      console.log(res.data == {})
-      if (res.data == {}) {
+      if (res.statusCode == 200) {
         wx.showToast({
           title: "发布成功",
           icon: 'success',
@@ -138,16 +159,16 @@ Page({
         });
       } else {
         wx.showToast({
-          title: "发布成功!",
+          title: "发布失败!",
           icon: 'none',
           mask: true,
-          success(res) {
-            setTimeout(() => {
-              wx.navigateBack({
-                delta: 1
-              })
-            }, 2000)
-          }
+          // success(res) {
+          //   setTimeout(() => {
+          //     wx.navigateBack({
+          //       delta: 1
+          //     })
+          //   }, 2000)
+          // }
         });
       }
     })
@@ -293,6 +314,8 @@ Page({
  * 生命周期函数--监听页面加载
  */
   onLoad: function (options) {
+
+
     this.setData({
       taskpersonIds: [],
       selectDepts: []

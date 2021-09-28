@@ -18,14 +18,14 @@
         </picker> 
     </view> 
  
-    <view class="cu-form-group"> 
+    <!-- <view class="cu-form-group"> 
         <view class="title">任务反馈时间</view> 
         <picker mode="date" value="{{date}}" start="{{endDate}}" end="2220-01-01" bindchange="dateChange"> 
             <view class="picker"> 
                 {{endDate}} 
             </view> 
         </picker> 
-  </view> 
+  </view>  -->
  
     <view class="cu-form-group align-start"> 
         <view class="title"><text class="text-red">*</text>任务完成情况：</view> 

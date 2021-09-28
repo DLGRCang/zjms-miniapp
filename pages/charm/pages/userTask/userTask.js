@@ -28,11 +28,11 @@ Page({
   },
   // 获取任务列表
   getTaskList() {
+
     let data = {
-      "taskperson": this.data.id
+      "taskperson": wx.getStorageSync('taskUserInfo').taskPersonId
     }
     util.requestData('taskinfo/taskinfolqlistrelease', 'GET', data).then(res => {
-      console.log(res.data.rows)
       this.setData({
         taskList: res.data.rows
       })
@@ -40,10 +40,9 @@ Page({
   },
   getFkList() {
     let data = {
-      "creator": this.data.id
+      "creator": wx.getStorageSync('taskUserInfo').taskPersonId
     }
     util.requestData('taskinfo/tasklqfkinfolistrelease', 'GET', data).then(res => {
-      console.log(res.data.rows)
       this.setData({
         taskFkList: res.data.rows
       })
@@ -52,14 +51,16 @@ Page({
   goTaskInfo(e) {
     console.log(e)
     wx.navigateTo({
-      url: '../taskInfo/taskInfo?id=' + JSON.stringify(e.currentTarget.dataset.id)
+      url: '../taskInfo/taskInfo?id=' + JSON.stringify(e.currentTarget.dataset.id)+"&isAdmin=true"
     })
   },
-  goTaskFk(e) {
+  goTaskFkInfo(e) {
+    console.log(e)
     wx.navigateTo({
-      url: '../taskFk/taskFk?id=' + e.currentTarget.dataset.id + '&name=' + e.currentTarget.dataset.name
+      url: '../taskFkInfo/taskFkInfo?id=' + JSON.stringify(e.currentTarget.dataset.id)
     })
   },
+  
   goVideo(e) {
     wx.navigateTo({
       url: '/pages/government/pages/eachFlagTownXY/eachFlagTownXY?num=' + 9083648674,

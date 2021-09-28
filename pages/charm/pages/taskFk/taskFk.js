@@ -9,7 +9,7 @@ Page({
   data: {
     vehicleImages: [], //图片url
     vehicleImagesId: [], //图片
-    endDate: util.formatDate(new Date()),
+    // endDate: util.formatDate(new Date()),
     persent: ['10%', '20%', '30%', '40%', '50%', '60%', '70%', '80%', '90%', '100%'],
     taskName:'',
     taskID:'',
@@ -25,11 +25,11 @@ Page({
       taskjd: this.data.persent[e.detail.value]
     })
   },
-  dateChange(e) {
-    this.setData({
-      endDate: e.detail.value
-    })
-  },
+  // dateChange(e) {
+  //   this.setData({
+  //     endDate: e.detail.value
+  //   })
+  // },
   putData(e) {
     let key = e.currentTarget.dataset.key
     console.log(key)
@@ -51,9 +51,9 @@ Page({
     console.log(data)
     util.requestData('taskinfo/fankuirelease', 'POST', data).then(res => {
       console.log(res)
-      if (res.data == {}) {
+      if (res.statusCode == 200) {
         wx.showToast({
-          title: "发布成功",
+          title: "反馈成功",
           icon: 'success',
           mask: true,
           success(res) {
@@ -69,13 +69,13 @@ Page({
           title: "服务器异常，请稍后再试",
           icon: 'none',
           mask: true,
-          success(res) {
-            setTimeout(() => {
-              wx.navigateBack({
-                delta: 1
-              })
-            }, 2000)
-          }
+          // success(res) {
+          //   setTimeout(() => {
+          //     wx.navigateBack({
+          //       delta: 1
+          //     })
+          //   }, 2000)
+          // }
         });
       }
     })
@@ -91,6 +91,7 @@ Page({
       let imgUrl = res.tempFilePaths[0]
       util.uploadFile(imgUrl, 'image')
         .then(res => {
+          console.log(res)
           if (res.statusCode == 200) {
             let obj = JSON.parse(res.data)
             console.log(obj)
