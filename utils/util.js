@@ -58,6 +58,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 // let base = 'http://172.16.20.68:8004/InfoIssue/app/' //孟磊
+// let base = 'http://192.168.0.7:8004/InfoIssue/app/' //刘翔宇
 let base = 'https://www.yjhlcity.com/InfoIssue/app/' //公司正式
 let baseUrl = base + 'release/'
 let uploadFileUrl = base + 'file/uploadfile'//文件上传地址

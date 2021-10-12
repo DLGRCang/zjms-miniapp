@@ -5,13 +5,13 @@
 <view class="padding-lr-lg">
   <dot-title title="资料下载" color="title-color"></dot-title>
 
-  <view class="box margin-bottom-sm" wx:for="{{3}}">
+  <view class="box margin-bottom-sm" wx:for="{{dataList}}">
     <view class="flex justify-between">
       <view>
-        <view class="margin-bottom-sm text-xl">资料名称</view>
-        <view class="text-sm text-grey">下载次数：10次</view>
+        <view class="margin-bottom-sm text-xl">{{item.dataName}}</view>
+        <view class="text-sm text-grey">下载次数：{{item.downloadCount}}次</view>
       </view>
-      <view class="click">下载</view>
+      <view class="click" bindtap="loadFile" data-url="{{item.fileLink}}" data-id="{{item.dataDownloadId}}">下载</view>
     </view>
   </view>
 

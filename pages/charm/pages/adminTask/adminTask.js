@@ -32,7 +32,6 @@ Page({
     })
   },
   goTaskFkInfo(e) {
-    console.log(e)
     wx.navigateTo({
       url: '../taskFkInfo/taskFkInfo?id=' + JSON.stringify(e.currentTarget.dataset.id)
     })
@@ -43,7 +42,6 @@ Page({
       "creator":  wx.getStorageSync('taskUserInfo').taskPersonId
     }
     util.requestData('taskinfo/taskinfolistrelease', 'GET', data).then(res => {
-      console.log(res)
       this.setData({
         taskList : res.data.rows 
       })

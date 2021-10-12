@@ -104,11 +104,12 @@ Page({
     //创建内部 audio 上下文 InnerAudioContext 对象。
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.onError(function (res) {
+      console.log("语音播放失败");
       console.log(res);
-      wx.showToast({
-        title: '语音播放失败',
-        icon: 'none',
-      })
+      // wx.showToast({
+      //   title: '语音播放失败',
+      //   icon: 'none',
+      // })
     })
   },
 

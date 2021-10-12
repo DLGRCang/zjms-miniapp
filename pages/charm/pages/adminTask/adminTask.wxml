@@ -14,38 +14,38 @@
 
   <block wx:if="{{TabCur === 0}}">
     <view class="margin-tb-sm box" wx:for="{{taskList}}" wx:key="item" bindtap="goTaskInfo" data-id="{{item}}">
-      <view class="text-bold text-xl">
+      <view class="text-bold text-lg">
         {{item.taskname}}
       </view>
       <view class="margin-tb-sm">
         <text class="cuIcon-title text-blue"></text>执行部门/执行人
       </view>
-      <view class="margin-tb-sm text-grey">
+      <view class=" margin-bottom-lg text-grey margin-left-sm">
         {{item.taskpersonname}}
       </view>
       <view class="margin-tb-sm">
         <text class="cuIcon-title text-blue"></text>任务时间
       </view>
-      <view class="text-grey text-sm">
+      <view class="text-grey  margin-left-sm">
         {{item.tasktime}}
       </view>
     </view>
   </block>
   <block wx:if="{{TabCur === 1}}">
     <view  bindtap="goTaskFkInfo" data-id="{{item}}" class="margin-tb-sm box" wx:for="{{taskFkList}}" wx:key="item">
-      <view class="text-bold text-xl">
+      <view class="text-bold text-lg">
         {{item.taskname}}
       </view>
       <view class="margin-tb-sm">
         <text class="cuIcon-title text-blue"></text>执行部门/执行人
       </view>
-      <view class="margin-tb-sm text-grey">
+      <view class="margin-bottom-lg text-grey margin-left-sm">
         {{item.taskperson}}
       </view>
       <view class="margin-tb-sm">
         <text class="cuIcon-title text-blue"></text>反馈时间
       </view>
-      <view class="text-grey text-sm">
+      <view class=" text-grey margin-left-sm">
         {{item.gmt_create}}
       </view>
 
@@ -57,7 +57,7 @@
 
 
 </view>
-<view class="flexButton bg-gray">
-  <button class="bg-green " bindtap="publishTaskForm" data-id="{{id}}">发布任务</button>
-  <button class="bg-green " bindtap="goVideo">视频会议</button>
+<view class="flexButton">
+  <button class="bg-green btn" bindtap="publishTaskForm" data-id="{{id}}">发布任务</button>
+  <button class="bg-green btn" bindtap="goVideo">视频会议</button>
 </view>

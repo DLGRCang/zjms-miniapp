@@ -19,12 +19,18 @@ Page({
 		dataList2: [], //敬老院列表
 		tit:''
 	},
-	goInfo:function(e){
-		wx.navigateTo({
-			url: "/pages/componentPage/pages/oldHome/oldHome?infoContentId="+ e.currentTarget.dataset.id,
-		})
-	},
-
+	// goInfo:function(e){
+	// 	wx.navigateTo({
+	// 		url: "/pages/componentPage/pages/oldHome/oldHome?infoContentId="+ e.currentTarget.dataset.id,
+	// 	})
+	// },
+  goDetail(e){
+		console.log('----------------')
+		console.log(e)
+    wx.navigateTo({
+      url: "/pages/publish/pages/newsDetail/newsDetail?info_content=" + e.currentTarget.dataset.obj.info_content + "&info_source=" + e.currentTarget.dataset.obj.info_source + "&publishdate=" + e.currentTarget.dataset.obj.publishdate + "&info_videos=" + encodeURIComponent(e.currentTarget.dataset.obj.info_videos) + "&info_detail=" + encodeURIComponent(e.currentTarget.dataset.obj.info_detail),
+    })
+  },
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

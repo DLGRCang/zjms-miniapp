@@ -1,7 +1,7 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
   <view slot="content">任务列表</view>
 </cu-custom>
-<view class="padding-lr-lg padding-bottom">
+<view class="padding-lr-lg" style="padding-bottom:180rpx">
   <scroll-view scroll-x class="nav margin-bottom-lg">
     <view class="flex text-center">
       <view class="cu-item flex-sub {{index==TabCur?'color cur':''}}" wx:for="{{status}}" wx:key bindtap="tabSelect"
@@ -14,19 +14,19 @@
   <block wx:for="{{taskList}}" wx:key="item" wx:if="{{TabCur === 0}}">
     <view bindtap="goTaskInfo" data-id="{{item}}" class="margin-tb-sm box flex justify-between">
       <view >
-        <view class="text-bold text-xl">
+        <view class="text-bold text-lg">
           {{item.taskname}}
         </view>
         <view class="margin-tb-sm">
           <text class="cuIcon-title text-blue"></text>执行部门/执行人
         </view>
-        <view class="margin-tb-sm text-grey">
+        <view class="margin-bottom-lg margin-left-sm text-grey">
           {{item.taskpersonname}}
         </view>
         <view class="margin-tb-sm">
           <text class="cuIcon-title text-blue"></text>任务时间
         </view>
-        <view class="text-grey text-sm">
+        <view class="text-grey text-sm  margin-left-sm">
           {{item.tasktime}}
         </view>
       </view>
@@ -37,19 +37,19 @@
   </block>
   <block wx:if="{{TabCur === 1}}">
     <view bindtap="goTaskFkInfo" data-id="{{item}}" class="margin-tb-sm box" wx:for="{{taskFkList}}" wx:key="item">
-      <view class="text-bold text-xl">
+      <view class="text-bold text-lg">
         {{item.taskname}}
       </view>
       <view class="margin-tb-sm">
         <text class="cuIcon-title text-blue"></text>执行部门/执行人
       </view>
-      <view class="margin-tb-sm text-grey">
+      <view class=" margin-bottom-lg text-grey margin-left-sm">
         {{item.taskperson}}
       </view>
       <view class="margin-tb-sm">
         <text class="cuIcon-title text-blue"></text>反馈时间
       </view>
-      <view class="text-grey text-sm">
+      <view class="text-grey text-sm  margin-left-sm">
         {{item.gmt_create}}
       </view>
 
@@ -57,7 +57,7 @@
   </block>
 
 
-  <view class="flexButton bg-gray">
-    <button class="bg-green " bindtap="goVideo">视频会议</button>
+  <view class="flexButton">
+    <button class="bg-green btn" bindtap="goVideo">视频会议</button>
   </view>
 </view>

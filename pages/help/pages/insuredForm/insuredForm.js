@@ -8,15 +8,131 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgList: [],
-    imageArr: [],
-    fileState: '点击添加',
-    userName: '', //申请人姓名
-    userPhone: '', //申请人联系方式
-    userCard: '',
-    userArea: '',
-    userAddress: '',
-    applyFile: '', //申请人材料（,隔开的字符串）
+    alimony: 0,
+    annualHouseholdDisposableIncome: 0,
+    bzzyhj: 0,
+    commoditHousingNum: 0,
+    endowmentInsurance: 0,
+    familyAnnualDeduction: 0,
+    farmingIncome: 0,
+    grossOperatingIncome: 0,
+    grossPropertyIncome: 0,
+    grossWageIncome: 0,
+    healthInsurance: 0,
+    houseRent: 0,
+    housingProvidentFund: 0,
+    interestSavings: 0,
+    landIncome: 0,
+    landSubleased: 0,
+    mbzykbx: 0,
+    oldAgePension: 0,
+    otherIncome: 0,
+    otherPropertyIncome: 0,
+    otherTransferIncome: 0,
+    otherWageIncome: 0,
+    peopleNum: 0,
+    perCapitaIncome: 0,
+    qtjbtyjtcy: 0,
+    rationAllowance: 0,
+    residenceNum: 0,
+    retirementAllowance: 0,
+    returnPlough: 0,
+    socialInsurance: 0,
+    speciaHardshipFamilyNum: 0,
+    totalTransferIncome: 0,
+    workersIncome: 0,
+    zxdxszc: 0,
+    bankDeposit: '',
+    cejzje: '',
+    collection: '',
+    commercialInsurance: '',
+    commercialTenant: '',
+    commodityHousing: '',
+    debenture: '',
+    fineArt: '',
+    headHouseholdName: '',
+    placeDomicile: '',
+    presentAddress: '',
+    residence: '',
+    securities: '',
+    speciaHardshipFamily: '',
+  },
+  commitData() {
+    let data = {
+      state: '未审核',
+      userId: wx.getStorageSync('userId'),
+      alimony: this.data.alimony,
+      annualHouseholdDisposableIncome: this.data.annualHouseholdDisposableIncome,
+      bzzyhj: this.data.bzzyhj,
+      commoditHousingNum: this.data.commoditHousingNum,
+      endowmentInsurance: this.data.endowmentInsurance,
+      familyAnnualDeduction: this.data.familyAnnualDeduction,
+      farmingIncome: this.data.farmingIncome,
+      grossOperatingIncome: this.data.grossOperatingIncome,
+      grossPropertyIncome: this.data.grossPropertyIncome,
+      grossWageIncome: this.data.grossWageIncome,
+      healthInsurance: this.data.healthInsurance,
+      houseRent: this.data.houseRent,
+      housingProvidentFund: this.data.housingProvidentFund,
+      interestSavings: this.data.interestSavings,
+      landIncome: this.data.landIncome,
+      landSubleased: this.data.landSubleased,
+      mbzykbx: this.data.mbzykbx,
+      oldAgePension: this.data.oldAgePension,
+      otherIncome: this.data.otherIncome,
+      otherPropertyIncome: this.data.otherPropertyIncome,
+      otherTransferIncome: this.data.otherTransferIncome,
+      otherWageIncome: this.data.otherWageIncome,
+      peopleNum: this.data.peopleNum,
+      perCapitaIncome: this.data.perCapitaIncome,
+      qtjbtyjtcy: this.data.qtjbtyjtcy,
+      rationAllowance: this.data.rationAllowance,
+      residenceNum: this.data.residenceNum,
+      retirementAllowance: this.data.retirementAllowance,
+      returnPlough: this.data.returnPlough,
+      socialInsurance: this.data.socialInsurance,
+      speciaHardshipFamilyNum: this.data.speciaHardshipFamilyNum,
+      totalTransferIncome: this.data.totalTransferIncome,
+      workersIncome: this.data.workersIncome,
+      zxdxszc: this.data.zxdxszc,
+      bankDeposit: this.data.bankDeposit,
+      cejzje: this.data.cejzje,
+      collection: this.data.collection,
+      commercialInsurance: this.data.commercialInsurance,
+      commercialTenant: this.data.commercialTenant,
+      commodityHousing: this.data.commodityHousing,
+      debenture: this.data.debenture,
+      fineArt: this.data.fineArt,
+      headHouseholdName: this.data.headHouseholdName,
+      placeDomicile: this.data.placeDomicile,
+      presentAddress: this.data.presentAddress,
+      residence: this.data.residence,
+      securities: this.data.securities,
+      speciaHardshipFamily: this.data.speciaHardshipFamily,
+    }
+    console.log(data)
+    util.requestApi('lowinsured/savelowinsured', 'POST', data).then(res => {
+      console.log(res)
+      if (res.statusCode == 200) {
+        wx.showToast({
+          title: "提交成功",
+          icon: 'success',
+          mask: true,
+          success(res) {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 1000)
+          }
+        });
+      } else {
+        wx.showToast({
+          title: '提交失败请检查数据',
+          icon: 'error',
+        })
+      }
+    });
   },
   putData(e) {
     let key = e.currentTarget.dataset.key
@@ -25,109 +141,7 @@ Page({
       [key]: e.detail.value
     })
   },
-  addFile() {
-    let that = this
-    wx.chooseMessageFile({
-      count: 1,
-      type: 'file',
-      success(res) {
-        const tempFilePash = res.tempFiles[0].path
-        util.uploadFile1(tempFilePash, 'file').then(res => {
-          console.log(res)
-          if (res.statusCode == 200) {
-            let obj = JSON.parse(res.data)
 
-            that.setData({
-              fileState: '上传成功',
-              applyFile: obj.data,
-
-            })
-          } else {
-            that.setData({
-              fileState: '上传失败',
-            })
-          }
-        });
-      }
-    })
-  },
-  //图片上传
-  ChooseImage() {
-    wx.chooseImage({
-      count: 4, //默认9
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success: (res) => {
-        let filePath = res.tempFilePaths[0]
-        wx.getFileSystemManager().readFile({
-          filePath: res.tempFilePaths[0], //选择图片返回的相对路径
-          encoding: 'base64', //编码格式
-          success: res => { //成功的回调
-            if (this.data.imageArr.length != 0) {
-              this.setData({
-                imgList: this.data.imgList.concat(filePath),
-                imageArr: this.data.imageArr.concat('data:image/png;base64' + ',' + res.data),
-              })
-            } else {
-              this.setData({
-                imgList: [filePath],
-                imageArr: ['data:image/png;base64' + ',' + res.data],
-              })
-            }
-          }
-        })
-      }
-    });
-  },
-  ViewImage(e) {
-    wx.previewImage({
-      urls: this.data.imgList,
-      current: e.currentTarget.dataset.url
-    });
-  },
-  DelImg(e) {
-    wx.showModal({
-      // title: '召唤师',
-      content: '确定要删除吗？',
-      cancelText: '再想想',
-      confirmText: '确定',
-      success: res => {
-        if (res.confirm) {
-          this.data.imgList.splice(e.currentTarget.dataset.index, 1);
-          this.setData({
-            imgList: this.data.imgList
-          })
-        }
-      }
-    })
-  },
-  commitData() {
-    let data = {
-      userId: wx.getStorageSync("userId"), //用户id
-      userName: this.data.userName,
-      userPhone: this.data.userPhone,
-      applyFile: this.data.applyFile,
-      userCard: this.data.userCard,
-      userArea: this.data.userArea,
-      userAddress: this.data.userArea,
-    }
-    util.checkIdCard(this.data.userCard)
-    util.checkPhone(this.data.userPhone)
-    if (this.data.userName == '' || this.data.userName == null) {
-      util.showToast('姓名不能为空')
-      return
-    }
-    if (this.data.userArea == '' || this.data.userArea == null) {
-      util.showToast('现居住地址不能为空')
-      return
-    }
-    if (this.data.userAddress == '' || this.data.userAddress == null) {
-      util.showToast('户籍所在地不能为空')
-      return
-    }
-    util.returnCode(200, 200, 2)
-
-  },
   /**
    * 生命周期函数--监听页面加载
    */

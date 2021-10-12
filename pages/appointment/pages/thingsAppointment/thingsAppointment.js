@@ -14,23 +14,23 @@ Page({
     let url = 'https://www.yjhlcity.com/InfoIssue/app/release/queue/getStatus';
     util.httpRequest(url, 'GET', {}).then(res => {
       console.log(res.data)
-      if (res.data.is_mock === 1) {
-        wx.showToast({
-          title: '服务器开小差了',
-          icon: 'none',
-          success(res) {
-            setTimeout(() => {
-              wx.navigateBack({
-                delta: 1
-              })
-            }, 3000)
-          }
-        })
-      } else {
+      // if (res.data.is_mock === 1) {
+      //   wx.showToast({
+      //     title: '服务器开小差了',
+      //     icon: 'none',
+      //     success(res) {
+      //       setTimeout(() => {
+      //         wx.navigateBack({
+      //           delta: 1
+      //         })
+      //       }, 3000)
+      //     }
+      //   })
+      // } else {
         this.setData({
           waitInfo: res.data
         })
-      }
+      // }
     });
   },
   /**

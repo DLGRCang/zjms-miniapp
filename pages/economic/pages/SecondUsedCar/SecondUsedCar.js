@@ -35,28 +35,28 @@ Page({
 	},
 	//提交数据
 	commitData() {
-		if (this.data.addressOfCarchangeTheNumber == '' || this.data.addressOfCarchangeTheNumber == null) {
+		if (this.data.changeTheNumber == '' || this.data.changeTheNumber == null) {
 			wx.showToast({
 				title: '过户次数不能为空',
 				icon: 'none',
 			})
 			return
 		}
-		if (this.data.addressOfCarlinkman == '' || this.data.addressOfCarlinkman == null) {
+		if (this.data.linkman == '' || this.data.linkman == null) {
 			wx.showToast({
 				title: '联系人不能为空',
 				icon: 'none',
 			})
 			return
 		}
-		if (this.data.addressOfCarcontactNumber == '' || this.data.addressOfCarcontactNumber == null) {
+		if (this.data.contactNumber == '' || this.data.contactNumber == null) {
 			wx.showToast({
 				title: '联系电话不能为空',
 				icon: 'none',
 			})
 			return
 		}
-		if (this.data.addressOfCarlocationLicence == '' || this.data.addressOfCarlocationLicence == null) {
+		if (this.data.locationLicence == '' || this.data.locationLicence == null) {
 			wx.showToast({
 				title: '牌照所在地不能为空',
 				icon: 'none',

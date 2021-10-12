@@ -28,6 +28,10 @@ Page({
 		voiceLong: '',
 		voiceStatus: '',
 
+		selectGroup:[],//选中的分组
+    selectGrouppname:[],//选中的分组中的人
+    selectGroupids:[],//选中的分组中人的列表
+
 	},
 	handleChange(e) {
 		console.log(e)
@@ -61,10 +65,24 @@ Page({
 			selectDepts:names,
 			taskpersonIds:ids
 		})
-		console.log(this.data.selectDepts)
-		console.log(this.data.taskpersonIds)
-	},
 
+	},
+// 选择分组
+groupSelect(e) {
+	let ids = []
+	let names = []
+	let pnames = []
+	for (let i = 0; i < e.detail.value.length; i++) {
+		ids.push(this.data.groupList[e.detail.value[i]].grouppersonids)
+		names.push(this.data.groupList[e.detail.value[i]].groupname)
+		pnames.push(this.data.groupList[e.detail.value[i]].grouppersonnames)
+	}
+	this.setData({
+		selectGroup: names,
+		selectGroupids: ids,
+		selectGrouppname: pnames
+	})
+},
 	// 确定
 	determine() {
 		let l = this.data.selectDepts.length
@@ -77,6 +95,18 @@ Page({
 			this.hideModal()
 		}
 	},
+	 // 确定分组
+   determine1() {
+    let l = this.data.selectGroup.length
+    if (l === 0) {
+      wx.showToast({
+        title: '请选择分组',
+        icon: 'none'
+      })
+    } else {
+      this.hideModal()
+    }
+  },
 	PickerChange(e) {
 		this.setData({
 			index: e.detail.value
@@ -128,14 +158,15 @@ Page({
 			"tasksummary": this.data.taskInfo,
 			"tasktime": this.data.endDate + "",
 			"gmt_create": this.data.startDate,
-			"taskpersonname": this.data.selectDepts.join(","),
-			"taskperson": this.data.taskpersonIds.join(","),
+	 // "taskpersonname": this.data.selectDepts.join(","),
+	 "taskpersonname": Array.from(new Set(this.data.selectDepts.concat(this.data.selectGrouppname.join(',').split(',')))).join(','),
+	 // "taskperson": this.data.taskpersonIds.join(",")+','+ this.data.selectGroupids.join(","),
+	 "taskperson": Array.from(new Set(this.data.taskpersonIds.concat(this.data.selectGroupids.join(',').split(',')))).join(','),
 			"taskfile": this.data.vehicleImagesId.join(","),
 			"taskaudio": this.data.soundRecording
 		}
 		console.log(data)
 		util.requestData('taskinfo/updatetaskinforelease/' + this.data.taskInfoId, 'PUT', data).then(res => {
-			console.log("********************")
 			console.log(res)
 			if (res.statusCode == 200) {
 				wx.showToast({
@@ -347,8 +378,17 @@ Page({
 		//   selectDepts: []
 		// })
 		this.getDeptsList()
+		this.getGroup()
 	},
-
+// 获取分组
+getGroup() {
+	util.requestData('taskgroup/listtaskgrouprelease', 'GET', {}).then(res => {
+		console.log(res.data)
+		this.setData({
+			groupList: res.data
+		})
+	})
+},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

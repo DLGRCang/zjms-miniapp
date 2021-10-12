@@ -13,11 +13,16 @@
     <view class="title">部门选择</view>
     <button class="cu-btn bg-green shadow round" bindtap="showModal" data-target="RadioModal">请选择</button>
   </view>
-
   <view class="cu-form-group" wx:if="{{selectDepts.length>0}}">
     <view class="text-grey"> {{selectDepts}}</view>
   </view>
-
+  <view class="cu-form-group">
+    <view class="title">分组选择</view>
+    <button class="cu-btn bg-green shadow round" bindtap="showModal" data-target="RadioModal1">请选择</button>
+  </view>
+  <view class="cu-form-group" wx:if="{{selectGroup.length>0}}">
+    <view class="text-grey"> {{selectGroup}}</view>
+  </view>
   <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" style="margin-top: 110rpx;">
     <scroll-view scroll-y='true' class="cu-dialog" catchtap style=" height: 80%;margin-bottom: 170rpx;">
 
@@ -44,7 +49,25 @@
         <button class="cu-btn bg-green margin-left-lg lg" bindtap="determine">确定</button>
       </view>
     </scroll-view>
-
+  </view>
+  <view class="cu-modal {{modalName=='RadioModal1'?'show':''}}" style="margin-top: 110rpx;">
+    <scroll-view scroll-y='true' class="cu-dialog" catchtap style=" height: 80%;margin-bottom: 170rpx;">
+      <checkbox-group class="block" bindchange="groupSelect">
+        <view class="cu-list menu text-left">
+          <view class="cu-item" wx:for="{{groupList}}" wx:key="item"
+            data-id="{{item.grouppersonids}}">
+            <label class="flex justify-between align-center flex-sub">
+              <view class="flex-sub">{{item.groupname}}</view>
+              <checkbox class="round" value="{{index}}"></checkbox>
+            </label>
+          </view>
+        </view>
+      </checkbox-group>
+      <view class="selectBtn">
+        <button class="cu-btn bg-green lg" bindtap="hideModal">取消</button>
+        <button class="cu-btn bg-green margin-left-lg lg" bindtap="determine1">确定</button>
+      </view>
+    </scroll-view>
   </view>
 
   <view class="cu-form-group" style="border-top: 1rpx solid #eee;">

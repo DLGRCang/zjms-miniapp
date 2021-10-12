@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据 
    */
   data: {
-    deptList: [],//部门
-    selectDepts: [],//选中的部门
+    deptList: [], //部门
+    selectDepts: [], //选中的部门
     taskpersonIds: [],
     index: 0,
     taskName: '',
@@ -24,6 +24,10 @@ Page({
     soundRecording: '', //录音文件 
     voiceLong: '',
     voiceStatus: '',
+    groupList:[],
+    selectGroup:[],//选中的分组
+    selectGrouppname:[],//选中的分组中的人
+    selectGroupids:[],//选中的分组中人的列表
 
   },
   handleChange(e) {
@@ -45,41 +49,52 @@ Page({
     })
   },
   // 选择部门
-  // 选择部门
-	deptSelect(e) {
-		let ids = []
-		let names = []
-		for (let i = 0; i < e.detail.value.length; i++) {
-			ids.push(this.data.deptList[e.detail.value[i]].taskPersonId)
-			names.push(this.data.deptList[e.detail.value[i]].tname)
-
-		}
-		this.setData({
-			selectDepts:names,
-			taskpersonIds:ids
-		})
-		console.log(this.data.selectDepts)
-		console.log(this.data.taskpersonIds)
-	},
-  // deptSelect(e) {
-  //   console.log(e)
-  //   this.setData({
-  //     selectDepts: e.detail.value
-  //   })
-  // },
-  // deptNameSelect(e) {
-
-  //   this.data.taskpersonIds.push(e.currentTarget.dataset.id)
-  //   this.data.taskpersonIds.concat(this.data.taskpersonIds)
-
-  //   console.log(this.data.taskpersonIds)
-  // },
+  deptSelect(e) {
+    let ids = []
+    let names = []
+    for (let i = 0; i < e.detail.value.length; i++) {
+      ids.push(this.data.deptList[e.detail.value[i]].taskPersonId)
+      names.push(this.data.deptList[e.detail.value[i]].tname)
+    }
+    this.setData({
+      selectDepts: names,
+      taskpersonIds: ids
+    })
+  },
+  // 选择分组
+  groupSelect(e) {
+    let ids = []
+    let names = []
+    let pnames = []
+    for (let i = 0; i < e.detail.value.length; i++) {
+      ids.push(this.data.groupList[e.detail.value[i]].grouppersonids)
+      names.push(this.data.groupList[e.detail.value[i]].groupname)
+      pnames.push(this.data.groupList[e.detail.value[i]].grouppersonnames)
+    }
+    this.setData({
+      selectGroup: names,
+      selectGroupids: ids,
+      selectGrouppname: pnames
+    })
+  },
   // 确定
   determine() {
     let l = this.data.selectDepts.length
     if (l === 0) {
       wx.showToast({
         title: '请选择部门',
+        icon: 'none'
+      })
+    } else {
+      this.hideModal()
+    }
+  },
+   // 确定分组
+   determine1() {
+    let l = this.data.selectGroup.length
+    if (l === 0) {
+      wx.showToast({
+        title: '请选择分组',
         icon: 'none'
       })
     } else {
@@ -131,17 +146,27 @@ Page({
       })
       return
     }
+    if (this.data.selectGroup.length === 0) {
+      wx.showToast({
+        title: '请选择分组',
+        icon: 'none'
+      })
+      return
+    }
     let data = {
       "creator": wx.getStorageSync('taskUserInfo').taskPersonId,
       "taskname": this.data.taskName,
       "tasksummary": this.data.taskInfo,
-      "tasktime": this.data.endDate+"",
+      "tasktime": this.data.endDate + "",
       "gmt_create": this.data.startDate,
-      "taskpersonname": this.data.selectDepts.join(","),
-      "taskperson": this.data.taskpersonIds.join(","),
+      // "taskpersonname": this.data.selectDepts.join(","),
+      "taskpersonname": Array.from(new Set(this.data.selectDepts.concat(this.data.selectGrouppname.join(',').split(',')))).join(','),
+      // "taskperson": this.data.taskpersonIds.join(",")+','+ this.data.selectGroupids.join(","),
+      "taskperson": Array.from(new Set(this.data.taskpersonIds.concat(this.data.selectGroupids.join(',').split(',')))).join(','),
       "taskfile": this.data.vehicleImagesId.join(","),
       "taskaudio": this.data.soundRecording
     }
+    console.log(this.data.selectGroupids.join(',').split(','))
     console.log(data)
     util.requestData('taskinfo/savetaskinforelease', 'POST', data).then(res => {
       if (res.statusCode == 200) {
@@ -175,11 +200,11 @@ Page({
 
   },
   // 搜索部门人员
-  searchDeptUser(e){
+  searchDeptUser(e) {
     console.log(e.detail.value)
     let data = {
       "istask": "0",
-      "keywords":e.detail.value
+      "keywords": e.detail.value
     }
     util.requestData('taskperson/applistTaskPersonrelease', 'GET', data).then(res => {
       console.log(res.data)
@@ -187,9 +212,16 @@ Page({
         deptList: res.data
       })
     })
-
   },
-
+  // 获取分组
+  getGroup() {
+    util.requestData('taskgroup/listtaskgrouprelease', 'GET', {}).then(res => {
+      console.log(res.data)
+      this.setData({
+        groupList: res.data
+      })
+    })
+  },
   // 获取任务列表
   getDeptsList() {
     let data = {
@@ -311,8 +343,8 @@ Page({
     })
   },
   /**
- * 生命周期函数--监听页面加载
- */
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
 
 
@@ -321,6 +353,7 @@ Page({
       selectDepts: []
     })
     this.getDeptsList()
+    this.getGroup()
   },
 
   /**

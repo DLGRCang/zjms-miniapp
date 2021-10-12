@@ -3,51 +3,199 @@
 </cu-custom>
 <view class="padding">
   <view class="cu-form-group">
-    <view class="title">姓名：</view>
-    <input placeholder="请输入申请人姓名" bindinput="putData" data-key="userName"></input>
+    <view class="title">户主姓名：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="headHouseholdName"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title">身份证号：</view>
-    <input type="number" placeholder="请输入身份证号" bindinput="putData" data-key="userCard"></input>
+    <view class="title">总工资收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="grossWageIncome"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title">联系方式：</view>
-    <input type="number" placeholder="请输入联系方式" bindinput="putData" data-key="userPhone"></input>
+    <view class="title">总财产收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="grossPropertyIncome"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title">现居住地址：</view>
-    <input  placeholder="请输入现居住地址" bindinput="putData" data-key="userArea"></input>
+    <view class="title">总经营收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="grossOperatingIncome"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title">户籍所在地：</view>
-    <input  placeholder="请输入户籍所在地" bindinput="putData" data-key="userAddress"></input>
+    <view class="title">城乡居民医疗保险：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="healthInsurance"></input>
   </view>
   <view class="cu-form-group">
-    <view class="title">申请材料：</view>
-    <view bindtap="addFile" class="padding-tb text-blue text-lg">{{fileState}}</view>
+    <view class="title">房屋出租出售收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="houseRent"></input>
   </view>
-  	<!-- 图片上传 -->
-	<view class="cu-bar bg-white">
-		<view class="action">
-			图片上传
-		</view>
-		<view class="action">
-			{{imgList.length}}/9
-		</view>
-	</view>
-	<view class="cu-form-group">
-		<view class="grid col-3 grid-square flex-sub">
-			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-				<image src='{{imgList[index]}}' mode='aspectFill'></image>
-				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
-					<text class="cuIcon-close"></text>
-				</view>
-			</view>
-			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<9}}">
-				<text class="cuIcon-cameraadd"></text>
-			</view>
-		</view>
-	</view>
+  <view class="cu-form-group">
+    <view class="title">住房公积金：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="housingProvidentFund"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">储蓄投资利息：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="interestSavings"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">土地经营(务农)收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="landIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">转租土地草牧场收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="landSubleased"></input>
+  </view>
+  <view class="flex flex-direction padding-lr">
+    <view class="title">慢病住院可报销的个人实际自付部分或其他疾病，同一家庭成员同一年患同一种疾病住院治疗可报销得到个人自付部分（5000元以上）：</view>
+    <input class="input" type="number" placeholder="请输入" bindinput="putData" data-key="mbzykbx"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">养老金收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="oldAgePension"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">其他经营收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="otherIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">其他财产收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="otherPropertyIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">其他转移性收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="otherTransferIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">其他工资收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="otherWageIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">认定人数：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="peopleNum"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">人均收入(元)人/月：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="perCapitaIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">养殖收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="farmingIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">家庭年核减总金额：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="familyAnnualDeduction"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">城乡居民养老保险：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="endowmentInsurance"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">家庭年可支配总收入(元)：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="annualHouseholdDisposableIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">银行存款：</view>
+    <input  placeholder="请输入" bindinput="putData" data-key="bankDeposit"></input>
+  </view>
+
+  <view class="flex flex-direction padding-lr">
+    <view class="title">重病住院可报销的个人实际自付部分或同一个家庭成员在一年内患同一种疾病住院治疗，经医疗部门报销后，属于医疗保险政策范围内的自付部分(30000)以上：</view>
+    <input class="input" type="number" placeholder="请输入" bindinput="putData" data-key="bzzyhj"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">差额救助金额(元)人/月：</view>
+    <input  placeholder="请输入" bindinput="putData" data-key="cejzje"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">收藏品：</view>
+    <input  placeholder="请输入" bindinput="putData" data-key="collection"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">商业保险：</view>
+    <input  placeholder="请输入" bindinput="putData" data-key="commercialInsurance"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">工商户注册资金：</view>
+    <input  placeholder="请输入" bindinput="putData" data-key="commercialTenant"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">商品用房(几套)：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="commoditHousingNum"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">商品用房：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="commodityHousing"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">债券：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="debenture"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">高档艺术品：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="fineArt"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">年赡，抚，抚养费：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="alimony"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">户籍地：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="placeDomicile"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">现住址：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="presentAddress"></input>
+  </view>
+  <view class="flex flex-direction padding-lr">
+    <view class="title">其他疾病，同一个家庭成员同一年患同一种疾病门诊治疗可报销的个人自付部分(3000元以上)：</view>
+    <input class="input" type="number" placeholder="请输入" bindinput="putData" data-key="qtjbtyjtcy"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">粮食燃煤补贴：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="rationAllowance"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">住宅用房：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="residence"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">住宅用房(几套)：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="residenceNum"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">退职生活费：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="retirementAllowance"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">退耕还林还草及粮种补贴：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="returnPlough"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">有价证券：</view>
+    <input  placeholder="请输入" bindinput="putData" data-key="securities"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">社会保险交纳总金额：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="socialInsurance"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">特殊困难家庭类型：</view>
+    <input placeholder="请输入" bindinput="putData" data-key="speciaHardshipFamily"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">特殊困难家庭核减总金额：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="speciaHardshipFamilyNum"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">总转移性收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="totalTransferIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">务工收入：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="workersIncome"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">在校大学生学费支出(6000*人数)：</view>
+    <input type="number" placeholder="请输入" bindinput="putData" data-key="zxdxszc"></input>
+  </view>
+
   <view class="padding flex flex-direction">
 		<button class="button-btn margin-tb-sm lg" bindtap="commitData">提交</button>
 	</view>

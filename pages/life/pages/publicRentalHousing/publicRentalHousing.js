@@ -7,7 +7,7 @@ Page({
 	 */
 	data: {
 		tit:'',
-		fileState: '点击添加',
+		fileState: '添加',
 		userName: '', //申请人姓名
 		userPhone: '', //申请人联系方式
 		applyFile: '', //申请人材料（,隔开的字符串）
@@ -20,22 +20,22 @@ Page({
 			[key]: e.detail.value
 		})
 	},
-	addFile() {
+	addFile: function () {
 		let that = this
-		wx.chooseMessageFile({
+		wx.chooseImage({
 			count: 1,
-			type: 'file',
+			sizeType: ['original', 'compressed'],
+			sourceType: ['album', 'camera'],
 			success(res) {
-				const tempFilePash = res.tempFiles[0].path
-				util.uploadFile1(tempFilePash, 'file').then(res => {
+				const tempFilePaths = res.tempFilePaths
+				util.uploadFile(tempFilePaths[0], 'image').then(res => {
 					console.log(res)
 					if (res.statusCode == 200) {
 						let obj = JSON.parse(res.data)
-
+		
 						that.setData({
 							fileState: '上传成功',
-							applyFile: obj.data,
-
+							applyFile: obj.data
 						})
 					} else {
 						that.setData({
@@ -43,7 +43,7 @@ Page({
 						})
 					}
 				});
-			}
+			},
 		})
 	},
 	commitData() {

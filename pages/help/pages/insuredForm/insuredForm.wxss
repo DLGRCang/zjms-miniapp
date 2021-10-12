@@ -18,3 +18,18 @@
 	margin: 0 30rpx 50rpx 30rpx;
 	font-size: 34rpx;
 }
+.title {
+	text-align: justify;
+	padding-right: 30rpx;
+	font-size: 32rpx;
+	position: relative;
+	line-height: 60rpx;
+}
+
+.input {
+	flex: 1;
+	font-size: 30rpx;
+	color: #555;
+	padding-right: 20rpx;
+	margin:15rpx 0;
+}

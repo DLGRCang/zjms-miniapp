@@ -11,7 +11,7 @@
     {{task.taskname}}
   </view>
 
-  <view class="margin-top-sm text-xl text-bold">
+  <view class="margin-top-xl text-xl text-bold">
     部门
   </view>
 
@@ -19,7 +19,7 @@
     {{task.taskpersonname}}
   </view>
 
-  <view class="margin-top-sm text-xl text-bold">
+  <view class="margin-top-xl text-xl text-bold">
     任务时间
   </view>
 
@@ -28,7 +28,7 @@
   </view>
 
 
-  <view class="margin-top-sm text-xl text-bold">
+  <view class="margin-top-xl text-xl text-bold">
     内容
   </view>
 
@@ -38,15 +38,15 @@
 
   <block wx:if="{{task.taskaudio == '' || task.taskaudio==null}}"></block>
   <block wx:else>
-    <view class="margin-top-sm text-xl text-bold">
+    <view class="margin-top-xl text-xl text-bold">
       任务语音
     </view>
 
     <!-- <view class="margin-top-sm box" bindtap="showVoice">
       {{task.taskaudio}}
     </view> -->
-    <view bindtap="showVoice" class="cuIcon-rankfill bg-green radius margin-right padding-left margin-top-sm"
-      style="height:60rpx;flex:1;line-height:60rpx">{{voiceStatus}}</view>
+    <view bindtap="showVoice" class="cuIcon-rankfill bg-green radius  padding-left margin-top-sm"
+      style="height:60rpx;flex:1;line-height:60rpx;width:120px">{{voiceStatus}}</view>
 
   </block>
 
@@ -54,19 +54,19 @@
   <block wx:if="{{task.taskfile == '' || task.taskfile==null}}"></block>
 
   <block wx:else>
-    <view class="margin-top-sm text-xl text-bold">
+    <view class="margin-top-xl text-xl text-bold">
       任务图片：
     </view>
 
-    <view class="margin-top-sm box" wx:for="{{taskImg}}" wx:key="item">
-      <image src="{{imgUrl}}{{item}}" mode="aspectFill"></image>
+    <view class="margin-top-sm " wx:for="{{taskImg}}" style="display:flex;justify-content: center;" wx:key="item">
+      <image src="{{imgUrl}}{{item}}" mode="widthFix"></image>
     </view>
   </block>
-  <view wx:if="{{isAdmin}}" bindtap="goTaskFk" data-id="{{task.taskInfoId}}" data-name="{{task.taskname}}">
-    <button class="bg-green margin-tb-sm margin-top-xl">反馈</button>
+  <view wx:if="{{isAdmin}}" style="margin-top: 70rpx;" bindtap="goTaskFk" data-id="{{task.taskInfoId}}" data-name="{{task.taskname}}">
+    <button class="bg-green btn flex-sub">反馈</button>
   </view>
-  <view style="display:flex" class="margin-top-lg"  wx:else>
-    <button bindtap="deleteTask" class="bg-red margin-tb-sm margin-top-xl padding-lr-xl">删除</button>
-    <button bindtap="updateTask" class="bg-green margin-tb-sm margin-top-xl padding-lr-xl">修改</button>
+  <view  style="display:flex;	margin-top: 70rpx;"  wx:else>
+    <button bindtap="deleteTask" class="bg-red margin-tb-sm margin-top-xl padding-lr-xl btn margin-right-xl">删除</button>
+    <button bindtap="updateTask" class="bg-green margin-tb-sm margin-top-xl padding-lr-xl btn">修改</button>
   </view>
 </view>
