@@ -4,7 +4,7 @@
 
 
 <!-- 头部 -->
-<image src="{{topImg}}" mode="aspectFit" style="width:100%;height:352rpx"></image>
+<image src="{{topImg}}" mode="scaleToFill" style="width:100%;height:352rpx"></image>
 <view class="padding-lr-lg" style="position: relative;">
   <view class="top flex">
     <view class="cu-bar">
@@ -667,5 +667,5 @@
       <view style="color:#BEBEBE;font-size:24rpx; margin-top:10rpx;">内蒙古大云智通科技有限公司</view>
     </view>
   </view>
-  <image src="{{bottomImg}}" mode="aspectFit" style="width:100%;height:420rpx"></image>
+  <image src="{{bottomImg}}" mode="aspectFit" style="width:100%;height:420rpx;position:absolute;bottom:0"></image>
 </view>
