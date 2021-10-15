@@ -105,6 +105,9 @@ Page({
           if (e.currentTarget.dataset.tit == '云上办') {
             if (!login.isLogin()) return
           }
+          if (e.currentTarget.dataset.tit == '问卷调查') {
+            if (!login.isLogin()) return
+          }
           util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
 
         } else {

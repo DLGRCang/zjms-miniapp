@@ -53,7 +53,10 @@ Page({
   },
   //获取最美家庭
   getBestHome(){
-    util.requestApi('beautifulfamily/listbeautifulfamily', 'GET', {}).then(res => {
+    let data={
+      status:'通过'
+    }
+    util.requestApi('beautifulfamily/listbeautifulfamily', 'GET', data).then(res => {
 
 			console.log(res)
 			if (res.statusCode == 200) {
@@ -67,12 +70,15 @@ Page({
   },
   //获取三八红旗手
   getWomanpacesetter(){
-    util.requestApi('womanpacesetter/listpagewomanpacesetter', 'GET', {}).then(res => {
+    let data={
+      status:'通过'
+    }
+    util.requestApi('womanpacesetter/listwomanpacesetter', 'GET', data).then(res => {
 
 			console.log(res)
 			if (res.statusCode == 200) {
         this.setData({
-          getWomanpacesetterList:res.data.rows
+          getWomanpacesetterList:res.data
         })
 			} else {
         util.showToast("数据加载失败");
@@ -81,11 +87,14 @@ Page({
   },
   //获取新时代好少年
   getGoodboyr(){
-    util.requestApi('goodboy/listpagegoodboy', 'GET', {}).then(res => {
+    let data={
+      status:'通过'
+    }
+    util.requestApi('goodboy/listgoodboy', 'GET', data).then(res => {
 			console.log(res)
 			if (res.statusCode == 200) {
         this.setData({
-          getGoodboyrList:res.data.rows
+          getGoodboyrList:res.data
         })
 			} else {
         util.showToast("数据加载失败");
@@ -138,14 +147,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log("下拉")
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+      console.log("上拉")
   },
 
   /**

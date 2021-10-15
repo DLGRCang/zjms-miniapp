@@ -1,0 +1,8 @@
+/* pages/life/pages/publishSeafood/publishSeafood.wxss */
+.bgColor {
+	background-color:#6670E1;
+	color: #ffffff;
+}
+.bg-blue{
+	background-color:#6670E1;
+}

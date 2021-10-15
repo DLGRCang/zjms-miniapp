@@ -20,7 +20,7 @@ Page({
 	},
 	getData() {
 		//消费者维权
-		util.requestApi('safeguardpotence/listsafeguardpotence?type=1', 'GET', {}).then(res => {
+		util.requestApi('safeguardpotence/listappsafeguardpotence?type=1', 'GET', {}).then(res => {
 			this.setData({
 				datalist:res.data
 			})
@@ -28,7 +28,7 @@ Page({
 			console.log(res)
 		})
 		//经营者维权
-		util.requestApi('safeguardpotence/listsafeguardpotence?type=2', 'GET', {}).then(res => {
+		util.requestApi('safeguardpotence/listappsafeguardpotence?type=2', 'GET', {}).then(res => {
 			this.setData({
 				datalist1:res.data
 			})

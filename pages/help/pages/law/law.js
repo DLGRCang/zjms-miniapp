@@ -25,7 +25,7 @@ Page({
 
 	// 加载评论
 	getinfo(){
-		let url = 'commentsonthemanagement/listcommentsonthemanagement?typeId=67b36a83-c7d0-4d89-a671-74863991de78'
+		let url = 'commentsonthemanagement/applistcommentsonthemanagement?typeId=67b36a83-c7d0-4d89-a671-74863991de78'
 		util.requestApi(url,'GET', {}).then(res => {
 			console.log(res.data)
 			this.setData({

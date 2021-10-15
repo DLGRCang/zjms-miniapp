@@ -51,7 +51,7 @@ Page({
           dataLi0.push(res.data[i])
           }else if(res.data[i].state==2){
             dataLi1.push(res.data[i])
-          }else{
+          }else if(res.data[i].state==1){
             dataLi2.push(res.data[i])
           }
         }

@@ -56,7 +56,7 @@ Page({
 		let data = {}
 
 			 data = {
-				user_id: this.data.userId,
+				userId: this.data.userId,
 				complainted: this.data.complainted,
 				title: this.data.title,
 				details: this.data.details,

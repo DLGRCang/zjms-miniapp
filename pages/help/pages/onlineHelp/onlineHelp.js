@@ -8,6 +8,7 @@ Page({
    */
   data: {
     imgUrl: app.globalData.imgUrl,
+    key:''
   },
   getKey(e) {
     console.log(e.detail.value)

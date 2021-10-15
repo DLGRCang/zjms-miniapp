@@ -2,6 +2,7 @@
 const app = getApp()
 const util = require('../../../../utils/util.js')
 const data = require('../../../../utils/data.js')
+const login = require('../../../../utils/login.js')
 
 Page({
 
@@ -16,6 +17,7 @@ Page({
 	},
 	//打开问题上报
 	instaShotReport() {
+		if (!login.isLogin()) return
 		util.pageJump('/pages/government/pages/instaShotReport/instaShotReport')
 	},
 	//打开详情

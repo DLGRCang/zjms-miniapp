@@ -6,3 +6,9 @@
 .title-color{
 	color:#2162B5
 }
+radio {
+	transform:scale(0.7);
+}
+.title{
+	font-size: 32rpx;
+}

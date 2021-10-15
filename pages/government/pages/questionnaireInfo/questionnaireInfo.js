@@ -6,57 +6,61 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		voteId: '',
-		data: {},
-		questions: null,
+		id: '',
+		dataList: [],
+		commintData: {},
+		chooseData: {}
+	},
+	//提交数据
+	commitData() {
+		let commintList = []
+		for (let key in this.data.chooseData) {
+			let cmData = {
+				voteId: key,
+				voteOption: this.data.chooseData[key],
+				votePeopleId: wx.getStorageSync('userId'),
+				voteTime: util.formatTime1(new Date()),
+				votePeopleName: wx.getStorageSync('name'),
+				questionnaire_id: this.data.id
+			}
+			commintList.push(cmData)
+		}
 
+		if(commintList.length<this.data.dataList.length){
+			wx.showToast({
+				title: '请答完所有题目',
+				icon: 'none'
+			})
+			return
+		}
+
+		util.requestApi('api/voterecord/saveappvoterecord', 'POST', commintList).then(res => {
+			console.log(res)
+			if (res.statusCode == 200) {
+			
+					wx.navigateBack({
+						delta: 1
+					})
+					util.showToast("提交成功")
+			} else {
+				util.showToast(res.data.msg)
+			}
+		});
+	},
+	radioChange(e) {
+		let key = e.currentTarget.dataset.key
+		let choose = this.data.chooseData;
+		choose[key] = e.detail.value;
+		console.log(choose)
+		this.setData({
+			chooseData: choose
+		})
 	},
 	getDataInfo() {
-		util.requestApi('question/getvote/' + this.data.voteId, 'GET', {}).then(res => {
+		util.requestApi('api/questionnaire/questionnaireInfo?questionnaireId=' + this.data.id, 'GET', {}).then(res => {
+			console.log(res)
 			this.setData({
-				data: res.data
-			})
-		});
-	},
-	getQuestion() {
-		let that = this
-		let result = []
-		let answer = {}
-		util.requestApi('question/listpagequestion?voteId=' + this.data.voteId, 'GET', {}).then(res => {
-			for (let i = 0; i < res.data.rows.length; i++) {	
-				let request = {"question":res.data.rows[i].questionContent}
-				util.requestApi('options/listpageoptions?questionId=' + res.data.rows[i].questionId, 'GET', {}).then(r => {
-				
-					for (let j = 0; j < r.data.rows.length; j++) {
-						console.log(r.data.rows[j].optionsName)
-			
-					}
-
-					let answer = {'answer':r.data.rows.optionsName}
-
-					let obj = {
-						'answer':r.data.rows.optionsName,
-						"question":request
-					}
-					result.push(obj)
-				});
-			
-				console.log(11111111111)
-				console.log(result)
-				console.log(11111111111)
-
-			}
-
-			console.log(res.data.rows)
-			this.setData({
-				questions: res.data.rows
-			})
-		});
-	},
-	getQuestionList(questionId) {
-		util.requestApi('options/listpageoptions?questionId=' + questionId, 'GET', {}).then(res => {
-			console.log(res.data)
-			this.setData({
+				dataList: res.data
 			})
 		});
 	},
@@ -64,12 +68,19 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		console.log(options.voteId)
+		let commintData = {
+			voteId: '',
+			voteOption: '',
+			votePeopleId: wx.getStorageSync('userId'),
+			voteTime: util.formatTime1(new Date()),
+			votePeopleName: wx.getStorageSync('name'),
+			questionnaire_id: options.id,
+		}
 		this.setData({
-			voteId: options.voteId
+			id: options.id,
+			commintData: commintData
 		})
 		this.getDataInfo()
-		this.getQuestion()
 	},
 
 	/**

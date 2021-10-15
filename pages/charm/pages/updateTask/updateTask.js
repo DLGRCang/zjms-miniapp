@@ -2,6 +2,9 @@ const recordManager = wx.getRecorderManager()
 const innerAudioContext = wx.createInnerAudioContext();
 const app = getApp()
 const util = require("../../../../utils/util")
+let ids = []
+let names = []
+let pnames = []
 Page({
 
 	/** 
@@ -11,6 +14,7 @@ Page({
 		imgUrl: app.globalData.baseImgUrl,
 		deptList: [], //部门
 		selectDepts: [], //选中的部门
+		showNames: [], //选中的人
 		taskpersonIds: [],
 		index: 0,
 		taskName: '',
@@ -28,9 +32,12 @@ Page({
 		voiceLong: '',
 		voiceStatus: '',
 
-		selectGroup:[],//选中的分组
-    selectGrouppname:[],//选中的分组中的人
-    selectGroupids:[],//选中的分组中人的列表
+		selectGroup: [], //选中的分组
+		selectGrouppname: [], //选中的分组中的人
+		selectGroupids: [], //选中的分组中人的列表
+
+		isChangeDept:false,
+		isChangeGourp:false,
 
 	},
 	handleChange(e) {
@@ -43,6 +50,8 @@ Page({
 	showModal(e) {
 
 		this.setData({
+			isChangeDept:false,
+			isChangeGourp:false,
 			modalName: e.currentTarget.dataset.target
 		})
 	},
@@ -54,59 +63,53 @@ Page({
 	},
 	// 选择部门
 	deptSelect(e) {
-		let ids = []
-		let names = []
+		this.setData({
+			isChangeDept:true
+		})
+		ids = []
+		names = []
+		pnames = []
 		for (let i = 0; i < e.detail.value.length; i++) {
 			ids.push(this.data.deptList[e.detail.value[i]].taskPersonId)
 			names.push(this.data.deptList[e.detail.value[i]].tname)
-
 		}
-		this.setData({
-			selectDepts:names,
-			taskpersonIds:ids
-		})
 
 	},
-// 选择分组
-groupSelect(e) {
-	let ids = []
-	let names = []
-	let pnames = []
-	for (let i = 0; i < e.detail.value.length; i++) {
-		ids.push(this.data.groupList[e.detail.value[i]].grouppersonids)
-		names.push(this.data.groupList[e.detail.value[i]].groupname)
-		pnames.push(this.data.groupList[e.detail.value[i]].grouppersonnames)
-	}
-	this.setData({
-		selectGroup: names,
-		selectGroupids: ids,
-		selectGrouppname: pnames
-	})
-},
+	// 选择分组
+	groupSelect(e) {
+		this.setData({
+			isChangeGourp:true
+		})
+		console.log(e.detail.value)
+		ids = []
+		names = []
+		pnames = []
+		for (let i = 0; i < e.detail.value.length; i++) {
+      ids.push(this.data.groupList[e.detail.value[i]].grouppersonids)
+      names.push(this.data.groupList[e.detail.value[i]].groupname)
+      pnames.push(this.data.groupList[e.detail.value[i]].grouppersonnames)
+    }
+
+	},
 	// 确定
 	determine() {
-		let l = this.data.selectDepts.length
-		if (l === 0) {
-			wx.showToast({
-				title: '请选择部门',
-				icon: 'none'
-			})
-		} else {
-			this.hideModal()
-		}
+		this.setData({
+			showNames: this.data.selectGrouppname.length == 0 ? names : Array.from(new Set(names.concat(this.data.selectGrouppname.join(',').split(',')))),
+			selectDepts: names,
+			taskpersonIds: ids
+		})
+		this.hideModal()
 	},
-	 // 确定分组
-   determine1() {
-    let l = this.data.selectGroup.length
-    if (l === 0) {
-      wx.showToast({
-        title: '请选择分组',
-        icon: 'none'
-      })
-    } else {
-      this.hideModal()
-    }
-  },
+	// 确定分组
+	determine1() {
+		this.setData({
+			selectGroup: names,
+			selectGroupids: ids,
+			selectGrouppname: pnames,
+			showNames: Array.from(new Set(this.data.selectDepts.concat(pnames.length>0?pnames.join(',').split(','):[]))),
+		})
+		this.hideModal()
+	},
 	PickerChange(e) {
 		this.setData({
 			index: e.detail.value
@@ -145,23 +148,23 @@ groupSelect(e) {
 			})
 			return
 		}
-		if (this.data.selectDepts.length === 0) {
-			wx.showToast({
-				title: '请选择部门',
-				icon: 'none'
-			})
-			return
-		}
+		if (this.data.selectDepts.length === 0&&this.data.selectGroup.length===0) {
+      wx.showToast({
+        title: '请选择部门或分组',
+        icon: 'none'
+      })
+      return
+    }
 		let data = {
 			"creator": wx.getStorageSync('taskUserInfo').taskPersonId,
 			"taskname": this.data.taskName,
 			"tasksummary": this.data.taskInfo,
 			"tasktime": this.data.endDate + "",
 			"gmt_create": this.data.startDate,
-	 // "taskpersonname": this.data.selectDepts.join(","),
-	 "taskpersonname": Array.from(new Set(this.data.selectDepts.concat(this.data.selectGrouppname.join(',').split(',')))).join(','),
-	 // "taskperson": this.data.taskpersonIds.join(",")+','+ this.data.selectGroupids.join(","),
-	 "taskperson": Array.from(new Set(this.data.taskpersonIds.concat(this.data.selectGroupids.join(',').split(',')))).join(','),
+	  // "taskpersonname": this.data.selectDepts.join(","),
+		"taskpersonname": Array.from(new Set(this.data.selectDepts.concat(this.data.selectGrouppname.length>0?this.data.selectGrouppname.join(',').split(','):[]))).join(','),
+		// "taskperson": this.data.taskpersonIds.join(",")+','+ this.data.selectGroupids.join(","),
+		"taskperson": Array.from(new Set(this.data.taskpersonIds.concat(this.data.selectGroupids.length>0?this.data.selectGroupids.join(',').split(','):[]))).join(','),
 			"taskfile": this.data.vehicleImagesId.join(","),
 			"taskaudio": this.data.soundRecording
 		}
@@ -353,7 +356,8 @@ groupSelect(e) {
 
 		this.setData({
 			deptList: [], //部门
-			selectDepts: obj.taskpersonname.split(','), //选中的部门
+			showNames: obj.taskpersonname.split(','), //选中的人
+			selectDepts: obj.taskpersonname.split(','), //选中的人
 			taskpersonIds: obj.taskperson.split(','),
 			index: 0,
 			taskName: obj.taskname,
@@ -380,15 +384,15 @@ groupSelect(e) {
 		this.getDeptsList()
 		this.getGroup()
 	},
-// 获取分组
-getGroup() {
-	util.requestData('taskgroup/listtaskgrouprelease', 'GET', {}).then(res => {
-		console.log(res.data)
-		this.setData({
-			groupList: res.data
+	// 获取分组
+	getGroup() {
+		util.requestData('taskgroup/listtaskgrouprelease', 'GET', {}).then(res => {
+			console.log(res.data)
+			this.setData({
+				groupList: res.data
+			})
 		})
-	})
-},
+	},
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */

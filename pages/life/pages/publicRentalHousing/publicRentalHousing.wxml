@@ -2,20 +2,24 @@
 <cu-custom  bgColor="bg-gradual-blue" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">{{tit}}</view>
 </cu-custom>
-<view class="padding">
-  <view class="cu-form-group">
-    <view class="title">申请人姓名：</view>
-    <input placeholder="请输入申请人姓名" bindinput="putData" data-key="userName"></input>
-  </view>
-  <view class="cu-form-group">
-    <view class="title">申请人电话：</view>
-    <input type="number" placeholder="请输入申请人电话" bindinput="putData" data-key="userPhone"></input>
-  </view>
-  <view class="cu-form-group">
-    <view class="title">申请材料：</view>
-    <view bindtap="addFile" class="padding-tb text-blue text-lg">{{fileState}}</view>
-  </view>
-  <view class="padding flex flex-direction">
-		<button class="cu-btn bg-gradual-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+<tab bindmyevent="selectTab" tabName="{{pageTabs}}" tvColor="color"></tab>
+<view wx:if="{{index===0}}">
+	<view class="margin-lg box" wx:for="{{toiletList}}">
+		<view>
+			<view class="text-xxl text-bold" bindtap="goTicket">{{item.title}}</view>
+			<view class=" margin-top-xs">{{item.address}}</view>
+			<view class=" margin-top-xs text-blue">{{item.category}}</view>
+			<view class="flex justify-between  text-grey" bindtap="goRoute" data-name="{{item.title}}" data-lat="{{item.location.lat}}"
+			data-lng="{{item.location.lng}}">
+				<view class="margin-top-xs">距您{{item._distance}}米</view>
+				<view class="cuIcon-right"></view>
+			</view>
+		</view>
 	</view>
+</view>
+<view wx:else>
+	<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}"
+		style="width:100%;height:{{maph}}" scale="{{scale}}" show-location='true'>
+		<cover-image class="focus" src='/image/focus.png' bindtap='clickControl'></cover-image>
+	</map>
 </view>

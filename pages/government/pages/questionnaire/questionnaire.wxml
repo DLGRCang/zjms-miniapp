@@ -6,7 +6,7 @@
 <view class="padding-lr-xl">
 	
 <dot-title title="调查问卷" color="title-color"></dot-title>
-	<item-image-text bindtap="goInfo" data-id="{{item.voteId}}" type="8" wx:for="{{dataList}}"  isImg="{{false}}" itemTitle="{{item.voteTtitle}}"
-		date="{{item.startData}}-{{item.endDate}}" isDate="true" isLine="true">
+	<item-image-text bindtap="goInfo" data-id="{{item.questionnaireId}}" data-index="{{index}}" type="8" wx:for="{{dataList}}"  isImg="{{false}}" itemTitle="{{item.questionnaireName}}"
+		date="{{item.gmt_create}}" isDate="false" isLine="true">
 	</item-image-text>
 </view>

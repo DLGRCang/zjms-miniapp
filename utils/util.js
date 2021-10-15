@@ -8,6 +8,15 @@ const formatTime = date => {
   const second = date.getSeconds()
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+const formatTime1 = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const second = date.getSeconds()
+  return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
 const formatDate = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -489,6 +498,7 @@ const routePlan = function (name, lat, lng) {
 
 module.exports = {
   formatTime: formatTime,
+  formatTime1: formatTime1,
   formatDate: formatDate,
   formatDate1: formatDate1,
   getWeekByDate: getWeekByDate,

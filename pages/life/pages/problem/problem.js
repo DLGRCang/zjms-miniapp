@@ -91,13 +91,13 @@ Page({
 	commitData() {
 		let data = {
       content:this.data.contents,
-      picture_url:this.data.imgList,
+      picture_url:this.data.imgList.join(","),
       title:this.data.title,
       type:this.data.type
 
 		}
 		console.log(data)
-		util.requestData('problemreport/saveproblemreport', 'POST', data).then(res => {
+		util.requestApi('problemreport/saveproblemreport', 'POST', data).then(res => {
       console.log(res)
       util.returnCode(res.statusCode,200,2)
 		});

@@ -1,1 +1,16 @@
 /* pages/life/pages/publicRentalHousing/publicRentalHousing.wxss */
+.color{
+  color: #054FAC;
+}
+.focus{
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  bottom: 160rpx;
+  right: 80rpx;
+}
+.box {
+  margin-top: 20rpx;
+  border: 1rpx solid #F5F5F5;
+  padding:20rpx;
+}

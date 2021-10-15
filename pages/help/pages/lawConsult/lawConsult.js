@@ -9,7 +9,8 @@ Page({
   data: {
     imgUrl: app.globalData.imgUrl,
     type: '',
-    dataList:[]
+    dataList:[],
+    key:''
   },
  //获取数据列表
  getData() {

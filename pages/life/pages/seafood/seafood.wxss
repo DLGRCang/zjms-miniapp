@@ -4,7 +4,9 @@
   color: #ffffff;
 
 }
-
+.bg-blue{
+	background-color:#6670E1;
+}
 .color {
   color: #6670E1;
 }

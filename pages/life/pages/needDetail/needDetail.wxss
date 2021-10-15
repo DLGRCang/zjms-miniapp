@@ -1,0 +1,6 @@
+/* pages/life/pages/needDetail/needDetail.wxss */
+.bgColor {
+  background-color: #6670E1;
+  color: #ffffff;
+
+}

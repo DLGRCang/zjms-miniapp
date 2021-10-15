@@ -30,6 +30,7 @@
 
 </view>
 <view class="bg-width padding btn-bg">
-	<view wx:if="{{TabCur===1}}"></view>
-	<button wx:else bindtap="apply" class="button-btn">申请</button>
+	<!-- <view wx:if="{{TabCur===1}}"></view>
+	<button wx:else bindtap="apply" class="button-btn">申请</button> -->
+	<button  bindtap="apply" class="button-btn">申请</button>
 </view>

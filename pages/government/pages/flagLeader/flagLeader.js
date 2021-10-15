@@ -53,7 +53,7 @@ Page({
 	},
 	//获取留言列表
 	getMessageList() {
-		return util.requestApi('commentsonthemanagement/listcommentsonthemanagement?typeId=b5c4e599-400d-4db9-9e11-e72eb9931822', 'GET', {}).then(res => {
+		return util.requestApi('commentsonthemanagement/applistcommentsonthemanagement?typeId=b5c4e599-400d-4db9-9e11-e72eb9931822', 'GET', {}).then(res => {
 			console.log(res.data)
 			this.setData({
 				messageList: res.data

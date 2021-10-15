@@ -1,0 +1,28 @@
+<!--pages/life/pages/publishSeafood/publishSeafood.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">发布需求</view>
+</cu-custom>
+<view class="padding">
+	<view class="cu-form-group">
+		<view class="title">标　题：</view>
+		<input  placeholder="请输入标题" bindinput="putData" data-key="title"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">内　容：</view>
+		<input  placeholder="请输入内容" bindinput="putData" data-key="content"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系人：</view>
+		<input  placeholder="请输入联系人" bindinput="putData" data-key="linkman"></input>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">联系电话：</view>
+		<input type="number"  placeholder="请输入联系电话" bindinput="putData" data-key="linkphone"></input>
+	</view>
+
+ 
+  <view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">确认提交</button>
+	</view>
+</view>
+

@@ -13,16 +13,12 @@
     <view class="title">部门选择</view>
     <button class="cu-btn bg-green shadow round" bindtap="showModal" data-target="RadioModal">请选择</button>
   </view>
-
-  <view class="cu-form-group" wx:if="{{selectDepts.length>0}}">
-    <view class="text-grey"> {{selectDepts}}</view>
-  </view>
   <view class="cu-form-group">
     <view class="title">分组选择</view>
     <button class="cu-btn bg-green shadow round" bindtap="showModal" data-target="RadioModal1">请选择</button>
   </view>
-  <view class="cu-form-group" wx:if="{{selectGroup.length>0}}">
-    <view class="text-grey"> {{selectGroup}}</view>
+  <view class="cu-form-group" wx:if="{{showNames.length>0}}">
+    <view class="text-grey"> {{showNames}}</view>
   </view>
   <view class="cu-modal {{modalName=='RadioModal'?'show':''}}" style="margin-top: 110rpx;">
     <scroll-view scroll-y='true' class="cu-dialog" catchtap style=" height: 80%;margin-bottom: 170rpx;">
@@ -47,7 +43,7 @@
       </checkbox-group>
       <view class="selectBtn">
         <button class="cu-btn bg-green lg" bindtap="hideModal">取消</button>
-        <button class="cu-btn bg-green margin-left-lg lg" bindtap="determine">确定</button>
+        <button class="cu-btn bg-green margin-left-lg lg" bindtap="{{isChangeDept?'determine':'hideModal'}}">确定</button>
       </view>
     </scroll-view>
   </view>
@@ -66,7 +62,7 @@
       </checkbox-group>
       <view class="selectBtn">
         <button class="cu-btn bg-green lg" bindtap="hideModal">取消</button>
-        <button class="cu-btn bg-green margin-left-lg lg" bindtap="determine1">确定</button>
+        <button class="cu-btn bg-green margin-left-lg lg" bindtap="{{isChangeGourp?'determine1':'hideModal'}}">确定</button>
       </view>
     </scroll-view>
   </view>

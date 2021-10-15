@@ -274,7 +274,9 @@
 				"pages/financeProductsForm/financeProductsForm",
 				"pages/publicRentalHousing/publicRentalHousing",
 				"pages/moveCarInfo/moveCarInfo",
-				"pages/moveCarAdd/moveCarAdd"
+				"pages/moveCarAdd/moveCarAdd",
+				"pages/publishSeafood/publishSeafood",
+				"pages/needDetail/needDetail"
 			]
 		},
 		{

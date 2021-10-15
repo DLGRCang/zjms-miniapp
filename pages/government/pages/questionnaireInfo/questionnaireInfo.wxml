@@ -2,9 +2,16 @@
 <cu-custom bgColor="bgColor" isBack="{{true}}">
 	<view slot="content" class="text-white text-xl text-black text-bold">问卷详情</view>
 </cu-custom>
-<view class="padding-lg">
-	<block wx:for="{{questions}}" wx:key="item">
-		<view>{{item.questionContent}}</view>
-
-	</block>
+<view class="padding-lr-lg">
+	<view class="flex flex-direction padding-bottom-xl" wx:for="{{dataList}}">
+		<text class="margin-bottom-sm margin-top-lg title">{{item.vote_name}}</text>
+		<radio-group data-key="{{item.vote_id}}" bindchange="radioChange">
+			<view wx:for="{{item.vote_option}}" wx:key="item" class="margin-top-sm">
+				<radio value="{{item}}"></radio>{{item}}
+			</view>
+		</radio-group>
+	</view>
+	<view class="padding flex flex-direction">
+		<button class="cu-btn bg-blue margin-tb-sm lg" bindtap="commitData">提交</button>
+	</view>
 </view>

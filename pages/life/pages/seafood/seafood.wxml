@@ -5,14 +5,19 @@
 <view class="margin-lr-lg">
   <dot-title title="生鲜商家" color="color" isMore="true" sign="{{infotypeid1}}" type="3"></dot-title>
 
-    <item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
-      itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
-    </item-image-text>
+  <item-image-text wx:for="{{dataList1}}" obj="{{item}}" imgUrl="{{item.info_photos}}" itemTitle="{{item.info_content}}"
+    itemInfo="{{item.info_summary}}" isImg="true" isTab="true" itemTabs="{{item.infoTypeLabel}}" isLine="true">
+  </item-image-text>
 
-  <dot-title title="生鲜需求" color="color" isMore="true" sign="{{infotypeid}}" type="1"></dot-title>
-  <view class="margin-bottom-lg" style="padding:20rpx;">
-    <item-image-text wx:for="{{dataList}}" obj="{{item}}" isImg="{{falses}}" itemTitle="{{item.info_content}}"
-      isDate="true" date="{{item.publishdate}}"></item-image-text>
-    <button>发布需求</button>
+  <dot-title title="生鲜需求" color="color" isMore="{{false}}" sign="{{infotypeid}}" type="1"></dot-title>
+  <view class="margin-bottom-lg" style="padding:20rpx;" >
+    <view wx:for="{{dataList}}" class="flex flex-direction margin-bottom-lg" bindtap="goDetail" data-index="{{index}}">
+      <text class="text-black margin-bottom-sm text-lg">{{item.title}}</text>
+      <view class="flex">
+        <text class="text-grey text-sm flex-sub">{{item.linkman}}</text>
+        <text class="text-grey text-sm flex-sub text-right">{{item.gmt_create}}</text>
+      </view>
+    </view>
+    <button class="cu-btn bg-blue margin-tb-sm lg" bindtap="addMove">发布需求</button>
   </view>
 </view>

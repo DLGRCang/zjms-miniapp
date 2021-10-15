@@ -1,0 +1,26 @@
+<!--pages/life/pages/needDetail/needDetail.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+  <view slot="content" class="text-white text-xl text-black text-bold">需求详情</view>
+</cu-custom>
+<view class="padding-lg">
+<view class="flex margin-bottom">
+    <view class="title">联系人：</view>
+    <view class="content">{{linkman}}</view>
+  </view>
+  <view class="flex margin-bottom">
+    <view class="title">联系电话：</view>
+    <view class="content">{{linkphone}}</view>
+  </view>
+  <view class="flex margin-bottom">
+    <view class="title">发布时间：</view>
+    <view class="content">{{gmt_create}}</view>
+  </view>
+  <view class="flex margin-bottom">
+    <view class="title">标题：</view>
+    <view class="content">{{title}}</view>
+  </view>
+  <view class="flex margin-bottom">
+    <view class="title">内容：</view>
+    <view class="content">{{content}}</view>
+  </view>
+  </view>

@@ -9,19 +9,42 @@ Page({
 	data: {
 		imgUrl: app.globalData.imgUrl,
 		dataList: [],
-		tit:''
-
+		tit:'',
+		userid: wx.getStorageSync('userId'),
+		page:1,
+		rows:5
 	},
 	getDataList() {
-		util.requestApi('question/listpagevote', 'GET', {}).then(res => {
-			console.log(res.data.rows)
+		let data={
+			is_release:1,
+			userid:this.data.userid,
+			page:this.data.page,
+			rows:this.data.rows
+		}
+		util.requestApi('api/questionnaire/listpagequestionnaire', 'GET', data).then(res => {
+			console.log(res)
+			if(res.data.rows.length==0){
+				wx.showToast({
+					title: '没有更多了',
+					icon: 'none'
+				})
+				return
+			}
 			this.setData({
-				dataList: res.data.rows
+				dataList: this.data.dataList.concat(res.data.rows)
 			})
 		});
 	},
 	goInfo(e) {
-		util.pageJump('../questionnaireInfo/questionnaireInfo?voteId='+e.currentTarget.dataset.id)
+		console.log(e.currentTarget.dataset.index)
+		if(this.data.dataList[e.currentTarget.dataset.index].voteid!=null&&this.data.dataList[e.currentTarget.dataset.index].voteid!=""){
+			wx.showToast({
+				title: '您已经答过了',
+				icon: 'none'
+			})
+			return
+		}
+		util.pageJump('../questionnaireInfo/questionnaireInfo?id='+e.currentTarget.dataset.id)
 	},
 	/**
 	 * 生命周期函数--监听页面加载
@@ -30,7 +53,6 @@ Page({
 		this.setData({
       tit:options.tit
     })
-		this.getDataList()
 	},
 
 	/**
@@ -44,7 +66,11 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.setData({
+			page:1,
+			dataList:[]
+		})
+		this.getDataList()
 	},
 
 	/**
@@ -72,7 +98,11 @@ Page({
 	 * 页面上拉触底事件的处理函数
 	 */
 	onReachBottom: function () {
-
+			console.log("触底加载")
+			this.setData({
+				page:this.data.page+1
+			})
+			this.getDataList()
 	},
 
 	/**
