@@ -1,0 +1,5 @@
+/* pages/education/pages/gongxiaoshe/gongxiaoshe.wxss */
+@import "../../../../wxParse/wxParse.wxss";
+.color{
+  color: rgb(18, 140, 211);
+}
