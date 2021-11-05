@@ -1,0 +1,8 @@
+/* pages/medical/pages/scan/scan.wxss */
+.bgColor {
+	background-color: #6670E1;
+	color: #ffffff;
+}
+.title-color{
+	color:#6670E1
+}

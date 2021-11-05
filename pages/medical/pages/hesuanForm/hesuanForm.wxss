@@ -1,0 +1,13 @@
+/* pages/medical/pages/hesuanForm/hesuanForm.wxss */
+page {
+  height: 100%;
+}
+
+.bgColor {
+  background-color: #32B072;
+  color: #ffffff;
+}
+
+.title-color {
+  color: #32B072
+}

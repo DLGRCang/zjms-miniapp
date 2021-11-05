@@ -1,0 +1,5 @@
+<!--pages/medical/pages/scan/scan.wxml-->
+<!-- <cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">扫码</view>
+</cu-custom> -->
+<web-view src="{{url}}"></web-view>

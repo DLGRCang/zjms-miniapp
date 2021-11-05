@@ -186,7 +186,9 @@
 				"pages/meeting/meeting",
 				"pages/meetingDetail/meetingDetail",
 				"pages/meetingSign/meetingSign",
-				"pages/material/material"
+				"pages/material/material",
+				"pages/scan/scan",
+				"pages/hesuanForm/hesuanForm"
 			]
 		},
 		{

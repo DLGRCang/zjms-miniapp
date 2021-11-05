@@ -6,7 +6,6 @@ let ids = []
 let names = []
 let pnames = []
 Page({
-
   /** 
    * 页面的初始数据 
    */
@@ -20,10 +19,8 @@ Page({
     taskInfo: '',
     startDate: util.formatTime(new Date()),
     endDate: util.formatTime(new Date()),
-
     vehicleImages: [], //图片url
     vehicleImagesId: [], //图片
-
     voiceSrc: '',
     soundRecording: '', //录音文件 
     voiceLong: '',
@@ -96,8 +93,6 @@ determine() {
 },
 // 确定分组
 determine1() {
-  console.log("----------")
-  console.log(pnames)
   this.setData({
     selectGroup: names,
     selectGroupids: ids,

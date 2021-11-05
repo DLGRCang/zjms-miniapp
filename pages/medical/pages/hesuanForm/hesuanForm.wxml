@@ -1,0 +1,2 @@
+<!--pages/medical/pages/hesuanForm/hesuanForm.wxml-->
+<web-view src="{{url}}"></web-view>
