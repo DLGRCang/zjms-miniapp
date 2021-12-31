@@ -1,39 +1,18 @@
-// pages/medical/pages/scan/scan.js
+// pages/home/home.js
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		url: '',
-		tit: '',
+
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		let color = options.color
-		wx.setNavigationBarColor({
-			frontColor: '#000000',
-			backgroundColor: "#ffffff",
-		})
-		this.setData({
-			tit: options.tit
-		})
 
-
-		let self = this
-		wx.scanCode({
-			onlyFromCamera: true,
-			success(res) {
-				console.log(res)
-				self.setData({
-					url: res.result+'&userId='+wx.getStorageSync("userId")+"&name="+escape(wx.getStorageSync("name"))+"&idCard="+wx.getStorageSync("idCard"),
-				})
-			
-			}
-		})
 	},
 
 	/**

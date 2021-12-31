@@ -40,7 +40,14 @@ Page({
           paramsList.push(key + '=' + wx.getStorageSync("userId"))
         }else  if(key=="token"){
           paramsList.push(key + '=' + wx.getStorageSync("token"))
-        }else{
+        }
+        else  if(key=="name"){
+          paramsList.push(key + '=' + escape(wx.getStorageSync("name")))
+        }
+        else  if(key=="idCard"){
+          paramsList.push(key + '=' + wx.getStorageSync("idCard"))
+        }
+        else{
           paramsList.push(key + '=' +paramOjb[key])
         }
       }
@@ -70,6 +77,7 @@ Page({
         url:params==""?this.data.options.url: this.data.options.url+"?"+params,
         tit: this.data.options.tit
       })
+      console.log(this.data.url)
     }
 
   },

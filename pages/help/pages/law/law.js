@@ -42,6 +42,7 @@ Page({
 	//加载数据列表
 	getDataList: function () {
 		data.getArtelData(this.data.infotypeid, this.data.page, this.data.rows).then(dataList => {
+			console.log(dataList)
 			this.setData({
 				dataList: this.data.dataList.concat(dataList),
 			})
@@ -49,6 +50,8 @@ Page({
 		})
 
 		data.getArtelData(this.data.infotypeid1, this.data.page, this.data.rows).then(dataList => {
+			console.log("--------------")
+			console.log(dataList)
 			this.setData({
 				dataList1: this.data.dataList1.concat(dataList),
 			})

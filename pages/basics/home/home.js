@@ -1037,7 +1037,7 @@ Page({
             break;
           case 15:
             that.sum(tit)
-            util.pageJump('/pages/government/pages/volunteerService/volunteerService')
+            util.pageJump('/pages/government/pages/wxyService/wxyService')
             break;
           case 16:
             that.sum(tit)

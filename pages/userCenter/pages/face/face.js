@@ -96,8 +96,8 @@ Page({
 			encryptedData: encryptedData,
 			type: '1',
 		}
-		// util.httpRequest('https://www.yjhlcity.com/app/sign/checkCoderelease', 'post', data).then(res => {
 		util.httpRequest('https://www.yjhlcity.com/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
+		// util.httpRequest('http://192.168.0.7:8002/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
 			console.log(res)
 
 

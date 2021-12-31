@@ -100,6 +100,8 @@ Page({
         }).then(res => {});
         // 页面跳转
         if (e.currentTarget.dataset.login) {
+          console.log("-----------")
+          console.log(e.currentTarget.dataset)
           if (e.currentTarget.dataset.tit == '会议管理') {
             if (!login.isLogin()) return
           }
@@ -109,9 +111,11 @@ Page({
           if (e.currentTarget.dataset.tit == '问卷调查') {
             if (!login.isLogin()) return
           }
-          if (e.currentTarget.dataset.tit == '核酸扫码') {
+          //所有扫码必须登录
+          if (e.currentTarget.dataset.url == '../medical/pages/scan/scan') {
             if (!login.isLogin()) return
           }
+        
           util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
 
         } else {
@@ -335,14 +339,60 @@ Page({
             },
             {
               "id": 0,
+              "name": "通行证",
+              "summary": "",
+              "icon": "/image/tongxingzheng.png",
+              "href": "../medical/pages/scan/scan",
+              "color": "#000",
+              "openType": 0,
+              "enable": 1,
+              "islogin": true,
+              "content": [{
+                "enable": 1,
+                "islogin": true,
+                "id": 0,
+                "tit": "",
+                "icon": "",
+                "url": "",
+                "color": "",
+                "openType": ""
+              }]
+            },
+            {
+              "id": 0,
+              "name": "疫情防护",
+              "summary": "",
+              "icon": "/image/yiqingfanghu.png",
+              "href": "https://www.yjhlcity.com/epidemiccontrol/route/shop/get-mine",
+              "data":{
+                "idCard":""
+              },
+              "color": "#0F8E60",
+              "openType": 2,
+              "enable": 1,
+              "islogin": true,
+              "content": [{
+                "enable": 1,
+                "islogin": true,
+                "id": 0,
+                "tit": "",
+                "icon": "",
+                "url": "",
+                "color": "",
+                "openType": ""
+              }]
+            },
+            {
+              "id": 0,
               "name": "煤矿到访登记",
               "summary": "",
               "icon": "/image/meikuangdaofangdengji.png",
               "href": "https://www.yjhlcity.com/form-report/route/coal-appointment/public/get-mine",
               "data":{
-                "userId": ""
+                "userId": "",
+                "token":""
               },
-              "color": "#019688",
+              "color": "#B81C24",
               "openType": 2,
               "enable": 1,
               "islogin": true,
@@ -2162,9 +2212,10 @@ Page({
    */
   onLoad: function (options) {
     this.getNewsList()
-    this.getData()
 
-    // 测试
+    //服务器
+    this.getData()
+    // 本地测试
     // this.getDataTest()
   },
 
