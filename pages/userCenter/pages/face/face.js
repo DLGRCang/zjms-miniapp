@@ -1,7 +1,6 @@
 // pages/plugin/face/face.js
 const util = require('../../../../utils/util')
 Page({
-
 	/**
 	 * 页面的初始数据
 	 */
@@ -10,7 +9,6 @@ Page({
 		name: '',
 		idCard: '',
 		access_token: '',
-
 	},
 	putData(e) {
 		let key = e.currentTarget.dataset.key
@@ -46,7 +44,6 @@ Page({
 		}
 
 		wx.startFacialRecognitionVerify({
-
 			name: this.data.name,
 			idCardNumber: this.data.idCard,
 			checkAliveType: this.data.type,
@@ -95,9 +92,11 @@ Page({
 			iv: iv,
 			encryptedData: encryptedData,
 			type: '1',
+			name:that.data.name,
+			idCard:that.data.idCard
 		}
-		util.httpRequest('https://www.yjhlcity.com/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
-		// util.httpRequest('http://192.168.0.7:8002/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
+		// util.httpRequest('https://www.yjhlcity.com/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
+		util.httpRequest('http://172.16.20.68:8002/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
 			console.log(res)
 
 
@@ -114,7 +113,7 @@ Page({
 					isLogin: wx.getStorageSync("isLogin")
 				})
 				wx.navigateBack({
-					delta: 1
+					delta: 2
 				})
 			} else {
 				util.showToast("登录失败")

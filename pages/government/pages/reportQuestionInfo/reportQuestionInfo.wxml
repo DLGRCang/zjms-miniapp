@@ -1,0 +1,47 @@
+<!--pages/government/pages/reportQuestionInfo/reportQuestionInfo.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">问题详情</view>
+</cu-custom>
+<wxs module="function">
+	module.exports = {
+		split: function (value) {
+			return value.split(',')
+		}
+	}
+</wxs>
+<view style="background-color:#f2f2f2;">
+	<view style="background-color: white;" class="padding-lr padding-bottom">
+		<view class="flex align-center justify-contents">
+			<dot-title title="问题情况" color="title-color" style="font-weight: 600;" />
+			<text wx:if="{{data.processState=='未处理'}}" class="status">{{data.processState}}</text>
+			<text wx:if="{{data.processState=='处理中'}}" class="status2">{{data.processState}}</text>
+			<text wx:if="{{data.processState=='已处理'}}" class="status3">{{data.processState}}</text>
+		</view>
+		<textarea disabled="false" bindinput="putData" style="width: 100%;">{{data.content}}</textarea>
+		<view class="line"></view>
+		<dot-title title="现场图片" color="title-color" style="font-weight: 600;" />
+		<view class="grid col-3 grid-square flex-sub" wx:if="{{data.photograph.length>0}}">
+			<view class="bg-img" wx:for="{{function.split(data.photograph)}}" wx:key="{{index}}" bindtap="ViewVideo" 	data-url="{{imgUrl}}{{item}}">
+				<image src='{{imgUrl}}{{item}}' mode='aspectFill'></image>
+			</view>
+		</view>
+		<view class="line"></view>
+		<dot-title title="现场位置" color="title-color" style="font-weight: 600;" />
+		<view class="flex align-center">
+			<text style="margin-right: 10px;">{{data.address}}</text>
+			<image style="width: 22px;height: 22px;margin-left: auto;min-width: 22px;" src="/image/location.png" bindtap="goRoute" data-name="{{data.address}}" data-lat="{{data.latitude}}" data-lng="{{data.longitude}}"></image>
+		</view>
+		<button wx:if="{{hasHandlePermission&&status=='处理中'}}" class="report_btn" bindtap="goHandle">填写处理情况</button>
+	</view>
+	<view wx:if="{{status=='已处理'}}" style="background-color: white;padding-top: 1px;" class="padding-lr margin-top padding-bottom">
+		<dot-title title="处理情况" color="title-color" style="font-weight: 600;" />
+		<textarea disabled="false" bindinput="putData" data-key="content" style="width: 100%;">{{data.feedBack}}</textarea>
+		<dot-title title="现场图片" color="title-color" style="font-weight: 600;" />
+		<view class="grid col-3 grid-square flex-sub">
+		<view wx:if="{{data.backPicture.length>0}}" class="bg-img" wx:for="{{function.split(data.backPicture)}}" wx:key="{{index}}"  bindtap="ViewVideo" >
+			<image src='{{imgUrl}}{{item}}' mode='aspectFill'></image>
+		</view>
+		</view>
+	</view>
+
+</view>

@@ -1,0 +1,17 @@
+<!--pages/government/pages/reportQuestion/reportQuestion.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">问题上报</view>
+</cu-custom>
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" style="width:100%;height:90.3%" scale="16" show-location='true' bindmarkertap="showInfo">
+	<button wx:if="{{hasReportPermission}}" bindtap="goReport" class="bgColor" style="margin: 35rpx 50rpx;font-size: 32rpx;">问题上报</button>
+</map>
+<view class="info_div" wx:if="{{show}}" style="height: 13%;">
+		<view class="info">
+			<text class="summary">{{marker.address}}</text>
+			<text wx:if="{{marker.processState=='未处理'}}" class="status">{{marker.processState}}</text>
+			<text wx:if="{{marker.processState=='处理中'}}" class="status2">{{marker.processState}}</text>
+			<text wx:if="{{marker.processState=='已处理'}}" class="status3">{{marker.processState}}</text>
+		</view>
+		<view style="height: 14px;font-size: 14px;color: #B81C24;margin-bottom: 10px;" class="margin-top" bindtap="goInfo" data-staus="{{marker.processState}}" data-id="{{marker.problemReportUpId}}">
+			问题详情>></view>
+	</view>

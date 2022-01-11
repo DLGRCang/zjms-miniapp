@@ -11,7 +11,7 @@
   <image  style="height:276rpx;width:552rpx;margin-top:120rpx" src="{{imgUrl}}/image/audio_logo.png"
     mode="aspectFill"></image>
   
-    <text  style="text-align: center;line-height: 260rpx;color:#ffffff;font-size: 45rpx;width:256rpx;height:260rpx; background-image:url({{imgUrl}}/image/audio_btn_bg.png);background-repeat: no-repeat;background-size: 256rpx 260rpx; margin-top:180rpx" >MF102.3</text>
+    <text  style="text-align: center;line-height: 260rpx;color:#ffffff;font-size: 45rpx;width:256rpx;height:260rpx; background-image:url({{imgUrl}}/image/audio_btn_bg.png);background-repeat: no-repeat;background-size: 256rpx 260rpx; margin-top:180rpx" >FM 102.3</text>
     <image bindtap="edit"  style="height:124rpx;width:124rpx;margin-top:auto;margin-bottom:150rpx" src="{{imgUrl}}/image/audio_edit.png"
     mode="aspectFill"></image>
   <!-- <button type="primary" bindtap="x">播放</button>

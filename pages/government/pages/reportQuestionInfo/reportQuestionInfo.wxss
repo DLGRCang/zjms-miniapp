@@ -1,0 +1,60 @@
+/* pages/government/pages/reportQuestionInfo/reportQuestionInfo.wxss */
+.bgColor {
+	background-color: #B81C24;
+	color: #ffffff;
+}
+
+.title-color {
+	color: #B81C24
+}
+
+
+.title {
+	font-size: 32rpx;
+}
+
+.line {
+	width: 100%;
+	height: 1px;
+	background-color: #f2f2f2;
+}
+
+.report_btn {
+	height: 35px;
+	background-color: #B81C24;
+	color: white;
+	font-size: 14px;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.status {
+	background-color: #F7E8E9;
+	border-radius: 11px;
+	color: #B81C24;
+	padding: 3px 8px;
+	margin-left: 6px;
+	font-size: 10px;
+	line-height: 10px;
+}
+.status2 {
+	background-color: #faf4e8;
+	border-radius: 11px;
+	color: #ffaa00;
+	padding: 3px 8px;
+	margin-left: 6px;
+	font-size: 10px;
+	line-height: 10px;
+}
+.status3 {
+	background-color: #ecfcec;
+	border-radius: 11px;
+	color: #00aa00;
+	padding: 3px 8px;
+	margin-left: 6px;
+	font-size: 10px;
+	line-height: 10px;
+}

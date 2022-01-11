@@ -98,10 +98,11 @@ Page({
         util.requestApi('businesstatistic/savebusinesstatistic', 'POST', {
           businesName: e.currentTarget.dataset.tit
         }).then(res => {});
+        console.log("------/////-----")
+
         // 页面跳转
         if (e.currentTarget.dataset.login) {
-          console.log("-----------")
-          console.log(e.currentTarget.dataset)
+         
           if (e.currentTarget.dataset.tit == '会议管理') {
             if (!login.isLogin()) return
           }
@@ -115,13 +116,12 @@ Page({
           if (e.currentTarget.dataset.url == '../medical/pages/scan/scan') {
             if (!login.isLogin()) return
           }
-        
-          util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
-
+      
         } else {
           if (!login.isLogin()) return
         }
 
+        util.pageJumpTo(e.currentTarget.dataset.url, 'tit', e.currentTarget.dataset.tit)
       } else if (e.currentTarget.dataset.type === 1) {
         // 统计
         util.requestApi('businesstatistic/savebusinesstatistic', 'POST', {
@@ -320,9 +320,37 @@ Page({
               "icon": "/image/hesuanyuyue.png",
               "href": "https://www.yjhlcity.com/form-report/route/covid19-testing-appointment/public/get-mine",
               "data":{
-                "userId": ""
+                "userId": "",
+                "name":"",
+                "idCard":""
               },
               "color": "#019688",
+              "openType": 2,
+              "enable": 1,
+              "islogin": true,
+              "content": [{
+                "enable": 1,
+                "islogin": true,
+                "id": 0,
+                "tit": "",
+                "icon": "",
+                "url": "",
+                "color": "",
+                "openType": ""
+              }]
+            },
+            {
+              "id": 0,
+              "name": "通行码",
+              "summary": "",
+              "icon": "/image/yiqingfanghu.png",
+              "href": "http://192.168.31.50:8848/20211228/save_v2.html",
+              "data":{
+                "userId": "",
+                "name":"",
+                "idCard":""
+              },
+              "color": "#5184C4",
               "openType": 2,
               "enable": 1,
               "islogin": true,
@@ -345,6 +373,30 @@ Page({
               "href": "../medical/pages/scan/scan",
               "color": "#000",
               "openType": 0,
+              "enable": 1,
+              "islogin": true,
+              "content": [{
+                "enable": 1,
+                "islogin": true,
+                "id": 0,
+                "tit": "",
+                "icon": "",
+                "url": "",
+                "color": "",
+                "openType": ""
+              }]
+            },
+            {
+              "id": 0,
+              "name": "登记记录",
+              "summary": "",
+              "icon": "/image/djjl.png",
+              "href": "https://www.yjhlcity.com/epidemiccontrol/route/shop-user-record/history",
+              "data":{
+                "idCard":""
+              },
+              "color": "#0F8E60",
+              "openType": 2,
               "enable": 1,
               "islogin": true,
               "content": [{
@@ -1054,6 +1106,27 @@ Page({
           }]
         },
         {
+          "id": 0,
+          "name": "问题上报",
+          "summary": "",
+          "icon": "/image/hesuansaoma.png",
+          "href": "../government/pages/reportQuestion/reportQuestion",
+          "color": "#000",
+          "openType": 0,
+          "enable": 1,
+          "islogin": false,
+          "content": [{
+            "enable": 1,
+            "islogin": false,
+            "id": 0,
+            "tit": "",
+            "icon": "",
+            "url": "",
+            "color": "",
+            "openType": ""
+          }]
+        },
+        {
           "id": 5,
           "name": "先锋云超市",
           "summary": "",
@@ -1061,7 +1134,7 @@ Page({
           "href": "先锋云超市",
           "color": "#E60012",
           "openType": 2,
-          "enable": 1,
+          "enable": 0,
           "islogin": false,
           "content": [{
             "enable": 1,
@@ -1073,7 +1146,8 @@ Page({
             "color": "",
             "openType": ""
           }]
-        }
+        },
+        
         ]
       },
       {

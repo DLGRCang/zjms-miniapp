@@ -218,7 +218,11 @@
 				"pages/questionnaireInfo/questionnaireInfo",
 				"pages/instaShotInfo/instaShotInfo",
 				"pages/flagLeaderWordMessage/flagLeaderWordMessage",
-				"pages/flagLeaderMessageInfo/flagLeaderMessageInfo"
+				"pages/flagLeaderMessageInfo/flagLeaderMessageInfo",
+				"pages/reportQuestion/reportQuestion",
+				"pages/reportQuestionForm/reportQuestionForm",
+				"pages/reportQuestionInfo/reportQuestionInfo",
+				"pages/reportHandleForm/reportHandleForm"
 			]
 		},
 		{

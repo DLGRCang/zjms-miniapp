@@ -1,0 +1,27 @@
+.bgColor {
+	background-color: #B81C24;
+	color: #ffffff;
+}
+
+.title-color {
+	color: #B81C24
+}
+
+radio {
+	transform: scale(0.7);
+}
+
+.title {
+	font-size: 32rpx;
+}
+.report_btn {
+	height: 35px;
+	background-color: #B81C24;
+	color: white;
+	font-size: 14px;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}

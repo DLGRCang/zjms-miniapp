@@ -1,5 +1,5 @@
 <view class="flex justify-between margin-tb-lg">
-  <view class="flex justify-contents">
+  <view class="flex justify-contents align-center">
     <view class="list {{color}}" ></view>
     <view class="text-center padding-left-xs text-lg">{{title}}</view>
   </view>

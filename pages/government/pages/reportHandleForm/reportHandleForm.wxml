@@ -1,0 +1,23 @@
+<!--pages/government/pages/reportHandleForm/reportHandleForm.wxml-->
+<cu-custom bgColor="bgColor" isBack="{{true}}">
+	<view slot="content" class="text-white text-xl text-black text-bold">填写处理情况</view>
+</cu-custom>
+<view class="padding-lr">
+	<dot-title title="处理情况" color="title-color" style="font-weight: 600;" />
+	<textarea placeholder="请简单描述处理情况" bindinput="putData" data-key="feedBack" style="width: 100%;"></textarea>
+	<view class="flex align-center"><dot-title title="现场图片" color="title-color" style="font-weight: 600;" /><text>(最多三张)</text></view>
+	<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{fileList}}" wx:key="{{index}}" bindtap="ViewVideo" data-type="image"
+				data-url="{{fileList[index]}}">
+				<image src='{{fileList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}" data-type="image">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{fileList.length<3}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	
+		<button class="report_btn" bindtap="commitData">确认处理</button>
+</view>
