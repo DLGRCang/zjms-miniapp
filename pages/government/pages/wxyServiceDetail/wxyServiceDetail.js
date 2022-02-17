@@ -16,8 +16,10 @@ Page({
 		time:'',//时间
 	},
 	getDataList: function () {
+    console.log(".......")
 		let that = this;
 		util.requestApi('weixinyuanservice/getvolunteersservice/'+this.data.id, 'GET', {}).then(res => {
+      console.log(res)
 			that.setData({
 				title: res.data.title,
 				content: res.data.content,
@@ -31,6 +33,7 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+    console.log("---------------")
 		this.setData({
 			id:options.id
 		})
@@ -39,12 +42,6 @@ Page({
 
 	},
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

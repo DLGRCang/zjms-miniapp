@@ -95,8 +95,8 @@ Page({
 			name:that.data.name,
 			idCard:that.data.idCard
 		}
-		// util.httpRequest('https://www.yjhlcity.com/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
-		util.httpRequest('http://172.16.20.68:8002/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
+		util.httpRequest('https://www.yjhlcity.com/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
+		// util.httpRequest('http://172.16.20.68:8002/usercenter/app/sign/checkCoderelease', 'post', data).then(res => {
 			console.log(res)
 
 

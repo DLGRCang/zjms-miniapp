@@ -9,14 +9,14 @@
   <view class="flex flex-direction margin-top margin-bottom-xl" style="width:100%">
     <text class="text-lg text-bold">姓名：</text>
     <input bindinput="putData" class="margin-top text-xl " placeholder="请输入真实姓名"  data-key="name" value=""/>
-    <view class="bg-gray" style="width:100%;height:1px"></view>
+    <view class="bg-gray" style="width:100%;height:1px;margin-top: 8rpx;"></view>
     <text class="text-lg margin-top-xl text-bold">身份证号：</text>
     <input bindinput="putData" class="margin-top text-xl " placeholder="请输入身份证号" data-key="idCard"  value=""/>
-    <view class="bg-gray margin-bottom-xl" style="width:100%;height:1px"></view>
+    <view class="bg-gray margin-bottom-xl" style="width:100%;height:1px;margin-top: 8rpx;"></view>
   </view>
   <radio-group bindchange="radioChange" style="width:100%" class="flex align-center"  data-key="type">
-    <radio checked="true" value="1"></radio>反光识别
-    <radio style="margin-left:auto" value="0"></radio> 读数识别
+    <!-- <radio checked="true" value="1"></radio>反光识别 -->
+    <!-- <radio style="margin-left:auto" value="0"></radio> 读数识别 -->
   </radio-group>
-  <button bindtap="faceid" class="bg-green text-lg"  style="margin-top:100rpx;width:100%" >开始人脸识别验证</button>
+  <button bindtap="faceid" class="bg-green text-lg"  style="margin-top:10rpx;width:100%;background-color: rgb(8, 146, 233);" >开始人脸识别验证</button>
 </view>

@@ -23,6 +23,7 @@ Page({
 				content: res.data.content,
 				picture_url: res.data.picture_url,
 				time: res.data.time,
+				num:res.data.num
 			})
 			console.log(res)
 		})

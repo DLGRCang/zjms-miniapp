@@ -33,22 +33,22 @@
 		<text class="help-text help-icon2">心理咨询</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="goConsult"
+	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 30rpx 30rpx; " bindtap="goConsult"
 		data-type="法律咨询">
 		<text class="help-text help-icon3">法律咨询</text>
 		<text class="into"></text>
 	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="onlineHelp">
+	<!-- <view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="onlineHelp">
 		<text class="help-text help-icon4">在线调解</text>
 		<text class="into"></text>
-	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="applyHouse">
+	</view> -->
+	<!-- <view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 0 30rpx; " bindtap="applyHouse">
 		<text class="help-text help-icon5">庇护所申请</text>
 		<text class="into"></text>
-	</view>
-	<view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 80rpx 30rpx; " bindtap="applySafe">
+	</view> -->
+	<!-- <view class="flex justify-between margin-lr" style="margin: 70rpx 30rpx 80rpx 30rpx; " bindtap="applySafe">
 		<text class="help-text help-icon6">人身安全保护令申请</text>
 		<text class="into"></text>
-	</view>
+	</view> -->
 
 </view>

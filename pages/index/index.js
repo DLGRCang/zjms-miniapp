@@ -202,7 +202,7 @@ Page({
   // 测试
   getDataTest() {
     let data = {
-      "iconImgUrl": "https://www.yjhlcity.com/InfoIssue/miniapp",
+      "iconImgUrl": "https://www.yjhlcity.com/miniapp",
       "topImg": "https://www.yjhlcity.com/InfoIssue/miniapp/zjms/top.png",
       "bottomImg": "https://www.yjhlcity.com/InfoIssue/miniapp/zjms/bottom.png",
       "modules": [{
@@ -1109,7 +1109,7 @@ Page({
           "id": 0,
           "name": "问题上报",
           "summary": "",
-          "icon": "/image/hesuansaoma.png",
+          "icon": "/image/wentishagnbao.png",
           "href": "../government/pages/reportQuestion/reportQuestion",
           "color": "#000",
           "openType": 0,
@@ -1499,7 +1499,7 @@ Page({
             "tit": "经济快餐",
             "icon": "/image/17.png",
             "url": "wx2612dde8b5df3d03",
-            "color": "pages/xiaoyuancanting/index",
+            "color": "pages/meishijiudian/index?id=22b6fbf342ce487b8cd28c4959bb38d2&tit=小吃快餐",
             "openType": 1
           },
           {
@@ -1513,6 +1513,7 @@ Page({
             "openType": 1
           },
           {
+            "enable": 1,
             "id": 3,
             "tit": "民族食品",
             "icon": "/image/19.png",
@@ -1693,6 +1694,16 @@ Page({
             "url": "../medical/pages/nucleicAcidCheck/nucleicAcidCheck",
             "color": "",
             "openType": 0
+          },
+          {
+            "enable": 1,
+            "islogin": true,
+            "id": 1,
+            "tit": "体检",
+            "icon": "/image/tijian.png",
+            "url": "wx7c812e7ef680c8d7",
+            "color": "",
+            "openType": 1
           },
           {
             "enable": 1,
@@ -2288,9 +2299,9 @@ Page({
     this.getNewsList()
 
     //服务器
-    this.getData()
+    // this.getData()
     // 本地测试
-    // this.getDataTest()
+    this.getDataTest()
   },
 
   /**

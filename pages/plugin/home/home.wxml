@@ -47,7 +47,7 @@
       <view bindtap="myOpinion" class="items"><text class="cuIcon-ticket"></text> 意见反馈</view>
     </view>
     <view class="grid col-2 margin-tb text-center">
-      <view bindtap="myCard" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-vipcard"></text> 我的卡券</view>
+      <view bindtap="myCard" class="items" style="border-right:1rpx solid #F5F5F5;"><text class="cuIcon-vipcard"></text> 我的证卡</view>
       <!-- <view bindtap="myOrder" class="items"><text class="cuIcon-comment"></text> 我的订单</view> -->
     </view>
   </view>
